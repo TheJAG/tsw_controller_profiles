@@ -1,0 +1,207 @@
+{
+  "name": "Plan V",
+  "auto_select": true,
+  "controller": {
+    "usb_id": "044F:0407"
+  },
+  "rail_class_information": [
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS Mat64 Plan V ABk"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS Mat64 Plan V Bk"
+    }
+  ],
+  "controls": [
+    {
+      "name": "LeftThrottle",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Regulator",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "invert": true,
+            "steps": [
+              0.0000,
+              0.1200,
+              0.2500,
+              0.3700,
+              0.5000,
+              0.6200,
+              0.7500,
+              0.8700,
+              1.0000
+            ]
+          }
+        },
+        {
+          "type": "sync_control",
+          "identifier": "Regulator",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "invert": true,
+            "steps": [
+              0.0000,
+              0.1200,
+              0.2500,
+              0.3700,
+              0.5000,
+              0.6200,
+              0.7500,
+              0.8700,
+              1.0000
+            ]
+          },
+          "action_increase": {
+            "keys": "a"
+          },
+          "action_decrease": {
+            "keys": "d"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.5,
+        "action_activate": {
+          "keys": "ctrl+w",
+          "press_time": 0.3
+        },
+        "action_deactivate": {
+          "keys": "ctrl+w",
+          "press_time": 0.3
+        }
+      }
+    },
+    {
+      "name": "GearLever",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "Q"
+        }
+      }
+    },
+    {
+      "name": "RotaryIgnStart",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "s",
+          "press_time": 0.3,
+          "wait_time": 0.2
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "w",
+          "press_time": 0.3,
+          "wait_time": 0.2
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "space"
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "x"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.5,
+        "action_activate": {
+          "keys": "v"
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.5,
+        "action_activate": {
+          "keys": "shift+v"
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "l"
+        }
+      }
+    },
+    {
+      "name": "AutoBrake4",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "h"
+        }
+      }
+    },
+    {
+      "name": "AutoBrake2",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "shift+h"
+        }
+      }
+    }
+  ]
+}
