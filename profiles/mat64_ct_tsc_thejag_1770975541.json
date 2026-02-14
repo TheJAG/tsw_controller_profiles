@@ -1,5 +1,5 @@
 {
-  "name": "Plan V",
+  "name": "TSC Mat64 (ChrisTrains) | TheJAG",
   "auto_select": true,
   "controller": {
     "usb_id": "044F:0407"
@@ -65,6 +65,72 @@
       ]
     },
     {
+      "name": "SpeedbrakeLever",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "invert": true,
+            "steps": [
+              -1.0000,
+              0.0000,
+              1.0000
+            ]
+          }
+        },
+        {
+          "type": "sync_control",
+          "identifier": "Reverser",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "invert": true,
+            "steps": [
+              -1.0000,
+              0.0000,
+              1.0000
+            ]
+          },
+          "action_increase": {
+            "keys": "w"
+          },
+          "action_decrease": {
+            "keys": "s"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "TrainBrakeControl",
+          "input_value": {
+            "min": 0,
+            "max": 1
+          }
+        },
+        {
+          "type": "sync_control",
+          "identifier": "TrainBrakeControl",
+          "input_value": {
+            "min": 0,
+            "max": 1
+          },
+          "action_increase": {
+            "keys": "'"
+          },
+          "action_decrease": {
+            "keys": ";"
+          }
+        }
+      ]
+    },
+    {
       "name": "ParkingBrake",
       "assignment": {
         "type": "momentary",
@@ -80,12 +146,22 @@
       }
     },
     {
+      "name": "RightThrottleButton",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "x"
+        }
+      }
+    },
+    {
       "name": "GearLever",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "Q"
+          "keys": "num_enter"
         }
       }
     },
@@ -95,9 +171,9 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "s",
-          "press_time": 0.3,
-          "wait_time": 0.2
+          "keys": "h",
+          "press_time": 0.1,
+          "wait_time": 0.1
         }
       }
     },
@@ -107,9 +183,9 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "w",
-          "press_time": 0.3,
-          "wait_time": 0.2
+          "keys": "shift+h",
+          "press_time": 0.1,
+          "wait_time": 0.1
         }
       }
     },
@@ -129,7 +205,7 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "x"
+          "keys": "n"
         }
       }
     },
@@ -137,9 +213,9 @@
       "name": "RudderTrimLeft",
       "assignment": {
         "type": "momentary",
-        "threshold": 0.9,
+        "threshold": 0.5,
         "action_activate": {
-          "keys": "y"
+          "keys": "t"
         }
       }
     },
@@ -147,7 +223,17 @@
       "name": "RudderTrimRight",
       "assignment": {
         "type": "momentary",
-        "threshold": 0.9,
+        "threshold": 0.5,
+        "action_activate": {
+          "keys": "t"
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.5,
         "action_activate": {
           "keys": "u"
         }
@@ -159,17 +245,7 @@
         "type": "momentary",
         "threshold": 0.5,
         "action_activate": {
-          "keys": "v"
-        }
-      }
-    },
-    {
-      "name": "LeftAuxButton",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.5,
-        "action_activate": {
-          "keys": "shift+v"
+          "keys": "shift+num_enter"
         }
       }
     },
@@ -179,7 +255,41 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "l"
+          "keys": "ctrl+f12"
+        }
+      }
+    },
+    {
+      "name": "AutoBrake0",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "ctrl+f9"
+        }
+      }
+    },
+    {
+      "name": "AutoBrake1",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "ctrl+f9",
+          "press_time": 0.1,
+          "wait_time": 0.1
+        }
+      }
+    },
+    {
+      "name": "AutoBrake3",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "ctrl+f10",
+          "press_time": 0.1,
+          "wait_time": 0.1
         }
       }
     },
@@ -189,17 +299,7 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "h"
-        }
-      }
-    },
-    {
-      "name": "AutoBrake2",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "keys": "shift+h"
+          "keys": "ctrl+f10"
         }
       }
     }
