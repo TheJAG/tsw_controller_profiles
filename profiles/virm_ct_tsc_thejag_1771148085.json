@@ -1,0 +1,415 @@
+{
+  "name": "TSC VIRM (ChrisTrains) | TheJAG",
+  "auto_select": true,
+  "controller": {
+    "usb_id": "044F:0407"
+  },
+  "rail_class_information": [
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS V-IRM mBv7 Koln Amsterdam Express"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS V-IRM mBvk Green"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS V-IRM mBvk Koln Amsterdam Express"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS V-IRM mBvk OV Paint"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS V-IRM mBvk van B naar A"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS V-IRM3 mBv7"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS V-IRM3 mBvk (2023)"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS V-IRM3 mBvk 2023"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS V-IRM3 mBvk"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS V-IRM4 mBvk (2023)"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS V-IRM4 mBvk 2023"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS V-IRM4 mBvk"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm1 8600 mBv7"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm1 8600 mBvk (2023)"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm1 8600 mBvk 2023"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm1 8600 mBvk"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm1 8600 mBvk2 (2023)"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm1 8600 mBvk2 2023"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm1 8600 mBvk2"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm1 9400 mBvk (2023)"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm1 9400 mBvk 2023"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm1 9400 mBvk"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm1 9400 mBvk2 (2023)"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm1 9400 mBvk2 2023"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm1 9400 mBvk2"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm2 8700 mBv7"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm2 8700 mBvk1"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm2 8700 mBvk2"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm2 9500 mBvk1"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm2 9500 mBvk2"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm3 8700 mBv7"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm3 8700 mBvk1"
+    },
+    {
+      "class_name": "ChrisTrains.:.RailSimulator.:.CT NS VIRMm3 8700 mBvk2"
+    }
+  ],
+  "controls": [
+    {
+      "name": "LeftThrottle",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "VirtualThrottle",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "invert": true
+          }
+        },
+        {
+          "type": "sync_control",
+          "identifier": "VirtualThrottle",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "invert": true
+          },
+          "action_increase": {
+            "keys": "a"
+          },
+          "action_decrease": {
+            "keys": "d"
+          }
+        }
+      ]
+    },
+    {
+      "name": "SpeedbrakeLever",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "steps": [
+              -1,
+              0,
+              1
+            ],
+            "invert": true
+          }
+        },
+        {
+          "type": "sync_control",
+          "identifier": "Reverser",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "steps": [
+              -1,
+              0,
+              1
+            ],
+            "invert": true
+          },
+          "action_increase": {
+            "keys": "w"
+          },
+          "action_decrease": {
+            "keys": "s"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "VirtualBrake",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.11,
+              0.22,
+              0.33,
+              0.44,
+              0.55,
+              0.66,
+              0.77,
+              1
+            ]
+          }
+        },
+        {
+          "type": "sync_control",
+          "identifier": "VirtualBrake",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.11,
+              0.22,
+              0.33,
+              0.44,
+              0.55,
+              0.66,
+              0.77,
+              1
+            ]
+          },
+          "action_increase": {
+            "keys": "'"
+          },
+          "action_decrease": {
+            "keys": ";"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "v",
+          "press_time": 0.1,
+          "wait_time": 0.1
+        },
+        "action_deactivate": {
+          "keys": "shift+v",
+          "press_time": 0.1,
+          "wait_time": 0.1
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "x"
+        }
+      }
+    },
+    {
+      "name": "GearLever",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "DeadMansReset",
+          "value": 1,
+          "hold": false
+        },
+        "action_deactivate": {
+          "controls": "DeadMansReset",
+          "value": 0
+        }
+      }
+    },
+    {
+      "name": "RotaryIgnStart",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "h",
+          "press_time": 0.1,
+          "wait_time": 0.1
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "shift+h",
+          "press_time": 0.1,
+          "wait_time": 0.1
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "space"
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "n"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.5,
+        "action_activate": {
+          "keys": "t"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.5,
+        "action_activate": {
+          "keys": "t"
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.5,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "DeadManSystem",
+          "value": 1,
+          "hold": false
+        },
+        "action_deactivate": {
+          "controls": "DeadManSystem",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "ctrl+f12"
+        }
+      }
+    },
+    {
+      "name": "AutoBrake0",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "ctrl+f9"
+        }
+      }
+    },
+    {
+      "name": "AutoBrake1",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "ctrl+f9",
+          "press_time": 0.1,
+          "wait_time": 0.1
+        }
+      }
+    },
+    {
+      "name": "AutoBrake3",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "ctrl+f10",
+          "press_time": 0.1,
+          "wait_time": 0.1
+        }
+      }
+    },
+    {
+      "name": "AutoBrake4",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "ctrl+f10"
+        }
+      }
+    }
+  ]
+}
