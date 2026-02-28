@@ -1,9 +1,9 @@
 {
   "name": "TSC | ICMm | ChrisTrains | TheJAG",
   "auto_select": true,
-  "controller": {
-    "usb_id": "044F:0407"
-  },
+  "apps": [
+    "Train Sim Classic"
+  ],
   "rail_class_information": [
     {
       "class_name": "ChrisTrains.:.RailSimulator.:.CT NS ICM mB (zonder baanruimer)"
@@ -126,6 +126,7 @@
       "class_name": "ChrisTrains.:.RailSimulator.:.RH NS ICM sBk 4200 closed nose"
     },
     {
+
       "class_name": "ChrisTrains.:.RailSimulator.:.RH NS ICM sBk 4200 Olympic closed nose"
     },
     {
@@ -133,6 +134,45 @@
     }
   ],
   "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "steps": [
+              -1,
+              0,
+              1
+            ],
+            "invert": true
+          }
+        },
+        {
+          "type": "sync_control",
+          "identifier": "Reverser",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "steps": [
+              -1,
+              0,
+              1
+            ],
+            "invert": true
+          },
+          "action_increase": {
+            "keys": "w"
+          },
+          "action_decrease": {
+            "keys": "s"
+          }
+        }
+      ]
+    },
     {
       "name": "LeftThrottle",
       "assignments": [
@@ -186,45 +226,6 @@
           },
           "action_decrease": {
             "keys": "d"
-          }
-        }
-      ]
-    },
-    {
-      "name": "SpeedbrakeLever",
-      "assignments": [
-        {
-          "type": "direct_control",
-          "controls": "Reverser",
-          "input_value": {
-            "min": -1,
-            "max": 1,
-            "steps": [
-              -1,
-              0,
-              1
-            ],
-            "invert": true
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "Reverser",
-          "input_value": {
-            "min": -1,
-            "max": 1,
-            "steps": [
-              -1,
-              0,
-              1
-            ],
-            "invert": true
-          },
-          "action_increase": {
-            "keys": "w"
-          },
-          "action_decrease": {
-            "keys": "s"
           }
         }
       ]
@@ -467,5 +468,8 @@
         }
       }
     }
-  ]
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
 }
