@@ -62,36 +62,6 @@
     },
     {
       "name": "LeftThrottle",
-      "description": "Throttle",
-      "assignments": [
-        {
-          "type": "direct_control",
-          "controls": "PowerController",
-          "input_value": {
-            "min": 0,
-            "max": 1,
-            "step": 0.25
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "Throttle",
-          "input_value": {
-            "min": 0,
-            "max": 1,
-            "step": 0.25
-          },
-          "action_increase": {
-            "keys": "a"
-          },
-          "action_decrease": {
-            "keys": "d"
-          }
-        }
-      ]
-    },
-    {
-      "name": "RightThrottle",
       "description": "Brake",
       "assignments": [
         {
@@ -118,6 +88,36 @@
           },
           "action_decrease": {
             "keys": ";"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "Throttle",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "PowerController",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "step": 0.25
+          }
+        },
+        {
+          "type": "sync_control",
+          "identifier": "Throttle",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "step": 0.25
+          },
+          "action_increase": {
+            "keys": "a"
+          },
+          "action_decrease": {
+            "keys": "d"
           }
         }
       ]
