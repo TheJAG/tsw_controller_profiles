@@ -1,0 +1,385 @@
+{
+  "name": "TSW | Class 710 | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_GOB_Class710_Base_C"
+    },
+    {
+      "class_name": "RVM_GOB_Class710_CabBase_C"
+    },
+    {
+      "class_name": "RVM_GOB_Class710_DMS_A_C"
+    },
+    {
+      "class_name": "RVM_GOB_Class710_DMS_B_C"
+    },
+    {
+      "class_name": "RVM_GOB_Class710_M_Base_C"
+    },
+    {
+      "class_name": "RVM_GOB_Class710_MS_C"
+    },
+    {
+      "class_name": "RVM_GOB_Class710_PMS_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "MasterControlSwitch",
+          "input_value": {
+            "min": 0.01,
+            "max": 0.99,
+            "steps": [0.01, 0.24, 0.49, 0.74, 0.99],
+            "invert": true
+          }
+        },
+        {
+          "type": "sync_control",
+          "identifier": "Reverser",
+          "input_value": {
+            "min": 0.01,
+            "max": 0.99,
+            "steps": [0.01, 0.24, 0.49, 0.74, 0.99],
+            "invert": true
+          },
+          "action_increase": {
+            "keys": "w"
+          },
+          "action_decrease": {
+            "keys": "s"
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Combined Power and brake",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "TractionBrakeControl",
+          "input_value": {
+            "min": -0.75,
+            "max": 1.0,
+            "steps": [-0.75, null, -0.05, 0, null, 1.0]
+          }
+        },
+        {
+          "type": "sync_control",
+          "identifier": "Throttle",
+          "input_value": {
+            "min": -0.75,
+            "max": 1,
+            "steps": [-0.75, null, -0.05, 0, null, 1.0]
+          },
+          "action_increase": {
+            "keys": "a"
+          },
+          "action_decrease": {
+            "keys": "d"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Master Key I/O",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "ctrl+w",
+          "press_time": 0.2,
+          "wait_time": 0.1
+        },
+        "action_deactivate": {
+          "controls": "MasterKey",
+          "value": 0.0,
+          "hold": false
+        }
+      }    },
+    {
+      "name": "FlapLever",
+      "description": "Cab light",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Cablight",
+          "input_value": {
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.5,
+            "invert": true
+          }
+        },
+        {
+          "type": "sync_control",
+          "identifier": "Cablights",
+          "input_value": {
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.5,
+            "invert": true
+          },
+          "action_increase": {
+            "keys": "l"
+          },
+          "action_decrease": {
+            "keys": "shift+l"
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottleButton",
+      "description": "Sand",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "x"
+        }
+      }
+    },
+    {
+      "name": "GearLever",
+      "description": "AWS Reset",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "Q"
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "AWS I/O",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "TPWS_AWS_Isolation",
+          "value": 1,
+          "hold": false
+        },
+        "action_deactivate": {
+          "controls": "TPWS_AWS_Isolation",
+          "value": 0
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "DSD / Vigilance Devices I/O",
+      "assignments": [
+        {
+          "type": "toggle",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "VigilanceDSD_Isolation",
+            "value": 1,
+            "hold": false
+          },
+          "action_deactivate": {
+            "controls": "VigilanceDSD_Isolation",
+            "value": 0
+          }
+        },
+        {
+          "type": "toggle",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "VigilanceIsolation",
+            "value": 1,
+            "hold": false
+          },
+          "action_deactivate": {
+            "controls": "VigilanceIsolation",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "Horn | High",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "space"
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "Horn | Low",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "n"
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "Cab lights",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "l"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wipers decrease",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "shift+v",
+          "press_time": 0.2,
+          "wait_time": 0.1
+        }
+      }
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wipers increase",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "v",
+          "press_time": 0.2,
+          "wait_time": 0.1
+        }
+      }
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Headlights | Off",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "HeadMarkerLights",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Headlights | Day running",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "HeadMarkerLights",
+          "value": 0.25,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Headlights | Marker lights only",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "HeadMarkerLights",
+          "value": 0.50,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Headlights | Night running",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadMarkerLights",
+            "value": 0.75,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TailLight",
+            "value": 0.0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Taillights | On",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadMarkerLights",
+            "value": 0.0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TailLight",
+            "value": 0.25,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}

@@ -29,13 +29,13 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **BR Class 158**  
 `TODO ◼️` **BR Class 166**  
 `TODO ◼️` **BR Class 170**  
-`DONE ✅` **BR Class 171 (Rivet)** [profile](releases/tsw-class-171-rivet-thejag.tswprofile) [manual](profiles/documentation/tsw-class-171-rivet-thejag.pdf)  
-`DONE ✅` **BR Class 313 (DTG)** [profile](releases/tsw-class-313-dtg-thejag.tswprofile) [manual](profiles/documentation/tsw-class-313-dtg-thejag.pdf)  
-`DONE ✅` **BR Class 314 (DTG)** [profile](releases/tsw-class-314-dtg-thejag.tswprofile) [manual](profiles/documentation/tsw-class-314-dtg-thejag.pdf)  
+`DONE ✅` **BR Class 171**<sub>— Rivet · [profile](releases/tsw-class-171-rivet-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-171-rivet-thejag.pdf)</sub>  
+`DONE ✅` **BR Class 313**<sub>— DTG · [profile](releases/tsw-class-313-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-313-dtg-thejag.pdf)</sub>  
+`DONE ✅` **BR Class 314**<sub>— DTG · [profile](releases/tsw-class-314-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-314-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 323**  
 `TODO ◼️` **BR Class 350**  
 `TODO ◼️` **BR Class 375**  
-`DONE ✅` **BR Class 377 (DTG)** [profile](releases/tsw-class-377-dtg-thejag.tswprofile) [manual](profiles/documentation/tsw-class-377-dtg-thejag.pdf)  
+`DONE ✅` **BR Class 377**<sub>— DTG · [profile](releases/tsw-class-377-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-377-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 380**  
 `TODO ◼️` **BR Class 385**  
 `TODO ◼️` **BR Class 378**  
@@ -46,7 +46,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **BR Class 483**  
 `TODO ◼️` **BR Class 484**  
 `TODO ◼️` **BR Class 700/0 Thameslink**  
-`TODO ◼️` **BR Class 710**  
+`SOON ⏳️` **BR Class 710**  
 `TODO ◼️` **BR Class 801**  
 `TODO ◼️` **Flying Scotsman**  
 `TODO ◼️` **LMS Class 4F**  
@@ -89,8 +89,8 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **DB BR 1442**  
 `TODO ◼️` **DB G6**  
 `TODO ◼️` **ES 64 U2**  
-`DONE ✅` **NS ICMm (DTG)** [profile](releases/tsw-ns-icmm-dtg-thejag.tswprofile) [manual](profiles/documentation/tsw-ns-icmm-dtg-thejag.pdf)  
-`TODO ◼️` **NS SNG (DTG)**  
+`DONE ✅` **NS ICMm**<sub>— DTG · [profile](releases/tsw-ns-icmm-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-ns-icmm-dtg-thejag.pdf)</sub>  
+`TODO ◼️` **NS SNG**<sub>— DTG</sub>  
 `TODO ◼️` **ÖBB 1020**  
 `TODO ◼️` **ÖBB 1116**  
 `TODO ◼️` **ÖBB 4024**  
@@ -100,28 +100,56 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 <img width="304" height="114" alt="image" src="https://github.com/user-attachments/assets/b4751799-5d7f-4af7-9c95-4332c0924435" />  <br>
 <br>
 
-`TODO ◼️` **NS 1100 (Dutch Classics)**  
-`TODO ◼️` **NS 1200 (Dutch Classics)**  
-`DONE ✅` **NS 1300 (Dutch Classics)** [profile](releases/tsc-ns-1300-dutch-classics-thejag.tswprofile) [manual](profiles/documentation/tsc-ns-1300-dutch-classics-thejag.pdf)  
-`TODO ◼️` **NS 1600 / 1700 / 1800 (Fopix)**  
-`TODO ◼️` **NS 2200 (Christrains)**  
-`TODO ◼️` **NS 6400 (Christrains)**  
-`TODO ◼️` **NS DD-AR (Christrains)**  
-`TODO ◼️` **NS DDZ (Christrains)**  
-`TODO ◼️` **NS DH1 + DH2 (Christrains)**  
-`TODO ◼️` **NS DM'90 (Christrains)**  
-`DONE ✅` **NS ICM (Christrains)** [profile](releases/tsc-ns-icmm-christrains-thejag.tswprofile) [manual](profiles/documentation/tsc-ns-icmm-christrains-thejag.pdf)  
-`TODO ◼️` **NS ICNG (Christrains)**  
-`TODO ◼️` **NS ICR / ICRm (Christrains)**  
-`DONE ✅` **NS IRM (Christrains)** [profile](releases/tsc-ns-virm-christrains-thejag.tswprofile) [manual](profiles/documentation/tsc-ns-virm-christrains-thejag.pdf)  
-`TODO ◼️` **NS Mat'46 (Dutch Classics)**  
-`TODO ◼️` **NS Mat'54/'57 (Dutch Classics)**  
-`DONE ✅` **NS Mat'64 (Christrains)** [profile](releases/tsc-ns-mat64-christrains-thejag.tswprofile) [manual](profiles/documentation/tsc-ns-mat64-christrains-thejag.pdf)  
-`TODO ◼️` **NS mp3000 (Christrains)**  
-`TODO ◼️` **NS SGM (Christrains)**  
-`TODO ◼️` **NS SNG (Christrains)**  
-`TODO ◼️` **NS SLT (Christrains)**  
-`TODO ◼️` **NS Traxx 186 + ICRmh wagons (Christrains)**  
-`TODO ◼️` **Stadler Flirt 3 (Christrains)**  
-`DONE ✅` **Stadler GTW (Christrains)** [profile](releases/tsc-stadler-gtw-christrains-thejag.tswprofile) [manual](profiles/documentation/tsc-stadler-gtw-christrains-thejag.pdf)  
-`TODO ◼️` **Stadler RS-1 (Christrains)**  
+`TODO ◼️` **DB Apmbzf** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BDnf "Hasenkasten"** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BDnrzf** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB Bnrbdzf** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB Bpmbdzf** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR101** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR103** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR110** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR111** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR112** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR120** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR140** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR141** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR143** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR145** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR146** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR151** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR152** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR156** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR181** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR185** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR189** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR218** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR243** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB BR323** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB E10** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB E41** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **DB ET403** <sub>— virtualRailroads</sub>  
+`TODO ◼️` **NS 1100** <sub>— Dutch Classics</sub>  
+`TODO ◼️` **NS 1200** <sub>— Dutch Classics</sub>  
+`DONE ✅` **NS 1300** <sub>— Dutch Classics · [profile](releases/tsc-ns-1300-dutch-classics-thejag.tswprofile) · [manual](profiles/documentation/tsc-ns-1300-dutch-classics-thejag.pdf)</sub>  
+`TODO ◼️` **NS 1600 / 1700 / 1800** <sub>— Fopix</sub>  
+`TODO ◼️` **NS 2200** <sub>— Christrains</sub>  
+`TODO ◼️` **NS 6400** <sub>— Christrains</sub>  
+`TODO ◼️` **NS DD-AR** <sub>— Christrains</sub>  
+`TODO ◼️` **NS DDZ** <sub>— Christrains</sub>  
+`TODO ◼️` **NS DH1 + DH2** <sub>— Christrains</sub>  
+`TODO ◼️` **NS DM'90** <sub>— Christrains</sub>  
+`DONE ✅` **NS ICM** <sub>— Christrains · [profile](releases/tsc-ns-icmm-christrains-thejag.tswprofile) · [manual](profiles/documentation/tsc-ns-icmm-christrains-thejag.pdf)</sub>  
+`TODO ◼️` **NS ICNG** <sub>— Christrains</sub>  
+`TODO ◼️` **NS ICR / ICRm** <sub>— Christrains</sub>  
+`DONE ✅` **NS IRM** <sub>— Christrains · [profile](releases/tsc-ns-virm-christrains-thejag.tswprofile) · [manual](profiles/documentation/tsc-ns-virm-christrains-thejag.pdf)</sub>  
+`TODO ◼️` **NS Mat'46** <sub>— Dutch Classics</sub>  
+`TODO ◼️` **NS Mat'54/'57** <sub>— Dutch Classics</sub>  
+`DONE ✅` **NS Mat'64** <sub>— Christrains · [profile](releases/tsc-ns-mat64-christrains-thejag.tswprofile) · [manual](profiles/documentation/tsc-ns-mat64-christrains-thejag.pdf)</sub>  
+`TODO ◼️` **NS mp3000** <sub>— Christrains</sub>  
+`TODO ◼️` **NS SGM** <sub>— Christrains</sub>  
+`TODO ◼️` **NS SNG** <sub>— Christrains</sub>  
+`TODO ◼️` **NS SLT** <sub>— Christrains</sub>  
+`TODO ◼️` **NS Traxx 186 + ICRmh wagons** <sub>— Christrains</sub>  
+`TODO ◼️` **Stadler Flirt 3** <sub>— Christrains</sub>  
+`DONE ✅` **Stadler GTW** <sub>— Christrains · [profile](releases/tsc-stadler-gtw-christrains-thejag.tswprofile) · [manual](profiles/documentation/tsc-stadler-gtw-christrains-thejag.pdf)</sub>    
+`TODO ◼️` **Stadler RS-1** <sub>— Christrains</sub>  
