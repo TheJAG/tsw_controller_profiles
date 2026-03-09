@@ -1,9 +1,512 @@
 {
   "name": "TSW | Class 377 | DTG | TheJAG",
-  "auto_select": true,
-  "apps": [
-    "Train Sim World"
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser",
+          "input_value": {
+            "min": -0.5,
+            "max": 1,
+            "step": 0.5,
+            "invert": true
+          }
+        },
+        {
+          "type": "sync_control",
+          "identifier": "Reverser",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "step": 0.33333,
+            "invert": true
+          },
+          "action_increase": {
+            "keys": "w"
+          },
+          "action_decrease": {
+            "keys": "s"
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "PowerHandle",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "steps": [
+              -1,
+              -0.6,
+              -0.4,
+              -0.2,
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ],
+            "invert": false
+          }
+        },
+        {
+          "type": "sync_control",
+          "identifier": "Throttle",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "steps": [
+              -1,
+              -0.6,
+              -0.4,
+              -0.2,
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ],
+            "invert": false
+          },
+          "action_increase": {
+            "keys": "a"
+          },
+          "action_decrease": {
+            "keys": "d"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "MasterKey",
+          "value": 1
+        },
+        "action_deactivate": {
+          "controls": "MasterKey",
+          "value": 0
+        }
+      }
+    },
+    {
+      "name": "GearLever",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "Q"
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "x"
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "space"
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "n"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "l"
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "AWS_Isolation",
+          "value": 1,
+          "hold": false
+        },
+        "action_deactivate": {
+          "controls": "AWS_Isolation",
+          "value": 0
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "assignments": [
+        {
+          "type": "toggle",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "DSD_Isolation",
+            "value": 1,
+            "hold": false
+          },
+          "action_deactivate": {
+            "controls": "DSD_Isolation",
+            "value": 0
+          }
+        },
+        {
+          "type": "toggle",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "VigilanceIsolation",
+            "value": 1,
+            "hold": false
+          },
+          "action_deactivate": {
+            "controls": "VigilanceIsolation",
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryCrank",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "shift+v",
+          "press_time": 0.2,
+          "wait_time": 0.1
+        }
+      }
+    },
+    {
+      "name": "RotaryIgnStart",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "v",
+          "press_time": 0.2,
+          "wait_time": 0.1
+        }
+      }
+    },
+    {
+      "name": "AutoBrake0",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Headlights",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake1",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Headlights",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake2",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Headlights",
+          "value": -1,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake3",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights",
+            "value": -0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TailLights",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake4",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TailLights",
+            "value": 0.5,
+            "hold": false
+          }
+        }
+      ]
+    }
   ],
+  "auto_select": true,
+  "controller": {
+    "usb_id": "044F:0407",
+    "mapping": {
+      "name": "TCA Quadrant Airbus - TSW | Class 377 | DTG | TheJAG",
+      "usb_id": "044F:0407",
+      "data": [
+        {
+          "kind": "button",
+          "index": 1,
+          "name": "RightThrottleButton"
+        },
+        {
+          "kind": "button",
+          "index": 15,
+          "name": "_Button15"
+        },
+        {
+          "kind": "button",
+          "index": 19,
+          "name": "ParkingBrake"
+        },
+        {
+          "kind": "button",
+          "index": 26,
+          "name": "_Button26"
+        },
+        {
+          "kind": "button",
+          "index": 6,
+          "name": "RotaryCrank"
+        },
+        {
+          "kind": "button",
+          "index": 13,
+          "name": "_Button13"
+        },
+        {
+          "kind": "button",
+          "index": 27,
+          "name": "_Button27"
+        },
+        {
+          "kind": "button",
+          "index": 22,
+          "name": "AutoBrake1"
+        },
+        {
+          "kind": "button",
+          "index": 30,
+          "name": "_Button30"
+        },
+        {
+          "kind": "button",
+          "index": 9,
+          "name": "_Button9"
+        },
+        {
+          "kind": "axis",
+          "index": 2,
+          "name": "FlapLever"
+        },
+        {
+          "kind": "axis",
+          "index": 5,
+          "name": "SpeedbrakeLever"
+        },
+        {
+          "kind": "button",
+          "index": 29,
+          "name": "_Button29"
+        },
+        {
+          "kind": "button",
+          "index": 3,
+          "name": "RightEngineOn"
+        },
+        {
+          "kind": "button",
+          "index": 0,
+          "name": "LeftThrottleButton"
+        },
+        {
+          "kind": "button",
+          "index": 14,
+          "name": "_Button14"
+        },
+        {
+          "kind": "button",
+          "index": 20,
+          "name": "GearLever"
+        },
+        {
+          "kind": "button",
+          "index": 23,
+          "name": "AutoBrake2"
+        },
+        {
+          "kind": "button",
+          "index": 7,
+          "name": "RotaryIgnStart"
+        },
+        {
+          "kind": "axis",
+          "index": 0,
+          "name": "LeftThrottle"
+        },
+        {
+          "kind": "button",
+          "index": 12,
+          "name": "_Button12"
+        },
+        {
+          "kind": "button",
+          "index": 21,
+          "name": "AutoBrake0"
+        },
+        {
+          "kind": "button",
+          "index": 24,
+          "name": "AutoBrake3"
+        },
+        {
+          "kind": "button",
+          "index": 5,
+          "name": "RightAuxButton"
+        },
+        {
+          "kind": "button",
+          "index": 10,
+          "name": "_Button10"
+        },
+        {
+          "kind": "button",
+          "index": 18,
+          "name": "RudderTrimRight"
+        },
+        {
+          "kind": "button",
+          "index": 25,
+          "name": "AutoBrake4"
+        },
+        {
+          "kind": "button",
+          "index": 28,
+          "name": "_Button28"
+        },
+        {
+          "kind": "button",
+          "index": 4,
+          "name": "LeftAuxButton"
+        },
+        {
+          "kind": "button",
+          "index": 8,
+          "name": "_Button8"
+        },
+        {
+          "kind": "axis",
+          "index": 1,
+          "name": "RightThrottle"
+        },
+        {
+          "kind": "button",
+          "index": 11,
+          "name": "_Button11"
+        },
+        {
+          "kind": "button",
+          "index": 16,
+          "name": "RoundAuxButton"
+        },
+        {
+          "kind": "button",
+          "index": 17,
+          "name": "RudderTrimLeft"
+        },
+        {
+          "kind": "button",
+          "index": 2,
+          "name": "LeftEngineOn"
+        }
+      ]
+    }
+  },
   "rail_class_information": [
     {
       "class_name": "RVM_ECW_SN_Class377-3_DMCO_A_C"
@@ -77,508 +580,5 @@
     {
       "class_name": "RVM_LBN_SN_Class377-4_UnpoweredBase_C"
     }
-
-  ],
-  "controls": [
-    {
-      "name": "SpeedbrakeLever",
-      "description": "Reverser",
-      "assignments": [
-        {
-          "type": "direct_control",
-          "controls": "Reverser",
-          "input_value": {
-            "min": -0.5,
-            "max": 1,
-            "step": 0.5,
-            "invert": true
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "Reverser",
-          "input_value": {
-            "min": 0,
-            "max": 1,
-            "step": 0.33333,
-            "invert": true
-          },
-          "action_increase": {
-            "keys": "w"
-          },
-          "action_decrease": {
-            "keys": "s"
-          }
-        }
-      ]
-    },
-    {
-      "name": "LeftThrottle",
-      "description": "Power Brake Controller",
-      "assignments": [
-        {
-          "type": "direct_control",
-          "controls": "PowerHandle",
-          "input_value": {
-            "min": -1,
-            "max": 1,
-            "steps": [-1, -0.6, -0.4, -0.2, 0, 0.25, 0.5, 0.75, 1],
-            "invert": false
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "Throttle",
-          "input_value": {
-            "min": -1,
-            "max": 1,
-            "steps": [-1, -0.6, -0.4, -0.2, 0, 0.25, 0.5, 0.75, 1],
-            "invert": false
-          },
-          "action_increase": {
-            "keys": "a"
-          },
-          "action_decrease": {
-            "keys": "d"
-          }
-        }
-      ]
-    },
-    {
-      "name": "ParkingBrake",
-      "description": "Master Key I/O",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "MasterKey",
-          "value": 1
-        },
-        "action_deactivate": {
-          "controls": "MasterKey",
-          "value": 0
-        }
-      }
-    },
-    {
-      "name": "GearLever",
-      "description": "AWS Reset",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "keys": "Q"
-        }
-      }
-    },
-    {
-      "name": "LeftThrottleButton",
-      "description": "Sand",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "keys": "x"
-        }
-      }
-    },
-    {
-      "name": "LeftEngineOn",
-      "description": "Horn | High",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "keys": "space"
-        }
-      }
-    },
-    {
-      "name": "RightEngineOn",
-      "description": "Horn | Low",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "keys": "n"
-        }
-      }
-    },
-    {
-      "name": "RudderTrimLeft",
-      "description": "Doors | Left",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "keys": "y"
-        }
-      }
-    },
-    {
-      "name": "RudderTrimRight",
-      "description": "Doors | Right",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "keys": "u"
-        }
-      }
-    },
-    {
-      "name": "RoundAuxButton",
-      "description": "Cab lights",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "keys": "l"
-        }
-      }
-    },
-    {
-      "name": "LeftAuxButton",
-      "description": "AWS I/O",
-      "assignment": {
-        "type": "toggle",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "AWS_Isolation",
-          "value": 1,
-          "hold": false
-        },
-        "action_deactivate": {
-          "controls": "AWS_Isolation",
-          "value": 0
-        }
-      }
-    },
-    {
-      "name": "RightAuxButton",
-      "description": "DSD / Vigilance Devices I/O",
-      "assignments": [
-        {
-          "type": "toggle",
-          "threshold": 0.9,
-          "action_activate": {
-            "controls": "DSD_Isolation",
-            "value": 1,
-            "hold": false
-          },
-          "action_deactivate": {
-            "controls": "DSD_Isolation",
-            "value": 0
-          }
-        },
-        {
-          "type": "toggle",
-          "threshold": 0.9,
-          "action_activate": {
-            "controls": "VigilanceIsolation",
-            "value": 1,
-            "hold": false
-          },
-          "action_deactivate": {
-            "controls": "VigilanceIsolation",
-            "value": 0
-          }
-        }
-      ]
-    },
-    {
-      "name": "RotaryCrank",
-      "description": "Wipers decrease",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "keys": "shift+v",
-          "press_time": 0.2,
-          "wait_time": 0.1
-        }
-      }
-    },
-    {
-      "name": "RotaryIgnStart",
-      "description": "Wipers increase",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "keys": "v",
-          "press_time": 0.2,
-          "wait_time": 0.1
-        }
-      }
-    },
-    {
-      "name": "AutoBrake0",
-      "description": "Headlights | Off",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "Headlights",
-          "value": 0,
-          "hold": false
-        }
-      }
-    },
-    {
-      "name": "AutoBrake1",
-      "description": "Headlights | Day running",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "Headlights",
-          "value": 0.5,
-          "hold": false
-        }
-      }
-    },
-    {
-      "name": "AutoBrake2",
-      "description": "Headlights | Marker lights only",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "Headlights",
-          "value": -1,
-          "hold": false
-        }
-      }
-    },
-    {
-      "name": "AutoBrake3",
-      "description": "Headlights | Night running",
-      "assignments": [
-        {
-          "type": "momentary",
-          "threshold": 0.9,
-          "action_activate": {
-            "controls": "Headlights",
-            "value": -0.5,
-            "hold": false
-          }
-        },
-        {
-          "type": "momentary",
-          "threshold": 0.9,
-          "action_activate": {
-            "controls": "TailLights",
-            "value": 0,
-            "hold": false
-          }
-        }
-      ]
-    },
-    {
-      "name": "AutoBrake4",
-      "description": "Taillights | On",
-      "assignments": [
-        {
-          "type": "momentary",
-          "threshold": 0.9,
-          "action_activate": {
-            "controls": "Headlights",
-            "value": 0,
-            "hold": false
-          }
-        },
-        {
-          "type": "momentary",
-          "threshold": 0.9,
-          "action_activate": {
-            "controls": "TailLights",
-            "value": 0.5,
-            "hold": false
-          }
-        }
-      ]
-    }
-  ],
-  "controller": {
-    "name": "TCA Quadrant Airbus",
-    "usb_id": "044F:0407",
-    "data": [
-      {
-        "kind": "axis",
-        "index": 0,
-        "name": "LeftThrottle"
-      },
-      {
-        "kind": "axis",
-        "index": 1,
-        "name": "RightThrottle"
-      },
-      {
-        "kind": "axis",
-        "index": 2,
-        "name": "FlapLever"
-      },
-      {
-        "kind": "axis",
-        "index": 5,
-        "name": "SpeedbrakeLever"
-      },
-      {
-        "kind": "button",
-        "index": 0,
-        "name": "LeftThrottleButton"
-      },
-      {
-        "kind": "button",
-        "index": 1,
-        "name": "RightThrottleButton"
-      },
-      {
-        "kind": "button",
-        "index": 10,
-        "name": "_Button10"
-      },
-      {
-        "kind": "button",
-        "index": 11,
-        "name": "_Button11"
-      },
-      {
-        "kind": "button",
-        "index": 12,
-        "name": "_Button12"
-      },
-      {
-        "kind": "button",
-        "index": 13,
-        "name": "_Button13"
-      },
-      {
-        "kind": "button",
-        "index": 14,
-        "name": "_Button14"
-      },
-      {
-        "kind": "button",
-        "index": 15,
-        "name": "_Button15"
-      },
-      {
-        "kind": "button",
-        "index": 16,
-        "name": "RoundAuxButton"
-      },
-      {
-        "kind": "button",
-        "index": 17,
-        "name": "RudderTrimLeft"
-      },
-      {
-        "kind": "button",
-        "index": 18,
-        "name": "RudderTrimRight"
-      },
-      {
-        "kind": "button",
-        "index": 19,
-        "name": "ParkingBrake"
-      },
-      {
-        "kind": "button",
-        "index": 2,
-        "name": "LeftEngineOn"
-      },
-      {
-        "kind": "button",
-        "index": 20,
-        "name": "GearLever"
-      },
-      {
-        "kind": "button",
-        "index": 21,
-        "name": "AutoBrake0"
-      },
-      {
-        "kind": "button",
-        "index": 22,
-        "name": "AutoBrake1"
-      },
-      {
-        "kind": "button",
-        "index": 23,
-        "name": "AutoBrake2"
-      },
-      {
-        "kind": "button",
-        "index": 24,
-        "name": "AutoBrake3"
-      },
-      {
-        "kind": "button",
-        "index": 25,
-        "name": "AutoBrake4"
-      },
-      {
-        "kind": "button",
-        "index": 26,
-        "name": "_Button26"
-      },
-      {
-        "kind": "button",
-        "index": 27,
-        "name": "_Button27"
-      },
-      {
-        "kind": "button",
-        "index": 28,
-        "name": "_Button28"
-      },
-      {
-        "kind": "button",
-        "index": 29,
-        "name": "_Button29"
-      },
-      {
-        "kind": "button",
-        "index": 3,
-        "name": "RightEngineOn"
-      },
-      {
-        "kind": "button",
-        "index": 30,
-        "name": "_Button30"
-      },
-      {
-        "kind": "button",
-        "index": 4,
-        "name": "LeftAuxButton"
-      },
-      {
-        "kind": "button",
-        "index": 5,
-        "name": "RightAuxButton"
-      },
-      {
-        "kind": "button",
-        "index": 6,
-        "name": "RotaryCrank"
-      },
-      {
-        "kind": "button",
-        "index": 7,
-        "name": "RotaryIgnStart"
-      },
-      {
-        "kind": "button",
-        "index": 8,
-        "name": "_Button8"
-      },
-      {
-        "kind": "button",
-        "index": 9,
-        "name": "_Button9"
-      }
-    ]
-  }
+  ]
 }

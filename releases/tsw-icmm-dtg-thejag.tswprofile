@@ -1,20 +1,5 @@
 {
   "name": "TSW | ICMm | DTG | TheJAG",
-  "auto_select": true,
-  "apps": [
-    "Train Sim World"
-  ],
-  "rail_class_information": [
-    {
-      "class_name": "RVM_ZGN_NS_ICMm3_sBk_C"
-    },
-    {
-      "class_name": "RVM_ZGN_NS_ICMm3_mBfk_C"
-    },
-    {
-      "class_name": "RVM_ZGN_NS_ICMm3_AB_C"
-    }
-  ],
   "controls": [
     {
       "name": "SpeedbrakeLever",
@@ -168,7 +153,8 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "x"
+          "controls": "x",
+          "value": 0
         }
       }
     },
@@ -179,7 +165,7 @@
         "threshold": 0.5,
         "action_activate": {
           "controls": "BrakeKey",
-          "value": 1.0,
+          "value": 1,
           "hold": true
         }
       }
@@ -191,11 +177,11 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "MasterKey",
-          "value": 1.0
+          "value": 1
         },
         "action_deactivate": {
           "controls": "MasterKey",
-          "value": 0.0
+          "value": 0
         }
       }
     },
@@ -206,11 +192,11 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "Compressor",
-          "value": 1.0
+          "value": 1
         },
         "action_deactivate": {
           "controls": "Compressor",
-          "value": 0.0
+          "value": 0
         }
       }
     },
@@ -220,12 +206,10 @@
         "type": "toggle",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "TrainVoltageSupply",
-          "value": 1.0
+          "keys": "TrainVoltageSupply"
         },
         "action_deactivate": {
-          "keys": "TrainVoltageSupply",
-          "value": 0.0
+          "keys": "TrainVoltageSupply"
         }
       }
     },
@@ -236,11 +220,11 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "GaugeLights",
-          "value": 1.0
+          "value": 1
         },
         "action_deactivate": {
           "controls": "GaugeLights",
-          "value": 0.0
+          "value": 0
         }
       }
     },
@@ -271,9 +255,7 @@
         "threshold": 0.9,
         "action_activate": {
           "keys": "v",
-          "value": 0.25,
-          "press_time": 0.2,
-          "relative": true
+          "press_time": 0.2
         }
       }
     },
@@ -284,9 +266,7 @@
         "threshold": 0.9,
         "action_activate": {
           "keys": "shift+v",
-          "value": -0.25,
-          "press_time": 0.2,
-          "relative": true
+          "press_time": 0.2
         }
       }
     },
@@ -328,8 +308,7 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightCenter",
-            "value": 0.0,
-            "press_time": 0.0
+            "value": 0
           }
         },
         {
@@ -337,8 +316,7 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightLeft",
-            "value": 0.5,
-            "press_time": 0.5
+            "value": 0.5
           }
         },
         {
@@ -346,8 +324,7 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightRight",
-            "value": 0.5,
-            "press_time": 0.5
+            "value": 0.5
           }
         }
       ]
@@ -360,13 +337,11 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightCenter",
-            "value": 1.0,
-            "press_time": 0.5
+            "value": 1
           },
           "action_deactivate": {
             "controls": "HeadLightCenter",
-            "value": 0.0,
-            "press_time": 0.5
+            "value": 0
           }
         },
         {
@@ -374,13 +349,11 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightLeft",
-            "value": 0.5,
-            "press_time": 0.5
+            "value": 0.5
           },
           "action_deactivate": {
             "controls": "HeadLightLeft",
-            "value": 0.5,
-            "press_time": 0.5
+            "value": 0.5
           }
         },
         {
@@ -388,13 +361,11 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightRight",
-            "value": 0.5,
-            "press_time": 0.5
+            "value": 0.5
           },
           "action_deactivate": {
             "controls": "HeadLightRight",
-            "value": 0.5,
-            "press_time": 0.5
+            "value": 0.5
           }
         }
       ]
@@ -407,13 +378,11 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightCenter",
-            "value": 1.0,
-            "press_time": 0.5
+            "value": 1
           },
           "action_deactivate": {
             "controls": "HeadLightCenter",
-            "value": 0.0,
-            "press_time": 0.5
+            "value": 0
           }
         },
         {
@@ -421,13 +390,11 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightLeft",
-            "value": 1.0,
-            "press_time": 0.5
+            "value": 1
           },
           "action_deactivate": {
             "controls": "HeadLightLeft",
-            "value": 0.5,
-            "press_time": 0.5
+            "value": 0.5
           }
         },
         {
@@ -435,13 +402,11 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightRight",
-            "value": 1.0,
-            "press_time": 0.5
+            "value": 1
           },
           "action_deactivate": {
             "controls": "HeadLightRight",
-            "value": 0.5,
-            "press_time": 0.5
+            "value": 0.5
           }
         }
       ]
@@ -454,13 +419,11 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightCenter",
-            "value": 0.0,
-            "press_time": 0.5
+            "value": 0
           },
           "action_deactivate": {
             "controls": "HeadLightCenter",
-            "value": 0.0,
-            "press_time": 0.5
+            "value": 0
           }
         },
         {
@@ -468,13 +431,11 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightLeft",
-            "value": 0.0,
-            "press_time": 0.5
+            "value": 0
           },
           "action_deactivate": {
             "controls": "HeadLightLeft",
-            "value": 0.5,
-            "press_time": 0.5
+            "value": 0.5
           }
         },
         {
@@ -482,13 +443,11 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightRight",
-            "value": 0.0,
-            "press_time": 0.5
+            "value": 0
           },
           "action_deactivate": {
             "controls": "HeadLightRight",
-            "value": 0.5,
-            "press_time": 0.5
+            "value": 0.5
           }
         }
       ]
@@ -501,13 +460,11 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightCenter",
-            "value": 1.0,
-            "press_time": 0.5
+            "value": 1
           },
           "action_deactivate": {
             "controls": "HeadLightCenter",
-            "value": 0.0,
-            "press_time": 0.5
+            "value": 0
           }
         },
         {
@@ -515,13 +472,11 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightLeft",
-            "value": 0.0,
-            "press_time": 0.5
+            "value": 0
           },
           "action_deactivate": {
             "controls": "HeadLightLeft",
-            "value": 0.5,
-            "press_time": 0.5
+            "value": 0.5
           }
         },
         {
@@ -529,197 +484,210 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightRight",
-            "value": 0.0,
-            "press_time": 0.5
+            "value": 0
           },
           "action_deactivate": {
             "controls": "HeadLightRight",
-            "value": 0.5,
-            "press_time": 0.5
+            "value": 0.5
           }
         }
       ]
     }
   ],
+  "auto_select": true,
   "controller": {
-    "name": "TCA Quadrant Airbus",
     "usb_id": "044F:0407",
-    "data": [
-      {
-        "kind": "axis",
-        "index": 0,
-        "name": "LeftThrottle"
-      },
-      {
-        "kind": "axis",
-        "index": 1,
-        "name": "RightThrottle"
-      },
-      {
-        "kind": "axis",
-        "index": 2,
-        "name": "FlapLever"
-      },
-      {
-        "kind": "axis",
-        "index": 5,
-        "name": "SpeedbrakeLever"
-      },
-      {
-        "kind": "button",
-        "index": 0,
-        "name": "LeftThrottleButton"
-      },
-      {
-        "kind": "button",
-        "index": 1,
-        "name": "RightThrottleButton"
-      },
-      {
-        "kind": "button",
-        "index": 10,
-        "name": "_Button10"
-      },
-      {
-        "kind": "button",
-        "index": 11,
-        "name": "_Button11"
-      },
-      {
-        "kind": "button",
-        "index": 12,
-        "name": "_Button12"
-      },
-      {
-        "kind": "button",
-        "index": 13,
-        "name": "_Button13"
-      },
-      {
-        "kind": "button",
-        "index": 14,
-        "name": "_Button14"
-      },
-      {
-        "kind": "button",
-        "index": 15,
-        "name": "_Button15"
-      },
-      {
-        "kind": "button",
-        "index": 16,
-        "name": "RoundAuxButton"
-      },
-      {
-        "kind": "button",
-        "index": 17,
-        "name": "RudderTrimLeft"
-      },
-      {
-        "kind": "button",
-        "index": 18,
-        "name": "RudderTrimRight"
-      },
-      {
-        "kind": "button",
-        "index": 19,
-        "name": "ParkingBrake"
-      },
-      {
-        "kind": "button",
-        "index": 2,
-        "name": "LeftEngineOn"
-      },
-      {
-        "kind": "button",
-        "index": 20,
-        "name": "GearLever"
-      },
-      {
-        "kind": "button",
-        "index": 21,
-        "name": "AutoBrake0"
-      },
-      {
-        "kind": "button",
-        "index": 22,
-        "name": "AutoBrake1"
-      },
-      {
-        "kind": "button",
-        "index": 23,
-        "name": "AutoBrake2"
-      },
-      {
-        "kind": "button",
-        "index": 24,
-        "name": "AutoBrake3"
-      },
-      {
-        "kind": "button",
-        "index": 25,
-        "name": "AutoBrake4"
-      },
-      {
-        "kind": "button",
-        "index": 26,
-        "name": "_Button26"
-      },
-      {
-        "kind": "button",
-        "index": 27,
-        "name": "_Button27"
-      },
-      {
-        "kind": "button",
-        "index": 28,
-        "name": "_Button28"
-      },
-      {
-        "kind": "button",
-        "index": 29,
-        "name": "_Button29"
-      },
-      {
-        "kind": "button",
-        "index": 3,
-        "name": "RightEngineOn"
-      },
-      {
-        "kind": "button",
-        "index": 30,
-        "name": "_Button30"
-      },
-      {
-        "kind": "button",
-        "index": 4,
-        "name": "LeftAuxButton"
-      },
-      {
-        "kind": "button",
-        "index": 5,
-        "name": "RightAuxButton"
-      },
-      {
-        "kind": "button",
-        "index": 6,
-        "name": "RotaryCrank"
-      },
-      {
-        "kind": "button",
-        "index": 7,
-        "name": "RotaryIgnStart"
-      },
-      {
-        "kind": "button",
-        "index": 8,
-        "name": "_Button8"
-      },
-      {
-        "kind": "button",
-        "index": 9,
-        "name": "_Button9"
-      }
-    ]
-  }
+    "mapping": {
+      "name": "TCA Quadrant Airbus - TSW | ICMm | DTG | TheJAG",
+      "usb_id": "044F:0407",
+      "data": [
+        {
+          "kind": "axis",
+          "index": 2,
+          "name": "FlapLever"
+        },
+        {
+          "kind": "axis",
+          "index": 5,
+          "name": "SpeedbrakeLever"
+        },
+        {
+          "kind": "button",
+          "index": 29,
+          "name": "_Button29"
+        },
+        {
+          "kind": "button",
+          "index": 3,
+          "name": "RightEngineOn"
+        },
+        {
+          "kind": "button",
+          "index": 0,
+          "name": "LeftThrottleButton"
+        },
+        {
+          "kind": "button",
+          "index": 14,
+          "name": "_Button14"
+        },
+        {
+          "kind": "button",
+          "index": 20,
+          "name": "GearLever"
+        },
+        {
+          "kind": "button",
+          "index": 23,
+          "name": "AutoBrake2"
+        },
+        {
+          "kind": "button",
+          "index": 7,
+          "name": "RotaryIgnStart"
+        },
+        {
+          "kind": "axis",
+          "index": 0,
+          "name": "LeftThrottle"
+        },
+        {
+          "kind": "button",
+          "index": 12,
+          "name": "_Button12"
+        },
+        {
+          "kind": "button",
+          "index": 21,
+          "name": "AutoBrake0"
+        },
+        {
+          "kind": "button",
+          "index": 24,
+          "name": "AutoBrake3"
+        },
+        {
+          "kind": "button",
+          "index": 5,
+          "name": "RightAuxButton"
+        },
+        {
+          "kind": "button",
+          "index": 10,
+          "name": "_Button10"
+        },
+        {
+          "kind": "button",
+          "index": 18,
+          "name": "RudderTrimRight"
+        },
+        {
+          "kind": "button",
+          "index": 25,
+          "name": "AutoBrake4"
+        },
+        {
+          "kind": "button",
+          "index": 28,
+          "name": "_Button28"
+        },
+        {
+          "kind": "button",
+          "index": 4,
+          "name": "LeftAuxButton"
+        },
+        {
+          "kind": "button",
+          "index": 8,
+          "name": "_Button8"
+        },
+        {
+          "kind": "axis",
+          "index": 1,
+          "name": "RightThrottle"
+        },
+        {
+          "kind": "button",
+          "index": 11,
+          "name": "_Button11"
+        },
+        {
+          "kind": "button",
+          "index": 16,
+          "name": "RoundAuxButton"
+        },
+        {
+          "kind": "button",
+          "index": 17,
+          "name": "RudderTrimLeft"
+        },
+        {
+          "kind": "button",
+          "index": 2,
+          "name": "LeftEngineOn"
+        },
+        {
+          "kind": "button",
+          "index": 1,
+          "name": "RightThrottleButton"
+        },
+        {
+          "kind": "button",
+          "index": 15,
+          "name": "_Button15"
+        },
+        {
+          "kind": "button",
+          "index": 19,
+          "name": "ParkingBrake"
+        },
+        {
+          "kind": "button",
+          "index": 26,
+          "name": "_Button26"
+        },
+        {
+          "kind": "button",
+          "index": 6,
+          "name": "RotaryCrank"
+        },
+        {
+          "kind": "button",
+          "index": 13,
+          "name": "_Button13"
+        },
+        {
+          "kind": "button",
+          "index": 27,
+          "name": "_Button27"
+        },
+        {
+          "kind": "button",
+          "index": 22,
+          "name": "AutoBrake1"
+        },
+        {
+          "kind": "button",
+          "index": 30,
+          "name": "_Button30"
+        },
+        {
+          "kind": "button",
+          "index": 9,
+          "name": "_Button9"
+        }
+      ]
+    }
+  },
+  "rail_class_information": [
+    {
+      "class_name": "RVM_ZGN_NS_ICMm3_sBk_C"
+    },
+    {
+      "class_name": "RVM_ZGN_NS_ICMm3_mBfk_C"
+    },
+    {
+      "class_name": "RVM_ZGN_NS_ICMm3_AB_C"
+    }
+  ]
 }
