@@ -46,7 +46,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **BR Class 483**  
 `TODO ◼️` **BR Class 484**  
 `TODO ◼️` **BR Class 700/0 Thameslink**  
-`SOON ⏳️` **BR Class 710**  
+`SOON 🟨` **BR Class 710**  
 `TODO ◼️` **BR Class 801**  
 `TODO ◼️` **Flying Scotsman**  
 `TODO ◼️` **LMS Class 4F**  
