@@ -29,13 +29,13 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **BR Class 158**  
 `TODO ◼️` **BR Class 166**  
 `TODO ◼️` **BR Class 170**  
-`DONE ✅` **BR Class 171**<sub>— Rivet · [profile](releases/tsw-class-171-rivet-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-171-rivet-thejag.pdf)</sub>  
-`DONE ✅` **BR Class 313**<sub>— DTG · [profile](releases/tsw-class-313-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-313-dtg-thejag.pdf)</sub>  
-`DONE ✅` **BR Class 314**<sub>— DTG · [profile](releases/tsw-class-314-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-314-dtg-thejag.pdf)</sub>  
+`DONE ✅` **BR Class 171** <sub>— Rivet · [profile](releases/tsw-class-171-rivet-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-171-rivet-thejag.pdf)</sub>  
+`DONE ✅` **BR Class 313** <sub>— DTG · [profile](releases/tsw-class-313-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-313-dtg-thejag.pdf)</sub>  
+`DONE ✅` **BR Class 314** <sub>— DTG · [profile](releases/tsw-class-314-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-314-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 323**  
 `TODO ◼️` **BR Class 350**  
 `TODO ◼️` **BR Class 375**  
-`DONE ✅` **BR Class 377**<sub>— DTG · [profile](releases/tsw-class-377-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-377-dtg-thejag.pdf)</sub>  
+`DONE ✅` **BR Class 377** <sub>— DTG · [profile](releases/tsw-class-377-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-377-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 380**  
 `TODO ◼️` **BR Class 385**  
 `TODO ◼️` **BR Class 378**  
@@ -89,8 +89,8 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **DB BR 1442**  
 `TODO ◼️` **DB G6**  
 `TODO ◼️` **ES 64 U2**  
-`DONE ✅` **NS ICMm**<sub>— DTG · [profile](releases/tsw-ns-icmm-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-ns-icmm-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **NS SNG**<sub>— DTG</sub>  
+`DONE ✅` **NS ICMm** <sub>— DTG · [profile](releases/tsw-ns-icmm-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-ns-icmm-dtg-thejag.pdf)</sub>  
+`TODO ◼️` **NS SNG** <sub>— DTG</sub>  
 `TODO ◼️` **ÖBB 1020**  
 `TODO ◼️` **ÖBB 1116**  
 `TODO ◼️` **ÖBB 4024**  
