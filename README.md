@@ -102,7 +102,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 
 `TODO ◼️` **NS 1100 (Dutch Classics)**  
 `TODO ◼️` **NS 1200 (Dutch Classics)**  
-`DONE ✅` **NS 1300 (Dutch Classics)** [profile](releases/tsc-ns-1300-dutch-classics-thejag.tswprofile) [manual](profiles/documentation/tsc-ns-1300-dc-thejag.pdf)  
+`DONE ✅` **NS 1300 (Dutch Classics)** [profile](releases/tsc-ns-1300-dutch-classics-thejag.tswprofile) [manual](profiles/documentation/tsc-ns-1300-dutch-classics-thejag.pdf)  
 `TODO ◼️` **NS 1600 / 1700 / 1800 (Fopix)**  
 `TODO ◼️` **NS 2200 (Christrains)**  
 `TODO ◼️` **NS 6400 (Christrains)**  
@@ -110,18 +110,18 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **NS DDZ (Christrains)**  
 `TODO ◼️` **NS DH1 + DH2 (Christrains)**  
 `TODO ◼️` **NS DM'90 (Christrains)**  
-`DONE ✅` **NS ICM (Christrains)** [profile](releases/tsc-ns-icmm-christrains-thejag.tswprofile) [manual](profiles/documentation/tsc-ns-icmm-ct-thejag.pdf)  
+`DONE ✅` **NS ICM (Christrains)** [profile](releases/tsc-ns-icmm-christrains-thejag.tswprofile) [manual](profiles/documentation/tsc-ns-icmm-christrains-thejag.pdf)  
 `TODO ◼️` **NS ICNG (Christrains)**  
 `TODO ◼️` **NS ICR / ICRm (Christrains)**  
-`DONE ✅` **NS IRM (Christrains)** [profile](releases/tsc-ns-virm-christrains-thejag.tswprofile) [manual](profiles/documentation/tsc-ns-virm-ct-thejag.pdf)  
+`DONE ✅` **NS IRM (Christrains)** [profile](releases/tsc-ns-virm-christrains-thejag.tswprofile) [manual](profiles/documentation/tsc-ns-virm-christrains-thejag.pdf)  
 `TODO ◼️` **NS Mat'46 (Dutch Classics)**  
 `TODO ◼️` **NS Mat'54/'57 (Dutch Classics)**  
-`DONE ✅` **NS Mat'64 (Christrains)** [profile](releases/tsc-ns-mat64-christrains-thejag.tswprofile) [manual](profiles/documentation/tsc-ns-mat64-ct-thejag.pdf)  
+`DONE ✅` **NS Mat'64 (Christrains)** [profile](releases/tsc-ns-mat64-christrains-thejag.tswprofile) [manual](profiles/documentation/tsc-ns-mat64-christrains-thejag.pdf)  
 `TODO ◼️` **NS mp3000 (Christrains)**  
 `TODO ◼️` **NS SGM (Christrains)**  
 `TODO ◼️` **NS SNG (Christrains)**  
 `TODO ◼️` **NS SLT (Christrains)**  
 `TODO ◼️` **NS Traxx 186 + ICRmh wagons (Christrains)**  
 `TODO ◼️` **Stadler Flirt 3 (Christrains)**  
-`DONE ✅` **Stadler GTW (Christrains)** [profile](releases/tsc-stadler-gtw-christrains-thejag.tswprofile) [manual](profiles/documentation/tsc-stadler-gtw-ct-thejag.pdf)  
+`DONE ✅` **Stadler GTW (Christrains)** [profile](releases/tsc-stadler-gtw-christrains-thejag.tswprofile) [manual](profiles/documentation/tsc-stadler-gtw-christrains-thejag.pdf)  
 `TODO ◼️` **Stadler RS-1 (Christrains)**  
