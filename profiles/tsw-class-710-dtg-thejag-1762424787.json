@@ -234,12 +234,19 @@
     },
     {
       "name": "RoundAuxButton",
-      "description": "Cab lights",
+      "description": "Signal buzzer",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "l"
+          "controls": "SignalBuzzer",
+          "value": 1.0,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "SignalBuzzer",
+          "value": 0.0,
+          "hold": false
         }
       }
     },

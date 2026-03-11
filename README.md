@@ -46,12 +46,10 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **BR Class 483**  
 `TODO ◼️` **BR Class 484**  
 `TODO ◼️` **BR Class 700/0 Thameslink**  
-`SOON 🟨` **BR Class 710**  
+`SOON 🟨` **BR Class 710** <sub>— DTG</sub>  
 `TODO ◼️` **BR Class 801**  
-`TODO ◼️` **Flying Scotsman**  
-`TODO ◼️` **LMS Class 4F**  
-`TODO ◼️` **LMS Class 8F**  
-`TODO ◼️` **LMS Jubilee Class (6P)**  
+`SOON 🟨` **CD Class 750** <sub>— Vector Simulations</sub>  
+`SOON 🟨` **CD Class 843** <sub>— Vector Simulations</sub>  
 `TODO ◼️` **DB Bpmmbdzf**  
 `TODO ◼️` **DB BR 101**  
 `TODO ◼️` **DB BR 103**  
@@ -89,6 +87,10 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **DB BR 1442**  
 `TODO ◼️` **DB G6**  
 `TODO ◼️` **ES 64 U2**  
+`TODO ◼️` **Flying Scotsman**  
+`TODO ◼️` **LMS Class 4F**  
+`TODO ◼️` **LMS Class 8F**  
+`TODO ◼️` **LMS Jubilee Class (6P)**  
 `DONE ✅` **NS ICMm** <sub>— DTG · [profile](releases/tsw-ns-icmm-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-ns-icmm-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **NS SNG** <sub>— DTG</sub>  
 `TODO ◼️` **ÖBB 1020**  
