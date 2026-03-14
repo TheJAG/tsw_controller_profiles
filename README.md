@@ -52,12 +52,14 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **CD Class 843** <sub>— Vector Simulations</sub>  
 `TODO ◼️` **DB Bpmmbdzf**  
 `TODO ◼️` **DB BR 101**  
+`TODO ◼️` **DB BR 101 Expert** <sub>— Train Sim Germany</sub>  
 `TODO ◼️` **DB BR 103**  
 `TODO ◼️` **DB BR 110.3**  
 `TODO ◼️` **DB BR 111**  
 `TODO ◼️` **DB BR 112**  
 `TODO ◼️` **DB BR 114**  
 `TODO ◼️` **DB BR 143**  
+`SOON 🟨` **DB BR 145 Expert** <sub>— Train Sim Germany</sub>  
 `TODO ◼️` **DB BR 146**  
 `TODO ◼️` **DB BR 155**  
 `TODO ◼️` **DB BR 182**  
