@@ -46,7 +46,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **BR Class 483**  
 `TODO ◼️` **BR Class 484**  
 `TODO ◼️` **BR Class 700/0 Thameslink**  
-`SOON 🟨` **BR Class 710** <sub>— DTG</sub>  
+`DONE ✅` **BR Class 710** <sub>— DTG · [profile](releases/tsw-class-710-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-710-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 801**  
 `SOON 🟨` **CD Class 750** <sub>— Vector Simulations</sub>  
 `SOON 🟨` **CD Class 843** <sub>— Vector Simulations</sub>  
