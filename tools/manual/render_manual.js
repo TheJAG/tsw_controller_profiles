@@ -127,25 +127,46 @@ ul { margin: 0; padding-left: 16px; }
 .schem .ghost { fill: none; stroke: var(--navy); stroke-width: 1.5; stroke-dasharray: 4 3; }
 .schem .pivot { fill: #fff; stroke: var(--navy); stroke-width: 1.5; }
 .lists { display: grid; grid-template-columns: 1fr 1fr 1.3fr; gap: 20px; padding: 6px 36px 0; }
+.lists.two { grid-template-columns: 1fr 1fr; }
 .lists h2 { font-size: 14px; color: var(--navy); margin-bottom: 3px; border-bottom: 1.5px solid var(--navy); padding-bottom: 3px; }
 .lists li { font-size: 11px; }
 .hwrow { display: grid; grid-template-columns: 150px 1fr; gap: 12px; align-items: start; }
 .hwrow img { width: 150px; height: auto; display: block; border-radius: 4px; }
 .hwtxt { font-size: 10.5px; color: var(--muted); line-height: 1.4; }
-.diagram { position: absolute; left: 36px; right: 36px; bottom: 36px; }
-.diagram img { width: 100%; height: auto; max-height: 120px; object-fit: cover; display: block; border-radius: 3px; }
+/* cab photo: a full-width band of the driver's desk (wide screenshot), between the checklists and the side view */
+.cab { padding: 10px 36px 0; }
+.cab img { width: 100%; height: ${D.cab && D.cab.height || 188}px; object-fit: cover; object-position: ${D.cab && D.cab.position || '50% 50%'}; display: block; border-radius: 6px; }
+.sheet.withcab .schem svg { height: ${D.schematicHeight || 596}px; width: auto; max-width: 100%; margin: 0 auto; }
+/* side view: same height on every manual (the Class 333 drawing at full width is 48px), centred, background stripped in-page */
+.diagram { position: absolute; left: 36px; right: 36px; bottom: 30px; text-align: center; }
+.diagram img { height: ${D.diagram && D.diagram.height || 48}px; width: auto; max-width: 100%; display: inline-block; }
 .foot { position: absolute; bottom: 0; left: 0; right: 0; padding: 8px 36px; font-size: 10px; color: var(--muted); display: flex; justify-content: space-between; }
-</style></head><body><div class="sheet">
+</style></head><body><div class="sheet${D.cab ? ' withcab' : ''}">
 <div class="head"><div><div class="sub">${esc(D.eyebrow || '')}</div><h1>${esc(D.title)}</h1></div><div style="display:flex;gap:14px">${logos}</div></div>
 <div class="schem">${schematic()}</div>
-<div class="lists">
+<div class="lists${D.cab ? ' two' : ''}">
   <div><h2>${esc((D.lists && D.lists.setupTitle) || 'Cab setup')}</h2><ul>${li(D.setup)}</ul></div>
   <div><h2>${esc((D.lists && D.lists.departTitle) || 'Cleared to depart')}</h2><ul>${li(D.depart)}</ul></div>
-  <div><h2>Controller</h2><div class="hwrow"><img src="${quadrant}" alt="Thrustmaster TCA Quadrant Airbus"><div class="hwtxt">${(D.controllerNotes || ['Thrustmaster TCA Quadrant Airbus Edition.', 'Profile: ' + (D.profileName || ''), 'Game: ' + [D.developer, D.title, D.route].filter(Boolean).join(', ')]).map(esc).join('<br>')}</div></div></div>
+  ${D.cab ? '' : `<div><h2>Controller</h2><div class="hwrow"><img src="${quadrant}" alt="Thrustmaster TCA Quadrant Airbus"><div class="hwtxt">${(D.controllerNotes || ['Thrustmaster TCA Quadrant Airbus Edition.', 'Profile: ' + (D.profileName || ''), 'Game: ' + [D.developer, D.title, D.route].filter(Boolean).join(', ')]).map(esc).join('<br>')}</div></div></div>`}
 </div>
-${D.diagram ? `<div class="diagram"><img src="${dataUri(D.diagram.file)}" alt="${esc(D.title)} side view"></div>` : ''}
-<div class="foot"><span>${esc(D.diagram && D.diagram.source || '')}</span><span>${esc(D.dlc || '')}</span><span>${esc(D.credit || '')}</span></div>
-</div></body></html>`;
+${D.cab ? `<div class="cab"><img src="${dataUri(D.cab.file)}" alt="${esc(D.title)} driver's desk"></div>` : ''}
+${D.diagram ? `<div class="diagram"><img id="diag" src="${dataUri(D.diagram.file)}" alt="${esc(D.title)} side view"></div>` : ''}
+<div class="foot"><span>${esc(D.diagram && D.diagram.source || '')}</span><span>${esc([D.dlc, D.cab ? 'Profile: ' + (D.profileName || '') : ''].filter(Boolean).join(' · '))}</span><span>${esc(D.credit || '')}</span></div>
+</div>
+${D.diagram && D.diagram.clean !== false ? `<script>
+// strip the flat background around the side view: flood fill from the picture edges, pixels close to the edge colour become transparent
+(function(){var img=document.getElementById('diag');if(!img)return;var tol=${Number(D.diagram.tolerance) || 40};
+function go(){try{var W=Math.min(2400,img.naturalWidth||2400),H=Math.round(W*(img.naturalHeight||1)/(img.naturalWidth||1));var c=document.createElement('canvas');c.width=W;c.height=H;var x=c.getContext('2d');x.drawImage(img,0,0,W,H);
+var d=x.getImageData(0,0,W,H),p=d.data,ref=function(i){return[p[i*4],p[i*4+1],p[i*4+2],p[i*4+3]];};
+var cs=[0,W-1,(H-1)*W,(H-1)*W+W-1].map(ref);if(cs.every(function(k){return k[3]<10;}))return;
+var bg=[0,1,2].map(function(k){return cs.map(function(c){return c[k];}).sort(function(a,b){return a-b;})[1];});
+var near=function(i){var r=p[i*4]-bg[0],g=p[i*4+1]-bg[1],b=p[i*4+2]-bg[2];return r*r+g*g+b*b<=tol*tol;};
+var seen=new Uint8Array(W*H),st=[],i;for(i=0;i<W;i++){st.push(i,(H-1)*W+i);}for(i=0;i<H;i++){st.push(i*W,i*W+W-1);}
+while(st.length){i=st.pop();if(seen[i]||!near(i))continue;seen[i]=1;p[i*4+3]=0;var x0=i%W,y0=(i/W)|0;if(x0>0)st.push(i-1);if(x0<W-1)st.push(i+1);if(y0>0)st.push(i-W);if(y0<H-1)st.push(i+W);}
+x.putImageData(d,0,0);img.src=c.toDataURL('image/png');}catch(e){}}
+if(img.complete&&img.naturalWidth)go();else img.addEventListener('load',go,{once:true});})();
+</script>` : ''}
+</body></html>`;
 
 fs.mkdirSync(outDir, { recursive: true });
 const base = path.join(outDir, D.name);

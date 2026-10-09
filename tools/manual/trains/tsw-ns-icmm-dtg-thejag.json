@@ -1,0 +1,48 @@
+{
+  "name": "tsw-ns-icmm-dtg-thejag",
+  "title": "NS ICMm",
+  "eyebrow": "Nederlandse Spoorwegen · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | NS ICMm | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "Spoorlijn Zwolle – Groningen",
+  "colors": { "navy": "#003082", "blue": "#2f5fb3", "paper": "#f3f5f9" },
+  "logos": [
+    { "file": "../../assets/logo-ns.svg", "alt": "Nederlandse Spoorwegen" },
+    { "file": "../../assets/logo-dtg.jpg", "alt": "Dovetail Games" }
+  ],
+  "cab": { "file": "../../assets/ns-icmm-cab.jpg", "height": 196, "position": "50% 40%" },
+  "diagram": { "file": "../../assets/ns-icmm-diagram.svg", "source": "Drawing: MrBrickALot, Wikimedia Commons, CC BY-SA 4.0", "clean": false },
+  "dlc": "store.steampowered.com/app/4678800",
+  "credit": "© TheJAG",
+  "controls": {
+    "speedbrake": { "name": "Reverser", "notches": ["Forward", "Neutral", "Reverse"], "start": 1 },
+    "leftThrottle": { "name": "Throttle", "notches": ["PZ5", "PZ4", "PZ3", "PZ2", "PZ1", "P", "SZ3", "SZ2", "SZ1", "S", "R", "0"], "start": 11 },
+    "rightThrottle": { "name": "Train brake", "notches": ["Running", "1", "2", "3", "4", "5", "6", "7"], "start": 1 },
+    "flap": { "name": "Mode selector", "notches": ["Driving", "Off", "Parking", "Cleaning"], "start": 1 },
+    "leftThrottleButton": null,
+    "rightThrottleButton": { "name": "Brake key (hold)" },
+    "gearLever": { "name": "ATB acknowledge" },
+    "autoBrk": {
+      "name": "Headlights",
+      "positions": [
+        { "short": "0", "desc": "–" },
+        { "short": "BTV", "desc": "All off" },
+        { "short": "LO", "desc": "Centre only" },
+        { "short": "2", "desc": "Three white" },
+        { "short": "3", "desc": "Tail lights" },
+        { "short": "HI", "desc": "Tail + centre" }
+      ],
+      "start": 1
+    },
+    "eng1": { "name": "Horn high", "start": true },
+    "eng2": { "name": "Horn low", "start": true },
+    "leftAux": { "name": "Compressor auto" },
+    "rightAux": { "name": "Train voltage" },
+    "modeSwitch": { "name": "Wipers", "left": "slower", "right": "faster" },
+    "roundAux": { "name": "Gauge lights" },
+    "rudTrim": { "name": "Doors L / R" },
+    "parkBrk": { "name": "Master key", "flat": "key out", "up": "key in" }
+  },
+  "setup": ["Insert master key (PARK BRK)", "Pull the brake key (right throttle button)", "Mode selector to Driving (flap lever)", "Train voltage supply on, compressor to auto", "Set headlights", "Open doors"],
+  "depart": ["Close doors", "Check signal and ATB", "Set reverser to forward", "Train brake to Running", "Apply power"]
+}

@@ -13,6 +13,12 @@
     },
     {
       "class_name": "RVM_ZGN_NS_ICMm3_AB_C"
+    },
+    {
+      "class_name": "RVM_ZGN_NS_ICMm3_Base_C"
+    },
+    {
+      "class_name": "RVM_ZGN_NS_ICMm3_K_Base_C"
     }
   ],
   "controls": [
@@ -32,28 +38,9 @@
             ],
             "invert": true
           }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "Reverser",
-          "input_value": {
-            "min": -1,
-            "max": 1,
-            "steps": [
-              0,
-              0.5,
-              1
-            ],
-            "invert": true
-          },
-          "action_increase": {
-            "keys": "w"
-          },
-          "action_decrease": {
-            "keys": "s"
-          }
         }
-      ]
+      ],
+      "description": "Reverser (Reverse / Neutral / Forward; pull back = reverse)"
     },
     {
       "name": "LeftThrottle",
@@ -66,37 +53,23 @@
             "max": 1,
             "steps": [
               0,
-              0.091,
-              0.181,
-              0.272,
-              0.363,
-              0.454,
-              0.545,
-              0.636,
-              0.727,
-              0.818,
-              0.909,
+              0.0909,
+              0.1818,
+              0.2727,
+              0.3636,
+              0.4545,
+              0.5455,
+              0.6364,
+              0.7273,
+              0.8182,
+              0.9091,
               1
             ],
             "invert": true
           }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "Throttle",
-          "input_value": {
-            "min": 0,
-            "max": 1,
-            "invert": true
-          },
-          "action_increase": {
-            "keys": "a"
-          },
-          "action_decrease": {
-            "keys": "d"
-          }
         }
-      ]
+      ],
+      "description": "Throttle (0 / R / S / SZ1-3 / P / PZ1-5)"
     },
     {
       "name": "RightThrottle",
@@ -110,40 +83,17 @@
             "steps": [
               0.3,
               0.4,
-              0.468,
+              0.467,
               0.534,
-              0.6,
+              0.601,
               0.668,
               0.735,
               0.8
             ]
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "AutomaticBrake",
-          "input_value": {
-            "min": 0.3,
-            "max": 0.8,
-            "steps": [
-              0.3,
-              0.4,
-              0.468,
-              0.534,
-              0.6,
-              0.668,
-              0.735,
-              0.8
-            ]
-          },
-          "action_increase": {
-            "keys": "'"
-          },
-          "action_decrease": {
-            "keys": ";"
           }
         }
-      ]
+      ],
+      "description": "Train brake (Running / 1 - 7; Emergency at 1.0 is left out on purpose)"
     },
     {
       "name": "FlapLever",
@@ -155,143 +105,100 @@
           "max": 1,
           "steps": [
             0,
-            0.33333334,
-            0.66666667,
+            0.3333,
+            0.6667,
             1
           ]
         }
-      }
+      },
+      "description": "Main mode selector (Driving / Off / Parking / Cleaning)"
     },
     {
-      "name": "LeftThrottleButton",
+      "name": "ParkingBrake",
+      "description": "Master key in / out",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "x"
+          "controls": "MasterKey",
+          "value": 1
+        },
+        "action_deactivate": {
+          "controls": "MasterKey",
+          "value": 0
+        }
+      }
+    },
+    {
+      "name": "GearLever",
+      "description": "ATB acknowledge",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "ATBAcknowledge",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "ATBAcknowledge",
+          "value": 0,
+          "hold": false
         }
       }
     },
     {
       "name": "RightThrottleButton",
+      "description": "Brake key (hold)",
       "assignment": {
         "type": "momentary",
         "threshold": 0.5,
         "action_activate": {
           "controls": "BrakeKey",
-          "value": 1.0,
+          "value": 1,
           "hold": true
         }
       }
     },
     {
-      "name": "ParkingBrake",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "MasterKey",
-          "value": 1.0
-        },
-        "action_deactivate": {
-          "controls": "MasterKey",
-          "value": 0.0
-        }
-      }
-    },
-    {
-      "name": "LeftAuxButton",
-      "assignment": {
-        "type": "toggle",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "Compressor",
-          "value": 1.0
-        },
-        "action_deactivate": {
-          "controls": "Compressor",
-          "value": 0.0
-        }
-      }
-    },
-    {
-      "name": "RightAuxButton",
-      "assignment": {
-        "type": "toggle",
-        "threshold": 0.9,
-        "action_activate": {
-          "keys": "TrainVoltageSupply",
-          "value": 1.0
-        },
-        "action_deactivate": {
-          "keys": "TrainVoltageSupply",
-          "value": 0.0
-        }
-      }
-    },
-    {
-      "name": "RoundAuxButton",
-      "assignment": {
-        "type": "toggle",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "GaugeLights",
-          "value": 1.0
-        },
-        "action_deactivate": {
-          "controls": "GaugeLights",
-          "value": 0.0
-        }
-      }
-    },
-    {
       "name": "LeftEngineOn",
+      "description": "Horn | High",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "space"
+          "controls": "HornHigh",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "HornHigh",
+          "value": 0,
+          "hold": false
         }
       }
     },
     {
       "name": "RightEngineOn",
+      "description": "Horn | Low",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "n"
-        }
-      }
-    },
-    {
-      "name": "RotaryIgnStart",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "keys": "v",
-          "value": 0.25,
-          "press_time": 0.2,
-          "relative": true
-        }
-      }
-    },
-    {
-      "name": "RotaryCrank",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "keys": "shift+v",
-          "value": -0.25,
-          "press_time": 0.2,
-          "relative": true
+          "controls": "HornLow",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "HornLow",
+          "value": 0,
+          "hold": false
         }
       }
     },
     {
       "name": "RudderTrimLeft",
+      "description": "Doors | Left (game key)",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,
@@ -302,6 +209,7 @@
     },
     {
       "name": "RudderTrimRight",
+      "description": "Doors | Right (game key)",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,
@@ -311,25 +219,94 @@
       }
     },
     {
-      "name": "GearLever",
+      "name": "RoundAuxButton",
+      "description": "Gauge lights (Off / On)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "GaugeLights",
+          "value": 1
+        },
+        "action_deactivate": {
+          "controls": "GaugeLights",
+          "value": 0
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "Compressor (Off / Automatic)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Compressor",
+          "value": 1
+        },
+        "action_deactivate": {
+          "controls": "Compressor",
+          "value": 0.5
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "Train voltage supply (Off / On)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "TrainVoltageSupply",
+          "value": 1
+        },
+        "action_deactivate": {
+          "controls": "TrainVoltageSupply",
+          "value": 0
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wipers one notch slower (Fast > Slow > Interval > Off)",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "q"
+          "controls": "Wipers",
+          "value": -0.3333,
+          "relative": true,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wipers one notch faster (Off > Interval > Slow > Fast)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Wipers",
+          "value": 0.3333,
+          "relative": true,
+          "hold": false,
+          "enable_api_fallback": true
         }
       }
     },
     {
       "name": "AutoBrake0",
+      "description": "Headlights | All off",
       "assignments": [
         {
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightCenter",
-            "value": 0.0,
-            "press_time": 0.0
+            "value": 0,
+            "press_time": 0.5
           }
         },
         {
@@ -354,18 +331,14 @@
     },
     {
       "name": "AutoBrake1",
+      "description": "Headlights | Centre only",
       "assignments": [
         {
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightCenter",
-            "value": 1.0,
-            "press_time": 0.5
-          },
-          "action_deactivate": {
-            "controls": "HeadLightCenter",
-            "value": 0.0,
+            "value": 1,
             "press_time": 0.5
           }
         },
@@ -376,22 +349,12 @@
             "controls": "HeadLightLeft",
             "value": 0.5,
             "press_time": 0.5
-          },
-          "action_deactivate": {
-            "controls": "HeadLightLeft",
-            "value": 0.5,
-            "press_time": 0.5
           }
         },
         {
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "HeadLightRight",
-            "value": 0.5,
-            "press_time": 0.5
-          },
-          "action_deactivate": {
             "controls": "HeadLightRight",
             "value": 0.5,
             "press_time": 0.5
@@ -401,18 +364,14 @@
     },
     {
       "name": "AutoBrake2",
+      "description": "Headlights | Full (three white)",
       "assignments": [
         {
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightCenter",
-            "value": 1.0,
-            "press_time": 0.5
-          },
-          "action_deactivate": {
-            "controls": "HeadLightCenter",
-            "value": 0.0,
+            "value": 1,
             "press_time": 0.5
           }
         },
@@ -421,12 +380,7 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightLeft",
-            "value": 1.0,
-            "press_time": 0.5
-          },
-          "action_deactivate": {
-            "controls": "HeadLightLeft",
-            "value": 0.5,
+            "value": 1,
             "press_time": 0.5
           }
         },
@@ -435,12 +389,7 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightRight",
-            "value": 1.0,
-            "press_time": 0.5
-          },
-          "action_deactivate": {
-            "controls": "HeadLightRight",
-            "value": 0.5,
+            "value": 1,
             "press_time": 0.5
           }
         }
@@ -448,18 +397,14 @@
     },
     {
       "name": "AutoBrake3",
+      "description": "Headlights | Tail lights (red, centre off)",
       "assignments": [
         {
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightCenter",
-            "value": 0.0,
-            "press_time": 0.5
-          },
-          "action_deactivate": {
-            "controls": "HeadLightCenter",
-            "value": 0.0,
+            "value": 0,
             "press_time": 0.5
           }
         },
@@ -468,12 +413,7 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightLeft",
-            "value": 0.0,
-            "press_time": 0.5
-          },
-          "action_deactivate": {
-            "controls": "HeadLightLeft",
-            "value": 0.5,
+            "value": 0,
             "press_time": 0.5
           }
         },
@@ -482,12 +422,7 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightRight",
-            "value": 0.0,
-            "press_time": 0.5
-          },
-          "action_deactivate": {
-            "controls": "HeadLightRight",
-            "value": 0.5,
+            "value": 0,
             "press_time": 0.5
           }
         }
@@ -495,18 +430,14 @@
     },
     {
       "name": "AutoBrake4",
+      "description": "Headlights | Tail lights + centre",
       "assignments": [
         {
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightCenter",
-            "value": 1.0,
-            "press_time": 0.5
-          },
-          "action_deactivate": {
-            "controls": "HeadLightCenter",
-            "value": 0.0,
+            "value": 1,
             "press_time": 0.5
           }
         },
@@ -515,12 +446,7 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightLeft",
-            "value": 0.0,
-            "press_time": 0.5
-          },
-          "action_deactivate": {
-            "controls": "HeadLightLeft",
-            "value": 0.5,
+            "value": 0,
             "press_time": 0.5
           }
         },
@@ -529,12 +455,7 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HeadLightRight",
-            "value": 0.0,
-            "press_time": 0.5
-          },
-          "action_deactivate": {
-            "controls": "HeadLightRight",
-            "value": 0.5,
+            "value": 0,
             "press_time": 0.5
           }
         }

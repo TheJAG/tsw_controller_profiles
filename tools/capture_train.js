@@ -28,6 +28,7 @@ function detectCabs(controls){
   return {style:'prefix',pair:ia<=ib?[a,b]:[b,a],shared:pairs[best]};
 }
 const cabOf=(name,cab)=>{if(!cab)return null;const m=/^([A-Z][A-Za-z]?)_/.exec(name);return m&&cab.pair.includes(m[1])?m[1]:null;};
+const bareName=name=>name.replace(/^[A-Z][A-Za-z]?_(?=[A-Z])/,'');
 // notch display name from the DisplayInfo ranges (Output ranges are matched on the output value, Input ranges on the snapped input)
 const nameOf=(lever,input,output)=>{
   for(const v of lever.namedValues||[]){const x=v.source==='Input'?input:output; if(x!==null&&x>=v.min-1e-6&&x<=v.max+1e-6) return v.name;}
@@ -47,7 +48,8 @@ async function sweep(c,info){
     if(idx!==last){const snapped=await get('/'+c.name+'.InputValue'); const out=await get('/'+c.name+'.Function.GetCurrentOutputValue');
       if(rows.length) rows[rows.length-1].to=r4(v-opt.step);
       rows.push({index:idx,from:v,to:1,snapped:r4(snapped),output:out,name:nameOf(c,snapped,out)}); last=idx;}}
-  await setv(c.name,orig); await sleep(800); const back=await get('/'+c.name+'.InputValue');
+  await setv(c.name,orig); await sleep(800); let back=await get('/'+c.name+'.InputValue');
+  if(Number(back)!==Number(orig)){ await setv(c.name,orig); await sleep(800); back=await get('/'+c.name+'.InputValue'); }
   info.swept=true; info.notches=rows; info.restored=back; info.inputValue=orig;
   const bad=Number(back)!==Number(orig)?'  <-- NOT RESTORED':'';
   console.log('  '+c.name+' ('+c.identifier+') '+rows.length+' notches, orig '+orig+' restored '+back+bad);
@@ -72,25 +74,44 @@ async function sweep(c,info){
       if(opt.cab&&g&&g!==opt.cab) continue;
       console.log("--- sweeping cab group '"+(g||'(common)')+"' ---");
       const want=c=>{const i=out.levers[c.name]; return opt.levers?opt.levers.includes(c.name):(i.notchCount>1);};
-      const master=ctrls.find(c=>/^(MasterSwitch|MasterKey)$/.test(c.identifier||'')); const reverser=ctrls.find(c=>c.identifier==='Reverser');
+      // the master key/switch can be a lever or a push button; look through every input control of this cab group
+      const inGroup=c=>c.inputValue!==undefined&&(cabOf(c.name,cab)||'')===g;
+      // enablers: master key/switch and brake key (ICMm) must be on before the levers accept input
+      const enablers=dump.controls.filter(c=>inGroup(c)&&(/^(MasterSwitch|MasterKey|BrakeKey)$/.test(c.identifier||'')||/^(Master(Key|Switch)|BrakeKey)/.test(bareName(c.name))));
+      const master=enablers[0];
+      const reverser=ctrls.find(c=>c.identifier==='Reverser');
       const isThrottle=c=>/^(Throttle|CombinedThrottleBrake|AutomaticBrake|TrainBrake|DynamicBrake|IndependentBrake)$/.test(c.identifier||'')||/MasterController|CombinedPowerBrake/.test(c.name);
-      const masterOrig=master?await get('/'+master.name+'.InputValue'):null;
-      if(master&&Number(masterOrig)<0.5){console.log('  '+master.name+' on for the sweep');await setv(master.name,1);await sleep(500);}
+      // push-button keys toggle on every value change: read the output (0 = removed, 1 = inserted) and flip the input only when needed
+      const enState=async e=>{const o=await get("/"+e.name+".Function.GetCurrentOutputValue"); const v=await get("/"+e.name+".InputValue"); return {on:Number(o)>=0.5,v:Number(v)};};
+      const toggled=[]; for(const e of enablers){ const st=await enState(e); if(!st.on){console.log("  "+e.name+" on for the sweep (output "+(st.on?1:0)+", input "+st.v+")"); await setv(e.name,st.v>=0.5?0:1); await sleep(500); toggled.push(e); const chk=await enState(e); if(!chk.on) console.log("  warning: "+e.name+" still off after toggling"); } else console.log("  "+e.name+" already on"); }
+      // order: everything else first (so a mode selector gets swept), then mode selector to Driving, reverser, throttle
+      const isRev=c=>c===reverser, isMode=c=>/ModeSelector|MainSwitch|Hoofdschakelaar|DriveMode|OperatingMode/i.test(c.name);
+      const modeSel=ctrls.find(isMode);
+      const others=ctrls.filter(c=>!isRev(c)&&!isThrottle(c)&&!enablers.includes(c));
+      const moving=async()=>{ if(await get(".Function.IsVehicleMoving")){console.log("  vehicle moving, sweep stopped");return true;} return false; };
+      for(const c of others){ if(!want(c)) continue; if(await moving()) break; await sweep(c,out.levers[c.name]); }
+      let modeOrig=null, drive=null;
+      if(modeSel){ modeOrig=await get("/"+modeSel.name+".InputValue"); const l=out.levers[modeSel.name];
+        drive=(l.notches||[]).find(n=>/driv|rijden|run|^on$|normal/i.test(n.name||""))||null;
+        if(drive){console.log("  "+modeSel.name+" to "+drive.name+" ("+drive.snapped+") for the reverser/throttle sweep");await setv(modeSel.name,drive.snapped);await sleep(500);} }
       let revOrig=null, neutral=null;
-      if(reverser){revOrig=await get('/'+reverser.name+'.InputValue'); if(want(reverser)) await sweep(reverser,out.levers[reverser.name]);
-        neutral=(out.levers[reverser.name].notches||[]).find(n=>/neutral|^0$|^N$/i.test(n.name||''));
-        if(neutral){console.log('  '+reverser.name+' to Neutral ('+neutral.snapped+') for the throttle sweep');await setv(reverser.name,neutral.snapped);await sleep(500);}}
-      for(const c of ctrls){ if(c===reverser||c===master||!want(c)) continue;
-        if(await get('.Function.IsVehicleMoving')){console.log('  vehicle moving, sweep stopped');break;}
-        if(isThrottle(c)&&reverser&&!neutral) console.log('  warning: no Neutral notch found on '+reverser.name+'; '+c.name+' may not accept input');
-        await sweep(c,out.levers[c.name]); }
+      if(reverser){revOrig=await get("/"+reverser.name+".InputValue"); if(want(reverser)) await sweep(reverser,out.levers[reverser.name]);
+        neutral=(out.levers[reverser.name].notches||[]).find(n=>/neutral|^0$|^N$/i.test(n.name||""));
+        if(neutral){console.log("  "+reverser.name+" to Neutral ("+neutral.snapped+") for the throttle sweep");await setv(reverser.name,neutral.snapped);await sleep(500);}}
+      for(const c of ctrls.filter(c=>isThrottle(c)&&!isRev(c)&&!enablers.includes(c))){ if(!want(c)) continue; if(await moving()) break;
+        if(reverser&&!neutral) console.log("  warning: no Neutral notch found on "+reverser.name+"; "+c.name+" may not accept input");
+        const rows=await sweep(c,out.levers[c.name]);
+        if(rows.length<=1&&reverser&&c.identifier==="Throttle"){ const fwd=(out.levers[reverser.name].notches||[]).find(n=>/forward|^F$|vooruit/i.test(n.name||""));
+          if(fwd){ console.log("  "+c.name+" locked in Neutral; retrying with "+reverser.name+" in "+fwd.name+" (brakes stay applied)"); await setv(reverser.name,fwd.snapped); await sleep(500); await sweep(c,out.levers[c.name]); await setv(reverser.name,neutral?neutral.snapped:revOrig); await sleep(400); } } }
       if(reverser&&neutral){await setv(reverser.name,revOrig);await sleep(500);}
-      if(master&&Number(masterOrig)<0.5){await setv(master.name,masterOrig);await sleep(300);}
-      if(master&&want(master)) await sweep(master,out.levers[master.name]);
+      if(modeSel&&drive){await setv(modeSel.name,modeOrig);await sleep(300);}
+      for(const e of toggled.slice().reverse()){ const st=await enState(e); await setv(e.name,st.v>=0.5?0:1); await sleep(300); }
+      for(const e of enablers) if(out.levers[e.name]&&want(e)) await sweep(e,out.levers[e.name]);
     }
   }
   const file=opt.out||path.join(__dirname,'captures',dump.objectClass+'.json');
   fs.mkdirSync(path.dirname(file),{recursive:true});
+  if(opt.levers&&fs.existsSync(file)){ const prev=JSON.parse(fs.readFileSync(file,'utf8')); let kept=0; for(const [n,l] of Object.entries(prev.levers||{})) if(l.swept&&out.levers[n]&&!out.levers[n].swept){out.levers[n]=l;kept++;} console.log('merged '+kept+' previously swept levers from '+path.basename(file)); }
   fs.writeFileSync(file,JSON.stringify(out,null,2));
   console.log('wrote',file);
   console.log('levers:',Object.entries(out.levers).map(([n,l])=>n+'['+l.identifier+':'+l.notchCount+(l.swept?'*':'')+']').join(' '));
