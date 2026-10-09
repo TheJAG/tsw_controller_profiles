@@ -80,6 +80,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **DB BR 423**  
 `TODO ◼️` **DB BR 425**  
 `TODO ◼️` **DB BR 430**  
+`DONE ✅` **DB BR 440** <sub>— DTG · [profile](releases/tsw-br-440-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-440-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **DB BR 442**  
 `TODO ◼️` **DB BR 612**  
 `TODO ◼️` **DB BR 628**  

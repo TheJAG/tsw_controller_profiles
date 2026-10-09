@@ -1,0 +1,491 @@
+{
+  "name": "TSW | BR 440 | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_NWB_DB_BR440_0_C"
+    },
+    {
+      "class_name": "RVM_NWB_DB_BR440_5_C"
+    },
+    {
+      "class_name": "RVM_NWB_DB_BR440_Series_Base_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [0, 0.5, 1],
+            "invert": true
+          }
+        },
+        {
+          "type": "sync_control",
+          "identifier": "Reverser",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [0, 0.5, 1],
+            "invert": true
+          },
+          "action_increase": {
+            "keys": "w"
+          },
+          "action_decrease": {
+            "keys": "s"
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Combined power and brake",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "MasterController",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [0, 0.1, null, 0.41, 0.5, 0.59, null, 1.0],
+            "invert": true,
+            "step_thresholds": [
+              { "threshold": 1.0, "threshold_tolerance": 0.04 },
+              { "threshold": 0.92, "threshold_tolerance": 0.04 },
+              { "threshold": 0.88, "threshold_end": 0.63, "threshold_tolerance": 0 },
+              { "threshold": 0.60, "threshold_tolerance": 0.03 },
+              { "threshold": 0.50, "threshold_tolerance": 0.07 },
+              { "threshold": 0.40, "threshold_tolerance": 0.03 },
+              { "threshold": 0.37, "threshold_end": 0.03, "threshold_tolerance": 0 },
+              { "threshold": 0.0, "threshold_tolerance": 0.04 }
+            ]
+          }
+        },
+        {
+          "type": "sync_control",
+          "identifier": "Throttle",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [0, 0.1, null, 0.41, 0.5, 0.59, null, 1.0],
+            "invert": true,
+            "step_thresholds": [
+              { "threshold": 1.0, "threshold_tolerance": 0.04 },
+              { "threshold": 0.92, "threshold_tolerance": 0.04 },
+              { "threshold": 0.88, "threshold_end": 0.63, "threshold_tolerance": 0 },
+              { "threshold": 0.60, "threshold_tolerance": 0.03 },
+              { "threshold": 0.50, "threshold_tolerance": 0.07 },
+              { "threshold": 0.40, "threshold_tolerance": 0.03 },
+              { "threshold": 0.37, "threshold_end": 0.03, "threshold_tolerance": 0 },
+              { "threshold": 0.0, "threshold_tolerance": 0.04 }
+            ]
+          },
+          "action_increase": {
+            "keys": "a"
+          },
+          "action_decrease": {
+            "keys": "d"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "Train brake",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "TrainBrake",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [0, 0.2, 0.4, 0.8, 1.0]
+          }
+        },
+        {
+          "type": "sync_control",
+          "identifier": "AutomaticBrake",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [0, 0.2, 0.4, 0.8, 1.0]
+          },
+          "action_increase": {
+            "keys": "'"
+          },
+          "action_decrease": {
+            "keys": ";"
+          }
+        }
+      ]
+    },
+    {
+      "name": "FlapLever",
+      "description": "Reading light dimmer",
+      "assignment": {
+        "type": "direct_control",
+        "controls": "ReadingLightDimmer",
+        "input_value": {
+          "min": 0.0,
+          "max": 1.0,
+          "invert": true
+        }
+      }
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Master key + master switch",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.5,
+          "action_activate": {
+            "controls": "MasterKey",
+            "value": 1.0,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "MasterSwitch",
+            "value": 0.5,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.5,
+          "action_activate": {
+            "controls": "MasterSwitch",
+            "value": 1.0,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "MasterKey",
+            "value": 0.0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "PZB Override (Befehl 40)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZB_Override",
+          "value": 1.0,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PZB_Override",
+          "value": 0.0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wipers decrease (one notch)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "WiperSetting",
+          "value": -0.142857,
+          "relative": true,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wipers increase (one notch)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "WiperSetting",
+          "value": 0.142857,
+          "relative": true,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "description": "Sand",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Sander",
+          "value": 1.0,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Sander",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Horn",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "HornPedal",
+          "value": 1.0,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "HornPedal",
+          "value": 0.0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "SiFa I/O (fuse toggle)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "SIFA_Fuse",
+          "value": 1.0,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "SIFA_Fuse",
+          "value": 0.0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "PZB I/O (fuse toggle)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZB_Fuse",
+          "value": 1.0,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "PZB_Fuse",
+          "value": 0.0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "OperateLeftDoors",
+          "value": 1.0,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "OperateLeftDoors",
+          "value": 0.0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "OperateRightDoors",
+          "value": 1.0,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "OperateRightDoors",
+          "value": 0.0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "GearLever",
+      "description": "SiFa reset",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "Q"
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "PZB Release (Frei)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZB_Release",
+          "value": 1.0,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PZB_Release",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "PZB Acknowledge (Wachsam)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZB_Acknowledge",
+          "value": 1.0,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PZB_Acknowledge",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Headlights | Off / tail lights",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights",
+            "value": 0.0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HighBeams",
+            "value": 0.0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Headlights | On",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights",
+            "value": 0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HighBeams",
+            "value": 0.0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Headlights | Dim",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights",
+            "value": 1.0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HighBeams",
+            "value": 0.0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Headlights | On + high beam",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights",
+            "value": 0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HighBeams",
+            "value": 1.0,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}
