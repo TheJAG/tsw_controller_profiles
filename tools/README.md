@@ -13,9 +13,13 @@ Scripts used to create a new controller profile and its Quick Reference Manual. 
 
 Notch values are usually evenly spaced (`i / (notches - 1)`); the sweep prints the boundaries, not the centres. Push buttons toggle on each value change: use a `toggle` assignment, not `momentary`, for buttons that latch (fuses, isolation switches). Spring switches rest at 0.5 and take 0 or 1 as a pulse.
 
-## Building the manual
+## Building the manual (current format)
 
-`gen_manual.js <template.docx> <spec.json> <out.docx>` clones an existing manual and rewrites it from a spec (see `specs/`). The spec can:
+`manual/render_manual.js trains/<train>.json [outdir]` renders the one-page schematic manual from a data file and prints it to A4 PDF with headless Chrome or Edge (HTML and PDF land in `profiles/documentation/`). The data file names the train, logos, side-view drawing, colours, every TCA control with its function, notch names and `start` index (the green "recommended starting position"), the AUTO BRK rotary positions with descriptions, the mode switch left/right meanings, the PARK BRK flat/up meanings, and the two checklists. `manual/trains/tsw-class-333-dtg-thejag.json` is the reference example. Unassigned controls are left `null` and drawn greyed.
+
+## Building a manual from the old Word templates
+
+`gen_manual.js <template.docx> <spec.json> <out.docx>` clones an existing manual and rewrites it from a spec (see `specs/`). Only needed for the manuals made before the Class 333. The spec can:
 
 - `boxes` replace the text of positioned text boxes by anchor index (`dump_boxes.js` prints the indices with coordinates).
 - `boxExt` resize or move a box (`cx`, `cy`, `x`, `y` in EMU).
