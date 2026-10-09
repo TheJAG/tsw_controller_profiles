@@ -11,6 +11,12 @@ This folder is both the live config dir of the TSW Controller App (`C:\Games\Too
 5. Manual (schematic format, current standard since the Class 333): copy the closest data file in `tools/manual/trains/`, fill in the controls, defaults (`start` = recommended starting notch, green dot) and checklists, then `node tools/manual/render_manual.js tools/manual/trains/<train>.json`. It writes the self-contained HTML and the A4 PDF straight into `profiles/documentation/` via headless Chrome. Render the PDF with `tools/pdf2png.ps1` and look at the PNG before committing. Loco pictures: prefer drawn side views from Wikimedia Commons (search the Commons API in namespace 6); logos go in `tools/assets/`, dark logos as white-on-transparent with `invertToNavy` when needed. The older Word-template path (`tools/gen_manual.js` + `tools/specs/`) is only for touching up the pre-333 manuals.
 6. Add the README line (`DONE ✅` with profile + manual links, alphabetical within the game's list; `SOON 🟨` while in progress). Commit only when the user asks; messages are in the style "Added and released X from <route>".
 
+## Manual conventions (decided 2026-10-09, keep them)
+
+- Data file keys under `controls`: `speedbrake`, `leftThrottle`, `rightThrottle`, `flap` (levers: `name`, `notches` top to bottom, `start` index or `null`), `leftThrottleButton`, `rightThrottleButton`, `gearLever`, `eng1`, `eng2` (`start: true` draws the dot at the switch's OFF end), `leftAux`, `rightAux`, `roundAux`, `rudTrim`, `autoBrk` (six `positions` with `short` and `desc`, `start`), `modeSwitch` (`left`/`right` meanings), `parkBrk` (`flat`/`up` meanings). `null` = not assigned, drawn greyed.
+- Green dot = recommended starting position. Lever notches are pills beside the slot, top to bottom, no arrows. The AUTO BRK rotary is a dial with the description under each position. The mode switch reads "slower ◀ · ▶ faster" with no "spring loaded" text. PARK BRK pivots on its right end: flat = key out, dashed upright = key in. Captions are "Left aux", "Right aux", "Round aux" with no "on-off" or "hold". The bottom-right block is the controller photo, not a table.
+- New trains get HTML + PDF only; do not create docx files any more.
+
 ## Gotchas learned
 
 - Numeric `step_thresholds` are mirrored when `invert` is true; express them on the raw lever axis. A dead band around a notch is done with `threshold_tolerance`.
