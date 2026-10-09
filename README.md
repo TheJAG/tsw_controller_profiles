@@ -6,8 +6,8 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 
 <br><img width="250" height="114" alt="image" src="https://github.com/user-attachments/assets/7d63d5d6-765a-4ba8-b818-8febac2b1fd3" />  <br>
 
-`TODO ◼️` **1972 Mark 2 Stock**  
-`TODO ◼️` **1938 Stock**  
+**🇬🇧 United Kingdom**
+
 `TODO ◼️` **BR Class 08**  
 `TODO ◼️` **BR Class 09**  
 `TODO ◼️` **BR Class 20**  
@@ -22,24 +22,28 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **BR Class 66**  
 `TODO ◼️` **BR Class 86**  
 `TODO ◼️` **BR Class 87**  
+`TODO ◼️` **BR Class 90**  
 `TODO ◼️` **BR Class 101**  
 `TODO ◼️` **BR Class 142**  
 `TODO ◼️` **BR Class 150**  
 `TODO ◼️` **BR Class 153**  
 `TODO ◼️` **BR Class 158**  
+`TODO ◼️` **BR Class 165**  
 `TODO ◼️` **BR Class 166**  
 `TODO ◼️` **BR Class 170**  
 `DONE ✅` **BR Class 171** <sub>— Rivet · [profile](releases/tsw-class-171-rivet-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-171-rivet-thejag.pdf)</sub>  
+`TODO ◼️` **BR Class 220 Voyager**  
 `DONE ✅` **BR Class 313** <sub>— DTG · [profile](releases/tsw-class-313-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-313-dtg-thejag.pdf)</sub>  
 `DONE ✅` **BR Class 314** <sub>— DTG · [profile](releases/tsw-class-314-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-314-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 323**  
+`TODO ◼️` **BR Class 331**  
 `DONE ✅` **BR Class 333** <sub>— DTG · [profile](releases/tsw-class-333-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-333-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 350**  
 `DONE ✅` **BR Class 375** <sub>— Firefly · [profile](releases/tsw-class-375-firefly-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-375-firefly-thejag.pdf)</sub>  
 `DONE ✅` **BR Class 377** <sub>— DTG · [profile](releases/tsw-class-377-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-377-dtg-thejag.pdf)</sub>  
+`TODO ◼️` **BR Class 378**  
 `TODO ◼️` **BR Class 380**  
 `TODO ◼️` **BR Class 385**  
-`TODO ◼️` **BR Class 378**  
 `TODO ◼️` **BR Class 387**  
 `TODO ◼️` **BR Class 390 Pendolino Avanti WC**  
 `TODO ◼️` **BR Class 395**  
@@ -49,8 +53,20 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **BR Class 700/0 Thameslink**  
 `DONE ✅` **BR Class 710** <sub>— DTG · [profile](releases/tsw-class-710-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-710-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 801**  
-`SOON 🟨` **CD Class 750** <sub>— Vector Simulations</sub>  
-`SOON 🟨` **CD Class 843** <sub>— Vector Simulations</sub>  
+`TODO ◼️` **BR Class 802**  
+`TODO ◼️` **BR Class 805**  
+`TODO ◼️` **BR Class 807**  
+`TODO ◼️` **Flying Scotsman**  
+`TODO ◼️` **LMS Class 4F**  
+`TODO ◼️` **LMS Class 8F**  
+`TODO ◼️` **LMS Jubilee Class (6P)**  
+`TODO ◼️` **LU 1938 Stock**  
+`TODO ◼️` **LU 1972 Mark 2 Stock**  
+`TODO ◼️` **Thomas & Friends: Thomas**  
+`TODO ◼️` **Thomas & Friends: Diesel**  
+
+**🇩🇪 Germany**
+
 `TODO ◼️` **DB Bpmmbdzf**  
 `TODO ◼️` **DB BR 101**  
 `TODO ◼️` **DB BR 101 Expert** <sub>— Train Sim Germany</sub>  
@@ -59,16 +75,19 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **DB BR 111**  
 `TODO ◼️` **DB BR 112**  
 `TODO ◼️` **DB BR 114**  
+`TODO ◼️` **DB BR 140**  
 `TODO ◼️` **DB BR 143**  
 `SOON 🟨` **DB BR 145 Expert** <sub>— Train Sim Germany</sub>  
 `TODO ◼️` **DB BR 146**  
+`TODO ◼️` **DB BR 147**  
 `TODO ◼️` **DB BR 155**  
 `TODO ◼️` **DB BR 182**  
 `TODO ◼️` **DB BR 185**  
 `TODO ◼️` **DB BR 187**  
 `TODO ◼️` **DB BR 193 Vectron**  
+`TODO ◼️` **DB BR 194 (E 94)**  
 `TODO ◼️` **DB BR 204**  
-`TODO ◼️` **DB BR 218**  
+`TODO ◼️` **DB BR 218** <sub>— Train Sim Germany</sub>  
 `TODO ◼️` **DB BR 294**  
 `TODO ◼️` **DB BR 363**  
 `TODO ◼️` **DB BR 365**  
@@ -76,7 +95,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **DB BR 403 ICE 3**  
 `TODO ◼️` **DB BR 406 ICE 3M**  
 `TODO ◼️` **DB BR 411 ICE-T**  
-`TODO ◼️` **DB BR 420**  
+`TODO ◼️` **DB BR 412 ICE 4**  
 `TODO ◼️` **DB BR 422**  
 `TODO ◼️` **DB BR 423**  
 `TODO ◼️` **DB BR 425**  
@@ -84,23 +103,86 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `DONE ✅` **DB BR 440** <sub>— DTG · [profile](releases/tsw-br-440-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-440-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **DB BR 442**  
 `TODO ◼️` **DB BR 612**  
-`TODO ◼️` **DB BR 628**  
+`TODO ◼️` **DB BR 628** <sub>— Train Sim Germany</sub>  
 `TODO ◼️` **DB BR 642**  
 `TODO ◼️` **DB BR 766.2**  
 `TODO ◼️` **DB BR 767.2**  
 `TODO ◼️` **DB BR 1442**  
-`TODO ◼️` **DB G6**  
+`TODO ◼️` **DB G6** <sub>— Train Sim Germany</sub>  
 `TODO ◼️` **ES 64 U2**  
-`TODO ◼️` **Flying Scotsman**  
-`TODO ◼️` **LMS Class 4F**  
-`TODO ◼️` **LMS Class 8F**  
-`TODO ◼️` **LMS Jubilee Class (6P)**  
-`DONE ✅` **NS ICMm** <sub>— DTG · [profile](releases/tsw-ns-icmm-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-ns-icmm-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **NS SNG** <sub>— DTG</sub>  
+
+**🇦🇹 Austria**
+
 `TODO ◼️` **ÖBB 1020**  
 `TODO ◼️` **ÖBB 1116**  
 `TODO ◼️` **ÖBB 4024**  
+
+**🇨🇭 Switzerland**
+
+`TODO ◼️` **RhB ABe 8/12 Allegra**  
+`TODO ◼️` **RhB Ge 4/4 II**  
+`TODO ◼️` **SBB RABe 523**  
+
+**🇨🇿 Czechia**
+
+`SOON 🟨` **CD Class 750** <sub>— Vector Simulations</sub>  
+`SOON 🟨` **CD Class 843** <sub>— Vector Simulations</sub>  
+
+**🇫🇷 France**
+
 `TODO ◼️` **TGV Duplex**  
+
+**🇳🇱 Netherlands**
+
+`DONE ✅` **NS ICMm** <sub>— DTG · [profile](releases/tsw-ns-icmm-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-ns-icmm-dtg-thejag.pdf)</sub>  
+`TODO ◼️` **NS SNG** <sub>— DTG</sub>  
+
+**🇯🇵 Japan**
+
+`TODO ◼️` **JR East KiHa 40**  
+
+**🇺🇸 United States & 🇨🇦 Canada**
+
+`TODO ◼️` **Amtrak ACS-64**  
+`TODO ◼️` **Amtrak Acela**  
+`TODO ◼️` **BNSF ES44C4**  
+`TODO ◼️` **BNSF GP60M / GP60B**  
+`TODO ◼️` **BNSF SD40-2**  
+`TODO ◼️` **Caltrain F40PH-2CAT**  
+`TODO ◼️` **Caltrain MP15DC**  
+`TODO ◼️` **Caltrain MP36PH-3C**  
+`TODO ◼️` **Clinchfield F7**  
+`TODO ◼️` **Clinchfield SD40**  
+`TODO ◼️` **CN GP9RM**  
+`TODO ◼️` **CN GP38-2**  
+`TODO ◼️` **CSX AC4400CW**  
+`TODO ◼️` **CSX C40-8W**  
+`TODO ◼️` **CSX GP38-2**  
+`TODO ◼️` **CSX SD40-2**  
+`TODO ◼️` **LIRR M3**  
+`TODO ◼️` **LIRR M7**  
+`TODO ◼️` **LIRR M9**  
+`TODO ◼️` **MBTA F40PH-3C**  
+`TODO ◼️` **MBTA HSP46**  
+`TODO ◼️` **Metrolink F125**  
+`TODO ◼️` **Metrolink F59PH**  
+`TODO ◼️` **Metrolink MP36PH-3C**  
+`TODO ◼️` **Metro-North M3a**  
+`TODO ◼️` **Metro-North M7a**  
+`TODO ◼️` **Metro-North M8**  
+`TODO ◼️` **NJ Transit ALP-45DP**  
+`TODO ◼️` **NJ Transit ALP-46**  
+`TODO ◼️` **NJ Transit Arrow III**  
+`TODO ◼️` **Norfolk Southern ES44AC**  
+`TODO ◼️` **Norfolk Southern GP38-2**  
+`TODO ◼️` **Santa Fe C40-8W**  
+`TODO ◼️` **Santa Fe F7**  
+`TODO ◼️` **Santa Fe SD40-2**  
+`TODO ◼️` **Tri-Rail BL36PH**  
+`TODO ◼️` **Tri-Rail F40PH-3C**  
+`TODO ◼️` **Tri-Rail GP49PH**  
+`TODO ◼️` **Union Pacific SD40-2**  
+`TODO ◼️` **Union Pacific SD70ACe**  
 
 <br>
 <img width="304" height="114" alt="image" src="https://github.com/user-attachments/assets/b4751799-5d7f-4af7-9c95-4332c0924435" />  <br>
