@@ -1,0 +1,24 @@
+{
+  "_comment": "Family templates for draft_profile.js: the template profile supplies the TCA layout (which TCA control does what), the capture of the new train supplies node names and notch values. nodeIdentifiers maps template node names to TSW input identifiers when the template has no capture of its own. keyRoles maps keyboard fallbacks in a template to identifiers that replace them with a direct control when the new train has one.",
+  "families": {
+    "uk-unit": { "template": "profiles/tsw-class-333-dtg-thejag-1791536000.json", "manual": "tools/manual/trains/tsw-class-333-dtg-thejag.json", "capture": null },
+    "uk-dmu":  { "template": "profiles/tsw-class-153-dtg-thejag-1791617000.json", "manual": "tools/manual/trains/tsw-class-153-dtg-thejag.json", "capture": "tools/captures/RVM_TFW_Class153_PRM_C.json" },
+    "de-unit": { "template": "profiles/tsw-br-440-dtg-thejag-1791528000.json", "manual": "tools/manual/trains/tsw-br-440-dtg-thejag.json", "capture": null },
+    "nl-unit": { "template": "profiles/tsw-ns-icmm-dtg-thejag-1771138596.json", "manual": "tools/manual/trains/tsw-ns-icmm-dtg-thejag.json", "capture": "tools/captures/RVM_ZGN_NS_ICMm3_sBk_C.json" }
+  },
+  "nodeIdentifiers": {
+    "Reverser": "Reverser", "Throttle": "Throttle", "TrainBrake": "AutomaticBrake", "AutomaticBrake": "AutomaticBrake",
+    "CombinedPowerBrakeHandle": "CombinedThrottleBrake", "MasterController": "CombinedThrottleBrake",
+    "MasterKey": "MasterKey", "MasterSwitch": "MasterSwitch", "Horn": "Horn", "HornPedal": "Horn", "Sander": "Sand", "Sand": "Sand",
+    "Headlights": "Headlights", "HeadLights": "Headlights", "Taillights": "Taillights", "TailLights": "Taillights", "HighBeams": "HighBeams",
+    "WipersSwitch": "Wipers", "WiperSetting": "Wipers", "Wipers": "Wipers", "SignalBuzzer_L": "Bell", "Bell": "Bell",
+    "TPWS_AWS_Isolation": "AWS_Isolation", "AWS_Isolation": "AWS_Isolation", "DSD_Isolation": "DVD_Isolation", "VigilenceIsolation": "Vigilance_Isolation",
+    "PZB_Override": "PZB_Override", "PZB_Release": "PZB_Release", "PZB_Acknowledge": "PZB_Acknowledge", "PZB_Fuse": "PZB_Fuse", "SIFA_Fuse": "SIFA_Fuse",
+    "OperateLeftDoors": "DoorsLeft", "OperateRightDoors": "DoorsRight", "ReadingLightDimmer": "None",
+    "MainModeSelector": "None", "BrakeKey": "None", "Compressor": "None", "TrainVoltageSupply": "None", "GaugeLights": "GaugeLights",
+    "HeadLightCenter": "None", "HeadLightLeft": "None", "HeadLightRight": "None"
+  },
+  "keyRoles": {
+    "Q": ["AWS_Reset", "SIFA_Reset"], "q": ["AWS_Reset", "SIFA_Reset"], "x": ["Sand"], "space": ["Horn"], "y": ["DoorsLeft"], "u": ["DoorsRight"]
+  }
+}

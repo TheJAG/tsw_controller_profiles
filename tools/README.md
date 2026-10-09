@@ -2,16 +2,24 @@
 
 Scripts used to create a new controller profile and its Quick Reference Manual. Run everything from the repo root (`C:\Users\m_jag\AppData\Roaming\tswcontrollerapp\config`). Requirements: Node, the `py` Python launcher, `unzip` from Git Bash, Microsoft Word (for PDF export), and Train Sim World started with the `-HTTPAPI` Steam launch option.
 
+## Pipeline per train (current, since 2026-10-10)
+
+1. Sit in the cab, train stationary, master key/switch on. `node tools/capture_train.js` dumps every control, reads `IS_GetActiveCab`, detects cab-prefix pairs (`L_`/`S_`) and sweeps every lever with more than one notch (master switch on, reverser to Neutral for the throttle, everything restored afterwards). Output: `tools/captures/<ObjectClass>.json`, committed, so profiles can be rebuilt without the game. Options: `--no-sweep`, `--levers A,B`, `--cab L`, `--step 0.01`.
+2. `node tools/draft_profile.js tools/captures/<Class>.json --family uk-dmu --name "Class 153" --dev dtg` writes `profiles/tsw-class-153-dtg-thejag-<unixtime>.json`. The family template (`tools/families.json`: `uk-unit` = Class 333, `uk-dmu` = Class 153, `de-unit` = BR 440, `nl-unit` = ICMm) gives the TCA layout; each node is resolved in the capture by input identifier (fallback: bare node name), cab pairs become `{SIDE:a:b}_Name`, lever steps come from the sweep, `sync_control` blocks are dropped, keyboard fallbacks become direct controls when the train has the node, the headlight rotary gets off / day / marker / night / tail in that order, rail classes come from `tools/pak_classes.txt`. Unmatched controls are removed and listed; read the draft before using it. `--classes PREFIX` overrides the pak lookup, `--slug` the file name.
+3. `node tools/draft_manual.js profiles/<file>.json --family uk-dmu --operator "..." --route "..." [--logo ../../assets/x.svg] [--diagram ../../assets/y.png --source "Drawing: ..."]` scaffolds `tools/manual/trains/<name>.json` with notch pills (top = lever fully forward = raw 1, so inverted levers show the game's notch 0 on top; `--flip` otherwise), `start` from the lever position at capture time, the AUTO BRK positions from the AutoBrake descriptions and the checklists of the family manual. `_todo` lists what is still placeholder. Then render as below.
+4. `node tools/build_release.js profiles/<file>.json`, then `node tools/readme_status.js "BR Class 153" soon --profile tsw-class-153-dtg-thejag --dev DTG` rewrites the README line (`--add "<country>"` inserts a new one alphabetically, `--game tsc|rt` for the other sections) and regenerates `tools/trains.json`, the registry of every README train with status and links (extra keys such as `route`, `classes`, `capture`, `family` survive a resync).
+
 ## Reading the loco through the TSW HTTP API
 
 | Script | What it does |
 |---|---|
-| `tswapi.js` | Tiny client. Reads the key from `CommAPIKey.txt` (override with env `TSW_COMMAPIKEY`). |
+| `tswapi.js` | Tiny client: `api`, `get`, `setv`, `dumpControls`. Reads the key from `CommAPIKey.txt` (override with env `TSW_COMMAPIKEY`). |
+| `capture_train.js [out.json]` | Dump + active cab + cab pairs + lever sweeps into `tools/captures/` (see pipeline). |
 | `dump_controls.js <out.json>` | Lists every control of the vehicle you are sitting in: class name, identifier, current value, display names of the notches. |
 | `levers.js <out.json>` | For every lever in that dump: notch count, current notch, min/max, output range. |
 | `sweep_levers.js <Lever> [...]` | Moves a lever through 0..1 in 1% steps and prints where the notches change, then restores it. Refuses when the train is moving; the throttle only when the reverser is neutral or off. |
 
-Notch values are usually evenly spaced (`i / (notches - 1)`); the sweep prints the boundaries, not the centres. Push buttons toggle on each value change: use a `toggle` assignment, not `momentary`, for buttons that latch (fuses, isolation switches). Spring switches rest at 0.5 and take 0 or 1 as a pulse.
+Notch values are usually evenly spaced (`i / (notches - 1)`, rotary switches that wrap use `i / notches`); the sweep prints the boundaries, not the centres. Push buttons toggle on each value change: use a `toggle` assignment, not `momentary`, for buttons that latch (fuses, isolation switches). Spring switches rest at 0.5 and take 0 or 1 as a pulse. The Class 153 capture in `tools/captures/` was rebuilt from the 2026-10-10 dump listing with hand-measured notch tables (`synthetic: true`); replace it with a real capture when the 153 is loaded again.
 
 ## Building the manual (current format)
 

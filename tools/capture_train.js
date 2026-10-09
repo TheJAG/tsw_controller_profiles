@@ -1,0 +1,97 @@
+// Capture the train you are sitting in: control dump, active cab, cab-prefix pairs and a notch sweep of every lever.
+// Usage (from repo root, train stationary, master key/switch of your cab ON):
+//   node tools/capture_train.js [out.json] [--no-sweep] [--levers Name,Name] [--cab L] [--step 0.01]
+// Default output: tools/captures/<ObjectClass>.json. A sweep sets the lever 0..1 in steps, reads the notch index and
+// restores the lever. Per cab the master switch is turned on and the reverser put in Neutral while the throttle is
+// swept, then both are restored. The brake lever is released for a few seconds during its sweep: stay on level track.
+const {api,sleep,get,setv,dumpControls}=require('./tswapi.js');
+const fs=require('fs'),path=require('path');
+const argv=process.argv.slice(2), opt={sweep:true,levers:null,cab:null,step:0.01,out:null};
+for(let i=0;i<argv.length;i++){const a=argv[i];
+  if(a==='--no-sweep')opt.sweep=false; else if(a==='--levers')opt.levers=argv[++i].split(',');
+  else if(a==='--cab')opt.cab=argv[++i]; else if(a==='--step')opt.step=Number(argv[++i]); else opt.out=a;}
+const LEVER_RE=/Lever|DimmerSwitch|ReversiblePushButton|RotarySwitch/;
+const r4=v=>Math.round(v*1e4)/1e4;
+
+// Cab prefix pairs: names like L_Reverser / S_Reverser or F_x / B_x. Returns {style:'prefix', pair:[a,b], shared:n} or null.
+function detectCabs(controls){
+  const names=controls.filter(c=>c.inputValue!==undefined).map(c=>c.name);
+  const bySuffix={};
+  for(const n of names){const m=/^([A-Z][A-Za-z]?)_(.+)$/.exec(n); if(m){(bySuffix[m[2]]=bySuffix[m[2]]||[]).push(m[1]);}}
+  const pairs={}, order=[];
+  for(const ps of Object.values(bySuffix)){const u=[...new Set(ps)]; if(u.length<2) continue;
+    for(let i=0;i<u.length;i++)for(let j=i+1;j<u.length;j++){const k=u[i]+'|'+u[j]; if(!pairs[k]){pairs[k]=0;order.push(k);} pairs[k]++;}}
+  const best=order.sort((a,b)=>pairs[b]-pairs[a])[0];
+  if(!best||pairs[best]<3) return null;
+  const [a,b]=best.split('|');
+  const ia=names.findIndex(n=>n.startsWith(a+'_')), ib=names.findIndex(n=>n.startsWith(b+'_'));
+  return {style:'prefix',pair:ia<=ib?[a,b]:[b,a],shared:pairs[best]};
+}
+const cabOf=(name,cab)=>{if(!cab)return null;const m=/^([A-Z][A-Za-z]?)_/.exec(name);return m&&cab.pair.includes(m[1])?m[1]:null;};
+// notch display name from the DisplayInfo ranges (Output ranges are matched on the output value, Input ranges on the snapped input)
+const nameOf=(lever,input,output)=>{
+  for(const v of lever.namedValues||[]){const x=v.source==='Input'?input:output; if(x!==null&&x>=v.min-1e-6&&x<=v.max+1e-6) return v.name;}
+  return null;};
+
+async function leverInfo(c){
+  const f=async n=>{const g=await api('/get/CurrentDrivableActor/'+encodeURIComponent(c.name)+'.Function.'+n);return g&&g.Values?g.Values.ReturnValue:null;};
+  const rot=await api('/get/CurrentDrivableActor/'+encodeURIComponent(c.name)+'.Property.bIsRotationalLever');
+  return {identifier:c.identifier,objectClass:c.objectClass,notchCount:await f('GetNotchCount'),minInput:await f('GetMinimumInputValue'),maxInput:await f('GetMaximumInputValue'),
+    defaultInput:await f('GetDefaultInputValue'),inputRange:await f('GetInputRange'),outputRange:await f('GetOutputRange'),
+    rotational:rot&&rot.Values?Object.values(rot.Values)[0]:null,inputValue:c.inputValue,namedValues:c.namedValues,swept:false,notches:[]};
+}
+async function sweep(c,info){
+  const orig=await get('/'+c.name+'.InputValue'); let last=null; const rows=[];
+  for(let v=0;v<=1.00001;v=r4(v+opt.step)){ await setv(c.name,v); await sleep(50);
+    const idx=await get('/'+c.name+'.Function.GetCurrentNotchIndex');
+    if(idx!==last){const snapped=await get('/'+c.name+'.InputValue'); const out=await get('/'+c.name+'.Function.GetCurrentOutputValue');
+      if(rows.length) rows[rows.length-1].to=r4(v-opt.step);
+      rows.push({index:idx,from:v,to:1,snapped:r4(snapped),output:out,name:nameOf(c,snapped,out)}); last=idx;}}
+  await setv(c.name,orig); await sleep(800); const back=await get('/'+c.name+'.InputValue');
+  info.swept=true; info.notches=rows; info.restored=back; info.inputValue=orig;
+  const bad=Number(back)!==Number(orig)?'  <-- NOT RESTORED':'';
+  console.log('  '+c.name+' ('+c.identifier+') '+rows.length+' notches, orig '+orig+' restored '+back+bad);
+  for(const r of rows) console.log('     #'+r.index+' '+String(r.name||'?').padEnd(16)+' raw '+r.from.toFixed(2)+'..'+r.to.toFixed(2)+' snapped '+r.snapped+' out '+r.output);
+  return rows;
+}
+(async()=>{
+  const dump=await dumpControls();
+  if(!dump){console.log('No drivable actor: sit in the cab first (API answered but CurrentDrivableActor is missing).');process.exit(1);}
+  console.log('class',dump.objectClass,'nodes',dump.controls.length);
+  const acRaw=await api('/get/CurrentDrivableActor.Function.IS_GetActiveCab');
+  const cab=detectCabs(dump.controls);
+  console.log('IS_GetActiveCab',JSON.stringify(acRaw&&acRaw.Values||acRaw),'cab pair',JSON.stringify(cab));
+  const out={objectClass:dump.objectClass,capturedAt:new Date().toISOString(),activeCab:acRaw&&acRaw.Values||null,cab,controls:dump.controls,levers:{}};
+  const leverCtrls=dump.controls.filter(c=>c.inputValue!==undefined&&LEVER_RE.test(c.objectClass||''));
+  for(const c of leverCtrls) out.levers[c.name]=await leverInfo(c);
+  const moving=await get('.Function.IsVehicleMoving');
+  if(opt.sweep&&moving){console.log('ABORT sweep: vehicle is moving. Dump written without sweeps.');opt.sweep=false;}
+  if(opt.sweep){
+    const groups={}; for(const c of leverCtrls){const g=cabOf(c.name,cab)||'';(groups[g]=groups[g]||[]).push(c);}
+    for(const [g,ctrls] of Object.entries(groups)){
+      if(opt.cab&&g&&g!==opt.cab) continue;
+      console.log("--- sweeping cab group '"+(g||'(common)')+"' ---");
+      const want=c=>{const i=out.levers[c.name]; return opt.levers?opt.levers.includes(c.name):(i.notchCount>1);};
+      const master=ctrls.find(c=>/^(MasterSwitch|MasterKey)$/.test(c.identifier||'')); const reverser=ctrls.find(c=>c.identifier==='Reverser');
+      const isThrottle=c=>/^(Throttle|CombinedThrottleBrake|AutomaticBrake|TrainBrake|DynamicBrake|IndependentBrake)$/.test(c.identifier||'')||/MasterController|CombinedPowerBrake/.test(c.name);
+      const masterOrig=master?await get('/'+master.name+'.InputValue'):null;
+      if(master&&Number(masterOrig)<0.5){console.log('  '+master.name+' on for the sweep');await setv(master.name,1);await sleep(500);}
+      let revOrig=null, neutral=null;
+      if(reverser){revOrig=await get('/'+reverser.name+'.InputValue'); if(want(reverser)) await sweep(reverser,out.levers[reverser.name]);
+        neutral=(out.levers[reverser.name].notches||[]).find(n=>/neutral|^0$|^N$/i.test(n.name||''));
+        if(neutral){console.log('  '+reverser.name+' to Neutral ('+neutral.snapped+') for the throttle sweep');await setv(reverser.name,neutral.snapped);await sleep(500);}}
+      for(const c of ctrls){ if(c===reverser||c===master||!want(c)) continue;
+        if(await get('.Function.IsVehicleMoving')){console.log('  vehicle moving, sweep stopped');break;}
+        if(isThrottle(c)&&reverser&&!neutral) console.log('  warning: no Neutral notch found on '+reverser.name+'; '+c.name+' may not accept input');
+        await sweep(c,out.levers[c.name]); }
+      if(reverser&&neutral){await setv(reverser.name,revOrig);await sleep(500);}
+      if(master&&Number(masterOrig)<0.5){await setv(master.name,masterOrig);await sleep(300);}
+      if(master&&want(master)) await sweep(master,out.levers[master.name]);
+    }
+  }
+  const file=opt.out||path.join(__dirname,'captures',dump.objectClass+'.json');
+  fs.mkdirSync(path.dirname(file),{recursive:true});
+  fs.writeFileSync(file,JSON.stringify(out,null,2));
+  console.log('wrote',file);
+  console.log('levers:',Object.entries(out.levers).map(([n,l])=>n+'['+l.identifier+':'+l.notchCount+(l.swept?'*':'')+']').join(' '));
+})();
