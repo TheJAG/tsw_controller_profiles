@@ -1,0 +1,336 @@
+{
+  "name": "TSW | Class 153 | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    { "class_name": "RVM_TFW_Class153_C" },
+    { "class_name": "RVM_TFW_Class153_PRM_C" },
+    { "class_name": "RVM_TFW_Class153_PRMLite_C" },
+    { "class_name": "RVM_TFW_Class153_ATW1_C" },
+    { "class_name": "RVM_TFW_Class153_ATW2_C" }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser (Off / Reverse / Neutral / Forward)",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "{SIDE:L:S}_Reverser_IrregularLever",
+          "input_value": {
+            "min": 0,
+            "max": 0.75,
+            "steps": [0, 0.25, 0.5, 0.75],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Throttle (Off, 1-7)",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "{SIDE:L:S}_Throttle_IrregularLever",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [0, 0.1429, 0.2857, 0.4286, 0.5714, 0.7143, 0.8571, 1]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "Train brake (Release / Step 1 / Step 2 / Full service / Emergency)",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "{SIDE:L:S}_TrainBrake_IrregularLever",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [0, 0.25, 0.5, 0.75, 1]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Master switch on / off",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "{SIDE:L:S}_MasterSwitch_IrregularLever",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "{SIDE:L:S}_MasterSwitch_IrregularLever",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "GearLever",
+      "description": "AWS reset",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "Q"
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "description": "Sand",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "x"
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Engine start",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "{SIDE:L:S}_EngineStart_PushButton",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "{SIDE:L:S}_EngineStart_PushButton",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "Horn | High",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "{SIDE:L:S}_Horn_IrregularLever",
+          "value": 1.0,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "{SIDE:L:S}_Horn_IrregularLever",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "Horn | Low",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "{SIDE:L:S}_Horn_IrregularLever",
+          "value": 0.0,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "{SIDE:L:S}_Horn_IrregularLever",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "Guard buzzer (signal bell)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "{SIDE:L:S}_Signal_PushButton",
+          "value": 1.0,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "{SIDE:L:S}_Signal_PushButton",
+          "value": 0.0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "AWS circuit breaker (Normal / Isolated)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "{SIDE:L:S}_AWSCircuitBreaker_PushButton",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "{SIDE:L:S}_AWSCircuitBreaker_PushButton",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "DVD / vigilance circuit breaker (Normal / Isolated)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "{SIDE:L:S}_DVDCircuitBreaker_PushButton",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "{SIDE:L:S}_DVDCircuitBreaker_PushButton",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wipers one notch towards Slow (Fast > Off > Slow)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "{SIDE:L:S}_DriverWasher_IrregularLever",
+          "value": -0.5,
+          "relative": true,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wipers one notch towards Fast (Slow > Off > Fast)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "{SIDE:L:S}_DriverWasher_IrregularLever",
+          "value": 0.5,
+          "relative": true,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Headlights | Off",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "{SIDE:L:S}_Headlights_IrregularLever",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Headlights | Day headlight",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "{SIDE:L:S}_Headlights_IrregularLever",
+          "value": 0.125,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Headlights | Marker lights only",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "{SIDE:L:S}_Headlights_IrregularLever",
+          "value": 0.625,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Headlights | Night headlight",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "{SIDE:L:S}_Headlights_IrregularLever",
+          "value": 0.875,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Headlights | Tail lights only",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "{SIDE:L:S}_Headlights_IrregularLever",
+          "value": 0.375,
+          "hold": false
+        }
+      }
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}

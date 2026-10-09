@@ -9,7 +9,12 @@ This folder is both the live config dir of the TSW Controller App (`C:\Games\Too
 3. Write `profiles/<game>-<train>-<dev>-thejag-<unixtime>.json` following the closest existing profile (German: `tsw-br-440-dtg`, DTG UK: `tsw-class-333-dtg`, Rivet UK: `tsw-class-710-dtg`). Keep the control-to-button layout the user already uses (see those files); levers get `direct_control` + `sync_control`, buttons `momentary` with direct values, latching buttons `toggle`, wipers relative steps.
 4. The user tests on the controller and reports; iterate. Then `node tools/build_release.js profiles/<file>.json`.
 5. Manual (schematic format, current standard since the Class 333): copy the closest data file in `tools/manual/trains/`, fill in the controls, defaults (`start` = recommended starting notch, green dot) and checklists, then `node tools/manual/render_manual.js tools/manual/trains/<train>.json`. It writes the self-contained HTML and the A4 PDF straight into `profiles/documentation/` via headless Chrome. Render the PDF with `tools/pdf2png.ps1` and look at the PNG before committing. Loco pictures: prefer drawn side views from Wikimedia Commons (search the Commons API in namespace 6); logos go in `tools/assets/`, dark logos as white-on-transparent with `invertToNavy` when needed. The older Word-template path (`tools/gen_manual.js` + `tools/specs/`) is only for touching up the pre-333 manuals.
-6. Add the README line (`DONE ✅` with profile + manual links, alphabetical within the game's list; `SOON 🟨` while in progress). Commit only when the user asks; messages are in the style "Added and released X from <route>".
+6. Add the README line (`DONE ✅` with profile + manual links, alphabetical within the game's list; `SOON 🟨` while in progress). Messages are in the style "Added and released X from <route>".
+
+## Working rules (user decisions, 2026-10-10)
+
+- Always commit and push to the repository after making changes to the code, profiles, manuals or tooling; do not wait to be asked. Use the commit message style above.
+- Use Opus 5.5 subagents (`model: "opus"`) for delegable work where it makes sense (pak scans, research, drafting data files), but Fable stays the orchestrator and the reviewer: it plans, checks the subagents' results and does the final edits.
 
 ## Manual conventions (decided 2026-10-09, keep them)
 
