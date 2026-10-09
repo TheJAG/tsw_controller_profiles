@@ -1,0 +1,278 @@
+{
+  "name": "RUNNING TRAIN | HR1500 | RT | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "RUNNING TRAIN"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "Cpy_KuHa115_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "step": 1,
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Throttle",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Throttle",
+          "input_value": {
+            "min": 0,
+            "max": 5,
+            "step": 1,
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "Brake",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Brake",
+          "input_value": {
+            "min": 0,
+            "max": 8,
+            "step": 1,
+            "invert": true
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "ParkingBrake",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "MasterKey",
+          "value": 1.0
+        },
+        "action_deactivate": {
+          "controls": "MasterKey",
+          "value": 0.0
+        }
+      }
+    },
+    {
+      "name": "GearLever",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "Q"
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "x"
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "Horn | High",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "space"
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "Horn | Low",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "n"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "l"
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "AWS isolation",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "AWS/TPWS_Isolation",
+          "value": 0.0,
+          "hold": false
+        },
+        "action_deactivate": {
+          "controls": "AWS/TPWS_Isolation",
+          "value": 1.0
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "Vigilance isolation",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "DSDIsolation",
+          "value": 0.0,
+          "hold": false
+        },
+        "action_deactivate": {
+          "controls": "DSDIsolation",
+          "value": 1.0
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "shift+v",
+          "press_time": 0.4,
+          "wait_time": 0.1
+        }
+      }
+    },
+    {
+      "name": "RotaryIgnStart",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "v",
+          "press_time": 0.4,
+          "wait_time": 0.1
+        }
+      }
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Headlights | Off",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Headlights",
+          "value": 0.0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Headlights | Marker lights",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Headlights",
+          "value": 0.2500,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Headlights | Head + marker lights",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Headlights",
+          "value": 0.500,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Headlights | Tail lights",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Headlights",
+          "value": 0.7500,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Headlights | Off",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Headlights",
+          "value": 0.0,
+          "hold": false
+        }
+      }
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}

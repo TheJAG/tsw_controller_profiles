@@ -200,12 +200,19 @@
     },
     {
       "name": "RoundAuxButton",
-      "description": "Cab lights",
+      "description": "Guard buzzer",
       "assignment": {
         "type": "momentary",
-        "threshold": 0.9,
+        "threshold": 0.2,
         "action_activate": {
-          "keys": "l"
+          "controls": "SignalBell",
+          "value": 1.0,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "SignalBell",
+          "value": 0.0,
+          "hold": false
         }
       }
     },
