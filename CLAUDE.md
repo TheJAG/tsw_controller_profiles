@@ -1,0 +1,23 @@
+# TSW controller profiles (TheJAG)
+
+This folder is both the live config dir of the TSW Controller App (`C:\Games\Tools\tsw-controller-app.exe`, it reloads `profiles/*.json` on change) and the git repo published at github.com/TheJAG/tsw_controller_profiles. Controller: Thrustmaster TCA Quadrant Airbus. Every released train ships with four things: a working profile in `profiles/`, a release copy in `releases/`, a docx + pdf manual in `profiles/documentation/`, and a `DONE ✅` line in `README.md`.
+
+## Recipe for a new train
+
+1. Ask which train, then confirm the API answers: `curl -H "DTGCommKey: <key>" http://127.0.0.1:31270/get/CurrentDrivableActor.ObjectClass` (key file: `C:\Users\m_jag\OneDrive\Documenten\My Games\TrainSimWorld7\Saved\Config\CommAPIKey.txt`). The user must sit in the cab.
+2. `node tools/dump_controls.js tools/dump.json` then `node tools/levers.js tools/dump.json`; sweep levers with `node tools/sweep_levers.js <Lever> ...` only when the train is stationary. Vehicle class names (`RVM_..._C`) come from the dump's `objectClass` and from the DLC pak index: `tail -c 60000000 "<pak>" | grep -a -o -E "RVM_[A-Za-z0-9_]*\.uasset"`.
+3. Write `profiles/<game>-<train>-<dev>-thejag-<unixtime>.json` following the closest existing profile (German: `tsw-br-440-dtg`, DTG UK: `tsw-class-333-dtg`, Rivet UK: `tsw-class-710-dtg`). Keep the control-to-button layout the user already uses (see those files); levers get `direct_control` + `sync_control`, buttons `momentary` with direct values, latching buttons `toggle`, wipers relative steps.
+4. The user tests on the controller and reports; iterate. Then `node tools/build_release.js profiles/<file>.json`.
+5. Manual: copy the closest spec in `tools/specs/`, adjust, run `node tools/gen_manual.js <template.docx> tools/specs/<spec>.json <out.docx>`, export with `powershell -File tools/pdf_export.ps1`, render with `tools/pdf2png.ps1` and look at the PNG before copying docx + pdf into `profiles/documentation/`. Loco pictures: prefer drawn side views from Wikimedia Commons (search the Commons API in namespace 6); operator logos go white on transparent when the header gradient is dark.
+6. Add the README line (`DONE ✅` with profile + manual links, alphabetical within the game's list; `SOON 🟨` while in progress). Commit only when the user asks; messages are in the style "Added and released X from <route>".
+
+## Gotchas learned
+
+- Numeric `step_thresholds` are mirrored when `invert` is true; express them on the raw lever axis. A dead band around a notch is done with `threshold_tolerance`.
+- Push buttons toggle on every value change through the mod, so a `momentary` 1-then-0 toggles twice. Use `toggle`.
+- Spring switches (horn, sander, cab light, PZB buttons) rest at 0.5; send 1 or 0 while held and 0.5 on release.
+- The app's API-key auto-detect does not see the OneDrive Documents path; the key path is set in the app settings.
+- The mod installer deletes `dxgi.dll` in the game's Win64 folder, which is OptiScaler. Keep `dxgi.dll.optiscaler` as backup and restore it after a mod install.
+- Word exports of the templates come out as two pages unless trailing paragraphs are dropped; the specs already do that.
+- Git identity is set locally in this repo. README uses CRLF line endings.
+- `img.png` in the root is a stray screenshot, leave it alone.
