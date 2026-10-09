@@ -158,3 +158,11 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **Stadler Flirt 3** <sub>— Christrains</sub>  
 `DONE ✅` **Stadler GTW** <sub>— Christrains · [profile](releases/tsc-stadler-gtw-christrains-thejag.tswprofile) · [manual](profiles/documentation/tsc-stadler-gtw-christrains-thejag.pdf)</sub>    
 `TODO ◼️` **Stadler RS-1** <sub>— Christrains</sub>  
+
+<br>
+<br>
+**RUNNING TRAIN**  
+<br>
+
+`DONE ✅` **HR1500** <sub>— RUNNING TRAIN · [profile](releases/rt-hr1500-rt-thejag.tswprofile) · [manual](profiles/documentation/rt-hr1500-rt-thejag.pdf)</sub>  
+`DONE ✅` **KR5000** <sub>— RUNNING TRAIN · [profile](releases/rt-kr5000-rt-thejag.tswprofile)</sub>  
