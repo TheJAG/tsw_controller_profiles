@@ -161,8 +161,8 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 
 <br>
 <br>
-**RUNNING TRAIN**  
+<img width="428" height="114" alt="image" src="img/running-train.png" />  <br>
 <br>
 
-`DONE ✅` **HR1500** <sub>— RUNNING TRAIN · [profile](releases/rt-hr1500-rt-thejag.tswprofile) · [manual](profiles/documentation/rt-hr1500-rt-thejag.pdf)</sub>  
-`DONE ✅` **KR5000** <sub>— RUNNING TRAIN · [profile](releases/rt-kr5000-rt-thejag.tswprofile)</sub>  
+`SOON 🟨` **HR1500** <sub>— RUNNING TRAIN · [profile](releases/rt-hr1500-rt-thejag.tswprofile) · [manual](profiles/documentation/rt-hr1500-rt-thejag.pdf)</sub>  
+`SOON 🟨` **KR5000** <sub>— RUNNING TRAIN · [profile](releases/rt-kr5000-rt-thejag.tswprofile)</sub>  
