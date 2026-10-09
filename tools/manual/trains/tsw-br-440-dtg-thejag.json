@@ -1,0 +1,47 @@
+{
+  "name": "tsw-br-440-dtg-thejag",
+  "title": "DB BR 440",
+  "eyebrow": "DB Regio · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | BR 440 | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "Nürnberg – Würzburg",
+  "colors": { "navy": "#3a3d4d", "blue": "#ec0016", "red": "#ec0016", "paper": "#f6f4f4" },
+  "logos": [
+    { "file": "../../assets/logo-db.png", "alt": "Deutsche Bahn" },
+    { "file": "../../assets/logo-dtg.jpg", "alt": "Dovetail Games" }
+  ],
+  "diagram": { "file": "../../assets/db-br-440.jpg", "source": "Photo: Deutsche Bahn AG" },
+  "dlc": "store.steampowered.com/app/4678800",
+  "credit": "© TheJAG",
+  "controls": {
+    "speedbrake": { "name": "Reverser", "notches": ["Forward", "Neutral", "Reverse"], "start": 1 },
+    "leftThrottle": { "name": "Power / brake", "notches": ["Emergency", "Max brake", "Min brake", "0", "Min power", "Full power"], "start": 3 },
+    "rightThrottle": { "name": "Train brake", "notches": ["Emergency", "Apply", "Hold", "Release", "Drive"], "start": 1 },
+    "flap": { "name": "Reading light", "notches": ["Bright", "Off"], "start": null },
+    "leftThrottleButton": { "name": "Sand" },
+    "rightThrottleButton": { "name": "Horn" },
+    "gearLever": { "name": "SiFa reset" },
+    "autoBrk": {
+      "name": "Headlights",
+      "positions": [
+        { "short": "0", "desc": "–" },
+        { "short": "BTV", "desc": "Off / tail" },
+        { "short": "LO", "desc": "On" },
+        { "short": "2", "desc": "Dim" },
+        { "short": "3", "desc": "On + beam" },
+        { "short": "HI", "desc": "–" }
+      ],
+      "start": 1
+    },
+    "eng1": { "name": "PZB Release (Frei)", "start": true },
+    "eng2": { "name": "PZB Acknowledge", "start": true },
+    "leftAux": { "name": "SiFa on / off" },
+    "rightAux": { "name": "PZB on / off" },
+    "modeSwitch": { "name": "Wipers", "left": "slower", "right": "faster" },
+    "roundAux": { "name": "PZB Befehl 40" },
+    "rudTrim": { "name": "Doors L / R" },
+    "parkBrk": { "name": "Master key + switch", "flat": "key out", "up": "key in, switch on" }
+  },
+  "setup": ["Insert master key (PARK BRK)", "Set reverser to neutral", "Raise pantograph, close MCB", "Turn on PZB and SiFa", "Set headlights", "Open doors"],
+  "depart": ["Close doors", "Check signal", "Set reverser to forward", "Train brake to Drive", "Apply power"]
+}

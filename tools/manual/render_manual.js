@@ -32,8 +32,8 @@ function lever(cx, y0, y1, l, pillX, anchorSide, label, labelX) {
   if (!assigned) return out + `<rect class="knob" x="${cx - 26}" y="${(y0 + y1) / 2 - 14}" width="52" height="28" rx="7" opacity=".3"/>`;
   const n = l.notches.length, step = n > 1 ? (y1 - y0) / (n - 1) : 0, st = l.start == null ? -1 : l.start;
   l.notches.forEach((name, i) => { const y = y0 + i * step; out += `<line class="tick" x1="${cx - 8}" y1="${y}" x2="${cx + 8}" y2="${y}"/>`; const w = pw(name); out += pillS(anchorSide === 'start' ? pillX + w / 2 : pillX - w / 2, y, name, i === st); });
-  const ky = y0 + (st >= 0 ? st : Math.floor(n / 2)) * step;
-  out += `<rect class="knob" x="${cx - 26}" y="${ky - 14}" width="52" height="28" rx="7" opacity=".92"/>` + (st >= 0 ? start(cx, ky) : '');
+  const ky = y0 + (st >= 0 ? st : (n - 1) / 2) * step;
+  out += `<rect class="knob" x="${cx - 22}" y="${ky - 14}" width="44" height="28" rx="7" opacity=".92"/>` + (st >= 0 ? start(cx, ky) : '');
   return out;
 }
 // six-position rotary (AUTO BRK): positions on an arc, description under each, pointer at the start position
@@ -58,12 +58,13 @@ function schematic() {
   s += dial(104, 494, ab) + sub2(104, 556, ab.name || 'not assigned', 'AUTO BRK rotary');
   // centre module: two throttles, ENG buttons, aux buttons, mode switch
   const lt = K.leftThrottle, rt = K.rightThrottle;
-  s += tx(302, 34, lt && lt.name ? lt.name : 'Left throttle') + tx(302, 46, lt && lt.name ? 'Left throttle' : 'not assigned', 'sub');
-  s += lever(282, 80, 290, lt, 312, 'start', '', 302).replace(/<text[^>]*>(?:[^<]*)<\/text>/, '').replace(/<text[^>]*>(?:[^<]*)<\/text>/, '');
-  s += tx(442, 34, rt && rt.name ? rt.name : 'Right throttle') + tx(442, 46, rt && rt.name ? 'Right throttle' : 'not assigned', 'sub');
-  s += lever(442, 80, 290, rt, 424, 'end', '', 442).replace(/<text[^>]*>(?:[^<]*)<\/text>/, '').replace(/<text[^>]*>(?:[^<]*)<\/text>/, '');
-  const ltb = K.leftThrottleButton; if (ltb) s += `<circle class="acc" cx="282" cy="330" r="6"/>` + tx(282, 350, ltb.name, 'sub') + tx(282, 361, 'Left throttle button', 'sub');
-  const rtb = K.rightThrottleButton; if (rtb) s += `<circle class="acc" cx="442" cy="330" r="6"/>` + tx(442, 350, rtb.name, 'sub') + tx(442, 361, 'Right throttle button', 'sub');
+  // the two throttles sit symmetrically about the card centre (362); each lever's pills face the centre gap
+  s += tx(270, 34, lt && lt.name ? lt.name : 'Left throttle') + tx(270, 46, lt && lt.name ? 'Left throttle' : 'not assigned', 'sub');
+  s += lever(270, 80, 290, lt, 296, 'start', '', 270).replace(/<text[^>]*>(?:[^<]*)<\/text>/, '').replace(/<text[^>]*>(?:[^<]*)<\/text>/, '');
+  s += tx(454, 34, rt && rt.name ? rt.name : 'Right throttle') + tx(454, 46, rt && rt.name ? 'Right throttle' : 'not assigned', 'sub');
+  s += lever(454, 80, 290, rt, 428, 'end', '', 454).replace(/<text[^>]*>(?:[^<]*)<\/text>/, '').replace(/<text[^>]*>(?:[^<]*)<\/text>/, '');
+  const ltb = K.leftThrottleButton; if (ltb) s += `<circle class="acc" cx="270" cy="330" r="6"/>` + tx(270, 350, ltb.name, 'sub') + tx(270, 361, 'Left throttle button', 'sub');
+  const rtb = K.rightThrottleButton; if (rtb) s += `<circle class="acc" cx="454" cy="330" r="6"/>` + tx(454, 350, rtb.name, 'sub') + tx(454, 361, 'Right throttle button', 'sub');
   const e1 = K.eng1 || {}, e2 = K.eng2 || {};
   s += button(262, 390, 36, 30, e1, true) + sub2(280, 440, e1.name || 'not assigned', 'ENG 1');
   s += button(424, 390, 36, 30, e2, true) + sub2(442, 440, e2.name || 'not assigned', 'ENG 2');
@@ -75,7 +76,7 @@ function schematic() {
   const fl = K.flap;
   s += tx(622, 34, fl && fl.name ? fl.name : 'Flap lever') + tx(622, 46, fl && fl.name ? 'Flap lever' : 'not assigned', 'sub');
   s += `<rect class="slot" x="608" y="74" width="28" height="222" rx="6"/>`;
-  if (fl && fl.notches && fl.notches.length) { const n = fl.notches.length, st = fl.start == null ? -1 : fl.start; fl.notches.forEach((name, i) => { const y = 80 + i * 210 / (n - 1); s += `<line class="tick" x1="${614}" y1="${y}" x2="${630}" y2="${y}"/>` + pillS(622 - 14 - pw(name) / 2 - 6, y, name, i === st); }); const ky = 80 + (st >= 0 ? st : 0) * 210 / (n - 1); s += `<rect class="knob" x="592" y="${ky - 25}" width="60" height="50" rx="10" opacity=".92"/>` + (st >= 0 ? start(622, ky) : ''); }
+  if (fl && fl.notches && fl.notches.length) { const n = fl.notches.length, st = fl.start == null ? -1 : fl.start; fl.notches.forEach((name, i) => { const y = 80 + i * 210 / (n - 1); s += `<line class="tick" x1="${614}" y1="${y}" x2="${630}" y2="${y}"/>` + pillS(584 - pw(name) / 2, y, name, i === st); }); const ky = 80 + (st >= 0 ? st : (n - 1) / 2) * 210 / (n - 1); s += `<rect class="knob" x="594" y="${ky - 25}" width="56" height="50" rx="10" opacity=".92"/>` + (st >= 0 ? start(622, ky) : ''); }
   else s += `<rect class="knob" x="592" y="120" width="60" height="50" rx="10" opacity=".3"/>`;
   const rd = K.roundAux || {}, rtm = K.rudTrim || {}, pb = K.parkBrk || {};
   s += `<circle class="acc" cx="572" cy="350" r="12"/>` + sub2(572, 378, rd.name || 'not assigned', 'Round aux');
@@ -132,7 +133,7 @@ ul { margin: 0; padding-left: 16px; }
 .hwrow img { width: 150px; height: auto; display: block; border-radius: 4px; }
 .hwtxt { font-size: 10.5px; color: var(--muted); line-height: 1.4; }
 .diagram { position: absolute; left: 36px; right: 36px; bottom: 36px; }
-.diagram img { width: 100%; height: auto; display: block; }
+.diagram img { width: 100%; height: auto; max-height: 120px; object-fit: cover; display: block; border-radius: 3px; }
 .foot { position: absolute; bottom: 0; left: 0; right: 0; padding: 8px 36px; font-size: 10px; color: var(--muted); display: flex; justify-content: space-between; }
 </style></head><body><div class="sheet">
 <div class="head"><div><div class="sub">${esc(D.eyebrow || '')}</div><h1>${esc(D.title)}</h1></div><div style="display:flex;gap:14px">${logos}</div></div>
