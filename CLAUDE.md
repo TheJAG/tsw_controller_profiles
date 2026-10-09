@@ -15,6 +15,8 @@ This folder is both the live config dir of the TSW Controller App (`C:\Games\Too
 
 - Always commit and push to the repository after making changes to the code, profiles, manuals or tooling; do not wait to be asked. Use the commit message style above.
 - Use Opus 5.5 subagents (`model: "opus"`) for delegable work where it makes sense (pak scans, research, drafting data files), but Fable stays the orchestrator and the reviewer: it plans, checks the subagents' results and does the final edits.
+- Keep Fable's context for orchestration and review (user, 2026-10-10): the in-game work per train (menus, loading a midday service, desk photo, `capture_train.js`) goes to a subagent briefed with `tools/CAPTURE_AGENT.md`; it runs one train at a time (one game, one screen). Fable only steps in when a capture comes back with locked levers that the script cannot handle.
+- Loco drawings: first look on Arthur's Treinenpagina (https://www.arthurstreinenpagina.nl/), whose author gave the user permission to use the drawings in these manuals with a reference to the site (request mail "Toestemming gebruik tekeningen", 2026-02); caption "Tekening: Arthur's Treinenpagina, arthurstreinenpagina.nl". Wikimedia Commons drawings are the second choice, licensed photos the third.
 
 ## Manual conventions (decided 2026-10-09, keep them)
 

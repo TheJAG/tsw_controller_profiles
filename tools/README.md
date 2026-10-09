@@ -10,6 +10,10 @@ Scripts used to create a new controller profile and its Quick Reference Manual. 
    Cab photo for the band under the checklists: in the cab view press F1 (HUD off), tilt so a little windscreen shows above the desk, screenshot, then `powershell -File tools/crop_image.ps1 -In shot.png -Out tools/assets/<train>-cab.jpg -X 0 -Y 0 -W 3440 -H 1100 -MaxWidth 1900` and set `cab` in the data file. Set `diagram.clean: false` for photos and transparent SVGs; drawings on a flat background are cleaned in-page.
 4. `node tools/build_release.js profiles/<file>.json`, then `node tools/readme_status.js "BR Class 153" soon --profile tsw-class-153-dtg-thejag --dev DTG` rewrites the README line (`--add "<country>"` inserts a new one alphabetically, `--game tsc|rt` for the other sections) and regenerates `tools/trains.json`, the registry of every README train with status and links (extra keys such as `route`, `classes`, `capture`, `family` survive a resync).
 
+## Driving the game from a script
+
+`tsw_input.ps1` focuses the TSW window, takes screenshots and sends clicks, mouse look, wheel and keys (`powershell -NoProfile -File tools/tsw_input.ps1 shot 0.5 out.png`, `click x y`, `mmove 0 95`, `key 112`). `CAPTURE_AGENT.md` is the brief for a subagent that loads one train through the menus, takes the desk photo and runs the capture; it lists the menu coordinates for 3440×1440 and the pitfalls. One game, one screen: captures run one train at a time.
+
 ## Reading the loco through the TSW HTTP API
 
 | Script | What it does |
