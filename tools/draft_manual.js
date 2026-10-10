@@ -3,8 +3,8 @@
 //   node tools/draft_manual.js profiles/<file>.json [--capture tools/captures/<Class>.json] [--family uk-dmu]
 //        [--operator "NS"] [--route "Zwolle – Groningen"] [--logo ../../assets/logo-ns.png] [--diagram ../../assets/x.png --source "Drawing: ..."]
 //        [--dlc store.steampowered.com/app/...] [--flip] [--out file]
-// Notch pills are listed top to bottom; top = TCA lever pushed fully forward = raw axis 1 (Class 153 cab test, 2026-10-10),
-// so a plain lever shows the game's last notch at the top and an inverted lever its notch 0. --flip reverses that.
+// Notch pills are listed top to bottom; top = TCA lever fully forward = raw axis 0, so an inverted lever shows the
+// game's last notch at the top (ICMm: Forward, PZ5). --flip reverses that if a train proves otherwise.
 // The capture is found by the profile's rail classes when --capture is omitted. Checklists and the eyebrow come from
 // the family's manual (tools/families.json) and are marked in _todo for you to rewrite.
 const fs=require('fs'),path=require('path');
@@ -23,9 +23,9 @@ else { const dir=path.join(__dirname,'captures'); const classes=new Set((prof.ra
 if(!cap) todo.push('no capture found: notch names are placeholders');
 const famCfg=opt.family?fam.families[opt.family]:null;
 const famManual=famCfg&&fs.existsSync(path.join(root,famCfg.manual))?JSON.parse(fs.readFileSync(path.join(root,famCfg.manual),'utf8')):null;
-// The TCA levers report raw 1 when pushed fully forward (user cab test on the Class 153, 2026-10-10), so the top pill is raw 1:
-// a plain lever shows the game's last notch on top (Class 153: 7), an inverted lever its notch 0 (reverser: Off).
-const TOP_IS_RAW_ONE=!opt.flip;
+// The TCA levers report raw 0 when pushed fully forward (SDL throttle convention), so the top pill is raw 0:
+// an inverted lever shows the game's last notch on top (ICMm: Forward / PZ5 on top), a plain lever its notch 0.
+const TOP_IS_RAW_ONE=!!opt.flip;
 
 const ctl=n=>prof.controls.find(c=>c.name===n);
 const assigns=c=>c?(c.assignments||[c.assignment]).filter(Boolean):[];
