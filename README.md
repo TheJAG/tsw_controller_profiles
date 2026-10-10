@@ -68,7 +68,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 **🇩🇪 Germany**
 
 `TODO ◼️` **DB Bpmmbdzf**  
-`TODO ◼️` **DB BR 101**  
+`SOON 🟨` **DB BR 101** <sub>— DTG · [profile](releases/tsw-br-101-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-101-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **DB BR 101 Expert** <sub>— Train Sim Germany</sub>  
 `TODO ◼️` **DB BR 103**  
 `TODO ◼️` **DB BR 110.3**  
