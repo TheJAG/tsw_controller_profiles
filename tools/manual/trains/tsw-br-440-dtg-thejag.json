@@ -26,48 +26,24 @@
   "controls": {
     "speedbrake": {
       "name": "Reverser",
-      "notches": [
-        "Forward",
-        "Neutral",
-        "Reverse"
-      ],
+      "notches": ["Reverse", "Neutral", "Forward"],
       "start": 1
     },
     "leftThrottle": {
       "name": "Power / brake handle",
       "continuous": true,
-      "notches": [
-        "Full power",
-        null,
-        "Power %",
-        "Min power",
-        "0",
-        "Min brake",
-        "Brake %",
-        null,
-        "Max brake"
-      ],
-      "start": 8
+      "notches": ["Max brake", null, "Brake %", "Min brake", "0", "Min power", "Power %", null, "Full power"],
+      "start": 0
     },
     "rightThrottle": {
       "name": "Train brake",
-      "notches": [
-        "Drive",
-        "Release",
-        "Hold",
-        "Apply",
-        "Emergency"
-      ],
-      "start": 3
+      "notches": ["Emergency", "Apply", "Hold", "Release", "Drive"],
+      "start": 1
     },
     "flap": {
       "name": "Reading light dimmer",
       "continuous": true,
-      "notches": [
-        "Bright",
-        null,
-        "Off"
-      ],
+      "notches": ["Off", null, "Bright"],
       "start": null
     },
     "leftThrottleButton": {
@@ -81,32 +57,7 @@
     },
     "autoBrk": {
       "name": "Headlights",
-      "positions": [
-        {
-          "short": "0",
-          "desc": "–"
-        },
-        {
-          "short": "BTV",
-          "desc": "Off / tail"
-        },
-        {
-          "short": "LO",
-          "desc": "On"
-        },
-        {
-          "short": "2",
-          "desc": "Dim"
-        },
-        {
-          "short": "3",
-          "desc": "On + beam"
-        },
-        {
-          "short": "HI",
-          "desc": "–"
-        }
-      ],
+      "positions": [{ "short": "0", "desc": "–" }, { "short": "BTV", "desc": "Off / tail" }, { "short": "LO", "desc": "On" }, { "short": "2", "desc": "Dim" }, { "short": "3", "desc": "On + beam" }, { "short": "HI", "desc": "–" }],
       "start": 1
     },
     "eng1": {
@@ -140,22 +91,8 @@
       "up": "key in, switch on"
     }
   },
-  "setup": [
-    "Insert master key, master switch on (PARK BRK)",
-    "Handle fully back at Max brake, train brake at Apply",
-    "Raise pantograph, close the main circuit breaker",
-    "PZB and SiFa on (aux squares)",
-    "Set headlights (AUTO BRK)",
-    "Open doors"
-  ],
-  "depart": [
-    "Close doors",
-    "Check signal and PZB",
-    "Reverser to Forward",
-    "Train brake to Drive",
-    "Handle forward through min brake to 0, then min power and continuous power",
-    "Brake: back past 0 into min brake, continuous to Max brake"
-  ],
+  "setup": ["Insert master key, master switch on (PARK BRK)", "Handle fully forward at Max brake, train brake at Apply", "Raise pantograph, close the main circuit breaker", "PZB and SiFa on (aux squares)", "Set headlights (AUTO BRK)", "Open doors"],
+  "depart": ["Close doors", "Check signal and PZB", "Reverser to Forward", "Train brake to Drive", "Handle back through min brake to 0, then min power and continuous power", "Brake: forward past 0 into min brake, continuous to Max brake"],
   "cab": {
     "file": "../../assets/db-br-440-cab.jpg",
     "height": 196,

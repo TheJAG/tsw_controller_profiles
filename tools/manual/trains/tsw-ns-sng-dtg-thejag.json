@@ -30,39 +30,20 @@
   "controls": {
     "speedbrake": {
       "name": "Reverser",
-      "notches": [
-        "Forward",
-        "Neutral",
-        "Reverse"
-      ],
+      "notches": ["Reverse", "Neutral", "Forward"],
       "start": 1
     },
     "leftThrottle": null,
     "rightThrottle": {
       "name": "Power / brake handle",
       "continuous": true,
-      "notches": [
-        "Full power",
-        null,
-        "Power %",
-        "5 % power",
-        "0",
-        "Min brake",
-        "Brake %",
-        null,
-        "Max brake"
-      ],
-      "start": 8
+      "notches": ["Max brake", null, "Brake %", "Min brake", "0", "5 % power", "Power %", null, "Full power"],
+      "start": 0
     },
     "flap": {
       "name": "Headlight intensity",
-      "notches": [
-        "Dipped",
-        "Normal",
-        "High dipped",
-        "High normal"
-      ],
-      "start": 1
+      "notches": ["High normal", "High dipped", "Normal", "Dipped"],
+      "start": 2
     },
     "leftThrottleButton": {
       "name": "Park brake apply (hold)"
@@ -75,32 +56,7 @@
     },
     "autoBrk": {
       "name": "Signal lights",
-      "positions": [
-        {
-          "short": "0",
-          "desc": "–"
-        },
-        {
-          "short": "BTV",
-          "desc": "Off"
-        },
-        {
-          "short": "LO",
-          "desc": "On (white headlights)"
-        },
-        {
-          "short": "2",
-          "desc": "Marker lights"
-        },
-        {
-          "short": "3",
-          "desc": "Hazard lights"
-        },
-        {
-          "short": "HI",
-          "desc": "–"
-        }
-      ],
+      "positions": [{ "short": "0", "desc": "–" }, { "short": "BTV", "desc": "Off" }, { "short": "LO", "desc": "On (white headlights)" }, { "short": "2", "desc": "Marker lights" }, { "short": "3", "desc": "Hazard lights" }, { "short": "HI", "desc": "–" }],
       "start": 1
     },
     "eng1": {
@@ -134,21 +90,8 @@
       "up": "key in"
     }
   },
-  "setup": [
-    "Insert master key (PARK BRK)",
-    "Handle fully back at Max brake (right throttle)",
-    "ATB / ERTMS and deadman cut-outs in (aux squares)",
-    "Signal lights On (AUTO BRK), intensity on the flap lever",
-    "Release the parking brake (right throttle button)",
-    "Unlock the doors"
-  ],
-  "depart": [
-    "Close doors",
-    "Check signal and ATB",
-    "Reverser to Forward",
-    "Handle forward through min brake to 0, then 5 % and continuous power",
-    "Brake: back past 0 into min brake, continuous to Max brake"
-  ],
+  "setup": ["Insert master key (PARK BRK)", "Handle fully forward at Max brake (right throttle)", "ATB / ERTMS and deadman cut-outs in (aux squares)", "Signal lights On (AUTO BRK), intensity on the flap lever", "Release the parking brake (right throttle button)", "Unlock the doors"],
+  "depart": ["Close doors", "Check signal and ATB", "Reverser to Forward", "Handle back through min brake to 0, then 5 % and continuous power", "Brake: forward past 0 into min brake, continuous to Max brake"],
   "cab": {
     "file": "../../assets/ns-sng-cab.jpg",
     "height": 196,
