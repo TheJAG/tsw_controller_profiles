@@ -48,7 +48,7 @@
     },
     {
       "name": "LeftThrottle",
-      "description": "Power / brake handle (B3 / B2 / B1 / Off / P1 / P2 / P3 / P4 / P5 / P6 / P7; Emergency at 0 is left out on purpose)",
+      "description": "Power / brake handle (B3 / B2 / B1 / Off / P1 / P2 / P3 / P4 / P5 / P6 / P7; Emergency at 0 is left out on purpose; each notch has a dead band so the TCA cannot flicker between two notches)",
       "assignments": [
         {
           "type": "direct_control",
@@ -68,6 +68,52 @@
               0.8571,
               0.9286,
               1
+            ],
+            "step_thresholds": [
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.1,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.2,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.3,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.4,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.5,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.6,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.7,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.8,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.9,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.04
+              }
             ]
           }
         }
@@ -128,10 +174,17 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "l"
+          "controls": "PushButton_Cab_Signal_L",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PushButton_Cab_Signal_L",
+          "value": 0,
+          "hold": false
         }
       },
-      "description": "Cab lights"
+      "description": "Guard buzzer (signal bell)"
     },
     {
       "name": "LeftEngineOn",
