@@ -90,7 +90,9 @@ async function sweep(c,info){
       // the master key/switch can be a lever or a push button; look through every input control of this cab group
       const inGroup=c=>c.inputValue!==undefined&&(cabOf(c.name,cab)||'')===g;
       // enablers: master key/switch and brake key (ICMm) must be on before the levers accept input
-      const enablers=dump.controls.filter(c=>inGroup(c)&&(/^(MasterSwitch|MasterKey|BrakeKey)$/.test(c.identifier||'')||/^(Master(Key|Switch)|BrakeKey)/.test(bareName(c.name))));
+      const DRIVING_RE=/^(Reverser|Throttle|CombinedThrottleBrake|AutomaticBrake|TrainBrake|IndependentBrake|DynamicBrake)$/;
+      // a driving lever never counts as a key, whatever its node name (the Just Trains 86/87 call the reverser MasterSwitch_F)
+      const enablers=dump.controls.filter(c=>inGroup(c)&&!DRIVING_RE.test(c.identifier||'')&&(/^(MasterSwitch|MasterKey|BrakeKey)$/.test(c.identifier||'')||/^(Master(Key|Switch)|BrakeKey)/.test(bareName(c.name))));
       const master=enablers[0];
       const reverser=ctrls.find(c=>c.identifier==='Reverser');
       const isThrottle=c=>/^(Throttle|CombinedThrottleBrake|AutomaticBrake|TrainBrake|DynamicBrake|IndependentBrake)$/.test(c.identifier||'')||/MasterController|CombinedPowerBrake/.test(c.name);
