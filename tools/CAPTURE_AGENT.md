@@ -27,7 +27,7 @@ Route name, train name (as on the timetable tile, e.g. "SNG3 - mABk"), family hi
 - The desk of some units sits low in the frame (313/314): tilt further (`mmove 0 70` more) and crop from Y 250–300 instead of 0.
 - The pause menu opens on the tab used last; always click the Options tab before Main Menu.
 - Master key and brake key are push buttons; the capture script reads their state and toggles only when needed. Toggling them by hand can lock a brake handle in Off for the rest of the session (then reload the service).
-- The throttle of some units (ICMm) only moves with the reverser in Forward; the script retries that itself with the brakes applied.
+- The throttle of some units (ICMm) only moves with the reverser in Forward; the script retries that itself with the brakes applied and, since 2026-10-11, the handbrake set or pulsed for the retry (the BR 112 crept and ended its service before that). If the end-of-service screen appears during a sweep, kill the script, reload the service and run  then  for the main levers.
 - Two-cab units with per-cab node names (`L_…`/`S_…`) are detected and reported as `cab.pair`.
 - The ICMm shows how a finished capture looks: `tools/captures/RVM_ZGN_NS_ICMm3_mBfk_C.json`.
 

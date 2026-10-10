@@ -119,7 +119,12 @@ async function sweep(c,info){
         // a combined handle locked in Neutral shows its whole power side as one wide top notch (170: Idle 0.36..1): retry in Forward then too
         const top=rows[rows.length-1], wide=!!top&&rows.length>1&&(top.to-top.from)>0.3*(top.to-rows[0].from);
         if((rows.length<=1||wide)&&reverser&&c.identifier==="Throttle"){ const fwd=(out.levers[reverser.name].notches||[]).find(n=>/forward|^F$|vooruit/i.test(n.name||""));
-          if(fwd){ console.log("  "+c.name+" locked in Neutral; retrying with "+reverser.name+" in "+fwd.name+" (brakes stay applied)"); await setv(reverser.name,fwd.snapped); await sleep(500); await sweep(c,out.levers[c.name]); await setv(reverser.name,neutral?neutral.snapped:revOrig); await sleep(400); } } }
+          if(fwd){ console.log("  "+c.name+" locked in Neutral; retrying with "+reverser.name+" in "+fwd.name+" (brakes stay applied)");
+            // hold the train with the handbrake while the reverser is in Forward (the BR 112 crept and ended its service): a settable Handbrake lever is set to 1, push-button pairs (Apply / Release) are pulsed
+            const hbAll=dump.controls.filter(x=>x.identifier==='Handbrake'&&inGroup(x)), hbLever=hbAll.find(x=>!/Apply|Release|On|Off/i.test(bareName(x.name))), hbApply=hbAll.find(x=>/Apply|On/i.test(bareName(x.name))&&!/Release|Off/i.test(bareName(x.name))), hbRel=hbAll.find(x=>/Release|Off/i.test(bareName(x.name)));
+            let hbOrig=null; if(hbLever){ hbOrig=await get(np(hbLever.name)+'.InputValue'); await setv(hbLever.name,1); console.log('  handbrake '+hbLever.name+' applied for the retry'); } else if(hbApply){ await setv(hbApply.name,1); await sleep(200); await setv(hbApply.name,0); console.log('  handbrake '+hbApply.name+' pulsed for the retry'); }
+            await sleep(500); await setv(reverser.name,fwd.snapped); await sleep(500); await sweep(c,out.levers[c.name]); await setv(reverser.name,neutral?neutral.snapped:revOrig); await sleep(400);
+            if(hbLever){ await setv(hbLever.name,hbOrig); } else if(hbRel){ await setv(hbRel.name,1); await sleep(200); await setv(hbRel.name,0); } } } }
       if(reverser&&neutral){await setv(reverser.name,revOrig);await sleep(500);}
       if(modeSel&&drive){await setv(modeSel.name,modeOrig);await sleep(300);}
       for(const e of toggled.slice().reverse()){ const st=await enState(e); await setv(e.name,st.v>=0.5?0:1); await sleep(300); }
