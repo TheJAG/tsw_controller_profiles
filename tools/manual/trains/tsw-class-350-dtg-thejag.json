@@ -1,0 +1,147 @@
+{
+  "name": "tsw-class-350-dtg-thejag",
+  "title": "Class 350",
+  "eyebrow": "London Northwestern Railway · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | Class 350 | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "West Coast Main Line: Birmingham – Crewe",
+  "colors": {
+    "navy": "#223261",
+    "blue": "#4a66a8",
+    "paper": "#f3f5f9"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-lnwr-navy.png",
+      "alt": "London Northwestern Railway"
+    },
+    {
+      "file": "../../assets/logo-dtg-navy.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "diagram": {
+    "file": "../../assets/class-350-side.png",
+    "source": "Drawing: Adam Bryant, Wikimedia Commons, CC BY-SA 4.0"
+  },
+  "dlc": "store.steampowered.com/app/4680550",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/class-350-dtg-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Off",
+        "Forward",
+        "Neutral",
+        "Reverse"
+      ],
+      "start": 0
+    },
+    "leftThrottle": {
+      "name": "Power / brake",
+      "continuous": true,
+      "notches": [
+        "Max brake",
+        null,
+        "Min brake",
+        "Off",
+        "Power",
+        null,
+        "Full power"
+      ],
+      "start": 0
+    },
+    "rightThrottle": null,
+    "flap": null,
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Pantograph up / down"
+    },
+    "gearLever": {
+      "name": "AWS reset"
+    },
+    "autoBrk": {
+      "name": "Headlights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Day"
+        },
+        {
+          "short": "2",
+          "desc": "Marker only"
+        },
+        {
+          "short": "3",
+          "desc": "Night"
+        },
+        {
+          "short": "HI",
+          "desc": "Tail only"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Horn high",
+      "start": true
+    },
+    "eng2": {
+      "name": "Horn low",
+      "start": true
+    },
+    "leftAux": {
+      "name": "TPWS/AWS isolation"
+    },
+    "rightAux": {
+      "name": "DVD isolation"
+    },
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "slower",
+      "right": "faster"
+    },
+    "roundAux": {
+      "name": "Guard buzzer"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Master key",
+      "flat": "out",
+      "up": "in"
+    }
+  },
+  "setup": [
+    "Master key in (PARK BRK)",
+    "Pantograph up (right throttle button), wait for line volts",
+    "Reverser to Neutral",
+    "Check TPWS/AWS and DVD isolation lights are out",
+    "Headlights to Day",
+    "Open doors (RUD TRIM)"
+  ],
+  "depart": [
+    "Close doors, wait for the guard buzzer",
+    "Check the signal",
+    "Reverser to Forward",
+    "Handle from Max brake through Off to the first power step",
+    "Pull further into the power zone as speed rises",
+    "Acknowledge AWS with the gear lever"
+  ]
+}
