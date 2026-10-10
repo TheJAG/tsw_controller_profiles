@@ -62,7 +62,7 @@
     },
     {
       "name": "RightThrottle",
-      "description": "Combined power / brake handle, continuous (forward = power up to 100 %, middle = 0 with a dead band, back = brake up to Max brake; Emergency at -1 is left out on purpose)",
+      "description": "Combined power / brake handle (Max brake / brake % / min brake -0.1 / 0 / 5 % power 0.1 / power % / full; the game snaps -0.06..-0.1 to min brake and 0.05..0.1 to 5 % power, 0 is -0.05..0.04; Emergency at -1 is left out on purpose)",
       "assignments": [
         {
           "type": "direct_control",
@@ -73,7 +73,9 @@
             "steps": [
               -0.9,
               null,
+              -0.1,
               0,
+              0.1,
               null,
               1
             ],
@@ -85,15 +87,23 @@
               },
               {
                 "threshold": 0.955,
-                "threshold_end": 0.585,
+                "threshold_end": 0.6,
                 "threshold_tolerance": 0
               },
               {
-                "threshold": 0.5,
-                "threshold_tolerance": 0.08
+                "threshold": 0.57,
+                "threshold_tolerance": 0.03
               },
               {
-                "threshold": 0.415,
+                "threshold": 0.5,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.43,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.4,
                 "threshold_end": 0.045,
                 "threshold_tolerance": 0
               },
