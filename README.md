@@ -103,7 +103,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `DONE ✅` **DB BR 440** <sub>— DTG · [profile](releases/tsw-br-440-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-440-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **DB BR 442**  
 `TODO ◼️` **DB BR 612**  
-`TODO ◼️` **DB BR 628** <sub>— Train Sim Germany</sub>  
+`SOON 🟨` **DB BR 628** <sub>— Train Sim Germany · [profile](releases/tsw-br-628-tsg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-628-tsg-thejag.pdf)</sub>  
 `TODO ◼️` **DB BR 642**  
 `TODO ◼️` **DB BR 766.2**  
 `TODO ◼️` **DB BR 767.2**  
