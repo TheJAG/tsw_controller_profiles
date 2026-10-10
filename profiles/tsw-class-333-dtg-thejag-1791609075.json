@@ -30,7 +30,7 @@
   "controls": [
     {
       "name": "SpeedbrakeLever",
-      "description": "Reverser",
+      "description": "Reverser (Reverse / Neutral / Forward / Off)",
       "assignments": [
         {
           "type": "direct_control",
@@ -38,31 +38,20 @@
           "input_value": {
             "min": 0,
             "max": 1,
-            "steps": [0, 0.3333, 0.6667, 1.0],
+            "steps": [
+              0,
+              0.333,
+              0.666,
+              1
+            ],
             "invert": true
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "Reverser",
-          "input_value": {
-            "min": 0,
-            "max": 1,
-            "steps": [0, 0.3333, 0.6667, 1.0],
-            "invert": true
-          },
-          "action_increase": {
-            "keys": "w"
-          },
-          "action_decrease": {
-            "keys": "s"
           }
         }
       ]
     },
     {
       "name": "LeftThrottle",
-      "description": "Power Brake Controller",
+      "description": "Power / brake controller (Emergency / B3 / B2 / B1 / Off / P1 / P2 / P3 / P4)",
       "assignments": [
         {
           "type": "direct_control",
@@ -70,22 +59,18 @@
           "input_value": {
             "min": 0,
             "max": 1,
-            "step": 0.125
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "Throttle",
-          "input_value": {
-            "min": 0,
-            "max": 1,
-            "step": 0.125
-          },
-          "action_increase": {
-            "keys": "a"
-          },
-          "action_decrease": {
-            "keys": "d"
+            "step": 0.125,
+            "steps": [
+              0,
+              0.125,
+              0.25,
+              0.375,
+              0.5,
+              0.625,
+              0.75,
+              0.875,
+              1
+            ]
           }
         }
       ]
@@ -124,7 +109,14 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "x"
+          "controls": "Sander",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Sander",
+          "value": 0,
+          "hold": false
         }
       }
     },
@@ -136,7 +128,7 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "Horn",
-          "value": 1.0,
+          "value": 1,
           "hold": true
         },
         "action_deactivate": {
@@ -154,7 +146,7 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "Horn",
-          "value": 0.0,
+          "value": 0,
           "hold": true
         },
         "action_deactivate": {
@@ -194,12 +186,12 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "SignalBuzzer_L",
-          "value": 1.0,
+          "value": 1,
           "hold": true
         },
         "action_deactivate": {
           "controls": "SignalBuzzer_L",
-          "value": 0.0,
+          "value": 0,
           "hold": false
         }
       }
@@ -309,7 +301,7 @@
     },
     {
       "name": "AutoBrake1",
-      "description": "Headlights | Day + marker lights",
+      "description": "Headlights | Day headlights + marker lights",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,
@@ -335,7 +327,7 @@
     },
     {
       "name": "AutoBrake3",
-      "description": "Headlights | Night + marker lights",
+      "description": "Headlights | Night headlights + marker lights",
       "assignments": [
         {
           "type": "momentary",
@@ -359,7 +351,7 @@
     },
     {
       "name": "AutoBrake4",
-      "description": "Taillights | On",
+      "description": "Headlights | Tail lights only",
       "assignments": [
         {
           "type": "momentary",

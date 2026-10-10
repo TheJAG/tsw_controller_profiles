@@ -12,32 +12,11 @@
             "max": 1,
             "steps": [
               0,
-              0.3333,
-              0.6667,
+              0.333,
+              0.666,
               1
             ],
             "invert": true
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "Reverser",
-          "input_value": {
-            "min": 0,
-            "max": 1,
-            "steps": [
-              0,
-              0.3333,
-              0.6667,
-              1
-            ],
-            "invert": true
-          },
-          "action_increase": {
-            "keys": "w"
-          },
-          "action_decrease": {
-            "keys": "s"
           }
         }
       ]
@@ -51,22 +30,18 @@
           "input_value": {
             "min": 0,
             "max": 1,
-            "step": 0.125
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "Throttle",
-          "input_value": {
-            "min": 0,
-            "max": 1,
-            "step": 0.125
-          },
-          "action_increase": {
-            "keys": "a"
-          },
-          "action_decrease": {
-            "keys": "d"
+            "step": 0.125,
+            "steps": [
+              0,
+              0.125,
+              0.25,
+              0.375,
+              0.5,
+              0.625,
+              0.75,
+              0.875,
+              1
+            ]
           }
         }
       ]
@@ -102,7 +77,14 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "x"
+          "controls": "Sander",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Sander",
+          "value": 0,
+          "hold": false
         }
       }
     },
