@@ -2,6 +2,23 @@
   "name": "TSW | NS ICMm | DTG | TheJAG",
   "controls": [
     {
+      "name": "LeftThrottleButton",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "TracieVerlaging",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "TracieVerlaging",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
       "name": "SpeedbrakeLever",
       "assignments": [
         {
@@ -192,11 +209,11 @@
         "type": "toggle",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "GaugeLights",
+          "controls": "TrainVoltageSupply",
           "value": 1
         },
         "action_deactivate": {
-          "controls": "GaugeLights",
+          "controls": "TrainVoltageSupply",
           "value": 0
         }
       }
@@ -207,12 +224,14 @@
         "type": "toggle",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "Compressor",
-          "value": 1
+          "controls": "ATBFuse",
+          "value": 1,
+          "enable_api_fallback": true
         },
         "action_deactivate": {
-          "controls": "Compressor",
-          "value": 0.5
+          "controls": "ATBFuse",
+          "value": 0,
+          "enable_api_fallback": true
         }
       }
     },
@@ -222,12 +241,14 @@
         "type": "toggle",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "TrainVoltageSupply",
-          "value": 1
+          "controls": "DeadManFuse",
+          "value": 1,
+          "enable_api_fallback": true
         },
         "action_deactivate": {
-          "controls": "TrainVoltageSupply",
-          "value": 0
+          "controls": "DeadManFuse",
+          "value": 0,
+          "enable_api_fallback": true
         }
       }
     },

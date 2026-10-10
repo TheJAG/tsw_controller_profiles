@@ -23,6 +23,24 @@
   ],
   "controls": [
     {
+      "name": "LeftThrottleButton",
+      "description": "Traction reduction (hold; the ICMm has no sander)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "TracieVerlaging",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "TracieVerlaging",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
       "name": "SpeedbrakeLever",
       "assignments": [
         {
@@ -220,38 +238,6 @@
     },
     {
       "name": "RoundAuxButton",
-      "description": "Gauge lights (Off / On)",
-      "assignment": {
-        "type": "toggle",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "GaugeLights",
-          "value": 1
-        },
-        "action_deactivate": {
-          "controls": "GaugeLights",
-          "value": 0
-        }
-      }
-    },
-    {
-      "name": "LeftAuxButton",
-      "description": "Compressor (Off / Automatic)",
-      "assignment": {
-        "type": "toggle",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "Compressor",
-          "value": 1
-        },
-        "action_deactivate": {
-          "controls": "Compressor",
-          "value": 0.5
-        }
-      }
-    },
-    {
-      "name": "RightAuxButton",
       "description": "Train voltage supply (Off / On)",
       "assignment": {
         "type": "toggle",
@@ -263,6 +249,42 @@
         "action_deactivate": {
           "controls": "TrainVoltageSupply",
           "value": 0
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "ATB fuse (On / Isolated)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "ATBFuse",
+          "value": 1,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "ATBFuse",
+          "value": 0,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "Deadman / vigilance fuse (On / Isolated)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "DeadManFuse",
+          "value": 1,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "DeadManFuse",
+          "value": 0,
+          "enable_api_fallback": true
         }
       }
     },
