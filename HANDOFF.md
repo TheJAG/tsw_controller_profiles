@@ -13,7 +13,7 @@ Short status page, updated with each train. The rules and the recipe live in `CL
 
 ## Next, one train at a time (user decision 2026-10-10: no batches yet)
 
-2. Class 153 cab test by the user (lever swap and throttle invert are untested), then README to DONE.
+2. (done) Class 153 cab-tested and released.
 3. Then the UK order from the plan (`~/.claude/plans/starry-honking-puddle.md`), Germany after.
 
 ## Open points
