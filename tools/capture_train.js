@@ -116,7 +116,9 @@ async function sweep(c,info){
       for(const c of ctrls.filter(c=>isThrottle(c)&&!isRev(c)&&!enablers.includes(c))){ if(!want(c)) continue; if(await moving()) break;
         if(reverser&&!neutral) console.log("  warning: no Neutral notch found on "+reverser.name+"; "+c.name+" may not accept input");
         const rows=await sweep(c,out.levers[c.name]);
-        if(rows.length<=1&&reverser&&c.identifier==="Throttle"){ const fwd=(out.levers[reverser.name].notches||[]).find(n=>/forward|^F$|vooruit/i.test(n.name||""));
+        // a combined handle locked in Neutral shows its whole power side as one wide top notch (170: Idle 0.36..1): retry in Forward then too
+        const top=rows[rows.length-1], wide=!!top&&rows.length>1&&(top.to-top.from)>0.3*(top.to-rows[0].from);
+        if((rows.length<=1||wide)&&reverser&&c.identifier==="Throttle"){ const fwd=(out.levers[reverser.name].notches||[]).find(n=>/forward|^F$|vooruit/i.test(n.name||""));
           if(fwd){ console.log("  "+c.name+" locked in Neutral; retrying with "+reverser.name+" in "+fwd.name+" (brakes stay applied)"); await setv(reverser.name,fwd.snapped); await sleep(500); await sweep(c,out.levers[c.name]); await setv(reverser.name,neutral?neutral.snapped:revOrig); await sleep(400); } } }
       if(reverser&&neutral){await setv(reverser.name,revOrig);await sleep(500);}
       if(modeSel&&drive){await setv(modeSel.name,modeOrig);await sleep(300);}
