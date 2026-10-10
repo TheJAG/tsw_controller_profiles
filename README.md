@@ -92,7 +92,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **DB BR 363**  
 `TODO ◼️` **DB BR 365**  
 `SOON 🟨` **DB BR 401 ICE 1** <sub>— DTG · [profile](releases/tsw-br-401-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-401-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **DB BR 403 ICE 3**  
+`SOON 🟨` **DB BR 403 ICE 3** <sub>— DTG · [profile](releases/tsw-br-403-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-403-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **DB BR 406 ICE 3M**  
 `TODO ◼️` **DB BR 411 ICE-T**  
 `TODO ◼️` **DB BR 412 ICE 4**  
