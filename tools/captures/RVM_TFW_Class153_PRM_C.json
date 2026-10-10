@@ -1,7 +1,6 @@
 {
   "objectClass": "RVM_TFW_Class153_PRM_C",
-  "capturedAt": "2026-10-10T00:00:00.000Z",
-  "note": "Rebuilt from the dump_controls.js listing of 2026-10-10; notch tables hand-measured with sweep_levers.js, not a capture_train.js sweep. Replace with a real capture when the 153 is loaded again.",
+  "capturedAt": "2026-10-10T04:24:52.727Z",
   "activeCab": {
     "bFront": false,
     "bBack": false
@@ -12,168 +11,28 @@
       "L",
       "S"
     ],
-    "shared": 40
+    "shared": 49
   },
   "controls": [
     {
       "name": "ModelChildActorComponent0",
-      "objectClass": null
+      "objectClass": "ModelChildActorComponent"
     },
     {
       "name": "RailVehiclePhysicsComponent0",
-      "objectClass": null
+      "objectClass": "RailVehicleComponent"
     },
     {
       "name": "GameplayTasksComponent0",
-      "objectClass": null
+      "objectClass": "GameplayTasksComponent"
     },
     {
       "name": "GameplayTagStatusComponent0",
-      "objectClass": null
+      "objectClass": "GameplayTagStatusComponent"
     },
     {
       "name": "Simulation",
-      "objectClass": null
-    },
-    {
-      "name": "L_DriverInteractionEnvironment",
-      "objectClass": null
-    },
-    {
-      "name": "L_GSM-R_Radio_New",
-      "objectClass": null
-    },
-    {
-      "name": "AWS_TPWS_Service",
-      "objectClass": null
-    },
-    {
-      "name": "DVD_Service",
-      "objectClass": null
-    },
-    {
-      "name": "S_DriverInteractionEnvironment",
-      "objectClass": null
-    },
-    {
-      "name": "S_GSM-R_Radio_New",
-      "objectClass": null
-    },
-    {
-      "name": "JumperCable_B",
-      "objectClass": null
-    },
-    {
-      "name": "JumperCable_F",
-      "objectClass": null
-    },
-    {
-      "name": "SeatManager",
-      "objectClass": null
-    },
-    {
-      "name": "Coupler_B",
-      "objectClass": null
-    },
-    {
-      "name": "Coupler_F_Regular",
-      "objectClass": null
-    },
-    {
-      "name": "Coupler_F",
-      "objectClass": null
-    },
-    {
-      "name": "Coupler_B_Regular",
-      "objectClass": null
-    },
-    {
-      "name": "TractionLockManager",
-      "objectClass": null
-    },
-    {
-      "name": "AirHose_B_(MR)",
-      "objectClass": null
-    },
-    {
-      "name": "AirHose_F_(MR)",
-      "objectClass": null
-    },
-    {
-      "name": "EmergencyConditionManager",
-      "objectClass": null
-    },
-    {
-      "name": "FuelingSetup",
-      "objectClass": null
-    },
-    {
-      "name": "FuelTank",
-      "objectClass": null
-    },
-    {
-      "name": "BP_CCC_Class153_DoorManager",
-      "objectClass": null
-    },
-    {
-      "name": "Numbering_RVN",
-      "objectClass": null
-    },
-    {
-      "name": "ServiceProviderBase",
-      "objectClass": null
-    },
-    {
-      "name": "PassengerCargoModel",
-      "objectClass": null
-    },
-    {
-      "name": "PassengerEnvironment",
-      "objectClass": null
-    },
-    {
-      "name": "PIS_Manager",
-      "objectClass": null
-    },
-    {
-      "name": "PIS_SubManager",
-      "objectClass": null
-    },
-    {
-      "name": "DataStore",
-      "objectClass": null
-    },
-    {
-      "name": "ISManager",
-      "objectClass": null
-    },
-    {
-      "name": "L_GuardInteractionEnvironment",
-      "objectClass": null
-    },
-    {
-      "name": "S_GuardInteractionEnvironment",
-      "objectClass": null
-    },
-    {
-      "name": "Gangway_F",
-      "objectClass": null
-    },
-    {
-      "name": "Gangway_B",
-      "objectClass": null
-    },
-    {
-      "name": "HornComponent",
-      "objectClass": null
-    },
-    {
-      "name": "L_BP_PersistentIntervalTimer",
-      "objectClass": null
-    },
-    {
-      "name": "S_BP_PersistentIntervalTimer",
-      "objectClass": null
+      "objectClass": "SimulationComponent"
     },
     {
       "name": "L_MasterSwitch_IrregularLever",
@@ -226,6 +85,10 @@
           "max": 1.5
         }
       ]
+    },
+    {
+      "name": "L_DriverInteractionEnvironment",
+      "objectClass": "InteractionEnvironmentComponent"
     },
     {
       "name": "L_TrainBrake_IrregularLever",
@@ -698,11 +561,23 @@
       ]
     },
     {
+      "name": "L_GSM-R_Radio_New",
+      "objectClass": "BP_Class153_GSM-R_Radio_C"
+    },
+    {
       "name": "L_ContactSignaller_PushButton",
       "objectClass": "PushButtonComponent",
       "inputValue": 0,
       "identifier": "ContactSignaller",
       "namedValues": []
+    },
+    {
+      "name": "AWS_TPWS_Service",
+      "objectClass": "BP_AWS_TPWS_Service_C"
+    },
+    {
+      "name": "DVD_Service",
+      "objectClass": "BP_DVD_Service_C"
     },
     {
       "name": "L_DriverBlind_IrregularLever",
@@ -714,7 +589,7 @@
     {
       "name": "L_VigilancePedal_ReversiblePushButton",
       "objectClass": "ReversiblePushButton_C",
-      "inputValue": 1,
+      "inputValue": 0,
       "identifier": "Alerter",
       "namedValues": [
         {
@@ -866,6 +741,10 @@
       "inputValue": 0,
       "identifier": "None",
       "namedValues": []
+    },
+    {
+      "name": "S_DriverInteractionEnvironment",
+      "objectClass": "InteractionEnvironmentComponent"
     },
     {
       "name": "S_DRA_PushButton",
@@ -1060,7 +939,7 @@
     {
       "name": "S_Headlights_IrregularLever",
       "objectClass": "IrregularLeverComponent",
-      "inputValue": 0,
+      "inputValue": 0.375,
       "identifier": "Headlights",
       "namedValues": [
         {
@@ -1118,6 +997,10 @@
           "max": 5.5
         }
       ]
+    },
+    {
+      "name": "S_GSM-R_Radio_New",
+      "objectClass": "BP_Class153_GSM-R_Radio_C"
     },
     {
       "name": "S_GSMR_IncreaseBrightness",
@@ -1387,7 +1270,7 @@
     {
       "name": "S_VigilancePedal_ReversiblePushButton",
       "objectClass": "ReversiblePushButton_C",
-      "inputValue": 0,
+      "inputValue": 1,
       "identifier": "Alerter",
       "namedValues": [
         {
@@ -1674,6 +1557,50 @@
       "namedValues": []
     },
     {
+      "name": "JumperCable_B",
+      "objectClass": "JumperCableComponent"
+    },
+    {
+      "name": "JumperCable_F",
+      "objectClass": "JumperCableComponent"
+    },
+    {
+      "name": "SeatManager",
+      "objectClass": "SeatManagerComponent"
+    },
+    {
+      "name": "Coupler_B",
+      "objectClass": "CouplerComponent"
+    },
+    {
+      "name": "Coupler_F_Regular",
+      "objectClass": "CouplerComponent"
+    },
+    {
+      "name": "Coupler_F",
+      "objectClass": "CouplerComponent"
+    },
+    {
+      "name": "Coupler_B_Regular",
+      "objectClass": "CouplerComponent"
+    },
+    {
+      "name": "TractionLockManager",
+      "objectClass": "TractionLockManager_C"
+    },
+    {
+      "name": "AirHose_B_(MR)",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_F_(MR)",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "EmergencyConditionManager",
+      "objectClass": "TractionLockManager_C"
+    },
+    {
       "name": "L_DriverWindow_PushButton",
       "objectClass": "PushButtonComponent",
       "inputValue": 0,
@@ -1812,7 +1739,7 @@
     {
       "name": "Door_Passenger_FL",
       "objectClass": "RailVehicleDoorComponent",
-      "inputValue": 0,
+      "inputValue": 1,
       "identifier": "None",
       "namedValues": []
     },
@@ -1826,7 +1753,7 @@
     {
       "name": "Door_Passenger_BL",
       "objectClass": "RailVehicleDoorComponent",
-      "inputValue": 0,
+      "inputValue": 1,
       "identifier": "None",
       "namedValues": []
     },
@@ -1847,7 +1774,7 @@
     {
       "name": "Door_Gangway_B",
       "objectClass": "RailVehicleDoorComponent",
-      "inputValue": 1,
+      "inputValue": 0,
       "identifier": "None",
       "namedValues": []
     },
@@ -1864,6 +1791,14 @@
       "inputValue": 0,
       "identifier": "None",
       "namedValues": []
+    },
+    {
+      "name": "FuelingSetup",
+      "objectClass": "FuelingSetup_C"
+    },
+    {
+      "name": "FuelTank",
+      "objectClass": "FuelTankComponent"
     },
     {
       "name": "FL_Ext_ManualLock_IrregularLever",
@@ -2036,7 +1971,7 @@
     {
       "name": "FL_GuardPanelDoor_PushButton",
       "objectClass": "PushButtonComponent",
-      "inputValue": 0,
+      "inputValue": 1,
       "identifier": "None",
       "namedValues": [
         {
@@ -2076,7 +2011,7 @@
     {
       "name": "BL_GuardPanelDoor_PushButton",
       "objectClass": "PushButtonComponent",
-      "inputValue": 0,
+      "inputValue": 1,
       "identifier": "None",
       "namedValues": [
         {
@@ -2284,7 +2219,7 @@
     {
       "name": "FL_GuardPanel_CrewDoor_PushButton",
       "objectClass": "PushButtonComponent",
-      "inputValue": 0,
+      "inputValue": 1,
       "identifier": "None",
       "namedValues": [
         {
@@ -2304,7 +2239,7 @@
     {
       "name": "BL_GuardPanel_CrewDoor_PushButton",
       "objectClass": "PushButtonComponent",
-      "inputValue": 0,
+      "inputValue": 1,
       "identifier": "None",
       "namedValues": [
         {
@@ -2364,7 +2299,7 @@
     {
       "name": "L_DriverSeat_PushButton",
       "objectClass": "PushButtonComponent",
-      "inputValue": 1,
+      "inputValue": 0,
       "identifier": "None",
       "namedValues": [
         {
@@ -2404,7 +2339,7 @@
     {
       "name": "S_DriverSeat_PushButton",
       "objectClass": "PushButtonComponent",
-      "inputValue": 0,
+      "inputValue": 1,
       "identifier": "None",
       "namedValues": [
         {
@@ -2482,6 +2417,26 @@
       ]
     },
     {
+      "name": "BP_CCC_Class153_DoorManager",
+      "objectClass": "BP_CCC_Class153_DoorManager_C"
+    },
+    {
+      "name": "Numbering_RVN",
+      "objectClass": "NumberingComponent"
+    },
+    {
+      "name": "ServiceProviderBase",
+      "objectClass": "ServiceProviderBase_C"
+    },
+    {
+      "name": "PassengerCargoModel",
+      "objectClass": "PassengerCargoModelComponent"
+    },
+    {
+      "name": "PassengerEnvironment",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
       "name": "L_CabDoor",
       "objectClass": "RailVehicleDoorComponent",
       "inputValue": 0,
@@ -2491,14 +2446,38 @@
     {
       "name": "S_CabDoor",
       "objectClass": "RailVehicleDoorComponent",
-      "inputValue": 1,
+      "inputValue": 0,
       "identifier": "None",
       "namedValues": []
     },
     {
+      "name": "PIS_Manager",
+      "objectClass": "PIS_Manager_C"
+    },
+    {
+      "name": "PIS_SubManager",
+      "objectClass": "PIS_SubManager_C"
+    },
+    {
+      "name": "DataStore",
+      "objectClass": "CCC_TFW_Class153_DataStore_C"
+    },
+    {
+      "name": "ISManager",
+      "objectClass": "ISManager_C"
+    },
+    {
+      "name": "L_GuardInteractionEnvironment",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "S_GuardInteractionEnvironment",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
       "name": "F_GuardPanelEnergiser_IrregularLever",
       "objectClass": "IrregularLeverComponent",
-      "inputValue": 0,
+      "inputValue": 1,
       "identifier": "None",
       "namedValues": [
         {
@@ -2518,7 +2497,7 @@
     {
       "name": "B_GuardPanelEnergiser_IrregularLever",
       "objectClass": "IrregularLeverComponent",
-      "inputValue": 0,
+      "inputValue": 1,
       "identifier": "None",
       "namedValues": [
         {
@@ -2574,6 +2553,18 @@
           "max": 1.5
         }
       ]
+    },
+    {
+      "name": "Gangway_F",
+      "objectClass": "GangwayComponent"
+    },
+    {
+      "name": "Gangway_B",
+      "objectClass": "GangwayComponent"
+    },
+    {
+      "name": "HornComponent",
+      "objectClass": "BP_SequenceHornCore_C"
     },
     {
       "name": "L_BreakerCover_PushButton",
@@ -2656,6 +2647,14 @@
           "max": 1.5
         }
       ]
+    },
+    {
+      "name": "L_BP_PersistentIntervalTimer",
+      "objectClass": "BP_PersistentIntervalTimer_C"
+    },
+    {
+      "name": "S_BP_PersistentIntervalTimer",
+      "objectClass": "BP_PersistentIntervalTimer_C"
     }
   ],
   "levers": {
@@ -2666,8 +2665,8 @@
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 1,
       "rotational": false,
       "inputValue": 0,
       "namedValues": [
@@ -2685,35 +2684,39 @@
         }
       ],
       "swept": true,
-      "synthetic": true,
       "notches": [
         {
           "index": 0,
           "from": 0,
-          "to": 0.99,
+          "to": 0.49,
           "snapped": 0,
-          "output": null,
+          "output": 0,
           "name": "Off"
         },
         {
           "index": 1,
-          "from": 1,
-          "to": 1.99,
-          "snapped": 1,
-          "output": null,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.89,
+          "output": 1,
           "name": "On"
         }
-      ]
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
     },
     "L_Reverser_IrregularLever": {
       "identifier": "Reverser",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 4,
+      "notchCount": 5,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 3,
       "rotational": true,
       "inputValue": 0,
       "namedValues": [
@@ -2743,41 +2746,53 @@
         }
       ],
       "swept": true,
-      "synthetic": true,
       "notches": [
         {
           "index": 0,
           "from": 0,
-          "to": 0.24,
+          "to": 0.12,
           "snapped": 0,
-          "output": null,
+          "output": -2,
           "name": "Off"
         },
         {
           "index": 1,
-          "from": 0.25,
-          "to": 0.49,
+          "from": 0.13,
+          "to": 0.37,
           "snapped": 0.25,
-          "output": null,
+          "output": -1,
           "name": "Reverse"
         },
         {
           "index": 2,
-          "from": 0.5,
-          "to": 0.74,
+          "from": 0.38,
+          "to": 0.62,
           "snapped": 0.5,
-          "output": null,
+          "output": 0,
           "name": "Neutral"
         },
         {
           "index": 3,
-          "from": 0.75,
-          "to": 0.99,
+          "from": 0.63,
+          "to": 0.87,
           "snapped": 0.75,
-          "output": null,
+          "output": 1,
           "name": "Forward"
+        },
+        {
+          "index": 0,
+          "from": 0.88,
+          "to": 1,
+          "snapped": 0,
+          "output": -2,
+          "name": "Off"
         }
-      ]
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
     },
     "L_TrainBrake_IrregularLever": {
       "identifier": "AutomaticBrake",
@@ -2786,8 +2801,8 @@
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0.75,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 4,
       "rotational": false,
       "inputValue": 0.75,
       "namedValues": [
@@ -2811,49 +2826,53 @@
         }
       ],
       "swept": true,
-      "synthetic": true,
       "notches": [
         {
           "index": 0,
           "from": 0,
-          "to": 0.24,
+          "to": 0.12,
           "snapped": 0,
-          "output": null,
+          "output": 0,
           "name": "Release"
         },
         {
           "index": 1,
-          "from": 0.25,
-          "to": 0.49,
+          "from": 0.13,
+          "to": 0.37,
           "snapped": 0.25,
-          "output": null,
-          "name": "Step 1"
+          "output": 1,
+          "name": null
         },
         {
           "index": 2,
-          "from": 0.5,
-          "to": 0.74,
+          "from": 0.38,
+          "to": 0.62,
           "snapped": 0.5,
-          "output": null,
-          "name": "Step 2"
+          "output": 2,
+          "name": null
         },
         {
           "index": 3,
-          "from": 0.75,
-          "to": 0.99,
+          "from": 0.63,
+          "to": 0.87,
           "snapped": 0.75,
-          "output": null,
+          "output": 3,
           "name": "Full Service"
         },
         {
           "index": 4,
-          "from": 1,
-          "to": 1.24,
+          "from": 0.88,
+          "to": 1,
           "snapped": 1,
-          "output": null,
+          "output": 4,
           "name": "Emergency"
         }
-      ]
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.75
     },
     "L_Throttle_IrregularLever": {
       "identifier": "Throttle",
@@ -2862,8 +2881,8 @@
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 7,
       "rotational": false,
       "inputValue": 0,
       "namedValues": [
@@ -2881,83 +2900,87 @@
         }
       ],
       "swept": true,
-      "synthetic": true,
       "notches": [
         {
           "index": 0,
           "from": 0,
-          "to": 0.13,
+          "to": 0.07,
           "snapped": 0,
-          "output": null,
+          "output": 0,
           "name": "Off"
         },
         {
           "index": 1,
-          "from": 0.14,
-          "to": 0.28,
+          "from": 0.08,
+          "to": 0.21,
           "snapped": 0.1429,
-          "output": null,
-          "name": "1"
+          "output": 1,
+          "name": null
         },
         {
           "index": 2,
-          "from": 0.29,
-          "to": 0.42,
+          "from": 0.22,
+          "to": 0.35,
           "snapped": 0.2857,
-          "output": null,
-          "name": "2"
+          "output": 2,
+          "name": null
         },
         {
           "index": 3,
-          "from": 0.43,
-          "to": 0.56,
+          "from": 0.36,
+          "to": 0.49,
           "snapped": 0.4286,
-          "output": null,
-          "name": "3"
+          "output": 3,
+          "name": null
         },
         {
           "index": 4,
-          "from": 0.57,
-          "to": 0.7,
+          "from": 0.5,
+          "to": 0.64,
           "snapped": 0.5714,
-          "output": null,
-          "name": "4"
+          "output": 4,
+          "name": null
         },
         {
           "index": 5,
-          "from": 0.71,
-          "to": 0.85,
+          "from": 0.65,
+          "to": 0.78,
           "snapped": 0.7143,
-          "output": null,
-          "name": "5"
+          "output": 5,
+          "name": null
         },
         {
           "index": 6,
-          "from": 0.86,
-          "to": 0.99,
+          "from": 0.79,
+          "to": 0.92,
           "snapped": 0.8571,
-          "output": null,
-          "name": "6"
+          "output": 6,
+          "name": null
         },
         {
           "index": 7,
-          "from": 1,
-          "to": 1.13,
+          "from": 0.93,
+          "to": 1,
           "snapped": 1,
-          "output": null,
-          "name": "7"
+          "output": 7,
+          "name": "Max"
         }
-      ]
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
     },
     "L_Horn_IrregularLever": {
       "identifier": "Horn",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 3,
+      "notchCount": 1,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0.5,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 2,
       "rotational": false,
       "inputValue": 0.5,
       "namedValues": [
@@ -2974,34 +2997,8 @@
           "max": 1.5
         }
       ],
-      "swept": true,
-      "synthetic": true,
-      "notches": [
-        {
-          "index": 0,
-          "from": 0,
-          "to": 0.49,
-          "snapped": 0,
-          "output": null,
-          "name": "Low"
-        },
-        {
-          "index": 1,
-          "from": 0.5,
-          "to": 0.99,
-          "snapped": 0.5,
-          "output": null,
-          "name": "Off"
-        },
-        {
-          "index": 2,
-          "from": 1,
-          "to": 1.49,
-          "snapped": 1,
-          "output": null,
-          "name": "High"
-        }
-      ]
+      "swept": false,
+      "notches": []
     },
     "L_Headlights_IrregularLever": {
       "identifier": "Headlights",
@@ -3009,10 +3006,10 @@
       "notchCount": 9,
       "minInput": 0,
       "maxInput": 1,
-      "defaultInput": 0.375,
-      "inputRange": null,
-      "outputRange": null,
-      "rotational": false,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 8,
+      "rotational": true,
       "inputValue": 0.375,
       "namedValues": [
         {
@@ -3071,91 +3068,95 @@
         }
       ],
       "swept": true,
-      "synthetic": true,
       "notches": [
         {
           "index": 0,
           "from": 0,
-          "to": 0.12,
+          "to": 0.06,
           "snapped": 0,
-          "output": null,
+          "output": -3,
           "name": "Off"
         },
         {
           "index": 1,
-          "from": 0.13,
-          "to": 0.24,
+          "from": 0.07,
+          "to": 0.18,
           "snapped": 0.125,
-          "output": null,
+          "output": -2,
           "name": "Day Headlight"
         },
         {
           "index": 2,
-          "from": 0.25,
-          "to": 0.37,
+          "from": 0.19,
+          "to": 0.31,
           "snapped": 0.25,
-          "output": null,
+          "output": -1,
           "name": "Off"
         },
         {
           "index": 3,
-          "from": 0.38,
-          "to": 0.49,
+          "from": 0.32,
+          "to": 0.43,
           "snapped": 0.375,
-          "output": null,
+          "output": 0,
           "name": "Tail Only"
         },
         {
           "index": 4,
-          "from": 0.5,
-          "to": 0.62,
+          "from": 0.44,
+          "to": 0.56,
           "snapped": 0.5,
-          "output": null,
+          "output": 1,
           "name": "Off"
         },
         {
           "index": 5,
-          "from": 0.63,
-          "to": 0.74,
+          "from": 0.57,
+          "to": 0.68,
           "snapped": 0.625,
-          "output": null,
+          "output": 2,
           "name": "Marker Only"
         },
         {
           "index": 6,
-          "from": 0.75,
-          "to": 0.87,
+          "from": 0.69,
+          "to": 0.81,
           "snapped": 0.75,
-          "output": null,
+          "output": 3,
           "name": "Hazard"
         },
         {
           "index": 7,
-          "from": 0.88,
-          "to": 0.99,
+          "from": 0.82,
+          "to": 0.93,
           "snapped": 0.875,
-          "output": null,
+          "output": 4,
           "name": "Night Headlight"
         },
         {
-          "index": 8,
-          "from": 1,
-          "to": 1.12,
-          "snapped": 1,
-          "output": null,
+          "index": 0,
+          "from": 0.94,
+          "to": 1,
+          "snapped": 0,
+          "output": -3,
           "name": "Off"
         }
-      ]
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.375
     },
     "L_HeatingCooling_IrregularLever": {
       "identifier": "None",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 1,
+      "notchCount": 3,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0.5,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 2,
       "rotational": false,
       "inputValue": 0.5,
       "namedValues": [
@@ -3178,37 +3179,65 @@
           "max": 1.5
         }
       ],
-      "swept": false,
-      "synthetic": true,
-      "notches": []
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": -1,
+          "name": "Heat"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 1,
+          "name": "Cool"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.5
     },
     "L_DriverBlind_IrregularLever": {
       "identifier": "None",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 1,
+      "notchCount": 0,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 1,
       "rotational": false,
       "inputValue": 0,
       "namedValues": [],
       "swept": false,
-      "synthetic": true,
       "notches": []
     },
     "L_VigilancePedal_ReversiblePushButton": {
       "identifier": "Alerter",
       "objectClass": "ReversiblePushButton_C",
-      "notchCount": 1,
+      "notchCount": null,
       "minInput": 0,
       "maxInput": 1,
-      "defaultInput": 1,
-      "inputRange": null,
-      "outputRange": null,
-      "rotational": false,
-      "inputValue": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": null,
+      "inputValue": 0,
       "namedValues": [
         {
           "name": "Released",
@@ -3218,23 +3247,21 @@
         }
       ],
       "swept": false,
-      "synthetic": true,
       "notches": []
     },
     "L_DriverWiper_SimpleLever": {
       "identifier": "None",
       "objectClass": "SimpleLeverComponent",
-      "notchCount": 1,
+      "notchCount": 0,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 1,
       "rotational": false,
       "inputValue": 0,
       "namedValues": [],
       "swept": false,
-      "synthetic": true,
       "notches": []
     },
     "L_TPWS_Iso_IrregularLever": {
@@ -3244,8 +3271,8 @@
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 1,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 1,
       "rotational": false,
       "inputValue": 1,
       "namedValues": [
@@ -3263,35 +3290,39 @@
         }
       ],
       "swept": true,
-      "synthetic": true,
       "notches": [
         {
           "index": 0,
           "from": 0,
-          "to": 0.99,
+          "to": 0.49,
           "snapped": 0,
-          "output": null,
+          "output": 0,
           "name": "Normal"
         },
         {
           "index": 1,
-          "from": 1,
-          "to": 1.99,
-          "snapped": 1,
-          "output": null,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.8889,
+          "output": 1,
           "name": "Isolated"
         }
-      ]
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
     },
     "L_TPWSTemporaryIso_IrregularLever": {
       "identifier": "TPWS_TempIsolation",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 3,
+      "notchCount": 1,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0.5,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 2,
       "rotational": false,
       "inputValue": 0.5,
       "namedValues": [
@@ -3308,60 +3339,33 @@
           "max": 1.5
         }
       ],
-      "swept": true,
-      "synthetic": true,
-      "notches": [
-        {
-          "index": 0,
-          "from": 0,
-          "to": 0.49,
-          "snapped": 0,
-          "output": null,
-          "name": "Isolated"
-        },
-        {
-          "index": 1,
-          "from": 0.5,
-          "to": 0.99,
-          "snapped": 0.5,
-          "output": null,
-          "name": "Off"
-        },
-        {
-          "index": 2,
-          "from": 1,
-          "to": 1.49,
-          "snapped": 1,
-          "output": null,
-          "name": "Normal"
-        }
-      ]
+      "swept": false,
+      "notches": []
     },
     "L_GuardBlind_IrregularLever": {
       "identifier": "None",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 1,
+      "notchCount": 0,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 1,
       "rotational": false,
       "inputValue": 0,
       "namedValues": [],
       "swept": false,
-      "synthetic": true,
       "notches": []
     },
     "S_HeatingCooling_IrregularLever": {
       "identifier": "None",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 1,
+      "notchCount": 3,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0.5,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 2,
       "rotational": false,
       "inputValue": 0.5,
       "namedValues": [
@@ -3384,9 +3388,38 @@
           "max": 1.5
         }
       ],
-      "swept": false,
-      "synthetic": true,
-      "notches": []
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": -1,
+          "name": "Heat"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 1,
+          "name": "Cool"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.5
     },
     "S_Headlights_IrregularLever": {
       "identifier": "Headlights",
@@ -3395,10 +3428,10 @@
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
-      "rotational": false,
-      "inputValue": 0,
+      "inputRange": 1,
+      "outputRange": 8,
+      "rotational": true,
+      "inputValue": 0.375,
       "namedValues": [
         {
           "name": "Off",
@@ -3456,81 +3489,85 @@
         }
       ],
       "swept": true,
-      "synthetic": true,
       "notches": [
         {
           "index": 0,
           "from": 0,
-          "to": 0.12,
+          "to": 0.06,
           "snapped": 0,
-          "output": null,
+          "output": -3,
           "name": "Off"
         },
         {
           "index": 1,
-          "from": 0.13,
-          "to": 0.24,
+          "from": 0.07,
+          "to": 0.18,
           "snapped": 0.125,
-          "output": null,
+          "output": -2,
           "name": "Day Headlight"
         },
         {
           "index": 2,
-          "from": 0.25,
-          "to": 0.37,
+          "from": 0.19,
+          "to": 0.31,
           "snapped": 0.25,
-          "output": null,
+          "output": -1,
           "name": "Off"
         },
         {
           "index": 3,
-          "from": 0.38,
-          "to": 0.49,
+          "from": 0.32,
+          "to": 0.43,
           "snapped": 0.375,
-          "output": null,
+          "output": 0,
           "name": "Tail Only"
         },
         {
           "index": 4,
-          "from": 0.5,
-          "to": 0.62,
+          "from": 0.44,
+          "to": 0.56,
           "snapped": 0.5,
-          "output": null,
+          "output": 1,
           "name": "Off"
         },
         {
           "index": 5,
-          "from": 0.63,
-          "to": 0.74,
+          "from": 0.57,
+          "to": 0.68,
           "snapped": 0.625,
-          "output": null,
+          "output": 2,
           "name": "Marker Only"
         },
         {
           "index": 6,
-          "from": 0.75,
-          "to": 0.87,
+          "from": 0.69,
+          "to": 0.81,
           "snapped": 0.75,
-          "output": null,
+          "output": 3,
           "name": "Hazard"
         },
         {
           "index": 7,
-          "from": 0.88,
-          "to": 0.99,
+          "from": 0.82,
+          "to": 0.93,
           "snapped": 0.875,
-          "output": null,
+          "output": 4,
           "name": "Night Headlight"
         },
         {
-          "index": 8,
-          "from": 1,
-          "to": 1.12,
-          "snapped": 1,
-          "output": null,
+          "index": 0,
+          "from": 0.94,
+          "to": 1,
+          "snapped": 0,
+          "output": -3,
           "name": "Off"
         }
-      ]
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.375
     },
     "S_MasterSwitch_IrregularLever": {
       "identifier": "MasterSwitch",
@@ -3539,8 +3576,8 @@
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 1,
       "rotational": false,
       "inputValue": 0,
       "namedValues": [
@@ -3558,35 +3595,39 @@
         }
       ],
       "swept": true,
-      "synthetic": true,
       "notches": [
         {
           "index": 0,
           "from": 0,
-          "to": 0.99,
+          "to": 0.49,
           "snapped": 0,
-          "output": null,
+          "output": 0,
           "name": "Off"
         },
         {
           "index": 1,
-          "from": 1,
-          "to": 1.99,
-          "snapped": 1,
-          "output": null,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.8906,
+          "output": 1,
           "name": "On"
         }
-      ]
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
     },
     "S_Reverser_IrregularLever": {
       "identifier": "Reverser",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 4,
+      "notchCount": 5,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 3,
       "rotational": true,
       "inputValue": 0,
       "namedValues": [
@@ -3616,41 +3657,53 @@
         }
       ],
       "swept": true,
-      "synthetic": true,
       "notches": [
         {
           "index": 0,
           "from": 0,
-          "to": 0.24,
+          "to": 0.12,
           "snapped": 0,
-          "output": null,
+          "output": 2,
           "name": "Off"
         },
         {
           "index": 1,
-          "from": 0.25,
-          "to": 0.49,
+          "from": 0.13,
+          "to": 0.37,
           "snapped": 0.25,
-          "output": null,
+          "output": 1,
           "name": "Reverse"
         },
         {
           "index": 2,
-          "from": 0.5,
-          "to": 0.74,
+          "from": 0.38,
+          "to": 0.62,
           "snapped": 0.5,
-          "output": null,
+          "output": 0,
           "name": "Neutral"
         },
         {
           "index": 3,
-          "from": 0.75,
-          "to": 0.99,
+          "from": 0.63,
+          "to": 0.87,
           "snapped": 0.75,
-          "output": null,
+          "output": -1,
           "name": "Forward"
+        },
+        {
+          "index": 0,
+          "from": 0.88,
+          "to": 1,
+          "snapped": 0,
+          "output": 2,
+          "name": "Off"
         }
-      ]
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
     },
     "S_TrainBrake_IrregularLever": {
       "identifier": "AutomaticBrake",
@@ -3659,8 +3712,8 @@
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0.75,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 4,
       "rotational": false,
       "inputValue": 0.75,
       "namedValues": [
@@ -3684,59 +3737,71 @@
         }
       ],
       "swept": true,
-      "synthetic": true,
       "notches": [
         {
-          "index": 0,
+          "index": 2,
           "from": 0,
-          "to": 0.24,
+          "to": 0,
+          "snapped": 0.5,
+          "output": 2,
+          "name": null
+        },
+        {
+          "index": 0,
+          "from": 0.01,
+          "to": 0.12,
           "snapped": 0,
-          "output": null,
+          "output": 0,
           "name": "Release"
         },
         {
           "index": 1,
-          "from": 0.25,
-          "to": 0.49,
+          "from": 0.13,
+          "to": 0.37,
           "snapped": 0.25,
-          "output": null,
-          "name": "Step 1"
+          "output": 1,
+          "name": null
         },
         {
           "index": 2,
-          "from": 0.5,
-          "to": 0.74,
+          "from": 0.38,
+          "to": 0.62,
           "snapped": 0.5,
-          "output": null,
-          "name": "Step 2"
+          "output": 2,
+          "name": null
         },
         {
           "index": 3,
-          "from": 0.75,
-          "to": 0.99,
+          "from": 0.63,
+          "to": 0.87,
           "snapped": 0.75,
-          "output": null,
+          "output": 3,
           "name": "Full Service"
         },
         {
           "index": 4,
-          "from": 1,
-          "to": 1.24,
+          "from": 0.88,
+          "to": 1,
           "snapped": 1,
-          "output": null,
+          "output": 4,
           "name": "Emergency"
         }
-      ]
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.75
     },
     "S_Horn_IrregularLever": {
       "identifier": "Horn",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 3,
+      "notchCount": 1,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0.5,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 2,
       "rotational": false,
       "inputValue": 0.5,
       "namedValues": [
@@ -3753,34 +3818,8 @@
           "max": 1.5
         }
       ],
-      "swept": true,
-      "synthetic": true,
-      "notches": [
-        {
-          "index": 0,
-          "from": 0,
-          "to": 0.49,
-          "snapped": 0,
-          "output": null,
-          "name": "Low"
-        },
-        {
-          "index": 1,
-          "from": 0.5,
-          "to": 0.99,
-          "snapped": 0.5,
-          "output": null,
-          "name": "Off"
-        },
-        {
-          "index": 2,
-          "from": 1,
-          "to": 1.49,
-          "snapped": 1,
-          "output": null,
-          "name": "High"
-        }
-      ]
+      "swept": false,
+      "notches": []
     },
     "S_Throttle_IrregularLever": {
       "identifier": "Throttle",
@@ -3789,8 +3828,8 @@
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 7,
       "rotational": false,
       "inputValue": 0,
       "namedValues": [
@@ -3808,85 +3847,89 @@
         }
       ],
       "swept": true,
-      "synthetic": true,
       "notches": [
         {
           "index": 0,
           "from": 0,
-          "to": 0.13,
+          "to": 0.07,
           "snapped": 0,
-          "output": null,
+          "output": 0,
           "name": "Off"
         },
         {
           "index": 1,
-          "from": 0.14,
-          "to": 0.28,
+          "from": 0.08,
+          "to": 0.21,
           "snapped": 0.1429,
-          "output": null,
-          "name": "1"
+          "output": 1,
+          "name": null
         },
         {
           "index": 2,
-          "from": 0.29,
-          "to": 0.42,
+          "from": 0.22,
+          "to": 0.35,
           "snapped": 0.2857,
-          "output": null,
-          "name": "2"
+          "output": 2,
+          "name": null
         },
         {
           "index": 3,
-          "from": 0.43,
-          "to": 0.56,
+          "from": 0.36,
+          "to": 0.49,
           "snapped": 0.4286,
-          "output": null,
-          "name": "3"
+          "output": 3,
+          "name": null
         },
         {
           "index": 4,
-          "from": 0.57,
-          "to": 0.7,
+          "from": 0.5,
+          "to": 0.64,
           "snapped": 0.5714,
-          "output": null,
-          "name": "4"
+          "output": 4,
+          "name": null
         },
         {
           "index": 5,
-          "from": 0.71,
-          "to": 0.85,
+          "from": 0.65,
+          "to": 0.78,
           "snapped": 0.7143,
-          "output": null,
-          "name": "5"
+          "output": 5,
+          "name": null
         },
         {
           "index": 6,
-          "from": 0.86,
-          "to": 0.99,
+          "from": 0.79,
+          "to": 0.92,
           "snapped": 0.8571,
-          "output": null,
-          "name": "6"
+          "output": 6,
+          "name": null
         },
         {
           "index": 7,
-          "from": 1,
-          "to": 1.13,
+          "from": 0.93,
+          "to": 1,
           "snapped": 1,
-          "output": null,
-          "name": "7"
+          "output": 7,
+          "name": "Max"
         }
-      ]
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
     },
     "S_VigilancePedal_ReversiblePushButton": {
       "identifier": "Alerter",
       "objectClass": "ReversiblePushButton_C",
-      "notchCount": 1,
-      "minInput": 0,
-      "maxInput": 1,
-      "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
-      "rotational": false,
-      "inputValue": 0,
+      "notchCount": null,
+      "minInput": 1,
+      "maxInput": 0,
+      "defaultInput": 1,
+      "inputRange": -1,
+      "outputRange": 1,
+      "rotational": null,
+      "inputValue": 1,
       "namedValues": [
         {
           "name": "Released",
@@ -3896,18 +3939,17 @@
         }
       ],
       "swept": false,
-      "synthetic": true,
       "notches": []
     },
     "S_TPWSTemporaryIso_IrregularLever": {
       "identifier": "TPWS_TempIsolation",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 3,
+      "notchCount": 1,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0.5,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 2,
       "rotational": false,
       "inputValue": 0.5,
       "namedValues": [
@@ -3924,81 +3966,52 @@
           "max": 1.5
         }
       ],
-      "swept": true,
-      "synthetic": true,
-      "notches": [
-        {
-          "index": 0,
-          "from": 0,
-          "to": 0.49,
-          "snapped": 0,
-          "output": null,
-          "name": "Isolated"
-        },
-        {
-          "index": 1,
-          "from": 0.5,
-          "to": 0.99,
-          "snapped": 0.5,
-          "output": null,
-          "name": "Off"
-        },
-        {
-          "index": 2,
-          "from": 1,
-          "to": 1.49,
-          "snapped": 1,
-          "output": null,
-          "name": "Normal"
-        }
-      ]
+      "swept": false,
+      "notches": []
     },
     "L_GuardWiper_SimpleLever": {
       "identifier": "None",
       "objectClass": "SimpleLeverComponent",
-      "notchCount": 1,
+      "notchCount": 0,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 1,
       "rotational": false,
       "inputValue": 0,
       "namedValues": [],
       "swept": false,
-      "synthetic": true,
       "notches": []
     },
     "S_DriverWiper_SimpleLever": {
       "identifier": "None",
       "objectClass": "SimpleLeverComponent",
-      "notchCount": 1,
+      "notchCount": 0,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 1,
       "rotational": false,
       "inputValue": 0,
       "namedValues": [],
       "swept": false,
-      "synthetic": true,
       "notches": []
     },
     "S_GuardWiper_SimpleLever": {
       "identifier": "None",
       "objectClass": "SimpleLeverComponent",
-      "notchCount": 1,
+      "notchCount": 0,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 1,
       "rotational": false,
       "inputValue": 0,
       "namedValues": [],
       "swept": false,
-      "synthetic": true,
       "notches": []
     },
     "S_TPWS_Iso_IrregularLever": {
@@ -4008,8 +4021,8 @@
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 1,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 1,
       "rotational": false,
       "inputValue": 1,
       "namedValues": [
@@ -4027,25 +4040,29 @@
         }
       ],
       "swept": true,
-      "synthetic": true,
       "notches": [
         {
           "index": 0,
           "from": 0,
-          "to": 0.99,
+          "to": 0.49,
           "snapped": 0,
-          "output": null,
+          "output": 0,
           "name": "Normal"
         },
         {
           "index": 1,
-          "from": 1,
-          "to": 1.99,
-          "snapped": 1,
-          "output": null,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.8914,
+          "output": 1,
           "name": "Isolated"
         }
-      ]
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
     },
     "L_DriverWasher_IrregularLever": {
       "identifier": "Wipers",
@@ -4054,8 +4071,8 @@
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0.5,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 2,
       "rotational": false,
       "inputValue": 0.5,
       "namedValues": [
@@ -4079,43 +4096,47 @@
         }
       ],
       "swept": true,
-      "synthetic": true,
       "notches": [
         {
           "index": 0,
           "from": 0,
-          "to": 0.49,
+          "to": 0.24,
           "snapped": 0,
-          "output": null,
+          "output": 0,
           "name": "Slow"
         },
         {
           "index": 1,
-          "from": 0.5,
-          "to": 0.99,
+          "from": 0.25,
+          "to": 0.74,
           "snapped": 0.5,
-          "output": null,
+          "output": 1,
           "name": "Off"
         },
         {
           "index": 2,
-          "from": 1,
-          "to": 1.49,
+          "from": 0.75,
+          "to": 1,
           "snapped": 1,
-          "output": null,
+          "output": 2,
           "name": "Fast"
         }
-      ]
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.5
     },
     "L_GuardWasher_IrregularLever": {
       "identifier": "None",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 1,
+      "notchCount": 3,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0.5,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 2,
       "rotational": false,
       "inputValue": 0.5,
       "namedValues": [
@@ -4138,9 +4159,38 @@
           "max": 2.5
         }
       ],
-      "swept": false,
-      "synthetic": true,
-      "notches": []
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": 0,
+          "name": "Slow"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 1,
+          "name": "Off"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 2,
+          "name": "Fast"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.5
     },
     "S_DriverWasher_IrregularLever": {
       "identifier": "Wipers",
@@ -4149,8 +4199,8 @@
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0.5,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 2,
       "rotational": false,
       "inputValue": 0.5,
       "namedValues": [
@@ -4174,43 +4224,47 @@
         }
       ],
       "swept": true,
-      "synthetic": true,
       "notches": [
         {
           "index": 0,
           "from": 0,
-          "to": 0.49,
+          "to": 0.24,
           "snapped": 0,
-          "output": null,
+          "output": 0,
           "name": "Slow"
         },
         {
           "index": 1,
-          "from": 0.5,
-          "to": 0.99,
+          "from": 0.25,
+          "to": 0.74,
           "snapped": 0.5,
-          "output": null,
+          "output": 1,
           "name": "Off"
         },
         {
           "index": 2,
-          "from": 1,
-          "to": 1.49,
+          "from": 0.75,
+          "to": 1,
           "snapped": 1,
-          "output": null,
+          "output": 2,
           "name": "Fast"
         }
-      ]
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.5
     },
     "S_GuardWasher_IrregularLever": {
       "identifier": "None",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 1,
+      "notchCount": 3,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0.5,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 2,
       "rotational": false,
       "inputValue": 0.5,
       "namedValues": [
@@ -4233,117 +4287,140 @@
           "max": 2.5
         }
       ],
-      "swept": false,
-      "synthetic": true,
-      "notches": []
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": 0,
+          "name": "Slow"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 1,
+          "name": "Off"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 2,
+          "name": "Fast"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.5
     },
     "S_DriverBlind_IrregularLever": {
       "identifier": "None",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 1,
+      "notchCount": 0,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 1,
       "rotational": false,
       "inputValue": 0,
       "namedValues": [],
       "swept": false,
-      "synthetic": true,
       "notches": []
     },
     "S_GuardBlind_IrregularLever": {
       "identifier": "None",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 1,
+      "notchCount": 0,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 1,
       "rotational": false,
       "inputValue": 0,
       "namedValues": [],
       "swept": false,
-      "synthetic": true,
       "notches": []
     },
     "FL_Ext_ManualLock_IrregularLever": {
       "identifier": "None",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 1,
+      "notchCount": 0,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 1,
       "rotational": false,
       "inputValue": 0,
       "namedValues": [],
       "swept": false,
-      "synthetic": true,
       "notches": []
     },
     "FR_Ext_ManualLock_IrregularLever": {
       "identifier": "None",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 1,
+      "notchCount": 0,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 1,
       "rotational": false,
       "inputValue": 0,
       "namedValues": [],
       "swept": false,
-      "synthetic": true,
       "notches": []
     },
     "BL_Ext_ManualLock_IrregularLever": {
       "identifier": "None",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 1,
+      "notchCount": 0,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 1,
       "rotational": false,
       "inputValue": 0,
       "namedValues": [],
       "swept": false,
-      "synthetic": true,
       "notches": []
     },
     "BR_Ext_ManualLock_IrregularLever": {
       "identifier": "None",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 1,
+      "notchCount": 0,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 1,
       "rotational": false,
       "inputValue": 0,
       "namedValues": [],
       "swept": false,
-      "synthetic": true,
       "notches": []
     },
     "F_GuardPanelEnergiser_IrregularLever": {
       "identifier": "None",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 1,
+      "notchCount": 2,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 1,
       "rotational": false,
-      "inputValue": 0,
+      "inputValue": 1,
       "namedValues": [
         {
           "name": "Off",
@@ -4358,21 +4435,42 @@
           "max": 1.5
         }
       ],
-      "swept": false,
-      "synthetic": true,
-      "notches": []
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 1,
+          "output": 1,
+          "name": "On"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
     },
     "B_GuardPanelEnergiser_IrregularLever": {
       "identifier": "None",
       "objectClass": "IrregularLeverComponent",
-      "notchCount": 1,
+      "notchCount": 2,
       "minInput": 0,
       "maxInput": 1,
       "defaultInput": 0,
-      "inputRange": null,
-      "outputRange": null,
+      "inputRange": 1,
+      "outputRange": 1,
       "rotational": false,
-      "inputValue": 0,
+      "inputValue": 1,
       "namedValues": [
         {
           "name": "Off",
@@ -4387,9 +4485,30 @@
           "max": 1.5
         }
       ],
-      "swept": false,
-      "synthetic": true,
-      "notches": []
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.8886,
+          "output": 0.9381154775619507,
+          "name": "On"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
     }
   }
 }

@@ -26,6 +26,26 @@
       "assignments": [
         {
           "type": "direct_control",
+          "controls": "{SIDE:L:S}_TrainBrake_IrregularLever",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "assignments": [
+        {
+          "type": "direct_control",
           "controls": "{SIDE:L:S}_Throttle_IrregularLever",
           "input_value": {
             "min": 0,
@@ -39,27 +59,8 @@
               0.7143,
               0.8571,
               1
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "name": "RightThrottle",
-      "assignments": [
-        {
-          "type": "direct_control",
-          "controls": "{SIDE:L:S}_TrainBrake_IrregularLever",
-          "input_value": {
-            "min": 0,
-            "max": 1,
-            "steps": [
-              0,
-              0.25,
-              0.5,
-              0.75,
-              1
-            ]
+            ],
+            "invert": true
           }
         }
       ]
@@ -99,7 +100,14 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "x"
+          "controls": "{SIDE:L:S}_Sander_PushButton",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "{SIDE:L:S}_Sander_PushButton",
+          "value": 0,
+          "hold": false
         }
       }
     },

@@ -5,11 +5,21 @@
     "Train Sim World"
   ],
   "rail_class_information": [
-    { "class_name": "RVM_TFW_Class153_C" },
-    { "class_name": "RVM_TFW_Class153_PRM_C" },
-    { "class_name": "RVM_TFW_Class153_PRMLite_C" },
-    { "class_name": "RVM_TFW_Class153_ATW1_C" },
-    { "class_name": "RVM_TFW_Class153_ATW2_C" }
+    {
+      "class_name": "RVM_TFW_Class153_C"
+    },
+    {
+      "class_name": "RVM_TFW_Class153_PRM_C"
+    },
+    {
+      "class_name": "RVM_TFW_Class153_PRMLite_C"
+    },
+    {
+      "class_name": "RVM_TFW_Class153_ATW1_C"
+    },
+    {
+      "class_name": "RVM_TFW_Class153_ATW2_C"
+    }
   ],
   "controls": [
     {
@@ -22,7 +32,12 @@
           "input_value": {
             "min": 0,
             "max": 0.75,
-            "steps": [0, 0.25, 0.5, 0.75],
+            "steps": [
+              0,
+              0.25,
+              0.5,
+              0.75
+            ],
             "invert": true
           }
         }
@@ -30,21 +45,6 @@
     },
     {
       "name": "LeftThrottle",
-      "description": "Throttle (Off, 1-7)",
-      "assignments": [
-        {
-          "type": "direct_control",
-          "controls": "{SIDE:L:S}_Throttle_IrregularLever",
-          "input_value": {
-            "min": 0,
-            "max": 1,
-            "steps": [0, 0.1429, 0.2857, 0.4286, 0.5714, 0.7143, 0.8571, 1]
-          }
-        }
-      ]
-    },
-    {
-      "name": "RightThrottle",
       "description": "Train brake (Release / Step 1 / Step 2 / Full service / Emergency)",
       "assignments": [
         {
@@ -53,7 +53,38 @@
           "input_value": {
             "min": 0,
             "max": 1,
-            "steps": [0, 0.25, 0.5, 0.75, 1]
+            "steps": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "Throttle (Off / 1 / 2 / 3 / 4 / 5 / 6 / 7)",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "{SIDE:L:S}_Throttle_IrregularLever",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.1429,
+              0.2857,
+              0.4286,
+              0.5714,
+              0.7143,
+              0.8571,
+              1
+            ],
+            "invert": true
           }
         }
       ]
@@ -96,7 +127,14 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "x"
+          "controls": "{SIDE:L:S}_Sander_PushButton",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "{SIDE:L:S}_Sander_PushButton",
+          "value": 0,
+          "hold": false
         }
       }
     },
@@ -126,7 +164,7 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "{SIDE:L:S}_Horn_IrregularLever",
-          "value": 1.0,
+          "value": 1,
           "hold": true
         },
         "action_deactivate": {
@@ -144,7 +182,7 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "{SIDE:L:S}_Horn_IrregularLever",
-          "value": 0.0,
+          "value": 0,
           "hold": true
         },
         "action_deactivate": {
@@ -184,12 +222,12 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "{SIDE:L:S}_Signal_PushButton",
-          "value": 1.0,
+          "value": 1,
           "hold": true
         },
         "action_deactivate": {
           "controls": "{SIDE:L:S}_Signal_PushButton",
-          "value": 0.0,
+          "value": 0,
           "hold": false
         }
       }

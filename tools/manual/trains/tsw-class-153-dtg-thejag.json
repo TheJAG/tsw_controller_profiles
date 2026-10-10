@@ -5,43 +5,94 @@
   "profileName": "TSW | Class 153 | DTG | TheJAG",
   "developer": "Dovetail Games",
   "route": "Cardiff City Commuter",
-  "colors": { "navy": "#223261", "blue": "#4a66a8", "paper": "#f3f5f9" },
+  "colors": {
+    "navy": "#223261",
+    "blue": "#4a66a8",
+    "paper": "#f3f5f9"
+  },
   "logos": [
-    { "file": "../../assets/logo-tfw.svg", "alt": "Transport for Wales" },
-    { "file": "../../assets/logo-dtg.jpg", "alt": "Dovetail Games" }
+    {
+      "file": "../../assets/logo-tfw.svg",
+      "alt": "Transport for Wales"
+    },
+    {
+      "file": "../../assets/logo-dtg.jpg",
+      "alt": "Dovetail Games"
+    }
   ],
-  "diagram": { "file": "../../assets/class-153-diagram.png", "source": "Drawing: Wikimedia Commons, CC BY-SA 4.0" },
+  "diagram": {
+    "file": "../../assets/class-153-diagram.png",
+    "source": "Drawing: Vauxhallvauxhall, Wikimedia Commons, CC BY-SA 4.0"
+  },
   "dlc": "store.steampowered.com/app/4678800",
   "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/class-153-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
   "controls": {
-    "speedbrake": { "name": "Reverser", "notches": ["Off", "Forward", "Neutral", "Reverse"], "start": 0 },
-    "leftThrottle": { "name": "Throttle", "notches": ["7", "6", "5", "4", "3", "2", "1", "Off"], "start": 7 },
-    "rightThrottle": { "name": "Train brake", "notches": ["Emergency", "Full service", "Step 2", "Step 1", "Release"], "start": 1 },
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": ["Forward", "Neutral", "Reverse", "Off"],
+      "start": 3
+    },
+    "leftThrottle": {
+      "name": "Train brake",
+      "notches": ["Release", "Step 1", "Step 2", "Full service", "Emergency"],
+      "start": 3
+    },
+    "rightThrottle": {
+      "name": "Throttle",
+      "notches": ["7", "6", "5", "4", "3", "2", "1", "Off"],
+      "start": 7
+    },
     "flap": null,
-    "leftThrottleButton": { "name": "Sand" },
-    "rightThrottleButton": { "name": "Engine start" },
-    "gearLever": { "name": "AWS reset" },
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Engine start"
+    },
+    "gearLever": {
+      "name": "AWS reset"
+    },
     "autoBrk": {
       "name": "Headlights",
-      "positions": [
-        { "short": "0", "desc": "–" },
-        { "short": "BTV", "desc": "Off" },
-        { "short": "LO", "desc": "Day" },
-        { "short": "2", "desc": "Marker only" },
-        { "short": "3", "desc": "Night" },
-        { "short": "HI", "desc": "Tail lights" }
-      ],
-      "start": 1
+      "positions": [{ "short": "0", "desc": "–" }, { "short": "BTV", "desc": "Off" }, { "short": "LO", "desc": "Day" }, { "short": "2", "desc": "Marker only" }, { "short": "3", "desc": "Night" }, { "short": "HI", "desc": "Tail only" }],
+      "start": 2
     },
-    "eng1": { "name": "Horn high", "start": true },
-    "eng2": { "name": "Horn low", "start": true },
-    "leftAux": { "name": "AWS breaker" },
-    "rightAux": { "name": "DVD / vigilance" },
-    "modeSwitch": { "name": "Wipers", "left": "slow", "right": "fast" },
-    "roundAux": { "name": "Guard buzzer" },
-    "rudTrim": { "name": "Doors L / R" },
-    "parkBrk": { "name": "Master switch", "flat": "off", "up": "on" }
+    "eng1": {
+      "name": "Horn high",
+      "start": true
+    },
+    "eng2": {
+      "name": "Horn low",
+      "start": true
+    },
+    "leftAux": {
+      "name": "AWS breaker"
+    },
+    "rightAux": {
+      "name": "DVD breaker"
+    },
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "slow",
+      "right": "fast"
+    },
+    "roundAux": {
+      "name": "Guard buzzer"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Master switch",
+      "flat": "off",
+      "up": "on"
+    }
   },
-  "setup": ["Master switch on (PARK BRK)", "Start engine", "Set reverser to neutral", "Check AWS and DVD breakers are normal", "Set headlights / tail lights", "Open doors"],
-  "depart": ["Close doors", "Wait for guard buzzer", "Check signal", "Set reverser to forward", "Release brake", "Apply power"]
+  "setup": ["Master switch on (PARK BRK)", "Start engine", "Reverser to neutral", "Check AWS and DVD breakers are normal", "Headlights to day", "Open doors"],
+  "depart": ["Close doors", "Wait for guard buzzer", "Check signal", "Reverser to forward", "Release brake", "Apply power"]
 }
