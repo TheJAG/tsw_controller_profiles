@@ -37,7 +37,7 @@ This folder is both the live config dir of the TSW Controller App (`C:\Games\Too
 - Numeric `step_thresholds` are mirrored when `invert` is true; express them on the raw lever axis. A dead band around a notch is done with `threshold_tolerance`.
 - Push buttons toggle on every value change through the mod, so a `momentary` 1-then-0 toggles twice. Use `toggle`.
 - Spring switches (horn, sander, cab light, PZB buttons) rest at 0.5; send 1 or 0 while held and 0.5 on release.
-- The gear lever is the safety acknowledge: AWS reset (UK), SiFa (Germany), and on Dutch stock the deadman pedal, since ATB has no acknowledge button. The ICMm pedal is a reversible push button resting at 1 (held); the gear lever sends 0 while held and 1 on release (user, 2026-10-10).
+- The gear lever is the safety acknowledge: AWS reset (UK), SiFa (Germany), and on Dutch stock the deadman pedal, since ATB has no acknowledge button. Setting the ICMm `DeadmanPedal` through the API moves the pedal but does not clear the warning, so Dutch stock uses the game key `Q` on the gear lever (user test, 2026-10-10).
 - The app's API-key auto-detect does not see the OneDrive Documents path; the key path is set in the app settings.
 - The mod installer deletes `dxgi.dll` in the game's Win64 folder, which is OptiScaler. Keep `dxgi.dll.optiscaler` as backup and restore it after a mod install.
 - Word exports of the templates come out as two pages unless trailing paragraphs are dropped; the specs already do that.
