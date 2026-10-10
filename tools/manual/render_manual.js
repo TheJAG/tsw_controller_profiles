@@ -129,6 +129,9 @@ ul { margin: 0; padding-left: 16px; }
 .schem .ghost { fill: none; stroke: var(--navy); stroke-width: 1.5; stroke-dasharray: 4 3; }
 .schem .pivot { fill: #fff; stroke: var(--navy); stroke-width: 1.5; }
 .lists { display: grid; grid-template-columns: 1fr 1fr 1.3fr; gap: 20px; padding: 6px 36px 0; }
+/* with a cab band the schematic is shorter: push the checklists and the band down so they do not crowd the schematic */
+.sheet.withcab .lists { padding-top: 22px; }
+.sheet.withcab .cab { padding-top: 10px; }
 .lists.two { grid-template-columns: 1fr 1fr; }
 .lists h2 { font-size: 14px; color: var(--navy); margin-bottom: 3px; border-bottom: 1.5px solid var(--navy); padding-bottom: 3px; }
 .lists li { font-size: 11px; }
