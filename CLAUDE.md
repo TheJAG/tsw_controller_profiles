@@ -28,6 +28,7 @@ This folder is both the live config dir of the TSW Controller App (`C:\Games\Too
 - Lever assignment follows the real cab: the lever the driver has on the left goes on the left TCA throttle, the right one on the right (ICMm: throttle left, brake right). An AFB / speed setter goes on the flap lever when the train has one. The speedbrake lever is always the reverser.
 - The left and right aux squares are for switching the safety systems on and off (ATB / PZB / SiFa / AWS-TPWS / DVD-vigilance isolation or fuses), as `toggle`; other latching switches (train voltage, compressor, gauge lights) go on the round aux or stay out. The left throttle button is the sander when the train has one; if not, the nearest traction aid (ICMm: traction reduction) or nothing.
 - The side-view drawing must show the whole consist, every unit of the set as it runs in the game (ICMm: three cars), not only the leading car.
+- A lever without detents (SNG power/brake handle) gets `continuous: true` in the manual data: the slot shows a filled inner track, `notches` holds only the named points with `null` for the gaps, no ticks. In the profile it is a `direct_control` with `min`/`max` and no `steps`.
 - Notch pills are listed top to bottom with the top = lever pushed forward = raw 0 on the TCA; an inverted lever therefore shows the game's last notch on top (Forward, full power). `draft_manual.js` does this; `--flip` if a train proves otherwise.
 - Every finished manual is also published as an artifact in the chat (the self-contained HTML) so the user can look at it right away.
 

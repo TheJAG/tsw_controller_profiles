@@ -31,7 +31,9 @@ function lever(cx, y0, y1, l, pillX, anchorSide, label, labelX) {
   out += `<rect class="slot" x="${cx - 11}" y="${y0 - 6}" width="22" height="${y1 - y0 + 12}" rx="6"/>`;
   if (!assigned) return out + `<rect class="knob" x="${cx - 26}" y="${(y0 + y1) / 2 - 14}" width="52" height="28" rx="7" opacity=".3"/>`;
   const n = l.notches.length, step = n > 1 ? (y1 - y0) / (n - 1) : 0, st = l.start == null ? -1 : l.start;
-  l.notches.forEach((name, i) => { const y = y0 + i * step; out += `<line class="tick" x1="${cx - 8}" y1="${y}" x2="${cx + 8}" y2="${y}"/>`; const w = pw(name); out += pillS(anchorSide === 'start' ? pillX + w / 2 : pillX - w / 2, y, name, i === st); });
+  // continuous: true = no detents; the slot gets a filled inner track and null entries in notches leave a gap without tick or pill
+  if (l.continuous) out += `<rect x="${cx - 4}" y="${y0}" width="8" height="${y1 - y0}" rx="4" fill="var(--navy)" opacity=".28"/>`;
+  l.notches.forEach((name, i) => { if (name == null) return; const y = y0 + i * step; if (!l.continuous) out += `<line class="tick" x1="${cx - 8}" y1="${y}" x2="${cx + 8}" y2="${y}"/>`; const w = pw(name); out += pillS(anchorSide === 'start' ? pillX + w / 2 : pillX - w / 2, y, name, i === st); });
   const ky = y0 + (st >= 0 ? st : (n - 1) / 2) * step;
   out += `<rect class="knob" x="${cx - 22}" y="${ky - 14}" width="44" height="28" rx="7" opacity=".92"/>` + (st >= 0 ? start(cx, ky) : '');
   return out;
