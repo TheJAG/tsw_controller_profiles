@@ -1,0 +1,148 @@
+{
+  "name": "tsw-class-801-dtg-thejag",
+  "title": "Class 801",
+  "eyebrow": "LNER · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | Class 801 | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "Airedale & Wharfedale Lines",
+  "colors": {
+    "navy": "#223261",
+    "blue": "#4a66a8",
+    "paper": "#f3f5f9"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-lner-navy.svg",
+      "alt": "LNER"
+    },
+    {
+      "file": "../../assets/logo-dtg-navy.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "diagram": {
+    "file": "../../assets/class-801-side.png",
+    "source": "Drawing: WestRail642fan, Wikimedia Commons, CC BY-SA 4.0",
+    "clean": false
+  },
+  "dlc": "store.steampowered.com/app/4714890",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/class-801-dtg-cab.jpg",
+    "height": 196,
+    "position": "50% 55%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Off",
+        "Forward",
+        "Neutral",
+        "Reverse"
+      ],
+      "start": 0
+    },
+    "leftThrottle": {
+      "name": "Power / brake",
+      "continuous": true,
+      "notches": [
+        "Max brake",
+        null,
+        "Min brake",
+        "Off",
+        "Power 1",
+        null,
+        "Full power"
+      ],
+      "start": 0
+    },
+    "rightThrottle": null,
+    "flap": null,
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Pantograph up"
+    },
+    "gearLever": {
+      "name": "AWS reset"
+    },
+    "autoBrk": {
+      "name": "Headlights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Full"
+        },
+        {
+          "short": "2",
+          "desc": "Marker"
+        },
+        {
+          "short": "3",
+          "desc": "Dimmed"
+        },
+        {
+          "short": "HI",
+          "desc": "Tail"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Horn high",
+      "start": true
+    },
+    "eng2": {
+      "name": "Horn low",
+      "start": true
+    },
+    "leftAux": {
+      "name": "TPWS/AWS isolation"
+    },
+    "rightAux": {
+      "name": "DVD isolation"
+    },
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "slower",
+      "right": "faster"
+    },
+    "roundAux": {
+      "name": "Guard buzzer"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Master key",
+      "flat": "out",
+      "up": "in"
+    }
+  },
+  "setup": [
+    "Master key in (PARK BRK)",
+    "Pantograph up (right throttle button), wait for line volts",
+    "Reverser to Neutral",
+    "Check TPWS/AWS and DVD isolation lights are out",
+    "Headlights to Full",
+    "Open doors (RUD TRIM)"
+  ],
+  "depart": [
+    "Close doors, wait for the guard buzzer",
+    "Check the signal",
+    "Reverser to Forward",
+    "Handle from Max brake through Off to Power 1",
+    "Pull further into the power zone (notches 2 to 4) as speed rises",
+    "Acknowledge AWS with the gear lever"
+  ]
+}

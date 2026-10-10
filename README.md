@@ -52,7 +52,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **BR Class 484**  
 `TODO ◼️` **BR Class 700/0 Thameslink**  
 `DONE ✅` **BR Class 710** <sub>— DTG · [profile](releases/tsw-class-710-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-710-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **BR Class 801**  
+`SOON 🟨` **BR Class 801** <sub>— DTG · [profile](releases/tsw-class-801-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-801-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 802**  
 `TODO ◼️` **BR Class 805**  
 `TODO ◼️` **BR Class 807**  
