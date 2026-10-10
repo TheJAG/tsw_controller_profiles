@@ -1,0 +1,173 @@
+{
+  "name": "tsw-br-411-dtg-thejag",
+  "title": "BR 411 ICE-T",
+  "eyebrow": "DB Fernverkehr · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | BR 411 ICE-T | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "Bahnstrecke Leipzig – Dresden",
+  "colors": {
+    "navy": "#3a3d4d",
+    "blue": "#ec0016",
+    "red": "#ec0016",
+    "paper": "#f6f4f4"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-db-grey.png",
+      "alt": "Deutsche Bahn"
+    },
+    {
+      "file": "../../assets/logo-dtg-dbgrey.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4680330",
+  "diagram": {
+    "file": "../../assets/br-411-side.png",
+    "source": "Tekening: Arthur's Treinenpagina, arthurstreinenpagina.nl",
+    "clean": false
+  },
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/br-411-dtg-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Richtungsschalter",
+      "notches": [
+        "Forward",
+        "Off",
+        "Reverse"
+      ],
+      "start": 1
+    },
+    "leftThrottle": {
+      "name": "Fahrschalter",
+      "continuous": true,
+      "notches": [
+        "Max",
+        null,
+        null,
+        null,
+        "Min",
+        "Off"
+      ],
+      "start": 5
+    },
+    "rightThrottle": {
+      "name": "Bremsen",
+      "notches": [
+        "Release",
+        "1A",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "Full application",
+        "Rapid braking"
+      ],
+      "start": 8
+    },
+    "flap": {
+      "name": "AFB V-Soll",
+      "continuous": true,
+      "notches": [
+        "Max",
+        null,
+        null,
+        null,
+        "0"
+      ],
+      "start": 4
+    },
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Horn"
+    },
+    "gearLever": {
+      "name": "SiFa reset"
+    },
+    "autoBrk": {
+      "name": "Headlights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Normal"
+        },
+        {
+          "short": "2",
+          "desc": "Dimmed"
+        },
+        {
+          "short": "3",
+          "desc": "Normal high"
+        },
+        {
+          "short": "HI",
+          "desc": "Dimmed high"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "PZB Frei",
+      "start": true
+    },
+    "eng2": {
+      "name": "PZB Wachsam",
+      "start": true
+    },
+    "leftAux": {
+      "name": "SiFa isolation"
+    },
+    "rightAux": {
+      "name": "PZB isolation"
+    },
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "back",
+      "right": "on"
+    },
+    "roundAux": {
+      "name": "PZB Befehl 40"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Battery",
+      "flat": "off",
+      "up": "on"
+    }
+  },
+  "setup": [
+    "Battery on (PARK BRK)",
+    "Richtungsschalter to Off, raise the pantograph and close the Hauptschalter in the cab",
+    "SiFa, PZB and LZB isolation switches off (aux squares unlit)",
+    "Headlights to Normal",
+    "AFB V-Soll on the flap lever to the wanted speed",
+    "Open doors (RUD TRIM)"
+  ],
+  "depart": [
+    "Close doors, check the signal, PZB and LZB",
+    "Richtungsschalter to Forward",
+    "Bremsen to Release",
+    "Fahrschalter towards Max; the AFB holds the set speed",
+    "Acknowledge SiFa with the gear lever, PZB with the ENG switches",
+    "Brake: Bremsen in steps towards Full application"
+  ]
+}
