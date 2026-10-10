@@ -26,76 +26,68 @@
           "input_value": {
             "min": 0,
             "max": 1,
-            "steps": [0, 0.5, 1],
+            "steps": [
+              0,
+              0.5,
+              1
+            ],
             "invert": true
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "Reverser",
-          "input_value": {
-            "min": 0,
-            "max": 1,
-            "steps": [0, 0.5, 1],
-            "invert": true
-          },
-          "action_increase": {
-            "keys": "w"
-          },
-          "action_decrease": {
-            "keys": "s"
           }
         }
       ]
     },
     {
       "name": "LeftThrottle",
-      "description": "Combined power and brake",
+      "description": "Combined power / brake handle (Max brake 0.1 / brake % / min brake 0.41 / 0 / min power 0.59 / power % / full; the game gates the handle one notch per set, 0 is 0.46..0.54; Emergency at 0 is left out on purpose)",
       "assignments": [
         {
           "type": "direct_control",
           "controls": "MasterController",
           "input_value": {
-            "min": 0,
+            "min": 0.1,
             "max": 1,
-            "steps": [0, 0.1, null, 0.41, 0.5, 0.59, null, 1.0],
+            "steps": [
+              0.1,
+              null,
+              0.41,
+              0.5,
+              0.59,
+              null,
+              1
+            ],
             "invert": true,
             "step_thresholds": [
-              { "threshold": 1.0, "threshold_tolerance": 0.04 },
-              { "threshold": 0.92, "threshold_tolerance": 0.04 },
-              { "threshold": 0.88, "threshold_end": 0.63, "threshold_tolerance": 0 },
-              { "threshold": 0.60, "threshold_tolerance": 0.03 },
-              { "threshold": 0.50, "threshold_tolerance": 0.07 },
-              { "threshold": 0.40, "threshold_tolerance": 0.03 },
-              { "threshold": 0.37, "threshold_end": 0.03, "threshold_tolerance": 0 },
-              { "threshold": 0.0, "threshold_tolerance": 0.04 }
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.955,
+                "threshold_end": 0.58,
+                "threshold_tolerance": 0
+              },
+              {
+                "threshold": 0.55,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.5,
+                "threshold_tolerance": 0.02
+              },
+              {
+                "threshold": 0.45,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.42,
+                "threshold_end": 0.045,
+                "threshold_tolerance": 0
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.04
+              }
             ]
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "Throttle",
-          "input_value": {
-            "min": 0,
-            "max": 1,
-            "steps": [0, 0.1, null, 0.41, 0.5, 0.59, null, 1.0],
-            "invert": true,
-            "step_thresholds": [
-              { "threshold": 1.0, "threshold_tolerance": 0.04 },
-              { "threshold": 0.92, "threshold_tolerance": 0.04 },
-              { "threshold": 0.88, "threshold_end": 0.63, "threshold_tolerance": 0 },
-              { "threshold": 0.60, "threshold_tolerance": 0.03 },
-              { "threshold": 0.50, "threshold_tolerance": 0.07 },
-              { "threshold": 0.40, "threshold_tolerance": 0.03 },
-              { "threshold": 0.37, "threshold_end": 0.03, "threshold_tolerance": 0 },
-              { "threshold": 0.0, "threshold_tolerance": 0.04 }
-            ]
-          },
-          "action_increase": {
-            "keys": "a"
-          },
-          "action_decrease": {
-            "keys": "d"
           }
         }
       ]
@@ -110,22 +102,13 @@
           "input_value": {
             "min": 0,
             "max": 1,
-            "steps": [0, 0.2, 0.4, 0.8, 1.0]
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "AutomaticBrake",
-          "input_value": {
-            "min": 0,
-            "max": 1,
-            "steps": [0, 0.2, 0.4, 0.8, 1.0]
-          },
-          "action_increase": {
-            "keys": "'"
-          },
-          "action_decrease": {
-            "keys": ";"
+            "steps": [
+              0,
+              0.2,
+              0.4,
+              0.8,
+              1
+            ]
           }
         }
       ]
@@ -133,15 +116,17 @@
     {
       "name": "FlapLever",
       "description": "Reading light dimmer",
-      "assignment": {
-        "type": "direct_control",
-        "controls": "ReadingLightDimmer",
-        "input_value": {
-          "min": 0.0,
-          "max": 1.0,
-          "invert": true
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "ReadingLightDimmer",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "invert": true
+          }
         }
-      }
+      ]
     },
     {
       "name": "ParkingBrake",
@@ -152,7 +137,7 @@
           "threshold": 0.5,
           "action_activate": {
             "controls": "MasterKey",
-            "value": 1.0,
+            "value": 1,
             "hold": false,
             "enable_api_fallback": true
           },
@@ -168,13 +153,13 @@
           "threshold": 0.5,
           "action_activate": {
             "controls": "MasterSwitch",
-            "value": 1.0,
+            "value": 1,
             "hold": false,
             "enable_api_fallback": true
           },
           "action_deactivate": {
             "controls": "MasterKey",
-            "value": 0.0,
+            "value": 0,
             "hold": false,
             "enable_api_fallback": true
           }
@@ -189,12 +174,12 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "PZB_Override",
-          "value": 1.0,
+          "value": 1,
           "hold": true
         },
         "action_deactivate": {
           "controls": "PZB_Override",
-          "value": 0.0,
+          "value": 0,
           "hold": false
         }
       }
@@ -237,7 +222,7 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "Sander",
-          "value": 1.0,
+          "value": 1,
           "hold": true
         },
         "action_deactivate": {
@@ -255,12 +240,12 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "HornPedal",
-          "value": 1.0,
+          "value": 1,
           "hold": true
         },
         "action_deactivate": {
           "controls": "HornPedal",
-          "value": 0.0,
+          "value": 0,
           "hold": false
         }
       }
@@ -273,13 +258,13 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "SIFA_Fuse",
-          "value": 1.0,
+          "value": 1,
           "hold": false,
           "enable_api_fallback": true
         },
         "action_deactivate": {
           "controls": "SIFA_Fuse",
-          "value": 0.0,
+          "value": 0,
           "hold": false,
           "enable_api_fallback": true
         }
@@ -293,13 +278,13 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "PZB_Fuse",
-          "value": 1.0,
+          "value": 1,
           "hold": false,
           "enable_api_fallback": true
         },
         "action_deactivate": {
           "controls": "PZB_Fuse",
-          "value": 0.0,
+          "value": 0,
           "hold": false,
           "enable_api_fallback": true
         }
@@ -313,12 +298,12 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "OperateLeftDoors",
-          "value": 1.0,
+          "value": 1,
           "hold": true
         },
         "action_deactivate": {
           "controls": "OperateLeftDoors",
-          "value": 0.0,
+          "value": 0,
           "hold": false
         }
       }
@@ -331,12 +316,12 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "OperateRightDoors",
-          "value": 1.0,
+          "value": 1,
           "hold": true
         },
         "action_deactivate": {
           "controls": "OperateRightDoors",
-          "value": 0.0,
+          "value": 0,
           "hold": false
         }
       }
@@ -360,7 +345,7 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "PZB_Release",
-          "value": 1.0,
+          "value": 1,
           "hold": true
         },
         "action_deactivate": {
@@ -378,7 +363,7 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "PZB_Acknowledge",
-          "value": 1.0,
+          "value": 1,
           "hold": true
         },
         "action_deactivate": {
@@ -397,7 +382,7 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "Headlights",
-            "value": 0.0,
+            "value": 0,
             "hold": false
           }
         },
@@ -406,7 +391,7 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HighBeams",
-            "value": 0.0,
+            "value": 0,
             "hold": false
           }
         }
@@ -430,7 +415,7 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HighBeams",
-            "value": 0.0,
+            "value": 0,
             "hold": false
           }
         }
@@ -445,7 +430,7 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "Headlights",
-            "value": 1.0,
+            "value": 1,
             "hold": false
           }
         },
@@ -454,7 +439,7 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HighBeams",
-            "value": 0.0,
+            "value": 0,
             "hold": false
           }
         }
@@ -478,7 +463,7 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "HighBeams",
-            "value": 1.0,
+            "value": 1,
             "hold": false
           }
         }

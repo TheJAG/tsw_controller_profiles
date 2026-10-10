@@ -5,43 +5,165 @@
   "profileName": "TSW | BR 440 | DTG | TheJAG",
   "developer": "Dovetail Games",
   "route": "Nürnberg – Würzburg",
-  "colors": { "navy": "#3a3d4d", "blue": "#ec0016", "red": "#ec0016", "paper": "#f6f4f4" },
+  "colors": {
+    "navy": "#3a3d4d",
+    "blue": "#ec0016",
+    "red": "#ec0016",
+    "paper": "#f6f4f4"
+  },
   "logos": [
-    { "file": "../../assets/logo-db.png", "alt": "Deutsche Bahn" },
-    { "file": "../../assets/logo-dtg.jpg", "alt": "Dovetail Games" }
+    {
+      "file": "../../assets/logo-db.png",
+      "alt": "Deutsche Bahn"
+    },
+    {
+      "file": "../../assets/logo-dtg.jpg",
+      "alt": "Dovetail Games"
+    }
   ],
-  "diagram": { "file": "../../assets/db-br-440.jpg", "source": "Photo: Deutsche Bahn AG" },
-  "dlc": "store.steampowered.com/app/4678800",
+  "diagram": {
+    "file": "../../assets/db-br-440.jpg",
+    "source": "Photo: Deutsche Bahn AG",
+    "clean": false
+  },
+  "dlc": "store.steampowered.com/app/4680800",
   "credit": "© TheJAG",
   "controls": {
-    "speedbrake": { "name": "Reverser", "notches": ["Forward", "Neutral", "Reverse"], "start": 1 },
-    "leftThrottle": { "name": "Power / brake", "notches": ["Emergency", "Max brake", "Min brake", "0", "Min power", "Full power"], "start": 3 },
-    "rightThrottle": { "name": "Train brake", "notches": ["Emergency", "Apply", "Hold", "Release", "Drive"], "start": 1 },
-    "flap": { "name": "Reading light", "notches": ["Bright", "Off"], "start": null },
-    "leftThrottleButton": { "name": "Sand" },
-    "rightThrottleButton": { "name": "Horn" },
-    "gearLever": { "name": "SiFa reset" },
-    "autoBrk": {
-      "name": "Headlights",
-      "positions": [
-        { "short": "0", "desc": "–" },
-        { "short": "BTV", "desc": "Off / tail" },
-        { "short": "LO", "desc": "On" },
-        { "short": "2", "desc": "Dim" },
-        { "short": "3", "desc": "On + beam" },
-        { "short": "HI", "desc": "–" }
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Forward",
+        "Neutral",
+        "Reverse"
       ],
       "start": 1
     },
-    "eng1": { "name": "PZB Release (Frei)", "start": true },
-    "eng2": { "name": "PZB Acknowledge", "start": true },
-    "leftAux": { "name": "SiFa on / off" },
-    "rightAux": { "name": "PZB on / off" },
-    "modeSwitch": { "name": "Wipers", "left": "slower", "right": "faster" },
-    "roundAux": { "name": "PZB Befehl 40" },
-    "rudTrim": { "name": "Doors L / R" },
-    "parkBrk": { "name": "Master key + switch", "flat": "key out", "up": "key in, switch on" }
+    "leftThrottle": {
+      "name": "Power / brake handle",
+      "continuous": true,
+      "notches": [
+        "Full power",
+        null,
+        "Power %",
+        "Min power",
+        "0",
+        "Min brake",
+        "Brake %",
+        null,
+        "Max brake"
+      ],
+      "start": 8
+    },
+    "rightThrottle": {
+      "name": "Train brake",
+      "notches": [
+        "Drive",
+        "Release",
+        "Hold",
+        "Apply",
+        "Emergency"
+      ],
+      "start": 3
+    },
+    "flap": {
+      "name": "Reading light dimmer",
+      "continuous": true,
+      "notches": [
+        "Bright",
+        null,
+        "Off"
+      ],
+      "start": null
+    },
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Horn"
+    },
+    "gearLever": {
+      "name": "SiFa reset"
+    },
+    "autoBrk": {
+      "name": "Headlights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off / tail"
+        },
+        {
+          "short": "LO",
+          "desc": "On"
+        },
+        {
+          "short": "2",
+          "desc": "Dim"
+        },
+        {
+          "short": "3",
+          "desc": "On + beam"
+        },
+        {
+          "short": "HI",
+          "desc": "–"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "PZB Release (Frei)",
+      "start": true
+    },
+    "eng2": {
+      "name": "PZB Acknowledge",
+      "start": true
+    },
+    "leftAux": {
+      "name": "SiFa on / off"
+    },
+    "rightAux": {
+      "name": "PZB on / off"
+    },
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "slower",
+      "right": "faster"
+    },
+    "roundAux": {
+      "name": "PZB Befehl 40"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Master key + switch",
+      "flat": "key out",
+      "up": "key in, switch on"
+    }
   },
-  "setup": ["Insert master key (PARK BRK)", "Set reverser to neutral", "Raise pantograph, close MCB", "Turn on PZB and SiFa", "Set headlights", "Open doors"],
-  "depart": ["Close doors", "Check signal", "Set reverser to forward", "Train brake to Drive", "Apply power"]
+  "setup": [
+    "Insert master key, master switch on (PARK BRK)",
+    "Handle fully back at Max brake, train brake at Apply",
+    "Raise pantograph, close the main circuit breaker",
+    "PZB and SiFa on (aux squares)",
+    "Set headlights (AUTO BRK)",
+    "Open doors"
+  ],
+  "depart": [
+    "Close doors",
+    "Check signal and PZB",
+    "Reverser to Forward",
+    "Train brake to Drive",
+    "Handle forward through min brake to 0, then min power and continuous power",
+    "Brake: back past 0 into min brake, continuous to Max brake"
+  ],
+  "cab": {
+    "file": "../../assets/db-br-440-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  }
 }

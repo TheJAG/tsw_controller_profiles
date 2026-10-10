@@ -78,7 +78,9 @@ function schematic() {
   const fl = K.flap;
   s += tx(622, 34, fl && fl.name ? fl.name : 'Flap lever') + tx(622, 46, fl && fl.name ? 'Flap lever' : 'not assigned', 'sub');
   s += `<rect class="slot" x="608" y="74" width="28" height="222" rx="6"/>`;
-  if (fl && fl.notches && fl.notches.length) { const n = fl.notches.length, st = fl.start == null ? -1 : fl.start; fl.notches.forEach((name, i) => { const y = 80 + i * 210 / (n - 1); s += `<line class="tick" x1="${614}" y1="${y}" x2="${630}" y2="${y}"/>` + pillS(584 - pw(name) / 2, y, name, i === st); }); const ky = 80 + (st >= 0 ? st : (n - 1) / 2) * 210 / (n - 1); s += `<rect class="knob" x="594" y="${ky - 25}" width="56" height="50" rx="10" opacity=".92"/>` + (st >= 0 ? start(622, ky) : ''); }
+  if (fl && fl.notches && fl.notches.length) { const n = fl.notches.length, st = fl.start == null ? -1 : fl.start;
+    if (fl.continuous) s += `<rect x="618" y="80" width="8" height="210" rx="4" fill="var(--navy)" opacity=".28"/>`;
+    fl.notches.forEach((name, i) => { if (name == null) return; const y = 80 + i * 210 / (n - 1); if (!fl.continuous) s += `<line class="tick" x1="${614}" y1="${y}" x2="${630}" y2="${y}"/>`; s += pillS(584 - pw(name) / 2, y, name, i === st); }); const ky = 80 + (st >= 0 ? st : (n - 1) / 2) * 210 / (n - 1); s += `<rect class="knob" x="594" y="${ky - 25}" width="56" height="50" rx="10" opacity=".92"/>` + (st >= 0 ? start(622, ky) : ''); }
   else s += `<rect class="knob" x="592" y="120" width="60" height="50" rx="10" opacity=".3"/>`;
   const rd = K.roundAux || {}, rtm = K.rudTrim || {}, pb = K.parkBrk || {};
   s += `<circle class="acc" cx="572" cy="350" r="12"/>` + sub2(572, 378, rd.name || 'not assigned', 'Round aux');
