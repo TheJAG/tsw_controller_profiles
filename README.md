@@ -135,7 +135,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 **🇳🇱 Netherlands**
 
 `DONE ✅` **NS ICMm** <sub>— DTG · [profile](releases/tsw-ns-icmm-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-ns-icmm-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **NS SNG** <sub>— DTG</sub>  
+`SOON 🟨` **NS SNG** <sub>— DTG · [profile](releases/tsw-ns-sng-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-ns-sng-dtg-thejag.pdf)</sub>  
 
 **🇯🇵 Japan**
 

@@ -6,11 +6,12 @@ Short status page, updated with each train. The rules and the recipe live in `CL
 
 - Phase A tooling: `capture_train.js`, `draft_profile.js` (+ `families.json`), `draft_manual.js`, `readme_status.js` (+ `trains.json`), `crop_image.ps1`, `stitch_cars.ps1`, `tsw_input.ps1`. Verified: the drafter regenerates the Class 153 profile from its capture.
 - Phase B: desktop computer-use tools never appeared in the session; `tools/tsw_input.ps1` (PowerShell screenshots + simulated input) drives the TSW menus reliably instead, and a capture subagent runs that loop (`tools/CAPTURE_AGENT.md`).
+- NS SNG (2026-10-10): captured as `RVM_ZGN_NS_SNG3_Cab_mBk_C` (the 11:20 SPR service leads with the mBk car), profile `tsw-ns-sng-dtg-thejag-1791600993`, schematic manual with desk photo and Arthur's 3-car drawing, release built, README `SOON 🟨` until the user has driven it. Combined power/brake handle on the right TCA throttle (-0.9..1, 11 steps, Emergency left out), left throttle unassigned, headlight intensity on the flap lever, slow-speed mode on the left throttle button, parking brake release/apply on the right throttle button and round aux, signal lights on AUTO BRK. Open: does the handle reach the 0 zone from a brake step in one jump (the API stuck at -0.1 once), does the toggle on the slow-speed button work.
 - NS ICMm: recaptured (`tools/captures/RVM_ZGN_NS_ICMm3_mBfk_C.json`), profile cleaned (direct controls, ATB/deadman fuses on the aux squares, traction reduction on the left throttle button), new schematic manual with the desk photo band and Arthur's 3-car drawing, release rebuilt, legacy docx removed. README stays `DONE ✅`; the user still has to drive it with the new profile once (notch pill orientation: lever forward = raw 0, see CLAUDE.md).
 
 ## Next, one train at a time (user decision 2026-10-10: no batches yet)
 
-1. NS SNG (Zwolle–Groningen, timetable tile "SNG3 - mABk"): capture subagent → review → `draft_profile.js --family nl-unit` → manual (`tools/assets/ns-sng-diagram-arthur.png` is already there, the cab photo is not) → release → README `SOON 🟨` → artifact → commit.
+1. NS SNG: cab test by the user, then README `DONE ✅` (`readme_status.js "NS SNG" done ...`).
 2. Class 153 recapture (its capture file is synthetic) and cab-side check, then its manual gets the cab band and a full-consist drawing.
 3. Then the UK order from the plan (`~/.claude/plans/starry-honking-puddle.md`), Germany after.
 
