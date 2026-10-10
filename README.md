@@ -32,7 +32,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **BR Class 166**  
 `SOON 🟨` **BR Class 170** <sub>— DTG · [profile](releases/tsw-class-170-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-170-dtg-thejag.pdf)</sub>  
 `DONE ✅` **BR Class 171** <sub>— Rivet · [profile](releases/tsw-class-171-rivet-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-171-rivet-thejag.pdf)</sub>  
-`TODO ◼️` **BR Class 220 Voyager**  
+`SOON 🟨` **BR Class 220 Voyager** <sub>— Rivet · [profile](releases/tsw-class-220-rivet-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-220-rivet-thejag.pdf)</sub>  
 `DONE ✅` **BR Class 313** <sub>— DTG · [profile](releases/tsw-class-313-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-313-dtg-thejag.pdf)</sub>  
 `DONE ✅` **BR Class 314** <sub>— DTG · [profile](releases/tsw-class-314-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-314-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 323**  
