@@ -22,6 +22,9 @@ Route name, train name (as on the timetable tile, e.g. "SNG3 - mABk"), family hi
 ## Pitfalls
 
 - Clicks only land when the TSW window is in front; call `focus` after any other window may have taken focus.
+- If another window (a browser) covers the game, `focus` may report success without bringing TSW to the front; clicking the TSW taskbar icon (about 2006,1416) does.
+- A negative `wheel` count is parsed as 0 through `powershell -File`; call it as `powershell -NoProfile -Command "& ./tools/tsw_input.ps1 wheel '-25'"`.
+- The desk of some units sits low in the frame (313/314): tilt further (`mmove 0 70` more) and crop from Y 250–300 instead of 0.
 - The pause menu opens on the tab used last; always click the Options tab before Main Menu.
 - Master key and brake key are push buttons; the capture script reads their state and toggles only when needed. Toggling them by hand can lock a brake handle in Off for the rest of the session (then reload the service).
 - The throttle of some units (ICMm) only moves with the reverser in Forward; the script retries that itself with the brakes applied.
