@@ -24,7 +24,7 @@ Scripts used to create a new controller profile and its Quick Reference Manual. 
 | `levers.js <out.json>` | For every lever in that dump: notch count, current notch, min/max, output range. |
 | `sweep_levers.js <Lever> [...]` | Moves a lever through 0..1 in 1% steps and prints where the notches change, then restores it. Refuses when the train is moving; the throttle only when the reverser is neutral or off. |
 | `recolor_logo.ps1 -In white.png -Out navy.png [-Color] [-Height]` | Recolour a white-on-transparent logo to one flat colour with soft edges (Rivet, Northern); replaces the old `invertToNavy` CSS filter. |
-| `tint_logo.ps1 -In white.png -Out navy.png [-Color] [-Height]` | Recolour a white-on-transparent logo to one flat colour with soft edges (Rivet, Northern); replaces the old `invertToNavy` CSS filter. |
+| `tint_logo.ps1 -In logo.jpg -Out logo-navy.png -Color '#223261' -Channel R [-Height]` | Tint a coloured raster logo with a white mark (DTG square, DB box) to a scheme colour: each pixel is mixed between the colour and white by one RGB channel that is dark on the brand colour (R for cyan, G for red). Keeps the original beside it. |
 | `joyread.ps1 [-Seconds n] [-IntervalMs n]` | Log the raw TCA axes (winmm; X = left throttle, Y = right) to find detent positions and jitter before tuning notch bands. |
 | `probe_lever.js <Lever> [--from a --to b --step s] [--values ...]` | Set values on a lever through the API and show what the game stores, its output and notch index; restores the lever. Use before tuning steps. |
 
