@@ -35,7 +35,7 @@ This folder is both the live config dir of the TSW Controller App (`C:\Games\Too
 ## Gotchas learned
 
 - Pak class names can contain hyphens (`Class377-3`, `SD40-2`), so keep `-` in the grep class. Newer paks (Medway Valley, Birmingham–Crewe, Tadami, BR 147) store names without the `.uasset` suffix and far from the end: grep the whole file for `RVM_[A-Za-z0-9_-]*` instead.
-- Numeric `step_thresholds` are mirrored when `invert` is true; express them on the raw lever axis. A dead band around a notch is done with `threshold_tolerance`.
+- Numeric `step_thresholds` are mirrored when `invert` is true; express them on the raw lever axis. A dead band around a notch is done with `threshold_tolerance`; a continuous zone is a `null` step with `threshold`..`threshold_end` (BR 440 and SNG combined handles: 0 at raw 0.5 with tolerance 0.07–0.08, free brake and power zones either side).
 - Push buttons toggle on every value change through the mod, so a `momentary` 1-then-0 toggles twice. Use `toggle`.
 - Spring switches (horn, sander, cab light, PZB buttons) rest at 0.5; send 1 or 0 while held and 0.5 on release.
 - The gear lever is the safety acknowledge: AWS reset (UK), SiFa (Germany), and on Dutch stock the deadman pedal, since ATB has no acknowledge button. Setting the ICMm `DeadmanPedal` through the API moves the pedal but does not clear the warning, so Dutch stock uses the game key `Q` on the gear lever (user test, 2026-10-10).
