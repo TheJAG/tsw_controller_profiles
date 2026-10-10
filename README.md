@@ -25,7 +25,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **BR Class 90** <sub>— Alan Thomson Simulation · [profile](releases/tsw-class-90-ats-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-90-ats-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 101**  
 `SOON 🟨` **BR Class 142** <sub>— DTG · [profile](releases/tsw-class-142-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-142-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **BR Class 150**  
+`SOON 🟨` **BR Class 150** <sub>— DTG · [profile](releases/tsw-class-150-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-150-dtg-thejag.pdf)</sub>  
 `DONE ✅` **BR Class 153** <sub>— DTG · [profile](releases/tsw-class-153-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-153-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 158**  
 `TODO ◼️` **BR Class 165**  
