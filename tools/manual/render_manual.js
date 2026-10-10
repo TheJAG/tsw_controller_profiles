@@ -134,6 +134,9 @@ ul { margin: 0; padding-left: 16px; }
 /* with a cab band the schematic is shorter: push the checklists and the band down so they do not crowd the schematic */
 .sheet.withcab .lists { padding-top: 22px; }
 .sheet.withcab .cab { padding-top: 10px; }
+/* no side view: the checklists and the cab band spread over the free space instead of leaving a hole at the bottom */
+.sheet.withcab.nodiag .lists { padding-top: 58px; }
+.sheet.withcab.nodiag .cab { padding-top: 26px; }
 .lists.two { grid-template-columns: 1fr 1fr; }
 .lists h2 { font-size: 14px; color: var(--navy); margin-bottom: 3px; border-bottom: 1.5px solid var(--navy); padding-bottom: 3px; }
 .lists li { font-size: 11px; }
@@ -148,7 +151,7 @@ ul { margin: 0; padding-left: 16px; }
 .diagram { position: absolute; left: 36px; right: 36px; bottom: 30px; text-align: center; }
 .diagram img { height: ${D.diagram && D.diagram.height || 48}px; width: auto; max-width: 100%; display: inline-block; }
 .foot { position: absolute; bottom: 0; left: 0; right: 0; padding: 8px 36px; font-size: 10px; color: var(--muted); display: flex; justify-content: space-between; }
-</style></head><body><div class="sheet${D.cab ? ' withcab' : ''}">
+</style></head><body><div class="sheet${D.cab ? ' withcab' : ''}${D.diagram ? '' : ' nodiag'}">
 <div class="head"><div><div class="sub">${esc(D.eyebrow || '')}</div><h1>${esc(D.title)}</h1></div><div style="display:flex;gap:14px">${logos}</div></div>
 <div class="schem">${schematic()}</div>
 <div class="lists${D.cab ? ' two' : ''}">
