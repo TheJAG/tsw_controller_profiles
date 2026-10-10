@@ -1,0 +1,477 @@
+{
+  "name": "TSW | BR 112 | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_HBK_DB_BR112_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Richtungsschalter (Reverse / Neutral / Forward)",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser_F",
+          "input_value": {
+            "min": -0.99,
+            "max": 0.95,
+            "steps": [
+              -0.99,
+              -0.05,
+              0.95
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Zugkraftsteller (force setter), continuous 0..1 (output 0..120 %); more force = push away (inverted)",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "ForceSelector_F",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "Führerbremsventil DriversBrake_F (Running 0.1 / 1 0.275 / 2 0.3375 / 3 0.4 / 4 0.4625 / 5 0.525 / 6 0.5875 / 7 0.65 / Full service 0.75 / Emergency 1), plain: release at the far end; bands centred on the TCA detents",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "DriversBrake_F",
+          "input_value": {
+            "min": 0.1,
+            "max": 1,
+            "steps": [
+              0.1,
+              0.275,
+              0.3375,
+              0.4,
+              0.4625,
+              0.525,
+              0.5875,
+              0.65,
+              0.75,
+              1
+            ],
+            "step_thresholds": [
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.045
+              },
+              {
+                "threshold": 0.1,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.2,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.31,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.44,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.535,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.63,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.724,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.84,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.04
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "FlapLever",
+      "description": "AFB speed setter SpeedSelector_F (Off 0 / On 0.05 / 10..160 km/h continuous 0.125..1); 160 at the far end (inverted): full raw 0 ±0.03, speed zone 0.04..0.88, On 0.93 ±0.03, Off 1 ±0.03",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "SpeedSelector_F",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.05,
+              null,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.93,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.88,
+                "threshold_end": 0.04,
+                "threshold_tolerance": 0
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.03
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Reverser handle (master switch) and brake key in / out",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "ReverserHandle_F",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "ReverserHandle_F",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "BrakeKey_F",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "BrakeKey_F",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "GearLever",
+      "description": "SiFa reset",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "Q"
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "description": "Sand (front)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Sander_F",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Sander_F",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Horn (high)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Horn_F",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn_F",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "PZB Frei (release)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZB_Release_F",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PZB_Release_F",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "PZB Wachsam (acknowledge)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZB_Acknowledge_F",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PZB_Acknowledge_F",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "PZB Befehl 40 (override)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZB_Override_F",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PZB_Override_F",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "SiFa switch (lit = on)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Sifa_Switch",
+          "value": 0.5,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "Sifa_Switch",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "PZB switch (lit = on)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZB_Switch",
+          "value": 0.5,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "PZB_Switch",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wipers one notch back (On > Off > Park), both screens",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Wiper_FL",
+            "value": -0.333,
+            "relative": true,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Wiper_FR",
+            "value": -0.333,
+            "relative": true,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wipers one notch on (Park > Off > On), both screens",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Wiper_FL",
+            "value": 0.333,
+            "relative": true,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Wiper_FR",
+            "value": 0.333,
+            "relative": true,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Lights | Off",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "SignalLights_F",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Lights | White (Spitzensignal)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "SignalLights_F",
+            "value": 0.5,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Lights | Single red",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "SignalLights_F",
+            "value": -1,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Lights | Red (Schlusslicht)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "SignalLights_F",
+            "value": -0.5,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}
