@@ -1,0 +1,160 @@
+{
+  "name": "tsw-class-87-jt-thejag",
+  "title": "Class 87",
+  "eyebrow": "InterCity · Just Trains · TCA Quadrant Airbus",
+  "profileName": "TSW | Class 87 | JT | TheJAG",
+  "developer": "Just Trains",
+  "route": "West Coast Main Line: Preston – Carlisle",
+  "colors": {
+    "navy": "#223261",
+    "blue": "#4a66a8",
+    "paper": "#f3f5f9"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-intercity-navy.svg",
+      "alt": "InterCity"
+    },
+    {
+      "file": "../../assets/logo-justtrains-navy.png",
+      "alt": "Just Trains"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4680080",
+  "credit": "© TheJAG",
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Forward",
+        "Off",
+        "Reverse"
+      ],
+      "start": 1
+    },
+    "leftThrottle": {
+      "name": "Train brake",
+      "notches": [
+        "Running",
+        "1st app.",
+        null,
+        "Full service",
+        "Emergency"
+      ],
+      "start": 3
+    },
+    "rightThrottle": {
+      "name": "Power controller",
+      "notches": [
+        "Notch up",
+        "Hold",
+        "Notch down",
+        "Run down",
+        "Off"
+      ],
+      "start": 4
+    },
+    "flap": {
+      "name": "Loco brake",
+      "continuous": true,
+      "notches": [
+        "Release",
+        null,
+        null,
+        null,
+        "Full"
+      ],
+      "start": 0
+    },
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Pantograph up"
+    },
+    "gearLever": {
+      "name": "AWS reset"
+    },
+    "autoBrk": {
+      "name": "Lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Markers"
+        },
+        {
+          "short": "2",
+          "desc": "Head + markers"
+        },
+        {
+          "short": "3",
+          "desc": "Tail (left)"
+        },
+        {
+          "short": "HI",
+          "desc": "Tail (right)"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Horn high",
+      "start": true
+    },
+    "eng2": {
+      "name": "Horn low",
+      "start": true
+    },
+    "leftAux": {
+      "name": "AWS isolation"
+    },
+    "rightAux": {
+      "name": "DSD breaker"
+    },
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "park",
+      "right": "run"
+    },
+    "roundAux": {
+      "name": "Guard buzzer"
+    },
+    "rudTrim": {
+      "name": "Park brake on / off"
+    },
+    "parkBrk": {
+      "name": "Master key + brake key",
+      "flat": "out",
+      "up": "in"
+    }
+  },
+  "setup": [
+    "Master key and brake key in (PARK BRK)",
+    "Pantograph up (right throttle button), wait for line volts",
+    "Check AWS isolation and DSD breaker lights are out",
+    "Lights to Head + markers, tail lights off",
+    "Release the parking brake (RUD TRIM right)",
+    "Train brake to Full service; service zone is continuous between 1st application and Full service"
+  ],
+  "depart": [
+    "Doors closed, wait for the guard buzzer",
+    "Check the signal",
+    "Reverser to Forward (Reverse needs the lock button in the cab)",
+    "Train brake to Running, loco brake released",
+    "Power controller to Notch up, back to Hold at the wanted tap; Run down / Notch down to shed power",
+    "Acknowledge AWS with the gear lever"
+  ],
+  "cab": {
+    "file": "../../assets/class-87-jt-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  }
+}
