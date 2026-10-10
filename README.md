@@ -47,7 +47,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **BR Class 387**  
 `SOON 🟨` **BR Class 390 Pendolino Avanti WC** <sub>— DTG · [profile](releases/tsw-class-390-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-390-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 395** <sub>— DTG · [profile](releases/tsw-class-395-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-395-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **BR Class 465**  
+`SOON 🟨` **BR Class 465** <sub>— DTG · [profile](releases/tsw-class-465-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-465-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 483**  
 `TODO ◼️` **BR Class 484**  
 `TODO ◼️` **BR Class 700/0 Thameslink**  
