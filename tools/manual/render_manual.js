@@ -147,9 +147,9 @@ ul { margin: 0; padding-left: 16px; }
 .cab { padding: 10px 36px 0; }
 .cab img { width: 100%; height: ${D.cab && D.cab.height || 188}px; object-fit: cover; object-position: ${D.cab && D.cab.position || '50% 50%'}; display: block; border-radius: 6px; }
 .sheet.withcab .schem svg { height: ${D.schematicHeight || 596}px; width: auto; max-width: 100%; margin: 0 auto; }
-/* side view: same height on every manual (the Class 333 drawing at full width is 48px), centred, background stripped in-page */
+/* side view: same height on every manual (the Class 333 drawing at full width is 48px), centred, background stripped in-page; diagram.fit = 'clip' keeps the height and cuts the drawing off at the right edge, 'width' fits the whole drawing at a lower height */
 .diagram { position: absolute; left: 36px; right: 36px; bottom: 30px; text-align: center; }
-.diagram img { height: ${D.diagram && D.diagram.height || 48}px; width: auto; max-width: 100%; display: inline-block; }
+${(D.diagram && D.diagram.fit) === 'width' ? '.diagram img { width: 100%; height: auto; display: block; }' : (D.diagram && D.diagram.fit) === 'clip' ? '.diagram { text-align: left; overflow: hidden; -webkit-mask-image: linear-gradient(to right, #000 88%, transparent); mask-image: linear-gradient(to right, #000 88%, transparent); } .diagram img { height: ' + (D.diagram.height || 48) + 'px; width: auto; max-width: none; display: block; }' : '.diagram img { height: ' + (D.diagram && D.diagram.height || 48) + 'px; width: auto; max-width: 100%; display: inline-block; }'}
 .foot { position: absolute; bottom: 0; left: 0; right: 0; padding: 8px 36px; font-size: 10px; color: var(--muted); display: flex; justify-content: space-between; }
 </style></head><body><div class="sheet${D.cab ? ' withcab' : ''}${D.diagram ? '' : ' nodiag'}">
 <div class="head"><div><div class="sub">${esc(D.eyebrow || '')}</div><h1>${esc(D.title)}</h1></div><div style="display:flex;gap:14px">${logos}</div></div>
