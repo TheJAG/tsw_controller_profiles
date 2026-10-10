@@ -1,0 +1,157 @@
+{
+  "name": "tsw-class-710-dtg-thejag",
+  "title": "Class 710",
+  "eyebrow": "London Overground · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | Class 710 | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "London Overground Suffragette line: Gospel Oak – Barking Riverside",
+  "colors": {
+    "navy": "#223261",
+    "blue": "#4a66a8",
+    "paper": "#f3f5f9"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-overground-navy.svg",
+      "alt": "London Overground"
+    },
+    {
+      "file": "../../assets/logo-dtg-navy.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "diagram": {
+    "file": "../../assets/class-710-side.png",
+    "source": "Drawing: WestRail642fan, Wikimedia Commons, CC BY-SA 4.0",
+    "clean": false
+  },
+  "dlc": "store.steampowered.com/app/4680010",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/class-710-dtg-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Master control switch",
+      "notches": [
+        "Shutdown",
+        "Forward",
+        "Secure",
+        "Recovery",
+        "Reverse"
+      ],
+      "start": 0
+    },
+    "leftThrottle": {
+      "name": "Traction / brake",
+      "continuous": true,
+      "notches": [
+        "Max brake",
+        null,
+        "Min brake",
+        "Coast",
+        null,
+        null,
+        "Full traction"
+      ],
+      "start": 0
+    },
+    "rightThrottle": null,
+    "flap": {
+      "name": "Cab light",
+      "notches": [
+        "Full",
+        "Half",
+        "Off"
+      ],
+      "start": 2
+    },
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Pantograph up"
+    },
+    "gearLever": {
+      "name": "AWS reset"
+    },
+    "autoBrk": {
+      "name": "Headlights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Day"
+        },
+        {
+          "short": "2",
+          "desc": "Marker only"
+        },
+        {
+          "short": "3",
+          "desc": "Night"
+        },
+        {
+          "short": "HI",
+          "desc": "Tail"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Horn high",
+      "start": true
+    },
+    "eng2": {
+      "name": "Horn low",
+      "start": true
+    },
+    "leftAux": {
+      "name": "TPWS/AWS isolation"
+    },
+    "rightAux": {
+      "name": "DSD isolation"
+    },
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "slower",
+      "right": "faster"
+    },
+    "roundAux": {
+      "name": "Signal buzzer"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Master key",
+      "flat": "out",
+      "up": "in"
+    }
+  },
+  "setup": [
+    "Master key in (PARK BRK)",
+    "Master control switch from Shutdown to Secure, then Forward when ready",
+    "Pantograph up (right throttle button) under the wires",
+    "Check TPWS/AWS and DSD isolation lights are out",
+    "Headlights to Day",
+    "Open doors (RUD TRIM)"
+  ],
+  "depart": [
+    "Close doors, wait for the signal buzzer",
+    "Check the signal",
+    "Master control switch to Forward",
+    "Handle from Max brake up to Coast",
+    "Push into the traction zone, more as speed rises",
+    "Acknowledge AWS with the gear lever"
+  ]
+}
