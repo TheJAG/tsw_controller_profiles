@@ -54,7 +54,7 @@
   "controls": [
     {
       "name": "SpeedbrakeLever",
-      "description": "Reverser",
+      "description": "Reverser (Reverse / Neutral / Forward / Off)",
       "assignments": [
         {
           "type": "direct_control",
@@ -62,31 +62,20 @@
           "input_value": {
             "min": -0.5,
             "max": 1,
-            "step": 0.5,
+            "steps": [
+              -0.5,
+              0,
+              0.5,
+              1
+            ],
             "invert": true
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "Reverser",
-          "input_value": {
-            "min": 0,
-            "max": 1,
-            "step": 0.33333,
-            "invert": true
-          },
-          "action_increase": {
-            "keys": "w"
-          },
-          "action_decrease": {
-            "keys": "s"
           }
         }
       ]
     },
     {
       "name": "LeftThrottle",
-      "description": "Power Brake Controller",
+      "description": "Power / brake controller (Emergency / B3 / B2 / B1 / Off / P1 / P2 / P3 / P4)",
       "assignments": [
         {
           "type": "direct_control",
@@ -94,24 +83,17 @@
           "input_value": {
             "min": -1,
             "max": 1,
-            "steps": [-1, -0.6, -0.4, -0.2, 0, 0.25, 0.5, 0.75, 1],
-            "invert": false
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "Throttle",
-          "input_value": {
-            "min": -1,
-            "max": 1,
-            "steps": [-1, -0.6, -0.4, -0.2, 0, 0.25, 0.5, 0.75, 1],
-            "invert": false
-          },
-          "action_increase": {
-            "keys": "a"
-          },
-          "action_decrease": {
-            "keys": "d"
+            "steps": [
+              -1,
+              -0.6,
+              -0.4,
+              -0.2,
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ]
           }
         }
       ]
@@ -124,11 +106,11 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "MasterKey",
-          "value": 1.0
+          "value": 1
         },
         "action_deactivate": {
           "controls": "MasterKey",
-          "value": 0.0
+          "value": 0
         }
       }
     },
@@ -150,7 +132,14 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "x"
+          "controls": "Sand",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Sand",
+          "value": 0,
+          "hold": false
         }
       }
     },
@@ -161,7 +150,14 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "space"
+          "controls": "Horn",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn",
+          "value": 0,
+          "hold": false
         }
       }
     },
@@ -172,7 +168,14 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "n"
+          "controls": "Horn",
+          "value": -1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn",
+          "value": 0,
+          "hold": false
         }
       }
     },
@@ -203,51 +206,57 @@
       "description": "Guard buzzer",
       "assignment": {
         "type": "momentary",
-        "threshold": 0.2,
+        "threshold": 0.9,
         "action_activate": {
           "controls": "SignalBell",
-          "value": 1.0,
+          "value": 1,
           "hold": true
         },
         "action_deactivate": {
           "controls": "SignalBell",
-          "value": 0.0,
+          "value": 0,
           "hold": false
         }
       }
     },
     {
       "name": "LeftAuxButton",
-      "description": "AWS I/O",
+      "description": "AWS isolation (lit = Isolated, out = Normal)",
       "assignment": {
         "type": "toggle",
         "threshold": 0.9,
         "action_activate": {
           "controls": "AWS_Isolation",
-          "value": 1,
-          "hold": false
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
         },
         "action_deactivate": {
           "controls": "AWS_Isolation",
-          "value": 0
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
         }
       }
     },
     {
       "name": "RightAuxButton",
-      "description": "DSD / Vigilance Devices I/O",
+      "description": "DSD / vigilance isolation (lit = Isolated, out = Normal)",
       "assignments": [
         {
           "type": "toggle",
           "threshold": 0.9,
           "action_activate": {
             "controls": "DSD_Isolation",
-            "value": 1,
-            "hold": false
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
           },
           "action_deactivate": {
             "controls": "DSD_Isolation",
-            "value": 0
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
           }
         },
         {
@@ -255,19 +264,22 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "VigilanceIsolation",
-            "value": 1,
-            "hold": false
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
           },
           "action_deactivate": {
             "controls": "VigilanceIsolation",
-            "value": 0
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
           }
         }
       ]
     },
     {
       "name": "RotaryCrank",
-      "description": "Wipers decrease",
+      "description": "Wipers decrease (game key)",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,
@@ -280,7 +292,7 @@
     },
     {
       "name": "RotaryIgnStart",
-      "description": "Wipers increase",
+      "description": "Wipers increase (game key)",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,
@@ -294,52 +306,13 @@
     {
       "name": "AutoBrake0",
       "description": "Headlights | Off",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "Headlights",
-          "value": 0,
-          "hold": false
-        }
-      }
-    },
-    {
-      "name": "AutoBrake1",
-      "description": "Headlights | Day running",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "Headlights",
-          "value": 0.5,
-          "hold": false
-        }
-      }
-    },
-    {
-      "name": "AutoBrake2",
-      "description": "Headlights | Marker lights only",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "Headlights",
-          "value": -1,
-          "hold": false
-        }
-      }
-    },
-    {
-      "name": "AutoBrake3",
-      "description": "Headlights | Night running",
       "assignments": [
         {
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
             "controls": "Headlights",
-            "value": -0.5,
+            "value": 0,
             "hold": false
           }
         },
@@ -355,8 +328,53 @@
       ]
     },
     {
+      "name": "AutoBrake1",
+      "description": "Headlights | Day running",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights",
+            "value": 0.5,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Headlights | Marker lights only",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights",
+            "value": -1,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Headlights | Night running",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights",
+            "value": -0.5,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
       "name": "AutoBrake4",
-      "description": "Taillights | On",
+      "description": "Headlights | Tail lights only",
       "assignments": [
         {
           "type": "momentary",

@@ -10,24 +10,13 @@
           "input_value": {
             "min": -0.5,
             "max": 1,
-            "step": 0.5,
+            "steps": [
+              -0.5,
+              0,
+              0.5,
+              1
+            ],
             "invert": true
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "Reverser",
-          "input_value": {
-            "min": 0,
-            "max": 1,
-            "step": 0.33333,
-            "invert": true
-          },
-          "action_increase": {
-            "keys": "w"
-          },
-          "action_decrease": {
-            "keys": "s"
           }
         }
       ]
@@ -51,34 +40,7 @@
               0.5,
               0.75,
               1
-            ],
-            "invert": false
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "Throttle",
-          "input_value": {
-            "min": -1,
-            "max": 1,
-            "steps": [
-              -1,
-              -0.6,
-              -0.4,
-              -0.2,
-              0,
-              0.25,
-              0.5,
-              0.75,
-              1
-            ],
-            "invert": false
-          },
-          "action_increase": {
-            "keys": "a"
-          },
-          "action_decrease": {
-            "keys": "d"
+            ]
           }
         }
       ]
@@ -114,7 +76,14 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "x"
+          "controls": "Sand",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Sand",
+          "value": 0,
+          "hold": false
         }
       }
     },
@@ -124,7 +93,14 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "space"
+          "controls": "Horn",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn",
+          "value": 0,
+          "hold": false
         }
       }
     },
@@ -134,7 +110,14 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "n"
+          "controls": "Horn",
+          "value": -1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn",
+          "value": 0,
+          "hold": false
         }
       }
     },
@@ -164,7 +147,14 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "l"
+          "controls": "SignalBell",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "SignalBell",
+          "value": 0,
+          "hold": false
         }
       }
     },
@@ -175,12 +165,15 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "AWS_Isolation",
-          "value": 1,
-          "hold": false
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
         },
         "action_deactivate": {
           "controls": "AWS_Isolation",
-          "value": 0
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
         }
       }
     },
@@ -192,12 +185,15 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "DSD_Isolation",
-            "value": 1,
-            "hold": false
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
           },
           "action_deactivate": {
             "controls": "DSD_Isolation",
-            "value": 0
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
           }
         },
         {
@@ -205,12 +201,15 @@
           "threshold": 0.9,
           "action_activate": {
             "controls": "VigilanceIsolation",
-            "value": 1,
-            "hold": false
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
           },
           "action_deactivate": {
             "controls": "VigilanceIsolation",
-            "value": 0
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
           }
         }
       ]
@@ -241,39 +240,54 @@
     },
     {
       "name": "AutoBrake0",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "Headlights",
-          "value": 0,
-          "hold": false
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TailLights",
+            "value": 0,
+            "hold": false
+          }
         }
-      }
+      ]
     },
     {
       "name": "AutoBrake1",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "Headlights",
-          "value": 0.5,
-          "hold": false
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights",
+            "value": 0.5,
+            "hold": false
+          }
         }
-      }
+      ]
     },
     {
       "name": "AutoBrake2",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "Headlights",
-          "value": -1,
-          "hold": false
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights",
+            "value": -1,
+            "hold": false
+          }
         }
-      }
+      ]
     },
     {
       "name": "AutoBrake3",
@@ -284,15 +298,6 @@
           "action_activate": {
             "controls": "Headlights",
             "value": -0.5,
-            "hold": false
-          }
-        },
-        {
-          "type": "momentary",
-          "threshold": 0.9,
-          "action_activate": {
-            "controls": "TailLights",
-            "value": 0,
             "hold": false
           }
         }
@@ -330,79 +335,19 @@
       "usb_id": "044F:0407",
       "data": [
         {
-          "kind": "button",
-          "index": 26,
-          "name": "_Button26"
+          "kind": "axis",
+          "index": 0,
+          "name": "LeftThrottle"
         },
         {
-          "kind": "button",
-          "index": 6,
-          "name": "RotaryCrank"
+          "kind": "axis",
+          "index": 1,
+          "name": "RightThrottle"
         },
         {
-          "kind": "button",
-          "index": 14,
-          "name": "_Button14"
-        },
-        {
-          "kind": "button",
-          "index": 20,
-          "name": "GearLever"
-        },
-        {
-          "kind": "button",
-          "index": 24,
-          "name": "AutoBrake3"
-        },
-        {
-          "kind": "button",
-          "index": 28,
-          "name": "_Button28"
-        },
-        {
-          "kind": "button",
-          "index": 4,
-          "name": "LeftAuxButton"
-        },
-        {
-          "kind": "button",
-          "index": 7,
-          "name": "RotaryIgnStart"
-        },
-        {
-          "kind": "button",
-          "index": 9,
-          "name": "_Button9"
-        },
-        {
-          "kind": "button",
-          "index": 11,
-          "name": "_Button11"
-        },
-        {
-          "kind": "button",
+          "kind": "axis",
           "index": 2,
-          "name": "LeftEngineOn"
-        },
-        {
-          "kind": "button",
-          "index": 22,
-          "name": "AutoBrake1"
-        },
-        {
-          "kind": "button",
-          "index": 23,
-          "name": "AutoBrake2"
-        },
-        {
-          "kind": "button",
-          "index": 29,
-          "name": "_Button29"
-        },
-        {
-          "kind": "button",
-          "index": 17,
-          "name": "RudderTrimLeft"
+          "name": "FlapLever"
         },
         {
           "kind": "axis",
@@ -416,33 +361,8 @@
         },
         {
           "kind": "button",
-          "index": 12,
-          "name": "_Button12"
-        },
-        {
-          "kind": "button",
-          "index": 19,
-          "name": "ParkingBrake"
-        },
-        {
-          "kind": "axis",
-          "index": 0,
-          "name": "LeftThrottle"
-        },
-        {
-          "kind": "button",
-          "index": 27,
-          "name": "_Button27"
-        },
-        {
-          "kind": "button",
-          "index": 16,
-          "name": "RoundAuxButton"
-        },
-        {
-          "kind": "axis",
           "index": 1,
-          "name": "RightThrottle"
+          "name": "RightThrottleButton"
         },
         {
           "kind": "button",
@@ -451,38 +371,13 @@
         },
         {
           "kind": "button",
-          "index": 18,
-          "name": "RudderTrimRight"
+          "index": 11,
+          "name": "_Button11"
         },
         {
           "kind": "button",
-          "index": 25,
-          "name": "AutoBrake4"
-        },
-        {
-          "kind": "button",
-          "index": 30,
-          "name": "_Button30"
-        },
-        {
-          "kind": "axis",
-          "index": 2,
-          "name": "FlapLever"
-        },
-        {
-          "kind": "button",
-          "index": 1,
-          "name": "RightThrottleButton"
-        },
-        {
-          "kind": "button",
-          "index": 5,
-          "name": "RightAuxButton"
-        },
-        {
-          "kind": "button",
-          "index": 3,
-          "name": "RightEngineOn"
+          "index": 12,
+          "name": "_Button12"
         },
         {
           "kind": "button",
@@ -491,8 +386,43 @@
         },
         {
           "kind": "button",
+          "index": 14,
+          "name": "_Button14"
+        },
+        {
+          "kind": "button",
           "index": 15,
           "name": "_Button15"
+        },
+        {
+          "kind": "button",
+          "index": 16,
+          "name": "RoundAuxButton"
+        },
+        {
+          "kind": "button",
+          "index": 17,
+          "name": "RudderTrimLeft"
+        },
+        {
+          "kind": "button",
+          "index": 18,
+          "name": "RudderTrimRight"
+        },
+        {
+          "kind": "button",
+          "index": 19,
+          "name": "ParkingBrake"
+        },
+        {
+          "kind": "button",
+          "index": 2,
+          "name": "LeftEngineOn"
+        },
+        {
+          "kind": "button",
+          "index": 20,
+          "name": "GearLever"
         },
         {
           "kind": "button",
@@ -501,8 +431,83 @@
         },
         {
           "kind": "button",
+          "index": 22,
+          "name": "AutoBrake1"
+        },
+        {
+          "kind": "button",
+          "index": 23,
+          "name": "AutoBrake2"
+        },
+        {
+          "kind": "button",
+          "index": 24,
+          "name": "AutoBrake3"
+        },
+        {
+          "kind": "button",
+          "index": 25,
+          "name": "AutoBrake4"
+        },
+        {
+          "kind": "button",
+          "index": 26,
+          "name": "_Button26"
+        },
+        {
+          "kind": "button",
+          "index": 27,
+          "name": "_Button27"
+        },
+        {
+          "kind": "button",
+          "index": 28,
+          "name": "_Button28"
+        },
+        {
+          "kind": "button",
+          "index": 29,
+          "name": "_Button29"
+        },
+        {
+          "kind": "button",
+          "index": 3,
+          "name": "RightEngineOn"
+        },
+        {
+          "kind": "button",
+          "index": 30,
+          "name": "_Button30"
+        },
+        {
+          "kind": "button",
+          "index": 4,
+          "name": "LeftAuxButton"
+        },
+        {
+          "kind": "button",
+          "index": 5,
+          "name": "RightAuxButton"
+        },
+        {
+          "kind": "button",
+          "index": 6,
+          "name": "RotaryCrank"
+        },
+        {
+          "kind": "button",
+          "index": 7,
+          "name": "RotaryIgnStart"
+        },
+        {
+          "kind": "button",
           "index": 8,
           "name": "_Button8"
+        },
+        {
+          "kind": "button",
+          "index": 9,
+          "name": "_Button9"
         }
       ]
     }
