@@ -48,7 +48,7 @@
     },
     {
       "name": "LeftThrottle",
-      "description": "Power / brake handle (B3 / B2 / B1 / Off / P1 / P2 / P3 / P4 / P5 / P6 / P7; Emergency at 0 is left out on purpose; each notch has a dead band so the TCA cannot flicker between two notches)",
+      "description": "Power / brake handle (B3 / B2 / B1 / Off / P1 / P2 / P3 / P4 / P5 / P6 / P7; Emergency at 0 is left out on purpose). Notch bands are placed on the TCA detents measured with tools/joyread.ps1: Off on the idle detent (raw 0.31), P1 on the soft stop at 0.44, P4 on the CL detent (0.724), P5 on the FLX detent (~0.84), so no detent sits on a band edge",
       "assignments": [
         {
           "type": "direct_control",
@@ -83,31 +83,31 @@
                 "threshold_tolerance": 0.035
               },
               {
-                "threshold": 0.3,
+                "threshold": 0.31,
                 "threshold_tolerance": 0.035
               },
               {
-                "threshold": 0.4,
+                "threshold": 0.44,
                 "threshold_tolerance": 0.035
               },
               {
-                "threshold": 0.5,
+                "threshold": 0.535,
                 "threshold_tolerance": 0.035
               },
               {
-                "threshold": 0.6,
+                "threshold": 0.63,
                 "threshold_tolerance": 0.035
               },
               {
-                "threshold": 0.7,
+                "threshold": 0.724,
                 "threshold_tolerance": 0.035
               },
               {
-                "threshold": 0.8,
-                "threshold_tolerance": 0.035
+                "threshold": 0.84,
+                "threshold_tolerance": 0.04
               },
               {
-                "threshold": 0.9,
+                "threshold": 0.92,
                 "threshold_tolerance": 0.035
               },
               {
