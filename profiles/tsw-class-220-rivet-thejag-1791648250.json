@@ -1,0 +1,399 @@
+{
+  "name": "TSW | Class 220 | RIVET | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_RIV_XC_Class220_DMF_C"
+    },
+    {
+      "class_name": "RVM_RIV_XC_Class220_DMSL_C"
+    },
+    {
+      "class_name": "RVM_RIV_XC_Class220_MSA_C"
+    },
+    {
+      "class_name": "RVM_RIV_XC_Class220_MSB_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser (Reverse / Neutral / Forward / Off; it only moves while the handle is in Emergency)",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.333,
+              0.666,
+              1
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Power / brake handle (Emergency -1 / Max brake -0.75 / brake % continuous / Min brake -0.2 / Off 0 / Power 1 0.25 / power continuous 0.26..1). Emergency is kept on this unit because the reverser is interlocked with it: narrow band at the far end.",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "MasterController",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "steps": [
+              -1,
+              -0.75,
+              null,
+              -0.2,
+              0,
+              0.25,
+              null,
+              1
+            ],
+            "step_thresholds": [
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.02
+              },
+              {
+                "threshold": 0.08,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.14,
+                "threshold_end": 0.42,
+                "threshold_tolerance": 0
+              },
+              {
+                "threshold": 0.45,
+                "threshold_tolerance": 0.025
+              },
+              {
+                "threshold": 0.5,
+                "threshold_tolerance": 0.02
+              },
+              {
+                "threshold": 0.55,
+                "threshold_tolerance": 0.025
+              },
+              {
+                "threshold": 0.58,
+                "threshold_end": 0.955,
+                "threshold_tolerance": 0
+              },
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.04
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Master key on / off",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "MasterKey",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "MasterKey",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "GearLever",
+      "description": "AWS reset",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "Q"
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "description": "Sand",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Sander",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Sander",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Engine start",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "EngineStart",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "EngineStart",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "Horn | High",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Horn_L",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn_L",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "Horn | Low",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Horn_L",
+          "value": -1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn_L",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "Guard buzzer (cab signal)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "CabSignalBuzzer",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "CabSignalBuzzer",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "AWS isolation (lit = Isolated / unlit = Normal)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "AWS_Isolation",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "AWS_Isolation",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "Vigilance (DVD) isolation (lit = Isolated / unlit = Normal)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "VigilanceIsolation",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "VigilanceIsolation",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wipers one notch slower (Fast > Slow > Off > Intermittent)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "WindscreenWiper",
+            "value": -0.333,
+            "relative": true,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wipers one notch faster (Intermittent > Off > Slow > Fast)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "WindscreenWiper",
+            "value": 0.333,
+            "relative": true,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Headlights | Off",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Head/MarkerLights",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Headlights | Day",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Head/MarkerLights",
+            "value": 0.25,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Headlights | Markers",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Head/MarkerLights",
+            "value": 0.125,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Headlights | Night",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Head/MarkerLights",
+            "value": 0.375,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Headlights | Tail",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Head/MarkerLights",
+            "value": 0.875,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}
