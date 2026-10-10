@@ -1,8 +1,33 @@
 {
   "name": "TSW | Class 171 | Rivet | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_BR_Class171_Base_C"
+    },
+    {
+      "class_name": "RVM_BR_Class171_DM_C"
+    },
+    {
+      "class_name": "RVM_BR_Class171_DMCL_C"
+    },
+    {
+      "class_name": "RVM_BR_Class171_DMCL_W_C"
+    },
+    {
+      "class_name": "RVM_BR_Class171_MS_C"
+    },
+    {
+      "class_name": "RVM_BR_Class171_MS2_4Car_C"
+    }
+  ],
   "controls": [
     {
       "name": "SpeedbrakeLever",
+      "description": "Reverser (Reverse / Neutral / Forward / Off)",
       "assignments": [
         {
           "type": "direct_control",
@@ -23,6 +48,7 @@
     },
     {
       "name": "LeftThrottle",
+      "description": "Power / brake handle (B3 / B2 / B1 / Off / P1 / P2 / P3 / P4 / P5 / P6 / P7; Emergency at 0 is left out on purpose)",
       "assignments": [
         {
           "type": "direct_control",
@@ -55,7 +81,8 @@
         "action_activate": {
           "keys": "Q"
         }
-      }
+      },
+      "description": "AWS reset"
     },
     {
       "name": "ParkingBrake",
@@ -70,7 +97,8 @@
           "controls": "MasterKey",
           "value": 0
         }
-      }
+      },
+      "description": "Master key in / out"
     },
     {
       "name": "RudderTrimLeft",
@@ -80,7 +108,8 @@
         "action_activate": {
           "keys": "y"
         }
-      }
+      },
+      "description": "Doors | Left"
     },
     {
       "name": "RudderTrimRight",
@@ -90,7 +119,8 @@
         "action_activate": {
           "keys": "u"
         }
-      }
+      },
+      "description": "Doors | Right"
     },
     {
       "name": "RoundAuxButton",
@@ -100,7 +130,8 @@
         "action_activate": {
           "keys": "l"
         }
-      }
+      },
+      "description": "Cab lights"
     },
     {
       "name": "LeftEngineOn",
@@ -117,7 +148,8 @@
           "value": 0,
           "hold": false
         }
-      }
+      },
+      "description": "Horn | High"
     },
     {
       "name": "RightEngineOn",
@@ -134,7 +166,8 @@
           "value": 0,
           "hold": false
         }
-      }
+      },
+      "description": "Horn | Low"
     },
     {
       "name": "LeftThrottleButton",
@@ -151,10 +184,12 @@
           "value": 0,
           "hold": false
         }
-      }
+      },
+      "description": "Sand"
     },
     {
       "name": "LeftAuxButton",
+      "description": "AWS isolation (Normal / Isolated)",
       "assignment": {
         "type": "toggle",
         "threshold": 0.9,
@@ -171,6 +206,7 @@
     },
     {
       "name": "RightAuxButton",
+      "description": "Vigilance (DVD) isolation (Normal / Isolated)",
       "assignment": {
         "type": "toggle",
         "threshold": 0.9,
@@ -193,7 +229,8 @@
         "action_activate": {
           "keys": "shift+v"
         }
-      }
+      },
+      "description": "Wipers one step slower"
     },
     {
       "name": "RotaryIgnStart",
@@ -203,10 +240,12 @@
         "action_activate": {
           "keys": "v"
         }
-      }
+      },
+      "description": "Wipers one step faster"
     },
     {
       "name": "AutoBrake0",
+      "description": "Headlights | Off",
       "assignments": [
         {
           "type": "momentary",
@@ -230,6 +269,7 @@
     },
     {
       "name": "AutoBrake1",
+      "description": "Headlights | Day running",
       "assignments": [
         {
           "type": "momentary",
@@ -253,6 +293,7 @@
     },
     {
       "name": "AutoBrake2",
+      "description": "Headlights | Marker lights only",
       "assignments": [
         {
           "type": "momentary",
@@ -276,6 +317,7 @@
     },
     {
       "name": "AutoBrake3",
+      "description": "Headlights | Night running",
       "assignments": [
         {
           "type": "momentary",
@@ -299,6 +341,7 @@
     },
     {
       "name": "AutoBrake4",
+      "description": "Headlights | Tail lights only",
       "assignments": [
         {
           "type": "momentary",
@@ -321,209 +364,7 @@
       ]
     }
   ],
-  "auto_select": true,
   "controller": {
-    "usb_id": "044F:0407",
-    "mapping": {
-      "name": "TCA Quadrant Airbus - TSW | Class 171 | Rivet | TheJAG",
-      "usb_id": "044F:0407",
-      "data": [
-        {
-          "kind": "axis",
-          "index": 0,
-          "name": "LeftThrottle"
-        },
-        {
-          "kind": "axis",
-          "index": 1,
-          "name": "RightThrottle"
-        },
-        {
-          "kind": "axis",
-          "index": 2,
-          "name": "FlapLever"
-        },
-        {
-          "kind": "axis",
-          "index": 5,
-          "name": "SpeedbrakeLever"
-        },
-        {
-          "kind": "button",
-          "index": 0,
-          "name": "LeftThrottleButton"
-        },
-        {
-          "kind": "button",
-          "index": 1,
-          "name": "RightThrottleButton"
-        },
-        {
-          "kind": "button",
-          "index": 10,
-          "name": "_Button10"
-        },
-        {
-          "kind": "button",
-          "index": 11,
-          "name": "_Button11"
-        },
-        {
-          "kind": "button",
-          "index": 12,
-          "name": "_Button12"
-        },
-        {
-          "kind": "button",
-          "index": 13,
-          "name": "_Button13"
-        },
-        {
-          "kind": "button",
-          "index": 14,
-          "name": "_Button14"
-        },
-        {
-          "kind": "button",
-          "index": 15,
-          "name": "_Button15"
-        },
-        {
-          "kind": "button",
-          "index": 16,
-          "name": "RoundAuxButton"
-        },
-        {
-          "kind": "button",
-          "index": 17,
-          "name": "RudderTrimLeft"
-        },
-        {
-          "kind": "button",
-          "index": 18,
-          "name": "RudderTrimRight"
-        },
-        {
-          "kind": "button",
-          "index": 19,
-          "name": "ParkingBrake"
-        },
-        {
-          "kind": "button",
-          "index": 2,
-          "name": "LeftEngineOn"
-        },
-        {
-          "kind": "button",
-          "index": 20,
-          "name": "GearLever"
-        },
-        {
-          "kind": "button",
-          "index": 21,
-          "name": "AutoBrake0"
-        },
-        {
-          "kind": "button",
-          "index": 22,
-          "name": "AutoBrake1"
-        },
-        {
-          "kind": "button",
-          "index": 23,
-          "name": "AutoBrake2"
-        },
-        {
-          "kind": "button",
-          "index": 24,
-          "name": "AutoBrake3"
-        },
-        {
-          "kind": "button",
-          "index": 25,
-          "name": "AutoBrake4"
-        },
-        {
-          "kind": "button",
-          "index": 26,
-          "name": "_Button26"
-        },
-        {
-          "kind": "button",
-          "index": 27,
-          "name": "_Button27"
-        },
-        {
-          "kind": "button",
-          "index": 28,
-          "name": "_Button28"
-        },
-        {
-          "kind": "button",
-          "index": 29,
-          "name": "_Button29"
-        },
-        {
-          "kind": "button",
-          "index": 3,
-          "name": "RightEngineOn"
-        },
-        {
-          "kind": "button",
-          "index": 30,
-          "name": "_Button30"
-        },
-        {
-          "kind": "button",
-          "index": 4,
-          "name": "LeftAuxButton"
-        },
-        {
-          "kind": "button",
-          "index": 5,
-          "name": "RightAuxButton"
-        },
-        {
-          "kind": "button",
-          "index": 6,
-          "name": "RotaryCrank"
-        },
-        {
-          "kind": "button",
-          "index": 7,
-          "name": "RotaryIgnStart"
-        },
-        {
-          "kind": "button",
-          "index": 8,
-          "name": "_Button8"
-        },
-        {
-          "kind": "button",
-          "index": 9,
-          "name": "_Button9"
-        }
-      ]
-    }
-  },
-  "rail_class_information": [
-    {
-      "class_name": "RVM_BR_Class171_Base_C"
-    },
-    {
-      "class_name": "RVM_BR_Class171_DM_C"
-    },
-    {
-      "class_name": "RVM_BR_Class171_DMCL_C"
-    },
-    {
-      "class_name": "RVM_BR_Class171_DMCL_W_C"
-    },
-    {
-      "class_name": "RVM_BR_Class171_MS_C"
-    },
-    {
-      "class_name": "RVM_BR_Class171_MS2_4Car_C"
-    }
-  ]
+    "usb_id": "044F:0407"
+  }
 }
