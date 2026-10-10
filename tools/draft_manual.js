@@ -4,7 +4,8 @@
 //        [--operator "NS"] [--route "Zwolle – Groningen"] [--logo ../../assets/logo-ns.png] [--diagram ../../assets/x.png --source "Drawing: ..."]
 //        [--dlc store.steampowered.com/app/...] [--flip] [--out file]
 // Notch pills are listed top to bottom; top = TCA lever fully forward = raw axis 0, so an inverted lever shows the
-// game's last notch at the top (ICMm: Forward, PZ5). --flip reverses that if a train proves otherwise.
+// game's last notch at the top (ICMm: Forward, PZ5; Class 153: Emergency, Off). The pills must match the cab: see the lever
+// direction rule in CLAUDE.md (check where each handle sits at 0 and at full, set invert to match, then verify the draft).
 // The capture is found by the profile's rail classes when --capture is omitted. Checklists and the eyebrow come from
 // the family's manual (tools/families.json) and are marked in _todo for you to rewrite.
 const fs=require('fs'),path=require('path');
