@@ -123,8 +123,11 @@ async function sweep(c,info){
             // hold the train with the handbrake while the reverser is in Forward (the BR 112 crept and ended its service): a settable Handbrake lever is set to 1, push-button pairs (Apply / Release) are pulsed
             const hbAll=dump.controls.filter(x=>x.identifier==='Handbrake'&&inGroup(x)), hbLever=hbAll.find(x=>!/Apply|Release|On|Off/i.test(bareName(x.name))), hbApply=hbAll.find(x=>/Apply|On/i.test(bareName(x.name))&&!/Release|Off/i.test(bareName(x.name))), hbRel=hbAll.find(x=>/Release|Off/i.test(bareName(x.name)));
             let hbOrig=null; if(hbLever){ hbOrig=await get(np(hbLever.name)+'.InputValue'); await setv(hbLever.name,1); console.log('  handbrake '+hbLever.name+' applied for the retry'); } else if(hbApply){ await setv(hbApply.name,1); await sleep(200); await setv(hbApply.name,0); console.log('  handbrake '+hbApply.name+' pulsed for the retry'); }
+            // no handbrake at all (ICE 3): hold the train with its own brake lever at the Full service notch found by the sweep
+            let tbHold=null, tbOrig=null; if(!hbLever&&!hbApply){ const tb=ctrls.find(x=>x!==c&&x.identifier==='AutomaticBrake'&&out.levers[x.name]&&out.levers[x.name].notches&&out.levers[x.name].notches.length>1); if(tb){ const rows=out.levers[tb.name].notches; const full=rows.find(r=>/full/i.test(r.name||''))||rows.filter(r=>!/emerg|rapid|bypass/i.test(r.name||'')).pop(); if(full){ tbHold=tb; tbOrig=await get(np(tb.name)+'.InputValue'); await setv(tb.name,full.snapped); console.log('  no handbrake: '+tb.name+' set to '+(full.name||'')+' ('+full.snapped+') for the retry'); } } }
             await sleep(500); await setv(reverser.name,fwd.snapped); await sleep(500); await sweep(c,out.levers[c.name]); await setv(reverser.name,neutral?neutral.snapped:revOrig); await sleep(400);
-            if(hbLever){ await setv(hbLever.name,hbOrig); } else if(hbRel){ await setv(hbRel.name,1); await sleep(200); await setv(hbRel.name,0); } } } }
+            if(hbLever){ await setv(hbLever.name,hbOrig); } else if(hbRel){ await setv(hbRel.name,1); await sleep(200); await setv(hbRel.name,0); }
+            if(tbHold){ await sleep(300); await setv(tbHold.name,tbOrig); } } } }
       if(reverser&&neutral){await setv(reverser.name,revOrig);await sleep(500);}
       if(modeSel&&drive){await setv(modeSel.name,modeOrig);await sleep(300);}
       for(const e of toggled.slice().reverse()){ const st=await enState(e); await setv(e.name,st.v>=0.5?0:1); await sleep(300); }
