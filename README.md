@@ -75,7 +75,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **DB BR 111** <sub>— DTG · [profile](releases/tsw-br-111-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-111-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 112** <sub>— DTG · [profile](releases/tsw-br-112-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-112-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 114** <sub>— DTG · [profile](releases/tsw-br-114-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-114-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **DB BR 140**  
+`SOON 🟨` **DB BR 140** <sub>— DTG · [profile](releases/tsw-br-140-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-140-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **DB BR 143**  
 `SOON 🟨` **DB BR 145 Expert** <sub>— Train Sim Germany</sub>  
 `TODO ◼️` **DB BR 146**  
