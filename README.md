@@ -19,7 +19,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **BR Class 45**  
 `TODO ◼️` **BR Class 47**  
 `TODO ◼️` **BR Class 52**  
-`TODO ◼️` **BR Class 66**  
+`SOON 🟨` **BR Class 66** <sub>— DTG · [profile](releases/tsw-class-66-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-66-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 86**  
 `TODO ◼️` **BR Class 87**  
 `TODO ◼️` **BR Class 90**  
