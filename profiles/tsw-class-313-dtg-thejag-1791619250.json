@@ -9,13 +9,13 @@
       "class_name": "RVM_ECW_SN_Class313_Base_C"
     },
     {
+      "class_name": "RVM_ECW_SN_Class313_DMSO_C"
+    },
+    {
       "class_name": "RVM_ECW_SN_Class313_DMSO_A_C"
     },
     {
       "class_name": "RVM_ECW_SN_Class313_DMSO_B_C"
-    },
-    {
-      "class_name": "RVM_ECW_SN_Class313_DMSO_C"
     },
     {
       "class_name": "RVM_ECW_SN_Class313_PoweredBase_C"
@@ -30,7 +30,7 @@
   "controls": [
     {
       "name": "SpeedbrakeLever",
-      "description": "Reverser",
+      "description": "Reverser (Reverse / Neutral / Forward / Off)",
       "assignments": [
         {
           "type": "direct_control",
@@ -38,63 +38,42 @@
           "input_value": {
             "min": 0,
             "max": 1,
-            "step": 0.33333,
+            "steps": [
+              0,
+              0.33,
+              0.66,
+              1
+            ],
             "invert": true
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "Reverser",
-          "input_value": {
-            "min": 0,
-            "max": 1,
-            "step": 0.33333,
-            "invert": true
-          },
-          "action_increase": {
-            "keys": "w"
-          },
-          "action_decrease": {
-            "keys": "s"
           }
         }
       ]
     },
     {
       "name": "LeftThrottle",
-      "description": "Brake",
+      "description": "Train brake (Release / Step 1 / Step 2 / Full Service / Emergency)",
       "assignments": [
         {
           "type": "direct_control",
           "controls": "BrakeController",
           "input_value": {
             "min": 0,
-            "max": 0.75,
-            "step": 0.25,
+            "max": 1,
+            "steps": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ],
             "invert": true
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "AutomaticBrake",
-          "input_value": {
-            "min": 0,
-            "max": 0.75,
-            "step": 0.25,
-            "invert": true
-          },
-          "action_increase": {
-            "keys": "'"
-          },
-          "action_decrease": {
-            "keys": ";"
           }
         }
       ]
     },
     {
       "name": "RightThrottle",
-      "description": "Throttle",
+      "description": "Throttle (Off / 1 / 2 / 3 / 4)",
       "assignments": [
         {
           "type": "direct_control",
@@ -102,43 +81,40 @@
           "input_value": {
             "min": 0,
             "max": 1,
-            "step": 0.25
-          }
-        },
-        {
-          "type": "sync_control",
-          "identifier": "Throttle",
-          "input_value": {
-            "min": 0,
-            "max": 1,
-            "step": 0.25
-          },
-          "action_increase": {
-            "keys": "a"
-          },
-          "action_decrease": {
-            "keys": "d"
+            "steps": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ]
           }
         }
       ]
     },
     {
       "name": "ParkingBrake",
+      "description": "Master switch on / off",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
           "controls": "MasterKey",
-          "value": 1.0
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
         },
         "action_deactivate": {
           "controls": "MasterKey",
-          "value": 0.0
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
         }
       }
     },
     {
       "name": "GearLever",
+      "description": "AWS reset",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,
@@ -149,11 +125,19 @@
     },
     {
       "name": "LeftThrottleButton",
+      "description": "Sand",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "x"
+          "controls": "Sander",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Sander",
+          "value": 0,
+          "hold": false
         }
       }
     },
@@ -164,7 +148,14 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "space"
+          "controls": "Horn",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn",
+          "value": 0.5,
+          "hold": false
         }
       }
     },
@@ -175,7 +166,14 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "n"
+          "controls": "Horn",
+          "value": 0,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn",
+          "value": 0.5,
+          "hold": false
         }
       }
     },
@@ -203,69 +201,89 @@
     },
     {
       "name": "RoundAuxButton",
+      "description": "Guard buzzer (signal bell)",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "l"
+          "controls": "SignalBell_Driver",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "SignalBell_Driver",
+          "value": 0,
+          "hold": false
         }
       }
     },
     {
       "name": "LeftAuxButton",
-      "description": "AWS isolation",
+      "description": "AWS / TPWS isolation (lit = Isolated, out = On)",
       "assignment": {
         "type": "toggle",
         "threshold": 0.9,
         "action_activate": {
           "controls": "AWS/TPWS_Isolation",
-          "value": 0.0,
-          "hold": false
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
         },
         "action_deactivate": {
           "controls": "AWS/TPWS_Isolation",
-          "value": 1.0
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
         }
       }
     },
     {
       "name": "RightAuxButton",
-      "description": "Vigilance isolation",
+      "description": "DSD isolation (lit = Off, out = On)",
       "assignment": {
         "type": "toggle",
         "threshold": 0.9,
         "action_activate": {
           "controls": "DSDIsolation",
-          "value": 0.0,
-          "hold": false
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
         },
         "action_deactivate": {
           "controls": "DSDIsolation",
-          "value": 1.0
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
         }
       }
     },
     {
       "name": "RotaryCrank",
+      "description": "Wipers one notch towards Slow (Fast > Park > Slow)",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "shift+v",
-          "press_time": 0.4,
-          "wait_time": 0.1
+          "controls": "WindscreenWiperSwitch",
+          "value": 0.5,
+          "relative": true,
+          "hold": false,
+          "enable_api_fallback": true
         }
       }
     },
     {
       "name": "RotaryIgnStart",
+      "description": "Wipers one notch towards Fast (Slow > Park > Fast)",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "keys": "v",
-          "press_time": 0.4,
-          "wait_time": 0.1
+          "controls": "WindscreenWiperSwitch",
+          "value": -0.5,
+          "relative": true,
+          "hold": false,
+          "enable_api_fallback": true
         }
       }
     },
@@ -277,7 +295,7 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "Headlights",
-          "value": 0.0,
+          "value": 0,
           "hold": false
         }
       }
@@ -290,20 +308,20 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "Headlights",
-          "value": 0.2500,
+          "value": 0.25,
           "hold": false
         }
       }
     },
     {
       "name": "AutoBrake2",
-      "description": "Headlights | Head + marker lights",
+      "description": "Headlights | Headlights and marker lights",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
           "controls": "Headlights",
-          "value": 0.500,
+          "value": 0.5,
           "hold": false
         }
       }
@@ -316,7 +334,7 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "Headlights",
-          "value": 0.7500,
+          "value": 0.75,
           "hold": false
         }
       }
@@ -329,7 +347,7 @@
         "threshold": 0.9,
         "action_activate": {
           "controls": "Headlights",
-          "value": 0.0,
+          "value": 0,
           "hold": false
         }
       }
