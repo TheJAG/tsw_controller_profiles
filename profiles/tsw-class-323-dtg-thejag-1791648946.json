@@ -1,0 +1,429 @@
+{
+  "name": "TSW | Class 323 | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_BCC_RR_Class323_DMS_A_C"
+    },
+    {
+      "class_name": "RVM_BCC_RR_Class323_DMS_B_C"
+    },
+    {
+      "class_name": "RVM_BCC_RR_Class323_PTS_C"
+    },
+    {
+      "class_name": "RVM_MGP_NT_Class323_DMS_A_C"
+    },
+    {
+      "class_name": "RVM_MGP_NT_Class323_DMS_B_C"
+    },
+    {
+      "class_name": "RVM_MGP_NT_Class323_PTS_C"
+    },
+    {
+      "class_name": "RVM_BCC_WRM_Class323_DMS_A_C"
+    },
+    {
+      "class_name": "RVM_BCC_WRM_Class323_DMS_B_C"
+    },
+    {
+      "class_name": "RVM_BCC_WRM_Class323_PTS_C"
+    },
+    {
+      "class_name": "RVM_TTC_Class323_DMS_A_C"
+    },
+    {
+      "class_name": "RVM_TTC_Class323_DMS_B_C"
+    },
+    {
+      "class_name": "RVM_TTC_Class323_PTS_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser (Reverse / Neutral / Forward / Off)",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.333,
+              0.667,
+              1
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Power / brake handle (B3 / B2 / B1 / Off / P1 / P2 / P3 / P4; Emergency at -1 is left out on purpose, as in the old 323 profile)",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "PowerBrakeHandle",
+          "input_value": {
+            "min": -0.6,
+            "max": 1,
+            "steps": [
+              -0.6,
+              -0.4,
+              -0.2,
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Master key in / out",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "MasterKey",
+          "value": 1
+        },
+        "action_deactivate": {
+          "controls": "MasterKey",
+          "value": 0
+        }
+      }
+    },
+    {
+      "name": "GearLever",
+      "description": "AWS reset",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "Q"
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "description": "Sand",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Sander",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Sander",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Pantograph raise",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PantographRaise",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PantographRaise",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "Horn | High",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Horn",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "Horn | Low",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Horn",
+          "value": 0,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "Guard buzzer",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "DoorControlPanel_Buzzer_L",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "DoorControlPanel_Buzzer_L",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "AWS isolation (lit = Isolated / unlit = Normal)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "AWS_Isolation",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "AWS_Isolation",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "Vigilance isolation (lit = Isolated / unlit = Normal)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Vigilance_Isolation",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "Vigilance_Isolation",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wipers one notch slower (Fast > Slow > Int 2 > Int 1 > Off)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "WiperControl",
+            "value": -0.25,
+            "relative": true,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wipers one notch faster (Off > Int 1 > Int 2 > Slow > Fast)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "WiperControl",
+            "value": 0.25,
+            "relative": true,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Headlights | Off",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightsMarkerLights",
+            "value": 0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TailLights",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Headlights | Day head",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightsMarkerLights",
+            "value": 0.75,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TailLights",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Headlights | Marker lights",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightsMarkerLights",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TailLights",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Headlights | Night head",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightsMarkerLights",
+            "value": 0.25,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TailLights",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Headlights | Tail lights",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightsMarkerLights",
+            "value": 0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TailLights",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}
