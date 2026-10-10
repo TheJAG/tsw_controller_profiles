@@ -1,0 +1,2581 @@
+{
+  "objectClass": "RVM_AWL_NT_Class331_DMSL_C",
+  "capturedAt": "2026-10-10T16:25:45.273Z",
+  "activeCab": {
+    "bFront": false,
+    "bBack": false
+  },
+  "cab": null,
+  "controls": [
+    {
+      "name": "ModelChildActorComponent0",
+      "objectClass": "ModelChildActorComponent"
+    },
+    {
+      "name": "RailVehiclePhysicsComponent0",
+      "objectClass": "RailVehicleComponent"
+    },
+    {
+      "name": "GameplayTasksComponent0",
+      "objectClass": "GameplayTasksComponent"
+    },
+    {
+      "name": "GameplayTagStatusComponent0",
+      "objectClass": "GameplayTagStatusComponent"
+    },
+    {
+      "name": "Simulation",
+      "objectClass": "SimulationComponent"
+    },
+    {
+      "name": "SeatManager",
+      "objectClass": "SeatManagerComponent"
+    },
+    {
+      "name": "PassengerCargoModel",
+      "objectClass": "PassengerCargoModelComponent"
+    },
+    {
+      "name": "Numbering",
+      "objectClass": "NumberingComponent"
+    },
+    {
+      "name": "JumperCable_F",
+      "objectClass": "JumperCableComponent"
+    },
+    {
+      "name": "JumperCable_B",
+      "objectClass": "JumperCableComponent"
+    },
+    {
+      "name": "Coupler_F",
+      "objectClass": "CouplerComponent"
+    },
+    {
+      "name": "Coupler_B",
+      "objectClass": "CouplerComponent"
+    },
+    {
+      "name": "PassengerDoor_FL",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "PassengerDoor_FR",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "PassengerDoor_BL",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "PassengerDoor_BR",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "PIS_SubManager",
+      "objectClass": "PIS_SubManager_C"
+    },
+    {
+      "name": "IsClient",
+      "objectClass": "ISClient_C"
+    },
+    {
+      "name": "PassengerEnvironment",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "GuardEnvironment",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "CurrentCollector",
+      "objectClass": "CurrentCollectorComponent"
+    },
+    {
+      "name": "Gangway_F",
+      "objectClass": "GangwayComponent"
+    },
+    {
+      "name": "Gangway_B",
+      "objectClass": "GangwayComponent"
+    },
+    {
+      "name": "GuardPanelDoor_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "GuardReleaseDoors_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "GuardSignalBuzzer_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "GuardCloseDoors_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "GuardKey_L",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Buzzer & Local Close",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Command and Local Open",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ]
+    },
+    {
+      "name": "GuardASDO_Flap_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "GuardASDO_L",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Left",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Normal",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Right",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ]
+    },
+    {
+      "name": "GuardPanelDoor_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "GuardReleaseDoors_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "GuardSignalBuzzer_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "GuardCloseDoors_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "GuardKey_R",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Buzzer & Local Close",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Command and Local Open",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ]
+    },
+    {
+      "name": "GuardASDO_Flap_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "GuardASDO_R",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Left",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Normal",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Right",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ]
+    },
+    {
+      "name": "DoorManager",
+      "objectClass": "BP_AWL_NT_Class331_DoorManager_C"
+    },
+    {
+      "name": "GangwayDoor_F",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "GangwayDoor_B",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "OpenPassengerDoorExt_FL",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "OpenPassengerDoorExt_FR",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "OpenPassengerDoorExt_BL",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "OpenPassengerDoorExt_BR",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "OpenPassengerDoorInt_FL",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "OpenPassengerDoorInt_FR",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "OpenPassengerDoorInt_BL",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "OpenPassengerDoorInt_BR",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ClosePassengerDoorInt_FL",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ClosePassengerDoorInt_FR",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ClosePassengerDoorInt_BL",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ClosePassengerDoorInt_BR",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "MR_F_AirHose",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "MR_B_AirHose",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "FaultManager",
+      "objectClass": "BP_AWL_NT_Class331_FaultManager_C"
+    },
+    {
+      "name": "ServiceProviderBase",
+      "objectClass": "ServiceProviderBase_C"
+    },
+    {
+      "name": "DigitalDisplay",
+      "objectClass": "BP_AWL_NT_Class331_DigitalDisplayService_C"
+    },
+    {
+      "name": "Gangway_Cable_F",
+      "objectClass": "GangwayComponent"
+    },
+    {
+      "name": "Gangway_Cable_B",
+      "objectClass": "GangwayComponent"
+    },
+    {
+      "name": "Gangway_Int_F",
+      "objectClass": "GangwayComponent"
+    },
+    {
+      "name": "Gangway_Int_B",
+      "objectClass": "GangwayComponent"
+    },
+    {
+      "name": "PersistantIntervalTimer_BIL_L",
+      "objectClass": "BP_AWL_NT_Class331_PersistentIntervalTimer_C"
+    },
+    {
+      "name": "PersistantIntervalTimer_BIL_R",
+      "objectClass": "BP_AWL_NT_Class331_PersistentIntervalTimer_C"
+    },
+    {
+      "name": "PersistantIntervalTimer_PassDoorOpen_FL",
+      "objectClass": "BP_AWL_NT_Class331_PersistentIntervalTimer_C"
+    },
+    {
+      "name": "PersistantIntervalTimer_PassDoorOpen_FR",
+      "objectClass": "BP_AWL_NT_Class331_PersistentIntervalTimer_C"
+    },
+    {
+      "name": "PersistantIntervalTimer_PassDoorOpen_BL",
+      "objectClass": "BP_AWL_NT_Class331_PersistentIntervalTimer_C"
+    },
+    {
+      "name": "PersistantIntervalTimer_PassDoorOpen_BR",
+      "objectClass": "BP_AWL_NT_Class331_PersistentIntervalTimer_C"
+    },
+    {
+      "name": "Horn",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "Horn",
+      "namedValues": [
+        {
+          "name": "Low",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "High",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "ReducedHorn",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "HornAlt",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "HornComponent",
+      "objectClass": "BP_SequenceHornCore_C"
+    },
+    {
+      "name": "PowerBrakeController",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": -0.949999988079071,
+      "identifier": "Throttle",
+      "namedValues": [
+        {
+          "name": "Emergency",
+          "source": "Output",
+          "min": -3.5,
+          "max": -2.5
+        },
+        {
+          "name": "{BrakePos} Brake",
+          "source": "Output",
+          "min": -2.5,
+          "max": -0.10000000149011612
+        },
+        {
+          "name": "Coasting",
+          "source": "Output",
+          "min": -0.10000000149011612,
+          "max": 0.10000000149011612
+        },
+        {
+          "name": "{PowerPos} Power",
+          "source": "Output",
+          "min": 0.10000000149011612,
+          "max": 4
+        }
+      ]
+    },
+    {
+      "name": "CabReadingLight",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "EmergencyPantographDown",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DSD_Pedal",
+      "objectClass": "ReversiblePushButton_C",
+      "inputValue": 1,
+      "identifier": "Alerter",
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        }
+      ]
+    },
+    {
+      "name": "CabLight_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "CabLight_C",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "CabLight_Desk",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "CabLights",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "BatteryOff",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "BatteryOn",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "MasterKey",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "MasterSwitch",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Reverser",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "Reverser",
+      "namedValues": [
+        {
+          "name": "Reverse",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Neutral",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Forward",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DoorRelease_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DoorsClose_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DRA",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "DRA_Reset",
+      "namedValues": [
+        {
+          "name": "Reset",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Set",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "LocomotiveConditionManager",
+      "objectClass": "LocomotiveConditionManager_C"
+    },
+    {
+      "name": "WindscreenWiper",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "Wipers",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Intermittent",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Slow",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Fast",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        }
+      ]
+    },
+    {
+      "name": "WiperSpeed",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "WipersAlt",
+      "namedValues": []
+    },
+    {
+      "name": "EmergencyBrakePlunger",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DriverSignalBuzzer",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Bell",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Sanding",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Sand",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "LampTest",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "ReadingLight",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "HazardWarningLights",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Uncouple",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "UncoupleButton",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Headlights",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "Headlights",
+      "namedValues": [
+        {
+          "name": "Tail Lights",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Marker Only",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Night Head & Marker",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        },
+        {
+          "name": "Day Head & Marker",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        }
+      ]
+    },
+    {
+      "name": "PantographDown",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Pantograph",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "PantographUp",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Pantograph",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "AWS_Reset",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "AWS_Reset",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DoorRelease_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DoorsClose_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "TPWS_TrainStopOverride",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "TPWS_TSO",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "TPWS_BrakeRelease",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "BrakeRelease",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DRA_Isolation",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "DRA_Isolation",
+      "namedValues": [
+        {
+          "name": "Normal",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Isolated",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "TPWSAWS_Isolation",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "AWS_TPWS_Isolation",
+      "namedValues": [
+        {
+          "name": "Normal",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Isolated",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "VigilanceIsolation",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "DVD_Isolation",
+      "namedValues": [
+        {
+          "name": "Normal",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Isolated",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DSD_Isolation",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "DSD_Isolation",
+      "namedValues": [
+        {
+          "name": "Normal",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Isolated",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "RescuedByLoco",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "TPWS_TempIsolation",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "TPWS_TempIsolation",
+      "namedValues": [
+        {
+          "name": "Normal",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Isolated",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "AWS_Isolation",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Normal",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Isolated",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "BP_DVD_Service",
+      "objectClass": "BP_DVD_Service_C"
+    },
+    {
+      "name": "BP_DriverAssistCore",
+      "objectClass": "BP_DriverAssistCore_C"
+    },
+    {
+      "name": "PIS_Manager",
+      "objectClass": "PIS_Manager_C"
+    },
+    {
+      "name": "CabWindow_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabWindow_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabDoor_L",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabDoor_R",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "DriverEnvironment",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "ISManager",
+      "objectClass": "ISManager_C"
+    },
+    {
+      "name": "CabDoor_Rear",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "GSMR_IncreaseBrightness",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "GSMR_DecreaseBrightness",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "GSMR_IncreaseVolume",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "GSMR_DecreaseVolume",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "GSMR_Cancel",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "GSMR_Confirm",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "GSMR_Test",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "GSMR_Registration",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "WiperBlade",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "GuardSeat",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Up",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Down",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "ContactSignaller",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "GSMR_Radio",
+      "objectClass": "BP_Class331_GSM-R_Radio_C"
+    },
+    {
+      "name": "AWS_TPWS_Service",
+      "objectClass": "AWL_NT_Class331_AWS_TPWS_Service_C"
+    },
+    {
+      "name": "TPWS_SPAD",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "TPWS_SPAD",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "TPWS_Overspeed",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "TPWS_OSS",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "TPWS_AWS",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "AWS_Release",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "CabBlind",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabLight_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "RescuedByTrainFlap",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Input",
+          "min": 0,
+          "max": 0.5
+        },
+        {
+          "name": "Open",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "AWSIsolationFlap",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Input",
+          "min": 0,
+          "max": 0.5
+        },
+        {
+          "name": "Open",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "TPWSTemporaryIsolationFlap",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Input",
+          "min": 0,
+          "max": 0.5
+        },
+        {
+          "name": "Open",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "EmergencyPlunger_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "SecondmanEnvironment",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "PersistantIntervalTime_HazardLights",
+      "objectClass": "BP_AWL_NT_Class331_PersistentIntervalTimer_C"
+    }
+  ],
+  "levers": {
+    "GuardKey_L": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Buzzer & Local Close",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Command and Local Open",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 1,
+          "name": "Buzzer & Local Close"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 2,
+          "name": "Command and Local Open"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
+    },
+    "GuardASDO_L": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Left",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Normal",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Right",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": 0,
+          "name": "Left"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 1,
+          "name": "Normal"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 2,
+          "name": "Right"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.5
+    },
+    "GuardKey_R": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Buzzer & Local Close",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Command and Local Open",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 1,
+          "name": "Buzzer & Local Close"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 2,
+          "name": "Command and Local Open"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "GuardASDO_R": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Left",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Normal",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Right",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": 0,
+          "name": "Left"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 1,
+          "name": "Normal"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 2,
+          "name": "Right"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.5
+    },
+    "Horn": {
+      "identifier": "Horn",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 1,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Low",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "High",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "PowerBrakeController": {
+      "identifier": "Throttle",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 5,
+      "minInput": -1,
+      "maxInput": 1,
+      "defaultInput": -0.949999988079071,
+      "inputRange": 2,
+      "outputRange": 7,
+      "rotational": false,
+      "inputValue": -0.949999988079071,
+      "namedValues": [
+        {
+          "name": "Emergency",
+          "source": "Output",
+          "min": -3.5,
+          "max": -2.5
+        },
+        {
+          "name": "{BrakePos} Brake",
+          "source": "Output",
+          "min": -2.5,
+          "max": -0.10000000149011612
+        },
+        {
+          "name": "Coasting",
+          "source": "Output",
+          "min": -0.10000000149011612,
+          "max": 0.10000000149011612
+        },
+        {
+          "name": "{PowerPos} Power",
+          "source": "Output",
+          "min": 0.10000000149011612,
+          "max": 4
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": -1,
+          "to": -0.98,
+          "snapped": -1,
+          "output": -3,
+          "name": "Emergency"
+        },
+        {
+          "index": 1,
+          "from": -0.97,
+          "to": -0.95,
+          "snapped": -0.95,
+          "output": -2,
+          "name": "{BrakePos} Brake"
+        },
+        {
+          "index": 2,
+          "from": -0.94,
+          "to": -0.01,
+          "snapped": -0.94,
+          "output": -1.978947401046753,
+          "name": "{BrakePos} Brake"
+        },
+        {
+          "index": 3,
+          "from": 0,
+          "to": 0,
+          "snapped": 0,
+          "output": 0,
+          "name": "Coasting"
+        },
+        {
+          "index": 4,
+          "from": 0.01,
+          "to": 1,
+          "snapped": 0.01,
+          "output": 0.03999999910593033,
+          "name": "Coasting"
+        }
+      ],
+      "sweptRange": [
+        -1,
+        1
+      ],
+      "restored": -0.949999988079071
+    },
+    "DSD_Pedal": {
+      "identifier": "Alerter",
+      "objectClass": "ReversiblePushButton_C",
+      "notchCount": null,
+      "minInput": 1,
+      "maxInput": 0,
+      "defaultInput": 1,
+      "inputRange": -1,
+      "outputRange": 1,
+      "rotational": null,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "MasterKey": {
+      "identifier": "MasterSwitch",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.8976,
+          "output": 1,
+          "name": "On"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
+    },
+    "Reverser": {
+      "identifier": "Reverser",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Reverse",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Neutral",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Forward",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 1,
+          "from": 0,
+          "to": 0,
+          "snapped": 0.5,
+          "output": 0,
+          "name": "Neutral"
+        },
+        {
+          "index": 0,
+          "from": 0.01,
+          "to": 0.24,
+          "snapped": 0,
+          "output": -1,
+          "name": "Reverse"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 0,
+          "name": "Neutral"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 1,
+          "name": "Forward"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.5
+    },
+    "WindscreenWiper": {
+      "identifier": "Wipers",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 4,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 3,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Intermittent",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Slow",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Fast",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.16,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.17,
+          "to": 0.49,
+          "snapped": 0.33,
+          "output": 1,
+          "name": "Intermittent"
+        },
+        {
+          "index": 2,
+          "from": 0.5,
+          "to": 0.83,
+          "snapped": 0.66,
+          "output": 2,
+          "name": "Slow"
+        },
+        {
+          "index": 3,
+          "from": 0.84,
+          "to": 1,
+          "snapped": 1,
+          "output": 3,
+          "name": "Fast"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "WiperSpeed": {
+      "identifier": "WipersAlt",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Headlights": {
+      "identifier": "Headlights",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 5,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 4,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Tail Lights",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Marker Only",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Night Head & Marker",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        },
+        {
+          "name": "Day Head & Marker",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.12,
+          "snapped": 0,
+          "output": 0,
+          "name": "Tail Lights"
+        },
+        {
+          "index": 1,
+          "from": 0.13,
+          "to": 0.37,
+          "snapped": 0.25,
+          "output": 1,
+          "name": "Off"
+        },
+        {
+          "index": 2,
+          "from": 0.38,
+          "to": 0.62,
+          "snapped": 0.5,
+          "output": 2,
+          "name": "Marker Only"
+        },
+        {
+          "index": 3,
+          "from": 0.63,
+          "to": 0.87,
+          "snapped": 0.75,
+          "output": 3,
+          "name": "Day Head & Marker"
+        },
+        {
+          "index": 4,
+          "from": 0.88,
+          "to": 1,
+          "snapped": 1,
+          "output": 4,
+          "name": "Night Head & Marker"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "DRA_Isolation": {
+      "identifier": "DRA_Isolation",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Normal",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Isolated",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Normal"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.848,
+          "output": 1,
+          "name": "Isolated"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "TPWSAWS_Isolation": {
+      "identifier": "AWS_TPWS_Isolation",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Normal",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Isolated",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Normal"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.9253,
+          "output": 1,
+          "name": "Isolated"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
+    },
+    "VigilanceIsolation": {
+      "identifier": "DVD_Isolation",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Normal",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Isolated",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Normal"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.8436,
+          "output": 1,
+          "name": "Isolated"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
+    },
+    "DSD_Isolation": {
+      "identifier": "DSD_Isolation",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Normal",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Isolated",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Normal"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.8658,
+          "output": 1,
+          "name": "Isolated"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
+    },
+    "RescuedByLoco": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.9269,
+          "output": 0.9723109602928162,
+          "name": "On"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "TPWS_TempIsolation": {
+      "identifier": "TPWS_TempIsolation",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 1,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Normal",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Isolated",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "AWS_Isolation": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Normal",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Isolated",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Normal"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.8849,
+          "output": 1,
+          "name": "Isolated"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "WiperBlade": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "CabBlind": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    }
+  }
+}
