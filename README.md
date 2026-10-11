@@ -77,7 +77,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **DB BR 114** <sub>— DTG · [profile](releases/tsw-br-114-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-114-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 140** <sub>— DTG · [profile](releases/tsw-br-140-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-140-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 143** <sub>— DTG · [profile](releases/tsw-br-143-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-143-dtg-thejag.pdf)</sub>  
-`SOON 🟨` **DB BR 145 Expert** <sub>— Train Sim Germany</sub>  
+`SOON 🟨` **DB BR 145 Expert** <sub>— Train Sim Germany · [profile](releases/tsw-br-145-expert-tsg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-145-expert-tsg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 146** <sub>— DTG · [profile](releases/tsw-br-146-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-146-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 147** <sub>— DTG · [profile](releases/tsw-br-147-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-147-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 155** <sub>— DTG · [profile](releases/tsw-br-155-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-155-dtg-thejag.pdf)</sub>  
