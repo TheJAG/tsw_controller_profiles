@@ -1,6 +1,6 @@
 // Capture the train you are sitting in: control dump, active cab, cab-prefix pairs and a notch sweep of every lever.
 // Usage (from repo root, train stationary, master key/switch of your cab ON):
-//   node tools/capture_train.js [out.json] [--no-sweep] [--levers Name,Name] [--cab L] [--step 0.01] [--range lo,hi]
+//   node tools/capture_train.js [out.json] [--no-sweep] [--no-keys] [--levers Name,Name] [--cab L] [--step 0.01] [--range lo,hi]
 // Default output: tools/captures/<ObjectClass>.json. A sweep sets the lever from its minimum to its maximum input (a
 // combined power/brake handle runs -1..1; --range lo,hi clips that, e.g. -1,0.12 to keep a combined handle out of full
 // power) in steps, reads the notch index and
@@ -10,7 +10,7 @@ const {api,sleep,get,setv,dumpControls}=require('./tswapi.js');
 const fs=require('fs'),path=require('path');
 const argv=process.argv.slice(2), opt={sweep:true,levers:null,cab:null,step:0.01,out:null,range:null};
 for(let i=0;i<argv.length;i++){const a=argv[i];
-  if(a==='--no-sweep')opt.sweep=false; else if(a==='--levers')opt.levers=argv[++i].split(',');
+  if(a==='--no-sweep')opt.sweep=false; else if(a==='--no-keys')opt.keys=false; else if(a==='--levers')opt.levers=argv[++i].split(',');
   else if(a==='--cab')opt.cab=argv[++i]; else if(a==='--step')opt.step=Number(argv[++i]); else if(a==='--range')opt.range=argv[++i].split(',').map(Number); else opt.out=a;}
 const LEVER_RE=/Lever|DimmerSwitch|ReversiblePushButton|RotarySwitch/;
 const r4=v=>Math.round(v*1e4)/1e4;
@@ -92,7 +92,7 @@ async function sweep(c,info){
       // enablers: master key/switch and brake key (ICMm) must be on before the levers accept input
       const DRIVING_RE=/^(Reverser|Throttle|CombinedThrottleBrake|AutomaticBrake|TrainBrake|IndependentBrake|DynamicBrake)$/;
       // a driving lever never counts as a key, whatever its node name (the Just Trains 86/87 call the reverser MasterSwitch_F)
-      const enablers=dump.controls.filter(c=>inGroup(c)&&!DRIVING_RE.test(c.identifier||'')&&(/^(MasterSwitch|MasterKey|BrakeKey)$/.test(c.identifier||'')||/^(Master(Key|Switch)|BrakeKey)/.test(bareName(c.name))));
+      const enablers=opt.keys===false?[]:dump.controls.filter(c=>inGroup(c)&&!DRIVING_RE.test(c.identifier||'')&&(/^(MasterSwitch|MasterKey|BrakeKey)$/.test(c.identifier||'')||/^(Master(Key|Switch)|BrakeKey)/.test(bareName(c.name))));
       const master=enablers[0];
       const reverser=ctrls.find(c=>c.identifier==='Reverser');
       const isThrottle=c=>/^(Throttle|CombinedThrottleBrake|AutomaticBrake|TrainBrake|DynamicBrake|IndependentBrake)$/.test(c.identifier||'')||/MasterController|CombinedPowerBrake/.test(c.name);

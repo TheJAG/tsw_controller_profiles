@@ -80,7 +80,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **DB BR 145 Expert** <sub>— Train Sim Germany</sub>  
 `SOON 🟨` **DB BR 146** <sub>— DTG · [profile](releases/tsw-br-146-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-146-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 147** <sub>— DTG · [profile](releases/tsw-br-147-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-147-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **DB BR 155**  
+`SOON 🟨` **DB BR 155** <sub>— DTG · [profile](releases/tsw-br-155-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-155-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 182** <sub>— DTG · [profile](releases/tsw-br-182-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-182-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 185** <sub>— DTG · [profile](releases/tsw-br-185-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-185-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 187** <sub>— Skyhook Games · [profile](releases/tsw-br-187-skyhook-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-187-skyhook-thejag.pdf)</sub>  
