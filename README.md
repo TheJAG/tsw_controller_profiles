@@ -113,7 +113,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 **🇦🇹 Austria**
 
 `TODO ◼️` **ÖBB 1020**  
-`TODO ◼️` **ÖBB 1116**  
+`SOON 🟨` **ÖBB 1116** <sub>— DTG · [profile](releases/tsw-oebb-1116-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-oebb-1116-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **ÖBB 4024**  
 
 **🇨🇭 Switzerland**
