@@ -13,7 +13,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **BR Class 20**  
 `TODO ◼️` **BR Class 31**  
 `TODO ◼️` **BR Class 33**  
-`TODO ◼️` **BR Class 37**  
+`SOON 🟨` **BR Class 37** <sub>— DTG · [profile](releases/tsw-class-37-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-37-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 40**  
 `SOON 🟨` **BR Class 43 HST** <sub>— DTG · [profile](releases/tsw-class-43-hst-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-43-hst-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 45**  
