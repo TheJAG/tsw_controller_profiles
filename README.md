@@ -49,7 +49,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **BR Class 395** <sub>— DTG · [profile](releases/tsw-class-395-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-395-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 465** <sub>— DTG · [profile](releases/tsw-class-465-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-465-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 483**  
-`TODO ◼️` **BR Class 484**  
+`SOON 🟨` **BR Class 484** <sub>— DTG · [profile](releases/tsw-class-484-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-484-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 700/0 Thameslink** <sub>— DTG · [profile](releases/tsw-class-700-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-700-dtg-thejag.pdf)</sub>  
 `DONE ✅` **BR Class 710** <sub>— DTG · [profile](releases/tsw-class-710-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-710-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 801** <sub>— DTG · [profile](releases/tsw-class-801-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-801-dtg-thejag.pdf)</sub>  
