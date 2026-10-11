@@ -7,7 +7,7 @@
 // above: a set to 0 from 1 stops at 0.1), continuous 0.1..0.8, Full 0.98 (0.9+). MasterKeySwitch lever Off 0 / On 0.2338 / Engine
 // Only 0.6337 (reads 0.29 = On at load). No AWS / TPWS; the DSD pedals are push buttons.
 const fs=require('fs');
-const f=process.argv[2]; const dlc=process.argv[3]||'store.steampowered.com/app/4680540';
+const f=process.argv[2]; const dlc=process.argv[3]||'store.steampowered.com/app/4680080';
 const p=JSON.parse(fs.readFileSync(f,'utf8'));
 const pak=fs.readFileSync('tools/pak_classes.txt','utf8').split(/\r?\n/).map(l=>l.trim().split(/\s+/)[1]).filter(n=>n&&/^RVM_JT_Class08/.test(n));
 p.rail_class_information=[...new Set(pak)].map(c=>({class_name:c+'_C'}));

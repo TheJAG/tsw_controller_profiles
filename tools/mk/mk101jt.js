@@ -4,7 +4,7 @@
 // DriversBrakeValve (vacuum) Released 0, continuous release zone to 0.47, Lap 0.5, continuous apply zone 0.55..1 (output 1.06..2);
 // Throttle Idling 0 / 0.25 / 0.5 / 0.75 / Full 1; Reverser Off 0 / Forward 0.5 / Reverse 1 (no Neutral).
 const fs=require('fs');
-const f=process.argv[2]; const dlc=process.argv[3]||'store.steampowered.com/app/4680540';
+const f=process.argv[2]; const dlc=process.argv[3]||'store.steampowered.com/app/4680080';
 const p=JSON.parse(fs.readFileSync(f,'utf8'));
 const pak=fs.readFileSync('tools/pak_classes.txt','utf8').split(/\r?\n/).map(l=>l.trim().split(/\s+/)[1]).filter(n=>n&&/JT_BR_Class101/.test(n)&&!/Base$/.test(n));
 p.rail_class_information=[...new Set(pak)].map(c=>({class_name:c+'_C'}));

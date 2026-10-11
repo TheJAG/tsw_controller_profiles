@@ -1,0 +1,161 @@
+{
+  "name": "tsw-class-20-jt-thejag",
+  "title": "Class 20",
+  "eyebrow": "British Rail · Just Trains · TCA Quadrant Airbus",
+  "profileName": "TSW | Class 20 | JT | TheJAG",
+  "developer": "Just Trains",
+  "route": "West Coast Main Line: Crewe – Preston",
+  "colors": {
+    "navy": "#223261",
+    "blue": "#4a66a8",
+    "paper": "#f3f5f9"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-britishrail-navy.svg",
+      "alt": "British Rail"
+    },
+    {
+      "file": "../../assets/logo-justtrains-navy.png",
+      "alt": "Just Trains"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4680540",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/class-20-jt-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Forward",
+        "Engine only",
+        "Reverse",
+        "Off"
+      ],
+      "start": 3
+    },
+    "leftThrottle": {
+      "name": "Power handle",
+      "continuous": true,
+      "notches": [
+        "Off",
+        "On",
+        "Slow speed",
+        null,
+        "Full"
+      ],
+      "start": 0
+    },
+    "rightThrottle": {
+      "name": "Vacuum brake",
+      "continuous": true,
+      "notches": [
+        "Emergency",
+        "Full",
+        null,
+        "Initial",
+        "Running"
+      ],
+      "start": 1
+    },
+    "flap": {
+      "name": "Loco brake",
+      "continuous": true,
+      "notches": [
+        "Full",
+        null,
+        null,
+        null,
+        "Release"
+      ],
+      "start": 0
+    },
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Engine start"
+    },
+    "gearLever": {
+      "name": "AWS reset"
+    },
+    "autoBrk": {
+      "name": "Lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Front markers"
+        },
+        {
+          "short": "2",
+          "desc": "+ top marker"
+        },
+        {
+          "short": "3",
+          "desc": "+ rear tail"
+        },
+        {
+          "short": "HI",
+          "desc": "Both ends"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Horn high",
+      "start": true
+    },
+    "eng2": {
+      "name": "Horn low",
+      "start": true
+    },
+    "leftAux": {
+      "name": "AWS isolation"
+    },
+    "rightAux": {
+      "name": "DSD breaker"
+    },
+    "modeSwitch": {
+      "name": "Wiper",
+      "left": "stop",
+      "right": "run"
+    },
+    "roundAux": null,
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Master key",
+      "flat": "out",
+      "up": "in"
+    }
+  },
+  "setup": [
+    "PARK BRK up: master key in; brake selector (vacuum / air, goods / passenger) in the cab",
+    "Start the engine (right throttle button)",
+    "Reverser from Off through Engine only to Forward: the power handle only moves then",
+    "Check the AWS isolation light is out",
+    "Lights to Front markers",
+    "Loco brake at Full, vacuum brake at Full (parked)"
+  ],
+  "depart": [
+    "Check the signal; release the handbrake in the cab",
+    "Vacuum brake to Running, loco brake to Release",
+    "Power handle to On, then into the power zone",
+    "Acknowledge AWS with the gear lever",
+    "Brake: power Off, vacuum brake towards Full; Emergency at the far end",
+    "Change direction: power Off first, then the reverser"
+  ]
+}
