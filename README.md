@@ -82,7 +82,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **DB BR 147**  
 `TODO ◼️` **DB BR 155**  
 `TODO ◼️` **DB BR 182**  
-`TODO ◼️` **DB BR 185**  
+`SOON 🟨` **DB BR 185** <sub>— DTG · [profile](releases/tsw-br-185-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-185-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **DB BR 187**  
 `TODO ◼️` **DB BR 193 Vectron**  
 `TODO ◼️` **DB BR 194 (E 94)**  
