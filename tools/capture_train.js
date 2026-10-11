@@ -13,6 +13,9 @@ for(let i=0;i<argv.length;i++){const a=argv[i];
   if(a==='--no-sweep')opt.sweep=false; else if(a==='--no-keys')opt.keys=false; else if(a==='--levers')opt.levers=argv[++i].split(',');
   else if(a==='--cab')opt.cab=argv[++i]; else if(a==='--step')opt.step=Number(argv[++i]); else if(a==='--range')opt.range=argv[++i].split(',').map(Number); else opt.out=a;}
 const LEVER_RE=/Lever|Handle|DimmerSwitch|ReversiblePushButton|RotarySwitch/;
+// Vendor blueprint levers (TSG G6: BP_TSG_Vossloh_G6_Throttle_C) carry a driving identifier but no Lever class name: sweep them too.
+const DRIVE_ID=/^(Throttle|AutomaticBrake|IndependentBrake|DynamicBrake|Reverser|CruiseControlAdjust)$/;
+const isLever=c=>LEVER_RE.test(c.objectClass||'')||(DRIVE_ID.test(c.identifier||'')&&!/PushButton|Door/.test(c.objectClass||''));
 const r4=v=>Math.round(v*1e4)/1e4;
 
 // Cab prefix pairs: names like L_Reverser / S_Reverser or F_x / B_x. Returns {style:'prefix', pair:[a,b], shared:n} or null.
@@ -77,7 +80,7 @@ async function sweep(c,info){
   const out={objectClass:dump.objectClass,capturedAt:new Date().toISOString(),activeCab:acRaw&&acRaw.Values||null,cab,controls:dump.controls,levers:{}};
   const file=opt.out||path.join(__dirname,'captures',dump.objectClass+'.json');
   const prev=opt.levers&&fs.existsSync(file)?JSON.parse(fs.readFileSync(file,'utf8')):null;
-  const leverCtrls=dump.controls.filter(c=>c.inputValue!==undefined&&LEVER_RE.test(c.objectClass||''));
+  const leverCtrls=dump.controls.filter(c=>c.inputValue!==undefined&&isLever(c));
   for(const c of leverCtrls){ out.levers[c.name]=await leverInfo(c); const p=prev&&prev.levers&&prev.levers[c.name]; if(p&&p.swept){ out.levers[c.name].notches=p.notches; out.levers[c.name].swept=true; out.levers[c.name].fromPrevious=true; } }
   const moving=await get('.Function.IsVehicleMoving');
   if(opt.sweep&&moving){console.log('ABORT sweep: vehicle is moving. Dump written without sweeps.');opt.sweep=false;}
