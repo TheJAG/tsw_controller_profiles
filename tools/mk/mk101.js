@@ -18,7 +18,7 @@ p.controls=[
  {name:'LeftThrottle',description:'Fahrschalter (Off 0 / Min 0.1 / continuous 0.11..0.99 / Max 1). Z (power) is at the far end of the quadrant, so the lever is inverted: Max raw 0 ±0.035, power zone 0.045..0.81, Min 0.88 ±0.05, Off 1 ±0.04',assignments:[{type:'direct_control',controls:'Throttle_F',input_value:{min:0,max:1,steps:[0,0.1,null,1],invert:true,step_thresholds:[{threshold:1,threshold_tolerance:0.04},{threshold:0.88,threshold_tolerance:0.05},{threshold:0.81,threshold_end:0.045,threshold_tolerance:0},{threshold:0,threshold_tolerance:0.035}]}}]},
  {name:'RightThrottle',description:'Führerbremsventil (Running / 1A / 1B / 2 / 3 / 4 / 5 / 6 / 7 / Full service / Emergency), plain: FÜ at the far end, SB nearest; the eleven Class 171 bands (centred on the TCA detents)',assignments:[{type:'direct_control',controls:'TrainBrake_F',input_value:{min:0.1,max:1,steps:brakeSteps,step_thresholds:JSON.parse(JSON.stringify(th11))}}]},
  {name:'FlapLever',description:'AFB speed setter, continuous 0..200 km/h (V at the far end, inverted); switch the AFB on in the cab first',assignments:[{type:'direct_control',controls:'AFB_Speed_F',input_value:{min:0,max:1,invert:true}}]},
- {name:'ParkingBrake',description:'Brake key (Führerbremsventil unlock) in / out',assignment:{type:'momentary',threshold:0.9,action_activate:{controls:'BrakeKeyF',value:1,hold:false,enable_api_fallback:true},action_deactivate:{controls:'BrakeKeyF',value:0,hold:false,enable_api_fallback:true}}},
+ {name:'ParkingBrake',description:'Reverser key (ReverserKey, MasterSwitch push button, In 1 / Out 0) and brake key (BrakeKey, Führerbremsventil unlock) of the cab you sit in, in / out. The reverser key goes in first: without it the Richtungsschalter stays locked (user, 2026-10-11)',assignments:[{type:'momentary',threshold:0.9,action_activate:{controls:'ReverserKeyF',value:1,hold:false,enable_api_fallback:true},action_deactivate:{controls:'ReverserKeyF',value:0,hold:false,enable_api_fallback:true}},{type:'momentary',threshold:0.9,action_activate:{controls:'BrakeKeyF',value:1,hold:false,enable_api_fallback:true},action_deactivate:{controls:'BrakeKeyF',value:0,hold:false,enable_api_fallback:true}}]},
  key('GearLever','SiFa reset','Q'),
  mom('LeftThrottleButton','Sand','Sand_F',1,0.5),
  mom('RightThrottleButton','Horn','Horn_FL',1,0.5),
@@ -50,8 +50,8 @@ controls:{
  eng1:{name:'PZB Frei',start:true}, eng2:{name:'PZB Wachsam',start:true},
  leftAux:{name:'SiFa on / off'}, rightAux:{name:'PZB on / off'},
  modeSwitch:{name:'Wipers',left:'slower',right:'faster'}, roundAux:{name:'PZB Befehl 40'}, rudTrim:{name:'Doors L / R'},
- parkBrk:{name:'Brake key',flat:'out',up:'in'}},
-setup:['Brake key in (PARK BRK), battery on','Richtungsschalter from Off to Neutral','Raise the pantograph and close the Hauptschalter in the cab','SiFa and PZB on (aux squares), PZB mode set','Lights to Signal lights or Headlights','AFB on in the cab if you drive with the speed setter; open doors (RUD TRIM)'],
+ parkBrk:{name:'Reverser key + brake key',flat:'out',up:'in'}},
+setup:['Reverser key and brake key in (PARK BRK), battery on','Richtungsschalter from Off to Neutral','Raise the pantograph and close the Hauptschalter in the cab','SiFa and PZB on (aux squares), PZB mode set','Lights to Signal lights or Headlights','AFB on in the cab if you drive with the speed setter; open doors (RUD TRIM)'],
 depart:['Close doors, check the signal and PZB','Richtungsschalter to Forward','Führerbremsventil to Running, wait for the brakes to release','Fahrschalter towards Z, or set the AFB speed on the flap lever','Acknowledge SiFa with the gear lever, PZB with the ENG switches','Brake: Führerbremsventil towards SB in steps']};
 fs.writeFileSync('tools/manual/trains/tsw-br-101-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
 require('../apply_side.js').apply(f); // cab-side nodes to {SIDE:F:B} (2026-10-11)

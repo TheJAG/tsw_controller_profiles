@@ -148,22 +148,40 @@
     },
     {
       "name": "ParkingBrake",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "BrakeKey{SIDE:F:B}",
-          "value": 1,
-          "hold": false,
-          "enable_api_fallback": true
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "ReverserKey{SIDE:F:B}",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "ReverserKey{SIDE:F:B}",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
         },
-        "action_deactivate": {
-          "controls": "BrakeKey{SIDE:F:B}",
-          "value": 0,
-          "hold": false,
-          "enable_api_fallback": true
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "BrakeKey{SIDE:F:B}",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "BrakeKey{SIDE:F:B}",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
         }
-      }
+      ]
     },
     {
       "name": "GearLever",

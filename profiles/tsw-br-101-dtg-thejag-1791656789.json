@@ -164,23 +164,41 @@
     },
     {
       "name": "ParkingBrake",
-      "description": "Brake key (Führerbremsventil unlock) in / out",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "BrakeKey{SIDE:F:B}",
-          "value": 1,
-          "hold": false,
-          "enable_api_fallback": true
+      "description": "Reverser key (ReverserKey, MasterSwitch push button, In 1 / Out 0) and brake key (BrakeKey, Führerbremsventil unlock) of the cab you sit in, in / out. The reverser key goes in first: without it the Richtungsschalter stays locked (user, 2026-10-11)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "ReverserKey{SIDE:F:B}",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "ReverserKey{SIDE:F:B}",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
         },
-        "action_deactivate": {
-          "controls": "BrakeKey{SIDE:F:B}",
-          "value": 0,
-          "hold": false,
-          "enable_api_fallback": true
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "BrakeKey{SIDE:F:B}",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "BrakeKey{SIDE:F:B}",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
         }
-      }
+      ]
     },
     {
       "name": "GearLever",
