@@ -48,3 +48,4 @@ controls:{
 setup:['Master key in (PARK BRK)','Pantograph up, then press again to close the circuit breaker (right throttle button)','Check AWS and DSD isolation lights are out','Lights to Day','Release the parking brake in the cab','Train brake to Full service, DRA reset'],
 depart:['Check the signal','Reverser to Forward','Train brake to Running','Power handle to Min, then open up gradually with the heavy train','Rheostatic brake on the flap lever for braking on the move','Acknowledge AWS with the gear lever']};
 fs.writeFileSync('tools/manual/trains/tsw-class-90-ats-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
+require('../apply_side.js').apply(f); // cab-side nodes to {SIDE:F:B} (2026-10-11)

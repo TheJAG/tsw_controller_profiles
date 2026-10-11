@@ -73,7 +73,7 @@
       "assignments": [
         {
           "type": "direct_control",
-          "controls": "MasterSwitch_F (IrregularLever)",
+          "controls": "MasterSwitch_{SIDE:F:B} (IrregularLever)",
           "input_value": {
             "min": 0,
             "max": 1,
@@ -93,7 +93,7 @@
       "assignments": [
         {
           "type": "direct_control",
-          "controls": "TrainBrake_F (IrregularLever)",
+          "controls": "TrainBrake_{SIDE:F:B} (IrregularLever)",
           "input_value": {
             "min": 0.175,
             "max": 0.84,
@@ -137,7 +137,7 @@
       "assignments": [
         {
           "type": "direct_control",
-          "controls": "PowerController_F (IrregularLever)",
+          "controls": "PowerController_{SIDE:F:B} (IrregularLever)",
           "input_value": {
             "min": 0,
             "max": 0.8,
@@ -159,7 +159,7 @@
       "assignments": [
         {
           "type": "direct_control",
-          "controls": "LocoBrake_F (SimpleLever)",
+          "controls": "LocoBrake_{SIDE:F:B} (SimpleLever)",
           "input_value": {
             "min": 0,
             "max": 1
@@ -175,13 +175,13 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "MasterKeySwitch_F (Lever)",
+            "controls": "MasterKeySwitch_{SIDE:F:B} (Lever)",
             "value": 1,
             "hold": false,
             "enable_api_fallback": true
           },
           "action_deactivate": {
-            "controls": "MasterKeySwitch_F (Lever)",
+            "controls": "MasterKeySwitch_{SIDE:F:B} (Lever)",
             "value": 0,
             "hold": false,
             "enable_api_fallback": true
@@ -191,13 +191,13 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "CabChangeLever_F (Simple Lever)",
+            "controls": "CabChangeLever_{SIDE:F:B} (Simple Lever)",
             "value": 1,
             "hold": false,
             "enable_api_fallback": true
           },
           "action_deactivate": {
-            "controls": "CabChangeLever_F (Simple Lever)",
+            "controls": "CabChangeLever_{SIDE:F:B} (Simple Lever)",
             "value": 0,
             "hold": false,
             "enable_api_fallback": true
@@ -257,12 +257,12 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "PanUpOverloadReset_F (PushButton)",
+          "controls": "PanUpOverloadReset_{SIDE:F:B} (PushButton)",
           "value": 1,
           "hold": true
         },
         "action_deactivate": {
-          "controls": "PanUpOverloadReset_F (PushButton)",
+          "controls": "PanUpOverloadReset_{SIDE:F:B} (PushButton)",
           "value": 0,
           "hold": false
         }
@@ -275,12 +275,12 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "Horn_FL (IrregularLever)",
+          "controls": "Horn_{SIDE:F:B}L (IrregularLever)",
           "value": 0,
           "hold": true
         },
         "action_deactivate": {
-          "controls": "Horn_FL (IrregularLever)",
+          "controls": "Horn_{SIDE:F:B}L (IrregularLever)",
           "value": 0.5,
           "hold": false
         }
@@ -293,12 +293,12 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "Horn_FL (IrregularLever)",
+          "controls": "Horn_{SIDE:F:B}L (IrregularLever)",
           "value": 1,
           "hold": true
         },
         "action_deactivate": {
-          "controls": "Horn_FL (IrregularLever)",
+          "controls": "Horn_{SIDE:F:B}L (IrregularLever)",
           "value": 0.5,
           "hold": false
         }
@@ -333,12 +333,12 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "DriverGuardBuzzer_F (PushButton)",
+          "controls": "DriverGuardBuzzer_{SIDE:F:B} (PushButton)",
           "value": 1,
           "hold": true
         },
         "action_deactivate": {
-          "controls": "DriverGuardBuzzer_F (PushButton)",
+          "controls": "DriverGuardBuzzer_{SIDE:F:B} (PushButton)",
           "value": 0,
           "hold": false
         }
@@ -351,13 +351,13 @@
         "type": "toggle",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "AWS_Isolation_F (Simple Lever)",
+          "controls": "AWS_Isolation_{SIDE:F:B} (Simple Lever)",
           "value": 0,
           "hold": false,
           "enable_api_fallback": true
         },
         "action_deactivate": {
-          "controls": "AWS_Isolation_F (Simple Lever)",
+          "controls": "AWS_Isolation_{SIDE:F:B} (Simple Lever)",
           "value": 1,
           "hold": false,
           "enable_api_fallback": true
@@ -392,7 +392,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Wiper_FL (IrregularLever)",
+            "controls": "Wiper_{SIDE:F:B}L (IrregularLever)",
             "value": -0.34,
             "relative": true,
             "hold": false,
@@ -403,7 +403,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Wiper_FR (IrregularLever)",
+            "controls": "Wiper_{SIDE:F:B}R (IrregularLever)",
             "value": -0.34,
             "relative": true,
             "hold": false,
@@ -420,7 +420,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Wiper_FL (IrregularLever)",
+            "controls": "Wiper_{SIDE:F:B}L (IrregularLever)",
             "value": 0.34,
             "relative": true,
             "hold": false,
@@ -431,7 +431,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Wiper_FR (IrregularLever)",
+            "controls": "Wiper_{SIDE:F:B}R (IrregularLever)",
             "value": 0.34,
             "relative": true,
             "hold": false,
@@ -448,7 +448,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "HeadLight_F (Lever)",
+            "controls": "HeadLight_{SIDE:F:B} (Lever)",
             "value": 0,
             "hold": false
           }
@@ -457,7 +457,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Marker_F (Lever)",
+            "controls": "Marker_{SIDE:F:B} (Lever)",
             "value": 0,
             "hold": false
           }
@@ -466,7 +466,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "TailLightSwitch_F (Lever)",
+            "controls": "TailLightSwitch_{SIDE:F:B} (Lever)",
             "value": 0.5,
             "hold": false
           }
@@ -481,7 +481,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "HeadLight_F (Lever)",
+            "controls": "HeadLight_{SIDE:F:B} (Lever)",
             "value": 0,
             "hold": false
           }
@@ -490,7 +490,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Marker_F (Lever)",
+            "controls": "Marker_{SIDE:F:B} (Lever)",
             "value": 1,
             "hold": false
           }
@@ -499,7 +499,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "TailLightSwitch_F (Lever)",
+            "controls": "TailLightSwitch_{SIDE:F:B} (Lever)",
             "value": 0.5,
             "hold": false
           }
@@ -514,7 +514,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "HeadLight_F (Lever)",
+            "controls": "HeadLight_{SIDE:F:B} (Lever)",
             "value": 1,
             "hold": false
           }
@@ -523,7 +523,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Marker_F (Lever)",
+            "controls": "Marker_{SIDE:F:B} (Lever)",
             "value": 1,
             "hold": false
           }
@@ -532,7 +532,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "TailLightSwitch_F (Lever)",
+            "controls": "TailLightSwitch_{SIDE:F:B} (Lever)",
             "value": 0.5,
             "hold": false
           }
@@ -547,7 +547,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "HeadLight_F (Lever)",
+            "controls": "HeadLight_{SIDE:F:B} (Lever)",
             "value": 0,
             "hold": false
           }
@@ -556,7 +556,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Marker_F (Lever)",
+            "controls": "Marker_{SIDE:F:B} (Lever)",
             "value": 0,
             "hold": false
           }
@@ -565,7 +565,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "TailLightSwitch_F (Lever)",
+            "controls": "TailLightSwitch_{SIDE:F:B} (Lever)",
             "value": 0,
             "hold": false
           }
@@ -580,7 +580,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "HeadLight_F (Lever)",
+            "controls": "HeadLight_{SIDE:F:B} (Lever)",
             "value": 0,
             "hold": false
           }
@@ -589,7 +589,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Marker_F (Lever)",
+            "controls": "Marker_{SIDE:F:B} (Lever)",
             "value": 0,
             "hold": false
           }
@@ -598,7 +598,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "TailLightSwitch_F (Lever)",
+            "controls": "TailLightSwitch_{SIDE:F:B} (Lever)",
             "value": 1,
             "hold": false
           }

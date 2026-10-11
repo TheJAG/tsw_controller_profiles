@@ -58,3 +58,4 @@ controls:{
 setup:['Battery switch closed in the cab (a scenario starts cold)','Master key and brake key in (PARK BRK up)','Reverser to Engine only, start the engine (right throttle button)','AWS and DSD isolation lights out','Headlights on (AUTO BRK)','Release the handbrake in the cab'],
 depart:['Check the signal','Train brake to Running, wait for the pipe to charge','Reverser to Forward','Loco brake to Release (flap lever away)','Power controller to On, then open up slowly','Acknowledge AWS with the gear lever','Power controller to Off before moving the reverser back']};
 fs.writeFileSync('tools/manual/trains/tsw-class-47-athena-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
+require('../apply_side.js').apply(f); // cab-side nodes to {SIDE:F:B} (2026-10-11)

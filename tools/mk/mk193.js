@@ -58,3 +58,4 @@ controls:{
 setup:['Battery to Ready in the cab, parking brake released','PARK BRK up: master key in, Führerbremsventil cut in','Raise the pantograph, close the Hauptschalter in the cab','SiFa and PZB on (aux squares): a service starts with both isolated','Lights (AUTO BRK), brake selector G / P / R in the cab','AFB on in the cab, speed on the flap lever, confirm in the cab'],
 depart:['Check the signal and PZB','Richtungsschalter to Forward','Führerbremsventil to Running, wait for the brakes to release','Fahr-/Bremsschalter towards power, or AFB speed on the flap lever','Acknowledge SiFa with the gear lever, PZB with the ENG switches','Brake: handle towards E-brake, Führerbremsventil in steps']};
 fs.writeFileSync('tools/manual/trains/tsw-br-193-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
+require('../apply_side.js').apply(f); // cab-side nodes to {SIDE:F:B} (2026-10-11)

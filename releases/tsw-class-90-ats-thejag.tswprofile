@@ -6,7 +6,7 @@
       "assignments": [
         {
           "type": "direct_control",
-          "controls": "Reverser_F",
+          "controls": "Reverser_{SIDE:F:B}",
           "input_value": {
             "min": 0,
             "max": 1,
@@ -26,7 +26,7 @@
       "assignments": [
         {
           "type": "direct_control",
-          "controls": "TrainBrake_F",
+          "controls": "TrainBrake_{SIDE:F:B}",
           "input_value": {
             "min": 0.1,
             "max": 1,
@@ -49,7 +49,7 @@
       "assignments": [
         {
           "type": "direct_control",
-          "controls": "Throttle_F",
+          "controls": "Throttle_{SIDE:F:B}",
           "input_value": {
             "min": 0,
             "max": 1,
@@ -87,7 +87,7 @@
       "assignments": [
         {
           "type": "direct_control",
-          "controls": "DynamicBrake_F",
+          "controls": "DynamicBrake_{SIDE:F:B}",
           "input_value": {
             "min": 0.1,
             "max": 0.9,
@@ -110,13 +110,13 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "MasterKey_F",
+          "controls": "MasterKey_{SIDE:F:B}",
           "value": 1,
           "hold": false,
           "enable_api_fallback": true
         },
         "action_deactivate": {
-          "controls": "MasterKey_F",
+          "controls": "MasterKey_{SIDE:F:B}",
           "value": 0,
           "hold": false,
           "enable_api_fallback": true
@@ -139,12 +139,12 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "Sand_F",
+          "controls": "Sand_{SIDE:F:B}",
           "value": 1,
           "hold": true
         },
         "action_deactivate": {
-          "controls": "Sand_F",
+          "controls": "Sand_{SIDE:F:B}",
           "value": 0,
           "hold": false
         }
@@ -157,12 +157,12 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "PanUp_F",
+            "controls": "PanUp_{SIDE:F:B}",
             "value": 1,
             "hold": true
           },
           "action_deactivate": {
-            "controls": "PanUp_F",
+            "controls": "PanUp_{SIDE:F:B}",
             "value": 0,
             "hold": false
           }
@@ -171,12 +171,12 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "MainCircuitBreaker_F",
+            "controls": "MainCircuitBreaker_{SIDE:F:B}",
             "value": 1,
             "hold": true
           },
           "action_deactivate": {
-            "controls": "MainCircuitBreaker_F",
+            "controls": "MainCircuitBreaker_{SIDE:F:B}",
             "value": 0.5,
             "hold": false
           }
@@ -189,12 +189,12 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "Horn_F",
+          "controls": "Horn_{SIDE:F:B}",
           "value": 1,
           "hold": true
         },
         "action_deactivate": {
-          "controls": "Horn_F",
+          "controls": "Horn_{SIDE:F:B}",
           "value": 0.5,
           "hold": false
         }
@@ -206,12 +206,12 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "Horn_F",
+          "controls": "Horn_{SIDE:F:B}",
           "value": 0,
           "hold": true
         },
         "action_deactivate": {
-          "controls": "Horn_F",
+          "controls": "Horn_{SIDE:F:B}",
           "value": 0.5,
           "hold": false
         }
@@ -243,13 +243,13 @@
         "type": "toggle",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "DRA_F",
+          "controls": "DRA_{SIDE:F:B}",
           "value": 1,
           "hold": false,
           "enable_api_fallback": true
         },
         "action_deactivate": {
-          "controls": "DRA_F",
+          "controls": "DRA_{SIDE:F:B}",
           "value": 0,
           "hold": false,
           "enable_api_fallback": true
@@ -262,13 +262,13 @@
         "type": "toggle",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "ISO_AWS_F",
+          "controls": "ISO_AWS_{SIDE:F:B}",
           "value": 1,
           "hold": false,
           "enable_api_fallback": true
         },
         "action_deactivate": {
-          "controls": "ISO_AWS_F",
+          "controls": "ISO_AWS_{SIDE:F:B}",
           "value": 0,
           "hold": false,
           "enable_api_fallback": true
@@ -281,13 +281,13 @@
         "type": "toggle",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "ISO_DSD_F",
+          "controls": "ISO_DSD_{SIDE:F:B}",
           "value": 0,
           "hold": false,
           "enable_api_fallback": true
         },
         "action_deactivate": {
-          "controls": "ISO_DSD_F",
+          "controls": "ISO_DSD_{SIDE:F:B}",
           "value": 1,
           "hold": false,
           "enable_api_fallback": true
@@ -301,7 +301,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Wiper_FL",
+            "controls": "Wiper_{SIDE:F:B}L",
             "value": -0.34,
             "relative": true,
             "hold": false,
@@ -312,7 +312,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Wiper_FR",
+            "controls": "Wiper_{SIDE:F:B}R",
             "value": -0.34,
             "relative": true,
             "hold": false,
@@ -328,7 +328,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Wiper_FL",
+            "controls": "Wiper_{SIDE:F:B}L",
             "value": 0.34,
             "relative": true,
             "hold": false,
@@ -339,7 +339,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Wiper_FR",
+            "controls": "Wiper_{SIDE:F:B}R",
             "value": 0.34,
             "relative": true,
             "hold": false,
@@ -355,7 +355,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "HeadLightSwitch_F",
+            "controls": "HeadLightSwitch_{SIDE:F:B}",
             "value": 0.5,
             "hold": false
           }
@@ -364,7 +364,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "MarkerLights_F",
+            "controls": "MarkerLights_{SIDE:F:B}",
             "value": 0,
             "hold": false
           }
@@ -373,7 +373,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "TailLights_F",
+            "controls": "TailLights_{SIDE:F:B}",
             "value": 0,
             "hold": false
           }
@@ -387,7 +387,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "HeadLightSwitch_F",
+            "controls": "HeadLightSwitch_{SIDE:F:B}",
             "value": 0,
             "hold": false
           }
@@ -396,7 +396,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "MarkerLights_F",
+            "controls": "MarkerLights_{SIDE:F:B}",
             "value": 1,
             "hold": false
           }
@@ -405,7 +405,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "TailLights_F",
+            "controls": "TailLights_{SIDE:F:B}",
             "value": 0,
             "hold": false
           }
@@ -419,7 +419,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "HeadLightSwitch_F",
+            "controls": "HeadLightSwitch_{SIDE:F:B}",
             "value": 0.5,
             "hold": false
           }
@@ -428,7 +428,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "MarkerLights_F",
+            "controls": "MarkerLights_{SIDE:F:B}",
             "value": 1,
             "hold": false
           }
@@ -437,7 +437,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "TailLights_F",
+            "controls": "TailLights_{SIDE:F:B}",
             "value": 0,
             "hold": false
           }
@@ -451,7 +451,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "HeadLightSwitch_F",
+            "controls": "HeadLightSwitch_{SIDE:F:B}",
             "value": 1,
             "hold": false
           }
@@ -460,7 +460,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "MarkerLights_F",
+            "controls": "MarkerLights_{SIDE:F:B}",
             "value": 1,
             "hold": false
           }
@@ -469,7 +469,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "TailLights_F",
+            "controls": "TailLights_{SIDE:F:B}",
             "value": 0,
             "hold": false
           }
@@ -483,7 +483,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "HeadLightSwitch_F",
+            "controls": "HeadLightSwitch_{SIDE:F:B}",
             "value": 0.5,
             "hold": false
           }
@@ -492,7 +492,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "MarkerLights_F",
+            "controls": "MarkerLights_{SIDE:F:B}",
             "value": 0,
             "hold": false
           }
@@ -501,7 +501,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "TailLights_F",
+            "controls": "TailLights_{SIDE:F:B}",
             "value": 1,
             "hold": false
           }

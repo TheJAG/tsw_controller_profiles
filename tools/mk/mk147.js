@@ -55,3 +55,4 @@ controls:{
 setup:['Battery on in the cab, parking brake released','PARK BRK up: desk active and Führerbremsventil cut in','Raise the pantograph, close the Hauptschalter in the cab','SiFa and PZB on (aux squares), PZB mode set','Lights (AUTO BRK), open doors (RUD TRIM)','AFB: flap lever off Off and set the speed, or leave it Off'],
 depart:['Close doors, check the signal and PZB','Richtungsschalter to Forward','Führerbremsventil to Running, wait for the brakes to release','Fahr-/Bremsschalter towards T, or set the AFB speed on the flap lever','Acknowledge SiFa with the gear lever, PZB with the ENG switches','Brake: handle towards B (E-brake), Führerbremsventil in steps']};
 fs.writeFileSync('tools/manual/trains/tsw-br-147-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
+require('../apply_side.js').apply(f); // cab-side nodes to {SIDE:F:B} (2026-10-11)

@@ -64,3 +64,4 @@ controls:{
 setup:['Battery on in the cab, parking brake released','Richtungsschalter from Off (the key position) to Neutral','Raise the pantograph and close the Hauptschalter in the cab','SiFa and PZB on (aux squares), PZB mode and brake selector set in the cab','Lights (AUTO BRK)','AFB on (PARK BRK up) if you drive with the speed setter'],
 depart:['Check the signal and PZB','Richtungsschalter to Forward','Führerbremsventil to Running, wait for the brakes to release','Fahrschalter towards Max, or set the AFB speed on the flap lever','Acknowledge SiFa with the gear lever, PZB with the ENG switches','Brake: Führerbremsventil in steps; the E-brake lever stays in the cab']};
 fs.writeFileSync('tools/manual/trains/'+slug+'.json',JSON.stringify(m,null,2)+'\n');console.log('manual data',slug);
+require('../apply_side.js').apply(f); // cab-side nodes to {SIDE:F:B} (2026-10-11)

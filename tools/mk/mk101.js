@@ -54,3 +54,4 @@ controls:{
 setup:['Brake key in (PARK BRK), battery on','Richtungsschalter from Off to Neutral','Raise the pantograph and close the Hauptschalter in the cab','SiFa and PZB on (aux squares), PZB mode set','Lights to Signal lights or Headlights','AFB on in the cab if you drive with the speed setter; open doors (RUD TRIM)'],
 depart:['Close doors, check the signal and PZB','Richtungsschalter to Forward','Führerbremsventil to Running, wait for the brakes to release','Fahrschalter towards Z, or set the AFB speed on the flap lever','Acknowledge SiFa with the gear lever, PZB with the ENG switches','Brake: Führerbremsventil towards SB in steps']};
 fs.writeFileSync('tools/manual/trains/tsw-br-101-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
+require('../apply_side.js').apply(f); // cab-side nodes to {SIDE:F:B} (2026-10-11)

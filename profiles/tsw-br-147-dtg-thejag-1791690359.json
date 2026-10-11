@@ -16,7 +16,7 @@
       "assignments": [
         {
           "type": "direct_control",
-          "controls": "ReverserProxy_F",
+          "controls": "ReverserProxy_{SIDE:F:B}",
           "input_value": {
             "min": 0,
             "max": 1,
@@ -36,7 +36,7 @@
       "assignments": [
         {
           "type": "direct_control",
-          "controls": "MasterController_F",
+          "controls": "MasterController_{SIDE:F:B}",
           "input_value": {
             "min": -1,
             "max": 1,
@@ -82,7 +82,7 @@
       "assignments": [
         {
           "type": "direct_control",
-          "controls": "TrainBrake_F",
+          "controls": "TrainBrake_{SIDE:F:B}",
           "input_value": {
             "min": 0.1,
             "max": 1,
@@ -155,7 +155,7 @@
       "assignments": [
         {
           "type": "direct_control",
-          "controls": "AFB_Speed_F",
+          "controls": "AFB_Speed_{SIDE:F:B}",
           "input_value": {
             "min": 0,
             "max": 1,
@@ -197,13 +197,13 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "ActivateDriversCompartment_F",
+            "controls": "ActivateDriversCompartment_{SIDE:F:B}",
             "value": 1,
             "hold": false,
             "enable_api_fallback": true
           },
           "action_deactivate": {
-            "controls": "ActivateDriversCompartment_F",
+            "controls": "ActivateDriversCompartment_{SIDE:F:B}",
             "value": 0,
             "hold": false,
             "enable_api_fallback": true
@@ -213,13 +213,13 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "DeactivateDriversCompartment_F",
+            "controls": "DeactivateDriversCompartment_{SIDE:F:B}",
             "value": 0,
             "hold": false,
             "enable_api_fallback": true
           },
           "action_deactivate": {
-            "controls": "DeactivateDriversCompartment_F",
+            "controls": "DeactivateDriversCompartment_{SIDE:F:B}",
             "value": 1,
             "hold": false,
             "enable_api_fallback": true
@@ -229,13 +229,13 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "DriversBrakeCutoff_F",
+            "controls": "DriversBrakeCutoff_{SIDE:F:B}",
             "value": 0,
             "hold": false,
             "enable_api_fallback": true
           },
           "action_deactivate": {
-            "controls": "DriversBrakeCutoff_F",
+            "controls": "DriversBrakeCutoff_{SIDE:F:B}",
             "value": 1,
             "hold": false,
             "enable_api_fallback": true
@@ -261,12 +261,12 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "Sand_F",
+          "controls": "Sand_{SIDE:F:B}",
           "value": 1,
           "hold": true
         },
         "action_deactivate": {
-          "controls": "Sand_F",
+          "controls": "Sand_{SIDE:F:B}",
           "value": 0.5,
           "hold": false
         }
@@ -279,12 +279,12 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "Horn_FL",
+          "controls": "Horn_{SIDE:F:B}L",
           "value": 1,
           "hold": true
         },
         "action_deactivate": {
-          "controls": "Horn_FL",
+          "controls": "Horn_{SIDE:F:B}L",
           "value": 0.5,
           "hold": false
         }
@@ -297,12 +297,12 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "LZB/PZB_Release_Desk_F",
+          "controls": "LZB/PZB_Release_Desk_{SIDE:F:B}",
           "value": 1,
           "hold": true
         },
         "action_deactivate": {
-          "controls": "LZB/PZB_Release_Desk_F",
+          "controls": "LZB/PZB_Release_Desk_{SIDE:F:B}",
           "value": 0,
           "hold": false
         }
@@ -315,12 +315,12 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "LZB/PZB_Acknowledge_Desk_F",
+          "controls": "LZB/PZB_Acknowledge_Desk_{SIDE:F:B}",
           "value": 1,
           "hold": true
         },
         "action_deactivate": {
-          "controls": "LZB/PZB_Acknowledge_Desk_F",
+          "controls": "LZB/PZB_Acknowledge_Desk_{SIDE:F:B}",
           "value": 0,
           "hold": false
         }
@@ -355,12 +355,12 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "LZB/PZB_Override_F",
+          "controls": "LZB/PZB_Override_{SIDE:F:B}",
           "value": 1,
           "hold": true
         },
         "action_deactivate": {
-          "controls": "LZB/PZB_Override_F",
+          "controls": "LZB/PZB_Override_{SIDE:F:B}",
           "value": 0,
           "hold": false
         }
@@ -414,7 +414,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Wiper_F",
+            "controls": "Wiper_{SIDE:F:B}",
             "value": -0.333,
             "relative": true,
             "hold": false,
@@ -431,7 +431,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Wiper_F",
+            "controls": "Wiper_{SIDE:F:B}",
             "value": 0.333,
             "relative": true,
             "hold": false,
@@ -448,7 +448,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "SignalLights_F",
+            "controls": "SignalLights_{SIDE:F:B}",
             "value": 0,
             "hold": false
           }
@@ -463,7 +463,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "SignalLights_F",
+            "controls": "SignalLights_{SIDE:F:B}",
             "value": 0.25,
             "hold": false
           }
@@ -478,7 +478,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "SignalLights_F",
+            "controls": "SignalLights_{SIDE:F:B}",
             "value": 0.5,
             "hold": false
           }
@@ -493,7 +493,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "SignalLights_F",
+            "controls": "SignalLights_{SIDE:F:B}",
             "value": 0.75,
             "hold": false
           }
@@ -508,7 +508,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "SignalLights_F",
+            "controls": "SignalLights_{SIDE:F:B}",
             "value": 1,
             "hold": false
           }

@@ -60,3 +60,4 @@ controls:{
 setup:['Master key and brake key in (PARK BRK), battery on','Reverser to Engine only, start the engine (right throttle button)','Check the AWS isolation light is out, DSD breaker on','Headlights on (AUTO BRK)','Release the handbrake in the cab','Train brake to Full service until the pipe is charged'],
 depart:['Check the signal','Reverser to Forward','Loco brake to Release (flap lever away)','Train brake to Running, wait for the pipe to charge','Power controller to On, then open up slowly with the heavy train','Acknowledge AWS with the gear lever']};
 fs.writeFileSync('tools/manual/trains/tsw-class-37-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
+require('../apply_side.js').apply(f); // cab-side nodes to {SIDE:F:B} (2026-10-11)

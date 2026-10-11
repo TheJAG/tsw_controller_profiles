@@ -52,3 +52,4 @@ controls:{
 setup:['Reverser key and brake key in (PARK BRK), battery on','Richtungsschalter from Off to Neutral','Raise the pantograph and close the Hauptschalter in the cab','SiFa and PZB on (aux squares), PZB mode set','Lights to Signal lights','Open doors (RUD TRIM)'],
 depart:['Close doors, check the signal and PZB','Richtungsschalter to Forward','Führerbremsventil to Running, release the Zusatzbremse','Turn the handwheel up a few taps at a time, watch the traction current','Acknowledge SiFa with the gear lever, PZB with the ENG switches','Brake: Führerbremsventil towards 7 in steps']};
 fs.writeFileSync('tools/manual/trains/tsw-br-103-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
+require('../apply_side.js').apply(f); // cab-side nodes to {SIDE:F:B} (2026-10-11)

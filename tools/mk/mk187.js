@@ -59,3 +59,4 @@ controls:{
 setup:['Battery on in the cab, parking brake released','PARK BRK up: Führerstand aktivieren','Raise the pantograph, close the Hauptschalter in the cab','SiFa and PZB on (aux squares), PZB mode set','Lights (AUTO BRK)','AFB: flap lever off Off and set the speed, or leave it Off'],
 depart:['Check the signal and PZB','Richtungsschalter to Forward (the lever sends the game keys W / S)','Führerbremsventil to Running, wait for the brakes to release','Fahr-/Bremsschalter towards T, or set the AFB speed on the flap lever','Acknowledge SiFa with the gear lever, PZB with the ENG switches','Brake: handle towards B (E-brake), Führerbremsventil in steps']};
 fs.writeFileSync('tools/manual/trains/tsw-br-187-skyhook-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
+require('../apply_side.js').apply(f); // cab-side nodes to {SIDE:F:B} (2026-10-11)

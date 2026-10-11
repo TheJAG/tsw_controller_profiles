@@ -62,3 +62,4 @@ controls:{
 setup:['Battery on, compressors to Automatic in the cab','PARK BRK up: brake key in, frees reverser + brake valve','Pantograph up and Hauptschalter on in the cab','SiFa and PZB on (aux squares), PZB mode set in the cab','Lights (AUTO BRK)','Fahrstufenschalter at 0 before moving the reverser'],
 depart:['Check the signal and PZB','Richtungsschalter to Forward','Führerbremsventil to Running, wait for the brakes to release','Zusatzbremse to Release (flap lever away)','Fahrstufenschalter up step by step, watch the ammeter','Acknowledge SiFa with the gear lever, PZB with the ENG switches','Brake: Führerbremsventil in steps, Abschluss holds']};
 fs.writeFileSync('tools/manual/trains/tsw-br-155-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
+require('../apply_side.js').apply(f); // cab-side nodes to {SIDE:F:B} (2026-10-11)

@@ -55,7 +55,7 @@
       "assignments": [
         {
           "type": "direct_control",
-          "controls": "Reverser_F",
+          "controls": "Reverser_{SIDE:F:B}",
           "input_value": {
             "min": -1,
             "max": 1,
@@ -75,7 +75,7 @@
       "assignments": [
         {
           "type": "direct_control",
-          "controls": "F_AutoBrake (Irregular Lever)",
+          "controls": "{SIDE:F:B}_AutoBrake (Irregular Lever)",
           "input_value": {
             "min": -1,
             "max": 1,
@@ -95,7 +95,7 @@
       "assignments": [
         {
           "type": "direct_control",
-          "controls": "Throttle_F",
+          "controls": "Throttle_{SIDE:F:B}",
           "input_value": {
             "min": 0,
             "max": 1,
@@ -120,7 +120,7 @@
       "assignments": [
         {
           "type": "direct_control",
-          "controls": "F_DirectBrake (Irregular Lever)",
+          "controls": "{SIDE:F:B}_DirectBrake (Irregular Lever)",
           "input_value": {
             "min": -1,
             "max": 1,
@@ -141,13 +141,13 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "ReverserHandle_F",
+          "controls": "ReverserHandle_{SIDE:F:B}",
           "value": 1,
           "hold": false,
           "enable_api_fallback": true
         },
         "action_deactivate": {
-          "controls": "ReverserHandle_F",
+          "controls": "ReverserHandle_{SIDE:F:B}",
           "value": 0,
           "hold": false,
           "enable_api_fallback": true
@@ -172,13 +172,13 @@
         "type": "toggle",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "F_SandStick (Toggle Button)",
+          "controls": "{SIDE:F:B}_SandStick (Toggle Button)",
           "value": 1,
           "hold": false,
           "enable_api_fallback": true
         },
         "action_deactivate": {
-          "controls": "F_SandStick (Toggle Button)",
+          "controls": "{SIDE:F:B}_SandStick (Toggle Button)",
           "value": 0,
           "hold": false,
           "enable_api_fallback": true
@@ -192,12 +192,12 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "F_EngineStartUp (Push Button)",
+          "controls": "{SIDE:F:B}_EngineStartUp (Push Button)",
           "value": 1,
           "hold": true
         },
         "action_deactivate": {
-          "controls": "F_EngineStartUp (Push Button)",
+          "controls": "{SIDE:F:B}_EngineStartUp (Push Button)",
           "value": 0,
           "hold": false
         }
@@ -210,12 +210,12 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "EngineersHorn_F (Irregular Lever)",
+          "controls": "EngineersHorn_{SIDE:F:B} (Irregular Lever)",
           "value": 1,
           "hold": true
         },
         "action_deactivate": {
-          "controls": "EngineersHorn_F (Irregular Lever)",
+          "controls": "EngineersHorn_{SIDE:F:B} (Irregular Lever)",
           "value": 0.5,
           "hold": false
         }
@@ -228,12 +228,12 @@
         "type": "momentary",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "EngineersHorn_F (Irregular Lever)",
+          "controls": "EngineersHorn_{SIDE:F:B} (Irregular Lever)",
           "value": 0,
           "hold": true
         },
         "action_deactivate": {
-          "controls": "EngineersHorn_F (Irregular Lever)",
+          "controls": "EngineersHorn_{SIDE:F:B} (Irregular Lever)",
           "value": 0.5,
           "hold": false
         }
@@ -268,13 +268,13 @@
         "type": "toggle",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "F_SlowSpeed_On/Off (Toggle Button)",
+          "controls": "{SIDE:F:B}_SlowSpeed_On/Off (Toggle Button)",
           "value": 1,
           "hold": false,
           "enable_api_fallback": true
         },
         "action_deactivate": {
-          "controls": "F_SlowSpeed_On/Off (Toggle Button)",
+          "controls": "{SIDE:F:B}_SlowSpeed_On/Off (Toggle Button)",
           "value": 0,
           "hold": false,
           "enable_api_fallback": true
@@ -329,7 +329,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "F_WindscreenWiper_L (SimpleLever)",
+            "controls": "{SIDE:F:B}_WindscreenWiper_L (SimpleLever)",
             "value": -0.5,
             "relative": true,
             "hold": false,
@@ -340,7 +340,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "F_WindscreenWiper_R (SimpleLever)",
+            "controls": "{SIDE:F:B}_WindscreenWiper_R (SimpleLever)",
             "value": -0.5,
             "relative": true,
             "hold": false,
@@ -357,7 +357,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "F_WindscreenWiper_L (SimpleLever)",
+            "controls": "{SIDE:F:B}_WindscreenWiper_L (SimpleLever)",
             "value": 0.5,
             "relative": true,
             "hold": false,
@@ -368,7 +368,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "F_WindscreenWiper_R (SimpleLever)",
+            "controls": "{SIDE:F:B}_WindscreenWiper_R (SimpleLever)",
             "value": 0.5,
             "relative": true,
             "hold": false,
@@ -385,7 +385,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Headlights/MarkerLight_F (Simple Lever)",
+            "controls": "Headlights/MarkerLight_{SIDE:F:B} (Simple Lever)",
             "value": 0,
             "hold": false
           }
@@ -394,7 +394,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "F_TailLights (Toggle Button)",
+            "controls": "{SIDE:F:B}_TailLights (Toggle Button)",
             "value": 0,
             "hold": false
           }
@@ -409,7 +409,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Headlights/MarkerLight_F (Simple Lever)",
+            "controls": "Headlights/MarkerLight_{SIDE:F:B} (Simple Lever)",
             "value": -0.5,
             "hold": false
           }
@@ -418,7 +418,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "F_TailLights (Toggle Button)",
+            "controls": "{SIDE:F:B}_TailLights (Toggle Button)",
             "value": 0,
             "hold": false
           }
@@ -433,7 +433,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Headlights/MarkerLight_F (Simple Lever)",
+            "controls": "Headlights/MarkerLight_{SIDE:F:B} (Simple Lever)",
             "value": -1,
             "hold": false
           }
@@ -442,7 +442,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "F_TailLights (Toggle Button)",
+            "controls": "{SIDE:F:B}_TailLights (Toggle Button)",
             "value": 0,
             "hold": false
           }
@@ -457,7 +457,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Headlights/MarkerLight_F (Simple Lever)",
+            "controls": "Headlights/MarkerLight_{SIDE:F:B} (Simple Lever)",
             "value": 0.5,
             "hold": false
           }
@@ -466,7 +466,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "F_TailLights (Toggle Button)",
+            "controls": "{SIDE:F:B}_TailLights (Toggle Button)",
             "value": 0,
             "hold": false
           }
@@ -481,7 +481,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "Headlights/MarkerLight_F (Simple Lever)",
+            "controls": "Headlights/MarkerLight_{SIDE:F:B} (Simple Lever)",
             "value": 0,
             "hold": false
           }
@@ -490,7 +490,7 @@
           "type": "momentary",
           "threshold": 0.9,
           "action_activate": {
-            "controls": "F_TailLights (Toggle Button)",
+            "controls": "{SIDE:F:B}_TailLights (Toggle Button)",
             "value": 1,
             "hold": false
           }

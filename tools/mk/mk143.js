@@ -55,3 +55,4 @@ controls:{
 setup:['Reverser handle and brake key in (PARK BRK), battery on','Richtungsschalter to Neutral','Raise the pantograph and close the Hauptschalter in the cab','SiFa and PZB on (aux squares), PZB mode set','Lights to White','AFB on (flap lever past Off), open doors (RUD TRIM)'],
 depart:['Close doors, check the signal and PZB','Richtungsschalter to Forward','Führerbremsventil to Running','Set the AFB speed on the flap lever, push the force lever up: the loco holds the speed','Acknowledge SiFa with the gear lever, PZB with the ENG switches','Brake: Führerbremsventil in steps, force lever back to 0']};
 fs.writeFileSync('tools/manual/trains/tsw-br-143-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
+require('../apply_side.js').apply(f); // cab-side nodes to {SIDE:F:B} (2026-10-11)
