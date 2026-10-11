@@ -1,0 +1,148 @@
+{
+  "name": "tsw-class-700-dtg-thejag",
+  "title": "Class 700",
+  "eyebrow": "Thameslink · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | Class 700 | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "Southeastern Highspeed",
+  "colors": {
+    "navy": "#223261",
+    "blue": "#4a66a8",
+    "paper": "#f3f5f9"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-thameslink-navy.svg",
+      "alt": "Thameslink"
+    },
+    {
+      "file": "../../assets/logo-dtg-navy.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "diagram": {
+    "file": "../../assets/class-700-side.png",
+    "source": "Drawing: WestRail642fan, Wikimedia Commons, CC BY-SA 4.0",
+    "clean": false,
+    "fit": "clip"
+  },
+  "dlc": "store.steampowered.com/app/4679380",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/class-700-dtg-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Direction switch",
+      "notches": [
+        "Forward",
+        "Neutral",
+        "Reverse"
+      ],
+      "start": 1
+    },
+    "leftThrottle": {
+      "name": "Power / brake",
+      "continuous": true,
+      "notches": [
+        "Full service",
+        null,
+        "Brake low",
+        "Off",
+        "Power min",
+        null,
+        "Power max"
+      ],
+      "start": 0
+    },
+    "rightThrottle": null,
+    "flap": null,
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Power supply on"
+    },
+    "gearLever": {
+      "name": "AWS reset"
+    },
+    "autoBrk": {
+      "name": "Exterior lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Main"
+        },
+        {
+          "short": "2",
+          "desc": "Marker"
+        },
+        {
+          "short": "3",
+          "desc": "Dipped"
+        },
+        {
+          "short": "HI",
+          "desc": "Tail"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Horn high",
+      "start": true
+    },
+    "eng2": {
+      "name": "Horn low",
+      "start": true
+    },
+    "leftAux": {
+      "name": "AWS/TPWS isolation"
+    },
+    "rightAux": {
+      "name": "DSD isolation"
+    },
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "back",
+      "right": "on"
+    },
+    "roundAux": {
+      "name": "Guard buzzer"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Master key",
+      "flat": "out",
+      "up": "in"
+    }
+  },
+  "setup": [
+    "Master key in (PARK BRK), battery on in the cab",
+    "Power supply on (right throttle button), wait for line volts",
+    "Direction switch to Neutral",
+    "Check AWS/TPWS and DSD isolation lights are out",
+    "Exterior lights to Main",
+    "Open doors (RUD TRIM)"
+  ],
+  "depart": [
+    "Close doors, wait for the guard buzzer",
+    "Check the signal",
+    "Direction switch to Forward",
+    "Handle from Full service through Off to Power min",
+    "Pull further into the power zone as speed rises",
+    "Acknowledge AWS with the gear lever"
+  ]
+}
