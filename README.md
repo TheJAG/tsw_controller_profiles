@@ -43,7 +43,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `DONE ✅` **BR Class 377** <sub>— DTG · [profile](releases/tsw-class-377-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-377-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 378** <sub>— DTG · [profile](releases/tsw-class-378-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-378-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 380**  
-`TODO ◼️` **BR Class 385**  
+`SOON 🟨` **BR Class 385** <sub>— Rivet · [profile](releases/tsw-class-385-rivet-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-385-rivet-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 387** <sub>— DTG · [profile](releases/tsw-class-387-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-387-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 390 Pendolino Avanti WC** <sub>— DTG · [profile](releases/tsw-class-390-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-390-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 395** <sub>— DTG · [profile](releases/tsw-class-395-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-395-dtg-thejag.pdf)</sub>  

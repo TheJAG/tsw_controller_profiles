@@ -1,0 +1,148 @@
+{
+  "name": "tsw-class-385-rivet-thejag",
+  "title": "Class 385",
+  "eyebrow": "ScotRail · Rivet Games · TCA Quadrant Airbus",
+  "profileName": "TSW | Class 385 | Rivet | TheJAG",
+  "developer": "Rivet Games",
+  "route": "ScotRail Express: Edinburgh – Glasgow",
+  "colors": {
+    "navy": "#223261",
+    "blue": "#4a66a8",
+    "paper": "#f3f5f9"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-scotrail-navy.svg",
+      "alt": "ScotRail"
+    },
+    {
+      "file": "../../assets/logo-rivet-navy.png",
+      "alt": "Rivet Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4679610",
+  "credit": "© TheJAG",
+  "diagram": {
+    "file": "../../assets/class-385-side.png",
+    "source": "Drawing: WestRail642fan, Wikimedia Commons, CC BY-SA 4.0",
+    "clean": false
+  },
+  "cab": {
+    "file": "../../assets/class-385-rivet-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Off",
+        "Forward",
+        "Neutral",
+        "Reverse"
+      ],
+      "start": 0
+    },
+    "leftThrottle": {
+      "name": "Power / brake",
+      "continuous": true,
+      "notches": [
+        "MAX brake",
+        null,
+        "Off",
+        "T-1",
+        "T-2",
+        "T-3",
+        "T-4"
+      ],
+      "start": 0
+    },
+    "rightThrottle": null,
+    "flap": null,
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Pantograph up"
+    },
+    "gearLever": {
+      "name": "AWS reset"
+    },
+    "autoBrk": {
+      "name": "Headlights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Full"
+        },
+        {
+          "short": "2",
+          "desc": "Marker"
+        },
+        {
+          "short": "3",
+          "desc": "Tail"
+        },
+        {
+          "short": "HI",
+          "desc": "–"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Horn high",
+      "start": true
+    },
+    "eng2": {
+      "name": "Horn low",
+      "start": true
+    },
+    "leftAux": {
+      "name": "AWS isolation"
+    },
+    "rightAux": {
+      "name": "DSD isolation"
+    },
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "slower",
+      "right": "faster"
+    },
+    "roundAux": {
+      "name": "DRA"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Master key",
+      "flat": "out",
+      "up": "in"
+    }
+  },
+  "setup": [
+    "Master key in (PARK BRK)",
+    "Pantograph up (right throttle button), wait for line volts",
+    "Reverser to Neutral",
+    "Check the AWS and DSD isolation lights are out",
+    "Headlights to Full",
+    "Open doors (RUD TRIM)"
+  ],
+  "depart": [
+    "Close doors, wait for the interlock light",
+    "Check the signal, DRA off (round aux)",
+    "Reverser to Forward",
+    "Handle from MAX brake through Off to T-1",
+    "Pull further to T-2, T-3 and T-4 as speed rises",
+    "Acknowledge AWS with the gear lever"
+  ]
+}
