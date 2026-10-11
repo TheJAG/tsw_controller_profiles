@@ -12,7 +12,7 @@ const argv=process.argv.slice(2), opt={sweep:true,levers:null,cab:null,step:0.01
 for(let i=0;i<argv.length;i++){const a=argv[i];
   if(a==='--no-sweep')opt.sweep=false; else if(a==='--no-keys')opt.keys=false; else if(a==='--levers')opt.levers=argv[++i].split(',');
   else if(a==='--cab')opt.cab=argv[++i]; else if(a==='--step')opt.step=Number(argv[++i]); else if(a==='--range')opt.range=argv[++i].split(',').map(Number); else opt.out=a;}
-const LEVER_RE=/Lever|DimmerSwitch|ReversiblePushButton|RotarySwitch/;
+const LEVER_RE=/Lever|Handle|DimmerSwitch|ReversiblePushButton|RotarySwitch/;
 const r4=v=>Math.round(v*1e4)/1e4;
 
 // Cab prefix pairs: names like L_Reverser / S_Reverser or F_x / B_x. Returns {style:'prefix', pair:[a,b], shared:n} or null.
