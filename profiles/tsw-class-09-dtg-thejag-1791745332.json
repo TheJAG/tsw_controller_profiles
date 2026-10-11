@@ -1,0 +1,467 @@
+{
+  "name": "TSW | Class 09 | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_WSR_Class09_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser (Reverse 0 / Off 0.5 / Forward 1; Off takes any value 0.25..0.74), inverted: Forward at the far end. Moves only with the throttle at Off",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.5,
+              1
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Power handle Throttle (Off 0 / 1 at 0.11 / 2 at 0.34 / 3 at 0.89 / 4 at 1; the continuous zones between the notches are skipped), plain: Off at the far end, 4 nearest. Bands on the TCA detents: Off 0 ±0.1, 1 at 0.31 ±0.1, 2 at 0.5 ±0.08, 3 at 0.724 ±0.08, 4 at 1 ±0.1. Moves only with the reverser in Forward",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Throttle",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.11,
+              0.34,
+              0.89,
+              1
+            ],
+            "step_thresholds": [
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.1
+              },
+              {
+                "threshold": 0.31,
+                "threshold_tolerance": 0.1
+              },
+              {
+                "threshold": 0.5,
+                "threshold_tolerance": 0.08
+              },
+              {
+                "threshold": 0.724,
+                "threshold_tolerance": 0.08
+              },
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "Vacuum brake DriversBrake (Running 0.09 / First application 0.24 / continuous Service 0.28..0.67 / Full 0.69 / Emergency 0.98; one gate per set), inverted as the Class 153 brake: Emergency at the far end, Running nearest. Emergency raw 0 ±0.06, Full 0.16 ±0.06, free zone 0.26..0.74 (full down to first), First 0.84 ±0.05 (detent), Running 1 ±0.08",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "DriversBrake",
+          "input_value": {
+            "min": 0.09,
+            "max": 0.98,
+            "steps": [
+              0.09,
+              0.24,
+              null,
+              0.69,
+              0.98
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.08
+              },
+              {
+                "threshold": 0.84,
+                "threshold_tolerance": 0.05
+              },
+              {
+                "threshold": 0.74,
+                "threshold_end": 0.26
+              },
+              {
+                "threshold": 0.16,
+                "threshold_tolerance": 0.06
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.06
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "FlapLever",
+      "description": "Loco brake DirectBrake (Release 0 / continuous 0.06..0.78 / Full 0.79 / Emergency 0.98; one gate down), inverted: Emergency at the far end, Release nearest. Emergency raw 0 ±0.06, Full 0.16 ±0.06, free zone 0.26..0.9, Release 1 ±0.06",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "DirectBrake",
+          "input_value": {
+            "min": 0,
+            "max": 0.98,
+            "steps": [
+              0,
+              null,
+              0.79,
+              0.98
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.06
+              },
+              {
+                "threshold": 0.9,
+                "threshold_end": 0.26
+              },
+              {
+                "threshold": 0.16,
+                "threshold_tolerance": 0.06
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.06
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Master key MasterKey (lever: Off 0 / On 0.2329 / Engine Only 0.6228): PARK BRK up = On",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MasterKey",
+            "value": 0.2329,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "MasterKey",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "GearLever",
+      "description": "Deadman / safety acknowledge (game key Q; the 09 has no AWS node)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "Q"
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "description": "Sand, front sander (SandingLever: Off 0 / Front 0.5 / Rear 1)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "SandingLever",
+          "value": 0.5,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "SandingLever",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Engine start (EngineStart push button, held)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "EngineStart",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "EngineStart",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "Horn (Horn_L push button)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Horn_L",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn_L",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wiper off (WiperValve_FL: Off 0 / Min 0.05 / Max 1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "WiperValve_FL",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wiper on (WiperValve_FL 0.5)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "WiperValve_FL",
+            "value": 0.5,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Lights | Off (marker, instrument and cab lights 0)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MarkerLights",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "InstrumentLights",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CabLight",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Lights | Marker lights",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MarkerLights",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "InstrumentLights",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CabLight",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Lights | Marker and instrument lights",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MarkerLights",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "InstrumentLights",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CabLight",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Lights | Marker, instrument and cab lights",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MarkerLights",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "InstrumentLights",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CabLight",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Lights | Cab light only",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MarkerLights",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "InstrumentLights",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CabLight",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}

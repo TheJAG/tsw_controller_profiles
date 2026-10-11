@@ -9,7 +9,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 **🇬🇧 United Kingdom**
 
 `SOON 🟨` **BR Class 08** <sub>— Just Trains · [profile](releases/tsw-class-08-jt-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-08-jt-thejag.pdf)</sub>  
-`TODO ◼️` **BR Class 09**  
+`SOON 🟨` **BR Class 09** <sub>— DTG · [profile](releases/tsw-class-09-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-09-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 20**  
 `DONE ✅` **BR Class 31** <sub>— DTG · [profile](releases/tsw-class-31-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-31-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 33**  
