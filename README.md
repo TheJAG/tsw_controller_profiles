@@ -90,7 +90,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **DB BR 218** <sub>— Train Sim Germany</sub>  
 `TODO ◼️` **DB BR 294**  
 `SOON 🟨` **DB BR 363** <sub>— DTG · [profile](releases/tsw-br-363-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-363-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **DB BR 365**  
+`SOON 🟨` **DB BR 365** <sub>— DTG · [profile](releases/tsw-br-365-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-365-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 401 ICE 1** <sub>— DTG · [profile](releases/tsw-br-401-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-401-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 403 ICE 3** <sub>— DTG · [profile](releases/tsw-br-403-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-403-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 406 ICE 3M** <sub>— DTG · [profile](releases/tsw-br-406-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-406-dtg-thejag.pdf)</sub>  
