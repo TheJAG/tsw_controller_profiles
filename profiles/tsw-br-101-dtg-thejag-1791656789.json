@@ -149,7 +149,7 @@
     },
     {
       "name": "FlapLever",
-      "description": "AFB speed setter, continuous 0..200 km/h (V at the far end, inverted); switch the AFB on in the cab first",
+      "description": "AFB speed setter (probe 2026-10-11 with the AFB on: 0 km/h for sets below 0.05, sets 0.05..0.105 snap to 0.1 = 5 km/h, continuous 10..200 km/h from 0.11 to 1). 200 at the far end, so inverted: 0 km/h raw 1 +-0.04, 5 km/h 0.93 +-0.03 (its own band, so the lever does not click on the snap), speed zone 0.88..0.04, 200 at 0 +-0.04. Switch the AFB on in the cab first",
       "assignments": [
         {
           "type": "direct_control",
@@ -157,7 +157,32 @@
           "input_value": {
             "min": 0,
             "max": 1,
-            "invert": true
+            "steps": [
+              0,
+              0.1,
+              null,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.93,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.88,
+                "threshold_end": 0.04,
+                "threshold_tolerance": 0
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.04
+              }
+            ]
           }
         }
       ]
