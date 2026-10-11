@@ -1,0 +1,429 @@
+{
+  "name": "TSW | RhB Ge44ii | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_GE44_ii_C"
+    },
+    {
+      "class_name": "RVM_GE44_ii_AlbulaTunnel_629_C"
+    },
+    {
+      "class_name": "RVM_GE44_ii_HakoneTozan_622_C"
+    },
+    {
+      "class_name": "RVM_GE44_ii_Anni-Jahre_623_C"
+    },
+    {
+      "class_name": "RVM_GE44_ii_Bernina_619_C"
+    },
+    {
+      "class_name": "RVM_GE44_ii_Bever-Scuol_620_C"
+    },
+    {
+      "class_name": "RVM_GE44_ii_Chur-Arosa_627_C"
+    },
+    {
+      "class_name": "RVM_GE44_ii_Chur-Disentis_630_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser_F (Reverse 0 / Neutral 0.5 / Forward 1; the zones take any value), inverted: Forward at the far end, Reverse nearest. Needs the master key (PARK BRK up)",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser_F",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.5,
+              1
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Handwheel DrivingControlWheel_F: electric brake continuous 0..0.47 / Off 0.51 / power 0.55..1 in 22 game notches (0.5 to 10). Inverted: full power at the far end (raw 0 ±0.04), power zone 0.05..0.44, Off 0.5 ±0.04, brake zone 0.56..0.93 (light to full), full brake 1 ±0.05 nearest",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "DrivingControlWheel_F",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              null,
+              0.51,
+              null,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.05
+              },
+              {
+                "threshold": 0.93,
+                "threshold_end": 0.56
+              },
+              {
+                "threshold": 0.5,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.44,
+                "threshold_end": 0.05
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.04
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "Vacuum brake Train_Vacuum_Brake_F (Release 0.02 / Minimum 0.07 / continuous service to 0.75 / Full service 0.8 / Emergency 1), inverted as the Class 153 brake: Emergency at the far end, Release nearest. Emergency raw 0 ±0.05, Full 0.16 ±0.05, free zone 0.24..0.84 (full down to minimum), Minimum 0.9 ±0.03, Release 1 ±0.05",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Train_Vacuum_Brake_F",
+          "input_value": {
+            "min": 0.02,
+            "max": 1,
+            "steps": [
+              0.02,
+              0.07,
+              null,
+              0.8,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.05
+              },
+              {
+                "threshold": 0.9,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.84,
+                "threshold_end": 0.24
+              },
+              {
+                "threshold": 0.16,
+                "threshold_tolerance": 0.05
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.05
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "FlapLever",
+      "description": "Loco brake LocoBrake_F (continuous 0..1), inverted: Full at the far end, Release nearest",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "LocoBrake_F",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Master key MasterKey_F (MasterSwitch push button, On 1 / Off 0): PARK BRK up = key in",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MasterKey_F",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "MasterKey_F",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "GearLever",
+      "description": "ZSI acknowledge (ZSIAcknowledge_F push button, held)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "ZSIAcknowledge_F",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "ZSIAcknowledge_F",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "description": "Sand (Sand_F push button)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Sand_F",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Sand_F",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Horn (Horn_F push button)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Horn_F",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn_F",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "Deadman cut-out (Deadman_Cut-out_Button_F: Cut-Out 0 / Cut-In 1). Lit = cut out",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Deadman_Cut-out_Button_F",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "Deadman_Cut-out_Button_F",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wiper off (WiperLeft_F push button 0)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "WiperLeft_F",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wiper on (WiperLeft_F push button 1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "WiperLeft_F",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Lights | Off (HeadlightSelector_F 0, train lights off 0.85)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightSelector_F",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TrainLightSwitch_F",
+            "value": 0.85,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Lights | Headlights 1 (0.33)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightSelector_F",
+            "value": 0.33,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TrainLightSwitch_F",
+            "value": 0.85,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Lights | Headlights 2 (0.66)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightSelector_F",
+            "value": 0.66,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TrainLightSwitch_F",
+            "value": 0.85,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Lights | Headlights 3 (1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightSelector_F",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TrainLightSwitch_F",
+            "value": 0.85,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Lights | Headlights 3 and train lights on (TrainLightSwitch_F 0)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightSelector_F",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TrainLightSwitch_F",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}

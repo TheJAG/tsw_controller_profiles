@@ -119,7 +119,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 **🇨🇭 Switzerland**
 
 `TODO ◼️` **RhB ABe 8/12 Allegra**  
-`TODO ◼️` **RhB Ge 4/4 II**  
+`SOON 🟨` **RhB Ge 4/4 II** <sub>— DTG · [profile](releases/tsw-rhb-ge44ii-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-rhb-ge44ii-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **SBB RABe 523**  
 
 **🇨🇿 Czechia**
