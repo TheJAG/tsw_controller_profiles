@@ -1,0 +1,155 @@
+{
+  "name": "tsw-class-08-jt-thejag",
+  "title": "Class 08",
+  "eyebrow": "British Rail · Just Trains · TCA Quadrant Airbus",
+  "profileName": "TSW | Class 08 | JT | TheJAG",
+  "developer": "Just Trains",
+  "route": "West Coast Main Line: Preston – Carlisle",
+  "colors": {
+    "navy": "#223261",
+    "blue": "#4a66a8",
+    "paper": "#f3f5f9"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-britishrail-navy.svg",
+      "alt": "British Rail"
+    },
+    {
+      "file": "../../assets/logo-justtrains-navy.png",
+      "alt": "Just Trains"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4680540",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/class-08-jt-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "schematicHeight": 560,
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Forward",
+        "Off",
+        "Reverse"
+      ],
+      "start": 1
+    },
+    "leftThrottle": {
+      "name": "Power handle",
+      "notches": [
+        "Off",
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "start": 0
+    },
+    "rightThrottle": {
+      "name": "Vacuum brake",
+      "continuous": true,
+      "notches": [
+        "Emergency",
+        "Full",
+        null,
+        "Initial",
+        "Release"
+      ],
+      "start": 1
+    },
+    "flap": {
+      "name": "Loco brake",
+      "continuous": true,
+      "notches": [
+        "Full",
+        null,
+        null,
+        null,
+        "Release"
+      ],
+      "start": 0
+    },
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Engine start"
+    },
+    "gearLever": {
+      "name": "Deadman ack."
+    },
+    "autoBrk": {
+      "name": "Lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Markers"
+        },
+        {
+          "short": "2",
+          "desc": "+ instruments"
+        },
+        {
+          "short": "3",
+          "desc": "+ cab light"
+        },
+        {
+          "short": "HI",
+          "desc": "Cab light only"
+        }
+      ],
+      "start": 2
+    },
+    "eng1": {
+      "name": "Horn",
+      "start": true
+    },
+    "eng2": null,
+    "leftAux": {
+      "name": "DSD isolation"
+    },
+    "rightAux": null,
+    "modeSwitch": {
+      "name": "Wiper",
+      "left": "off",
+      "right": "on"
+    },
+    "roundAux": null,
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Master key switch",
+      "flat": "off",
+      "up": "on"
+    }
+  },
+  "setup": [
+    "PARK BRK up: master key switch On; brake selector and battery in the cab",
+    "Start the engine (right throttle button)",
+    "Reverser from Off to Forward: the power handle only moves then",
+    "Check the DSD isolation light is out",
+    "Lights to Markers",
+    "Loco brake at Full, vacuum brake at Full (parked)"
+  ],
+  "depart": [
+    "Check the signal and the shunter",
+    "Vacuum brake to Release, loco brake to Release",
+    "Power handle 1 to 4 (only with the reverser in Forward)",
+    "Deadman: acknowledge with the gear lever if the game asks",
+    "Brake: power Off, vacuum brake towards Full, or the loco brake light engine",
+    "Change direction: power Off first, then the reverser"
+  ]
+}
