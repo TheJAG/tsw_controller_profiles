@@ -1,0 +1,5307 @@
+{
+  "objectClass": "RVM_WSR_Class33_C",
+  "capturedAt": "2026-10-11T20:09:25.075Z",
+  "activeCab": null,
+  "cab": null,
+  "controls": [
+    {
+      "name": "ModelChildActorComponent0",
+      "objectClass": "ModelChildActorComponent"
+    },
+    {
+      "name": "RailVehiclePhysicsComponent0",
+      "objectClass": "RailVehicleComponent"
+    },
+    {
+      "name": "GameplayTasksComponent0",
+      "objectClass": "GameplayTasksComponent"
+    },
+    {
+      "name": "GameplayTagStatusComponent0",
+      "objectClass": "GameplayTagStatusComponent"
+    },
+    {
+      "name": "Simulation",
+      "objectClass": "SimulationComponent"
+    },
+    {
+      "name": "DieselEngine",
+      "objectClass": "DieselEngine_C"
+    },
+    {
+      "name": "Driver_F (Environment)",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "Secondman_F (Environment)",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "Driver_B (Environment)",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "Secondman_B (Environment)",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "CabDoor_FL (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Opened",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "CabDoor_FR (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Opened",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "CabDoor_BL (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "CabDoor_BR (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Opened",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "SeatManager",
+      "objectClass": "SeatManagerComponent"
+    },
+    {
+      "name": "FuelTank",
+      "objectClass": "FuelTankComponent"
+    },
+    {
+      "name": "FuelCap_L",
+      "objectClass": "FuelCapComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "FuelCap_R",
+      "objectClass": "FuelCapComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Hook_F (Coupler)",
+      "objectClass": "CouplerComponent"
+    },
+    {
+      "name": "Hook_B (Coupler)",
+      "objectClass": "CouplerComponent"
+    },
+    {
+      "name": "Reverser_F (IrregularLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "Reverser",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -2.5,
+          "max": -1.5
+        },
+        {
+          "name": "Reverse",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Engine Only",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Forward",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Reverser_B (IrregularLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "Reverser",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -2.5,
+          "max": -1.5
+        },
+        {
+          "name": "Reverse",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Engine Only",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Forward",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "MasterKey_F (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "MasterSwitch",
+      "namedValues": []
+    },
+    {
+      "name": "MasterKey_B (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "MasterSwitch",
+      "namedValues": []
+    },
+    {
+      "name": "EngineStart_F (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "EngineStartStop",
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "Input",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Pressed",
+          "source": "Input",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "EngineStart_B (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "EngineStartStop",
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "Input",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Pressed",
+          "source": "Input",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "EngineStop_F (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "EngineStartStop",
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "Input",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Pressed",
+          "source": "Input",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "EngineStop_B (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "EngineStartStop",
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "Input",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Pressed",
+          "source": "Input",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "Throttle_F (IrregularLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "Throttle",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.05000000074505806
+        },
+        {
+          "name": "On",
+          "source": "Input",
+          "min": 0.05000000074505806,
+          "max": 0.20499999821186066
+        },
+        {
+          "name": "{ThrottlePercent}",
+          "source": "Input",
+          "min": 0.20499999821186066,
+          "max": 0.9900000095367432
+        },
+        {
+          "name": "Full",
+          "source": "Input",
+          "min": 0.9900000095367432,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "Throttle_B (IrregularLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "Throttle",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.05000000074505806
+        },
+        {
+          "name": "On",
+          "source": "Input",
+          "min": 0.05000000074505806,
+          "max": 0.20499999821186066
+        },
+        {
+          "name": "{ThrottlePercent}",
+          "source": "Input",
+          "min": 0.20499999821186066,
+          "max": 0.9900000095367432
+        },
+        {
+          "name": "Full",
+          "source": "Input",
+          "min": 0.9900000095367432,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "DriversBrake_F (IrregularLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "AutomaticBrake",
+      "namedValues": [
+        {
+          "name": "Running",
+          "source": "Input",
+          "min": -0.05000000074505806,
+          "max": 0.17499999701976776
+        },
+        {
+          "name": "Initial Application",
+          "source": "Input",
+          "min": 0.17499999701976776,
+          "max": 0.25099998712539673
+        },
+        {
+          "name": "Service {Service}",
+          "source": "Input",
+          "min": 0.25099998712539673,
+          "max": 0.7490000128746033
+        },
+        {
+          "name": "Full Service",
+          "source": "Input",
+          "min": 0.7490000128746033,
+          "max": 0.824999988079071
+        },
+        {
+          "name": "Emergency",
+          "source": "Input",
+          "min": 0.824999988079071,
+          "max": 0.949999988079071
+        },
+        {
+          "name": "Neutral / Shutdown",
+          "source": "Input",
+          "min": 0.949999988079071,
+          "max": 1.0499999523162842
+        }
+      ]
+    },
+    {
+      "name": "DriversBrake_B (IrregularLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "AutomaticBrake",
+      "namedValues": [
+        {
+          "name": "Running",
+          "source": "Input",
+          "min": -0.05000000074505806,
+          "max": 0.17499999701976776
+        },
+        {
+          "name": "Initial Application",
+          "source": "Input",
+          "min": 0.17499999701976776,
+          "max": 0.25099998712539673
+        },
+        {
+          "name": "Service {Service}",
+          "source": "Input",
+          "min": 0.25099998712539673,
+          "max": 0.7490000128746033
+        },
+        {
+          "name": "Full Service",
+          "source": "Input",
+          "min": 0.7490000128746033,
+          "max": 0.824999988079071
+        },
+        {
+          "name": "Emergency",
+          "source": "Input",
+          "min": 0.824999988079071,
+          "max": 0.949999988079071
+        },
+        {
+          "name": "Neutral / Shutdown",
+          "source": "Input",
+          "min": 0.949999988079071,
+          "max": 1.0499999523162842
+        }
+      ]
+    },
+    {
+      "name": "AirHose_B_VAC",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_F_VAC",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_B_MR",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_F_MR",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_F_BP",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_B_BP",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "StraightBrake_F (SimpleLever)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "IndependentBrake",
+      "namedValues": []
+    },
+    {
+      "name": "StraightBrake_B (SimpleLever)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "IndependentBrake",
+      "namedValues": []
+    },
+    {
+      "name": "Horn_FL (IrregularLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "Horn",
+      "namedValues": [
+        {
+          "name": "Low",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "High",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Horn_FR (IrregularLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "Horn",
+      "namedValues": [
+        {
+          "name": "Low",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "High",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Horn_BL (IrregularLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "Horn",
+      "namedValues": [
+        {
+          "name": "Low",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "High",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Horn_BR (IrregularLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "Horn",
+      "namedValues": [
+        {
+          "name": "Low",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "High",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "AWSReset_F (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Alerter",
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "AWSReset_B (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Alerter",
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "Wiper_FL (IrregularLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "Wipers",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Park",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Run",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ]
+    },
+    {
+      "name": "Wiper_BL (IrregularLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "Wipers",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Park",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Run",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ]
+    },
+    {
+      "name": "DSDPedal_F (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "DSDPedal_B (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "DSDButton_F (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "Output",
+          "min": 0,
+          "max": 0.10000000149011612
+        },
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.8999999761581421,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "DSDButton_B (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "HeadlightSwitch_F (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Headlights",
+      "namedValues": []
+    },
+    {
+      "name": "HeadlightSwitch_B (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Headlights",
+      "namedValues": []
+    },
+    {
+      "name": "DeskLightSwitch_F (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "GaugeLights",
+      "namedValues": []
+    },
+    {
+      "name": "DeskLightSwitch_B (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "GaugeLights",
+      "namedValues": []
+    },
+    {
+      "name": "InternalJumperCable_F",
+      "objectClass": "JumperCableComponent"
+    },
+    {
+      "name": "InternalJumperCable_B",
+      "objectClass": "JumperCableComponent"
+    },
+    {
+      "name": "LeftCabLight_F (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "CabLights",
+      "namedValues": []
+    },
+    {
+      "name": "LeftCabLight_B (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "CabLights",
+      "namedValues": []
+    },
+    {
+      "name": "AWS_Isolation_F (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "SignallingSystems",
+      "namedValues": [
+        {
+          "name": "Isolated",
+          "source": "Output",
+          "min": 0,
+          "max": 0.5
+        },
+        {
+          "name": "Unisolated",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "AWS_Isolation_B (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "SignallingSystems",
+      "namedValues": [
+        {
+          "name": "Isolated",
+          "source": "Output",
+          "min": 0,
+          "max": 0.5
+        },
+        {
+          "name": "Unisolated",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake_F (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Handbrake",
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "InputNormalised",
+          "min": 0,
+          "max": 0.5
+        },
+        {
+          "name": "Applied",
+          "source": "InputNormalised",
+          "min": 0.5,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake_B (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Handbrake",
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "InputNormalised",
+          "min": 0,
+          "max": 0.5
+        },
+        {
+          "name": "Applied",
+          "source": "InputNormalised",
+          "min": 0.5,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "BrakeSelector (SimpleLever)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Vacuum - Normal",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Air",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Vacuum - Emergency",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Vacuum - Isolated",
+          "source": "Output",
+          "min": 2.5,
+          "max": 4.5
+        }
+      ]
+    },
+    {
+      "name": "Wiper_FR (IrregularLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "Wipers",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Park",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Run",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ]
+    },
+    {
+      "name": "Wiper_BR (IrregularLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "Wipers",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Park",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Run",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ]
+    },
+    {
+      "name": "CabChangeLever_F (Toggle Button)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabChangeLever_B (Toggle Button)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "RVN (Numbering)",
+      "objectClass": "NumberingComponent"
+    },
+    {
+      "name": "Window_FL (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Window_FR (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Window_BL (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Window_BR (ToggleButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "WiperBlade_FL (SimpleLever)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0.6114557385444641,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "WiperBlade_FR (SimpleLever)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0.012741883285343647,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "WiperBlade_BL (SimpleLever)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0.9569136500358582,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "WiperBlade_BR (SimpleLever)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0.42336001992225647,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Cab_Heater_Front_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Cab_Heater_Rear_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Cab_Heater_Side_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Cab_Heater_Front_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Cab_Heater_Rear_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Cab_Heater_Side_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ETH_On_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ETH_Off_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ETH_On_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ETH_Off_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ETH_Dimmer_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ETH_Dimmer_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "AntiSlipBrake_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "AntiSlipBrake_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Spare_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Spare_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Demister_Left_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Demister_Right_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Demister_Left_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Demister_Right_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "EngineRoomLight_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Trip/Set",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "EngineRoomLight_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Trip/Set",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "NoseLight_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "NoseLight_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "FireAlarmTest_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "FireAlarmTest_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ScreenWashLeft_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ScreenWashRight_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ScreenWashLeft_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ScreenWashRight_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "VacuumChamberRelease_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "VacuumChamberRelease_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Sander_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Sand",
+      "namedValues": []
+    },
+    {
+      "name": "Sander_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Sand",
+      "namedValues": []
+    },
+    {
+      "name": "SeatBackLeft_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "SeatBackRight_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "SeatBackLeft_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "SeatBackRight_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "DSDHoldOver_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "DSDHoldOver_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabLight_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "CabLights",
+      "namedValues": []
+    },
+    {
+      "name": "CabLight_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "CabLights",
+      "namedValues": []
+    },
+    {
+      "name": "AirCockFront",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "BatteryIsolatingSwitch",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "AirTPFront",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "AirTPRear",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "AirMRFrontLeft",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "AirMRFrontRight",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "AirMRRearLeft",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "AirMRRearRight",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "DriversBrakePin_(A)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "DriversBrakePin_(B)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "DriversBlind (A)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "DriversBlind (B)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "FireBellClapper (A)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "FireBellClapper (B)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "SeatWinderLeft (A)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "SeatWinderRight (A)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "SeatWinderLeft (B)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "SeatWinderRight (B)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "AWS_V2_F",
+      "objectClass": "AWS_V2_C"
+    },
+    {
+      "name": "AWS_V2_R",
+      "objectClass": "AWS_V2_C"
+    },
+    {
+      "name": "FanSpeed",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "AWSVisualStateFront",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "AWSVisualStateRear",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabHeater_RSide_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabHeater_RRear_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabHeater_RSide_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabHeater_RRear_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabLightRight_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabLightRight_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ExhausterSpeedup_L_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ExhausterSpeedup_R_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ExhausterSpeedup_L_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ExhausterSpeedup_R_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "StraightBrake_BR (SimpleLever)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "IndependentBrake",
+      "namedValues": []
+    },
+    {
+      "name": "StraightBrake_FR (SimpleLever)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "IndependentBrake",
+      "namedValues": []
+    },
+    {
+      "name": "VacuumEmergencyValve_(A)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "VacuumEmergencyValve_(B)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "AWSReset_BR (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Alerter",
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "AWSReset_FR (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Alerter",
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "DriversBlindRight_(A) ",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "DriversBlindRight_(B)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "SanderLHS_(A)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "Sand",
+      "namedValues": [
+        {
+          "name": "Trail Sand",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Forward Sand",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "SanderLHS_(B)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "Sand",
+      "namedValues": [
+        {
+          "name": "Trail Sand",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Forward Sand",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "MarkerLHS_(A)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Red",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "White",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "MarkerRHS_(A)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Red",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "White",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "MarkerLHS_(B)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Red",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "White",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "MarkerRHS_(B)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Red",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "White",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "BrakeTimingSwitch (SimpleLever)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0.25,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Fitted Goods ",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Passenger",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Unfitted Goods",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Passenger",
+          "source": "Output",
+          "min": 2.5,
+          "max": 4.5
+        }
+      ]
+    },
+    {
+      "name": "WindowDoor_FL ",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "WindowDoor_FR",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "WindowDoor_BL",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "WindowDoor_BR",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "BlueStar27Way_F (JumperCable)",
+      "objectClass": "JumperCableComponent"
+    },
+    {
+      "name": "BlueStar27Way_B (JumperCable)",
+      "objectClass": "JumperCableComponent"
+    },
+    {
+      "name": "ControlAirPipes_F (JumperCable)",
+      "objectClass": "JumperCableComponent"
+    },
+    {
+      "name": "ControlAirPipes_B (JumperCable)",
+      "objectClass": "JumperCableComponent"
+    },
+    {
+      "name": "AirHose_FR_MR",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_BR_MR",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "CabChangeLever_F (Simple Lever)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabChangeLever_B (Simple Lever)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "AWS_Isolation_F (Simple Lever)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "SignallingSystems",
+      "namedValues": []
+    },
+    {
+      "name": "AWS_Isolation_B (Simple Lever)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "SignallingSystems",
+      "namedValues": []
+    },
+    {
+      "name": "SimpleLever",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "RVN33XXX (Number)",
+      "objectClass": "NumberingComponent"
+    },
+    {
+      "name": "BlindFL (SimpleLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Black",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "White",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Red",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Orange",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        },
+        {
+          "name": "A",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        },
+        {
+          "name": "B",
+          "source": "Output",
+          "min": 4.5,
+          "max": 5.5
+        },
+        {
+          "name": "C",
+          "source": "Output",
+          "min": 5.5,
+          "max": 6.5
+        },
+        {
+          "name": "D",
+          "source": "Output",
+          "min": 6.5,
+          "max": 7.5
+        },
+        {
+          "name": "E",
+          "source": "Output",
+          "min": 7.5,
+          "max": 8.5
+        },
+        {
+          "name": "F",
+          "source": "Output",
+          "min": 8.5,
+          "max": 9.5
+        },
+        {
+          "name": "G",
+          "source": "Output",
+          "min": 9.5,
+          "max": 10.5
+        },
+        {
+          "name": "H",
+          "source": "Output",
+          "min": 10.5,
+          "max": 11.5
+        },
+        {
+          "name": "J",
+          "source": "Output",
+          "min": 11.5,
+          "max": 12.5
+        },
+        {
+          "name": "K",
+          "source": "Output",
+          "min": 12.5,
+          "max": 13.5
+        },
+        {
+          "name": "1",
+          "source": "Output",
+          "min": 13.5,
+          "max": 14.5
+        },
+        {
+          "name": "2",
+          "source": "Output",
+          "min": 14.5,
+          "max": 15.5
+        },
+        {
+          "name": "3",
+          "source": "Output",
+          "min": 15.5,
+          "max": 16.5
+        },
+        {
+          "name": "4",
+          "source": "Output",
+          "min": 16.5,
+          "max": 17.5
+        },
+        {
+          "name": "5",
+          "source": "Output",
+          "min": 17.5,
+          "max": 18.5
+        },
+        {
+          "name": "6",
+          "source": "Output",
+          "min": 18.5,
+          "max": 19.5
+        },
+        {
+          "name": "7",
+          "source": "Output",
+          "min": 19.5,
+          "max": 20.5
+        },
+        {
+          "name": "8",
+          "source": "Output",
+          "min": 20.5,
+          "max": 21.5
+        },
+        {
+          "name": "9",
+          "source": "Output",
+          "min": 21.5,
+          "max": 22.5
+        },
+        {
+          "name": "0",
+          "source": "Output",
+          "min": 22.5,
+          "max": 23.5
+        }
+      ]
+    },
+    {
+      "name": "BlindFR (SimpleLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 4,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Black",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "White",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Red",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Orange",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        },
+        {
+          "name": "A",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        },
+        {
+          "name": "B",
+          "source": "Output",
+          "min": 4.5,
+          "max": 5.5
+        },
+        {
+          "name": "C",
+          "source": "Output",
+          "min": 5.5,
+          "max": 6.5
+        },
+        {
+          "name": "D",
+          "source": "Output",
+          "min": 6.5,
+          "max": 7.5
+        },
+        {
+          "name": "E",
+          "source": "Output",
+          "min": 7.5,
+          "max": 8.5
+        },
+        {
+          "name": "F",
+          "source": "Output",
+          "min": 8.5,
+          "max": 9.5
+        },
+        {
+          "name": "G",
+          "source": "Output",
+          "min": 9.5,
+          "max": 10.5
+        },
+        {
+          "name": "H",
+          "source": "Output",
+          "min": 10.5,
+          "max": 11.5
+        },
+        {
+          "name": "J",
+          "source": "Output",
+          "min": 11.5,
+          "max": 12.5
+        },
+        {
+          "name": "K",
+          "source": "Output",
+          "min": 12.5,
+          "max": 13.5
+        },
+        {
+          "name": "1",
+          "source": "Output",
+          "min": 13.5,
+          "max": 14.5
+        },
+        {
+          "name": "2",
+          "source": "Output",
+          "min": 14.5,
+          "max": 15.5
+        },
+        {
+          "name": "3",
+          "source": "Output",
+          "min": 15.5,
+          "max": 16.5
+        },
+        {
+          "name": "4",
+          "source": "Output",
+          "min": 16.5,
+          "max": 17.5
+        },
+        {
+          "name": "5",
+          "source": "Output",
+          "min": 17.5,
+          "max": 18.5
+        },
+        {
+          "name": "6",
+          "source": "Output",
+          "min": 18.5,
+          "max": 19.5
+        },
+        {
+          "name": "7",
+          "source": "Output",
+          "min": 19.5,
+          "max": 20.5
+        },
+        {
+          "name": "8",
+          "source": "Output",
+          "min": 20.5,
+          "max": 21.5
+        },
+        {
+          "name": "9",
+          "source": "Output",
+          "min": 21.5,
+          "max": 22.5
+        },
+        {
+          "name": "0",
+          "source": "Output",
+          "min": 22.5,
+          "max": 23.5
+        }
+      ]
+    },
+    {
+      "name": "BlindBL (SimpleLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Black",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "White",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Red",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Orange",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        },
+        {
+          "name": "A",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        },
+        {
+          "name": "B",
+          "source": "Output",
+          "min": 4.5,
+          "max": 5.5
+        },
+        {
+          "name": "C",
+          "source": "Output",
+          "min": 5.5,
+          "max": 6.5
+        },
+        {
+          "name": "D",
+          "source": "Output",
+          "min": 6.5,
+          "max": 7.5
+        },
+        {
+          "name": "E",
+          "source": "Output",
+          "min": 7.5,
+          "max": 8.5
+        },
+        {
+          "name": "F",
+          "source": "Output",
+          "min": 8.5,
+          "max": 9.5
+        },
+        {
+          "name": "G",
+          "source": "Output",
+          "min": 9.5,
+          "max": 10.5
+        },
+        {
+          "name": "H",
+          "source": "Output",
+          "min": 10.5,
+          "max": 11.5
+        },
+        {
+          "name": "J",
+          "source": "Output",
+          "min": 11.5,
+          "max": 12.5
+        },
+        {
+          "name": "K",
+          "source": "Output",
+          "min": 12.5,
+          "max": 13.5
+        },
+        {
+          "name": "1",
+          "source": "Output",
+          "min": 13.5,
+          "max": 14.5
+        },
+        {
+          "name": "2",
+          "source": "Output",
+          "min": 14.5,
+          "max": 15.5
+        },
+        {
+          "name": "3",
+          "source": "Output",
+          "min": 15.5,
+          "max": 16.5
+        },
+        {
+          "name": "4",
+          "source": "Output",
+          "min": 16.5,
+          "max": 17.5
+        },
+        {
+          "name": "5",
+          "source": "Output",
+          "min": 17.5,
+          "max": 18.5
+        },
+        {
+          "name": "6",
+          "source": "Output",
+          "min": 18.5,
+          "max": 19.5
+        },
+        {
+          "name": "7",
+          "source": "Output",
+          "min": 19.5,
+          "max": 20.5
+        },
+        {
+          "name": "8",
+          "source": "Output",
+          "min": 20.5,
+          "max": 21.5
+        },
+        {
+          "name": "9",
+          "source": "Output",
+          "min": 21.5,
+          "max": 22.5
+        },
+        {
+          "name": "0",
+          "source": "Output",
+          "min": 22.5,
+          "max": 23.5
+        }
+      ]
+    },
+    {
+      "name": "BlindBR (SimpleLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Black",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "White",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Red",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Orange",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        },
+        {
+          "name": "A",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        },
+        {
+          "name": "B",
+          "source": "Output",
+          "min": 4.5,
+          "max": 5.5
+        },
+        {
+          "name": "C",
+          "source": "Output",
+          "min": 5.5,
+          "max": 6.5
+        },
+        {
+          "name": "D",
+          "source": "Output",
+          "min": 6.5,
+          "max": 7.5
+        },
+        {
+          "name": "E",
+          "source": "Output",
+          "min": 7.5,
+          "max": 8.5
+        },
+        {
+          "name": "F",
+          "source": "Output",
+          "min": 8.5,
+          "max": 9.5
+        },
+        {
+          "name": "G",
+          "source": "Output",
+          "min": 9.5,
+          "max": 10.5
+        },
+        {
+          "name": "H",
+          "source": "Output",
+          "min": 10.5,
+          "max": 11.5
+        },
+        {
+          "name": "J",
+          "source": "Output",
+          "min": 11.5,
+          "max": 12.5
+        },
+        {
+          "name": "K",
+          "source": "Output",
+          "min": 12.5,
+          "max": 13.5
+        },
+        {
+          "name": "1",
+          "source": "Output",
+          "min": 13.5,
+          "max": 14.5
+        },
+        {
+          "name": "2",
+          "source": "Output",
+          "min": 14.5,
+          "max": 15.5
+        },
+        {
+          "name": "3",
+          "source": "Output",
+          "min": 15.5,
+          "max": 16.5
+        },
+        {
+          "name": "4",
+          "source": "Output",
+          "min": 16.5,
+          "max": 17.5
+        },
+        {
+          "name": "5",
+          "source": "Output",
+          "min": 17.5,
+          "max": 18.5
+        },
+        {
+          "name": "6",
+          "source": "Output",
+          "min": 18.5,
+          "max": 19.5
+        },
+        {
+          "name": "7",
+          "source": "Output",
+          "min": 19.5,
+          "max": 20.5
+        },
+        {
+          "name": "8",
+          "source": "Output",
+          "min": 20.5,
+          "max": 21.5
+        },
+        {
+          "name": "9",
+          "source": "Output",
+          "min": 21.5,
+          "max": 22.5
+        },
+        {
+          "name": "0",
+          "source": "Output",
+          "min": 22.5,
+          "max": 23.5
+        }
+      ]
+    },
+    {
+      "name": "FrontCab (Environment)",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "RearCab (Environment)",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "ContactSignaller_F",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "ContactSignaller_B",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "SimpleRadio",
+      "objectClass": "BP_SimpleRadio_C"
+    }
+  ],
+  "levers": {
+    "Reverser_F (IrregularLever)": {
+      "identifier": "Reverser",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 4,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 3,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -2.5,
+          "max": -1.5
+        },
+        {
+          "name": "Reverse",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Engine Only",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Forward",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.16,
+          "snapped": 0,
+          "output": -2,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.17,
+          "to": 0.49,
+          "snapped": 0.2484,
+          "output": -1,
+          "name": "Reverse"
+        },
+        {
+          "index": 2,
+          "from": 0.5,
+          "to": 0.83,
+          "snapped": 0.5695,
+          "output": 0,
+          "name": "Engine Only"
+        },
+        {
+          "index": 3,
+          "from": 0.84,
+          "to": 1,
+          "snapped": 0.9178,
+          "output": 1,
+          "name": "Forward"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "Reverser_B (IrregularLever)": {
+      "identifier": "Reverser",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 4,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 3,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -2.5,
+          "max": -1.5
+        },
+        {
+          "name": "Reverse",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Engine Only",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Forward",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.16,
+          "snapped": 0,
+          "output": -2,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.17,
+          "to": 0.49,
+          "snapped": 0.244,
+          "output": -1,
+          "name": "Reverse"
+        },
+        {
+          "index": 2,
+          "from": 0.5,
+          "to": 0.83,
+          "snapped": 0.5662,
+          "output": 0,
+          "name": "Engine Only"
+        },
+        {
+          "index": 3,
+          "from": 0.84,
+          "to": 1,
+          "snapped": 0.9253,
+          "output": 1,
+          "name": "Forward"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "Throttle_F (IrregularLever)": {
+      "identifier": "Throttle",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 4,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.05000000074505806
+        },
+        {
+          "name": "On",
+          "source": "Input",
+          "min": 0.05000000074505806,
+          "max": 0.20499999821186066
+        },
+        {
+          "name": "{ThrottlePercent}",
+          "source": "Input",
+          "min": 0.20499999821186066,
+          "max": 0.9900000095367432
+        },
+        {
+          "name": "Full",
+          "source": "Input",
+          "min": 0.9900000095367432,
+          "max": 1
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.09,
+          "snapped": 0,
+          "output": -1,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.1,
+          "to": 0.29,
+          "snapped": 0.2,
+          "output": 0,
+          "name": "On"
+        },
+        {
+          "index": 2,
+          "from": 0.3,
+          "to": 0.4,
+          "snapped": 0.4,
+          "output": 0.24528302252292633,
+          "name": "{ThrottlePercent}"
+        },
+        {
+          "index": 3,
+          "from": 0.41,
+          "to": 1,
+          "snapped": 0.41,
+          "output": 0.2578616142272949,
+          "name": "{ThrottlePercent}"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "Throttle_B (IrregularLever)": {
+      "identifier": "Throttle",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 4,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.05000000074505806
+        },
+        {
+          "name": "On",
+          "source": "Input",
+          "min": 0.05000000074505806,
+          "max": 0.20499999821186066
+        },
+        {
+          "name": "{ThrottlePercent}",
+          "source": "Input",
+          "min": 0.20499999821186066,
+          "max": 0.9900000095367432
+        },
+        {
+          "name": "Full",
+          "source": "Input",
+          "min": 0.9900000095367432,
+          "max": 1
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.09,
+          "snapped": 0,
+          "output": -1,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.1,
+          "to": 0.29,
+          "snapped": 0.2,
+          "output": 0,
+          "name": "On"
+        },
+        {
+          "index": 2,
+          "from": 0.3,
+          "to": 0.4,
+          "snapped": 0.4,
+          "output": 0.24528302252292633,
+          "name": "{ThrottlePercent}"
+        },
+        {
+          "index": 3,
+          "from": 0.41,
+          "to": 1,
+          "snapped": 0.41,
+          "output": 0.2578616142272949,
+          "name": "{ThrottlePercent}"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "DriversBrake_F (IrregularLever)": {
+      "identifier": "AutomaticBrake",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 4,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 0.8999999761581421,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Running",
+          "source": "Input",
+          "min": -0.05000000074505806,
+          "max": 0.17499999701976776
+        },
+        {
+          "name": "Initial Application",
+          "source": "Input",
+          "min": 0.17499999701976776,
+          "max": 0.25099998712539673
+        },
+        {
+          "name": "Service {Service}",
+          "source": "Input",
+          "min": 0.25099998712539673,
+          "max": 0.7490000128746033
+        },
+        {
+          "name": "Full Service",
+          "source": "Input",
+          "min": 0.7490000128746033,
+          "max": 0.824999988079071
+        },
+        {
+          "name": "Emergency",
+          "source": "Input",
+          "min": 0.824999988079071,
+          "max": 0.949999988079071
+        },
+        {
+          "name": "Neutral / Shutdown",
+          "source": "Input",
+          "min": 0.949999988079071,
+          "max": 1.0499999523162842
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.12,
+          "snapped": 0,
+          "output": 0.10000000149011612,
+          "name": "Running"
+        },
+        {
+          "index": 1,
+          "from": 0.13,
+          "to": 0.84,
+          "snapped": 0.2426,
+          "output": 0.27440208196640015,
+          "name": "Initial Application"
+        },
+        {
+          "index": 2,
+          "from": 0.85,
+          "to": 1,
+          "snapped": 0.8814,
+          "output": 0.800000011920929,
+          "name": "Emergency"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.8999999761581421
+    },
+    "DriversBrake_B (IrregularLever)": {
+      "identifier": "AutomaticBrake",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 4,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 0.8999999761581421,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Running",
+          "source": "Input",
+          "min": -0.05000000074505806,
+          "max": 0.17499999701976776
+        },
+        {
+          "name": "Initial Application",
+          "source": "Input",
+          "min": 0.17499999701976776,
+          "max": 0.25099998712539673
+        },
+        {
+          "name": "Service {Service}",
+          "source": "Input",
+          "min": 0.25099998712539673,
+          "max": 0.7490000128746033
+        },
+        {
+          "name": "Full Service",
+          "source": "Input",
+          "min": 0.7490000128746033,
+          "max": 0.824999988079071
+        },
+        {
+          "name": "Emergency",
+          "source": "Input",
+          "min": 0.824999988079071,
+          "max": 0.949999988079071
+        },
+        {
+          "name": "Neutral / Shutdown",
+          "source": "Input",
+          "min": 0.949999988079071,
+          "max": 1.0499999523162842
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.12,
+          "snapped": 0,
+          "output": 0.10000000149011612,
+          "name": "Running"
+        },
+        {
+          "index": 1,
+          "from": 0.13,
+          "to": 0.84,
+          "snapped": 0.1459,
+          "output": 0.10000000149011612,
+          "name": "Running"
+        },
+        {
+          "index": 2,
+          "from": 0.85,
+          "to": 1,
+          "snapped": 0.8643,
+          "output": 0.800000011920929,
+          "name": "Emergency"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.8999999761581421
+    },
+    "StraightBrake_F (SimpleLever)": {
+      "identifier": "IndependentBrake",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": true,
+      "notches": [
+        {
+          "index": -1,
+          "from": 0,
+          "to": 1,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "StraightBrake_B (SimpleLever)": {
+      "identifier": "IndependentBrake",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Horn_FL (IrregularLever)": {
+      "identifier": "Horn",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 1,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Low",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "High",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "Horn_FR (IrregularLever)": {
+      "identifier": "Horn",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 1,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Low",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "High",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "Horn_BL (IrregularLever)": {
+      "identifier": "Horn",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 1,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Low",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "High",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "Horn_BR (IrregularLever)": {
+      "identifier": "Horn",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 1,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Low",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "High",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "Wiper_FL (IrregularLever)": {
+      "identifier": "Wipers",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Park",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Run",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 1,
+          "name": "Park"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 2,
+          "name": "Run"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "Wiper_BL (IrregularLever)": {
+      "identifier": "Wipers",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Park",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Run",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 1,
+          "name": "Park"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 2,
+          "name": "Run"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "BrakeSelector (SimpleLever)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 5,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.25,
+      "inputRange": 1,
+      "outputRange": 4,
+      "rotational": true,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Vacuum - Normal",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Air",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Vacuum - Emergency",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Vacuum - Isolated",
+          "source": "Output",
+          "min": 2.5,
+          "max": 4.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.12,
+          "snapped": 0,
+          "output": 0,
+          "name": "Vacuum - Normal"
+        },
+        {
+          "index": 1,
+          "from": 0.13,
+          "to": 0.37,
+          "snapped": 0.25,
+          "output": 0.9999999403953552,
+          "name": "Air"
+        },
+        {
+          "index": 2,
+          "from": 0.38,
+          "to": 0.62,
+          "snapped": 0.5,
+          "output": 2,
+          "name": "Vacuum - Emergency"
+        },
+        {
+          "index": 3,
+          "from": 0.63,
+          "to": 0.87,
+          "snapped": 0.75,
+          "output": 3,
+          "name": "Vacuum - Isolated"
+        },
+        {
+          "index": 0,
+          "from": 0.88,
+          "to": 1,
+          "snapped": 0,
+          "output": 0,
+          "name": "Vacuum - Normal"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "Wiper_FR (IrregularLever)": {
+      "identifier": "Wipers",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Park",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Run",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 1,
+          "name": "Park"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 2,
+          "name": "Run"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "Wiper_BR (IrregularLever)": {
+      "identifier": "Wipers",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Park",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Run",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 1,
+          "name": "Park"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 2,
+          "name": "Run"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "WiperBlade_FL (SimpleLever)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0.6114557385444641,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "WiperBlade_FR (SimpleLever)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0.012741883285343647,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "WiperBlade_BL (SimpleLever)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0.9569136500358582,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "WiperBlade_BR (SimpleLever)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0.42336001992225647,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "DriversBrakePin_(A)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.7077,
+          "output": 0.5,
+          "name": null
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
+    },
+    "DriversBrakePin_(B)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 1,
+          "output": 1,
+          "name": null
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
+    },
+    "DriversBlind (A)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "DriversBlind (B)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "FireBellClapper (A)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "FireBellClapper (B)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "SeatWinderLeft (A)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "SeatWinderRight (A)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "SeatWinderLeft (B)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "SeatWinderRight (B)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "FanSpeed": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "AWSVisualStateFront": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "AWSVisualStateRear": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "StraightBrake_BR (SimpleLever)": {
+      "identifier": "IndependentBrake",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "StraightBrake_FR (SimpleLever)": {
+      "identifier": "IndependentBrake",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "DriversBlindRight_(A) ": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "DriversBlindRight_(B)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "SanderLHS_(A)": {
+      "identifier": "Sand",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 1,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Trail Sand",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Forward Sand",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "SanderLHS_(B)": {
+      "identifier": "Sand",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 1,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Trail Sand",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Forward Sand",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "MarkerLHS_(A)": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Red",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "White",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": -1,
+          "name": "Red"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 1,
+          "name": "White"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.5
+    },
+    "MarkerRHS_(A)": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Red",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "White",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": -1,
+          "name": "Red"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 1,
+          "name": "White"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.5
+    },
+    "MarkerLHS_(B)": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Red",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "White",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": -1,
+          "name": "Red"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 1,
+          "name": "White"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.5
+    },
+    "MarkerRHS_(B)": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Red",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "White",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": -1,
+          "name": "Red"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 1,
+          "name": "White"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.5
+    },
+    "BrakeTimingSwitch (SimpleLever)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 5,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.25,
+      "inputRange": 1,
+      "outputRange": 4,
+      "rotational": true,
+      "inputValue": 0.25,
+      "namedValues": [
+        {
+          "name": "Fitted Goods ",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Passenger",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Unfitted Goods",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Passenger",
+          "source": "Output",
+          "min": 2.5,
+          "max": 4.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.12,
+          "snapped": 0,
+          "output": 0,
+          "name": "Fitted Goods "
+        },
+        {
+          "index": 1,
+          "from": 0.13,
+          "to": 0.37,
+          "snapped": 0.25,
+          "output": 0.9999999403953552,
+          "name": "Passenger"
+        },
+        {
+          "index": 2,
+          "from": 0.38,
+          "to": 0.62,
+          "snapped": 0.5,
+          "output": 2,
+          "name": "Unfitted Goods"
+        },
+        {
+          "index": 3,
+          "from": 0.63,
+          "to": 0.87,
+          "snapped": 0.75,
+          "output": 3,
+          "name": "Passenger"
+        },
+        {
+          "index": 0,
+          "from": 0.88,
+          "to": 1,
+          "snapped": 0,
+          "output": 0,
+          "name": "Fitted Goods "
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.25
+    },
+    "CabChangeLever_F (Simple Lever)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.7191,
+          "output": 0.5,
+          "name": null
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "CabChangeLever_B (Simple Lever)": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.7108,
+          "output": 1,
+          "name": null
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "AWS_Isolation_F (Simple Lever)": {
+      "identifier": "SignallingSystems",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.7007,
+          "output": 0.5,
+          "name": null
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "AWS_Isolation_B (Simple Lever)": {
+      "identifier": "SignallingSystems",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.7108,
+          "output": 0.5,
+          "name": null
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "SimpleLever": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.7324,
+          "output": 1,
+          "name": null
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
+    },
+    "BlindFL (SimpleLever)": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 24,
+      "minInput": 0,
+      "maxInput": 23,
+      "defaultInput": 0,
+      "inputRange": 23,
+      "outputRange": 23,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Black",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "White",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Red",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Orange",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        },
+        {
+          "name": "A",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        },
+        {
+          "name": "B",
+          "source": "Output",
+          "min": 4.5,
+          "max": 5.5
+        },
+        {
+          "name": "C",
+          "source": "Output",
+          "min": 5.5,
+          "max": 6.5
+        },
+        {
+          "name": "D",
+          "source": "Output",
+          "min": 6.5,
+          "max": 7.5
+        },
+        {
+          "name": "E",
+          "source": "Output",
+          "min": 7.5,
+          "max": 8.5
+        },
+        {
+          "name": "F",
+          "source": "Output",
+          "min": 8.5,
+          "max": 9.5
+        },
+        {
+          "name": "G",
+          "source": "Output",
+          "min": 9.5,
+          "max": 10.5
+        },
+        {
+          "name": "H",
+          "source": "Output",
+          "min": 10.5,
+          "max": 11.5
+        },
+        {
+          "name": "J",
+          "source": "Output",
+          "min": 11.5,
+          "max": 12.5
+        },
+        {
+          "name": "K",
+          "source": "Output",
+          "min": 12.5,
+          "max": 13.5
+        },
+        {
+          "name": "1",
+          "source": "Output",
+          "min": 13.5,
+          "max": 14.5
+        },
+        {
+          "name": "2",
+          "source": "Output",
+          "min": 14.5,
+          "max": 15.5
+        },
+        {
+          "name": "3",
+          "source": "Output",
+          "min": 15.5,
+          "max": 16.5
+        },
+        {
+          "name": "4",
+          "source": "Output",
+          "min": 16.5,
+          "max": 17.5
+        },
+        {
+          "name": "5",
+          "source": "Output",
+          "min": 17.5,
+          "max": 18.5
+        },
+        {
+          "name": "6",
+          "source": "Output",
+          "min": 18.5,
+          "max": 19.5
+        },
+        {
+          "name": "7",
+          "source": "Output",
+          "min": 19.5,
+          "max": 20.5
+        },
+        {
+          "name": "8",
+          "source": "Output",
+          "min": 20.5,
+          "max": 21.5
+        },
+        {
+          "name": "9",
+          "source": "Output",
+          "min": 21.5,
+          "max": 22.5
+        },
+        {
+          "name": "0",
+          "source": "Output",
+          "min": 22.5,
+          "max": 23.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Black"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.5816,
+          "output": 1,
+          "name": "White"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "BlindFR (SimpleLever)": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 24,
+      "minInput": 0,
+      "maxInput": 23,
+      "defaultInput": 0,
+      "inputRange": 23,
+      "outputRange": 23,
+      "rotational": false,
+      "inputValue": 4,
+      "namedValues": [
+        {
+          "name": "Black",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "White",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Red",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Orange",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        },
+        {
+          "name": "A",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        },
+        {
+          "name": "B",
+          "source": "Output",
+          "min": 4.5,
+          "max": 5.5
+        },
+        {
+          "name": "C",
+          "source": "Output",
+          "min": 5.5,
+          "max": 6.5
+        },
+        {
+          "name": "D",
+          "source": "Output",
+          "min": 6.5,
+          "max": 7.5
+        },
+        {
+          "name": "E",
+          "source": "Output",
+          "min": 7.5,
+          "max": 8.5
+        },
+        {
+          "name": "F",
+          "source": "Output",
+          "min": 8.5,
+          "max": 9.5
+        },
+        {
+          "name": "G",
+          "source": "Output",
+          "min": 9.5,
+          "max": 10.5
+        },
+        {
+          "name": "H",
+          "source": "Output",
+          "min": 10.5,
+          "max": 11.5
+        },
+        {
+          "name": "J",
+          "source": "Output",
+          "min": 11.5,
+          "max": 12.5
+        },
+        {
+          "name": "K",
+          "source": "Output",
+          "min": 12.5,
+          "max": 13.5
+        },
+        {
+          "name": "1",
+          "source": "Output",
+          "min": 13.5,
+          "max": 14.5
+        },
+        {
+          "name": "2",
+          "source": "Output",
+          "min": 14.5,
+          "max": 15.5
+        },
+        {
+          "name": "3",
+          "source": "Output",
+          "min": 15.5,
+          "max": 16.5
+        },
+        {
+          "name": "4",
+          "source": "Output",
+          "min": 16.5,
+          "max": 17.5
+        },
+        {
+          "name": "5",
+          "source": "Output",
+          "min": 17.5,
+          "max": 18.5
+        },
+        {
+          "name": "6",
+          "source": "Output",
+          "min": 18.5,
+          "max": 19.5
+        },
+        {
+          "name": "7",
+          "source": "Output",
+          "min": 19.5,
+          "max": 20.5
+        },
+        {
+          "name": "8",
+          "source": "Output",
+          "min": 20.5,
+          "max": 21.5
+        },
+        {
+          "name": "9",
+          "source": "Output",
+          "min": 21.5,
+          "max": 22.5
+        },
+        {
+          "name": "0",
+          "source": "Output",
+          "min": 22.5,
+          "max": 23.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Black"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.5789,
+          "output": 1,
+          "name": "White"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 4
+    },
+    "BlindBL (SimpleLever)": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 24,
+      "minInput": 0,
+      "maxInput": 23,
+      "defaultInput": 0,
+      "inputRange": 23,
+      "outputRange": 23,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Black",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "White",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Red",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Orange",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        },
+        {
+          "name": "A",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        },
+        {
+          "name": "B",
+          "source": "Output",
+          "min": 4.5,
+          "max": 5.5
+        },
+        {
+          "name": "C",
+          "source": "Output",
+          "min": 5.5,
+          "max": 6.5
+        },
+        {
+          "name": "D",
+          "source": "Output",
+          "min": 6.5,
+          "max": 7.5
+        },
+        {
+          "name": "E",
+          "source": "Output",
+          "min": 7.5,
+          "max": 8.5
+        },
+        {
+          "name": "F",
+          "source": "Output",
+          "min": 8.5,
+          "max": 9.5
+        },
+        {
+          "name": "G",
+          "source": "Output",
+          "min": 9.5,
+          "max": 10.5
+        },
+        {
+          "name": "H",
+          "source": "Output",
+          "min": 10.5,
+          "max": 11.5
+        },
+        {
+          "name": "J",
+          "source": "Output",
+          "min": 11.5,
+          "max": 12.5
+        },
+        {
+          "name": "K",
+          "source": "Output",
+          "min": 12.5,
+          "max": 13.5
+        },
+        {
+          "name": "1",
+          "source": "Output",
+          "min": 13.5,
+          "max": 14.5
+        },
+        {
+          "name": "2",
+          "source": "Output",
+          "min": 14.5,
+          "max": 15.5
+        },
+        {
+          "name": "3",
+          "source": "Output",
+          "min": 15.5,
+          "max": 16.5
+        },
+        {
+          "name": "4",
+          "source": "Output",
+          "min": 16.5,
+          "max": 17.5
+        },
+        {
+          "name": "5",
+          "source": "Output",
+          "min": 17.5,
+          "max": 18.5
+        },
+        {
+          "name": "6",
+          "source": "Output",
+          "min": 18.5,
+          "max": 19.5
+        },
+        {
+          "name": "7",
+          "source": "Output",
+          "min": 19.5,
+          "max": 20.5
+        },
+        {
+          "name": "8",
+          "source": "Output",
+          "min": 20.5,
+          "max": 21.5
+        },
+        {
+          "name": "9",
+          "source": "Output",
+          "min": 21.5,
+          "max": 22.5
+        },
+        {
+          "name": "0",
+          "source": "Output",
+          "min": 22.5,
+          "max": 23.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Black"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.5908,
+          "output": 1,
+          "name": "White"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "BlindBR (SimpleLever)": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 24,
+      "minInput": 0,
+      "maxInput": 23,
+      "defaultInput": 0,
+      "inputRange": 23,
+      "outputRange": 23,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Black",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "White",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Red",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Orange",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        },
+        {
+          "name": "A",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        },
+        {
+          "name": "B",
+          "source": "Output",
+          "min": 4.5,
+          "max": 5.5
+        },
+        {
+          "name": "C",
+          "source": "Output",
+          "min": 5.5,
+          "max": 6.5
+        },
+        {
+          "name": "D",
+          "source": "Output",
+          "min": 6.5,
+          "max": 7.5
+        },
+        {
+          "name": "E",
+          "source": "Output",
+          "min": 7.5,
+          "max": 8.5
+        },
+        {
+          "name": "F",
+          "source": "Output",
+          "min": 8.5,
+          "max": 9.5
+        },
+        {
+          "name": "G",
+          "source": "Output",
+          "min": 9.5,
+          "max": 10.5
+        },
+        {
+          "name": "H",
+          "source": "Output",
+          "min": 10.5,
+          "max": 11.5
+        },
+        {
+          "name": "J",
+          "source": "Output",
+          "min": 11.5,
+          "max": 12.5
+        },
+        {
+          "name": "K",
+          "source": "Output",
+          "min": 12.5,
+          "max": 13.5
+        },
+        {
+          "name": "1",
+          "source": "Output",
+          "min": 13.5,
+          "max": 14.5
+        },
+        {
+          "name": "2",
+          "source": "Output",
+          "min": 14.5,
+          "max": 15.5
+        },
+        {
+          "name": "3",
+          "source": "Output",
+          "min": 15.5,
+          "max": 16.5
+        },
+        {
+          "name": "4",
+          "source": "Output",
+          "min": 16.5,
+          "max": 17.5
+        },
+        {
+          "name": "5",
+          "source": "Output",
+          "min": 17.5,
+          "max": 18.5
+        },
+        {
+          "name": "6",
+          "source": "Output",
+          "min": 18.5,
+          "max": 19.5
+        },
+        {
+          "name": "7",
+          "source": "Output",
+          "min": 19.5,
+          "max": 20.5
+        },
+        {
+          "name": "8",
+          "source": "Output",
+          "min": 20.5,
+          "max": 21.5
+        },
+        {
+          "name": "9",
+          "source": "Output",
+          "min": 21.5,
+          "max": 22.5
+        },
+        {
+          "name": "0",
+          "source": "Output",
+          "min": 22.5,
+          "max": 23.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Black"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.8175,
+          "output": 1,
+          "name": "White"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    }
+  }
+}
