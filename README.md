@@ -107,7 +107,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **DB BR 642** <sub>— DTG · [profile](releases/tsw-br-642-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-642-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **DB BR 766.2**  
 `TODO ◼️` **DB BR 767.2**  
-`TODO ◼️` **DB G6** <sub>— Train Sim Germany</sub>  
+`SOON 🟨` **DB G6** <sub>— Train Sim Germany · [profile](releases/tsw-g6-tsg-thejag.tswprofile) · [manual](profiles/documentation/tsw-g6-tsg-thejag.pdf)</sub>  
 `SOON 🟨` **ES 64 U2** <sub>— DTG · [profile](releases/tsw-es64u2-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-es64u2-dtg-thejag.pdf)</sub>  
 
 **🇦🇹 Austria**

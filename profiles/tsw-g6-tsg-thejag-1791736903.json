@@ -1,0 +1,437 @@
+{
+  "name": "TSW | G6 | TSG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_TSG_Vossloh_G6_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "LeftThrottle",
+      "description": "Fahr-/Bremsjoystick ThrottleHandleFront (Brake + 0 spring / Brake hold 0.15 / Locked 0.3 / Off 0.5 / Throttle - 0.7 / Throttle hold 0.85 / Throttle + 1 spring; one gate per set), inverted: Throttle + at the far end, Brake + nearest. Bands on the raw axis: Throttle + 0 ±0.08, Throttle hold 0.167 ±0.06, Throttle - 0.333 ±0.06, Off 0.5 ±0.09, Locked 0.68 ±0.07, Brake hold 0.833 ±0.06, Brake + 1 ±0.08",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "ThrottleHandleFront",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.15,
+              0.3,
+              0.5,
+              0.7,
+              0.85,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.08
+              },
+              {
+                "threshold": 0.833,
+                "threshold_tolerance": 0.06
+              },
+              {
+                "threshold": 0.68,
+                "threshold_tolerance": 0.07
+              },
+              {
+                "threshold": 0.5,
+                "threshold_tolerance": 0.09
+              },
+              {
+                "threshold": 0.333,
+                "threshold_tolerance": 0.06
+              },
+              {
+                "threshold": 0.167,
+                "threshold_tolerance": 0.06
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.08
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "Führerbremsventil TrainBrakeFront (Release 0.25 / Hold 0.5 / Apply 0.75, one gate per set; Quick release 0 and Emergency 1 are spring ends that never stored), plain: Release at the far end, Apply nearest: Release 0 ±0.2, Hold 0.5 ±0.2, Apply 1 ±0.2",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "TrainBrakeFront",
+          "input_value": {
+            "min": 0.25,
+            "max": 0.75,
+            "steps": [
+              0.25,
+              0.5,
+              0.75
+            ],
+            "step_thresholds": [
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.2
+              },
+              {
+                "threshold": 0.5,
+                "threshold_tolerance": 0.2
+              },
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "FlapLever",
+      "description": "Zusatzbremse LocoBrakeFront (Release 0.25 / Hold 0.5 / Apply 0.75, one gate per set; Release fast 0 and Apply fast 1 never stored), plain: Release at the far end, Apply nearest: Release 0 ±0.2, Hold 0.5 ±0.2, Apply 1 ±0.2",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "LocoBrakeFront",
+          "input_value": {
+            "min": 0.25,
+            "max": 0.75,
+            "steps": [
+              0.25,
+              0.5,
+              0.75
+            ],
+            "step_thresholds": [
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.2
+              },
+              {
+                "threshold": 0.5,
+                "threshold_tolerance": 0.2
+              },
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Battery key BatteryKey (MasterSwitch push button, Inserted 1 / Removed 0): PARK BRK up = key in",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "BatteryKey",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "BatteryKey",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "GearLever",
+      "description": "SiFa reset",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "Q"
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "description": "Sand (SanderSwitchF spring lever, On 1 / 0)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "SanderSwitchF",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "SanderSwitchF",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Horn high (HornSwitchF spring lever: Low -1 / rest 0.5 / High 1)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "HornSwitchF",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "HornSwitchF",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "PZB Frei (PZBReleaseFront spring lever)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZBReleaseFront",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PZBReleaseFront",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "PZB Wachsam (PZBAcknowledgeFront spring lever)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZBAcknowledgeFront",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PZBAcknowledgeFront",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "PZB Befehl 40 (PZBOverrideFront spring lever)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZBOverrideFront",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PZBOverrideFront",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "SiFa on / off (SifaOnOffKey push button, Activated 1 / Deactivated 0; it drives the SIFAOnOffSwitch under its cap). Lit = on. The loco loads with the SiFa off",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "SifaOnOffKey",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "SifaOnOffKey",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "PZB on / off (PZBOnOffKey push button, Activated 1 / Deactivated 0; it drives the PZBOnOffSwitch; PZBModeSwitch U / M / O stays in the cab). Lit = on. The loco loads with the PZB off",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZBOnOffKey",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "PZBOnOffKey",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Direction Reverse on / off: one press of ReverserFR (1 then 0) toggles CurrentDirectionSelected between -1 and 0",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "ReverserFR",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "ReverserFR",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Direction Forward on / off: one press of ReverserFF (1 then 0) toggles CurrentDirectionSelected between 1 and 0",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "ReverserFF",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "ReverserFF",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Lights | Off (HeadlightSwitch 0)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightSwitch",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Lights | Front (HeadlightSwitch 0.25)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightSwitch",
+            "value": 0.25,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Lights | Rear (HeadlightSwitch 0.125)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightSwitch",
+            "value": 0.125,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Lights | Shunting, both ends (HeadlightSwitch 0.875)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightSwitch",
+            "value": 0.875,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Lights | Automatic (HeadlightSwitch 1, follows the direction)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightSwitch",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}
