@@ -1,0 +1,157 @@
+{
+  "name": "tsw-br-194-dtg-thejag",
+  "title": "BR 194 · E 94",
+  "eyebrow": "Deutsche Bundesbahn · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | BR 194 | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "Linke Rheinstrecke: Mainz – Koblenz (1984) · Pfälzische Ludwigsbahn",
+  "colors": {
+    "navy": "#3a3d4d",
+    "blue": "#ec0016",
+    "red": "#ec0016",
+    "paper": "#f6f4f4"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-db-grey.png",
+      "alt": "Deutsche Bahn"
+    },
+    {
+      "file": "../../assets/logo-dtg-dbgrey.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4680420",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/br-194-dtg-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "schematicHeight": 540,
+  "controls": {
+    "speedbrake": {
+      "name": "Richtungsschalter",
+      "notches": [
+        "Forward",
+        "Off",
+        "Reverse"
+      ],
+      "start": 1
+    },
+    "leftThrottle": {
+      "name": "Fahrschalter",
+      "notches": [
+        "Wind up",
+        "Hold",
+        "Wind down"
+      ],
+      "start": 1
+    },
+    "rightThrottle": {
+      "name": "Führerbremsventil",
+      "notches": [
+        "Release",
+        "Neutral",
+        "Lap",
+        "Service",
+        "Emergency"
+      ],
+      "start": 3
+    },
+    "flap": {
+      "name": "Zusatzbremse",
+      "notches": [
+        "Release",
+        "Hold",
+        "Apply"
+      ],
+      "start": 1
+    },
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Whistle"
+    },
+    "gearLever": {
+      "name": "SiFa reset"
+    },
+    "autoBrk": {
+      "name": "Lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Front 3 half"
+        },
+        {
+          "short": "2",
+          "desc": "Front 3 full"
+        },
+        {
+          "short": "3",
+          "desc": "Front 3 + tail"
+        },
+        {
+          "short": "HI",
+          "desc": "Front + rear 3"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "PZB Frei",
+      "start": true
+    },
+    "eng2": {
+      "name": "PZB Wachsam",
+      "start": true
+    },
+    "leftAux": {
+      "name": "SiFa on / off"
+    },
+    "rightAux": {
+      "name": "PZB on / off"
+    },
+    "modeSwitch": {
+      "name": "Fahrstufe",
+      "left": "down",
+      "right": "up"
+    },
+    "roundAux": {
+      "name": "PZB Befehl 40"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Brake key + reverser lock",
+      "flat": "out",
+      "up": "in"
+    }
+  },
+  "setup": [
+    "Pantograph, Hauptschalter, compressor and battery in the cab",
+    "PARK BRK up: brake key in (the Führerbremsventil is locked without it), reverser lock held",
+    "SiFa and PZB on (aux squares; both load switched off), PZB mode in the cab",
+    "Richtungsschalter Off to Forward: it only moves at Fahrstufe 0",
+    "Lights to Front 3 full, or Front + rear for shunting",
+    "Zusatzbremse at Hold, Führerbremsventil at Service"
+  ],
+  "depart": [
+    "Check the signal and PZB, release the handbrake in the cab",
+    "Führerbremsventil to Release, then Neutral once the brakes are off; Zusatzbremse to Release",
+    "Mode switch right winds the tap changer up (Fahrstufe 0..18), left down; the left lever does the same in pulses",
+    "Acknowledge SiFa with the gear lever, PZB with the ENG switches",
+    "Brake: wind down to Fahrstufe 0, Führerbremsventil to Service; Emergency nearest you",
+    "Stop: Zusatzbremse to Apply; the reverser only moves at Fahrstufe 0"
+  ]
+}
