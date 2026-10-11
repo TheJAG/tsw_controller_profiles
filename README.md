@@ -96,7 +96,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **DB BR 406 ICE 3M** <sub>— DTG · [profile](releases/tsw-br-406-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-406-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 411 ICE-T** <sub>— DTG · [profile](releases/tsw-br-411-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-411-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 412 ICE 4** <sub>— DTG · [profile](releases/tsw-br-412-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-412-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **DB BR 422**  
+`SOON 🟨` **DB BR 422** <sub>— DTG · [profile](releases/tsw-br-422-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-422-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 423** <sub>— DTG · [profile](releases/tsw-br-423-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-423-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 425** <sub>— DTG · [profile](releases/tsw-br-425-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-425-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 430** <sub>— DTG · [profile](releases/tsw-br-430-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-430-dtg-thejag.pdf)</sub>  
