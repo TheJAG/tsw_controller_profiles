@@ -44,7 +44,7 @@ controls:{
  speedbrake:{name:'Richtungsschalter',notches:['Forward','Neutral','Off','Reverse'],start:2},
  leftThrottle:{name:'Fahrschalter',continuous:true,notches:['Max (Z)',null,null,null,'Min','Off'],start:5},
  rightThrottle:{name:'Führerbremsventil',notches:['Running','1A','1B','2','3','4','5','6','7','Full service','Emergency'],start:9},
- flap:{name:'AFB speed',continuous:true,notches:['200 km/h',null,null,null,'5','0'],start:5},
+ flap:{name:'AFB speed',continuous:true,notches:['200 km/h',null,null,null,'5 km/h','0 km/h'],start:5},
  leftThrottleButton:{name:'Sand'}, rightThrottleButton:{name:'Horn'}, gearLever:{name:'SiFa reset'},
  autoBrk:{name:'Lights',positions:[{short:'0',desc:'–'},{short:'BTV',desc:'Off'},{short:'LO',desc:'Signal lights'},{short:'2',desc:'Headlights reduced'},{short:'3',desc:'Headlights bright'},{short:'HI',desc:'Tail lights'}],start:1},
  eng1:{name:'PZB Frei',start:true}, eng2:{name:'PZB Wachsam',start:true},
