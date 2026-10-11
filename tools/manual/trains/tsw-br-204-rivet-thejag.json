@@ -1,0 +1,167 @@
+{
+  "name": "tsw-br-204-rivet-thejag",
+  "title": "BR 204",
+  "eyebrow": "Railion · Rivet Games · TCA Quadrant Airbus",
+  "profileName": "TSW | BR 204 | RIVET | TheJAG",
+  "developer": "Rivet Games",
+  "route": "Main-Spessart-Bahn: Aschaffenburg – Gemünden",
+  "colors": {
+    "navy": "#3a3d4d",
+    "blue": "#ec0016",
+    "red": "#ec0016",
+    "paper": "#f6f4f4"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-db-grey.png",
+      "alt": "Deutsche Bahn"
+    },
+    {
+      "file": "../../assets/logo-rivet-dbgrey.png",
+      "alt": "Rivet Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4679060",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/br-204-rivet-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "schematicHeight": 560,
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Forward",
+        "Engine only",
+        "Neutral",
+        "Reverse"
+      ],
+      "start": 2
+    },
+    "leftThrottle": {
+      "name": "Fahrschalter",
+      "notches": [
+        "6",
+        "5",
+        "4",
+        "3",
+        "2",
+        "1",
+        "LL"
+      ],
+      "start": 6
+    },
+    "rightThrottle": {
+      "name": "Führerbremsventil",
+      "continuous": true,
+      "notches": [
+        "Running",
+        "Off",
+        "Minimum",
+        null,
+        "Full service",
+        "Emergency"
+      ],
+      "start": 4
+    },
+    "flap": {
+      "name": "Zusatzbremse",
+      "continuous": true,
+      "notches": [
+        "Release",
+        null,
+        null,
+        null,
+        "Full"
+      ],
+      "start": 4
+    },
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Horn"
+    },
+    "gearLever": {
+      "name": "SiFa reset"
+    },
+    "autoBrk": {
+      "name": "Lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Markers"
+        },
+        {
+          "short": "2",
+          "desc": "Headlight"
+        },
+        {
+          "short": "3",
+          "desc": "Head + rear red"
+        },
+        {
+          "short": "HI",
+          "desc": "Shunting"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "PZB Frei",
+      "start": true
+    },
+    "eng2": {
+      "name": "PZB Wachsam",
+      "start": true
+    },
+    "leftAux": {
+      "name": "SiFa on / off"
+    },
+    "rightAux": {
+      "name": "PZB on / off"
+    },
+    "modeSwitch": {
+      "name": "Wiper",
+      "left": "off",
+      "right": "on"
+    },
+    "roundAux": {
+      "name": "PZB Befehl 40"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Brake key + master key",
+      "flat": "out",
+      "up": "in"
+    }
+  },
+  "setup": [
+    "Battery, engine start and the gear selector (Shunting / Fast) in the cab",
+    "PARK BRK up: brake key and master key in (the Zb3 valve is locked without it)",
+    "SiFa and PZB on (aux squares; both load off), PZB mode in the cab",
+    "Reverser to Forward: the Fahrschalter only moves in Forward",
+    "Lights to Headlight, or Shunting (white both ends)",
+    "Zusatzbremse at Full, Führerbremsventil at Full service"
+  ],
+  "depart": [
+    "Check the signal and PZB, release the handbrake in the cab",
+    "Führerbremsventil to Running (far end), then Off once released",
+    "Zusatzbremse to Release",
+    "Fahrschalter: push one Fahrstufe at a time, LL to 6",
+    "Acknowledge SiFa with the gear lever, PZB with the ENG switches",
+    "Brake: Fahrschalter to LL, Führerbremsventil into the service zone; Emergency nearest you"
+  ]
+}

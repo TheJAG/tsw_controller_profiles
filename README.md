@@ -86,7 +86,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **DB BR 187** <sub>— Skyhook Games · [profile](releases/tsw-br-187-skyhook-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-187-skyhook-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 193 Vectron** <sub>— DTG · [profile](releases/tsw-br-193-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-193-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 194 (E 94)** <sub>— DTG · [profile](releases/tsw-br-194-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-194-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **DB BR 204**  
+`SOON 🟨` **DB BR 204** <sub>— Rivet · [profile](releases/tsw-br-204-rivet-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-204-rivet-thejag.pdf)</sub>  
 `TODO ◼️` **DB BR 218** <sub>— Train Sim Germany</sub>  
 `SOON 🟨` **DB BR 294** <sub>— DTG · [profile](releases/tsw-br-294-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-294-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **DB BR 363** <sub>— DTG · [profile](releases/tsw-br-363-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-br-363-dtg-thejag.pdf)</sub>  
