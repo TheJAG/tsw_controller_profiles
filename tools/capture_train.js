@@ -17,6 +17,8 @@ const LEVER_RE=/Lever|Handle|DimmerSwitch|ReversiblePushButton|RotarySwitch/;
 const DRIVE_ID=/^(Throttle|AutomaticBrake|IndependentBrake|DynamicBrake|Reverser|CruiseControlAdjust)$/;
 const isLever=c=>LEVER_RE.test(c.objectClass||'')||(DRIVE_ID.test(c.identifier||'')&&!/PushButton|Door/.test(c.objectClass||''));
 const r4=v=>Math.round(v*1e4)/1e4;
+// IsVehicleMoving is a bool on most stock but a float on some (DTG Class 52: 0.0002..0.0008 standing still, 2026-10-12): below 0.05 counts as stationary.
+const isMoving=v=>v===true||(typeof v==='number'&&v>=0.05)||(typeof v==='string'&&v==='true');
 
 // Cab prefix pairs: names like L_Reverser / S_Reverser or F_x / B_x. Returns {style:'prefix', pair:[a,b], shared:n} or null.
 function detectCabs(controls){
@@ -54,7 +56,7 @@ async function sweep(c,info){
   let lo=Math.min(mi,ma), hi=Math.max(mi,ma); if(opt.range){lo=Math.max(lo,opt.range[0]);hi=Math.min(hi,opt.range[1]);}
   let n=0, aborted=false;
   for(let v=lo;v<=hi+0.00001;v=r4(v+opt.step)){ await setv(c.name,v); await sleep(50);
-    if(++n%5===0&&await get('.Function.IsVehicleMoving')){console.log('  '+c.name+': vehicle started moving at '+v+', sweep stopped');aborted=true;break;}
+    if(++n%5===0&&isMoving(await get('.Function.IsVehicleMoving'))){console.log('  '+c.name+': vehicle started moving at '+v+', sweep stopped');aborted=true;break;}
     const idx=await get(np(c.name)+'.Function.GetCurrentNotchIndex');
     if(idx!==last){const snapped=await get(np(c.name)+'.InputValue'); const out=await get(np(c.name)+'.Function.GetCurrentOutputValue');
       if(rows.length) rows[rows.length-1].to=r4(v-opt.step);
@@ -82,7 +84,7 @@ async function sweep(c,info){
   const prev=opt.levers&&fs.existsSync(file)?JSON.parse(fs.readFileSync(file,'utf8')):null;
   const leverCtrls=dump.controls.filter(c=>c.inputValue!==undefined&&isLever(c));
   for(const c of leverCtrls){ out.levers[c.name]=await leverInfo(c); const p=prev&&prev.levers&&prev.levers[c.name]; if(p&&p.swept){ out.levers[c.name].notches=p.notches; out.levers[c.name].swept=true; out.levers[c.name].fromPrevious=true; } }
-  const moving=await get('.Function.IsVehicleMoving');
+  const moving=isMoving(await get('.Function.IsVehicleMoving'));
   if(opt.sweep&&moving){console.log('ABORT sweep: vehicle is moving. Dump written without sweeps.');opt.sweep=false;}
   if(opt.sweep){
     const groups={}; for(const c of leverCtrls){const g=cabOf(c.name,cab)||'';(groups[g]=groups[g]||[]).push(c);}
@@ -106,7 +108,7 @@ async function sweep(c,info){
       const isRev=c=>c===reverser, isMode=c=>/ModeSelector|MainSwitch|Hoofdschakelaar|DriveMode|OperatingMode/i.test(c.name);
       const modeSel=ctrls.find(isMode);
       const others=ctrls.filter(c=>!isRev(c)&&!isThrottle(c)&&!enablers.includes(c));
-      const moving=async()=>{ if(await get(".Function.IsVehicleMoving")){console.log("  vehicle moving, sweep stopped");return true;} return false; };
+      const moving=async()=>{ if(isMoving(await get(".Function.IsVehicleMoving"))){console.log("  vehicle moving, sweep stopped");return true;} return false; };
       for(const c of others){ if(!want(c)) continue; if(await moving()) break; await sweep(c,out.levers[c.name]); }
       let modeOrig=null, drive=null;
       if(modeSel){ modeOrig=await get(np(modeSel.name)+".InputValue"); const l=out.levers[modeSel.name];
