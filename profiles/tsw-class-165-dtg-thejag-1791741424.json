@@ -1,0 +1,428 @@
+{
+  "name": "TSW | Class 165 | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_GWR_Class165_C"
+    },
+    {
+      "class_name": "RVM_GWR_Class165_DMCO_C"
+    },
+    {
+      "class_name": "RVM_GWR_Class165_DMSL_C"
+    },
+    {
+      "class_name": "RVM_GWR_Class165_MSO_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser (Reverse -1 / Neutral 0 / Forward 1 / Off 2, even steps inside the zones), inverted as the 171: Off at the far end",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser (Irregular Lever)",
+          "input_value": {
+            "min": -1,
+            "max": 2,
+            "steps": [
+              -1,
+              0,
+              1,
+              2
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Power / brake handle ThrottleAndBrake (Full service -0.75 / B2 -0.5 / B1 -0.25 / Off 0 / P1..P7 at 0.14 k; Emergency -1 is left out on purpose). Plain, as the tested Class 171: Full service at the far end, P7 nearest; the eleven 171 bands (centred on the TCA detents)",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "ThrottleAndBrake (Irregular Lever)",
+          "input_value": {
+            "min": -0.75,
+            "max": 1,
+            "steps": [
+              -0.75,
+              -0.5,
+              -0.25,
+              0,
+              0.14,
+              0.28,
+              0.42,
+              0.56,
+              0.7,
+              0.84,
+              1
+            ],
+            "invert": false,
+            "step_thresholds": [
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.1,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.2,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.31,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.44,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.535,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.63,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.724,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.84,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.92,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.04
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Master key (MasterKey toggle button, Unlocked 1 / Locked 0): PARK BRK up = key in",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "MasterKey (Toggle Button)",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "MasterKey (Toggle Button)",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "GearLever",
+      "description": "AWS reset (AWS_Reset push button, held)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "AWS_Reset (Push Button)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "AWS_Reset (Push Button)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Engine start",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "EngineStart (PushButton)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "EngineStart (PushButton)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "Horn | High (WarningHorn lever 1, rest 0)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "WarningHorn (IrregularLever)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "WarningHorn (IrregularLever)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "Horn | Low (WarningHorn lever -1, rest 0)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "WarningHorn (IrregularLever)",
+          "value": -1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "WarningHorn (IrregularLever)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "TPWS / AWS isolation (TPWS_Isolate toggle button: Isolated 0 / Normal 1). Lit = isolated",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "TPWS_Isolate (Toggle Button)",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "TPWS_Isolate (Toggle Button)",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "DSD (vigilance) isolation (DSD_Isolate toggle button: Isolated 0 / Normal 1). Lit = isolated",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "DSD_Isolate (Toggle Button)",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "DSD_Isolate (Toggle Button)",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "TPWS / AWS isolation (TPWS_Isolate toggle button: Isolated 0 / Normal 1). Lit = isolated",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "TPWS_Isolate (Toggle Button)",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "TPWS_Isolate (Toggle Button)",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "DSD (vigilance) isolation (DSD_Isolate toggle button: Isolated 0 / Normal 1). Lit = isolated",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "DSD_Isolate (Toggle Button)",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "DSD_Isolate (Toggle Button)",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "Guard buzzer (signal bell)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "GuardsBuzzer (Push Button)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "GuardsBuzzer (Push Button)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wipers one notch slower (WiperControl Off 0 / Min 0.2 / 0.4 / 0.6 / 0.8 / Max 1)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "WiperControl (Simple Lever)",
+          "value": -0.2,
+          "relative": true,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wipers one notch faster",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "WiperControl (Simple Lever)",
+          "value": 0.2,
+          "relative": true,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Headlights | Off",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "HeadlightSwitch (Irregular Lever)",
+          "value": -1,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Headlights | Day",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "HeadlightSwitch (Irregular Lever)",
+          "value": -0.25,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Headlights | Markers",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "HeadlightSwitch (Irregular Lever)",
+          "value": -0.75,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Headlights | Night",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "HeadlightSwitch (Irregular Lever)",
+          "value": 0.75,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Headlights | Tail",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "HeadlightSwitch (Irregular Lever)",
+          "value": -0.5,
+          "hold": false
+        }
+      }
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}
