@@ -1,0 +1,539 @@
+{
+  "name": "TSW | Class 31 | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_DSN_BR_Class31-1fX_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser (Off 0 / Reverse 0.2468 / Engine only 0.569 / Forward 0.9243), inverted: Forward at the far end, Off nearest. It only leaves Forward with the power controller at Off",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser_F (IrregularLever)",
+          "input_value": {
+            "min": 0,
+            "max": 0.9243,
+            "steps": [
+              0,
+              0.2468,
+              0.569,
+              0.9243
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Driver's brake valve (Running 0.1 / 1st application 0.25 / Service continuous 0.3..0.75 / Full service 0.8 / Emergency 0.9; Release and Shutdown do not store). Plain: Running at the far end, Emergency nearest; 1st application on the 0.31 detent, Full service on the 0.84 FLX detent",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "DriversBrake_F (IrregularLever)",
+          "input_value": {
+            "min": 0.1,
+            "max": 0.9,
+            "steps": [
+              0.1,
+              0.25,
+              null,
+              0.8,
+              0.9
+            ],
+            "step_thresholds": [
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.045
+              },
+              {
+                "threshold": 0.31,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.36,
+                "threshold_end": 0.78,
+                "threshold_tolerance": 0
+              },
+              {
+                "threshold": 0.84,
+                "threshold_tolerance": 0.045
+              },
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.04
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "Power controller (Off 0 / 1 0.1 / 2 0.2 / 3 0.3 / 4 0.4, one gate per set / continuous 0.41..0.99 / Full 1). Plain: Off at the far end, full power nearest; Off raw 0, notches 1-4 at 0.12 / 0.22 / 0.31 (detent) / 0.40, continuous zone 0.46..0.955 (the 0.44 soft stop sits in the gap), Full 1",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Throttle_F (IrregularLever)",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.1,
+              0.2,
+              0.3,
+              0.4,
+              null,
+              1
+            ],
+            "step_thresholds": [
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.045
+              },
+              {
+                "threshold": 0.12,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.22,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.31,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.4,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.46,
+                "threshold_end": 0.955,
+                "threshold_tolerance": 0
+              },
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.04
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "FlapLever",
+      "description": "Straight air (loco) brake, continuous 0..1, plain: released at the far end, full nearest",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "StraightBrake_F (SimpleLever)",
+          "input_value": {
+            "min": 0,
+            "max": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Master key switch (lever, On 0.84) and cab change lever (the brake key, 0.71) in / out: the handles only store with both in",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MasterKeySwitch_F (Lever)",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "MasterKeySwitch_F (Lever)",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CabChangeLever_F (Simple Lever)",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "CabChangeLever_F (Simple Lever)",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "GearLever",
+      "description": "AWS reset",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "Q"
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "description": "Sand",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Sander_(A)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Sander_(A)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Engine start",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "EngineStart_F (PushButton)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "EngineStart_F (PushButton)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "Horn | High",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Horn_FL (IrregularLever)",
+          "value": -1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn_FL (IrregularLever)",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "Horn | Low",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Horn_FL (IrregularLever)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn_FL (IrregularLever)",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Handbrake | Apply (front)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HandbrakeFront (Component)",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "HandbrakeFront (Component)",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Handbrake | Release (front)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HandbrakeFront (Component)",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "HandbrakeFront (Component)",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "Engine stop",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "EngineStop_F (PushButton)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "EngineStop_F (PushButton)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "AWS isolation (lit = Isolated 0 / unlit = Unisolated)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "AWS_Isolation_F (Simple Lever)",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "AWS_Isolation_F (Simple Lever)",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "DSD circuit breaker (lit = on)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "DSDCircuitBreaker",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "DSDCircuitBreaker",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wipers one notch back (Run > Stop > Park)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Wiper_FL (IrregularLever)",
+            "value": -0.34,
+            "relative": true,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wipers one notch on (Park > Stop > Run)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Wiper_FL (IrregularLever)",
+            "value": 0.34,
+            "relative": true,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Lights | All off",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "RouteIndicatorLights (A)",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TailLightLeft_A",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TailLightRight_A",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Lights | Route indicator (marker) lights",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "RouteIndicatorLights (A)",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TailLightLeft_A",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TailLightRight_A",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Lights | Tail lights only",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "RouteIndicatorLights (A)",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TailLightLeft_A",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TailLightRight_A",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Lights | Marker + tail lights",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "RouteIndicatorLights (A)",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TailLightLeft_A",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TailLightRight_A",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}

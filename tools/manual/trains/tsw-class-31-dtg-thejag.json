@@ -1,0 +1,169 @@
+{
+  "name": "tsw-class-31-dtg-thejag",
+  "title": "Class 31",
+  "eyebrow": "British Rail · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | Class 31 | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "Tees Valley Line: Darlington – Saltburn",
+  "colors": {
+    "navy": "#223261",
+    "blue": "#4a66a8",
+    "paper": "#f3f5f9"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-britishrail-navy.svg",
+      "alt": "British Rail"
+    },
+    {
+      "file": "../../assets/logo-dtg-navy.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4678980",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/class-31-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Forward",
+        "Engine only",
+        "Reverse",
+        "Off"
+      ],
+      "start": 1
+    },
+    "leftThrottle": {
+      "name": "Train brake",
+      "continuous": true,
+      "notches": [
+        "Running",
+        "1st application",
+        null,
+        null,
+        "Full service",
+        "Emergency"
+      ],
+      "start": 4
+    },
+    "rightThrottle": {
+      "name": "Power controller",
+      "continuous": true,
+      "notches": [
+        "Off",
+        "1",
+        "2",
+        "3",
+        "4",
+        null,
+        null,
+        null,
+        "Full"
+      ],
+      "start": 0
+    },
+    "flap": {
+      "name": "Loco brake",
+      "continuous": true,
+      "notches": [
+        "Release",
+        null,
+        null,
+        null,
+        "Full"
+      ],
+      "start": 4
+    },
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Engine start"
+    },
+    "gearLever": {
+      "name": "AWS reset"
+    },
+    "autoBrk": {
+      "name": "Lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "All off"
+        },
+        {
+          "short": "BTV",
+          "desc": "Markers"
+        },
+        {
+          "short": "LO",
+          "desc": "Tail only"
+        },
+        {
+          "short": "2",
+          "desc": "Marker + tail"
+        },
+        {
+          "short": "3",
+          "desc": "–"
+        },
+        {
+          "short": "HI",
+          "desc": "–"
+        }
+      ],
+      "start": 0
+    },
+    "eng1": {
+      "name": "Horn high",
+      "start": true
+    },
+    "eng2": {
+      "name": "Horn low",
+      "start": true
+    },
+    "leftAux": {
+      "name": "AWS isolation"
+    },
+    "rightAux": {
+      "name": "DSD breaker"
+    },
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "back",
+      "right": "on"
+    },
+    "roundAux": {
+      "name": "Engine stop"
+    },
+    "rudTrim": {
+      "name": "Handbrake on / off"
+    },
+    "parkBrk": {
+      "name": "Master key + brake key",
+      "flat": "out",
+      "up": "in"
+    }
+  },
+  "setup": [
+    "Master key and brake key in (PARK BRK up), battery on",
+    "Reverser to Engine only, start the engine (right throttle button)",
+    "AWS isolation light out, DSD breaker on",
+    "Marker lights on (AUTO BRK)",
+    "Release the handbrake (RUD TRIM right)",
+    "Train brake to Full service until the pipe is charged"
+  ],
+  "depart": [
+    "Check the signal",
+    "Reverser to Forward",
+    "Loco brake to Release (flap lever away)",
+    "Train brake to Running, wait for the pipe to charge",
+    "Power controller notch by notch; the TCA walks one gate per send",
+    "Acknowledge AWS with the gear lever",
+    "Power controller to Off before moving the reverser back"
+  ]
+}
