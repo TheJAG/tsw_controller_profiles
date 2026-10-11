@@ -1,0 +1,469 @@
+{
+  "name": "TSW | Class 101 | JT | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_JT_BR_Class101_DMBS_C"
+    },
+    {
+      "class_name": "RVM_JT_BR_Class101_DMCL_C"
+    },
+    {
+      "class_name": "RVM_JT_BR_Class101_TSL_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser (Off 0 / Forward 0.5 / Reverse 1; no Neutral, Off is the middle state), plain: Off at the far end, Forward in the middle, Reverse nearest",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.5,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Throttle (Idling 0 / 1 0.25 / 2 0.5 / 3 0.75 / Full 1), plain as the Class 153: Idling at the far end, Full nearest",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Throttle",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "Vacuum brake DriversBrakeValve (Released 0 / release zone to 0.47 / Lap 0.5 / apply zone 0.55..1 / full application 1), inverted as the Class 153 brake: full application at the far end, Released nearest. Released raw 1 ±0.08, release zone 0.9..0.58, Lap 0.5 ±0.06, apply zone 0.42..0.08, full 0 ±0.06",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "DriversBrakeValve",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              null,
+              0.5,
+              null,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.08
+              },
+              {
+                "threshold": 0.9,
+                "threshold_end": 0.58
+              },
+              {
+                "threshold": 0.5,
+                "threshold_tolerance": 0.06
+              },
+              {
+                "threshold": 0.42,
+                "threshold_end": 0.08
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.06
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "FlapLever",
+      "description": "Gear selector GearSelector (1st 0 / 2nd 0.25 / 3rd 0.5 / 4th 0.75 / Neutral 1; it only moves with both keys in, the engines running and the reverser in Forward), inverted: Neutral at the far end, then 4th, 3rd, 2nd, 1st nearest",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "GearSelector",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Main switch MainSwitch (MasterSwitch push button, On 1 / Off 0) and AWS change-end key AWS_ChangeEnd (lever, On 1 / Off 0): PARK BRK up = both in",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MainSwitch",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "MainSwitch",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "AWS_ChangeEnd",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "AWS_ChangeEnd",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "GearLever",
+      "description": "AWS reset (AWS_ResetButton push button, held)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "AWS_ResetButton",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "AWS_ResetButton",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Engine start, front engine (EngineStart_Front_Int push button, held)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "EngineStart_Front_Int",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "EngineStart_Front_Int",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "Horn | High (Horn spring lever 1, rest 0.5)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Horn",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "Horn | Low (Horn spring lever 0, rest 0.5)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Horn",
+          "value": 0,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "AWS isolation (AWS_IsolationLever: Isolated 0 / Unisolated 1). Lit = isolated",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "AWS_IsolationLever",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "AWS_IsolationLever",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "Deadman (DSD) isolation (DeadmansIsolation lever: Isolated 0 / Unisolated 1). Lit = isolated",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "DeadmansIsolation",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "DeadmansIsolation",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "Guard buzzer (GuardBuzzer push button)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "GuardBuzzer",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "GuardBuzzer",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wipers stop (Wiper_L lever: Stop 0 / Run 0.5 / Park 1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Wiper_L",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wipers run (Wiper_L 0.5)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Wiper_L",
+            "value": 0.5,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Marker lights | Off (MarkerLight_L / _R: Red 0 / Off 0.5 / White 1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MarkerLight_L",
+            "value": 0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MarkerLight_R",
+            "value": 0.5,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Marker lights | White both",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MarkerLight_L",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MarkerLight_R",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Marker lights | Red both (tail)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MarkerLight_L",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MarkerLight_R",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Marker lights | White left, red right",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MarkerLight_L",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MarkerLight_R",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Marker lights | Red left, white right",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MarkerLight_L",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MarkerLight_R",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}

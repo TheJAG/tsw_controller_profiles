@@ -1,0 +1,158 @@
+{
+  "name": "tsw-class-101-jt-thejag",
+  "title": "Class 101",
+  "eyebrow": "British Rail · Just Trains · TCA Quadrant Airbus",
+  "profileName": "TSW | Class 101 | JT | TheJAG",
+  "developer": "Just Trains",
+  "route": "West Coast Main Line: Preston – Carlisle",
+  "colors": {
+    "navy": "#223261",
+    "blue": "#4a66a8",
+    "paper": "#f3f5f9"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-britishrail-navy.svg",
+      "alt": "British Rail"
+    },
+    {
+      "file": "../../assets/logo-justtrains-navy.png",
+      "alt": "Just Trains"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4680540",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/class-101-jt-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Off",
+        "Forward",
+        "Reverse"
+      ],
+      "start": 0
+    },
+    "leftThrottle": {
+      "name": "Throttle",
+      "notches": [
+        "Idle",
+        "1",
+        "2",
+        "3",
+        "Full"
+      ],
+      "start": 0
+    },
+    "rightThrottle": {
+      "name": "Vacuum brake",
+      "continuous": true,
+      "notches": [
+        "Apply",
+        null,
+        "Lap",
+        null,
+        "Release"
+      ],
+      "start": 2
+    },
+    "flap": {
+      "name": "Gear selector",
+      "notches": [
+        "Neutral",
+        "4th",
+        "3rd",
+        "2nd",
+        "1st"
+      ],
+      "start": 0
+    },
+    "leftThrottleButton": null,
+    "rightThrottleButton": {
+      "name": "Engine start"
+    },
+    "gearLever": {
+      "name": "AWS reset"
+    },
+    "autoBrk": {
+      "name": "Marker lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "White"
+        },
+        {
+          "short": "2",
+          "desc": "Red (tail)"
+        },
+        {
+          "short": "3",
+          "desc": "White L, red R"
+        },
+        {
+          "short": "HI",
+          "desc": "Red L, white R"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Horn high",
+      "start": true
+    },
+    "eng2": {
+      "name": "Horn low",
+      "start": true
+    },
+    "leftAux": {
+      "name": "AWS isolation"
+    },
+    "rightAux": {
+      "name": "Deadman isolation"
+    },
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "stop",
+      "right": "run"
+    },
+    "roundAux": {
+      "name": "Guard buzzer"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Main switch + AWS key",
+      "flat": "out",
+      "up": "in"
+    }
+  },
+  "setup": [
+    "PARK BRK up: main switch on and AWS change-end key in",
+    "Start the engines (right throttle button for the front engine; the rear engine button is in the cab)",
+    "Reverser to Forward; the gear selector only moves then",
+    "Check the AWS and deadman isolation lights are out",
+    "Marker lights to White",
+    "Open doors (RUD TRIM)"
+  ],
+  "depart": [
+    "Close doors, wait for the guard buzzer (round aux)",
+    "Check the signal",
+    "Gear selector to 1st (nearest), vacuum brake to Released",
+    "Throttle up to Full; change up through 2nd, 3rd and 4th with the throttle closed",
+    "Acknowledge AWS with the gear lever",
+    "Brake: throttle to Idling, gear to Neutral, vacuum brake into the apply zone; Lap holds the application"
+  ]
+}
