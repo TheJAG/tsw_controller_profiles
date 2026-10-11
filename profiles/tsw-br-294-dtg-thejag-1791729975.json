@@ -1,0 +1,629 @@
+{
+  "name": "TSW | BR 294 | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_DLG_DB_BR294_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser through ReverserProxy (Reverse 0 / Neutral 0.5 / Forward 1), inverted: Forward at the far end",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "ReverserProxy",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.5,
+              1
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Fahr-/Bremsschalter PBC_L, incremental: Apply brake -1 (spring) / Hold brake -0.5 / Release brake, decrease power 0 / Hold power 0.5 / Increase power 1 (spring). Push the TCA to the far end to raise power, back one band to hold it; pull past the centre to brake the same way (which brake the brake side works on is set with BrakeSelection in the cab). Inverted: Increase raw 0 ±0.06, Hold power 0.25 ±0.12, Release / decrease 0.5 ±0.1, Hold brake 0.75 ±0.12, Apply brake 1 ±0.06",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "PBC_L",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "steps": [
+              -1,
+              -0.5,
+              0,
+              0.5,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.06
+              },
+              {
+                "threshold": 0.75,
+                "threshold_tolerance": 0.12
+              },
+              {
+                "threshold": 0.5,
+                "threshold_tolerance": 0.1
+              },
+              {
+                "threshold": 0.25,
+                "threshold_tolerance": 0.12
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.06
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "Führerbremsventil TrainBrake, self-lapping (Release 0 / Hold 0.5 / Apply 1; one gate per set), plain: Release at the far end, Apply nearest: Release 0 ±0.2, Hold 0.5 ±0.2, Apply 1 ±0.2",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "TrainBrake",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.5,
+              1
+            ],
+            "step_thresholds": [
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.2
+              },
+              {
+                "threshold": 0.5,
+                "threshold_tolerance": 0.2
+              },
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Desk take-over (PanelTakeOver_L, MasterSwitch push button): pressed when PARK BRK goes up",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "PanelTakeOver_L",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "PanelTakeOver_L",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "GearLever",
+      "description": "SiFa reset",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "Q"
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "description": "Sand (Sand_L push button)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Sand_L",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Sand_L",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Horn (OverchargeBrakeHorn_L spring lever: Horn 1, rest 0.5, Overcharge 0)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "OverchargeBrakeHorn_L",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "OverchargeBrakeHorn_L",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "PZB Frei (PZB_Release_L spring lever)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZB_Release_L",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PZB_Release_L",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "PZB Wachsam (PZB_Acknowledge_L spring lever)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZB_Acknowledge_L",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PZB_Acknowledge_L",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "PZB Befehl 40 (PZB_Override_L spring lever)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZB_Override_L",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PZB_Override_L",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "SiFa fuse (Fuse_Sifa push button, On 1 / Off 0). Lit = on",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Fuse_Sifa",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "Fuse_Sifa",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "PZB breaker (PZB_Breaker push button, On 1 / Off 0). Lit = on",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZB_Breaker",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "PZB_Breaker",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wiper off (WiperValve_FL)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "WiperValve_FL",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wiper on (WiperValve_FL)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "WiperValve_FL",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Lights | Off",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_FC",
+            "value": 0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_FL",
+            "value": 0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_FR",
+            "value": 0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_BC",
+            "value": 0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_BL",
+            "value": 0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_BR",
+            "value": 0.5,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Lights | Front: two headlights",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_FC",
+            "value": 0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_FL",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_FR",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_BC",
+            "value": 0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_BL",
+            "value": 0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_BR",
+            "value": 0.5,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Lights | Front: three headlights",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_FC",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_FL",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_FR",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_BC",
+            "value": 0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_BL",
+            "value": 0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_BR",
+            "value": 0.5,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Lights | Front three headlights, rear tail lights",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_FC",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_FL",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_FR",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_BC",
+            "value": 0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_BL",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_BR",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Lights | Front and rear: three headlights each (shunting)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_FC",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_FL",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_FR",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_BC",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_BL",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlight_BR",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}
