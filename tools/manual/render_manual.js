@@ -7,6 +7,10 @@ const fs = require('fs'), path = require('path'), cp = require('child_process');
 const dataPath = process.argv[2];
 if (!dataPath) { console.error('usage: node tools/manual/render_manual.js tools/manual/trains/<train>.json [outdir]'); process.exit(1); }
 const D = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+// Side-view drawings that live outside the data file (tools/manual/diagrams.json, keyed by the data file's name), so a rerun of a
+// tools/mk script, which rewrites the data file, does not drop them. A diagram key inside the data file wins.
+const diagTable = path.join(__dirname, 'diagrams.json');
+if (!D.diagram && fs.existsSync(diagTable)) { const tbl = JSON.parse(fs.readFileSync(diagTable, 'utf8')); if (tbl[D.name]) D.diagram = tbl[D.name]; }
 const dataDir = path.dirname(path.resolve(dataPath));
 const repoRoot = path.resolve(__dirname, '..', '..');
 const outDir = path.resolve(process.argv[3] || path.join(repoRoot, 'profiles', 'documentation'));
