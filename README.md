@@ -16,7 +16,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **BR Class 37** <sub>— DTG · [profile](releases/tsw-class-37-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-37-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 40** <sub>— Athena · [profile](releases/tsw-class-40-athena-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-40-athena-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 43 HST** <sub>— DTG · [profile](releases/tsw-class-43-hst-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-43-hst-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **BR Class 45**  
+`SOON 🟨` **BR Class 45** <sub>— DTG · [profile](releases/tsw-class-45-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-45-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 47** <sub>— Athena · [profile](releases/tsw-class-47-athena-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-47-athena-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 52**  
 `SOON 🟨` **BR Class 66** <sub>— DTG · [profile](releases/tsw-class-66-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-66-dtg-thejag.pdf)</sub>  
