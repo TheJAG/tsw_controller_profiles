@@ -41,7 +41,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **BR Class 350** <sub>— DTG · [profile](releases/tsw-class-350-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-350-dtg-thejag.pdf)</sub>  
 `DONE ✅` **BR Class 375** <sub>— Firefly · [profile](releases/tsw-class-375-firefly-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-375-firefly-thejag.pdf)</sub>  
 `DONE ✅` **BR Class 377** <sub>— DTG · [profile](releases/tsw-class-377-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-377-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **BR Class 378**  
+`SOON 🟨` **BR Class 378** <sub>— DTG · [profile](releases/tsw-class-378-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-378-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BR Class 380**  
 `TODO ◼️` **BR Class 385**  
 `SOON 🟨` **BR Class 387** <sub>— DTG · [profile](releases/tsw-class-387-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-387-dtg-thejag.pdf)</sub>  
