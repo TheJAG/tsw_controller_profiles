@@ -19,8 +19,8 @@ p.controls=[
  {name:'RightThrottleButton',description:'Pantograph up + main circuit breaker close (press again once the pan is up)',assignments:[{type:'momentary',threshold:0.9,action_activate:{controls:'PanUp_F',value:1,hold:true},action_deactivate:{controls:'PanUp_F',value:0,hold:false}},{type:'momentary',threshold:0.9,action_activate:{controls:'MainCircuitBreaker_F',value:1,hold:true},action_deactivate:{controls:'MainCircuitBreaker_F',value:0.5,hold:false}}]},
  mom('LeftEngineOn','Horn | High','Horn_F',1,0.5),
  mom('RightEngineOn','Horn | Low','Horn_F',0,0.5),
- mom('RudderTrimLeft','Parking brake | On','ParkingBrakeOn_F',1,0),
- mom('RudderTrimRight','Parking brake | Off','ParkingBrakeOff_F',1,0),
+ key('RudderTrimLeft','Doors | Left','y'),
+ key('RudderTrimRight','Doors | Right','u'),
  tog('RoundAuxButton','DRA (lit = Set / unlit = Reset)','DRA_F',1,0),
  tog('LeftAuxButton','AWS isolation (lit = Isolated / unlit = Normal)','ISO_AWS_F',1,0),
  tog('RightAuxButton','DSD isolation (lit = Isolated / unlit = Normal)','ISO_DSD_F',0,1),
@@ -43,8 +43,8 @@ controls:{
  autoBrk:{name:'Lights',positions:[{short:'0',desc:'–'},{short:'BTV',desc:'Off'},{short:'LO',desc:'Day'},{short:'2',desc:'Markers only'},{short:'3',desc:'Night'},{short:'HI',desc:'Tail only'}],start:1},
  eng1:{name:'Horn high',start:true}, eng2:{name:'Horn low',start:true},
  leftAux:{name:'AWS isolation'}, rightAux:{name:'DSD isolation'},
- modeSwitch:{name:'Wipers',left:'park',right:'run'}, roundAux:{name:'DRA set / reset'}, rudTrim:{name:'Park brake on / off'},
+ modeSwitch:{name:'Wipers',left:'park',right:'run'}, roundAux:{name:'DRA set / reset'}, rudTrim:{name:'Doors L / R'},
  parkBrk:{name:'Master key',flat:'out',up:'in'}},
-setup:['Master key in (PARK BRK)','Pantograph up, then press again to close the circuit breaker (right throttle button)','Check AWS and DSD isolation lights are out','Lights to Day','Release the parking brake (RUD TRIM right)','Train brake to Full service, DRA reset'],
+setup:['Master key in (PARK BRK)','Pantograph up, then press again to close the circuit breaker (right throttle button)','Check AWS and DSD isolation lights are out','Lights to Day','Release the parking brake in the cab','Train brake to Full service, DRA reset'],
 depart:['Check the signal','Reverser to Forward','Train brake to Running','Power handle to Min, then open up gradually with the heavy train','Rheostatic brake on the flap lever for braking on the move','Acknowledge AWS with the gear lever']};
 fs.writeFileSync('tools/manual/trains/tsw-class-90-ats-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');

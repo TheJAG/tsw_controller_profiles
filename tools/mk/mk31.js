@@ -21,7 +21,7 @@ const R=nm(/^Reverser_F/),TH=nm(/^Throttle_F/),DB=nm(/^DriversBrake_F/),SB=nm(/^
 const SAND=nm(/^Sander_?\(A\)|^Sander_A/),EST=nm(/^EngineStart_F/),ESP=nm(/^EngineStop_F/),AWSI=nm(/^AWS_Isolation_F/),DSD=nm(/^DSDCircuitBreaker/),HBF=nm(/^HandbrakeFront/),RIL=nm(/^RouteIndicatorLights ?\(A\)/),TLL=nm(/^TailLightLeft_A/),TLR=nm(/^TailLightRight_A/);
 console.log('nodes',[R,TH,DB,SB,MK,CC,HORN,WIP,SAND,EST,ESP,AWSI,DSD,HBF,RIL,TLL,TLR].join(' | '));
 p.controls=[
- {name:'SpeedbrakeLever',description:'Reverser (Off 0 / Reverse 0.2468 / Engine only 0.569 / Forward 0.9243), inverted: Forward at the far end, Off nearest. It only leaves Forward with the power controller at Off',assignments:[{type:'direct_control',controls:R,input_value:{min:0,max:0.9243,steps:[0,0.2468,0.569,0.9243],invert:true}}]},
+ {name:'SpeedbrakeLever',description:'Reverser, inverted: Forward at the far end, Off nearest. The game switches notch at 0.18 / 0.5 / 0.84 and stores any value, so the steps sit at thirds for four equal bands (Off 0 / Reverse 0.333 / Engine only 0.666 / Forward 1). It only leaves Forward with the power controller at Off',assignments:[{type:'direct_control',controls:R,input_value:{min:0,max:1,steps:[0,0.333,0.666,1],invert:true}}]},
  {name:'LeftThrottle',description:'Driver\'s brake valve (Running 0.1 / 1st application 0.25 / Service continuous 0.3..0.75 / Full service 0.8 / Emergency 0.9; Release and Shutdown do not store). Plain: Running at the far end, Emergency nearest; 1st application on the 0.31 detent, Full service on the 0.84 FLX detent',assignments:[{type:'direct_control',controls:DB,input_value:{min:0.1,max:0.9,steps:[0.1,0.25,null,0.8,0.9],step_thresholds:[{threshold:0,threshold_tolerance:0.045},{threshold:0.31,threshold_tolerance:0.04},{threshold:0.36,threshold_end:0.78,threshold_tolerance:0},{threshold:0.84,threshold_tolerance:0.045},{threshold:1,threshold_tolerance:0.04}]}}]},
  {name:'RightThrottle',description:'Power controller (Off 0 / 1 0.1 / 2 0.2 / 3 0.3 / 4 0.4, one gate per set / continuous 0.41..0.99 / Full 1). Plain: Off at the far end, full power nearest; Off raw 0, notches 1-4 at 0.12 / 0.22 / 0.31 (detent) / 0.40, continuous zone 0.46..0.955 (the 0.44 soft stop sits in the gap), Full 1',assignments:[{type:'direct_control',controls:TH,input_value:{min:0,max:1,steps:[0,0.1,0.2,0.3,0.4,null,1],step_thresholds:[{threshold:0,threshold_tolerance:0.045},{threshold:0.12,threshold_tolerance:0.035},{threshold:0.22,threshold_tolerance:0.035},{threshold:0.31,threshold_tolerance:0.04},{threshold:0.40,threshold_tolerance:0.03},{threshold:0.46,threshold_end:0.955,threshold_tolerance:0},{threshold:1,threshold_tolerance:0.04}]}}]},
  {name:'FlapLever',description:'Straight air (loco) brake, continuous 0..1, plain: released at the far end, full nearest',assignments:[{type:'direct_control',controls:SB,input_value:{min:0,max:1}}]},
@@ -31,8 +31,8 @@ p.controls=[
  mom('RightThrottleButton','Engine start',EST,1,0),
  mom('LeftEngineOn','Horn | High',HORN,-1,0.5),
  mom('RightEngineOn','Horn | Low',HORN,1,0.5),
- {name:'RudderTrimLeft',description:'Handbrake | Apply (front)',assignments:[momA(HBF,1,1)]},
- {name:'RudderTrimRight',description:'Handbrake | Release (front)',assignments:[momA(HBF,0,0)]},
+ key('RudderTrimLeft','Doors | Left','y'),
+ key('RudderTrimRight','Doors | Right','u'),
  mom('RoundAuxButton','Engine stop',ESP,1,0),
  tog('LeftAuxButton','AWS isolation (lit = Isolated 0 / unlit = Unisolated)',AWSI,0,1),
  tog('RightAuxButton','DSD circuit breaker (lit = on)',DSD,1,0),
@@ -56,8 +56,8 @@ controls:{
  autoBrk:{name:'Lights',positions:hlPos,start:0},
  eng1:{name:'Horn high',start:true}, eng2:{name:'Horn low',start:true},
  leftAux:{name:'AWS isolation'}, rightAux:{name:'DSD breaker'},
- modeSwitch:{name:'Wipers',left:'back',right:'on'}, roundAux:{name:'Engine stop'}, rudTrim:{name:'Handbrake on / off'},
+ modeSwitch:{name:'Wipers',left:'back',right:'on'}, roundAux:{name:'Engine stop'}, rudTrim:{name:'Doors L / R'},
  parkBrk:{name:'Master key + brake key',flat:'out',up:'in'}},
-setup:['Master key and brake key in (PARK BRK up), battery on','Reverser to Engine only, start the engine (right throttle button)','AWS isolation light out, DSD breaker on','Marker lights on (AUTO BRK)','Release the handbrake (RUD TRIM right)','Train brake to Full service until the pipe is charged'],
+setup:['Master key and brake key in (PARK BRK up), battery on','Reverser to Engine only, start the engine (right throttle button)','AWS isolation light out, DSD breaker on','Marker lights on (AUTO BRK)','Release the handbrake in the cab','Train brake to Full service until the pipe is charged'],
 depart:['Check the signal','Reverser to Forward','Loco brake to Release (flap lever away)','Train brake to Running, wait for the pipe to charge','Power controller notch by notch; the TCA walks one gate per send','Acknowledge AWS with the gear lever','Power controller to Off before moving the reverser back']};
 fs.writeFileSync('tools/manual/trains/tsw-class-31-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');

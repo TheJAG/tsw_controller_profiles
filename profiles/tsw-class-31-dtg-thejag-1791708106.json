@@ -12,19 +12,19 @@
   "controls": [
     {
       "name": "SpeedbrakeLever",
-      "description": "Reverser (Off 0 / Reverse 0.2468 / Engine only 0.569 / Forward 0.9243), inverted: Forward at the far end, Off nearest. It only leaves Forward with the power controller at Off",
+      "description": "Reverser, inverted: Forward at the far end, Off nearest. The game switches notch at 0.18 / 0.5 / 0.84 and stores any value, so the steps sit at thirds for four equal bands (Off 0 / Reverse 0.333 / Engine only 0.666 / Forward 1). It only leaves Forward with the power controller at Off",
       "assignments": [
         {
           "type": "direct_control",
           "controls": "Reverser_F (IrregularLever)",
           "input_value": {
             "min": 0,
-            "max": 0.9243,
+            "max": 1,
             "steps": [
               0,
-              0.2468,
-              0.569,
-              0.9243
+              0.333,
+              0.666,
+              1
             ],
             "invert": true
           }
@@ -266,47 +266,25 @@
     },
     {
       "name": "RudderTrimLeft",
-      "description": "Handbrake | Apply (front)",
-      "assignments": [
-        {
-          "type": "momentary",
-          "threshold": 0.9,
-          "action_activate": {
-            "controls": "HandbrakeFront (Component)",
-            "value": 1,
-            "hold": false,
-            "enable_api_fallback": true
-          },
-          "action_deactivate": {
-            "controls": "HandbrakeFront (Component)",
-            "value": 1,
-            "hold": false,
-            "enable_api_fallback": true
-          }
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
         }
-      ]
+      }
     },
     {
       "name": "RudderTrimRight",
-      "description": "Handbrake | Release (front)",
-      "assignments": [
-        {
-          "type": "momentary",
-          "threshold": 0.9,
-          "action_activate": {
-            "controls": "HandbrakeFront (Component)",
-            "value": 0,
-            "hold": false,
-            "enable_api_fallback": true
-          },
-          "action_deactivate": {
-            "controls": "HandbrakeFront (Component)",
-            "value": 0,
-            "hold": false,
-            "enable_api_fallback": true
-          }
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
         }
-      ]
+      }
     },
     {
       "name": "RoundAuxButton",

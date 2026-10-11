@@ -28,8 +28,8 @@ p.controls=[
  mom('RightThrottleButton','Horn high (spring lever)','Horn_F',1,0.5),
  mom('LeftEngineOn','PZB Frei (release)','PZB_Release_F',1,0.5),
  mom('RightEngineOn','PZB Wachsam (acknowledge)','PZB_Acknowledge_F',1,0.5),
- mom('RudderTrimLeft','AFB on / off (push button)','AFB_ProxySwitchControl',1,0),
- mom('RudderTrimRight','AFB confirm speed (push button)','AFB_Confirm_Speed_F',1,0),
+ key('RudderTrimLeft','Doors | Left','y'),
+ key('RudderTrimRight','Doors | Right','u'),
  mom('RoundAuxButton','PZB Befehl 40 (override)','PZB_Override_F',1,0),
  tog('LeftAuxButton','SiFa isolation switch (lit = Normal, off = Isolated)','Sifa_Isolation',1,0),
  tog('RightAuxButton','PZB isolation switch (lit = Normal, off = Isolated)','PZB_Isolation',1,0),
@@ -53,8 +53,8 @@ controls:{
  autoBrk:{name:'Lights',positions:[{short:'0',desc:'Off'},{short:'BTV',desc:'Signal dim'},{short:'LO',desc:'Signal'},{short:'2',desc:'High dim'},{short:'3',desc:'High'},{short:'HI',desc:'–'}],start:0},
  eng1:{name:'PZB Frei',start:true}, eng2:{name:'PZB Wachsam',start:true},
  leftAux:{name:'SiFa on / off'}, rightAux:{name:'PZB on / off'},
- modeSwitch:{name:'Wipers',left:'slower',right:'faster'}, roundAux:{name:'PZB Befehl 40'}, rudTrim:{name:'AFB on · confirm'},
+ modeSwitch:{name:'Wipers',left:'slower',right:'faster'}, roundAux:{name:'PZB Befehl 40'}, rudTrim:{name:'Doors L / R'},
  parkBrk:{name:'Key + brake valve',flat:'out',up:'in'}},
-setup:['Battery to Ready in the cab, parking brake released','PARK BRK up: master key in, Führerbremsventil cut in','Raise the pantograph, close the Hauptschalter in the cab','SiFa and PZB on (aux squares): a service starts with both isolated','Lights (AUTO BRK), brake selector G / P / R in the cab','AFB: RUD TRIM left on, speed on the flap lever, RUD TRIM right confirms'],
-depart:['Check the signal and PZB','Richtungsschalter to Forward','Führerbremsventil to Running, wait for the brakes to release','Fahr-/Bremsschalter towards power, or set and confirm the AFB speed','Acknowledge SiFa with the gear lever, PZB with the ENG switches','Brake: handle towards E-brake, Führerbremsventil in steps']};
+setup:['Battery to Ready in the cab, parking brake released','PARK BRK up: master key in, Führerbremsventil cut in','Raise the pantograph, close the Hauptschalter in the cab','SiFa and PZB on (aux squares): a service starts with both isolated','Lights (AUTO BRK), brake selector G / P / R in the cab','AFB on in the cab, speed on the flap lever, confirm in the cab'],
+depart:['Check the signal and PZB','Richtungsschalter to Forward','Führerbremsventil to Running, wait for the brakes to release','Fahr-/Bremsschalter towards power, or AFB speed on the flap lever','Acknowledge SiFa with the gear lever, PZB with the ENG switches','Brake: handle towards E-brake, Führerbremsventil in steps']};
 fs.writeFileSync('tools/manual/trains/tsw-br-193-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');

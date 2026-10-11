@@ -32,8 +32,8 @@ p.controls=[
  mom('RightThrottleButton','Horn high (spring switch: Low 0 / Off 0.5 / High 1)','Horn_FL',1,0.5),
  mom('LeftEngineOn','PZB Frei (release, spring)','PZB_Release_F',1,0.5),
  mom('RightEngineOn','PZB Wachsam (acknowledge, spring)','PZB_Acknowledge_F',1,0.5),
- mom('RudderTrimLeft','Pantograph raise (spring switch: Lower and Sand 0 / Lower 0.333 / rest 0.667 / Raise 1)','PantographStateSwitch_F',1,0.667),
- mom('RudderTrimRight','Hauptschalter close (spring switch: Open 0 / Close 1)','MainCircuitBreaker_F',1,0.5),
+ key('RudderTrimLeft','Doors | Left','y'),
+ key('RudderTrimRight','Doors | Right','u'),
  mom('RoundAuxButton','PZB Befehl 40 (override)','PZB_Override_F',1,0),
  tog('LeftAuxButton','SiFa switch (lit = On 0.83, off = Off)','SifaSwitch',1,0),
  tog('RightAuxButton','PZB switch (lit = On 0.83, off = Off)','PZB_Switch_F',1,0),
@@ -59,8 +59,8 @@ controls:{
  autoBrk:{name:'Lights',positions:[{short:'0',desc:'Off'},{short:'BTV',desc:'Markers'},{short:'LO',desc:'High beams'},{short:'2',desc:'High bright'},{short:'3',desc:'Tail lights'},{short:'HI',desc:'Head + tail'}],start:0},
  eng1:{name:'PZB Frei',start:true}, eng2:{name:'PZB Wachsam',start:true},
  leftAux:{name:'SiFa on / off'}, rightAux:{name:'PZB on / off'},
- modeSwitch:{name:'Wipers',left:'slower',right:'faster'}, roundAux:{name:'PZB Befehl 40'}, rudTrim:{name:'Panto up · HS on'},
+ modeSwitch:{name:'Wipers',left:'slower',right:'faster'}, roundAux:{name:'PZB Befehl 40'}, rudTrim:{name:'Doors L / R'},
  parkBrk:{name:'AFB',flat:'off',up:'on'}},
-setup:['Battery on in the cab, parking brake released','Richtungsschalter from Off (the key position) to Neutral','RUD TRIM left raises the pantograph, right closes the Hauptschalter','SiFa and PZB on (aux squares), PZB mode and brake selector set in the cab','Lights (AUTO BRK)','AFB on (PARK BRK up) if you drive with the speed setter'],
+setup:['Battery on in the cab, parking brake released','Richtungsschalter from Off (the key position) to Neutral','Raise the pantograph and close the Hauptschalter in the cab','SiFa and PZB on (aux squares), PZB mode and brake selector set in the cab','Lights (AUTO BRK)','AFB on (PARK BRK up) if you drive with the speed setter'],
 depart:['Check the signal and PZB','Richtungsschalter to Forward','Führerbremsventil to Running, wait for the brakes to release','Fahrschalter towards Max, or set the AFB speed on the flap lever','Acknowledge SiFa with the gear lever, PZB with the ENG switches','Brake: Führerbremsventil in steps; the E-brake lever stays in the cab']};
 fs.writeFileSync('tools/manual/trains/'+slug+'.json',JSON.stringify(m,null,2)+'\n');console.log('manual data',slug);

@@ -27,8 +27,8 @@ p.controls=[
  mom('RightThrottleButton','Engine start','EngineStart_F (PushButton)',1,0),
  mom('LeftEngineOn','Horn | High',HORN,-1,0.5),
  mom('RightEngineOn','Horn | Low',HORN,1,0.5),
- {name:'RudderTrimLeft',description:'Handbrake | Apply',assignments:[momA('ParkingBrake_F (ToggleButton)',1,1)]},
- {name:'RudderTrimRight',description:'Handbrake | Release',assignments:[momA('ParkingBrake_F (ToggleButton)',0,0)]},
+ key('RudderTrimLeft','Doors | Left','y'),
+ key('RudderTrimRight','Doors | Right','u'),
  mom('RoundAuxButton','Engine stop','EngineStop_F (PushButton)',1,0),
  tog('LeftAuxButton','AWS isolation (lit = Isolated 0 / unlit = Unisolated)','AWS_Isolation_F',0,1),
  tog('RightAuxButton','DSD isolation (lit = Isolated 0 / unlit = Unisolated)','DSD_Isolation_F',0,1),
@@ -53,8 +53,8 @@ controls:{
  autoBrk:{name:'Headlights',positions:hlPos,start:0},
  eng1:{name:'Horn high',start:true}, eng2:{name:'Horn low',start:true},
  leftAux:{name:'AWS isolation'}, rightAux:{name:'DSD isolation'},
- modeSwitch:{name:'Wipers',left:'back',right:'on'}, roundAux:{name:'Engine stop'}, rudTrim:{name:'Handbrake on / off'},
+ modeSwitch:{name:'Wipers',left:'back',right:'on'}, roundAux:{name:'Engine stop'}, rudTrim:{name:'Doors L / R'},
  parkBrk:{name:'Master key + brake key',flat:'out',up:'in'}},
-setup:['Battery switch closed in the cab (a scenario starts cold)','Master key and brake key in (PARK BRK up)','Reverser to Engine only, start the engine (right throttle button)','AWS and DSD isolation lights out','Headlights on (AUTO BRK)','Release the handbrake (RUD TRIM right)'],
+setup:['Battery switch closed in the cab (a scenario starts cold)','Master key and brake key in (PARK BRK up)','Reverser to Engine only, start the engine (right throttle button)','AWS and DSD isolation lights out','Headlights on (AUTO BRK)','Release the handbrake in the cab'],
 depart:['Check the signal','Train brake to Running, wait for the pipe to charge','Reverser to Forward','Loco brake to Release (flap lever away)','Power controller to On, then open up slowly','Acknowledge AWS with the gear lever','Power controller to Off before moving the reverser back']};
 fs.writeFileSync('tools/manual/trains/tsw-class-47-athena-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');

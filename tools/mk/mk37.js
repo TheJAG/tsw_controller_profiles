@@ -30,8 +30,8 @@ p.controls=[
  mom('RightThrottleButton','Engine start','EngineStart_F (PushButton)',1,0),
  mom('LeftEngineOn','Horn | High',HORN,-1,0.5),
  mom('RightEngineOn','Horn | Low',HORN,1,0.5),
- {name:'RudderTrimLeft',description:'Handbrake | Apply (front)',assignments:[momA('HandbrakeFront (Component)',1,1)]},
- {name:'RudderTrimRight',description:'Handbrake | Release (front)',assignments:[momA('HandbrakeFront (Component)',0,0)]},
+ key('RudderTrimLeft','Doors | Left','y'),
+ key('RudderTrimRight','Doors | Right','u'),
  mom('RoundAuxButton','Engine stop','EngineStop_F (PushButton)',1,0),
  tog('LeftAuxButton','AWS isolation (lit = Isolated / unlit = Unisolated)','AWS_Isolation_F (ToggleButton)',0,1),
  tog('RightAuxButton','DSD circuit breaker (lit = on)','DSDCircuitBreaker',1,0),
@@ -55,8 +55,8 @@ controls:{
  autoBrk:{name:'Headlights',positions:hlPos,start:1},
  eng1:{name:'Horn high',start:true}, eng2:{name:'Horn low',start:true},
  leftAux:{name:'AWS isolation'}, rightAux:{name:'DSD breaker'},
- modeSwitch:{name:'Wipers',left:'back',right:'on'}, roundAux:{name:'Engine stop'}, rudTrim:{name:'Handbrake on / off'},
+ modeSwitch:{name:'Wipers',left:'back',right:'on'}, roundAux:{name:'Engine stop'}, rudTrim:{name:'Doors L / R'},
  parkBrk:{name:'Master key + brake key',flat:'out',up:'in'}},
-setup:['Master key and brake key in (PARK BRK), battery on','Reverser to Engine only, start the engine (right throttle button)','Check the AWS isolation light is out, DSD breaker on','Headlights on (AUTO BRK)','Release the handbrake (RUD TRIM right)','Train brake to Full service until the pipe is charged'],
+setup:['Master key and brake key in (PARK BRK), battery on','Reverser to Engine only, start the engine (right throttle button)','Check the AWS isolation light is out, DSD breaker on','Headlights on (AUTO BRK)','Release the handbrake in the cab','Train brake to Full service until the pipe is charged'],
 depart:['Check the signal','Reverser to Forward','Loco brake to Release (flap lever away)','Train brake to Running, wait for the pipe to charge','Power controller to On, then open up slowly with the heavy train','Acknowledge AWS with the gear lever']};
 fs.writeFileSync('tools/manual/trains/tsw-class-37-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');

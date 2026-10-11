@@ -32,8 +32,8 @@ p.controls=[
  mom('RightThrottleButton','Horn (push button)','Horn_FL',1,0),
  mom('LeftEngineOn','PZB Frei (release)','PZB_Release_F',1,0),
  mom('RightEngineOn','PZB Wachsam (acknowledge)','PZB_Acknowledge_F',1,0),
- tog('RudderTrimLeft','Pantograph up (0.5) / down (0)','Pantograph_F',0.5,0),
- mom('RudderTrimRight','Hauptschalter close (spring lever: Open 0 / Close 1)','MainCircuitBreaker_F',1,0.5),
+ key('RudderTrimLeft','Doors | Left','y'),
+ key('RudderTrimRight','Doors | Right','u'),
  mom('RoundAuxButton','PZB Befehl 40 (override)','PZB_Override_F',1,0),
  tog('LeftAuxButton','SiFa rotary switch (lit = On at 0, off = Off at 0.25)','Sifa_Switch',0,0.25),
  tog('RightAuxButton','PZB switch (lit = Cut-In 0.94, off = Cut-Out 0)','PZB_Switch',1,0),
@@ -57,8 +57,8 @@ controls:{
  autoBrk:{name:'Lights',positions:[{short:'0',desc:'Off'},{short:'BTV',desc:'Markers'},{short:'LO',desc:'Head dim'},{short:'2',desc:'Head bright'},{short:'3',desc:'Tail lights'},{short:'HI',desc:'–'}],start:0},
  eng1:{name:'PZB Frei',start:true}, eng2:{name:'PZB Wachsam',start:true},
  leftAux:{name:'SiFa on / off'}, rightAux:{name:'PZB on / off'},
- modeSwitch:{name:'Wipers',left:'off',right:'on'}, roundAux:{name:'PZB Befehl 40'}, rudTrim:{name:'Panto up/down · HS on'},
+ modeSwitch:{name:'Wipers',left:'off',right:'on'}, roundAux:{name:'PZB Befehl 40'}, rudTrim:{name:'Doors L / R'},
  parkBrk:{name:'Brake key',flat:'out',up:'in'}},
-setup:['Battery on, compressors to Automatic in the cab','PARK BRK up: brake key in, frees reverser + brake valve','RUD TRIM left: pantograph up, right: Hauptschalter on','SiFa and PZB on (aux squares), PZB mode set in the cab','Lights (AUTO BRK)','Fahrstufenschalter at 0 before moving the reverser'],
+setup:['Battery on, compressors to Automatic in the cab','PARK BRK up: brake key in, frees reverser + brake valve','Pantograph up and Hauptschalter on in the cab','SiFa and PZB on (aux squares), PZB mode set in the cab','Lights (AUTO BRK)','Fahrstufenschalter at 0 before moving the reverser'],
 depart:['Check the signal and PZB','Richtungsschalter to Forward','Führerbremsventil to Running, wait for the brakes to release','Zusatzbremse to Release (flap lever away)','Fahrstufenschalter up step by step, watch the ammeter','Acknowledge SiFa with the gear lever, PZB with the ENG switches','Brake: Führerbremsventil in steps, Abschluss holds']};
 fs.writeFileSync('tools/manual/trains/tsw-br-155-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
