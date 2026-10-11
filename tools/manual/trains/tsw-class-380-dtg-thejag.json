@@ -1,0 +1,147 @@
+{
+  "name": "tsw-class-380-dtg-thejag",
+  "title": "Class 380",
+  "eyebrow": "ScotRail · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | Class 380 | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "Cathcart Circle Line: Glasgow – Neilston & Newton",
+  "colors": {
+    "navy": "#223261",
+    "blue": "#4a66a8",
+    "paper": "#f3f5f9"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-scotrail-navy.svg",
+      "alt": "ScotRail"
+    },
+    {
+      "file": "../../assets/logo-dtg-navy.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4680110",
+  "credit": "© TheJAG",
+  "diagram": {
+    "file": "../../assets/class-380-side.png",
+    "source": "Drawing: WestRail642fan, Wikimedia Commons, CC BY-SA 4.0",
+    "clean": false
+  },
+  "cab": {
+    "file": "../../assets/class-380-dtg-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Direction switch",
+      "notches": [
+        "Forward",
+        "Neutral",
+        "Reverse"
+      ],
+      "start": 1
+    },
+    "leftThrottle": {
+      "name": "Power / brake",
+      "continuous": true,
+      "notches": [
+        "Max brake",
+        null,
+        null,
+        "Off",
+        null,
+        null,
+        "Full power"
+      ],
+      "start": 0
+    },
+    "rightThrottle": null,
+    "flap": null,
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Pantograph / VCB"
+    },
+    "gearLever": {
+      "name": "AWS reset"
+    },
+    "autoBrk": {
+      "name": "Exterior lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Day"
+        },
+        {
+          "short": "2",
+          "desc": "Marker only"
+        },
+        {
+          "short": "3",
+          "desc": "Night"
+        },
+        {
+          "short": "HI",
+          "desc": "Tail only"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Horn high",
+      "start": true
+    },
+    "eng2": {
+      "name": "Horn low",
+      "start": true
+    },
+    "leftAux": {
+      "name": "TPWS/AWS isolation"
+    },
+    "rightAux": {
+      "name": "DVD isolation"
+    },
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "slower",
+      "right": "faster"
+    },
+    "roundAux": {
+      "name": "Guard bell"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Master key",
+      "flat": "out",
+      "up": "in"
+    }
+  },
+  "setup": [
+    "Master key in (PARK BRK)",
+    "Pantograph up (right throttle button), wait for line volts",
+    "Direction switch to Neutral",
+    "TPWS/AWS and DVD isolation off (aux squares): a service starts with both isolated",
+    "Exterior lights to Day",
+    "Open doors (RUD TRIM)"
+  ],
+  "depart": [
+    "Close doors, wait for the guard bell",
+    "Check the signal, DRA off",
+    "Direction switch to Forward",
+    "Handle from Max brake through Off into power",
+    "Pull further as speed rises",
+    "Acknowledge AWS with the gear lever"
+  ]
+}
