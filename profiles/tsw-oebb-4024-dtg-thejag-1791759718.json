@@ -1,0 +1,495 @@
+{
+  "name": "TSW | OBB 4024 | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_SRM_OBB_4024_M1_C"
+    },
+    {
+      "class_name": "RVM_SRM_OBB_4024_M2_C"
+    },
+    {
+      "class_name": "RVM_SRM_OBB_4024_T1_C"
+    },
+    {
+      "class_name": "RVM_SRM_OBB_4024_T2_C"
+    },
+    {
+      "class_name": "RVM_SBN_OBB_4024_M1_C"
+    },
+    {
+      "class_name": "RVM_SBN_OBB_4024_M2_C"
+    },
+    {
+      "class_name": "RVM_SBN_OBB_4024_T1_C"
+    },
+    {
+      "class_name": "RVM_SBN_OBB_4024_T2_C"
+    },
+    {
+      "class_name": "RVM_VBRG_OBB_4024_M1_C"
+    },
+    {
+      "class_name": "RVM_VBRG_OBB_4024_M2_C"
+    },
+    {
+      "class_name": "RVM_VBRG_OBB_4024_T1_C"
+    },
+    {
+      "class_name": "RVM_VBRG_OBB_4024_T2_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser (Reverse 0 / Off 0.5 / Forward 1; the zones take any value), inverted: Forward at the far end, Reverse nearest. Needs the cab active (PARK BRK up)",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.5,
+              1
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Combined power / brake handle MasterController (Emergency 0 left out / Max brake 0.099 / brake continuous 0.11..0.40 / Min brake 0.41 / 0 at 0.5 / Min power 0.59 / power continuous 0.6..1; one gate per set, the app re-sends). The BR 440 geometry, inverted: full power at the far end (raw 0 ±0.04), power zone 0.045..0.42, Min power 0.45 ±0.03, 0 at 0.5 ±0.02, Min brake 0.55 ±0.03, brake zone 0.58..0.955, Max brake 1 ±0.04 nearest",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "MasterController",
+          "input_value": {
+            "min": 0.099,
+            "max": 1,
+            "steps": [
+              0.099,
+              null,
+              0.41,
+              0.5,
+              0.59,
+              null,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.955,
+                "threshold_end": 0.58
+              },
+              {
+                "threshold": 0.55,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.5,
+                "threshold_tolerance": 0.02
+              },
+              {
+                "threshold": 0.45,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.42,
+                "threshold_end": 0.045
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.04
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "Brake valve TrainBrake (Drive 0 / Release 0.25 / Hold 0.5 / Apply 0.75; Emergency never stores), plain: Drive at the far end, Apply nearest. Drive 0 ±0.12, Release 0.31 ±0.1 (detent), Hold 0.5 ±0.08, Apply 0.84 ±0.16",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "TrainBrake",
+          "input_value": {
+            "min": 0,
+            "max": 0.75,
+            "steps": [
+              0,
+              0.25,
+              0.5,
+              0.75
+            ],
+            "step_thresholds": [
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.12
+              },
+              {
+                "threshold": 0.31,
+                "threshold_tolerance": 0.1
+              },
+              {
+                "threshold": 0.5,
+                "threshold_tolerance": 0.08
+              },
+              {
+                "threshold": 0.84,
+                "threshold_tolerance": 0.16
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Cab activation CabActivationSwitch (MasterSwitch lever: Active 1 / Off 0.5) and brake key TrainBrakeHandle (BrakeKey push button, Inserted 1 / Removed 0): PARK BRK up = both in",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CabActivationSwitch",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "CabActivationSwitch",
+            "value": 0.5,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "TrainBrakeHandle",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "TrainBrakeHandle",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "GearLever",
+      "description": "SiFa reset",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "Q"
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "description": "Sand (SanderButton push button)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "SanderButton",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "SanderButton",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Horn high (HornButtonH push button)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "HornButtonH",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "HornButtonH",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "PZB Frei (PZBRelease spring lever, rest 0.5)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZBRelease",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PZBRelease",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "PZB Wachsam (PZBAcknowledge spring lever, rest 0.5)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZBAcknowledge",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PZBAcknowledge",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left: DoorsSideSelectionSwitch to Unlock Left (0.25) while held, Lock All (0) on release",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "DoorsSideSelectionSwitch",
+          "value": 0.25,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "DoorsSideSelectionSwitch",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right: DoorsSideSelectionSwitch to Unlock Right (0.75) while held, Lock All (0) on release",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "DoorsSideSelectionSwitch",
+          "value": 0.75,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "DoorsSideSelectionSwitch",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "PZB Befehl 40 (PZBOverride spring lever, rest 0.5)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZBOverride",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PZBOverride",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "SiFa fuse (SifaFuseControl push button: On 1 / Off 0). Lit = on",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "SifaFuseControl",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "SifaFuseControl",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "PZB fuse (PZBFuseControl push button: On 1 / Off 0). Lit = on",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZBFuseControl",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "PZBFuseControl",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wipers off (WiperSwitch: Interval 0 / Off 0.333 / Slow 0.667 / Fast 1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "WiperSwitch",
+            "value": 0.3333,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wipers slow (WiperSwitch 0.667)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "WiperSwitch",
+            "value": 0.6667,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Lights | Off (SignalLights 0.667)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "SignalLights",
+            "value": 0.6667,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Lights | Headlights (SignalLights 1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "SignalLights",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Lights | Tail lights (SignalLights 0.333)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "SignalLights",
+            "value": 0.3333,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Lights | Headlights both ends (SignalLights 0)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "SignalLights",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Lights | Headlights and instrument lights (InstrumentLightSwitch 1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "SignalLights",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "InstrumentLightSwitch",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}
