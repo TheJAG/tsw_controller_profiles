@@ -1,0 +1,3 @@
+# Profile build scripts
+
+One script per train, run after `draft_profile.js` has written the base profile: `node tools/mk/mk147.js profiles/<file>.json [store.steampowered.com/app/<id>]`. The script replaces the `controls` block and the rail classes of that profile with the train's TCA layout (lever geometry, bands, buttons) and writes the manual data file `tools/manual/trains/<slug>.json`. Copy the nearest relative for a new train (mk147 = TRAXX 3 combined handle, mk185 / mk146 = TRAXX 2 with separate Fahrschalter, mk101 = German loco base, mk805 / mk801 = Hitachi units, mk350 = Desiro, mk43 = BR diesel) and adjust the node names from the capture. They used to live in the session scratchpads; since 2026-10-11 they are committed here.
