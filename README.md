@@ -182,7 +182,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **NJ Transit Bi-Level cab car** <sub>— DTG</sub>  
 `SOON 🟨` **Norfolk Southern ES44AC** <sub>— Skyhook Games · [profile](releases/tsw-ns-es44ac-skyhook-thejag.tswprofile) · [manual](profiles/documentation/tsw-ns-es44ac-skyhook-thejag.pdf)</sub>  
 `SOON 🟨` **Norfolk Southern GP38-2** <sub>— DTG · [profile](releases/tsw-ns-gp38-2-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-ns-gp38-2-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **Santa Fe C40-8W**  
+`SOON 🟨` **Santa Fe C40-8W** <sub>— DTG · [profile](releases/tsw-santafe-c40-8w-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-santafe-c40-8w-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **Santa Fe F7**  
 `TODO ◼️` **Santa Fe SD40-2**  
 `TODO ◼️` **Tri-Rail BL36PH**  
