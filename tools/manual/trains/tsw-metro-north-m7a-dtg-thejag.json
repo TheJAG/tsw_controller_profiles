@@ -1,0 +1,136 @@
+{
+  "name": "tsw-metro-north-m7a-dtg-thejag",
+  "title": "M7a",
+  "eyebrow": "Metro-North Railroad · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | Metro-North M7a | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "Harlem Line: Grand Central Terminal – North White Plains",
+  "colors": {
+    "navy": "#1f3b52",
+    "blue": "#4d7593",
+    "red": "#c8102e",
+    "paper": "#f3f6f8"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-metro-north-slate.svg",
+      "alt": "Metro-North Railroad"
+    },
+    {
+      "file": "../../assets/logo-dtg-slate.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/search/?term=Harlem+Line",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/metro-north-m7a-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Forward",
+        "Neutral",
+        "Reverse"
+      ],
+      "start": 1
+    },
+    "leftThrottle": {
+      "name": "Master controller",
+      "continuous": true,
+      "notches": [
+        "Emergency",
+        "Max brake",
+        null,
+        "Min brake",
+        "Coast",
+        "Min power",
+        null,
+        "Max power"
+      ],
+      "start": 1
+    },
+    "rightThrottle": null,
+    "flap": null,
+    "leftThrottleButton": null,
+    "rightThrottleButton": {
+      "name": "Horn"
+    },
+    "gearLever": {
+      "name": "Acknowledge"
+    },
+    "autoBrk": {
+      "name": "Lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Dim"
+        },
+        {
+          "short": "2",
+          "desc": "Bright"
+        },
+        {
+          "short": "3",
+          "desc": "+ markers"
+        },
+        {
+          "short": "HI",
+          "desc": "Markers only"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Buzzer",
+      "start": true
+    },
+    "eng2": null,
+    "leftAux": {
+      "name": "ATC · ACSES fuses"
+    },
+    "rightAux": {
+      "name": "Alerter · deadman"
+    },
+    "modeSwitch": {
+      "name": "Wiper",
+      "left": "off",
+      "right": "low"
+    },
+    "roundAux": {
+      "name": "Cab lights"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Key + deadman",
+      "flat": "out",
+      "up": "in"
+    }
+  },
+  "setup": [
+    "PARK BRK up: master key in, deadman held; the reverser loads at Key Out",
+    "Reverser from Neutral to Forward",
+    "ATC / ACSES and alerter / deadman fuses closed (aux squares lit); all four load open",
+    "Lights to Bright",
+    "Controller at Max brake (parked)"
+  ],
+  "depart": [
+    "Close doors (RUD TRIM), check the signal; buzzer (ENG 1)",
+    "Controller towards you through Min brake and Coast into the power zone",
+    "Acknowledge ATC / ACSES with the gear lever",
+    "Brake: controller away from you through Coast and Min brake into the brake zone; Max brake for the stop, Emergency at the far end"
+  ]
+}
