@@ -1,0 +1,163 @@
+{
+  "name": "tsw-mbta-f40ph-dtg-thejag",
+  "title": "F40PH-3C",
+  "eyebrow": "MBTA · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | MBTA F40PH | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "Northeast Corridor: Boston – Providence · Boston – Worcester",
+  "colors": {
+    "navy": "#1f3b52",
+    "blue": "#4d7593",
+    "red": "#c8102e",
+    "paper": "#f3f6f8"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-mbta-slate.svg",
+      "alt": "MBTA"
+    },
+    {
+      "file": "../../assets/logo-dtg-slate.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4679270",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/mbta-f40ph-dtg-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Forward",
+        "Neutral",
+        "Reverse"
+      ],
+      "start": 1
+    },
+    "leftThrottle": {
+      "name": "Throttle",
+      "notches": [
+        "8",
+        "7",
+        "6",
+        "5",
+        "4",
+        "3",
+        "2",
+        "1",
+        "Idle"
+      ],
+      "start": 8
+    },
+    "rightThrottle": {
+      "name": "Automatic brake",
+      "continuous": true,
+      "notches": [
+        "Emergency",
+        "Handle off",
+        "Suppression",
+        "Full service",
+        null,
+        "Minimum",
+        "Release"
+      ],
+      "start": 3
+    },
+    "flap": {
+      "name": "Independent",
+      "continuous": true,
+      "notches": [
+        "Full",
+        null,
+        null,
+        null,
+        "Release"
+      ],
+      "start": 0
+    },
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Horn"
+    },
+    "gearLever": {
+      "name": "Alerter"
+    },
+    "autoBrk": {
+      "name": "Lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Dim"
+        },
+        {
+          "short": "2",
+          "desc": "Bright"
+        },
+        {
+          "short": "3",
+          "desc": "+ rear dim"
+        },
+        {
+          "short": "HI",
+          "desc": "Rear only"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Bell",
+      "start": true
+    },
+    "eng2": {
+      "name": "Bail-off",
+      "start": true
+    },
+    "leftAux": {
+      "name": "Safety fuses"
+    },
+    "rightAux": null,
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "off",
+      "right": "on"
+    },
+    "roundAux": {
+      "name": "Ditch lights"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Handle · valves · switches",
+      "flat": "off",
+      "up": "on"
+    }
+  },
+  "setup": [
+    "PARK BRK up: reverser handle in, brake valve cut in, MU-2A to Lead, engine run / generator field / control switches on (the loco loads as a trailing unit with them off)",
+    "Reverser from Neutral to Forward; safety fuses on (left aux lit); HEP in the cab",
+    "Lights to Bright, ditch lights on (round aux)",
+    "Independent at Full, automatic brake at Full service (parked); throttle Idle"
+  ],
+  "depart": [
+    "Check the signal; bell on (ENG 1)",
+    "Automatic brake to Release; independent to Release, ENG 2 up to bail off",
+    "Throttle notch by notch",
+    "Reset the alerter with the gear lever",
+    "Brake: throttle to Idle, automatic brake into the service zone, independent for the final stop; Emergency at the far end"
+  ]
+}
