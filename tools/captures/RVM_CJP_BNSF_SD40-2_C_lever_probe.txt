@@ -1,0 +1,41 @@
+BNSF EMD SD40-2 (RVM_CJP_BNSF_SD40-2_C), hand probe with tools/probe_lever.js, 2026-10-12, Cajon Pass timetable,
+L-SBDHES3-04c Local service Hesperia to Barstow (11:19, Hesperia, 23 cars, 3312 t), stationary,
+IndependentBrake 1 (full), AutomaticBrake 0.125 (Initial Reduction), Throttle 0.
+
+KEY: ReverserHandle (PushButton, identifier MasterSwitch, Out -0.5 / In 0.5) LOADS OUT (input 0, output 0).
+With the handle out the Reverser AND the Throttle store nothing (every set stores 0). Set it to 1 (In) first.
+The sweep worked because capture_train.js put the handle in; the script restored it to Out.
+
+Reverser (handle in): stores exactly -1 / 0 / 1. Sets >= 0.5 -> 1 Forward; -0.5..0.4 -> 0 Neutral; <= -0.75 -> -1 Reverse.
+  (the sweep's snapped -0.1669 / 0.8304 are artefacts)
+
+Throttle (handle in, reverser Neutral): Idle 0 (0..0.05), N1 0.13 (0.07..0.18), N2 0.25 (0.19..), N3 0.375, N4 0.5,
+  N5 0.625, N6 0.75, N7 0.875, N8 1 (0.94..1). Stored values are exactly those; output 0..8.
+
+DynamicBrake: LOCKED with the reverser in Neutral (sweep saw one notch, Off). Probe with handle in, reverser Forward:
+  set     stored  output
+  0..0.05 0       -1   Off
+  0.06..0.14 0.11  0   Setup
+  0.15..0.21 0.21  1   (B1, start of the continuous zone)
+  0.25    0.25    1.354
+  0.5     0.5     3.570
+  0.75    0.75    5.785
+  1       1       8
+  Output = 1 + (in - 0.21) * 8.86 between 0.21 and 1 (not quantised).
+
+AutomaticBrake: Release 0 (0..0.06, out -1), Initial Reduction 0.125 (0.07..0.15, out 0), service continuous 0.2..0.6
+  (out (in-0.2)/0.4 ~ 0..1; 0.62 stores 0.6), Full Service 0.65 (0.63..0.65, out 1), Suppression 0.7 (out 2),
+  Handle Off 0.8 (0.75..0.90, out 3), Emergency 1 (0.91..1, out 4). Loads at 0.125.
+
+IndependentBrake: Release 0.25 (out 0), continuous 0.26..1 (out (in-0.25)/0.75), Full 1. Sets below 0.25 store 0.25
+  (set 0 once: 0.22 transient). Loads at 1.
+
+IndependentBrake_BailOff (identifier MoveToLap, 0..0.25, rests 0.25, spring): a single set of 0 drops to ~0.17-0.22 and
+  springs back, output stays 0; only 25 sets of 0 in 2 s pushed it to 0.092 with output -1 (Bail Off). The spring
+  pulls it back within a fraction of a second, so a single API set (one button press through the app) does not bail off.
+  IndependentBrake_Proxy (VirtualHID) 0..0.25 follows it.
+
+Other: MU-2A_Valve loads 0 = Lead or Dead (no trailing-unit set-up on this loco), CutOffPilotValve 1 = Freight,
+DynamicBrakeCutOut (PushButton) 1, EmergencyBrakeValve 0 Closed. Handbrake PushButton (Released -0.5 / Applied 0.9) 0.
+Restored: ReverserHandle 0 (Out), Reverser 0, Throttle 0, DynamicBrake 0, AutomaticBrake 0.125, IndependentBrake 1,
+BailOff 0.25. Train did not move.
