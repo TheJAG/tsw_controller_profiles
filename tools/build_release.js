@@ -17,3 +17,6 @@ const rel = {
 const out = path.join(__dirname, '..', 'releases', path.basename(src).replace(/-\d+\.json$/, '') + '.tswprofile');
 fs.writeFileSync(out, JSON.stringify(rel, null, 2) + '\n');
 console.log('wrote', out);
+// profile checks (node names against the capture, direct_control levers, rail classes, release in sync)
+const chk = require('child_process').spawnSync(process.execPath, [path.join(__dirname, 'check.js'), '--profile-only', src], { stdio: 'inherit' });
+if (chk.status) process.exit(chk.status);

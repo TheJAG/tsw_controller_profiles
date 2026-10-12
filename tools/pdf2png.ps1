@@ -1,4 +1,4 @@
-﻿param([string]$Pdf,[string]$OutDir,[int]$MaxPages=3)
+﻿param([string]$Pdf,[string]$OutDir,[int]$MaxPages=3,[int]$Width=800)  # 800 px shows overflow and drawing fit; -Width 1240 for detail
 Add-Type -AssemblyName System.Runtime.WindowsRuntime
 $null = [Windows.Data.Pdf.PdfDocument,Windows.Data.Pdf,ContentType=WindowsRuntime]
 $null = [Windows.Storage.StorageFile,Windows.Storage,ContentType=WindowsRuntime]
@@ -20,7 +20,7 @@ for ($i = 0; $i -lt $n; $i++) {
   $out = Await ($folder.CreateFileAsync("page$($i+1).png", [Windows.Storage.CreationCollisionOption]::ReplaceExisting)) ([Windows.Storage.StorageFile])
   $stream = Await ($out.OpenAsync([Windows.Storage.FileAccessMode]::ReadWrite)) ([Windows.Storage.Streams.IRandomAccessStream])
   $opts = New-Object Windows.Data.Pdf.PdfPageRenderOptions
-  $opts.DestinationWidth = 1240
+  $opts.DestinationWidth = $Width
   AwaitAction ($page.RenderToStreamAsync($stream, $opts))
   $stream.Dispose(); $page.Dispose()
 }

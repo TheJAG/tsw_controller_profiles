@@ -1,5 +1,5 @@
 // Probe how the game treats input values on one lever: set each value through the API, read back InputValue, the output
-// value and the notch index, then restore the lever by ramping. Use it before tuning a profile's steps (CLAUDE.md gotcha
+// value and the notch index, then restore the lever by ramping. Use it before tuning a profile's steps (tools/GOTCHAS.md
 // "notch beeps"): the step values must sit on (or 0.0002 above) the positions the game stores, and the output zones tell
 // where the notch boundaries are. Sit in the cab, train stationary, reverser where the lever is free to move.
 // Usage: node tools/probe_lever.js IrregularLever_ThrottleBrake [--from 0.46 --to 1 --step 0.01] [--values 0.5,0.5714,0.7857]

@@ -1,6 +1,6 @@
 # HANDOFF — status of the collection rollout
 
-Short status page, updated with each train. The rules and the recipe live in `CLAUDE.md`, the pipeline in `tools/README.md`, the subagent brief in `tools/CAPTURE_AGENT.md`. A new session needs nothing else: "continue with the NS SNG" is a complete prompt.
+Short status page, updated with each train. The recipe and working rules live in `CLAUDE.md`, layout and manual rules in `tools/CONVENTIONS.md`, lever and vendor quirks in `tools/GOTCHAS.md`, the pipeline in `tools/README.md`, the subagent brief in `tools/CAPTURE_AGENT.md`. A new session needs nothing else: "continue with the NS SNG" is a complete prompt.
 
 ## Done (2026-10-10)
 

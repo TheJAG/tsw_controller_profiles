@@ -191,3 +191,10 @@ if (!browser) { console.error('no Chrome/Edge found; HTML written to ' + base + 
 try { fs.unlinkSync(base + '.pdf'); } catch (e) {}
 cp.execFileSync(browser, ['--headless=new', '--disable-gpu', '--no-pdf-header-footer', '--virtual-time-budget=8000', '--print-to-pdf=' + base + '.pdf', 'file:///' + (base + '.html').replace(/\\/g, '/')], { stdio: 'ignore' });
 console.log('wrote', base + '.html', 'and', base + '.pdf');
+// full release check (profile, manual data, assets, one-page PDF) for the profile this manual belongs to
+const profDir = path.join(__dirname, '..', '..', 'profiles');
+const prof = fs.readdirSync(profDir).filter(f => f.replace(/-\d+\.json$/, '') === D.name).sort().pop();
+if (prof) {
+  const chk = cp.spawnSync(process.execPath, [path.join(__dirname, '..', 'check.js'), path.join(profDir, prof)], { stdio: 'inherit' });
+  if (chk.status) process.exit(chk.status);
+}

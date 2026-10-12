@@ -1,5 +1,5 @@
 const fs=require('fs');
-const f=process.argv[2]; const dlc=process.argv[3]||'store.steampowered.com/app/DLCID';
+const f=process.argv[2]; const dlc=process.argv[3]||'store.steampowered.com/app/1113823';
 const p=JSON.parse(fs.readFileSync(f,'utf8'));
 const cap=JSON.parse(fs.readFileSync('tools/captures/RVM_NRM_DB_BR422_Cab_Base_C.json','utf8')); const names=new Set(cap.controls.map(c=>c.name));
 ['Reverser','MasterController','ReverserKey','Sander','Horn','PZB_Release','PZB_Acknowledge','PZB_Override','Isolate_Sifa','Isolate_PZB','Wiper','Headlights','OperateLeftDoors','OperateRightDoors'].forEach(n=>{if(!names.has(n))throw new Error('missing '+n)});

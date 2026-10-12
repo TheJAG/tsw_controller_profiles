@@ -1,0 +1,4 @@
+#!/bin/sh
+# Release check on every staged profile, release, manual data file or manual (tools/check.js).
+# Enable once per clone: git config core.hooksPath tools/hooks
+exec node tools/check.js --staged --quiet
