@@ -176,7 +176,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **Metro-North M8** <sub>— DTG · [profile](releases/tsw-metro-north-m8-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metro-north-m8-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **Metrolink Bi-Level cab car** <sub>— DTG</sub>  
 `TODO ◼️` **Metrolink Rotem cab car** <sub>— DTG</sub>  
-`TODO ◼️` **NJ Transit ALP-45DP**  
+`SOON 🟨` **NJ Transit ALP-45DP** <sub>— DTG · [profile](releases/tsw-njt-alp45dp-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-njt-alp45dp-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **NJ Transit ALP-46**  
 `TODO ◼️` **NJ Transit Arrow III**  
 `TODO ◼️` **NJ Transit Bi-Level cab car** <sub>— DTG</sub>  
