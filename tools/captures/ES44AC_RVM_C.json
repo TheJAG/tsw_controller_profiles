@@ -1,0 +1,3696 @@
+{
+  "objectClass": "ES44AC_RVM_C",
+  "capturedAt": "2026-10-12T18:12:30.719Z",
+  "activeCab": null,
+  "cab": null,
+  "controls": [
+    {
+      "name": "ModelChildActorComponent0",
+      "objectClass": "ModelChildActorComponent"
+    },
+    {
+      "name": "RailVehiclePhysicsComponent0",
+      "objectClass": "RailVehicleComponent"
+    },
+    {
+      "name": "GameplayTasksComponent0",
+      "objectClass": "GameplayTasksComponent"
+    },
+    {
+      "name": "GameplayTagStatusComponent0",
+      "objectClass": "GameplayTagStatusComponent"
+    },
+    {
+      "name": "Simulation",
+      "objectClass": "SimulationComponent"
+    },
+    {
+      "name": "VehicleNumber",
+      "objectClass": "NumberingComponent"
+    },
+    {
+      "name": "Cab (Environment)",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "JumperCable_F",
+      "objectClass": "JumperCableComponent"
+    },
+    {
+      "name": "JumperCable_B",
+      "objectClass": "JumperCableComponent"
+    },
+    {
+      "name": "FuelTank",
+      "objectClass": "FuelTankComponent"
+    },
+    {
+      "name": "AirHose_F (BP)",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_F (APP)",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_F (ACT)",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_F (MR)",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_B (BP)",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_B (APP)",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_B (ACT)",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_B (MR)",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "IndependentBrake",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.20000000298023224,
+      "identifier": "IndependentBrake",
+      "namedValues": [
+        {
+          "name": "Bail Off",
+          "source": "Output",
+          "min": -1,
+          "max": -1
+        },
+        {
+          "name": "Release",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Full Application",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "AutomaticBrake",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.800000011920929,
+      "identifier": "AutomaticBrake",
+      "namedValues": [
+        {
+          "name": "Release",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.75
+        },
+        {
+          "name": "Minimum Reduction",
+          "source": "Output",
+          "min": -0.7509999871253967,
+          "max": 0
+        },
+        {
+          "name": "Full Service",
+          "source": "Output",
+          "min": 1,
+          "max": 1.5
+        },
+        {
+          "name": "Service {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "Suppression",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Handle Off",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        },
+        {
+          "name": "Emergency",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        }
+      ]
+    },
+    {
+      "name": "Bell",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Bell",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "AutoBrakeBailOff",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "BailOff",
+      "namedValues": [
+        {
+          "name": "Bail Off",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "HeadlightsFront",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "Headlights",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Dim",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Bright",
+          "source": "Output",
+          "min": 2,
+          "max": 2
+        },
+        {
+          "name": "Bright Aux",
+          "source": "Output",
+          "min": 3,
+          "max": 3
+        }
+      ]
+    },
+    {
+      "name": "HeadlightsBack",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "HeadlightsBack",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Dim",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Bright",
+          "source": "Output",
+          "min": 2,
+          "max": 2
+        }
+      ]
+    },
+    {
+      "name": "Door_F",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Door_M",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Window_L1",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Window_L2",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Window_R1",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Window_R2",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Door_B",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "SunVisor_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "SunVisor_C1",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "SunVisor_C2",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "SunVisor_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Mirror_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Mirror_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ExteriorBlind_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ExteriorBlind_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabFan_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "CabFan_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "CabFanSpeed_L",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabFanSpeed_R",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "DeskLight_L1",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "DeskLight",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DeskLight_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "DeskLight",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DeskLightDimmer_L1",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "DeskLightDimmer_R",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabLight_L1",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "CabLight",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "CabLight_L2",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "CabLight",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "CabLight_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "CabLight",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "CabLight_C",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "CabLight",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "StepLights",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "StepLights",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "NoseLight",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "NumberLights",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "NumberLights",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "GageLights",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "GaugeLights",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DitchLights",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "EngineStart",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "EngineStartStop",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "EngineStop",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "EngineStartStop",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Horn_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Horn_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Horn",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Horn_Sequencer",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "HornSequencer",
+      "namedValues": []
+    },
+    {
+      "name": "Sand",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Sand",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "EOT_EmergencyCover",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "EOT_EmergencySwitch",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "AcknowledgeButton",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "AlerterReset",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Alerter",
+      "namedValues": [
+        {
+          "name": "Reset",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "Wiper_FL",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Wiper_FR",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Wiper_BL",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Wiper_BR",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "WiperSwitch_FL",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "Wipers",
+      "namedValues": []
+    },
+    {
+      "name": "WiperSwitch_FR",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "Wipers",
+      "namedValues": []
+    },
+    {
+      "name": "WiperSwitch_BL",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "Wipers",
+      "namedValues": []
+    },
+    {
+      "name": "WiperSwitch_BR",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "Wipers",
+      "namedValues": []
+    },
+    {
+      "name": "ToiletLight",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "GeneratorField",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "ControlSwitch",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DynamicBrakeSwitch",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "ControlComptSwitch",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "EngineControlSwitch",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Run",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Isolate",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Start",
+          "source": "Output",
+          "min": 2,
+          "max": 2
+        },
+        {
+          "name": "Jog",
+          "source": "Output",
+          "min": 3,
+          "max": 3
+        }
+      ]
+    },
+    {
+      "name": "Nose (Environment)",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "Roof (Environment)",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "Heater_Engineer",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Medium",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "High",
+          "source": "Output",
+          "min": 2,
+          "max": 2
+        }
+      ]
+    },
+    {
+      "name": "Heater_Helper",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Medium",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "High",
+          "source": "Output",
+          "min": 2,
+          "max": 2
+        }
+      ]
+    },
+    {
+      "name": "EngineRun",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "HeatingAirConSwitch",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Med. Fan",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "High Fan",
+          "source": "Output",
+          "min": 2,
+          "max": 2
+        },
+        {
+          "name": "Low Cool",
+          "source": "Output",
+          "min": 3,
+          "max": 3
+        },
+        {
+          "name": "Low Heat",
+          "source": "Output",
+          "min": 4,
+          "max": 4
+        },
+        {
+          "name": "Med. Heat",
+          "source": "Output",
+          "min": 5,
+          "max": 5
+        },
+        {
+          "name": "High Heat",
+          "source": "Output",
+          "min": 6,
+          "max": 6
+        },
+        {
+          "name": "Low Fan",
+          "source": "Output",
+          "min": 7,
+          "max": 7
+        }
+      ]
+    },
+    {
+      "name": "Fuse_WindowHeaters",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Fuse_RoadCrossingLights",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Fuse_Refridgerator",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Fuse_Radio",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Fuse_DistributedPower",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Fuse_CabFan",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Fuse_HeadlightsShortHood",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Fuse_HeadlightsLongHood",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Fuse_RunningLights",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Fuse_FuelPump",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Fuse_LocalControl",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Fuse_CabDisplayComputer",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "AC4400CW_MeasuredMile",
+      "objectClass": "ES44AC_MeasuredMile_C"
+    },
+    {
+      "name": "Screen1_Menu",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_Help",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_F1",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_F2",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_F3",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_F4",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_F5",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_F6",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_F7",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_F8",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_D0",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_D1",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_D2",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_D3",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_D4",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_D5",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_D6",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_D7",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_D8",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_D9",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_Menu",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_Help",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_F1",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_F2",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_F3",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_F4",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_F5",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_F6",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_F7",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_F8",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_D0",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_D1",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_D2",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_D3",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_D4",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_D5",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_D6",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_D7",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_D8",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_D9",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_Menu",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_Help",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_F1",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_F2",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_F3",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_F4",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_F5",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_F6",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_F7",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_F8",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_D0",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_D1",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_D2",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_D3",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_D4",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_D5",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_D6",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_D7",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_D8",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_D9",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen1_Brightness",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen2_Brightness",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Screen3_Brightness",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "AC4400CW_DistanceCounter1",
+      "objectClass": "ES44AC_DistanceCounter_C"
+    },
+    {
+      "name": "AC4400CW_DistanceCounter2",
+      "objectClass": "ES44AC_DistanceCounter_C"
+    },
+    {
+      "name": "AC4400CW_DistanceCounter3",
+      "objectClass": "ES44AC_DistanceCounter_C"
+    },
+    {
+      "name": "Fuel (Numbering)",
+      "objectClass": "NumberingComponent"
+    },
+    {
+      "name": "Fuse_EngineersWallHeater",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Fuse_HelpersWallHeater",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Fuse_HeaterAirConditioner",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "CouplerLock_F",
+      "objectClass": "CouplerLockComponent",
+      "inputValue": 0,
+      "identifier": "CouplerLock_F",
+      "namedValues": []
+    },
+    {
+      "name": "CouplerLock_B",
+      "objectClass": "CouplerLockComponent",
+      "inputValue": 0,
+      "identifier": "CouplerLock_B",
+      "namedValues": []
+    },
+    {
+      "name": "Coupler_F",
+      "objectClass": "CouplerComponent"
+    },
+    {
+      "name": "Coupler_B",
+      "objectClass": "CouplerComponent"
+    },
+    {
+      "name": "SafetyDeviceGroup",
+      "objectClass": "SafetyDeviceGroup_C"
+    },
+    {
+      "name": "RadioVolumeUp",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "RadioVolumeDown",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "RadioPTT",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Talk",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "Crossing_F",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Crossing_F",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "Crossing_B",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Crossing_B",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "WarningDevices (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "WarningDevices",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "FuelCap_L",
+      "objectClass": "FuelCapComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "FuelCap_R",
+      "objectClass": "FuelCapComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Headlight_Control",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Single or Middle Unit",
+          "source": "Output",
+          "min": 2,
+          "max": 2
+        },
+        {
+          "name": "Short Hood Lead",
+          "source": "Output",
+          "min": 3,
+          "max": 3
+        },
+        {
+          "name": "Long Hood Lead",
+          "source": "Output",
+          "min": 4,
+          "max": 4
+        },
+        {
+          "name": "Short Hood Trail",
+          "source": "Output",
+          "min": 1,
+          "max": 10
+        },
+        {
+          "name": "Long Hood Trail",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        }
+      ]
+    },
+    {
+      "name": "CrosswalkLights",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "PlatformLights",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "BrakeCutoutValve",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Lead",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Trail",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        }
+      ]
+    },
+    {
+      "name": "MU-2A_Valve",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Lead",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Trail",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "WindowHeaters (FuseControl)",
+      "objectClass": "FuseControl_C",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "RoadCrossingLights (FuseControl)",
+      "objectClass": "FuseControl_C",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Radio (FuseControl)",
+      "objectClass": "FuseControl_C",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabFan (FuseControl)",
+      "objectClass": "FuseControl_C",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ShortHoodHeadlights (FuseControl)",
+      "objectClass": "FuseControl_C",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "LongHoodHeadlights (FuseControl)",
+      "objectClass": "FuseControl_C",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "RunningLights (FuseControl)",
+      "objectClass": "FuseControl_C",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "FuelPump (FuseControl)",
+      "objectClass": "FuseControl_C",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "EngineRun (FuseControl)",
+      "objectClass": "FuseControl_C",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabComputerDisplay (FuseControl)",
+      "objectClass": "FuseControl_C",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "EngineerWallHeater (FuseControl)",
+      "objectClass": "FuseControl_C",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "HelperWallHeater (FuseControl)",
+      "objectClass": "FuseControl_C",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "HeaterAirConditioner (FuseControl)",
+      "objectClass": "FuseControl_C",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "AC4400CW_SlowSpeedControl",
+      "objectClass": "ES44AC_SlowSpeedControl_C"
+    },
+    {
+      "name": "AC4400CW_NotchPowerControl",
+      "objectClass": "ES44AC_NotchPowerControl_C"
+    },
+    {
+      "name": "Cab_Passenger (Environment)",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "SandLead",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "SandLead",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "CrossingChain_F",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CrossingChain_B",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "TractionSimulation",
+      "objectClass": "BP_ES44AC_TractionComponent_C"
+    },
+    {
+      "name": "Handbrake",
+      "objectClass": "BP_ES44AC_Handbrake_C",
+      "inputValue": 0,
+      "identifier": "Handbrake",
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "InputNormalised",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "AC4400CW_Sander",
+      "objectClass": "ES44AC_Sander_C"
+    },
+    {
+      "name": "Banking",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DriverAI",
+      "objectClass": "BP_ES44AC_DriverAI_C"
+    },
+    {
+      "name": "LocalControl (FuseControl)",
+      "objectClass": "FuseControl_C",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ServiceProvider",
+      "objectClass": "ServiceProviderBase_C"
+    },
+    {
+      "name": "DigitalDisplayService",
+      "objectClass": "HSC_ES44AC_DigitalDisplay_Service_C"
+    },
+    {
+      "name": "PCS",
+      "objectClass": "BP_ES44AC_PCS_C"
+    },
+    {
+      "name": "Alerter",
+      "objectClass": "AlerterComponent"
+    },
+    {
+      "name": "DynamicBrake",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "DynamicBrake",
+      "namedValues": [
+        {
+          "name": "Setup",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -1,
+          "max": -1
+        }
+      ]
+    },
+    {
+      "name": "ReverserHandle",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "MasterSwitch",
+      "namedValues": [
+        {
+          "name": "",
+          "source": "Output",
+          "min": -0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Throttle",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "Throttle",
+      "namedValues": [
+        {
+          "name": "Idle",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        }
+      ]
+    },
+    {
+      "name": "Reverser",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "Reverser",
+      "namedValues": [
+        {
+          "name": "Reverse",
+          "source": "Output",
+          "min": -1,
+          "max": -1
+        },
+        {
+          "name": "Neutral",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Forward",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "EmergencyBrake",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "EmergencyBrake",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "DeskLight_L2",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "DeskLight",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DeskLightDimmer_L2",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CrosswalkLightsDriverStand",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "PlatformLights",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "ES44AC_DistanceCounter",
+      "objectClass": "ES44AC_DistanceCounter_C"
+    },
+    {
+      "name": "DistanceCounterButton",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    }
+  ],
+  "levers": {
+    "IndependentBrake": {
+      "identifier": "IndependentBrake",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.20000000298023224,
+      "namedValues": [
+        {
+          "name": "Bail Off",
+          "source": "Output",
+          "min": -1,
+          "max": -1
+        },
+        {
+          "name": "Release",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Full Application",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.22,
+          "snapped": 0.2,
+          "output": 0,
+          "name": "Release"
+        },
+        {
+          "index": 1,
+          "from": 0.23,
+          "to": 1,
+          "snapped": 0.25,
+          "output": 0,
+          "name": "Release"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.20000000298023224
+    },
+    "AutomaticBrake": {
+      "identifier": "AutomaticBrake",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 7,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.8500000238418579,
+      "inputRange": 1,
+      "outputRange": 5,
+      "rotational": false,
+      "inputValue": 0.800000011920929,
+      "namedValues": [
+        {
+          "name": "Release",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.75
+        },
+        {
+          "name": "Minimum Reduction",
+          "source": "Output",
+          "min": -0.7509999871253967,
+          "max": 0
+        },
+        {
+          "name": "Full Service",
+          "source": "Output",
+          "min": 1,
+          "max": 1.5
+        },
+        {
+          "name": "Service {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "Suppression",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Handle Off",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        },
+        {
+          "name": "Emergency",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.09,
+          "snapped": 0,
+          "output": -1,
+          "name": "Release"
+        },
+        {
+          "index": 1,
+          "from": 0.1,
+          "to": 0.2,
+          "snapped": 0.2,
+          "output": 0,
+          "name": "Minimum Reduction"
+        },
+        {
+          "index": 2,
+          "from": 0.21,
+          "to": 0.62,
+          "snapped": 0.21,
+          "output": 0.02499997429549694,
+          "name": "Service {%}"
+        },
+        {
+          "index": 3,
+          "from": 0.63,
+          "to": 0.67,
+          "snapped": 0.65,
+          "output": 1,
+          "name": "Full Service"
+        },
+        {
+          "index": 4,
+          "from": 0.68,
+          "to": 0.74,
+          "snapped": 0.7,
+          "output": 2,
+          "name": "Suppression"
+        },
+        {
+          "index": 5,
+          "from": 0.75,
+          "to": 0.9,
+          "snapped": 0.8,
+          "output": 3,
+          "name": "Handle Off"
+        },
+        {
+          "index": 6,
+          "from": 0.91,
+          "to": 1,
+          "snapped": 1,
+          "output": 4,
+          "name": "Emergency"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.800000011920929
+    },
+    "AutoBrakeBailOff": {
+      "identifier": "BailOff",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Bail Off",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.8956,
+          "output": 1,
+          "name": "Bail Off"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "HeadlightsFront": {
+      "identifier": "Headlights",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 4,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 3,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Dim",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Bright",
+          "source": "Output",
+          "min": 2,
+          "max": 2
+        },
+        {
+          "name": "Bright Aux",
+          "source": "Output",
+          "min": 3,
+          "max": 3
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.14,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.15,
+          "to": 0.45,
+          "snapped": 0.3,
+          "output": 1,
+          "name": "Dim"
+        },
+        {
+          "index": 2,
+          "from": 0.46,
+          "to": 0.79,
+          "snapped": 0.6,
+          "output": 2,
+          "name": "Bright"
+        },
+        {
+          "index": 3,
+          "from": 0.8,
+          "to": 1,
+          "snapped": 1,
+          "output": 3,
+          "name": "Bright Aux"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "HeadlightsBack": {
+      "identifier": "HeadlightsBack",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Dim",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Bright",
+          "source": "Output",
+          "min": 2,
+          "max": 2
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.4965,
+          "output": 1,
+          "name": "Dim"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 0.999,
+          "output": 2,
+          "name": "Bright"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "CabFanSpeed_L": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "CabFanSpeed_R": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "DeskLightDimmer_L1": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 0.5,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "DeskLightDimmer_R": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 0.5,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Wiper_FL": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Wiper_FR": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Wiper_BL": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Wiper_BR": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "WiperSwitch_FL": {
+      "identifier": "Wipers",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "WiperSwitch_FR": {
+      "identifier": "Wipers",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "WiperSwitch_BL": {
+      "identifier": "Wipers",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "WiperSwitch_BR": {
+      "identifier": "Wipers",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "EngineControlSwitch": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 4,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.6600000262260437,
+      "inputRange": 1,
+      "outputRange": 3,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Run",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Isolate",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Start",
+          "source": "Output",
+          "min": 2,
+          "max": 2
+        },
+        {
+          "name": "Jog",
+          "source": "Output",
+          "min": 3,
+          "max": 3
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.16,
+          "snapped": 0,
+          "output": 0,
+          "name": "Run"
+        },
+        {
+          "index": 1,
+          "from": 0.17,
+          "to": 0.5,
+          "snapped": 0.3333,
+          "output": 1,
+          "name": "Isolate"
+        },
+        {
+          "index": 2,
+          "from": 0.51,
+          "to": 0.83,
+          "snapped": 0.6667,
+          "output": 2,
+          "name": "Start"
+        },
+        {
+          "index": 3,
+          "from": 0.84,
+          "to": 1,
+          "snapped": 1,
+          "output": 3,
+          "name": "Jog"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "Heater_Engineer": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Medium",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "High",
+          "source": "Output",
+          "min": 2,
+          "max": 2
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.25,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.26,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 1,
+          "name": "Medium"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 2,
+          "name": "High"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "Heater_Helper": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Medium",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "High",
+          "source": "Output",
+          "min": 2,
+          "max": 2
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.25,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.26,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 1,
+          "name": "Medium"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 2,
+          "name": "High"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "HeatingAirConSwitch": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 9,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 7,
+      "rotational": true,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Med. Fan",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "High Fan",
+          "source": "Output",
+          "min": 2,
+          "max": 2
+        },
+        {
+          "name": "Low Cool",
+          "source": "Output",
+          "min": 3,
+          "max": 3
+        },
+        {
+          "name": "Low Heat",
+          "source": "Output",
+          "min": 4,
+          "max": 4
+        },
+        {
+          "name": "Med. Heat",
+          "source": "Output",
+          "min": 5,
+          "max": 5
+        },
+        {
+          "name": "High Heat",
+          "source": "Output",
+          "min": 6,
+          "max": 6
+        },
+        {
+          "name": "Low Fan",
+          "source": "Output",
+          "min": 7,
+          "max": 7
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.06,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.07,
+          "to": 0.18,
+          "snapped": 0.125,
+          "output": 1,
+          "name": "Med. Fan"
+        },
+        {
+          "index": 2,
+          "from": 0.19,
+          "to": 0.31,
+          "snapped": 0.25,
+          "output": 2,
+          "name": "High Fan"
+        },
+        {
+          "index": 3,
+          "from": 0.32,
+          "to": 0.43,
+          "snapped": 0.375,
+          "output": 3,
+          "name": "Low Cool"
+        },
+        {
+          "index": 4,
+          "from": 0.44,
+          "to": 0.56,
+          "snapped": 0.5,
+          "output": 4,
+          "name": "Low Heat"
+        },
+        {
+          "index": 5,
+          "from": 0.57,
+          "to": 0.68,
+          "snapped": 0.625,
+          "output": 4,
+          "name": "Low Heat"
+        },
+        {
+          "index": 6,
+          "from": 0.69,
+          "to": 0.81,
+          "snapped": 0.75,
+          "output": 5,
+          "name": "Med. Heat"
+        },
+        {
+          "index": 7,
+          "from": 0.82,
+          "to": 0.93,
+          "snapped": 0.875,
+          "output": 6,
+          "name": "High Heat"
+        },
+        {
+          "index": 0,
+          "from": 0.94,
+          "to": 1,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "Headlight_Control": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 5,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 4,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Single or Middle Unit",
+          "source": "Output",
+          "min": 2,
+          "max": 2
+        },
+        {
+          "name": "Short Hood Lead",
+          "source": "Output",
+          "min": 3,
+          "max": 3
+        },
+        {
+          "name": "Long Hood Lead",
+          "source": "Output",
+          "min": 4,
+          "max": 4
+        },
+        {
+          "name": "Short Hood Trail",
+          "source": "Output",
+          "min": 1,
+          "max": 10
+        },
+        {
+          "name": "Long Hood Trail",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.12,
+          "snapped": 0,
+          "output": 0,
+          "name": "Long Hood Trail"
+        },
+        {
+          "index": 1,
+          "from": 0.13,
+          "to": 0.37,
+          "snapped": 0.25,
+          "output": 1,
+          "name": "Short Hood Trail"
+        },
+        {
+          "index": 2,
+          "from": 0.38,
+          "to": 0.62,
+          "snapped": 0.5,
+          "output": 2,
+          "name": "Single or Middle Unit"
+        },
+        {
+          "index": 3,
+          "from": 0.63,
+          "to": 0.87,
+          "snapped": 0.75,
+          "output": 3,
+          "name": "Short Hood Lead"
+        },
+        {
+          "index": 4,
+          "from": 0.88,
+          "to": 1,
+          "snapped": 1,
+          "output": 4,
+          "name": "Long Hood Lead"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.5
+    },
+    "DynamicBrake": {
+      "identifier": "DynamicBrake",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 9,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Setup",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -1,
+          "max": -1
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 1,
+          "snapped": 0,
+          "output": -1,
+          "name": "Off"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "Throttle": {
+      "identifier": "Throttle",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 9,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 8,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Idle",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.06,
+          "snapped": 0,
+          "output": 0,
+          "name": "Idle"
+        },
+        {
+          "index": 1,
+          "from": 0.07,
+          "to": 0.18,
+          "snapped": 0.125,
+          "output": 1,
+          "name": null
+        },
+        {
+          "index": 2,
+          "from": 0.19,
+          "to": 0.31,
+          "snapped": 0.25,
+          "output": 2,
+          "name": null
+        },
+        {
+          "index": 3,
+          "from": 0.32,
+          "to": 0.43,
+          "snapped": 0.375,
+          "output": 3,
+          "name": null
+        },
+        {
+          "index": 4,
+          "from": 0.44,
+          "to": 0.56,
+          "snapped": 0.5,
+          "output": 4,
+          "name": null
+        },
+        {
+          "index": 5,
+          "from": 0.57,
+          "to": 0.68,
+          "snapped": 0.625,
+          "output": 5,
+          "name": null
+        },
+        {
+          "index": 6,
+          "from": 0.69,
+          "to": 0.81,
+          "snapped": 0.75,
+          "output": 6,
+          "name": null
+        },
+        {
+          "index": 7,
+          "from": 0.82,
+          "to": 0.93,
+          "snapped": 0.875,
+          "output": 7,
+          "name": null
+        },
+        {
+          "index": 8,
+          "from": 0.94,
+          "to": 1,
+          "snapped": 1,
+          "output": 8,
+          "name": null
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "Reverser": {
+      "identifier": "Reverser",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 3,
+      "minInput": -1,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 2,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Reverse",
+          "source": "Output",
+          "min": -1,
+          "max": -1
+        },
+        {
+          "name": "Neutral",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Forward",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": -1,
+          "to": -0.51,
+          "snapped": -1,
+          "output": -1,
+          "name": "Reverse"
+        },
+        {
+          "index": 1,
+          "from": -0.5,
+          "to": 0.49,
+          "snapped": -0.3432,
+          "output": 0,
+          "name": "Neutral"
+        },
+        {
+          "index": 2,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.6529,
+          "output": 1,
+          "name": "Forward"
+        }
+      ],
+      "sweptRange": [
+        -1,
+        1
+      ],
+      "restored": 0
+    },
+    "EmergencyBrake": {
+      "identifier": "EmergencyBrake",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Closed"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.8866,
+          "output": 0.938523530960083,
+          "name": null
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "DeskLightDimmer_L2": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 0.5,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    }
+  }
+}

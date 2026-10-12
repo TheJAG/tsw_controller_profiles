@@ -1,0 +1,13 @@
+NS GE ES44AC (ES44AC_RVM_C), Horseshoe Curve, 509 Shire Oaks - Baltimore (Coal) 11:19 from Johnstown, 2026-10-13.
+probe_lever.js results (set -> stored InputValue, output, notch). Train stationary, automatic brake at Handle Off, independent applied.
+
+IndependentBrake: 0 -> 0.2 (Release, out 0, notch 0); 0.25 out 0 notch 1; continuous 0.25..1, output (in - 0.25) / 0.75 (0.5 -> 0.333, 1 -> 1). Loads 0.2.
+DynamicBrake (reverser Forward; locked at Off in Neutral, the sweep saw one notch):
+  0..0.05 -> 0 Off (out -1); 0.07..0.18 -> 0.14 Setup (out 0); 0.2..0.26 -> 0.26 (out 1, notch 2);
+  continuous 0.26..1, output 1 + 9.46 x (in - 0.26) (0.5 -> 3.27, 0.76 -> 5.73, 1 -> 8).
+Throttle (Neutral): Idle 0 / N1..N8 stored at 0.125 / 0.25 / 0.375 / 0.5 / 0.625 / 0.75 / 0.875 / 1 (k/8, snaps to nearest; 0.05 -> 0, 0.95 -> 1).
+Reverser: -1 / 0 / 1, snaps (-0.6 -> -1, +-0.3 -> 0, 0.6 -> 1). Moves with ReverserHandle (MasterSwitch) reading 0.
+AutomaticBrake: Release 0 (out -1) / Minimum Reduction 0.2 (0.1..0.2 snap to 0.2, out 0) / Service continuous 0.21..0.6 (out (in - 0.2) x 2.5) /
+  Full Service 0.65 (0.62 -> 0.6, 0.64 -> 0.65) / Suppression 0.7 (0.68 -> 0.7) / Handle Off 0.8 (0.75..0.9 -> 0.8) / Emergency 1 (0.95 -> 1). Loads 0.8.
+AutoBrakeBailOff (BailOff): 0 / 1 (0.5 -> 1); HOLDS at 1 (read back 1 after 2 s), not a spring.
+Loads as a trailing unit: BrakeCutoutValve 0 (Trail; Lead = 1), MU-2A_Valve 1 (Trail; Lead = 0), GeneratorField 0 (Off).
