@@ -1,0 +1,116 @@
+# AC4400CW_RVM_C (CSX GE AC4400CW, DTG, Sand Patch Grade) lever probe, capture agent 2026-10-12, Q261 Autorack from Cumberland Yard West 12:30, stationary.
+# No key node (no MasterSwitch / BrakeKey). Loads with a TRAILING-UNIT brake set-up: BrakeCutoutValve 0 = Trail (1 = Lead), MU-2A_Valve 1 = Trail (0 = Lead), AutomaticBrake at Handle Off 0.8, IndependentBrake 0.2 (Release), ThrottleAndBrake 0.2 (Idle).
+# The sweep's reverser Neutral (-0.3324) / Forward (0.6632) and independent 'one notch' were artefacts; dynamic side of ThrottleAndBrake LOCKED in Neutral (stores 0.2), probed with Reverser Forward. Everything restored to the load state; train did not move.
+# AutoBrakeBailOff: stores 1 for sets >= 0.5 and HOLDS (still 1 after 2 s, not a spring), 0 below; restored 0.
+
+orig {"BrakeCutoutValve":0,"MU-2A_Valve":1,"Reverser":0,"ThrottleAndBrake":0.20000000298023224,"IndependentBrake":0.20000000298023224,"AutomaticBrake":0.800000011920929,"Handbrake":0} speed 0.00
+### Reverser
+set -1 -> stored -1.0000 output -1 notch 0  speed 0.00
+set -0.75 -> stored -1.0000 output -1 notch 0  speed 0.00
+set -0.5 -> stored 0.0000 output 0 notch 1  speed 0.00
+set -0.4 -> stored 0.0000 output 0 notch 1  speed 0.00
+set -0.25 -> stored 0.0000 output 0 notch 1  speed 0.00
+set -0.1 -> stored 0.0000 output 0 notch 1  speed 0.00
+set 0 -> stored 0.0000 output 0 notch 1  speed 0.00
+set 0.1 -> stored 0.0000 output 0 notch 1  speed 0.00
+set 0.25 -> stored 0.0000 output 0 notch 1  speed 0.00
+set 0.4 -> stored 0.0000 output 0 notch 1  speed 0.00
+set 0.5 -> stored 1.0000 output 1 notch 2  speed 0.00
+set 0.6 -> stored 1.0000 output 1 notch 2  speed 0.00
+set 0.75 -> stored 1.0000 output 1 notch 2  speed 0.00
+set 1 -> stored 1.0000 output 1 notch 2  speed 0.00
+set 0 -> stored 0.0000 output 0 notch 1  speed 0.00
+-- IndependentBrake, trailing set-up as loaded
+### IndependentBrake
+set 0 -> stored 0.2000 output 0 notch 0  speed 0.00
+set 0.2 -> stored 0.2000 output 0 notch 0  speed 0.00
+set 0.25 -> stored 0.2500 output 0 notch 1  speed 0.00
+set 0.5 -> stored 0.5000 output 0.3333333432674408 notch 1  speed 0.00
+set 1 -> stored 1.0000 output 1 notch 1  speed 0.00
+set 0.2 -> stored 0.2000 output 0 notch 0  speed 0.00
+Lead set-up: BrakeCutoutValve [ '1.0000', 1, null ] MU-2A [ '0.0000', 0, null ]
+### IndependentBrake
+set 0 -> stored 0.2000 output 0 notch 0  speed 0.00
+set 0.1 -> stored 0.2000 output 0 notch 0  speed 0.00
+set 0.15 -> stored 0.2000 output 0 notch 0  speed 0.00
+set 0.2 -> stored 0.2000 output 0 notch 0  speed 0.00
+set 0.22 -> stored 0.2000 output 0 notch 0  speed 0.00
+set 0.25 -> stored 0.2500 output 0 notch 1  speed 0.00
+set 0.3 -> stored 0.3000 output 0.06666668504476547 notch 1  speed 0.00
+set 0.4 -> stored 0.4000 output 0.20000000298023224 notch 1  speed 0.00
+set 0.5 -> stored 0.5000 output 0.3333333432674408 notch 1  speed 0.00
+set 0.6 -> stored 0.6000 output 0.46666669845581055 notch 1  speed 0.00
+set 0.7 -> stored 0.7000 output 0.5999999642372131 notch 1  speed 0.00
+set 0.8 -> stored 0.8000 output 0.7333333492279053 notch 1  speed 0.00
+set 0.9 -> stored 0.9000 output 0.8666666150093079 notch 1  speed 0.00
+set 1 -> stored 1.0000 output 1 notch 1  speed 0.00
+### AutomaticBrake
+set 0.8 -> stored 0.8000 output 3 notch 5  speed 0.00
+set 0.65 -> stored 0.6500 output 1 notch 3  speed 0.00
+set 0.5 -> stored 0.5000 output 0.7499999403953552 notch 2  speed 0.00
+set 0.3 -> stored 0.3000 output 0.25 notch 2  speed 0.00
+set 0.21 -> stored 0.2100 output 0.02499997429549694 notch 2  speed 0.00
+set 0.2 -> stored 0.2000 output 0 notch 1  speed 0.00
+set 0.1 -> stored 0.2000 output 0 notch 1  speed 0.00
+set 0 -> stored 0.0000 output -1 notch 0  speed 0.00
+set 0.2 -> stored 0.2000 output 0 notch 1  speed 0.00
+set 0.65 -> stored 0.6500 output 1 notch 3  speed 0.00
+set 0.7 -> stored 0.7000 output 2 notch 4  speed 0.00
+set 0.8 -> stored 0.8000 output 3 notch 5  speed 0.00
+set 0.9 -> stored 0.8000 output 3 notch 5  speed 0.00
+set 0.95 -> stored 1.0000 output 4 notch 6  speed 0.00
+set 1 -> stored 1.0000 output 4 notch 6  speed 0.00
+set 0.8 -> stored 0.8000 output 3 notch 5  speed 0.00
+Reverser Forward [ '1.0000', 1, 2 ]
+### ThrottleAndBrake
+set 0.2 -> stored 0.2000 output 0 notch 2  speed 0.00
+set 0.1 -> stored 0.2000 output 0 notch 2  speed 0.00
+set 0.05 -> stored 0.2000 output 0 notch 2  speed 0.00
+set 0 -> stored 0.2000 output 0 notch 2  speed 0.00
+set -0.05 -> stored -0.2000 output -1 notch 1  speed 0.00
+set -0.1 -> stored -0.2000 output -1 notch 1  speed 0.00
+set -0.15 -> stored -0.2000 output -1 notch 1  speed 0.00
+set -0.2 -> stored -0.2000 output -1 notch 1  speed 0.00
+set -0.25 -> stored -0.2000 output -1 notch 1  speed 0.00
+set -0.3 -> stored -0.3000 output -2 notch 0  speed 0.00
+set -0.35 -> stored -0.3500 output -2.5 notch 0  speed 0.00
+set -0.4 -> stored -0.4000 output -2.999999523162842 notch 0  speed 0.00
+set -0.5 -> stored -0.5000 output -4 notch 0  speed 0.00
+set -0.6 -> stored -0.6000 output -5 notch 0  speed 0.00
+set -0.7 -> stored -0.7000 output -6 notch 0  speed 0.00
+set -0.8 -> stored -0.8000 output -7 notch 0  speed 0.00
+set -0.9 -> stored -0.9000 output -8 notch 0  speed 0.00
+set -1 -> stored -1.0000 output -9 notch 0  speed 0.00
+-- Neutral check
+### ThrottleAndBrake
+set 0 -> stored 0.2000 output 0 notch 2  speed 0.00
+set -0.2 -> stored 0.2000 output 0 notch 2  speed 0.00
+set -0.5 -> stored 0.2000 output 0 notch 2  speed 0.00
+set -1 -> stored 0.2000 output 0 notch 2  speed 0.00
+restored {"BrakeCutoutValve":0,"MU-2A_Valve":1,"Reverser":0,"ThrottleAndBrake":0.20000000298023224,"IndependentBrake":0.20000000298023224,"AutomaticBrake":0.800000011920929,"Handbrake":0} speed 0.00
+
+### ThrottleAndBrake power side, Reverser Neutral (probe_lever.js)
+current InputValue 0.20000000298023224 (what the game stores after the last set, e.g. by the TCA through the mod)
+set 0.2000 -> stored 0.200000 output 0 notch 2 
+set 0.2500 -> stored 0.200000 output 0 notch 2   <-- game changed the value
+set 0.2600 -> stored 0.300000 output 1 notch 3   <-- game changed the value
+set 0.3000 -> stored 0.300000 output 1 notch 3 
+set 0.3500 -> stored 0.300000 output 1 notch 3   <-- game changed the value
+set 0.4000 -> stored 0.400000 output 2 notch 4 
+set 0.4500 -> stored 0.400000 output 2 notch 4   <-- game changed the value
+set 0.5000 -> stored 0.500000 output 3 notch 5 
+set 0.6000 -> stored 0.600000 output 4 notch 6 
+set 0.7000 -> stored 0.700000 output 5 notch 7 
+set 0.8000 -> stored 0.800000 output 6 notch 8 
+set 0.9000 -> stored 0.900000 output 7 notch 9 
+set 0.9500 -> stored 1.000000 output 8 notch 10   <-- game changed the value
+set 1.0000 -> stored 1.000000 output 8 notch 10 
+set 0.2000 -> stored 0.200000 output 0 notch 2 
+restored 0.20000000298023224
+current InputValue 0 (what the game stores after the last set, e.g. by the TCA through the mod)
+set 0.0000 -> stored 0.000000 output 0 notch 0 
+set 0.3000 -> stored 0.000000 output 0 notch 0   <-- game changed the value
+set 0.5000 -> stored 1.000000 output 1 notch 1   <-- game changed the value
+set 1.0000 -> stored 1.000000 output 1 notch 1 
+set 0.0000 -> stored 0.000000 output 0 notch 0 
+restored 0
