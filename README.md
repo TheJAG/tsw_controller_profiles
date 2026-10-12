@@ -129,7 +129,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 
 **🇫🇷 France**
 
-`TODO ◼️` **TGV Duplex**  
+`SOON 🟨` **TGV Duplex** <sub>— DTG · [profile](releases/tsw-tgv-duplex-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-tgv-duplex-dtg-thejag.pdf)</sub>  
 
 **🇳🇱 Netherlands**
 

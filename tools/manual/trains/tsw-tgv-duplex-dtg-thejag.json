@@ -1,0 +1,161 @@
+{
+  "name": "tsw-tgv-duplex-dtg-thejag",
+  "title": "TGV Duplex",
+  "eyebrow": "SNCF · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | TGV Duplex | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "LGV Méditerranée: Marseille – Avignon",
+  "colors": {
+    "navy": "#46284a",
+    "blue": "#7a5a80",
+    "red": "#d23732",
+    "paper": "#f6f3f7"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-sncf-aubergine.svg",
+      "alt": "SNCF"
+    },
+    {
+      "file": "../../assets/logo-dtg-aubergine.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4679140",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/tgv-duplex-dtg-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "diagram": {
+    "file": "../../assets/tgv-duplex-side.png",
+    "caption": "Tekening: Arthur’s Treinenpagina, arthurstreinenpagina.nl",
+    "clean": false,
+    "fit": "clip"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Forward",
+        "Neutral",
+        "Reverse"
+      ],
+      "start": 1
+    },
+    "leftThrottle": {
+      "name": "Traction / freinage",
+      "continuous": true,
+      "notches": [
+        "Max power",
+        null,
+        "Min power",
+        "0",
+        null,
+        "Max brake"
+      ],
+      "start": 5
+    },
+    "rightThrottle": {
+      "name": "Frein direct",
+      "notches": [
+        "Apply",
+        "Neutral",
+        "Release"
+      ],
+      "start": 0
+    },
+    "flap": {
+      "name": "Vitesse consigne",
+      "continuous": true,
+      "notches": [
+        "320 km/h",
+        null,
+        null,
+        null,
+        "0"
+      ],
+      "start": 4
+    },
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Horn"
+    },
+    "gearLever": {
+      "name": "VACMA ack."
+    },
+    "autoBrk": {
+      "name": "Lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Reduced"
+        },
+        {
+          "short": "2",
+          "desc": "Normal"
+        },
+        {
+          "short": "3",
+          "desc": "Normal + tail"
+        },
+        {
+          "short": "HI",
+          "desc": "Tail only"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": null,
+    "eng2": null,
+    "leftAux": {
+      "name": "KVB · TVM"
+    },
+    "rightAux": {
+      "name": "VACMA"
+    },
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "off",
+      "right": "on"
+    },
+    "roundAux": {
+      "name": "Selected speed"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Desk · Manual mode",
+      "flat": "off",
+      "up": "on"
+    }
+  },
+  "setup": [
+    "Battery, pantograph (Normal) and circuit breaker in the cab",
+    "PARK BRK up: master switch Active, driving mode Manual",
+    "Reverser from Neutral to Forward",
+    "KVB / TVM and VACMA to Normal (aux squares lit); the train loads with them isolated",
+    "Lights to Normal",
+    "Frein direct at Apply, handle at Max brake (parked); the robinet de frein automatique stays in the cab"
+  ],
+  "depart": [
+    "Close doors (RUD TRIM), check the signal",
+    "Frein direct to Release, handle to 0",
+    "Handle past Min power into the power zone",
+    "Selected speed: round aux lit, set the speed on the flap lever",
+    "Acknowledge VACMA / KVB with the gear lever",
+    "Brake: handle back through 0 into the brake zone; frein direct to Apply at a stand"
+  ]
+}
