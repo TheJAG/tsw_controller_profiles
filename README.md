@@ -183,7 +183,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **Norfolk Southern ES44AC** <sub>— Skyhook Games · [profile](releases/tsw-ns-es44ac-skyhook-thejag.tswprofile) · [manual](profiles/documentation/tsw-ns-es44ac-skyhook-thejag.pdf)</sub>  
 `SOON 🟨` **Norfolk Southern GP38-2** <sub>— DTG · [profile](releases/tsw-ns-gp38-2-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-ns-gp38-2-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Santa Fe C40-8W** <sub>— DTG · [profile](releases/tsw-santafe-c40-8w-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-santafe-c40-8w-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **Santa Fe F7**  
+`SOON 🟨` **Santa Fe F7** <sub>— DTG · [profile](releases/tsw-santafe-f7-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-santafe-f7-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Santa Fe SD40-2** <sub>— DTG · [profile](releases/tsw-santafe-sd40-2-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-santafe-sd40-2-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **Tri-Rail BL36PH**  
 `TODO ◼️` **Tri-Rail F40PH-3C**  

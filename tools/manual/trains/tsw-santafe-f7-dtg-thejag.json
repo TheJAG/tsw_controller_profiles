@@ -1,0 +1,158 @@
+{
+  "name": "tsw-santafe-f7-dtg-thejag",
+  "title": "F7",
+  "eyebrow": "Santa Fe · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | Santa Fe F7 | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "Cajon Pass: Barstow – San Bernardino",
+  "colors": {
+    "navy": "#1f3b52",
+    "blue": "#4d7593",
+    "red": "#c8102e",
+    "paper": "#f3f6f8"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-santafe-slate.svg",
+      "alt": "Santa Fe"
+    },
+    {
+      "file": "../../assets/logo-dtg-slate.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4679520",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/santafe-f7-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Forward",
+        "Neutral",
+        "Reverse"
+      ],
+      "start": 1
+    },
+    "leftThrottle": {
+      "name": "Throttle",
+      "notches": [
+        "8",
+        "7",
+        "6",
+        "5",
+        "4",
+        "3",
+        "2",
+        "1",
+        "Idle"
+      ],
+      "start": 8
+    },
+    "rightThrottle": {
+      "name": "24RL brake",
+      "notches": [
+        "Emergency",
+        "Service",
+        "Lap",
+        "First service",
+        "Running"
+      ],
+      "start": 1
+    },
+    "flap": {
+      "name": "Transition",
+      "notches": [
+        "SP shunt",
+        "Series par.",
+        "Off",
+        "Braking"
+      ],
+      "start": 2
+    },
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Horn"
+    },
+    "gearLever": {
+      "name": "Deadman"
+    },
+    "autoBrk": {
+      "name": "Lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Dim"
+        },
+        {
+          "short": "2",
+          "desc": "Bright"
+        },
+        {
+          "short": "3",
+          "desc": "+ number"
+        },
+        {
+          "short": "HI",
+          "desc": "+ class"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Bell",
+      "start": true
+    },
+    "eng2": {
+      "name": "Transition MAN",
+      "start": true
+    },
+    "leftAux": {
+      "name": "Safety control"
+    },
+    "rightAux": null,
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "off",
+      "right": "on"
+    },
+    "roundAux": {
+      "name": "Independent"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Handle · field · valve",
+      "flat": "off",
+      "up": "on"
+    }
+  },
+  "setup": [
+    "PARK BRK up: reverser handle in, generator field on, brake valve cut in (a spawned loco loads with them off)",
+    "Reverser from Neutral to Forward; safety control cock cut in (left aux lit)",
+    "Lights to Bright",
+    "Independent applied (round aux lit), 24RL brake at Service (parked); throttle Idle, transition Off"
+  ],
+  "depart": [
+    "Check the signal; bell on (ENG 1)",
+    "24RL brake to Running; round aux out to release the independent",
+    "Transition lever to Series parallel (throttle at Idle), then throttle notch by notch; SP shunt at speed",
+    "Deadman pedal on the gear lever when it calls",
+    "Brake: throttle to Idle, transition to Braking and throttle up for dynamic braking; 24RL to First service or Service, Lap to hold; Emergency at the far end"
+  ]
+}

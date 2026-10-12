@@ -20,6 +20,8 @@ Read before probing a lever, writing an mk script for a new vendor or lever type
 
 ## Vendor interlocks
 
+- DTG Santa Fe F7 (2026-10-13): the interlocks between throttle, transition lever and reverser LAG by one event (checked against the other lever's state before its last change). A second set to a slightly different value of the lever just moved (0.41 after 0.4) refreshes the check; the same value does not. `mksff7.js` gives such a lever two direct_control assignments on the same node (notch values and notch +0.01); a sweep shows the throttle with one notch because of the lag.
+
 - Just Trains 86/87 (2026-10-11): the reverser, train brake and loco brake are free only with the master key (`MasterKeySwitch_F`, identifier MasterSwitch) AND the brake key (`CabChangeLever_F`, BrakeKey) in; their reverser is named `MasterSwitch_F` (the capture script ignores driving levers when it looks for keys); Reverse needs the `ReverserLockButton` held.
 - Rivet Voyager (220): the reverser moves only while the combined handle is in Emergency, so its profile keeps Emergency on the handle.
 - ATS Class 90: the straight air brake springs back to Hold within 400 ms of any set above 0.5, so it is left off the TCA.

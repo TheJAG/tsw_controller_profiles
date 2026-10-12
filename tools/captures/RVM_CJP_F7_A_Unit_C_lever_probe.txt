@@ -1,0 +1,42 @@
+Santa Fe EMD F7 A unit (RVM_CJP_F7_A_Unit_C), DTG loco pack (pak CJP_SF_F7), Cajon Pass. Probed by hand 2026-10-13 through tools/tswapi.js / probe_lever.js,
+free roam at Barstow Old Yard 10:00 (clear), spawned from the Tab radial as "Santa Fe F7 A-B" (loco 307), stationary, independent brake applied during throttle tests.
+
+Loads cold (spawn): ReverserHandle (MasterSwitch push button, Out 0 / In 1) Out 0; BrakeValveCutoutCock 1 = Cut-Out; SafetyControlCock (WarningDevices) 0 = Cut-Out;
+GeneratorField 0. EngineRun 1, FuelPumpAndControlSwitch 1, IsolationValve 1 (Run), DeadmansPedal (Alerter, ReversiblePushButton) 1, ClassLights 1, NumberLights 1.
+None of them unlocked the throttle; the lock is the transition lever (below). Set by hand for the probes: ReverserHandle 1, BrakeValveCutoutCock 0, SafetyControlCock 1, GeneratorField 1.
+
+Reverser (Reverser): Reverse 0 / Neutral 0.5 / Forward 1 (sweep values 0.3344 / 0.8348 are artefacts; 0.25 -> 0.468, 0.75 -> 1). Loads 0.5.
+
+TransitionLever (identifier DynamicBrake): Braking 0 (out -1) / Off 0.2 (out 0) / Series Parallel 0.4 (out 1) / Series Parallel Shunt 0.6 (out 2); 0.8 / 1 store 0.6. Loads 0.2.
+
+Throttle (Throttle): Idle 0.11 / N1 0.22 / N2 0.33 / N3 0.44 / N4 0.55 / N5 0.66 / N6 0.77 / N7 0.88 / N8 1.0 (output 0..8; 0.6 -> 0.55). "Emergency Stop" below Idle not tested. Loads 0.11.
+  LOCKED while TransitionLever is Off (0.2); free in Braking, SP and SPS (Neutral and Forward). Same rule as the Clinchfield F7, BUT:
+  INTERLOCKS LAG ONE EVENT. The game evaluates the throttle / transition / reverser interlocks with the state from BEFORE the last change of the other lever.
+  After a single API set TransitionLever Off -> SP the throttle stays locked; after SP -> Off the throttle still takes one move (then locks).
+  Likewise after Throttle N3 -> Idle in one set, TransitionLever refuses Braking -> Off and Reverser refuses Forward -> Neutral.
+  A second set to a slightly different value of the lever just moved (TransitionLever 0.41 after 0.4, 0.21 after 0.2, 0.01 after 0; Throttle 0.12 after 0.11) is a change
+  event that snaps back to the same notch and refreshes the interlock; then the behaviour is clean (log below). A set to the identical value is no event (no refresh).
+  This is why the sweep (and the first probes) saw the throttle at one notch.
+
+AutomaticBrake (AutomaticBrake): Running 0.2 / First Service 0.4 / Lap 0.6 / Service 0.8 / Emergency 1 (output 0..4; 0 and 0.1 -> 0.2; 0.3 -> 0.4; 0.5 -> 0.4; 0.7 -> 0.6; 0.9 -> 0.8). Release unreachable. Loads 0.4.
+IndependentBrake (IndependentBrake): Release 0 / continuous 0.1..1 (0.05 -> 0.1 out 0.01; 0.25 out 0.18; 0.5 out 0.45; 0.75 out 0.73; 0.9 out 0.89; 1 out 1); -0.1 stores 0. Loads 0.
+HeadlightSwitchProxy (Headlights, lever): Off 0 (out -1) / Dim 0.33 (out 0) / Bright 0.66 (out 1); 1 wraps to Off 0. Loads 0.
+SignalLightSwitch (HeadlightsBack): Off 0 / Red 0.25 / Full 0.5 / Dim 0.75 (1 wraps to Off). SafetyControlCock (WarningDevices): Cut-Out 0 / Cut-In 1.
+BrakeValveCutoutCock: Cut-In 0 / Cut-Out 1. RotairValve: Freight 0 / Freight Lap 0.33 / Passenger Lap 0.67 / Passenger 1 (loads 0.33). UnitSelectorSwitch quarters (out 1..4).
+Horn: SimpleLever (identifier Horn), not a push button. EmergencyBrake_L (EmergencyBrake) lever, Pressed >= 0.5.
+
+Interlock log with refresh sets (1.5 s between sets):
+start                  TL 0.600 Thr 0.110 Rev 1.000
+TransitionLever=0.2    TL 0.200 Thr 0.110
+TransitionLever=0.21   TL 0.200 Thr 0.110
+Throttle=0.22          TL 0.200 Thr 0.110   (locked in Off)
+TransitionLever=0.4    TL 0.400
+TransitionLever=0.41   TL 0.400
+Throttle=0.22 / 0.33 / 0.11   Thr 0.220 / 0.330 / 0.110   (free in SP)
+TransitionLever=0.2, 0.21 ; Throttle=0.22   Thr 0.110   (locked)
+TransitionLever=0, 0.01 ; Throttle=0.22 / 0.44 / 0.11   Thr 0.220 / 0.440 / 0.110   (free in Braking)
+TransitionLever=0.2    TL 0.000   (refused: stale throttle 0.44)
+Throttle=0.12          Thr 0.110  (refresh)
+TransitionLever=0.2    TL 0.200   (now accepted)
+Reverser=0.5           Rev 0.500
+Without refresh (2 s waits): from SPS, TL 0.4 -> throttle free; TL 0.2 -> throttle 0.11 -> 0.22 accepted, then 0.22 -> 0.11 refused; TL 0.6 -> throttle still locked.
