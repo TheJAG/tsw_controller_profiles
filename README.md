@@ -144,10 +144,13 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 
 `SOON 🟨` **Amtrak ACS-64** <sub>— DTG · [profile](releases/tsw-amtrak-acs64-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-amtrak-acs64-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Amtrak Acela** <sub>— DTG · [profile](releases/tsw-amtrak-acela-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-amtrak-acela-dtg-thejag.pdf)</sub>  
+`TODO ◼️` **Amtrak Amfleet cab car** <sub>— DTG</sub>  
 `SOON 🟨` **BNSF ES44C4** <sub>— DTG · [profile](releases/tsw-bnsf-es44c4-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-bnsf-es44c4-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BNSF GP60M / GP60B** <sub>— DTG · [profile](releases/tsw-bnsf-gp60m-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-bnsf-gp60m-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BNSF SD40-2** <sub>— DTG · [profile](releases/tsw-bnsf-sd40-2-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-bnsf-sd40-2-dtg-thejag.pdf)</sub>  
+`TODO ◼️` **Caltrain Bi-Level cab car** <sub>— DTG</sub>  
 `SOON 🟨` **Caltrain F40PH-2CAT** <sub>— DTG · [profile](releases/tsw-caltrain-f40ph-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-caltrain-f40ph-dtg-thejag.pdf)</sub>  
+`TODO ◼️` **Caltrain Gallery cab car** <sub>— DTG</sub>  
 `SOON 🟨` **Caltrain MP15DC** <sub>— DTG · [profile](releases/tsw-caltrain-mp15dc-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-caltrain-mp15dc-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **Caltrain MP36PH-3C**  
 `TODO ◼️` **Clinchfield F7**  
@@ -161,17 +164,22 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **LIRR M3**  
 `TODO ◼️` **LIRR M7**  
 `TODO ◼️` **LIRR M9**  
+`TODO ◼️` **MBTA bi-level cab car** <sub>— DTG</sub>  
 `TODO ◼️` **MBTA F40PH-3C**  
 `TODO ◼️` **MBTA HSP46**  
+`TODO ◼️` **MBTA single-deck cab car** <sub>— DTG</sub>  
 `TODO ◼️` **Metrolink F125**  
 `TODO ◼️` **Metrolink F59PH**  
 `TODO ◼️` **Metrolink MP36PH-3C**  
 `TODO ◼️` **Metro-North M3a**  
 `TODO ◼️` **Metro-North M7a**  
 `TODO ◼️` **Metro-North M8**  
+`TODO ◼️` **Metrolink Bi-Level cab car** <sub>— DTG</sub>  
+`TODO ◼️` **Metrolink Rotem cab car** <sub>— DTG</sub>  
 `TODO ◼️` **NJ Transit ALP-45DP**  
 `TODO ◼️` **NJ Transit ALP-46**  
 `TODO ◼️` **NJ Transit Arrow III**  
+`TODO ◼️` **NJ Transit Bi-Level cab car** <sub>— DTG</sub>  
 `TODO ◼️` **Norfolk Southern ES44AC**  
 `TODO ◼️` **Norfolk Southern GP38-2**  
 `TODO ◼️` **Santa Fe C40-8W**  
@@ -180,6 +188,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **Tri-Rail BL36PH**  
 `TODO ◼️` **Tri-Rail F40PH-3C**  
 `TODO ◼️` **Tri-Rail GP49PH**  
+`TODO ◼️` **Tri-Rail Rotem cab car** <sub>— DTG</sub>  
 `TODO ◼️` **Union Pacific SD40-2**  
 `TODO ◼️` **Union Pacific SD70ACe**  
 
