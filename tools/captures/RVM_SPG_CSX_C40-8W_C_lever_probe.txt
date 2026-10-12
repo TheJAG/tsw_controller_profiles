@@ -1,0 +1,26 @@
+CSX GE C40-8W (DTG, SPGC40-8W layer on Sand Patch Grade), class RVM_SPG_CSX_C40-8W_C
+Probed by hand with tools/probe_lever.js, 2026-10-12, Q640 Manifest Cumberland Yard West 13:15, stationary, IndependentBrake 1.
+
+ThrottleAndBrake (identifier Throttle), combined handle -1..1, loads 0.12 (Idle)
+  power side (moves in Neutral and Forward):
+    Idle  stored 0.12  for sets -0.04..0.17   output 0
+    N1    0.23  (0.18..0.28)   N2 0.34 (0.29..0.39)   N3 0.45 (0.40..0.50)   N4 0.56 (0.51..0.61)
+    N5    0.67  (0.62..0.72)   N6 0.78 (0.73..0.83)   N7 0.89 (0.84..0.94)   N8 1.00 (0.95..1)
+  dynamic side: LOCKED while the reverser is in Neutral (any negative set stores 0.12); in Forward:
+    Set-up stored -0.20 for sets -0.05..-0.25, output -1
+    B zone continuous from -0.30 (sets -0.26..-0.30 store -0.30) to -1.00, output -2 - 10 x (|in| - 0.3) (-2 .. -9), not quantised
+
+Reverser (Reverser): Reverse -1 (sets <= -0.6), Neutral 0 (-0.4..0.4), Forward 1 (>= 0.6); -0.5 / 0.5 caught mid-travel (-0.062 / 0.927). The sweep's -0.3618 / 0.6636 are artefacts.
+
+AutomaticBrake (AutomaticBrake), loads 0.8 (Handle Off)
+  Release 0 (0..0.09) out -1 | Minimum Reduction 0.20 (0.10..0.20) out 0 | Service continuous 0.21..0.60 out (in-0.2)/0.4
+  (0.60..0.62 store 0.60) | Full Service 0.65 (0.63..0.67) out 1 | Suppression 0.70 (0.68..0.74) out 2
+  Handle Off 0.80 (0.75..0.90) out 3 | Emergency 1.00 (0.91..1) out 4
+
+IndependentBrake (IndependentBrake), loads 0.2
+  Release 0.20 (sets 0..0.23 store 0.20; 0.24 stores 0.25), continuous 0.25..1, output (in-0.25)/0.75
+
+AutoBrakeBailOff (BailOff, SimpleLever): 0 / 1, HOLDS at 1 through the API (not a spring), as on the AC4400CW.
+
+Lead / trail set-up at load (trailing-unit style, as the AC4400CW): BrakeCutoutValve 1 = Cut Out (3 positions: Passenger 0 / Freight 0.5 / Cut Out 1),
+MU-2A_Valve 1, GeneratorField 0, IndependentBrakeValve 1. No key node.

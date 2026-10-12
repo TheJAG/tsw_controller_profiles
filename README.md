@@ -158,7 +158,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **CN GP9RM** <sub>— DTG · [profile](releases/tsw-cn-gp9rm-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-cn-gp9rm-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **CN GP38-2** <sub>— DTG · [profile](releases/tsw-cn-gp38-2-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-cn-gp38-2-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **CSX AC4400CW** <sub>— DTG · [profile](releases/tsw-csx-ac4400cw-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-csx-ac4400cw-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **CSX C40-8W**  
+`SOON 🟨` **CSX C40-8W** <sub>— DTG · [profile](releases/tsw-csx-c40-8w-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-csx-c40-8w-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **CSX GP38-2**  
 `TODO ◼️` **CSX SD40-2**  
 `TODO ◼️` **LIRR M3**  
