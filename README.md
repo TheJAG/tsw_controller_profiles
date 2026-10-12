@@ -57,7 +57,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **BR Class 805** <sub>— DTG · [profile](releases/tsw-class-805-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-805-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 807** <sub>— DTG · [profile](releases/tsw-class-807-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-807-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Flying Scotsman** <sub>— DTG · [profile](releases/tsw-flying-scotsman-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-flying-scotsman-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **LMS Class 4F**  
+`SOON 🟨` **LMS Class 4F** <sub>— DTG · [profile](releases/tsw-lms-4f-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-lms-4f-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **LMS Class 8F**  
 `TODO ◼️` **LMS Jubilee Class (6P)**  
 `TODO ◼️` **LU 1938 Stock**  
