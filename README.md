@@ -150,7 +150,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **BNSF SD40-2** <sub>— DTG · [profile](releases/tsw-bnsf-sd40-2-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-bnsf-sd40-2-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **Caltrain Bi-Level cab car** <sub>— DTG</sub>  
 `SOON 🟨` **Caltrain F40PH-2CAT** <sub>— DTG · [profile](releases/tsw-caltrain-f40ph-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-caltrain-f40ph-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **Caltrain Gallery cab car** <sub>— DTG</sub>  
+`SOON 🟨` **Caltrain Gallery cab car** <sub>— DTG · [profile](releases/tsw-caltrain-gallery-cab-car-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-caltrain-gallery-cab-car-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Caltrain MP15DC** <sub>— DTG · [profile](releases/tsw-caltrain-mp15dc-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-caltrain-mp15dc-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Caltrain MP36PH-3C** <sub>— DTG · [profile](releases/tsw-caltrain-mp36ph-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-caltrain-mp36ph-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Clinchfield F7** <sub>— DTG · [profile](releases/tsw-clinchfield-f7-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-clinchfield-f7-dtg-thejag.pdf)</sub>  
