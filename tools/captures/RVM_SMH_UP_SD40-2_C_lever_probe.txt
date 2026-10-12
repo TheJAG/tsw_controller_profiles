@@ -1,0 +1,131 @@
+# RVM_SMH_UP_SD40-2_C lever probe (capture agent, 2026-10-13, Sherman Hill timetable, SD40-2 UP tile -> layer 'Sherman Hill: Cheyenne - Laramie' (all 11 services are yard switching), Chemical Switching 12:35 at Cheyenne Yard, 2x SD40-2 light engine, lead UP 3431).
+# The service loads ROLLING (about 2 m/s, accelerating downhill with AutomaticBrake 0.9 Handle Off); stopped with AutomaticBrake Emergency 1 + IndependentBrake 1 through the API before the photo and sweep. Probed with ReverserHandle In (1), IndependentBrake 1, AutomaticBrake 0.65 between sweeps. Left at AutomaticBrake 0.65, IndependentBrake 1, ReverserHandle 0.
+# Summary: identical to the Santa Fe / BNSF SD40-2 stand (Handle Off 0.9). DynamicBrake locked in Neutral; with it out of Off the throttle stays at Idle. SandNew a spring (rest 0.5, a single set of 1 or 0 is gone within 100 ms).
+load ReverserHandle ["0.0000",0,null]
+load GeneratorField ["0.0000",0,null]
+load EngineRun ["0.0000",0,null]
+load ControlFuelPump ["0.0000",0,null]
+load MainBreaker ["1.0000",1,null]
+load CutOffPilotValve ["0.0000",0,0]
+load MU-2A_Valve ["1.0000",1,1]
+load Fuse_WarningDevices ["0.0000",0,null]
+load Fuse_Control ["1.0000",1,null]
+load Fuse_GeneratorField ["1.0000",1,null]
+load IsolationSwitch ["0.0000",0,0]
+load EmergencyBrakeValve ["0.0000",0,0]
+load HeadlightControl ["0.0000",0,0]
+load Headlight_F ["0.0000",0,0]
+load Bell ["0.0000",0,null]
+load Horn ["0.0000",0,null]
+load SandNew ["0.5000",0,0]
+load Reverser ["0.0000",0,1]
+load Throttle ["0.0000",0,0]
+load DynamicBrake ["0.0000",-1,0]
+load AutomaticBrake ["1.0000",4,7]
+load IndependentBrake ["1.0000",1,2]
+load IndependentBrake_BailOff ["0.2500",0,0]
+ReverserHandle after set 1 ["1.0000",1,null]
+### Reverser
+set -1 -> stored -1.0000 out -1 notch 0
+set -0.75 -> stored -1.0000 out -1 notch 0
+set -0.5 -> stored 0.0000 out 0 notch 1
+set -0.25 -> stored 0.0000 out 0 notch 1
+set 0 -> stored 0.0000 out 0 notch 1
+set 0.25 -> stored 0.0000 out 0 notch 1
+set 0.5 -> stored 1.0000 out 1 notch 2
+set 0.75 -> stored 1.0000 out 1 notch 2
+set 1 -> stored 1.0000 out 1 notch 2
+### Throttle
+set 0 -> stored 0.0000 out 0 notch 0
+set 0.05 -> stored 0.0000 out 0 notch 0
+set 0.1 -> stored 0.1300 out 1 notch 1
+set 0.13 -> stored 0.1300 out 1 notch 1
+set 0.2 -> stored 0.2500 out 2 notch 2
+set 0.25 -> stored 0.2500 out 2 notch 2
+set 0.375 -> stored 0.3750 out 3 notch 3
+set 0.5 -> stored 0.5000 out 4 notch 4
+set 0.625 -> stored 0.6250 out 5 notch 5
+set 0.75 -> stored 0.7500 out 6 notch 6
+set 0.875 -> stored 0.8750 out 7 notch 7
+set 0.95 -> stored 1.0000 out 8 notch 8
+set 1 -> stored 1.0000 out 8 notch 8
+-- DynamicBrake with Reverser Neutral
+### DynamicBrake
+set 0.1 -> stored 0.0000 out -1 notch 0
+set 0.5 -> stored 0.0000 out -1 notch 0
+-- DynamicBrake with Reverser Forward, throttle Idle
+### DynamicBrake
+set 0 -> stored 0.0000 out -1 notch 0
+set 0.05 -> stored 0.0000 out -1 notch 0
+set 0.08 -> stored 0.1100 out 0 notch 1
+set 0.11 -> stored 0.1100 out 0 notch 1
+set 0.14 -> stored 0.1100 out 0 notch 1
+set 0.18 -> stored 0.2100 out 1 notch 2
+set 0.2 -> stored 0.2100 out 1 notch 2
+set 0.21 -> stored 0.2100 out 1 notch 2
+set 0.24 -> stored 0.2400 out 1.2658227682113647 notch 2
+set 0.26 -> stored 0.2600 out 1.443037986755371 notch 2
+set 0.3 -> stored 0.3000 out 1.7974684238433838 notch 2
+set 0.5 -> stored 0.5000 out 3.569620370864868 notch 2
+set 0.75 -> stored 0.7500 out 5.784810543060303 notch 2
+set 1 -> stored 1.0000 out 8 notch 2
+-- Throttle with DynamicBrake at 0.5 (interlock?)
+### Throttle
+set 0.25 -> stored 0.0000 out 0 notch 0
+DynamicBrake back ["0.0000",-1,0]
+### AutomaticBrake
+set 0 -> stored 0.0000 out -1 notch 0
+set 0.05 -> stored 0.0000 out -1 notch 0
+set 0.075 -> stored 0.1250 out 0 notch 1
+set 0.1 -> stored 0.1250 out 0 notch 1
+set 0.125 -> stored 0.1250 out 0 notch 1
+set 0.15 -> stored 0.1250 out 0 notch 1
+set 0.175 -> stored 0.2000 out 0.00009999999747378752 notch 2
+set 0.2 -> stored 0.2000 out 0.00009999999747378752 notch 2
+set 0.4 -> stored 0.4000 out 0.4999999403953552 notch 2
+set 0.6 -> stored 0.6000 out 0.9998999834060669 notch 2
+set 0.625 -> stored 0.6500 out 1 notch 3
+set 0.65 -> stored 0.6500 out 1 notch 3
+set 0.675 -> stored 0.7000 out 2 notch 4
+set 0.7 -> stored 0.7000 out 2 notch 4
+set 0.725 -> stored 0.7500 out 2 notch 5
+set 0.75 -> stored 0.7500 out 2 notch 5
+set 0.8 -> stored 0.7500 out 2 notch 5
+set 0.825 -> stored 0.9000 out 3 notch 6
+set 0.85 -> stored 0.9000 out 3 notch 6
+set 0.875 -> stored 0.9000 out 3 notch 6
+set 0.9 -> stored 0.9000 out 3 notch 6
+set 0.925 -> stored 0.9000 out 3 notch 6
+set 0.95 -> stored 1.0000 out 4 notch 7
+set 1 -> stored 1.0000 out 4 notch 7
+### IndependentBrake
+set 1 -> stored 1.0000 out 1 notch 2
+set 0.75 -> stored 0.7500 out 0.6666666865348816 notch 2
+set 0.5 -> stored 0.5000 out 0.3333333432674408 notch 2
+set 0.3 -> stored 0.3000 out 0.06666668504476547 notch 2
+set 0.26 -> stored 0.2600 out 0.013333320617675781 notch 2
+set 0.25 -> stored 0.2500 out 0 notch 1
+set 0.2 -> stored 0.2500 out 0 notch 1
+set 0.1 -> stored 0.2500 out 0 notch 1
+set 0 -> stored 0.2500 out 0 notch 1
+IndependentBrake 1.5 s after set 0 ["0.2500",0,1]
+### IndependentBrake_BailOff
+BailOff rest ["0.2500",0,0]
+BailOff 1 s after set 0 ["0.2500",0,0]
+BailOff after 25 sets ["0.0128",-1,0]
+BailOff 1.5 s later ["0.2500",0,0]
+### SandNew
+rest ["0.5000",0,0]
+just after set 1 ["0.5000",0,0]
+1.5 s later ["0.5000",0,0]
+just after set 0 ["0.5000",0,0]
+1.5 s later ["0.5000",0,0]
+final ReverserHandle ["0.0000",0,null]
+final Reverser ["0.0000",0,1]
+final Throttle ["0.0000",0,0]
+final DynamicBrake ["0.0000",-1,0]
+final AutomaticBrake ["0.6500",1,3]
+final IndependentBrake ["1.0000",1,2]
+final IndependentBrake_BailOff ["0.2500",0,0]
+final SandNew ["0.5000",0,0]
+speed -0.000015195590094663203

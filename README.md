@@ -189,7 +189,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **Tri-Rail F40PH-3C** <sub>— DTG · [profile](releases/tsw-trirail-f40ph-3c-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-trirail-f40ph-3c-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Tri-Rail GP49PH** <sub>— DTG · [profile](releases/tsw-trirail-gp49ph-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-trirail-gp49ph-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **Tri-Rail Rotem cab car** <sub>— DTG</sub>  
-`TODO ◼️` **Union Pacific SD40-2**  
+`SOON 🟨` **Union Pacific SD40-2** <sub>— DTG · [profile](releases/tsw-up-sd40-2-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-up-sd40-2-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **Union Pacific SD70ACe**  
 
 <br>
