@@ -1,0 +1,34 @@
+Tri-Rail Brookville BL36PH (RVM_MPB_TR_BL36PH_C), Florida Tri-Rail, P623 Mangonia Park - Miami Airport 12:28 (drive Boca Raton - Miami Airport, loco leading, 5 vehicles), 2026-10-13. probe_lever.js --values / ramps + scripted set sequences, train stationary.
+
+ReverserHandle (PushButton, MasterSwitch) Out 0 / In 1, loads Out. A plain set to 1 works.
+Reverser: Reverse -1 / Neutral 0 / Forward 1 (sets snap: 0.5 -> 1, -0.5 -> 0). Handle Out: all moves refused.
+  LATCHING LOCK: after the ThrottleAndBrakeHandle has left Idle and come back (power or dynamic), or after the
+  reverser was moved while the handle was off Idle, every reverser move is refused, also back at Idle, also after 30 s.
+  Cycling ReverserHandle Out -> In WITH THE THROTTLE AT IDLE clears it (a cycle while at N2 does not).
+  Before any throttle use after a cycle: Neutral/Forward/Reverse move freely at Idle; Forward -> Neutral also allowed at N1 and in Setup.
+  Forward -> Neutral refused in dynamic -0.5. Profile hint: pulse ReverserHandle 0 -> 1 before a reverser move (throttle at Idle).
+
+ThrottleAndBrakeHandle (Throttle, -1..1), loads Idle 0.125 (NOT 0):
+  dynamic continuous -0.2 .. -1 (stored as set; output -2 at -0.2/-0.25, -3 at -0.3, -5 at -0.5, -6 at -0.6..-0.7, -7 at -0.8, -8 at -0.9, -9 at -0.99/-1)
+  -0.18 snaps to -0.2; -0.17 .. -0.02 snaps to Setup
+  Setup -0.15 (output -1, notch 1)
+  Idle 0.125 (output 0, notch 2; 0 .. 0.2 snap to 0.125)
+  N1 0.325, N2 0.421, N3 0.517, N4 0.613, N5 0.709, N6 0.805, N7 0.901, N8 1.0 (output 1..8; 0.23 .. 0.3 snap to N1, 0.4 -> N2)
+  GATES, one per API set: Idle -> power stops at N1 0.325; Idle -> dynamic stops at Setup -0.15; dynamic -> Idle/power stops at Setup;
+  Setup -> power stops at Idle. Free inside a zone: N1 -> N8, N8 -> Idle 0.125 directly, Setup -> -1, -1 -> Setup directly.
+  Moves without the reverser handle In and in Neutral.
+
+AutomaticBrake (moves freely, loads Full Service 0.55):
+  Release 0 (out -1; 0.05 -> 0.01) / Minimum Reduction 0.095 (0.06 .. 0.12 -> 0.095..0.105, out 0) /
+  service continuous 0.15 .. 0.525 (out 0.01 .. 0.99) / Full Service 0.545 - 0.555 (out 1; 0.6 / 0.65 -> 0.555) /
+  0.70 lands on ~0.589 (unstable, out 1) / Handle Off 0.845 (0.72 -> 0.83, 0.75 / 0.8 -> 0.845, 0.85 stays, 0.9 -> 0.855, out 2) /
+  Emergency 0.99 - 1 (0.93 / 0.95 / 0.9743 -> 0.99, out 3).
+
+IndependentBrake: rest 0 (notch 0) / Release 0.1 / continuous 0.125 .. 1 (out 0.028 .. 1); 0.05 snaps to 0.1.
+  Below 0 is a spring (-0.1 -> 0, -0.25 reads back -0.11, out 0).
+IndependentBrakeBailOffLever (BrakeRelease): spring; 0.5 -> 0.39 out 0, 1 -> 0.89 out -1 (bail off), returns to 0.
+
+CutOffPilotValve (AirBrakeCutIn): Trail 0 / Test 0.2438 / Freight 0.5741 / Passenger 0.9433 (out 0..3). Loads Passenger 1 (out 3).
+Loaded cold / off: GeneratorField Off 0 (GenField), TMSFuse Off 0 (AlerterIsolation), ATC_CutOut 0 = "Cut Out" (PTC_ACSES_ASES_Isolation),
+  ReverserHandle Out, HeadlightsFront Off 0. On: EngineRun 1, ControlAndFuelPump 1, DynamicBrakeCutout 0 = Cut In, HEP_TrainlineSetup 1 = Long Hood Coupled,
+  HeadlightControl 0.75 = Controlling, long hood end.
