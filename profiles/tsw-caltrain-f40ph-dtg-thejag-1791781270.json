@@ -1,0 +1,541 @@
+{
+  "name": "TSW | Caltrain F40PH | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_SFJ_CT_F40PH-2CAT_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser (Reverse -1 / Neutral 0 / Forward 1; any value in a zone), inverted: Forward at the far end. Needs the reverser handle in (PARK BRK up); the dynamic brake only moves out of Neutral",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "steps": [
+              -1,
+              0,
+              1
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Throttle Idle / notches 1..8 (step values on the stored positions), inverted: notch 8 at the far end (pushed away), Idle nearest",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Throttle",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.125,
+              0.25,
+              0.375,
+              0.5,
+              0.625,
+              0.75,
+              0.875,
+              1
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "Automatic brake AutomaticBrake (six detents, no service zone: Release 0 / Holding 0.2 / Lap 0.4 / Service 0.6 / Handle Off 0.8 / Emergency 1), inverted: Emergency at the far end, Release nearest, even bands",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "AutomaticBrake",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.2,
+              0.4,
+              0.6,
+              0.8,
+              1
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "FlapLever",
+      "description": "Dynamic brake DynamicBrake (Off 0 / Setup 0.15 / B1 0.275 / continuous to 1 = 8), inverted: full dynamic at the far end (raw 0 ±0.04), zone 0.045..0.86, Set Up 0.9 ±0.03, Off 1 ±0.06 nearest. Locked while the reverser is in Neutral",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "DynamicBrake",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.15,
+              null,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.06
+              },
+              {
+                "threshold": 0.9,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.86,
+                "threshold_end": 0.045
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.04
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Desk up: ReverserHandle (MasterSwitch In 1 / Out 0), CutOffValve (brake valve In 0.94 / Out 0), EngineRun, GeneratorField and ControlAndFuelPump (On 1 / Off 0); the loco loads with all of them off. PARK BRK up = handle in, valve cut in, switches on",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "ReverserHandle",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "ReverserHandle",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CutOffValve",
+            "value": 0.94,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "CutOffValve",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "EngineRun",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "EngineRun",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "GeneratorField",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "GeneratorField",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "ControlAndFuelPump",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "ControlAndFuelPump",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "GearLever",
+      "description": "Alerter reset (AlerterReset push button, held)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "AlerterReset",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "AlerterReset",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "description": "Sand (Sand push button)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Sand",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Sand",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Horn (Horn push button)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Horn",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "Bell (Bell 1 while up, 0 when down)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Bell",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "Bell",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "Independent bail-off (IndependentBrake -0.25 while up, 0.1 when down; the bail-off is a spring below 0, may need the cab)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "IndependentBrake",
+            "value": -0.25,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "IndependentBrake",
+            "value": 0.1,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "Alerter (AlerterControl On 1 / Off 0). Lit = on; loads off",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "AlerterControl",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "AlerterControl",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "Electro-pneumatic brake (ElectroPneumaticBrake On 1 / Off 0). Lit = on",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "ElectroPneumaticBrake",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "ElectroPneumaticBrake",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "Independent brake IndependentBrake: Full 1 / Release 0.1. Lit = applied; loads released",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "IndependentBrake",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "IndependentBrake",
+          "value": 0.1,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wipers off (Wiper_R 0)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Wiper_R",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wipers on (Wiper_R 0.5)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Wiper_R",
+            "value": 0.5,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Lights | Off",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightsFront",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "DitchLights",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Lights | Headlights dim (HeadlightsFront 0.215)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightsFront",
+            "value": 0.215,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "DitchLights",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Lights | Headlights bright (0.64)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightsFront",
+            "value": 0.64,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "DitchLights",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Lights | Headlights bright-cruising (1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightsFront",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "DitchLights",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Lights | Bright and ditch lights (DitchLights 1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightsFront",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "DitchLights",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}
