@@ -163,7 +163,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **CSX SD40-2** <sub>— DTG · [profile](releases/tsw-csx-sd40-2-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-csx-sd40-2-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **LIRR M3** <sub>— DTG · [profile](releases/tsw-lirr-m3-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-lirr-m3-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **LIRR M7** <sub>— DTG · [profile](releases/tsw-lirr-m7-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-lirr-m7-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **LIRR M9**  
+`SOON 🟨` **LIRR M9** <sub>— DTG · [profile](releases/tsw-lirr-m9-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-lirr-m9-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **MBTA bi-level cab car** <sub>— DTG</sub>  
 `TODO ◼️` **MBTA F40PH-3C**  
 `TODO ◼️` **MBTA HSP46**  
