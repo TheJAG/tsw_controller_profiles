@@ -152,7 +152,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **Caltrain F40PH-2CAT** <sub>— DTG · [profile](releases/tsw-caltrain-f40ph-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-caltrain-f40ph-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **Caltrain Gallery cab car** <sub>— DTG</sub>  
 `SOON 🟨` **Caltrain MP15DC** <sub>— DTG · [profile](releases/tsw-caltrain-mp15dc-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-caltrain-mp15dc-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **Caltrain MP36PH-3C**  
+`SOON 🟨` **Caltrain MP36PH-3C** <sub>— DTG · [profile](releases/tsw-caltrain-mp36ph-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-caltrain-mp36ph-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **Clinchfield F7**  
 `TODO ◼️` **Clinchfield SD40**  
 `TODO ◼️` **CN GP9RM**  
