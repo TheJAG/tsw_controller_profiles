@@ -1,0 +1,452 @@
+{
+  "name": "TSW | RhB Allegra | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_RhB_ABe_8_12_DM_C"
+    },
+    {
+      "class_name": "RVM_RhB_ABe_8_12_EWA_C"
+    },
+    {
+      "class_name": "RVM_RhB_ABe_8_12_EWB_C"
+    },
+    {
+      "class_name": "RVM_RhB_ABe_8_12_MWC_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser IrregularLever_Reverser (Reverse 0 / 0 at 0.5 / Forward 1; the zones take any value), inverted: Forward at the far end. Needs the master key (PARK BRK up)",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "IrregularLever_Reverser",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.5,
+              1
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "Combined Zugkraft / Bremskraft handle IrregularLever_Throttle_Brake -1.29..1 (Emergency -1.29 / Max brake -1 / brake continuous to -0.2 / 0 / min power 0.2 / power continuous to 1). SNG geometry, inverted: max power at the far end (raw 0 ±0.04), power zone 0.045..0.42, min power 0.45 ±0.03, 0 at 0.5 ±0.02, min brake 0.55 ±0.03, brake zone 0.58..0.92, Max brake 0.95 ±0.02, Emergency 1 ±0.02 nearest",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "IrregularLever_Throttle_Brake",
+          "input_value": {
+            "min": -1.29,
+            "max": 1,
+            "steps": [
+              -1.29,
+              -1,
+              null,
+              -0.2,
+              0,
+              0.2,
+              null,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.02
+              },
+              {
+                "threshold": 0.95,
+                "threshold_tolerance": 0.02
+              },
+              {
+                "threshold": 0.92,
+                "threshold_end": 0.58
+              },
+              {
+                "threshold": 0.55,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.5,
+                "threshold_tolerance": 0.02
+              },
+              {
+                "threshold": 0.45,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.42,
+                "threshold_end": 0.045
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.04
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Zugbremse IrregularLever_TrainBrake (Release 0 / Minimum 0.07 / continuous service to 0.79 / Full service 0.8 / Emergency 1), inverted as the Class 153 brake: Emergency at the far end, Release nearest. Emergency raw 0 ±0.05, Full 0.16 ±0.05, free zone 0.24..0.84 (full down to minimum), Minimum 0.9 ±0.03, Release 1 ±0.05 (a second re-send finishes the release)",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "IrregularLever_TrainBrake",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.07,
+              null,
+              0.8,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.05
+              },
+              {
+                "threshold": 0.9,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.84,
+                "threshold_end": 0.24
+              },
+              {
+                "threshold": 0.16,
+                "threshold_tolerance": 0.05
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.05
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "FlapLever",
+      "description": "Vmax setter IrregularLever_CruiseControl (0..120 km/h in 0.04 steps, the game snaps), 120 at the far end so inverted; the V-Sol rocker and the cruise switch stay in the cab",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "IrregularLever_CruiseControl",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Master key PushButton_MasterKey (MasterSwitch push button, Unlocked 1 / Locked 0): PARK BRK up = key in",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "PushButton_MasterKey",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "PushButton_MasterKey",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "GearLever",
+      "description": "SISTE (vigilance) reset (PushButton_SISTE_Reset, Alerter, held)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PushButton_SISTE_Reset",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PushButton_SISTE_Reset",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Horn (PushButton_Horn)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PushButton_Horn",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PushButton_Horn",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "ZS acknowledge (PushButton_ZS_R, Alerter)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PushButton_ZS_R",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PushButton_ZS_R",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "Train protection on / off (PushButton_SafetyDevices, SignallingSystems: 1 / 0). Lit = pressed",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PushButton_SafetyDevices",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "PushButton_SafetyDevices",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "Vigilance on / off (PushButton_VigilanceDevices, WarningDevices: 1 / 0). Lit = pressed",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PushButton_VigilanceDevices",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "PushButton_VigilanceDevices",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wipers off (IrregularLever_Wipers 0)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "IrregularLever_Wipers",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wipers intermittent slow (IrregularLever_Wipers 0.66)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "IrregularLever_Wipers",
+            "value": 0.66,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Lights | Off (Headlights 0 at 0.5, tail lights Off)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "IrregularLever_Headlights",
+            "value": 0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "IrregularLever_TailLights",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Lights | Dimmed (0.75)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "IrregularLever_Headlights",
+            "value": 0.75,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "IrregularLever_TailLights",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Lights | Full (1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "IrregularLever_Headlights",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "IrregularLever_TailLights",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Lights | Full headlights, white tail lamps (0.5)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "IrregularLever_Headlights",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "IrregularLever_TailLights",
+            "value": 0.5,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Lights | Red tail lamps at this end (headlights off)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "IrregularLever_Headlights",
+            "value": 0.5,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "IrregularLever_TailLights",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}
