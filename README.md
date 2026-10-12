@@ -59,7 +59,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **Flying Scotsman** <sub>— DTG · [profile](releases/tsw-flying-scotsman-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-flying-scotsman-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **LMS Class 4F** <sub>— DTG · [profile](releases/tsw-lms-4f-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-lms-4f-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **LMS Class 8F** <sub>— DTG · [profile](releases/tsw-lms-8f-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-lms-8f-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **LMS Jubilee Class (6P)**  
+`SOON 🟨` **LMS Jubilee Class (6P)** <sub>— DTG · [profile](releases/tsw-lms-jubilee-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-lms-jubilee-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **LU 1938 Stock**  
 `TODO ◼️` **LU 1972 Mark 2 Stock**  
 `TODO ◼️` **Thomas & Friends: Thomas**  
