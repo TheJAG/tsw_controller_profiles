@@ -57,7 +57,7 @@ function schematic() {
   const Hc = 640;
   let s = `<rect class="mod" x="4" y="10" width="200" height="${Hc}" rx="10"/><rect class="mod" x="212" y="10" width="298" height="${Hc}" rx="10"/><rect class="mod" x="518" y="10" width="200" height="${Hc}" rx="10"/>`;
   // left module: speedbrake lever, gear lever, AUTO BRK rotary
-  s += lever(70, 80, 240, K.speedbrake, 100, 'start', K.speedbrake && K.speedbrake.name ? K.speedbrake.name : 'Speedbrake lever', 104).replace(tx(104, 46, K.speedbrake && K.speedbrake.name ? K.speedbrake.name : 'not assigned', 'sub'), tx(104, 46, 'Speedbrake lever', 'sub'));
+  s += lever(70, 80, 240, K.speedbrake, 100, 'start', K.speedbrake && K.speedbrake.name ? K.speedbrake.name : 'Speedbrake lever', 104).replace(tx(104, 46, K.speedbrake && K.speedbrake.name ? K.speedbrake.name : 'not assigned', 'sub'), tx(104, 46, K.speedbrake && K.speedbrake.name ? 'Speedbrake lever' : 'not assigned', 'sub'));
   const gl = K.gearLever || {};
   s += `<rect class="slot" x="96" y="300" width="16" height="44" rx="4"/><rect class="knob" x="90" y="310" width="28" height="14" rx="3"/>` + (gl.start !== false ? start(104, 344) : '') + sub2(104, 364, gl.name || 'not assigned', 'Gear lever');
   const ab = K.autoBrk || {};

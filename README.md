@@ -178,7 +178,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **Metrolink Rotem cab car** <sub>— DTG</sub>  
 `SOON 🟨` **NJ Transit ALP-45DP** <sub>— DTG · [profile](releases/tsw-njt-alp45dp-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-njt-alp45dp-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **NJ Transit ALP-46** <sub>— DTG · [profile](releases/tsw-njt-alp46-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-njt-alp46-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **NJ Transit Arrow III**  
+`SOON 🟨` **NJ Transit Arrow III** <sub>— DTG · [profile](releases/tsw-njt-arrow3-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-njt-arrow3-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **NJ Transit Bi-Level cab car** <sub>— DTG</sub>  
 `TODO ◼️` **Norfolk Southern ES44AC**  
 `TODO ◼️` **Norfolk Southern GP38-2**  
