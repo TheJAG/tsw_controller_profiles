@@ -154,7 +154,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **Caltrain MP15DC** <sub>— DTG · [profile](releases/tsw-caltrain-mp15dc-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-caltrain-mp15dc-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Caltrain MP36PH-3C** <sub>— DTG · [profile](releases/tsw-caltrain-mp36ph-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-caltrain-mp36ph-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Clinchfield F7** <sub>— DTG · [profile](releases/tsw-clinchfield-f7-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-clinchfield-f7-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **Clinchfield SD40**  
+`SOON 🟨` **Clinchfield SD40** <sub>— DTG · [profile](releases/tsw-clinchfield-sd40-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-clinchfield-sd40-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **CN GP9RM**  
 `TODO ◼️` **CN GP38-2**  
 `TODO ◼️` **CSX AC4400CW**  

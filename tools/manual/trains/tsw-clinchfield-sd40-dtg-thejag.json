@@ -1,0 +1,163 @@
+{
+  "name": "tsw-clinchfield-sd40-dtg-thejag",
+  "title": "SD40",
+  "eyebrow": "Clinchfield Railroad · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | Clinchfield SD40 | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "Clinchfield Railroad: Elkhorn City – Dante",
+  "colors": {
+    "navy": "#1f3b52",
+    "blue": "#4d7593",
+    "red": "#c8102e",
+    "paper": "#f3f6f8"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-dtg-slate.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4679200",
+  "credit": "© TheJAG",
+  "schematicHeight": 540,
+  "cab": {
+    "file": "../../assets/clinchfield-sd40-dtg-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Forward",
+        "Neutral",
+        "Reverse"
+      ],
+      "start": 1
+    },
+    "leftThrottle": {
+      "name": "Throttle",
+      "notches": [
+        "8",
+        "7",
+        "6",
+        "5",
+        "4",
+        "3",
+        "2",
+        "1",
+        "Idle"
+      ],
+      "start": 8
+    },
+    "rightThrottle": {
+      "name": "26L brake",
+      "continuous": true,
+      "notches": [
+        "Emergency",
+        "Handle off",
+        "Suppression",
+        "Full service",
+        null,
+        "Initial",
+        "Release"
+      ],
+      "start": 3
+    },
+    "flap": {
+      "name": "Dynamic brake",
+      "continuous": true,
+      "notches": [
+        "100 %",
+        null,
+        null,
+        null,
+        "Off"
+      ],
+      "start": 4
+    },
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Horn"
+    },
+    "gearLever": {
+      "name": "Alerter"
+    },
+    "autoBrk": {
+      "name": "Lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Dim"
+        },
+        {
+          "short": "LO",
+          "desc": "Medium"
+        },
+        {
+          "short": "2",
+          "desc": "Bright"
+        },
+        {
+          "short": "3",
+          "desc": "+ number"
+        },
+        {
+          "short": "HI",
+          "desc": "Bright back"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Bell",
+      "start": true
+    },
+    "eng2": {
+      "name": "Bail-off",
+      "start": true
+    },
+    "leftAux": {
+      "name": "Alerter fuse"
+    },
+    "rightAux": {
+      "name": "Dyn. brake breaker"
+    },
+    "modeSwitch": {
+      "name": "Selector (hold ½ s)",
+      "left": "down",
+      "right": "up"
+    },
+    "roundAux": {
+      "name": "Independent"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Handle · switches · valve",
+      "flat": "off",
+      "up": "on"
+    }
+  },
+  "setup": [
+    "PARK BRK up: reverser handle in, engine run / generator field / control switches on, cut-off pilot valve at Freight (the loco loads with all of them off); MU-2A valve to Lead in the cab",
+    "Reverser from Neutral to Forward; alerter fuse closed and dynamic brake breaker closed (aux squares lit)",
+    "Selector: hold the mode switch right about half a second per step, OFF to 1 (the throttle is dead in OFF)",
+    "Lights to Bright front",
+    "Independent applied (round aux lit), 26L brake at Full service (parked); throttle Idle"
+  ],
+  "depart": [
+    "Check the signal; bell on (ENG 1)",
+    "26L brake to Release; round aux out to release the independent, ENG 2 up to bail off",
+    "Throttle notch by notch; selector up to 2, 3, 4 as the speed rises",
+    "Reset the alerter with the gear lever",
+    "Dynamic braking: throttle to Idle, selector down past OFF to B (reverser locked in B), flap lever for the strength; 26L into the service zone for the stop, Emergency at the far end"
+  ]
+}

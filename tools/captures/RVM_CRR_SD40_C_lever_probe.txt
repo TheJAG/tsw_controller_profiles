@@ -1,0 +1,36 @@
+Clinchfield EMD SD40 (RVM_CRR_SD40_C), DTG, Clinchfield Railroad. Probed by hand 2026-10-12 through tools/tswapi.js / probe_lever.js,
+service CRR Extra 3001 North - Northbound Coal (11:12, Dante Yard North - Elkhorn City, 44 cars, 5376 t), stationary, independent brake at 1 during the tests.
+
+Loads PART COLD: ReverserHandle (MasterSwitch) Out 0, EngineRun / GeneratorField / ControlFuelPump Off 0, CutOffPilotValve Cut-Out 0,
+MU-2A_Valve Trail 6 or 26 (1), IndependentBrake 0.25 (Release), AutomaticBrake 0.9 (Handle Off), SelectorLever OFF, throttle Idle 0.11.
+
+SelectorLever (BP_CRR_SD40_RatchetLever_C, identifier DynamicBrake): B (out -1) / OFF (out 0) / 1 / 2 / 3 / 4 (out 1..4, transition).
+  RATCHET: InputValue is a spring deflection (-1..1, rests 0); a plain API set never stores. One step per push: re-send +1 (or -1) every
+  30 ms for about 500-550 ms, then send 0 (holds of 350-450 ms were missed at times; holds over ~1.1 s give two steps, RepeatDelay 0.1,
+  repeat rate 1/s). In game: hold '.' / ',' (one step per press-and-hold). Max 4.
+  OFF -> B only with the Reverser out of Neutral (refused in Neutral). In B the Reverser is LOCKED (cannot go to Neutral).
+  B -> OFF was refused twice (once after several quick pulses; worked after a keyboard D hold and in later runs with the dynamic handle at 0.11);
+  not fully reproducible, keep the dynamic handle at 0.11 before leaving B.
+
+ThrottleLever (Throttle) (identifier Throttle): Idle 0.11 / N1 0.22 / N2 0.33 / N3 0.44 / N4 0.55 / N5 0.66 / N6 0.77 / N7 0.88 / N8 1.0
+  (output = notch 0..8, sets snap: 0.17 -> 0.22, 0.28 -> 0.33, 0.94 -> 1; 0.10 -> 0.11). "Stop" (out -1) below Idle NOT tested (engine stop).
+  LOCKED while SelectorLever is OFF or B, and while ReverserHandle is Out. Free with the handle In and the selector on 1..4, in Neutral too.
+  ControlFuelPump / EngineRun / GeneratorField not needed for the lever to move.
+
+ThrottleLever (DynamicBrake) (identifier Throttle, separate node, not mirrored by the API): in B the game's throttle keys drive this node
+  (A raises it to 1, D back to 0.11). Off 0.11 (out 0), 0.12..0.15 out 0, continuous to 0.95 = 100 % (out = (in - 0.15) / 0.8), 0.96..1 out 1.
+  It also stores API sets with the selector in OFF (bInputEnabled false there, true in B). ThrottleLever (Throttle) also stores notches in B
+  (bInputEnabled false), so a profile must send to the DynamicBrake node for braking.
+
+Reverser (Reverser): Reverse -1 / Neutral 0 / Forward 1 (sets snap: -0.6 -> -1, -0.4..0.4 -> 0, 0.6 -> 1). Locked with ReverserHandle Out,
+  locked with the selector in B. Sweep values -0.1724 / 0.756 are artefacts.
+
+AutomaticBrake (26L): Release 0 (0..0.06) / Initial Reduction 0.125 (0.08..0.15) / Service continuous 0.2..0.6 (out 0..1) / Full Service 0.65 /
+  Suppression 0.7 and 0.75 (two notches, both out 2) / Handle Off 0.9 (0.83..0.93) / Emergency 1 (0.95..1). Loads 0.9. Sweep values 0.1075 /
+  0.8673 / 0.9825 are artefacts. CutOffPilotValve loads Cut-Out, so the handle does nothing to the train until it is set to Freight 1.
+
+IndependentBrake: Release 0.25 / continuous 0.26..1 (out (in-0.25)/0.75); Bail Off below 0.25 is a SPRING (sets of -1..0.2 read back 0.11..0.25
+  and return to 0.25). Loads 0.25.
+
+CutOffPilotValve Cut-Out 0 / Freight 1 / Passenger 2; MU-2A_Valve Lead or Dead 0 / Trail 6 or 26 1 / Trail 24 2 (loads 1 = Trail);
+IsolationSwitch Run 0 / Start Stop Isolate 1; HeadlightDimmingSwitch Bright Back 0 / Medium Back 0.25 / Dim 0.5 / Medium Front 0.75 / Bright Front 1.
