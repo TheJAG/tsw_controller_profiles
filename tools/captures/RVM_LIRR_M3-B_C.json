@@ -1,0 +1,1493 @@
+{
+  "objectClass": "RVM_LIRR_M3-B_C",
+  "capturedAt": "2026-10-12T07:22:13.836Z",
+  "activeCab": {
+    "bFront": false,
+    "bBack": false
+  },
+  "cab": null,
+  "controls": [
+    {
+      "name": "ModelChildActorComponent0",
+      "objectClass": "ModelChildActorComponent"
+    },
+    {
+      "name": "RailVehiclePhysicsComponent0",
+      "objectClass": "RailVehicleComponent"
+    },
+    {
+      "name": "GameplayTasksComponent0",
+      "objectClass": "GameplayTasksComponent"
+    },
+    {
+      "name": "GameplayTagStatusComponent0",
+      "objectClass": "GameplayTagStatusComponent"
+    },
+    {
+      "name": "Simulation",
+      "objectClass": "SimulationComponent"
+    },
+    {
+      "name": "Coupler_F",
+      "objectClass": "CouplerComponent"
+    },
+    {
+      "name": "Coupler_B",
+      "objectClass": "CouplerComponent"
+    },
+    {
+      "name": "AirHose_BP_F",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_BP_B",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_MR_B",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "DriverEnvironment",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "MasterController",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "Throttle",
+      "namedValues": [
+        {
+          "name": "Emergency",
+          "source": "Input",
+          "min": -0.10000000149011612,
+          "max": 0.10000000149011612
+        },
+        {
+          "name": "Max Brake",
+          "source": "Input",
+          "min": 0.10000000149011612,
+          "max": 0.27000001072883606
+        },
+        {
+          "name": "Brake {Brake}",
+          "source": "Input",
+          "min": 0.2709999978542328,
+          "max": 0.6299999952316284
+        },
+        {
+          "name": "Min Brake",
+          "source": "Input",
+          "min": 0.6399999856948853,
+          "max": 0.6399999856948853
+        },
+        {
+          "name": "Coast",
+          "source": "Input",
+          "min": 0.6399999856948853,
+          "max": 0.800000011920929
+        },
+        {
+          "name": "P1",
+          "source": "Input",
+          "min": 0.800000011920929,
+          "max": 0.8500000238418579
+        },
+        {
+          "name": "P2",
+          "source": "Input",
+          "min": 0.8500000238418579,
+          "max": 0.8999999761581421
+        },
+        {
+          "name": "P3",
+          "source": "Input",
+          "min": 0.8999999761581421,
+          "max": 0.949999988079071
+        },
+        {
+          "name": "P4",
+          "source": "Input",
+          "min": 0.949999988079071,
+          "max": 1.0499999523162842
+        }
+      ]
+    },
+    {
+      "name": "JumperCable_F",
+      "objectClass": "JumperCableComponent"
+    },
+    {
+      "name": "JumperCable_B",
+      "objectClass": "JumperCableComponent"
+    },
+    {
+      "name": "Reverser",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "Reverser",
+      "namedValues": [
+        {
+          "name": "Reverse",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Neutral",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Forward",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Key Out",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ]
+    },
+    {
+      "name": "PassengerEnvironment",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "SecondmanEnvironment",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "PassengerDoor_FL",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Opened",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "PassengerDoor_FR",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Opened",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "PassengerDoor_BL",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Opened",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "PassengerDoor_BR",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Opened",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "GangwayDoor_F",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Opened",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DriverDoor",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "LIRR_M3_PassengerDoors",
+      "objectClass": "LIRR_M3_PassengerDoors_C"
+    },
+    {
+      "name": "MasterKey",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "MasterSwitch",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DoorZoneFrontEnd",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Through",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "UncouplingKeySwitch",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "UncoupleButton",
+      "namedValues": []
+    },
+    {
+      "name": "Headlights/AuxLights",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "Headlights",
+      "namedValues": [
+        {
+          "name": "Dim",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Bright",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DoorOverride",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Wiper",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "Wipers",
+      "namedValues": []
+    },
+    {
+      "name": "BrakeCharging",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "AutomaticBrake",
+      "namedValues": []
+    },
+    {
+      "name": "SunVisor_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabWindow_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabWindow_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Acknowledge",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "Alerter",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        }
+      ]
+    },
+    {
+      "name": "DoorPanelKey_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "DoorPanelKeySwitch_L",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "COMM",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "DOORS/COMM",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ]
+    },
+    {
+      "name": "RearwardDoorOpen_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "RearwardDoorClose_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ForwardDoorOpen_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ForwardDoorClose_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "DoorPanelKey_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "DoorPanelKeySwitch_R",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "COMM",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "DOORS/COMM",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ]
+    },
+    {
+      "name": "RearwardDoorOpen_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "RearwardDoorClose_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ForwardDoorOpen_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ForwardDoorClose_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CurrentCollector_F",
+      "objectClass": "CurrentCollectorComponent"
+    },
+    {
+      "name": "CurrentCollector_B",
+      "objectClass": "CurrentCollectorComponent"
+    },
+    {
+      "name": "ADU_Dim",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0.75,
+      "identifier": "StepLights",
+      "namedValues": [
+        {
+          "name": "Min",
+          "source": "Input",
+          "min": 0,
+          "max": 0.009999999776482582
+        },
+        {
+          "name": "Max",
+          "source": "Output",
+          "min": 0.9900000095367432,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "GangwayDoor_B",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Input",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Opened",
+          "source": "Input",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "WiperBlade",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Gangway_F",
+      "objectClass": "GangwayComponent"
+    },
+    {
+      "name": "Gangway_B",
+      "objectClass": "GangwayComponent"
+    },
+    {
+      "name": "SeatManager",
+      "objectClass": "SeatManagerComponent"
+    },
+    {
+      "name": "PassengerCargoModel",
+      "objectClass": "PassengerCargoModelComponent"
+    },
+    {
+      "name": "ISManager",
+      "objectClass": "ISManager_C"
+    },
+    {
+      "name": "LocoNumbering",
+      "objectClass": "NumberingComponent"
+    },
+    {
+      "name": "CabDoorBlind",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabCeilingLights",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "CabLights",
+      "namedValues": []
+    },
+    {
+      "name": "Horn",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Horn",
+      "namedValues": []
+    },
+    {
+      "name": "Headlights_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "MarkerLights",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "StepLights",
+      "namedValues": []
+    },
+    {
+      "name": "Headlights_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "ATC_Cut-out",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "SignallingSystems",
+      "namedValues": []
+    },
+    {
+      "name": "ACSES_Cut-out",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "SignallingSystems",
+      "namedValues": []
+    },
+    {
+      "name": "DoorOperations_Cut-out",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Battery",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Lights",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "DoorControl",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "LIRR_M3_Crank",
+      "objectClass": "LIRR_M3_Crank_C",
+      "inputValue": 0,
+      "identifier": "Handbrake",
+      "namedValues": []
+    },
+    {
+      "name": "handbrake_release",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Gangway_BCable",
+      "objectClass": "GangwayComponent"
+    },
+    {
+      "name": "Gangway_BCableSockets",
+      "objectClass": "GangwayComponent"
+    },
+    {
+      "name": "Gangway_BDrawbar",
+      "objectClass": "GangwayComponent"
+    },
+    {
+      "name": "Gangway_BBuffer",
+      "objectClass": "GangwayComponent"
+    },
+    {
+      "name": "Gangway_FBuffer",
+      "objectClass": "GangwayComponent"
+    },
+    {
+      "name": "DeadmanFootSwitch",
+      "objectClass": "ReversiblePushButton_C",
+      "inputValue": 1,
+      "identifier": "Alerter",
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "ContactSignaller",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "SimpleRadio",
+      "objectClass": "BP_SimpleRadio_C"
+    },
+    {
+      "name": "Buzzer",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Bell",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Buzzer_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Buzzer_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "AlerterV2",
+      "objectClass": "AlerterV2_C"
+    },
+    {
+      "name": "ACSES_ATC_Service_V4",
+      "objectClass": "ACSES_ATC_Service_V4_C"
+    },
+    {
+      "name": "ServiceProviderBase",
+      "objectClass": "ServiceProviderBase_C"
+    }
+  ],
+  "levers": {
+    "MasterController": {
+      "identifier": "Throttle",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 8,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 3,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Emergency",
+          "source": "Input",
+          "min": -0.10000000149011612,
+          "max": 0.10000000149011612
+        },
+        {
+          "name": "Max Brake",
+          "source": "Input",
+          "min": 0.10000000149011612,
+          "max": 0.27000001072883606
+        },
+        {
+          "name": "Brake {Brake}",
+          "source": "Input",
+          "min": 0.2709999978542328,
+          "max": 0.6299999952316284
+        },
+        {
+          "name": "Min Brake",
+          "source": "Input",
+          "min": 0.6399999856948853,
+          "max": 0.6399999856948853
+        },
+        {
+          "name": "Coast",
+          "source": "Input",
+          "min": 0.6399999856948853,
+          "max": 0.800000011920929
+        },
+        {
+          "name": "P1",
+          "source": "Input",
+          "min": 0.800000011920929,
+          "max": 0.8500000238418579
+        },
+        {
+          "name": "P2",
+          "source": "Input",
+          "min": 0.8500000238418579,
+          "max": 0.8999999761581421
+        },
+        {
+          "name": "P3",
+          "source": "Input",
+          "min": 0.8999999761581421,
+          "max": 0.949999988079071
+        },
+        {
+          "name": "P4",
+          "source": "Input",
+          "min": 0.949999988079071,
+          "max": 1.0499999523162842
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.13,
+          "snapped": 0,
+          "output": -2,
+          "name": "Emergency"
+        },
+        {
+          "index": 1,
+          "from": 0.14,
+          "to": 0.63,
+          "snapped": 0.27,
+          "output": -1,
+          "name": "Max Brake"
+        },
+        {
+          "index": 2,
+          "from": 0.64,
+          "to": 0.67,
+          "snapped": 0.64,
+          "output": -0.05000000074505806,
+          "name": "Min Brake"
+        },
+        {
+          "index": 3,
+          "from": 0.68,
+          "to": 0.78,
+          "snapped": 0.72,
+          "output": 0,
+          "name": "Coast"
+        },
+        {
+          "index": 4,
+          "from": 0.79,
+          "to": 0.87,
+          "snapped": 0.85,
+          "output": 0.25,
+          "name": "P1"
+        },
+        {
+          "index": 5,
+          "from": 0.88,
+          "to": 0.92,
+          "snapped": 0.9,
+          "output": 0.4999998211860657,
+          "name": "P2"
+        },
+        {
+          "index": 6,
+          "from": 0.93,
+          "to": 0.97,
+          "snapped": 0.95,
+          "output": 0.7499998807907104,
+          "name": "P3"
+        },
+        {
+          "index": 7,
+          "from": 0.98,
+          "to": 1,
+          "snapped": 1,
+          "output": 1,
+          "name": "P4"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "Reverser": {
+      "identifier": "Reverser",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 4,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 3,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Reverse",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Neutral",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Forward",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Key Out",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.16,
+          "snapped": 0,
+          "output": -1,
+          "name": "Reverse"
+        },
+        {
+          "index": 1,
+          "from": 0.17,
+          "to": 0.49,
+          "snapped": 0.333,
+          "output": 0,
+          "name": "Neutral"
+        },
+        {
+          "index": 2,
+          "from": 0.5,
+          "to": 0.83,
+          "snapped": 0.666,
+          "output": 1,
+          "name": "Forward"
+        },
+        {
+          "index": 3,
+          "from": 0.84,
+          "to": 1,
+          "snapped": 1,
+          "output": 2,
+          "name": "Key Out"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
+    },
+    "MasterKey": {
+      "identifier": "MasterSwitch",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.9128,
+          "output": 1,
+          "name": "On"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "DoorZoneFrontEnd": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Through",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.9296,
+          "output": 1,
+          "name": "Through"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
+    },
+    "UncouplingKeySwitch": {
+      "identifier": "UncoupleButton",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Headlights/AuxLights": {
+      "identifier": "Headlights",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Dim",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Bright",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": -1,
+          "name": "Dim"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.2901,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 0.7893,
+          "output": 1,
+          "name": "Bright"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "Wiper": {
+      "identifier": "Wipers",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Acknowledge": {
+      "identifier": "Alerter",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 1,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "DoorPanelKeySwitch_L": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "COMM",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "DOORS/COMM",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": 0,
+          "name": "COMM"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 1,
+          "name": "Off"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 2,
+          "name": "DOORS/COMM"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.5
+    },
+    "DoorPanelKeySwitch_R": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "COMM",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "DOORS/COMM",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": 0,
+          "name": "COMM"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 1,
+          "name": "Off"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 2,
+          "name": "DOORS/COMM"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.5
+    },
+    "ADU_Dim": {
+      "identifier": "StepLights",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.75,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0.75,
+      "namedValues": [
+        {
+          "name": "Min",
+          "source": "Input",
+          "min": 0,
+          "max": 0.009999999776482582
+        },
+        {
+          "name": "Max",
+          "source": "Output",
+          "min": 0.9900000095367432,
+          "max": 1
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "WiperBlade": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "CabDoorBlind": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "handbrake_release": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 1,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "DeadmanFootSwitch": {
+      "identifier": "Alerter",
+      "objectClass": "ReversiblePushButton_C",
+      "notchCount": null,
+      "minInput": 1,
+      "maxInput": 0,
+      "defaultInput": 1,
+      "inputRange": -1,
+      "outputRange": 1,
+      "rotational": null,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": false,
+      "notches": []
+    }
+  }
+}

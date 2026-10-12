@@ -1,0 +1,134 @@
+{
+  "name": "tsw-lirr-m3-dtg-thejag",
+  "title": "M3",
+  "eyebrow": "Long Island Rail Road · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | LIRR M3 | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "Long Island Rail Road: New York – Hicksville",
+  "colors": {
+    "navy": "#1f3b52",
+    "blue": "#4d7593",
+    "red": "#c8102e",
+    "paper": "#f3f6f8"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-lirr-slate.svg",
+      "alt": "Long Island Rail Road"
+    },
+    {
+      "file": "../../assets/logo-dtg-slate.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4679070",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/lirr-m3-dtg-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Forward",
+        "Neutral",
+        "Reverse"
+      ],
+      "start": 1
+    },
+    "leftThrottle": {
+      "name": "Master controller",
+      "notches": [
+        "P4",
+        "P3",
+        "P2",
+        "P1",
+        "Coast",
+        "Min brake",
+        null,
+        "Max brake",
+        "Emergency"
+      ],
+      "start": 7
+    },
+    "rightThrottle": null,
+    "flap": null,
+    "leftThrottleButton": null,
+    "rightThrottleButton": {
+      "name": "Horn"
+    },
+    "gearLever": {
+      "name": "Acknowledge"
+    },
+    "autoBrk": {
+      "name": "Lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Dim"
+        },
+        {
+          "short": "2",
+          "desc": "Bright"
+        },
+        {
+          "short": "3",
+          "desc": "+ markers"
+        },
+        {
+          "short": "HI",
+          "desc": "Markers only"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Buzzer",
+      "start": true
+    },
+    "eng2": null,
+    "leftAux": {
+      "name": "ATC · ACSES cut-out"
+    },
+    "rightAux": null,
+    "modeSwitch": {
+      "name": "Wiper",
+      "left": "off",
+      "right": "on"
+    },
+    "roundAux": {
+      "name": "Cab lights"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Master key",
+      "flat": "out",
+      "up": "in"
+    }
+  },
+  "setup": [
+    "Master key in (PARK BRK up); the reverser loads at Key Out",
+    "Reverser from Neutral to Forward",
+    "Cab signalling cut in (left aux unlit); hold the deadman pedal in the cab if it calls",
+    "Lights to Bright",
+    "Controller at Max brake (parked)"
+  ],
+  "depart": [
+    "Close doors (RUD TRIM), check the signal; buzzer (ENG 1)",
+    "Controller through Min brake to Coast, then P1 … P4",
+    "Acknowledge ATC / ACSES with the gear lever",
+    "Brake: controller back through Coast and Min brake into the brake zone; Max brake for the stop, Emergency nearest you"
+  ]
+}
