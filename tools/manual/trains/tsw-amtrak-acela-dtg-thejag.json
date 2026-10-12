@@ -1,0 +1,161 @@
+{
+  "name": "tsw-amtrak-acela-dtg-thejag",
+  "title": "Acela",
+  "eyebrow": "Amtrak · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | Amtrak Acela | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "Northeast Corridor: Boston – Providence",
+  "colors": {
+    "navy": "#1f3b52",
+    "blue": "#4d7593",
+    "red": "#c8102e",
+    "paper": "#f3f6f8"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-acela-slate.svg",
+      "alt": "Amtrak Acela"
+    },
+    {
+      "file": "../../assets/logo-dtg-slate.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4679630",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/amtrak-acela-dtg-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Forward",
+        "Neutral",
+        "Reverse"
+      ],
+      "start": 1
+    },
+    "leftThrottle": {
+      "name": "Throttle",
+      "continuous": true,
+      "notches": [
+        "Max",
+        null,
+        "Ready",
+        "Off"
+      ],
+      "start": 3
+    },
+    "rightThrottle": {
+      "name": "Automatic brake",
+      "continuous": true,
+      "notches": [
+        "Emergency",
+        "Handle off",
+        "Full service",
+        "Suppression",
+        null,
+        "Minimum",
+        "Release"
+      ],
+      "start": 2
+    },
+    "flap": {
+      "name": "Cruise control",
+      "continuous": true,
+      "notches": [
+        "Max",
+        null,
+        "Slow",
+        "Off"
+      ],
+      "start": 3
+    },
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Horn"
+    },
+    "gearLever": {
+      "name": "Acknowledge"
+    },
+    "autoBrk": {
+      "name": "Lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Dim"
+        },
+        {
+          "short": "2",
+          "desc": "Full"
+        },
+        {
+          "short": "3",
+          "desc": "+ ditch"
+        },
+        {
+          "short": "HI",
+          "desc": "Ditch flash"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Bell",
+      "start": true
+    },
+    "eng2": {
+      "name": "Pantograph",
+      "start": true
+    },
+    "leftAux": {
+      "name": "ACSES · ATC"
+    },
+    "rightAux": {
+      "name": "Alerter"
+    },
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "off",
+      "right": "low"
+    },
+    "roundAux": {
+      "name": "Parking brake"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Handle + cab",
+      "flat": "off",
+      "up": "on"
+    }
+  },
+  "setup": [
+    "PARK BRK up: reverser handle in, cab activated; pantograph up (ENG 2)",
+    "Reverser from Neutral to Forward",
+    "ACSES / ATC and alerter cut in (aux squares lit); the train loads with them cut out",
+    "Lights to Full, ditch lights on",
+    "Automatic brake at Full service (parked), throttle Off, cruise Off"
+  ],
+  "depart": [
+    "Close doors (RUD TRIM), check the signal; bell on (ENG 1)",
+    "Automatic brake to Release",
+    "Throttle to Ready, then into the effort zone; cruise control on the flap lever if wanted",
+    "Acknowledge the alerter and cab signals with the gear lever",
+    "Brake: throttle to Ready, automatic brake into the service zone, Suppression for a penalty; Emergency at the far end"
+  ]
+}

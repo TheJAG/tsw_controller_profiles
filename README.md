@@ -143,7 +143,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 **🇺🇸 United States & 🇨🇦 Canada**
 
 `SOON 🟨` **Amtrak ACS-64** <sub>— DTG · [profile](releases/tsw-amtrak-acs64-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-amtrak-acs64-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **Amtrak Acela**  
+`SOON 🟨` **Amtrak Acela** <sub>— DTG · [profile](releases/tsw-amtrak-acela-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-amtrak-acela-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **BNSF ES44C4**  
 `TODO ◼️` **BNSF GP60M / GP60B**  
 `TODO ◼️` **BNSF SD40-2**  
