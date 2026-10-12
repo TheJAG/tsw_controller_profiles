@@ -1,0 +1,13 @@
+RVM_BOW_MBTA_HSP46_C hand probe, 2026-10-12, MBTA Franklin #709 Boston South Station 12:18 (Boston - Providence route, HSP-46 timetable)
+
+ReverserLever (Reverser, 0..1): Reverse 0 / Neutral 0.5 / Forward 1; sets snap (0..0.2 -> 0, 0.25..0.9 -> 0.5 from Reverse, 0.75+ -> 1).
+  Locked whenever it sits in Neutral. Unlock = ReverserHandle (MasterSwitch push button) value change 1 -> 0 (set 1, then 0);
+  after that the reverser moves freely between Forward and Reverse (1 -> 0 direct works), but the moment it lands in Neutral it locks again.
+  Setting ReverserHandle 0 -> 1 alone does not unlock. ReverserHandle readback (Inserted = 1) does not reflect the lock state.
+MasterController (Throttle, 0..1): Idle 0, N1..N8 stored at k/8 exactly (0.125 .. 1); 0.06 -> 0, 0.1 -> 0.125, 0.2 -> 0.25, 0.95 -> 1. Moves in Neutral.
+  No dynamic-brake lever node (only DynamicBrake_CutOut push button, DynBrakeCutIn, reads 1 = Cut-In).
+AutomaticBrake (0..1, loads 0.9 Handle Off): Release 0 (out -1) / Minimum Application 0.125 and 0.15 (out 0) /
+  service continuous 0.15..0.65 (out 0.2->0.10, 0.3->0.30, 0.4->0.50, 0.5->0.69, 0.6->0.89, 0.65->0.99) /
+  Full Service 0.7 (0.68 -> 0.7) / Suppression 0.8 (0.75 -> 0.8) / Handle Off 0.9 (0.85 -> 0.9) / Emergency 1 (0.95 -> 1).
+IndependentBrake (-0.25..1, loads 0): Released 0 (0..0.06 -> 0) / 0.1 -> 0.125 (out 0) / continuous 0.125..1, output ~ (in-0.125)/0.875 (0.5 -> 0.43, 0.8 -> 0.77) / Full 1.
+  Bail Off -0.25..0 is a spring: a set to -0.25 reads 0 again after 100 ms.
