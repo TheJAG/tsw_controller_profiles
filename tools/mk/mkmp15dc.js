@@ -23,7 +23,6 @@ p.controls=[
  {name:'RightThrottle',description:'Automatic brake AutomaticBrake_26L (Release 0 / Initial reduction 0.125 / service continuous 0.2..0.6 / Full Service 0.65 / Suppression 0.7 / Handle Off 0.9 / Emergency 1), inverted: Emergency at the far end (raw 0 ±0.04), Handle Off 0.1 ±0.04, Suppression 0.2 ±0.04, Full Service 0.3 ±0.04, service zone 0.36..0.86, Minimum 0.9 ±0.03, Release 1 ±0.06 nearest',assignments:[{type:'direct_control',controls:'AutomaticBrake_26L',input_value:{min:0,max:1,steps:[0,0.125,null,0.65,0.7,0.9,1],invert:true,step_thresholds:[{threshold:1,threshold_tolerance:0.06},{threshold:0.9,threshold_tolerance:0.03},{threshold:0.86,threshold_end:0.36},{threshold:0.3,threshold_tolerance:0.04},{threshold:0.2,threshold_tolerance:0.04},{threshold:0.1,threshold_tolerance:0.04},{threshold:0,threshold_tolerance:0.04}]}}]},
  {name:'FlapLever',description:'Independent brake IndependentBrake (Release 0.25 / continuous 0.26..1), inverted: Full at the far end, Release nearest. No dynamic brake on this loco',assignments:[{type:'direct_control',controls:'IndependentBrake',input_value:{min:0.25,max:1,invert:true}}]},
  {name:'ParkingBrake',description:'Desk up: ReverserHandle (MasterSwitch In 1 / Out 0), GeneratorField (On 1 / Off 0) and BrakeCutOut (Passenger 1 / Cut-Out 0); the loco loads with all three off. PARK BRK up = handle in, generator field on, brake valve cut in',assignments:[pair('ReverserHandle',1,0),pair('GeneratorField',1,0),pair('BrakeCutOut',1,0)]},
- mom('GearLever','Alerter reset (AlerterReset push button, held)','AlerterReset',1,0),
  mom('LeftThrottleButton','Sand (Sander push button)','Sander',1,0),
  mom('RightThrottleButton','Horn (Horn push button)','Horn',1,0),
  {name:'LeftEngineOn',description:'Bell (Bell 1 while up, 0 when down)',assignments:[pair('Bell',1,0)]},
@@ -47,12 +46,12 @@ controls:{
  leftThrottle:{name:'Throttle',notches:['8','7','6','5','4','3','2','1','Idle'],start:8},
  rightThrottle:{name:'Automatic brake',continuous:true,notches:['Emergency','Handle off','Suppression','Full service',null,'Initial','Release'],start:3},
  flap:{name:'Independent',continuous:true,notches:['Full',null,null,null,'Release'],start:0},
- leftThrottleButton:{name:'Sand'}, rightThrottleButton:{name:'Horn'}, gearLever:{name:'Alerter'},
+ leftThrottleButton:{name:'Sand'}, rightThrottleButton:{name:'Horn'}, gearLever:null,
  autoBrk:{name:'Lights',positions:[{short:'0',desc:'–'},{short:'BTV',desc:'Off'},{short:'LO',desc:'Dim'},{short:'2',desc:'Medium'},{short:'3',desc:'Bright'},{short:'HI',desc:'+ ditch'}],start:1},
  eng1:{name:'Bell',start:true}, eng2:{name:'Bail-off',start:true},
  leftAux:{name:'Safety fuse'}, rightAux:null,
  modeSwitch:{name:'Wipers',left:'off',right:'on'}, roundAux:null, rudTrim:{name:'Doors L / R'},
  parkBrk:{name:'Handle · field · valve',flat:'off',up:'on'}},
 setup:['PARK BRK up: reverser handle in, generator field on, brake valve cut in (the loco loads with them off); MU-2A to Lead in the cab','Reverser from Neutral to Forward; safety devices fuse on (left aux lit)','Lights to Bright, ditch lights on','Independent at Full, automatic brake at Full service (parked); throttle Idle'],
-depart:['Check the signal; bell on (ENG 1)','Automatic brake to Release; independent to Release, ENG 2 up to bail off','Throttle notch by notch','Reset the alerter with the gear lever','Brake: throttle to Idle, automatic brake into the service zone, independent for the final stop; Emergency at the far end']};
+depart:['Check the signal; bell on (ENG 1)','Automatic brake to Release; independent to Release, ENG 2 up to bail off','Throttle notch by notch','Brake: throttle to Idle, automatic brake into the service zone, independent for the final stop; Emergency at the far end']};
 fs.writeFileSync('tools/manual/trains/tsw-caltrain-mp15dc-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');

@@ -192,7 +192,7 @@
     },
     {
       "name": "ParkingBrake",
-      "description": "Reverser key ReverserKeyF (MasterSwitch push button, held at 1 while PARK BRK is up: the Richtungsschalter only moves while it reads 1) and brake key BrakeKeyF (lever, Unlocked 1 / Locked 0)",
+      "description": "Reverser key ReverserKeyF (MasterSwitch push button, held at 1 while PARK BRK is up: the Richtungsschalter only moves while it reads 1). The BR 145 has no brake key (the 101 Expert BrakeKeyF is not in the capture)",
       "assignments": [
         {
           "type": "momentary",
@@ -205,22 +205,6 @@
           },
           "action_deactivate": {
             "controls": "ReverserKeyF",
-            "value": 0,
-            "hold": false,
-            "enable_api_fallback": true
-          }
-        },
-        {
-          "type": "momentary",
-          "threshold": 0.9,
-          "action_activate": {
-            "controls": "BrakeKeyF",
-            "value": 1,
-            "hold": false,
-            "enable_api_fallback": true
-          },
-          "action_deactivate": {
-            "controls": "BrakeKeyF",
             "value": 0,
             "hold": false,
             "enable_api_fallback": true
