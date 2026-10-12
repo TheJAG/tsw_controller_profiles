@@ -1,0 +1,2282 @@
+{
+  "objectClass": "RVM_BKR_LUL_38Stock_BR_C",
+  "capturedAt": "2026-10-12T02:38:19.659Z",
+  "activeCab": null,
+  "cab": null,
+  "controls": [
+    {
+      "name": "ModelChildActorComponent0",
+      "objectClass": "ModelChildActorComponent"
+    },
+    {
+      "name": "RailVehiclePhysicsComponent0",
+      "objectClass": "RailVehicleComponent"
+    },
+    {
+      "name": "GameplayTasksComponent0",
+      "objectClass": "GameplayTasksComponent"
+    },
+    {
+      "name": "GameplayTagStatusComponent0",
+      "objectClass": "GameplayTagStatusComponent"
+    },
+    {
+      "name": "Simulation",
+      "objectClass": "SimulationComponent"
+    },
+    {
+      "name": "Driver",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "DriversBrake",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "AutomaticBrake",
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "EP Hold",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "EP Min",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "EP Normal",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        },
+        {
+          "name": "EP Max",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        },
+        {
+          "name": "Westinghouse Hold",
+          "source": "Output",
+          "min": 4.5,
+          "max": 5.5
+        },
+        {
+          "name": "Westinghouse Charge",
+          "source": "Output",
+          "min": 5.5,
+          "max": 6.5
+        },
+        {
+          "name": "Emergency",
+          "source": "Output",
+          "min": 6.5,
+          "max": 7.5
+        }
+      ]
+    },
+    {
+      "name": "MasterController",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "Throttle",
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.9900000095367432
+        },
+        {
+          "name": "Shunting",
+          "source": "Output",
+          "min": 1,
+          "max": 1.9900000095367432
+        },
+        {
+          "name": "Full Series",
+          "source": "Output",
+          "min": 2,
+          "max": 2.990000009536743
+        },
+        {
+          "name": "Full Parallel",
+          "source": "Output",
+          "min": 3,
+          "max": 3.5
+        }
+      ]
+    },
+    {
+      "name": "ReverserKey",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "MasterSwitch",
+      "namedValues": [
+        {
+          "name": "IN",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Reverser",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0.3333333432674408,
+      "identifier": "Reverser",
+      "namedValues": [
+        {
+          "name": "Reverse",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.49000000953674316,
+          "max": 0.5
+        },
+        {
+          "name": "Forward 1",
+          "source": "Output",
+          "min": 0.5099999904632568,
+          "max": 1.5
+        },
+        {
+          "name": "Forward 2",
+          "source": "Output",
+          "min": 1.5099999904632568,
+          "max": 2.5
+        }
+      ]
+    },
+    {
+      "name": "MasterKey",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "IN",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "MasterKeyLever",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "JumperCable_B (38Stock)",
+      "objectClass": "JumperCableComponent"
+    },
+    {
+      "name": "JumperCable_F (38Stock)",
+      "objectClass": "JumperCableComponent"
+    },
+    {
+      "name": "DeadmansHandleButton",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Coupler_F",
+      "objectClass": "CouplerComponent"
+    },
+    {
+      "name": "Coupler_B",
+      "objectClass": "CouplerComponent"
+    },
+    {
+      "name": "WeakFieldFlag",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "HandbrakeLever",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "Handbrake",
+      "namedValues": []
+    },
+    {
+      "name": "Handbrake",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "Handbrake",
+      "namedValues": [
+        {
+          "name": "Releasing",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Applying",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Released",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        }
+      ]
+    },
+    {
+      "name": "DriverSeat",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Up",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Down",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "ColdStop",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "CircuitBreaker",
+      "namedValues": [
+        {
+          "name": "Trip power",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "ColdStart",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "CircuitBreaker",
+      "namedValues": [
+        {
+          "name": "Start",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "BP_38Stock_Handbrake",
+      "objectClass": "BP_38Stock_Handbrake_C"
+    },
+    {
+      "name": "DoorsOpen_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DoorsClose_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DoorsClose_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DoorsOpen_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "BP_BKR_LUL_38Stock_PassengerDoorManager",
+      "objectClass": "BP_BKR_LUL_38Stock_PassengerDoorManager_C"
+    },
+    {
+      "name": "GangwayDoor_B",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Opened",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "GangwayDoor_F",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Opened",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "CabDoor_L",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Opened",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "CabDoor_R",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Opened",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "CabDoor_B",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Opened",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "WiperBlade",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "WindowWiperControl",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Park",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Run",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "PassWindow_L7",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Window_R",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "PassWindow_L1",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "PassWindow_L2",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "PassWindow_L3",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "PassWindow_L4",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "PassWindow_L5",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "PassWindow_L6",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Window_L",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "PassWindow_R1",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "PassWindow_R2",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "PassWindow_R3",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "PassWindow_R4",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "PassWindow_R5",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "PassWindow_R6",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "PassWindow_R7",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabLight_ON",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "CabLight_OFF",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Headlight_ON",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Headlights",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Headlight_OFF",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Headlights",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "PassLights_ON",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "CabLightsAlt",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "PassLights_OFF",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "CabLightsAlt",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "InstrumentLights_ON",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "GaugeLights",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "InstrumentLights_OFF",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "GaugeLights",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Uncouple",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "UncoupleButton",
+      "namedValues": [
+        {
+          "name": "Uncouple",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "Couple",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "CoupleButton",
+      "namedValues": [
+        {
+          "name": "Couple",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DoorCutIn",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Unlocked",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "DoorCutOut",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Locked",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Environment (Passenger)",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "PassengerCargoModel",
+      "objectClass": "PassengerCargoModelComponent"
+    },
+    {
+      "name": "SeatManager",
+      "objectClass": "SeatManagerComponent"
+    },
+    {
+      "name": "DeadmanPedal",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CurrentCollector",
+      "objectClass": "CurrentCollectorComponent"
+    },
+    {
+      "name": "MR_F",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "MR_B",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "Environment (Loco)",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "Numbering_L",
+      "objectClass": "NumberingComponent"
+    },
+    {
+      "name": "Horn",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Horn",
+      "namedValues": []
+    },
+    {
+      "name": "Window_L1",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Window_R1",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "BP_BKR_LUL_38Stock_DestinationController",
+      "objectClass": "BP_BKR_LUL_38Stock_DestinationController_C"
+    },
+    {
+      "name": "DestinationBlindLever (IrregularLever)(Mid)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "DestinationToggle",
+      "namedValues": [
+        {
+          "name": "Blank",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Not In Service",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Bakerloo",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Elephant & Castle",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        },
+        {
+          "name": "Queen's Park",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        },
+        {
+          "name": "Stonebridge Park",
+          "source": "Output",
+          "min": 4.5,
+          "max": 5.5
+        },
+        {
+          "name": "Harrow & Wealdstone",
+          "source": "Output",
+          "min": 5.5,
+          "max": 6.5
+        },
+        {
+          "name": "Waterloo",
+          "source": "Output",
+          "min": 6.5,
+          "max": 7.5
+        },
+        {
+          "name": "Piccadilly Circus",
+          "source": "Output",
+          "min": 7.5,
+          "max": 8.5
+        },
+        {
+          "name": "Paddington",
+          "source": "Output",
+          "min": 8.5,
+          "max": 9.5
+        },
+        {
+          "name": "Lambeth North",
+          "source": "Output",
+          "min": 9.5,
+          "max": 10.5
+        },
+        {
+          "name": "Willesden Junction",
+          "source": "Output",
+          "min": 10.5,
+          "max": 11.5
+        },
+        {
+          "name": "Wembley Central",
+          "source": "Output",
+          "min": 11.5,
+          "max": 12.5
+        },
+        {
+          "name": "Special",
+          "source": "Input",
+          "min": 12.5,
+          "max": 13.5
+        },
+        {
+          "name": "None 1",
+          "source": "Output",
+          "min": 13.5,
+          "max": 14.5
+        },
+        {
+          "name": "None 2",
+          "source": "Input",
+          "min": 14.5,
+          "max": 15.5
+        },
+        {
+          "name": "Blank",
+          "source": "Input",
+          "min": 15.5,
+          "max": 16.5
+        }
+      ]
+    },
+    {
+      "name": "DestinationCabinet",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "DestinationBlindLever (IrregularLever)(Top)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "DestinationToggle",
+      "namedValues": [
+        {
+          "name": "Not In Service",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Elephant & Castle",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Queen's Park",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Stonebridge Park",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        },
+        {
+          "name": "Harrow & Wealdstone",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        },
+        {
+          "name": "Waterloo",
+          "source": "Output",
+          "min": 4.5,
+          "max": 5.5
+        },
+        {
+          "name": "Piccadilly Circus",
+          "source": "Output",
+          "min": 5.5,
+          "max": 6.5
+        },
+        {
+          "name": "Paddington",
+          "source": "Output",
+          "min": 6.5,
+          "max": 7.5
+        },
+        {
+          "name": "Lambeth North",
+          "source": "Output",
+          "min": 7.5,
+          "max": 8.5
+        },
+        {
+          "name": "Willesden Junction",
+          "source": "Output",
+          "min": 8.5,
+          "max": 9.5
+        },
+        {
+          "name": "Wembley Central",
+          "source": "Output",
+          "min": 9.5,
+          "max": 10.5
+        },
+        {
+          "name": "Not in Service",
+          "source": "Output",
+          "min": 10.5,
+          "max": 11.5
+        },
+        {
+          "name": "Blank",
+          "source": "Input",
+          "min": 11.5,
+          "max": 12.5
+        }
+      ]
+    },
+    {
+      "name": "DestinationBlindLever (IrregularLever)(Bot)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "DestinationToggle",
+      "namedValues": [
+        {
+          "name": "Not In Service",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Elephant & Castle",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Queen's Park",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Stonebridge Park",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        },
+        {
+          "name": "Harrow & Wealdstone",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        },
+        {
+          "name": "Waterloo",
+          "source": "Output",
+          "min": 4.5,
+          "max": 5.5
+        },
+        {
+          "name": "Piccadilly Circus",
+          "source": "Output",
+          "min": 5.5,
+          "max": 6.5
+        },
+        {
+          "name": "Paddington",
+          "source": "Output",
+          "min": 6.5,
+          "max": 7.5
+        },
+        {
+          "name": "Lambeth North",
+          "source": "Output",
+          "min": 7.5,
+          "max": 8.5
+        },
+        {
+          "name": "Willesden Junction",
+          "source": "Output",
+          "min": 8.5,
+          "max": 9.5
+        },
+        {
+          "name": "Wembley Central",
+          "source": "Output",
+          "min": 9.5,
+          "max": 10.5
+        },
+        {
+          "name": "Not in Service",
+          "source": "Output",
+          "min": 10.5,
+          "max": 11.5
+        },
+        {
+          "name": "Blank",
+          "source": "Input",
+          "min": 11.5,
+          "max": 12.5
+        }
+      ]
+    },
+    {
+      "name": "Numbering",
+      "objectClass": "NumberingComponent"
+    },
+    {
+      "name": "Wiper_ON",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Wipers",
+      "namedValues": [
+        {
+          "name": "",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "On",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Wiper_OFF",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Wipers",
+      "namedValues": [
+        {
+          "name": "",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Off",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Numbering_F",
+      "objectClass": "NumberingComponent"
+    },
+    {
+      "name": "TL_F",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "TL_B",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "door_l1",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "door_l2",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Door_L3",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "door_r1",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "door_r2",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Door_R3",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "CabLight (PushButton)(Hotkey)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "CabLights",
+      "namedValues": []
+    },
+    {
+      "name": "CurrentCollector_B",
+      "objectClass": "CurrentCollectorComponent"
+    },
+    {
+      "name": "GuardOpen_R (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "GuardClose_L (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "GuardClose_R (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "GuardOpen_L (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "GuardSignal_R (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "GuardSignal_L (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    }
+  ],
+  "levers": {
+    "DriversBrake": {
+      "identifier": "AutomaticBrake",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 4,
+      "minInput": 0,
+      "maxInput": 2,
+      "defaultInput": 1,
+      "inputRange": 2,
+      "outputRange": 7,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Released",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "EP Hold",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "EP Min",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "EP Normal",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        },
+        {
+          "name": "EP Max",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        },
+        {
+          "name": "Westinghouse Hold",
+          "source": "Output",
+          "min": 4.5,
+          "max": 5.5
+        },
+        {
+          "name": "Westinghouse Charge",
+          "source": "Output",
+          "min": 5.5,
+          "max": 6.5
+        },
+        {
+          "name": "Emergency",
+          "source": "Output",
+          "min": 6.5,
+          "max": 7.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 1.16,
+          "snapped": 0,
+          "output": 0,
+          "name": "Released"
+        },
+        {
+          "index": 1,
+          "from": 1.17,
+          "to": 1.49,
+          "snapped": 1.3333,
+          "output": 4.999999046325684,
+          "name": "Westinghouse Hold"
+        },
+        {
+          "index": 2,
+          "from": 1.5,
+          "to": 1.83,
+          "snapped": 1.6667,
+          "output": 6.000000953674316,
+          "name": "Westinghouse Charge"
+        },
+        {
+          "index": 3,
+          "from": 1.84,
+          "to": 2,
+          "snapped": 2,
+          "output": 7,
+          "name": "Emergency"
+        }
+      ],
+      "sweptRange": [
+        0,
+        2
+      ],
+      "restored": 1
+    },
+    "MasterController": {
+      "identifier": "Throttle",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 4,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 3,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.9900000095367432
+        },
+        {
+          "name": "Shunting",
+          "source": "Output",
+          "min": 1,
+          "max": 1.9900000095367432
+        },
+        {
+          "name": "Full Series",
+          "source": "Output",
+          "min": 2,
+          "max": 2.990000009536743
+        },
+        {
+          "name": "Full Parallel",
+          "source": "Output",
+          "min": 3,
+          "max": 3.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.16,
+          "snapped": 0,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 1,
+          "from": 0.17,
+          "to": 0.49,
+          "snapped": 0.248,
+          "output": 1,
+          "name": "Shunting"
+        },
+        {
+          "index": 2,
+          "from": 0.5,
+          "to": 0.83,
+          "snapped": 0.5774,
+          "output": 2,
+          "name": "Full Series"
+        },
+        {
+          "index": 3,
+          "from": 0.84,
+          "to": 1,
+          "snapped": 0.929,
+          "output": 3,
+          "name": "Full Parallel"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "Reverser": {
+      "identifier": "Reverser",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 4,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.33333298563957214,
+      "inputRange": 1,
+      "outputRange": 3,
+      "rotational": false,
+      "inputValue": 0.3333333432674408,
+      "namedValues": [
+        {
+          "name": "Reverse",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Off",
+          "source": "Output",
+          "min": -0.49000000953674316,
+          "max": 0.5
+        },
+        {
+          "name": "Forward 1",
+          "source": "Output",
+          "min": 0.5099999904632568,
+          "max": 1.5
+        },
+        {
+          "name": "Forward 2",
+          "source": "Output",
+          "min": 1.5099999904632568,
+          "max": 2.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.16,
+          "snapped": 0,
+          "output": -1,
+          "name": "Reverse"
+        },
+        {
+          "index": 1,
+          "from": 0.17,
+          "to": 0.5,
+          "snapped": 0.3333,
+          "output": 0,
+          "name": "Off"
+        },
+        {
+          "index": 2,
+          "from": 0.51,
+          "to": 0.83,
+          "snapped": 0.6667,
+          "output": 1,
+          "name": "Forward 1"
+        },
+        {
+          "index": 3,
+          "from": 0.84,
+          "to": 1,
+          "snapped": 1,
+          "output": 2,
+          "name": "Forward 2"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.3333333432674408
+    },
+    "MasterKeyLever": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.8894,
+          "output": 0.9542725682258606,
+          "name": null
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "HandbrakeLever": {
+      "identifier": "Handbrake",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 0.30000001192092896,
+      "defaultInput": 0,
+      "inputRange": 0.30000001192092896,
+      "outputRange": 0.30000001192092896,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Handbrake": {
+      "identifier": "Handbrake",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 1,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Releasing",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Applying",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Released",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "WiperBlade": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "WindowWiperControl": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Park",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Run",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Park"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.8984,
+          "output": 0.9498189687728882,
+          "name": "Run"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "PassWindow_L7": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Window_R": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "PassWindow_L1": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "PassWindow_L2": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "PassWindow_L3": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "PassWindow_L4": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "PassWindow_L5": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "PassWindow_L6": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Window_L": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "PassWindow_R1": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "PassWindow_R2": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "PassWindow_R3": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "PassWindow_R4": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "PassWindow_R5": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "PassWindow_R6": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "PassWindow_R7": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Window_L1": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Window_R1": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "DestinationBlindLever (IrregularLever)(Mid)": {
+      "identifier": "DestinationToggle",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 12,
+      "defaultInput": 0,
+      "inputRange": 12,
+      "outputRange": 12,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Blank",
+          "source": "Input",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Not In Service",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Bakerloo",
+          "source": "Input",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Elephant & Castle",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        },
+        {
+          "name": "Queen's Park",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        },
+        {
+          "name": "Stonebridge Park",
+          "source": "Output",
+          "min": 4.5,
+          "max": 5.5
+        },
+        {
+          "name": "Harrow & Wealdstone",
+          "source": "Output",
+          "min": 5.5,
+          "max": 6.5
+        },
+        {
+          "name": "Waterloo",
+          "source": "Output",
+          "min": 6.5,
+          "max": 7.5
+        },
+        {
+          "name": "Piccadilly Circus",
+          "source": "Output",
+          "min": 7.5,
+          "max": 8.5
+        },
+        {
+          "name": "Paddington",
+          "source": "Output",
+          "min": 8.5,
+          "max": 9.5
+        },
+        {
+          "name": "Lambeth North",
+          "source": "Output",
+          "min": 9.5,
+          "max": 10.5
+        },
+        {
+          "name": "Willesden Junction",
+          "source": "Output",
+          "min": 10.5,
+          "max": 11.5
+        },
+        {
+          "name": "Wembley Central",
+          "source": "Output",
+          "min": 11.5,
+          "max": 12.5
+        },
+        {
+          "name": "Special",
+          "source": "Input",
+          "min": 12.5,
+          "max": 13.5
+        },
+        {
+          "name": "None 1",
+          "source": "Output",
+          "min": 13.5,
+          "max": 14.5
+        },
+        {
+          "name": "None 2",
+          "source": "Input",
+          "min": 14.5,
+          "max": 15.5
+        },
+        {
+          "name": "Blank",
+          "source": "Input",
+          "min": 15.5,
+          "max": 16.5
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "DestinationCabinet": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "DestinationBlindLever (IrregularLever)(Top)": {
+      "identifier": "DestinationToggle",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 12,
+      "defaultInput": 0,
+      "inputRange": 12,
+      "outputRange": 12,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Not In Service",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Elephant & Castle",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Queen's Park",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Stonebridge Park",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        },
+        {
+          "name": "Harrow & Wealdstone",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        },
+        {
+          "name": "Waterloo",
+          "source": "Output",
+          "min": 4.5,
+          "max": 5.5
+        },
+        {
+          "name": "Piccadilly Circus",
+          "source": "Output",
+          "min": 5.5,
+          "max": 6.5
+        },
+        {
+          "name": "Paddington",
+          "source": "Output",
+          "min": 6.5,
+          "max": 7.5
+        },
+        {
+          "name": "Lambeth North",
+          "source": "Output",
+          "min": 7.5,
+          "max": 8.5
+        },
+        {
+          "name": "Willesden Junction",
+          "source": "Output",
+          "min": 8.5,
+          "max": 9.5
+        },
+        {
+          "name": "Wembley Central",
+          "source": "Output",
+          "min": 9.5,
+          "max": 10.5
+        },
+        {
+          "name": "Not in Service",
+          "source": "Output",
+          "min": 10.5,
+          "max": 11.5
+        },
+        {
+          "name": "Blank",
+          "source": "Input",
+          "min": 11.5,
+          "max": 12.5
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "DestinationBlindLever (IrregularLever)(Bot)": {
+      "identifier": "DestinationToggle",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 12,
+      "defaultInput": 0,
+      "inputRange": 12,
+      "outputRange": 12,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Not In Service",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Elephant & Castle",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        },
+        {
+          "name": "Queen's Park",
+          "source": "Output",
+          "min": 1.5,
+          "max": 2.5
+        },
+        {
+          "name": "Stonebridge Park",
+          "source": "Output",
+          "min": 2.5,
+          "max": 3.5
+        },
+        {
+          "name": "Harrow & Wealdstone",
+          "source": "Output",
+          "min": 3.5,
+          "max": 4.5
+        },
+        {
+          "name": "Waterloo",
+          "source": "Output",
+          "min": 4.5,
+          "max": 5.5
+        },
+        {
+          "name": "Piccadilly Circus",
+          "source": "Output",
+          "min": 5.5,
+          "max": 6.5
+        },
+        {
+          "name": "Paddington",
+          "source": "Output",
+          "min": 6.5,
+          "max": 7.5
+        },
+        {
+          "name": "Lambeth North",
+          "source": "Output",
+          "min": 7.5,
+          "max": 8.5
+        },
+        {
+          "name": "Willesden Junction",
+          "source": "Output",
+          "min": 8.5,
+          "max": 9.5
+        },
+        {
+          "name": "Wembley Central",
+          "source": "Output",
+          "min": 9.5,
+          "max": 10.5
+        },
+        {
+          "name": "Not in Service",
+          "source": "Output",
+          "min": 10.5,
+          "max": 11.5
+        },
+        {
+          "name": "Blank",
+          "source": "Input",
+          "min": 11.5,
+          "max": 12.5
+        }
+      ],
+      "swept": false,
+      "notches": []
+    }
+  }
+}
