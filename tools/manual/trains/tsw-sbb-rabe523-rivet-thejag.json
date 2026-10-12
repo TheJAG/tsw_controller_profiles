@@ -1,0 +1,148 @@
+{
+  "name": "tsw-sbb-rabe523-rivet-thejag",
+  "title": "RABe 523 FLIRT",
+  "eyebrow": "SBB CFF FFS · Rivet Games · TCA Quadrant Airbus",
+  "profileName": "TSW | SBB RABe523 | RIVET | TheJAG",
+  "developer": "Rivet Games",
+  "route": "S-Bahn Zentralschweiz: Luzern – Sursee",
+  "colors": {
+    "navy": "#5a2a2e",
+    "blue": "#8a5a5e",
+    "red": "#eb0000",
+    "paper": "#f7f3f3"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-sbb-maroon.svg",
+      "alt": "SBB CFF FFS"
+    },
+    {
+      "file": "../../assets/logo-rivet-maroon.png",
+      "alt": "Rivet Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4679340",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/sbb-rabe523-rivet-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Forward",
+        "Neutral",
+        "Reverse"
+      ],
+      "start": 1
+    },
+    "rightThrottle": {
+      "name": "Zugkraft / Bremskraft",
+      "continuous": true,
+      "notches": [
+        "Max power",
+        null,
+        "Min power",
+        "0",
+        "Min brake",
+        null,
+        "Max brake",
+        "Emergency"
+      ],
+      "start": 6
+    },
+    "leftThrottle": {
+      "name": "Zugbremse",
+      "continuous": true,
+      "notches": [
+        "Emergency",
+        "Full service",
+        null,
+        "Minimum",
+        "Release"
+      ],
+      "start": 1
+    },
+    "flap": null,
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Horn"
+    },
+    "gearLever": {
+      "name": "Signum reset"
+    },
+    "autoBrk": {
+      "name": "Lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Markers"
+        },
+        {
+          "short": "2",
+          "desc": "Day"
+        },
+        {
+          "short": "3",
+          "desc": "Night"
+        },
+        {
+          "short": "HI",
+          "desc": "Tail lamps"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "ETCS ack.",
+      "start": true
+    },
+    "eng2": null,
+    "leftAux": {
+      "name": "ETCS"
+    },
+    "rightAux": null,
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "off",
+      "right": "on"
+    },
+    "roundAux": {
+      "name": "Tempomat isol."
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Master key",
+      "flat": "out",
+      "up": "in"
+    }
+  },
+  "setup": [
+    "Master key in (PARK BRK up); the handle ignores the lever without it; pantograph in the cab",
+    "Reverser from Neutral to Forward",
+    "ETCS on (left aux), level in the cab",
+    "Lights to Day",
+    "Zugbremse at Full service, handle at Max brake (parked)"
+  ],
+  "depart": [
+    "Close doors (RUD TRIM), check the signal",
+    "Zugbremse to Release, handle to 0",
+    "Handle past Min power into the power zone; the Tempomat rocker stays in the cab",
+    "Acknowledge Integra-Signum with the gear lever, the ETCS with ENG 1",
+    "Brake: handle back through 0 into the brake zone; Zugbremse into the service zone; Emergency at the far ends"
+  ]
+}

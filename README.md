@@ -120,7 +120,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 
 `SOON 🟨` **RhB ABe 8/12 Allegra** <sub>— DTG · [profile](releases/tsw-rhb-allegra-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-rhb-allegra-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **RhB Ge 4/4 II** <sub>— DTG · [profile](releases/tsw-rhb-ge44ii-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-rhb-ge44ii-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **SBB RABe 523**  
+`SOON 🟨` **SBB RABe 523** <sub>— Rivet · [profile](releases/tsw-sbb-rabe523-rivet-thejag.tswprofile) · [manual](profiles/documentation/tsw-sbb-rabe523-rivet-thejag.pdf)</sub>  
 
 **🇨🇿 Czechia**
 
