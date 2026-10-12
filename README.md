@@ -125,7 +125,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 **🇨🇿 Czechia**
 
 `SOON 🟨` **CD Class 750** <sub>— Vector Simulations · [profile](releases/tsw-cd-750-vector-thejag.tswprofile) · [manual](profiles/documentation/tsw-cd-750-vector-thejag.pdf)</sub>  
-`SOON 🟨` **CD Class 843** <sub>— Vector Simulations</sub>  
+`SOON 🟨` **CD Class 843** <sub>— Vector Simulations · [profile](releases/tsw-cd-843-vector-thejag.tswprofile) · [manual](profiles/documentation/tsw-cd-843-vector-thejag.pdf)</sub>  
 
 **🇫🇷 France**
 
