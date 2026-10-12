@@ -1,0 +1,17 @@
+# RVM_GP38-2_YN2_C lever probe (capture agent, 2026-10-12, Sand Patch Grade Y103 Westbound Delivery 12:05, Cumberland Yard West).
+# Probed with ReverserHandle In (1), GenField On (1), BrakeCutoutValve Freight (0.5), MU-2A_Valve Lead (0), IndependentBrake 1;
+# all restored to the load state afterwards (ReverserHandle 0, GenField 0, BrakeCutoutValve 0 = Cut-Out, MU-2A 1 = Trail 6/26, Independent 0.25).
+# ReverserHandle 1 in a single set freed the reverser here (no CN-style 0-then-1 needed). With ReverserHandle Out (0) Reverser and Throttle store nothing (1e-8).
+### Reverser (snaps)
+-1 -> -1 out -1 Reverse | -0.5 -> -0.08 out 0 | -0.25..0.25 -> 0 out 0 Neutral | 0.5 -> 0.929 out 1 | 0.75..1 -> 1 out 1 Forward
+### Throttle (reverser Neutral, snaps to k/8)
+0..0.06 -> 0 Idle | 0.07 -> 0.125 N1 | 0.25 N2 | 0.375 N3 | 0.5 N4 | 0.625 N5 | 0.75 N6 | 0.875 N7 | 1 N8
+### DynamicBrake (LOCKED in Neutral: every set stores 0; probed with Reverser Forward, Throttle Idle)
+0..0.06 -> 0 out -1 Off | 0.07..0.18 -> 0.14 out 0 Setup | 0.20..0.26 -> 0.26 out 1 | 0.27..1 stored as set, output 1 + 9.4595*(in-0.26), 1.0 -> 8 (continuous)
+### AutomaticBrake (26L; BrakeCutoutValve Freight; loads 0.9 Handle Off)
+0 -> 0 out -1 Release | 0.075..0.15 -> 0.125 out 0 Initial Reduction | 0.175 -> 0.2 out 0.0001 | 0.2..0.6 stored as set, out (in-0.2)/0.4 service
+0.625 -> 0.65 out 1 Full Service | 0.675 -> 0.7 out 2 Suppression | 0.725..0.8 -> 0.75 out 2 Suppression | 0.825..0.925 -> 0.9 out 3 Handle Off | 0.95..1 -> 1 out 4 Emergency
+### IndependentBrake (loads 0.25 Release; bail-off is the lever's own zone below 0.25, a SPRING)
+0.15..0.25 -> 0.25 out 0 Release | 0.26..1 stored as set, out (in-0.25)/0.75, 1 = Full Application
+set 0 once: stored 0.11 and springs back to 0.25 within ~0.5 s, output stays 0 (no bail-off)
+set 0 25 times back-to-back (~1 s): stored ~0.005, output -1 Bail Off for as long as it is re-sent; back to 0.25 ~0.5 s after the last set
