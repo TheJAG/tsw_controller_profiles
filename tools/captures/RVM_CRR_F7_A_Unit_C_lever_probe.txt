@@ -1,0 +1,27 @@
+Clinchfield EMD F7 A unit (RVM_CRR_F7_A_Unit_C), DTG, Clinchfield Railroad. Probed by hand 2026-10-12 through tools/tswapi.js / probe_lever.js,
+service CRR 97 Northbound Florida Perishable (12:12, Dante Yard North - Elkhorn City), stationary, independent brake applied during throttle tests.
+
+Reverser (Reverser): Reverse 0 / Neutral 0.5 / Forward 1 (sweep values 0.3221 / 0.817 are artefacts; intermediate sets drift, e.g. 0.25 -> 0.46, 0.75 -> 0.96). Loads 0.5.
+
+TransitionLever (identifier DynamicBrake): Braking 0 (out -1) / Off 0.2 (out 0) / Series Parallel 0.4 (out 1) / Series Parallel Shunt 0.6 (out 2).
+  Named values also list Parallel (out 3) and Parallel Shunt (out 4), but sets of 0.8 / 1 store 0.6, with TransitionCutoutSwitch on AUTO (0) and on MAN (1) alike, train stationary.
+  A direct set 0 -> 0.6 works with the throttle at Idle. With the throttle at N2 the lever moved SP -> Off -> Braking but refused Braking -> SPS (stayed 0).
+  Loads 0.2 (Off).
+
+Throttle (Throttle): LOCKED while TransitionLever is Off (0.2), whatever the reverser. Free in Braking (0), SP (0.4) and SPS (0.6), in Neutral and in Forward.
+  Stored: Idle 0.11 / N1 0.22 / N2 0.33 / N3 0.44 / N4 0.55 / N5 0.66 / N6 0.77 / N7 0.88 / N8 1.0 (output = notch, 0..8). Sets snap to the nearest (0.6 -> 0.55, 0.95 -> 1).
+  Named value "Emergency Stop" (out -1) below Idle, presumably input 0: NOT tested (engine stop). Keep the profile at >= 0.11. Loads 0.11.
+  With TransitionLever in Braking the throttle still moves through the notches (dynamic brake strength on the F7, not verified by output).
+
+AutomaticBrake (AutomaticBrake): Running 0.2 / First Service 0.4 / Lap 0.6 / Service 0.8 / Emergency 1 (output 0..4; sets snap: 0 and 0.1 -> 0.2, 0.3 -> 0.4, 0.5 -> 0.4, 0.7 -> 0.6, 0.9 -> 0.8).
+  Named value Release (out -1) is NOT reachable: sets of 0, -0.1, -0.2, -1 all store 0.2. Loads 0.4 (First Service).
+
+IndependentBrake (IndependentBrake): Release 0 / continuous 0.1..0.99 (0.05 snaps to 0.1, out 0.01; 0.25 -> 0.18; 0.5 -> 0.45; 0.75 -> 0.73; 0.9 -> 0.89) / Full Application 1 (out 1).
+  Bail-Off (out -1) not reachable: sets of -0.1 / -0.05 store 0 (Release). Loads 0.5.
+
+SandingLever (Sand): SPRING, rests 0.5. 0 = Sand (out -1), 1 = Sand Lead (out +1); back at 0.5 within 100 ms, ten sets of 0 at 40 ms only reach 0.30.
+
+UnitSelectorSwitch: 0 / 0.25 / 0.5 / 0.75 -> out 1 / 2 / 3 / 4 (1 wraps to 0). Loads 0 (1 unit).
+TransitionCutoutSwitch (push button): AUTO 0 / MAN 1, stores either.
+
+Loads with EngineRun, GeneratorField, FuelPumpAndControlSwitch all 0 (Off); none was needed for the throttle to move.
