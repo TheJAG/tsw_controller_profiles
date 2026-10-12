@@ -175,7 +175,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **Metro-North M7a** <sub>— DTG · [profile](releases/tsw-metro-north-m7a-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metro-north-m7a-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Metro-North M8** <sub>— DTG · [profile](releases/tsw-metro-north-m8-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metro-north-m8-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **Metrolink Bi-Level cab car** <sub>— DTG</sub>  
-`TODO ◼️` **Metrolink Rotem cab car** <sub>— DTG</sub>  
+`SOON 🟨` **Metrolink Rotem cab car** <sub>— DTG · [profile](releases/tsw-metrolink-rotem-cab-car-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metrolink-rotem-cab-car-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **NJ Transit ALP-45DP** <sub>— DTG · [profile](releases/tsw-njt-alp45dp-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-njt-alp45dp-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **NJ Transit ALP-46** <sub>— DTG · [profile](releases/tsw-njt-alp46-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-njt-alp46-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **NJ Transit Arrow III** <sub>— DTG · [profile](releases/tsw-njt-arrow3-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-njt-arrow3-dtg-thejag.pdf)</sub>  
