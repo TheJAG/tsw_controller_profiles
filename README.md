@@ -170,7 +170,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **MBTA single-deck cab car** <sub>— DTG</sub>  
 `SOON 🟨` **Metrolink F125** <sub>— DTG · [profile](releases/tsw-metrolink-f125-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metrolink-f125-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Metrolink F59PH** <sub>— DTG · [profile](releases/tsw-metrolink-f59ph-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metrolink-f59ph-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **Metrolink MP36PH-3C**  
+`SOON 🟨` **Metrolink MP36PH-3C** <sub>— DTG · [profile](releases/tsw-metrolink-mp36ph-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metrolink-mp36ph-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **Metro-North M3a**  
 `TODO ◼️` **Metro-North M7a**  
 `TODO ◼️` **Metro-North M8**  

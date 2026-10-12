@@ -1,0 +1,27 @@
+Metrolink MPI MP36PH-3C (RVM_SBD_ML_MP36PH-3C_C), SB 314 LA Union - Pomona North 12:37, 2026-10-12. probe_lever.js --values / ramps, train stationary.
+
+ReverserHandle (PushButton, MasterSwitch) Out 0 / In 1, loads Out. A plain set to 1 works.
+Reverser: Reverse -1 / Neutral 0 / Forward 1 (sets snap: -0.5 -> 0, 0.5 -> 1).
+  Handle Out: Neutral -> Forward/Reverse refused (stays 0). Forward -> Neutral allowed with the handle Out.
+  Handle In: free. No Idle interlock for Neutral -> Forward (works with the handle at N1 or in dynamic).
+  Forward -> Neutral is REFUSED while ThrottleAndBrakeHandle is off Idle (N1 0.125 or dynamic -0.5); works at Idle.
+
+ThrottleAndBrakeHandle (Throttle, -1..1), loads Idle 0:
+  dynamic continuous -0.3 .. -1 (stored as set; output -2 at -0.3..-0.39, -3 at -0.4, ... -8 at -0.9, -9 at -0.99 / -1)
+  -0.26 snaps to -0.3; -0.25 snaps to Setup
+  Setup -0.2 (output -1, notch 1)
+  Idle 0 (output 0, notch 2)
+  N1..N8 at k/8 = 0.125 .. 1.0 (output k, snaps)
+  GATES, one per API set: Idle -> -1 stops at Setup -0.2; Idle -> 1 stops at N1 0.125; dynamic -1 -> 0 stops at Setup.
+  Free inside a zone: N1 -> N8 jumps, N8 -> Idle 0 jumps directly, Setup -> -1 jumps.
+
+AutomaticBrake (moves freely, loads Full Service 0.65):
+  Release 0 (out -1) / Initial Reduction 0.095 (out 0) / service continuous 0.15..0.60 (out 0.01..0.99) /
+  Full Service 0.645-0.65 (out 1) / Suppression 0.745 (0.7 snaps to it, out 2) / Handle Off 0.845 (0.8 -> 0.845, 0.9 -> 0.855, out 3) /
+  Emergency 1 (0.9747 -> 0.99, out 4).
+
+IndependentBrake: rest 0 (notch 0) / Release 0.1 / continuous 0.125..1 (out 0.028..1); 0.05 snaps to 0.1.
+  Below 0 is a spring (-0.25 read back -0.11, out 0) = bail-off.
+IndependentBrakeBailOffLever (BrakeRelease): spring; 0.5 -> 0.38 out 0, 1 -> 0.89 out -1 (bail off), returns to 0.
+
+CutOffPilotValve (BrakeMode): Out 0 / Freight 0.5 / Passenger 1 (0.8576 -> 1). Loads Out; the display reads "CUT OUT".
