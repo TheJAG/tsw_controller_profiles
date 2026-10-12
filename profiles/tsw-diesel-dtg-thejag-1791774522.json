@@ -1,0 +1,207 @@
+{
+  "name": "TSW | Diesel | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_ART_Diesel_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser(Proxy) (Reverse -1 / Neutral 0 / Forward 1; any value in a zone), inverted: Forward at the far end. Only holds at a stand; the throttle sign takes over while driving",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser(Proxy)",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "steps": [
+              -1,
+              0,
+              1
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Simple-controls handle ThrottleControl -1..1 (brake .. 0 .. power), a spring handle that only acts while the app keeps sending: inverted, full power at the far end (raw 0 ±0.04), power zone 0.045..0.45, 0 at 0.5 ±0.05, brake zone 0.55..0.955, full brake 1 ±0.04 nearest",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "ThrottleControl",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "steps": [
+              -1,
+              null,
+              0,
+              null,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.955,
+                "threshold_end": 0.55
+              },
+              {
+                "threshold": 0.5,
+                "threshold_tolerance": 0.05
+              },
+              {
+                "threshold": 0.45,
+                "threshold_end": 0.045
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.04
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "Power held (ThrottleControl 0.75 while the switch is up, 0 when down)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "ThrottleControl",
+          "value": 0.75,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "ThrottleControl",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "Brake held (ThrottleControl -1 while the switch is up, 0 when down)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "ThrottleControl",
+          "value": -1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "ThrottleControl",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Horn (Horn push button)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Horn",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "Headlights (Headlights push button On 1 / Off 0). Lit = on",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Headlights",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "Headlights",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Cab light off (CabLight push button 0)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CabLight",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Cab light on (CabLight push button 1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CabLight",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}

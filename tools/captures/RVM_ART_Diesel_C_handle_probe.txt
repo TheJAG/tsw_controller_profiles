@@ -1,0 +1,15 @@
+RVM_ART_Diesel_C (Diesel, DTG Artemis, West Somerset Railway "Thomas at the WSR", 14:32 Minehead - Bishops Lydeard freight demo, 11 vehicles), probed 2026-10-12.
+UsesSimpleControls = true (Function.UsesSimpleControls). 23 nodes; no keys, brake valve, AWS. IS_GetActiveCab fails; no cab pair.
+ThrottleControl (IrregularLever, identifier SimpleThrottle), -1..1, 1 notch; Output named values Brake/Reverse -1.5..-0.5, Throttle/Forward 0.5..1.5.
+ SPRING-CENTRED as on Thomas: .InputValue reads 0; Function.GetCurrentInputValue is live only while sets keep coming and decays within ~100 ms
+ (a read 40+ ms after the last set already shows less, e.g. 0.75 -> 0.15, 1 -> 0.38; that is decay, not the held value).
+ Held by re-sending every 0-100 ms and read straight after a set (live input / output):
+   +-0.1 -> 0..-0.05 / 0   +0.2 -> 0  -0.2 -> -0.10   +0.3 -> 0.25  -0.3 -> -0.20
+   +-0.5 -> +-0.40..0.45 / ~+0.25..0.35   +-0.75 -> +-0.65..0.70   +-1 -> +-0.90..0.95 / +-0.75..0.83
+ i.e. live ~ set - 0.1 above a dead zone of about 0.2 (smaller than Thomas: Thomas 1 -> 0.62..0.66). Re-send rate 0 / 40 / 100 ms made no difference.
+ Holding + at a stand sets Reverser(Proxy) 1 and moves off (1 held 2.5 s from rest -> 1.15 m/s with 11 vehicles); holding 0.5 for 0.8 s gave 0..0.26 m/s.
+ Holding - while moving forward brakes (-1 for 1.5 s: 0.74 -> 0.13 m/s, then stand); at a stand - sets Reverser -1 and moves backwards (-1, -0.75).
+ Released: the train coasts; any non-zero set at a stand can reset the reverser to 0 first.
+Reverser(Proxy) (IrregularLever, no identifier) -1 / 0 / 1, sweep zones raw <= -0.51 / -0.50..0.49 / >= 0.50; API sets 1, 0, -1 store at a stand.
+Push buttons (0/1, both store): Horn (identifier Horn, On 0.5..1.5), CabLight (CabLights, Off/On), Headlights (Headlights, Off/On), Window_L / Window_R (none).
+CabDoor_L / _R (RailVehicleDoorComponent). Left with throttle 0, reverser 0, all buttons 0, stationary near Minehead.

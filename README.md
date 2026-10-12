@@ -63,7 +63,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **LU 1938 Stock** <sub>— Rivet · [profile](releases/tsw-lu-1938-rivet-thejag.tswprofile) · [manual](profiles/documentation/tsw-lu-1938-rivet-thejag.pdf)</sub>  
 `SOON 🟨` **LU 1972 Mark 2 Stock** <sub>— DTG · [profile](releases/tsw-lu-1972-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-lu-1972-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Thomas & Friends: Thomas** <sub>— DTG · [profile](releases/tsw-thomas-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-thomas-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **Thomas & Friends: Diesel**  
+`SOON 🟨` **Thomas & Friends: Diesel** <sub>— DTG · [profile](releases/tsw-diesel-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-diesel-dtg-thejag.pdf)</sub>  
 
 **🇩🇪 Germany**
 
