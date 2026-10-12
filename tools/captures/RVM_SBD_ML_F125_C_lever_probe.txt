@@ -1,0 +1,23 @@
+RVM_SBD_ML_F125_C hand probe, 2026-10-12, SB 312 LA Union - San Bernardino Downtown (Part 2), Pomona North 12:29 (San Bernardino Line timetable), F125 leading, 5 vehicles
+
+Loads: ReverserLever Forward 1, ReverserHandleButton (MasterSwitch) 0, MasterController 0.25 (dynamic, out -1.17), AutomaticBrakeLever 0.8 Handle Off,
+  IndependentBrakeLever 0.1 Released, BrakeModeSwitch 0.33 (Test; Trail 0 / Test 0.33 / Freight 0.66 / Passenger 1); the IFD reads "AIR BRAKE SETUP TRAIL - CUT OUT"
+  and brake pipe / ER 0, so the air brake set-up probably needs Passenger (left untouched). GeneratorFieldSwitch 0 Off, EngineRun / FuelPump on.
+
+ReverserLever (Reverser, 0..1): Reverse 0 / Neutral 0.5 / Forward 1; sets snap (<=0.2 -> 0, 0.3..0.7 -> 0.5, >=0.8 -> 1).
+  Moves ONLY with MasterController at Idle (0.5): with the handle in dynamic (0.25, 0.4) or power (0.55) every set is ignored.
+  With ReverserHandleButton 0 it can still go Forward -> Neutral, but then locks in Neutral; with ReverserHandleButton 1 it moves freely (plain set 1 works, no 1->0 flick needed).
+  With ReverserHandleButton 0 and the reverser in Forward, the MasterController also stays put (restore from 0.5 to 0.25 was ignored).
+MasterController (Throttle, 0..1, combined throttle / dynamic), probed in Forward with the handle In:
+  B continuous 0..0.30 stores the set value (output -2 at 0 .. -1.01 at 0.30; 0.30..0.33 snap to 0.30),
+  Setup 0.34..0.45 (0.34 / 0.36 -> 0.375, 0.375..0.42 stored as set, 0.45 -> 0.425; output -1),
+  Idle 0.5 (0.48 -> 0.5), N1..N8 stored at 0.55 / 0.614286 / 0.678572 / 0.742858 / 0.807144 / 0.871430 / 0.935716 / 1.0 (0.55 + (k-1) x 0.45/7; sets snap to the nearest).
+AutomaticBrakeLever (AutomaticBrake, 0..1): Release 0 (0.02 -> 0) / Minimum Application 0.1 (0.05..0.1 -> 0.1, out 0.23) /
+  service continuous 0.125..0.375 (out 0.125 -> 0.24, 0.2 -> 0.48, 0.25 -> 0.64, 0.3 -> 0.66, 0.35 -> 0.88, 0.375 -> 0.99) with a Suppression gate at 0.275 (out 0.65) inside it /
+  Full Service 0.4 (0.45..0.55 -> 0.4) / Handle Off 0.8 (0.6..0.9 -> 0.8) / Emergency 1 (0.95 -> 1).
+  ONE GATE PER SET in both directions: 0.2 -> set 0.3 stores 0.275, then 0.4 stores 0.375; from 0.4 a set of 0 stores 0.275; from 0.275 a set of 0.1 stores 0.125. Ramp it.
+IndependentBrakeLever (IndependentBrake): Released 0.1 (every set 0..0.11, and all negative sets, -> 0.1) / continuous 0.125..1 (out ~ (in-0.1)/0.9: 0.5 -> 0.44, 0.8 -> 0.79) / Full Service 1.
+IndependentBrakeBailOffLever (BrakeRelease): separate lever, a SPRING: a set of 1 reads in 0.96 / out -1 (Bail Off) for ~100-200 ms, then 0 again; sets <= 0.5 do nothing.
+Capture sweep artefacts: ReverserLever 1 notch (locked, handle in dynamic); AutomaticBrakeLever raw table wrong (one gate per set); IndependentBrakeLever 3 notches (0.1 / 0.125 / 1).
+
+Left after the probe: reverser Forward, ReverserHandleButton 0, MasterController Idle 0.5, automatic brake Handle Off 0.8, independent Full 1 (was 0.1), brake mode Test 0.33.
