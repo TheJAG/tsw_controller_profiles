@@ -1,0 +1,156 @@
+{
+  "name": "tsw-flying-scotsman-dtg-thejag",
+  "title": "Flying Scotsman",
+  "eyebrow": "British Railways · LNER A3 · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | Flying Scotsman | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "East Coast Main Line: Peterborough – Doncaster",
+  "logos": [
+    {
+      "file": "../../assets/logo-br-totem-navy.png",
+      "alt": "British Railways"
+    },
+    {
+      "file": "../../assets/logo-dtg-navy.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4679820",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/flying-scotsman-dtg-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Cut-off",
+      "continuous": true,
+      "notches": [
+        "75 % fwd",
+        null,
+        "Mid-gear",
+        null,
+        "75 % back"
+      ],
+      "start": 2
+    },
+    "leftThrottle": {
+      "name": "Regulator",
+      "continuous": true,
+      "notches": [
+        "Closed",
+        null,
+        null,
+        null,
+        "Fully open"
+      ],
+      "start": 0
+    },
+    "rightThrottle": {
+      "name": "Vacuum brake",
+      "continuous": true,
+      "notches": [
+        "Emergency",
+        "Full service",
+        null,
+        "Initial",
+        "Running"
+      ],
+      "start": 1
+    },
+    "flap": {
+      "name": "Steam brake",
+      "continuous": true,
+      "notches": [
+        "Full",
+        null,
+        null,
+        null,
+        "Off"
+      ],
+      "start": 0
+    },
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Whistle"
+    },
+    "gearLever": {
+      "name": "AWS ack."
+    },
+    "autoBrk": {
+      "name": "Lamps",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Lamp 1"
+        },
+        {
+          "short": "2",
+          "desc": "Express"
+        },
+        {
+          "short": "3",
+          "desc": "Headlamp"
+        },
+        {
+          "short": "HI",
+          "desc": "All four"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Blower",
+      "start": true
+    },
+    "eng2": {
+      "name": "Live injector",
+      "start": true
+    },
+    "leftAux": {
+      "name": "AWS"
+    },
+    "rightAux": null,
+    "modeSwitch": {
+      "name": "Front damper",
+      "left": "closed",
+      "right": "open"
+    },
+    "roundAux": {
+      "name": "Cylinder cocks"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Brake pin",
+      "flat": "out",
+      "up": "in"
+    }
+  },
+  "setup": [
+    "Brake pin in (PARK BRK up); the AI fireman keeps the fire, dampers and firebox door",
+    "Cut-off to full forward gear (far end), AWS on (left aux)",
+    "Blower open (ENG 1) while standing; live injector (ENG 2) when the water drops",
+    "Cylinder cocks open (round aux lit) for the first turns of the wheels",
+    "Steam brake at Full, vacuum brake at Full service (parked); regulator Closed"
+  ],
+  "depart": [
+    "Close doors (RUD TRIM), check the signal",
+    "Vacuum brake to Running, steam brake Off",
+    "Regulator open a little, then more; wind the cut-off back towards Mid-gear as speed rises",
+    "Cylinder cocks closed after the first 100 m; blower closed once the exhaust draws the fire",
+    "Acknowledge AWS with the gear lever; brake with the vacuum valve in the service zone, Emergency at the far end"
+  ]
+}

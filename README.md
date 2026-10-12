@@ -56,7 +56,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **BR Class 802** <sub>— Rivet · [profile](releases/tsw-class-802-rivet-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-802-rivet-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 805** <sub>— DTG · [profile](releases/tsw-class-805-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-805-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 807** <sub>— DTG · [profile](releases/tsw-class-807-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-807-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **Flying Scotsman**  
+`SOON 🟨` **Flying Scotsman** <sub>— DTG · [profile](releases/tsw-flying-scotsman-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-flying-scotsman-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **LMS Class 4F**  
 `TODO ◼️` **LMS Class 8F**  
 `TODO ◼️` **LMS Jubilee Class (6P)**  

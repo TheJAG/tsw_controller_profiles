@@ -1,0 +1,2892 @@
+{
+  "objectClass": "RVM_PBD_FlyingScotsman_2016_C",
+  "capturedAt": "2026-10-12T01:20:01.994Z",
+  "activeCab": null,
+  "cab": null,
+  "controls": [
+    {
+      "name": "ModelChildActorComponent0",
+      "objectClass": "ModelChildActorComponent"
+    },
+    {
+      "name": "RailVehiclePhysicsComponent0",
+      "objectClass": "RailVehicleComponent"
+    },
+    {
+      "name": "GameplayTasksComponent0",
+      "objectClass": "GameplayTasksComponent"
+    },
+    {
+      "name": "GameplayTagStatusComponent0",
+      "objectClass": "GameplayTagStatusComponent"
+    },
+    {
+      "name": "Simulation",
+      "objectClass": "SimulationComponent"
+    },
+    {
+      "name": "Environment (Driver)",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "Environment (Fireman)",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "Environment (Engine)",
+      "objectClass": "InteractionEnvironmentComponent"
+    },
+    {
+      "name": "Coupler_F (Hook)",
+      "objectClass": "CouplerComponent"
+    },
+    {
+      "name": "Coupler_B (Tender)",
+      "objectClass": "CouplerComponent"
+    },
+    {
+      "name": "Numbering (RVN)",
+      "objectClass": "NumberingComponent"
+    },
+    {
+      "name": "SeatManager",
+      "objectClass": "SeatManagerComponent"
+    },
+    {
+      "name": "Door_L",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Door_R",
+      "objectClass": "RailVehicleDoorComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "FireboxDoor",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "SteamFireboxDoor",
+      "namedValues": []
+    },
+    {
+      "name": "Regulator",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "Throttle",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0.004999999888241291,
+          "max": 0.9950000047683716
+        }
+      ]
+    },
+    {
+      "name": "SteamInjector_Live",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "SteamInjectorLive",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "SteamInjector_Exhaust",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "SteamInjectorExhaust",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "Damper_F",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "SteamDamper",
+      "namedValues": []
+    },
+    {
+      "name": "Damper_B",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "SteamRearDamper",
+      "namedValues": []
+    },
+    {
+      "name": "SteamEjector_Large",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "SteamLargeEjector",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "SteamEjector_Small",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "SteamSmallEjector",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "FireboxCover",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Raised",
+          "source": "Input",
+          "min": 0.75,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "HeatValve",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "RoofVent_Left",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Blower",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "SteamBlower",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Input",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Input",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "Sander",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "Sand",
+      "namedValues": [
+        {
+          "name": "Rear",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Front",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "WaterInjector_Live",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "SteamWaterInjectorLive",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "WaterInjector_Exhaust",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "SteamWaterInjectorExhaust",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "Gauge_L",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Gauge_R",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "GaugeDrain_L",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0.004999999888241291,
+          "max": 0.9950000047683716
+        }
+      ]
+    },
+    {
+      "name": "GaugeDrain_R",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0.004999999888241291,
+          "max": 0.9950000047683716
+        }
+      ]
+    },
+    {
+      "name": "Gangway_B (EnginePipes)",
+      "objectClass": "GangwayComponent"
+    },
+    {
+      "name": "BP_HeadcodeLamps",
+      "objectClass": "BP_HeadcodeController_C"
+    },
+    {
+      "name": "HeadcodeLamp_0",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "",
+          "source": "Input",
+          "min": -0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "HeadcodeLamp_1",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "White",
+          "source": "Input",
+          "min": -0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "HeadcodeLamp_2",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "High Intensity Headlamp",
+          "source": "Input",
+          "min": -0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "HeadcodeLamp_3",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "White",
+          "source": "Input",
+          "min": -0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Reverser",
+      "objectClass": "BP_NotchedWindingLeverComponent_C",
+      "inputValue": 0,
+      "identifier": "Reverser",
+      "namedValues": [
+        {
+          "name": "Forwards {%F}",
+          "source": "Output",
+          "min": 0.5,
+          "max": 100
+        },
+        {
+          "name": "Backwards {%B}",
+          "source": "Output",
+          "min": -100,
+          "max": -0.5
+        },
+        {
+          "name": "Mid-Gear",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        }
+      ]
+    },
+    {
+      "name": "SteamHose_B (Heat)",
+      "objectClass": "SteamHoseComponent"
+    },
+    {
+      "name": "SteamHose_B (Brake)",
+      "objectClass": "SteamHoseComponent"
+    },
+    {
+      "name": "AirHose_F (VAC)",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_B (VAC)",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "Firing",
+      "objectClass": "FiringComponent"
+    },
+    {
+      "name": "WaterHose_L",
+      "objectClass": "WaterHoseComponent"
+    },
+    {
+      "name": "Window_L",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Window_R",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Window_FL",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Window_FR",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "DriverSeat",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "FiremanSeat",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Whistle",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "Horn",
+      "namedValues": [
+        {
+          "name": "Pulled",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "CylinderCocks",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "SteamCylinderDrains",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Gangway_B (EngineDoor_R)",
+      "objectClass": "GangwayComponent"
+    },
+    {
+      "name": "Gangway_B (EngineDoor_L)",
+      "objectClass": "GangwayComponent"
+    },
+    {
+      "name": "Numbering (Side)",
+      "objectClass": "NumberingComponent"
+    },
+    {
+      "name": "Numbering (Nose)",
+      "objectClass": "NumberingComponent"
+    },
+    {
+      "name": "WaterHose_R",
+      "objectClass": "WaterHoseComponent"
+    },
+    {
+      "name": "Numbering (Year)",
+      "objectClass": "NumberingComponent"
+    },
+    {
+      "name": "Reverser_RailDriver",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Forwards {%F}",
+          "source": "Output",
+          "min": 0.5,
+          "max": 100
+        },
+        {
+          "name": "Backwards {%B}",
+          "source": "Output",
+          "min": -100,
+          "max": -0.5
+        },
+        {
+          "name": "Mid-Gear",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        }
+      ]
+    },
+    {
+      "name": "BP_SteamBankingComm",
+      "objectClass": "BP_SteamBankingComm_C"
+    },
+    {
+      "name": "ServiceProviderBase",
+      "objectClass": "ServiceProviderBase_C"
+    },
+    {
+      "name": "DriverAssist",
+      "objectClass": "PFT_LMS_Jubilee_DriverAssist_C"
+    },
+    {
+      "name": "TrainBrake (IrregularLever)",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "AutomaticBrake",
+      "namedValues": [
+        {
+          "name": "Overcharge",
+          "source": "Input",
+          "min": -0.05000000074505806,
+          "max": 0.125
+        },
+        {
+          "name": "Running",
+          "source": "Input",
+          "min": 0.125,
+          "max": 0.32499998807907104
+        },
+        {
+          "name": "Initial Application",
+          "source": "Input",
+          "min": 0.32499998807907104,
+          "max": 0.35100001096725464
+        },
+        {
+          "name": "Service {Service}",
+          "source": "Input",
+          "min": 0.35100001096725464,
+          "max": 0.6489999890327454
+        },
+        {
+          "name": "Full Service",
+          "source": "Input",
+          "min": 0.6489999890327454,
+          "max": 0.824999988079071
+        },
+        {
+          "name": "Emergency",
+          "source": "Input",
+          "min": 0.824999988079071,
+          "max": 0.949999988079071
+        },
+        {
+          "name": "Neutral / Shutdown",
+          "source": "Input",
+          "min": 0.949999988079071,
+          "max": 1.0499999523162842
+        }
+      ]
+    },
+    {
+      "name": "LocoBrake (SimpleLever)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "IndependentBrake",
+      "namedValues": []
+    },
+    {
+      "name": "DriversBrakePin",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Whistle_IsolationValve",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "Ejector_IsolationValve",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "CylindCocks_IsolationValve",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "Compressor_IsolationValve",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "Pressure_Gauge_Isolation_Valve",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "Blower_IsolationValve",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "RoofVent_Right",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Gauge_BL",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Gauge_BR",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Gauge_GlassFrame_L",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0.5,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Gauge_GlassFrame_R",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Emergency_BrakeValve_L",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "Emergency_BrakeValve_R",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "FireboxDoorWhole",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Armrest_L",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Armrest_R",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "AWS_Isolation (Simple Lever)",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 1,
+      "identifier": "SignallingSystems",
+      "namedValues": [
+        {
+          "name": "Isolated",
+          "source": "Output",
+          "min": 0,
+          "max": 0.5
+        },
+        {
+          "name": "Unisolated",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "AWSReset_F (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "AWS_Reset",
+      "namedValues": [
+        {
+          "name": "Acknowledge",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "VacuumChamberReleaseValve",
+      "objectClass": "SimpleLeverComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": 0,
+          "max": 0.5
+        },
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "CabLightSwitch_F (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "CabLights",
+      "namedValues": []
+    },
+    {
+      "name": "CabLightSwitch_B (PushButton)",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 1,
+      "identifier": "CabLights",
+      "namedValues": []
+    },
+    {
+      "name": "TPWS_TrainStopOverride",
+      "objectClass": "PushButtonComponent",
+      "inputValue": 0,
+      "identifier": "None",
+      "namedValues": [
+        {
+          "name": "Pressed",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ]
+    },
+    {
+      "name": "AirHose_F_BP",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_B_BP",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_F_MR",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_B_MR",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_MR_Tender",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "AirHose_LocoBrake_Tender",
+      "objectClass": "AirHoseComponent"
+    },
+    {
+      "name": "Window_Left",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "Window_Right",
+      "objectClass": "IrregularLeverComponent",
+      "inputValue": 1,
+      "identifier": "None",
+      "namedValues": []
+    },
+    {
+      "name": "BP_AWS_TPWS_Service",
+      "objectClass": "BP_AWS_TPWS_Service_C"
+    },
+    {
+      "name": "BP_SteamBankingControlBindingComponent_C_2147454645",
+      "objectClass": "BP_SteamBankingControlBindingComponent_C"
+    },
+    {
+      "name": "BP_SteamBankingControlBindingComponent_C_2147454644",
+      "objectClass": "BP_SteamBankingControlBindingComponent_C"
+    },
+    {
+      "name": "BP_SteamBankingControlBindingComponent_C_2147454643",
+      "objectClass": "BP_SteamBankingControlBindingComponent_C"
+    },
+    {
+      "name": "BP_SteamBankingControlBindingComponent_C_2147454642",
+      "objectClass": "BP_SteamBankingControlBindingComponent_C"
+    },
+    {
+      "name": "BP_SteamBankingControlBindingComponent_C_2147454641",
+      "objectClass": "BP_SteamBankingControlBindingComponent_C"
+    }
+  ],
+  "levers": {
+    "FireboxDoor": {
+      "identifier": "SteamFireboxDoor",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Regulator": {
+      "identifier": "Throttle",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0.004999999888241291,
+          "max": 0.9950000047683716
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "SteamInjector_Live": {
+      "identifier": "SteamInjectorLive",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "SteamInjector_Exhaust": {
+      "identifier": "SteamInjectorExhaust",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "Damper_F": {
+      "identifier": "SteamDamper",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 5,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.12,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 1,
+          "from": 0.13,
+          "to": 0.15,
+          "snapped": 0.25,
+          "output": 0.25,
+          "name": null
+        },
+        {
+          "index": 0,
+          "from": 0.16,
+          "to": 0.16,
+          "snapped": 0.0167,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 1,
+          "from": 0.17,
+          "to": 0.2,
+          "snapped": 0.25,
+          "output": 0.25,
+          "name": null
+        },
+        {
+          "index": 0,
+          "from": 0.21,
+          "to": 0.21,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 1,
+          "from": 0.22,
+          "to": 0.29,
+          "snapped": 0.25,
+          "output": 0.25,
+          "name": null
+        },
+        {
+          "index": 0,
+          "from": 0.3,
+          "to": 0.3,
+          "snapped": 0.0742,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 1,
+          "from": 0.31,
+          "to": 0.36,
+          "snapped": 0.25,
+          "output": 0.25,
+          "name": null
+        },
+        {
+          "index": 0,
+          "from": 0.37,
+          "to": 0.37,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 2,
+          "from": 0.38,
+          "to": 0.41,
+          "snapped": 0.5,
+          "output": 0.5,
+          "name": null
+        },
+        {
+          "index": 0,
+          "from": 0.42,
+          "to": 0.42,
+          "snapped": 0.0137,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 2,
+          "from": 0.43,
+          "to": 0.56,
+          "snapped": 0.5,
+          "output": 0.5,
+          "name": null
+        },
+        {
+          "index": 1,
+          "from": 0.57,
+          "to": 0.57,
+          "snapped": 0.0776,
+          "output": 0.07999999821186066,
+          "name": null
+        },
+        {
+          "index": 0,
+          "from": 0.58,
+          "to": 0.58,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 2,
+          "from": 0.59,
+          "to": 0.62,
+          "snapped": 0.5,
+          "output": 0.5,
+          "name": null
+        },
+        {
+          "index": 3,
+          "from": 0.63,
+          "to": 0.63,
+          "snapped": 0.75,
+          "output": 0.75,
+          "name": null
+        },
+        {
+          "index": 0,
+          "from": 0.64,
+          "to": 0.64,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 3,
+          "from": 0.65,
+          "to": 0.69,
+          "snapped": 0.75,
+          "output": 0.75,
+          "name": null
+        },
+        {
+          "index": 2,
+          "from": 0.7,
+          "to": 0.7,
+          "snapped": 0.3194,
+          "output": 0.07999999821186066,
+          "name": null
+        },
+        {
+          "index": 0,
+          "from": 0.71,
+          "to": 0.71,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 3,
+          "from": 0.72,
+          "to": 0.78,
+          "snapped": 0.75,
+          "output": 0.75,
+          "name": null
+        },
+        {
+          "index": 0,
+          "from": 0.79,
+          "to": 0.79,
+          "snapped": 0.0787,
+          "output": 0.029999999329447746,
+          "name": null
+        },
+        {
+          "index": 3,
+          "from": 0.8,
+          "to": 0.85,
+          "snapped": 0.75,
+          "output": 0.75,
+          "name": null
+        },
+        {
+          "index": 1,
+          "from": 0.86,
+          "to": 0.86,
+          "snapped": 0.0785,
+          "output": 0.029999999329447746,
+          "name": null
+        },
+        {
+          "index": 3,
+          "from": 0.87,
+          "to": 0.87,
+          "snapped": 0.75,
+          "output": 0.75,
+          "name": null
+        },
+        {
+          "index": 4,
+          "from": 0.88,
+          "to": 0.94,
+          "snapped": 1,
+          "output": 1,
+          "name": null
+        },
+        {
+          "index": 1,
+          "from": 0.95,
+          "to": 0.95,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 4,
+          "from": 0.96,
+          "to": 1,
+          "snapped": 1,
+          "output": 1,
+          "name": null
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "Damper_B": {
+      "identifier": "SteamRearDamper",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 5,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.12,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 1,
+          "from": 0.13,
+          "to": 0.37,
+          "snapped": 0.25,
+          "output": 0.25,
+          "name": null
+        },
+        {
+          "index": 2,
+          "from": 0.38,
+          "to": 0.62,
+          "snapped": 0.5,
+          "output": 0.5,
+          "name": null
+        },
+        {
+          "index": 3,
+          "from": 0.63,
+          "to": 0.87,
+          "snapped": 0.75,
+          "output": 0.75,
+          "name": null
+        },
+        {
+          "index": 4,
+          "from": 0.88,
+          "to": 1,
+          "snapped": 1,
+          "output": 1,
+          "name": null
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "SteamEjector_Large": {
+      "identifier": "SteamLargeEjector",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "SteamEjector_Small": {
+      "identifier": "SteamSmallEjector",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "FireboxCover": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Raised",
+          "source": "Input",
+          "min": 0.75,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 1,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0
+    },
+    "HeatValve": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "RoofVent_Left": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Blower": {
+      "identifier": "SteamBlower",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Input",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Input",
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "Sander": {
+      "identifier": "Sand",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 3,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 2,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [
+        {
+          "name": "Rear",
+          "source": "Output",
+          "min": -1.5,
+          "max": -0.5
+        },
+        {
+          "name": "Front",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0,
+          "output": -1,
+          "name": "Rear"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.5,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 1,
+          "output": 1,
+          "name": "Front"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 0.5
+    },
+    "WaterInjector_Live": {
+      "identifier": "SteamWaterInjectorLive",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "WaterInjector_Exhaust": {
+      "identifier": "SteamWaterInjectorExhaust",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "Gauge_L": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Closed"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 1,
+          "output": 1,
+          "name": "Open"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
+    },
+    "Gauge_R": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Closed"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 1,
+          "output": 1,
+          "name": "Open"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
+    },
+    "GaugeDrain_L": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0.004999999888241291,
+          "max": 0.9950000047683716
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "GaugeDrain_R": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0.004999999888241291,
+          "max": 0.9950000047683716
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "Reverser": {
+      "identifier": "Reverser",
+      "objectClass": "BP_NotchedWindingLeverComponent_C",
+      "notchCount": 0,
+      "minInput": -1,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 2,
+      "outputRange": 150,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Forwards {%F}",
+          "source": "Output",
+          "min": 0.5,
+          "max": 100
+        },
+        {
+          "name": "Backwards {%B}",
+          "source": "Output",
+          "min": -100,
+          "max": -0.5
+        },
+        {
+          "name": "Mid-Gear",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "Reverser_RailDriver": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": -1,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 2,
+      "outputRange": 150,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Forwards {%F}",
+          "source": "Output",
+          "min": 0.5,
+          "max": 100
+        },
+        {
+          "name": "Backwards {%B}",
+          "source": "Output",
+          "min": -100,
+          "max": -0.5
+        },
+        {
+          "name": "Mid-Gear",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "TrainBrake (IrregularLever)": {
+      "identifier": "AutomaticBrake",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 4,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Overcharge",
+          "source": "Input",
+          "min": -0.05000000074505806,
+          "max": 0.125
+        },
+        {
+          "name": "Running",
+          "source": "Input",
+          "min": 0.125,
+          "max": 0.32499998807907104
+        },
+        {
+          "name": "Initial Application",
+          "source": "Input",
+          "min": 0.32499998807907104,
+          "max": 0.35100001096725464
+        },
+        {
+          "name": "Service {Service}",
+          "source": "Input",
+          "min": 0.35100001096725464,
+          "max": 0.6489999890327454
+        },
+        {
+          "name": "Full Service",
+          "source": "Input",
+          "min": 0.6489999890327454,
+          "max": 0.824999988079071
+        },
+        {
+          "name": "Emergency",
+          "source": "Input",
+          "min": 0.824999988079071,
+          "max": 0.949999988079071
+        },
+        {
+          "name": "Neutral / Shutdown",
+          "source": "Input",
+          "min": 0.949999988079071,
+          "max": 1.0499999523162842
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.24,
+          "snapped": 0.0398,
+          "output": 0,
+          "name": "Overcharge"
+        },
+        {
+          "index": 1,
+          "from": 0.25,
+          "to": 0.74,
+          "snapped": 0.2883,
+          "output": 0.10000000149011612,
+          "name": "Running"
+        },
+        {
+          "index": 2,
+          "from": 0.75,
+          "to": 1,
+          "snapped": 0.7917,
+          "output": 0.800000011920929,
+          "name": "Full Service"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
+    },
+    "LocoBrake (SimpleLever)": {
+      "identifier": "IndependentBrake",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "DriversBrakePin": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": null
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.835,
+          "output": 1,
+          "name": null
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
+    },
+    "Whistle_IsolationValve": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "Ejector_IsolationValve": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "CylindCocks_IsolationValve": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "Compressor_IsolationValve": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "Pressure_Gauge_Isolation_Valve": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "Blower_IsolationValve": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "RoofVent_Right": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Gauge_BL": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Closed"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 1,
+          "output": 1,
+          "name": "Open"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
+    },
+    "Gauge_BR": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.5
+        },
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1.5
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 0,
+          "name": "Closed"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.9805,
+          "output": 1,
+          "name": "Open"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
+    },
+    "Gauge_GlassFrame_L": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0.5,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0.5,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Gauge_GlassFrame_R": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Emergency_BrakeValve_L": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "Emergency_BrakeValve_R": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": -0.5,
+          "max": 0.004999999888241291
+        },
+        {
+          "name": "Fully Open",
+          "source": "Output",
+          "min": 0.9950000047683716,
+          "max": 1.5
+        },
+        {
+          "name": "Open {%}",
+          "source": "Output",
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "FireboxDoorWhole": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Armrest_L": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Armrest_R": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "AWS_Isolation (Simple Lever)": {
+      "identifier": "SignallingSystems",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 2,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": -1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [
+        {
+          "name": "Isolated",
+          "source": "Output",
+          "min": 0,
+          "max": 0.5
+        },
+        {
+          "name": "Unisolated",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1
+        }
+      ],
+      "swept": true,
+      "notches": [
+        {
+          "index": 0,
+          "from": 0,
+          "to": 0.49,
+          "snapped": 0,
+          "output": 1,
+          "name": "Unisolated"
+        },
+        {
+          "index": 1,
+          "from": 0.5,
+          "to": 1,
+          "snapped": 0.8067,
+          "output": 0,
+          "name": "Isolated"
+        }
+      ],
+      "sweptRange": [
+        0,
+        1
+      ],
+      "restored": 1
+    },
+    "VacuumChamberReleaseValve": {
+      "identifier": "None",
+      "objectClass": "SimpleLeverComponent",
+      "notchCount": 1,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 0,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 0,
+      "namedValues": [
+        {
+          "name": "Closed",
+          "source": "Output",
+          "min": 0,
+          "max": 0.5
+        },
+        {
+          "name": "Open",
+          "source": "Output",
+          "min": 0.5,
+          "max": 1
+        }
+      ],
+      "swept": false,
+      "notches": []
+    },
+    "Window_Left": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    },
+    "Window_Right": {
+      "identifier": "None",
+      "objectClass": "IrregularLeverComponent",
+      "notchCount": 0,
+      "minInput": 0,
+      "maxInput": 1,
+      "defaultInput": 1,
+      "inputRange": 1,
+      "outputRange": 1,
+      "rotational": false,
+      "inputValue": 1,
+      "namedValues": [],
+      "swept": false,
+      "notches": []
+    }
+  }
+}

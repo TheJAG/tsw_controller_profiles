@@ -1,0 +1,572 @@
+{
+  "name": "TSW | Flying Scotsman | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_PBD_FlyingScotsman_2016_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Cut-off Reverser_RailDriver -1..1 (-75 % .. +75 %, Mid-gear 0; the screw Reverser follows it), continuous, inverted: full forward gear at the far end, full back gear nearest. Mid-gear at raw 0.5 ±0.03",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser_RailDriver",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "steps": [
+              -1,
+              null,
+              0,
+              null,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.955,
+                "threshold_end": 0.535
+              },
+              {
+                "threshold": 0.5,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.465,
+                "threshold_end": 0.045
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.04
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Regulator (Throttle) continuous 0..1, plain: Closed at the far end, pulled towards you to open, Fully open nearest",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Regulator",
+          "input_value": {
+            "min": 0,
+            "max": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "Vacuum brake valve TrainBrake (IrregularLever): Running 0.15 / Initial application 0.35 / Service continuous to 0.65 / Full service 0.65 / Emergency 0.85 (one gate per API set, the lever ramps through them), inverted as the Class 153 brake: Emergency at the far end, Running nearest. Emergency raw 0 ±0.05, Full 0.16 ±0.05, service zone 0.24..0.78, Initial 0.84 ±0.04, Running 1 ±0.08. Overcharge and Neutral / Shutdown stay in the cab",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "TrainBrake (IrregularLever)",
+          "input_value": {
+            "min": 0.15,
+            "max": 0.85,
+            "steps": [
+              0.15,
+              0.35,
+              null,
+              0.65,
+              0.85
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.08
+              },
+              {
+                "threshold": 0.84,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.78,
+                "threshold_end": 0.24
+              },
+              {
+                "threshold": 0.16,
+                "threshold_tolerance": 0.05
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.05
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "FlapLever",
+      "description": "Loco steam brake LocoBrake (SimpleLever) continuous 0..1, inverted: Full at the far end, Off nearest",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "LocoBrake (SimpleLever)",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Driver’s brake pin DriversBrakePin (in 1 / out 0; the vacuum valve is dead with it out, the loco loads with it in): PARK BRK up = pin in",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "DriversBrakePin",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "DriversBrakePin",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "GearLever",
+      "description": "AWS acknowledge (AWSReset_F (PushButton), AWS_Reset, held)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "AWSReset_F (PushButton)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "AWSReset_F (PushButton)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "description": "Sand to the front (Sander lever Front 1 while held, back to the centre 0.5)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Sander",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Sander",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Whistle (Whistle push button, Horn)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Whistle",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Whistle",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "Blower (Blower valve 1 while up, 0 when down)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Blower",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "Blower",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "Live injector (SteamInjector_Live and WaterInjector_Live 1 while up, 0 when down)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "SteamInjector_Live",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "SteamInjector_Live",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "WaterInjector_Live",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "WaterInjector_Live",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "AWS (AWS_Isolation (Simple Lever): Unisolated 0.81 / Isolated 0). Lit = AWS on",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "AWS_Isolation (Simple Lever)",
+          "value": 0.81,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "AWS_Isolation (Simple Lever)",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "Cylinder cocks (CylinderCocks push button Open 1 / Closed 0). Lit = open; the loco loads with them open",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "CylinderCocks",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "CylinderCocks",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Front damper closed (Damper_F 0)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Damper_F",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Front damper open (Damper_F 1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Damper_F",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Lamps | Off",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_0",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_1",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_2",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_3",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Lamps | Lamp 1 (HeadcodeLamp_0)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_0",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_1",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_2",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_3",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Lamps | Lamps 1 and 2 (express headcode)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_0",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_1",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_2",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_3",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Lamps | High-intensity headlamp (HeadcodeLamp_2)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_0",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_1",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_2",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_3",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Lamps | All four",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_0",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_1",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_2",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadcodeLamp_3",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}
