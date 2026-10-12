@@ -1,0 +1,161 @@
+{
+  "name": "tsw-caltrain-mp15dc-dtg-thejag",
+  "title": "MP15DC",
+  "eyebrow": "Caltrain · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | Caltrain MP15DC | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "Peninsula Corridor: San Francisco – San Jose",
+  "colors": {
+    "navy": "#1f3b52",
+    "blue": "#4d7593",
+    "red": "#c8102e",
+    "paper": "#f3f6f8"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-caltrain-slate.svg",
+      "alt": "Caltrain"
+    },
+    {
+      "file": "../../assets/logo-dtg-slate.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4679030",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/caltrain-mp15dc-dtg-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Forward",
+        "Neutral",
+        "Reverse"
+      ],
+      "start": 1
+    },
+    "leftThrottle": {
+      "name": "Throttle",
+      "notches": [
+        "8",
+        "7",
+        "6",
+        "5",
+        "4",
+        "3",
+        "2",
+        "1",
+        "Idle"
+      ],
+      "start": 8
+    },
+    "rightThrottle": {
+      "name": "Automatic brake",
+      "continuous": true,
+      "notches": [
+        "Emergency",
+        "Handle off",
+        "Suppression",
+        "Full service",
+        null,
+        "Initial",
+        "Release"
+      ],
+      "start": 3
+    },
+    "flap": {
+      "name": "Independent",
+      "continuous": true,
+      "notches": [
+        "Full",
+        null,
+        null,
+        null,
+        "Release"
+      ],
+      "start": 0
+    },
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Horn"
+    },
+    "gearLever": {
+      "name": "Alerter"
+    },
+    "autoBrk": {
+      "name": "Lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Dim"
+        },
+        {
+          "short": "2",
+          "desc": "Medium"
+        },
+        {
+          "short": "3",
+          "desc": "Bright"
+        },
+        {
+          "short": "HI",
+          "desc": "+ ditch"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Bell",
+      "start": true
+    },
+    "eng2": {
+      "name": "Bail-off",
+      "start": true
+    },
+    "leftAux": {
+      "name": "Safety fuse"
+    },
+    "rightAux": null,
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "off",
+      "right": "on"
+    },
+    "roundAux": null,
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Handle · field · valve",
+      "flat": "off",
+      "up": "on"
+    }
+  },
+  "setup": [
+    "PARK BRK up: reverser handle in, generator field on, brake valve cut in (the loco loads with them off); MU-2A to Lead in the cab",
+    "Reverser from Neutral to Forward; safety devices fuse on (left aux lit)",
+    "Lights to Bright, ditch lights on",
+    "Independent at Full, automatic brake at Full service (parked); throttle Idle"
+  ],
+  "depart": [
+    "Check the signal; bell on (ENG 1)",
+    "Automatic brake to Release; independent to Release, ENG 2 up to bail off",
+    "Throttle notch by notch",
+    "Reset the alerter with the gear lever",
+    "Brake: throttle to Idle, automatic brake into the service zone, independent for the final stop; Emergency at the far end"
+  ]
+}

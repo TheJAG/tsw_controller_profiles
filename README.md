@@ -148,7 +148,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **BNSF GP60M / GP60B** <sub>— DTG · [profile](releases/tsw-bnsf-gp60m-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-bnsf-gp60m-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BNSF SD40-2** <sub>— DTG · [profile](releases/tsw-bnsf-sd40-2-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-bnsf-sd40-2-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Caltrain F40PH-2CAT** <sub>— DTG · [profile](releases/tsw-caltrain-f40ph-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-caltrain-f40ph-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **Caltrain MP15DC**  
+`SOON 🟨` **Caltrain MP15DC** <sub>— DTG · [profile](releases/tsw-caltrain-mp15dc-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-caltrain-mp15dc-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **Caltrain MP36PH-3C**  
 `TODO ◼️` **Clinchfield F7**  
 `TODO ◼️` **Clinchfield SD40**  
