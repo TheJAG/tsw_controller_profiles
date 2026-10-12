@@ -169,7 +169,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **MBTA HSP46** <sub>— DTG · [profile](releases/tsw-mbta-hsp46-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-mbta-hsp46-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **MBTA single-deck cab car** <sub>— DTG</sub>  
 `SOON 🟨` **Metrolink F125** <sub>— DTG · [profile](releases/tsw-metrolink-f125-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metrolink-f125-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **Metrolink F59PH**  
+`SOON 🟨` **Metrolink F59PH** <sub>— DTG · [profile](releases/tsw-metrolink-f59ph-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metrolink-f59ph-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **Metrolink MP36PH-3C**  
 `TODO ◼️` **Metro-North M3a**  
 `TODO ◼️` **Metro-North M7a**  

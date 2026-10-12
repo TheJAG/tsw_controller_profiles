@@ -1,0 +1,20 @@
+Metrolink F59PH(R) (RVM_SBD_ML_F59PH_C), San Bernardino Line, SB 312 part 2 Pomona North -> San Bernardino Downtown 12:29, 2026-10-12.
+Probed with tools/probe_lever.js (ReverserHandle set to 1 = In, train stationary, AutomaticBrake at Full Service).
+
+ReverserHandle (MasterSwitch push button, Out 0 / In 1): loads 0. A plain set to 1 works. With it at 0 the Reverser stays in Neutral.
+Reverser (Reverser): Reverse -1 / Neutral 0 / Forward 1, snaps (-1..-0.51 / -0.5..0.49 / 0.5..1). Moves with the throttle in any position (tested at N1 and Idle).
+ThrottleAndBrakeHandle (Throttle), combined, range -1..1, loads 0.2 (Idle):
+  dynamic brake continuous -0.3 .. -1 (output -2 .. -9), stores any value in the zone
+  Setup -0.2 (input -0.25..-0.2 snaps to -0.2; -0.27 snaps to -0.3), output -1
+  Idle 0.2 (0..0.25), output 0
+  N1..N8 0.3 / 0.4 / 0.5 / 0.6 / 0.7 / 0.8 / 0.9 / 1.0, output 1..8, snaps to the nearest tenth
+  GATES, one per API set: Idle and Setup. From Idle a set to -1 stops at Setup, the next set goes on; from -1 a set to 0.2 stops at Setup;
+  from Idle a set to 0.5 stops at N1 (0.3), from N1 the power notches jump freely (0.3 -> 1 and 1 -> 0.2 in one set); from N1 a set to -0.2 stops at Idle.
+AutomaticBrake (AutomaticBrake), loads 0.65 (Full Service), moves freely (no gating):
+  Release 0 (out -1) / Minimum 0.095 (0.06..0.12, out 0) / service continuous 0.15..0.60 (out 0.01..0.99) / Full Service 0.65 (0.625..0.69 -> 0.645 or 0.65, out 1)
+  / Suppression 0.745 (out 2) / Handle Off 0.845 (out 3) / Emergency 0.99..1 (from 0.925, out 4)
+IndependentBrake (IndependentBrake), loads 0: 0 = rest (out 0), Release 0.1 (0.05 snaps), continuous 0.125..1 (out 0.028..1, Full Application 1).
+  Negative inputs (Bail Off side) spring back to 0 within 2 s, output stays 0.
+IndependentBrakeBailOffLever (BrakeRelease): spring; 1 -> output -1 (Bail Off) for well under 2 s, then back to 0. 0.5 stores 0.39, output 0.
+CutOffPilotValve (BrakeMode): Out 0 / Freight 0.5 / Passenger 1 (sweep's 0.3331 / 0.8331 are artefacts). LOADS 0 = OUT (display "CUT OUT").
+TMSBreaker (AlerterIsolation) Off 0 / On 1, loads 0. ATS_CutOut Cut Out 0 / Cut In 1, loads 0.
