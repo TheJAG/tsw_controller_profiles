@@ -1,0 +1,331 @@
+{
+  "name": "TSW | Metro-North M8 | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_NYS_MNR_M8_A_C"
+    },
+    {
+      "class_name": "RVM_NYS_MNR_M8_B_C"
+    },
+    {
+      "class_name": "RVM_NYS_MNR_M8_DM_C"
+    },
+    {
+      "class_name": "RVM_NYS_MNR_M8_S_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser (Reverse 0 / Neutral 0.33 / Forward 0.66; Key Out 1 stays in the cab), inverted: Forward at the far end. Needs the master key (PARK BRK up)",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser",
+          "input_value": {
+            "min": 0,
+            "max": 0.66,
+            "steps": [
+              0,
+              0.33,
+              0.66
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Master controller MasterController 0..1 (Emergency 0 / Max Brake 0.1 / brake zone 0.11..0.39 / Min brake 0.4 / Coast 0.5 / Min Power 0.6 / power zone 0.61..1; every notch boundary is a gate the game crosses one per set), plain as the desk reads: Emergency at the far end (raw 0 ±0.03), Max Brake 0.07 ±0.03, brake zone 0.11..0.42, Min brake 0.45 ±0.03, Coast 0.5 ±0.02, Min Power 0.55 ±0.03, power zone 0.58..0.955, Max power 1 ±0.04 nearest.",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "MasterController",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.1,
+              null,
+              0.4,
+              0.5,
+              0.6,
+              null,
+              1
+            ],
+            "step_thresholds": [
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.07,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.11,
+                "threshold_end": 0.42
+              },
+              {
+                "threshold": 0.45,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.5,
+                "threshold_tolerance": 0.02
+              },
+              {
+                "threshold": 0.55,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.58,
+                "threshold_end": 0.955
+              },
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.04
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Master key MasterKey (MasterSwitch lever, On 1 / Off 0; the game ignores Off): PARK BRK up = key in",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "MasterKey",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "MasterKey",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "GearLever",
+      "description": "ATC / ACSES acknowledge (Acknowledge lever 1 while held, 0.5 released)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Acknowledge",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Acknowledge",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Horn (Horn lever 1, back to 0)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Horn",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Horn",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "Driver buzzer (DriverBuzzer push button: 1 while up, 0 when down)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "DriverBuzzer",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "DriverBuzzer",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "Cab ceiling light (CabCeilingLight 1 / 0). Lit = on; loads on",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "CabCeilingLight",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "CabCeilingLight",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wiper off (WiperSpeed 0.6)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "WiperSpeed",
+            "value": 0.6,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wiper low (WiperSpeed 0.8)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "WiperSpeed",
+            "value": 0.8,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Lights | Off (Headlights 0.33)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights",
+            "value": 0.33,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Lights | Marker lights (Headlights 0; this end trailing)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Lights | Dim (0.66)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights",
+            "value": 0.66,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Lights | Bright (1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Lights | Bright (1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}

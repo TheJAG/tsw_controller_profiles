@@ -173,7 +173,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **Metrolink MP36PH-3C** <sub>— DTG · [profile](releases/tsw-metrolink-mp36ph-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metrolink-mp36ph-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Metro-North M3a** <sub>— DTG · [profile](releases/tsw-metro-north-m3a-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metro-north-m3a-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Metro-North M7a** <sub>— DTG · [profile](releases/tsw-metro-north-m7a-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metro-north-m7a-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **Metro-North M8**  
+`SOON 🟨` **Metro-North M8** <sub>— DTG · [profile](releases/tsw-metro-north-m8-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metro-north-m8-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **Metrolink Bi-Level cab car** <sub>— DTG</sub>  
 `TODO ◼️` **Metrolink Rotem cab car** <sub>— DTG</sub>  
 `TODO ◼️` **NJ Transit ALP-45DP**  
