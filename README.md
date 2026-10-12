@@ -186,7 +186,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **Santa Fe F7** <sub>— DTG · [profile](releases/tsw-santafe-f7-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-santafe-f7-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Santa Fe SD40-2** <sub>— DTG · [profile](releases/tsw-santafe-sd40-2-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-santafe-sd40-2-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Tri-Rail BL36PH** <sub>— DTG · [profile](releases/tsw-trirail-bl36ph-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-trirail-bl36ph-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **Tri-Rail F40PH-3C**  
+`SOON 🟨` **Tri-Rail F40PH-3C** <sub>— DTG · [profile](releases/tsw-trirail-f40ph-3c-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-trirail-f40ph-3c-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **Tri-Rail GP49PH**  
 `TODO ◼️` **Tri-Rail Rotem cab car** <sub>— DTG</sub>  
 `TODO ◼️` **Union Pacific SD40-2**  
