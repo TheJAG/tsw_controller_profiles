@@ -66,7 +66,7 @@ function fixAction(act,ctrlName,isDeact){
   if(!act) return act;
   if(act.keys&&!isKeyName(act.keys)&&byBare[act.keys]){act.controls=act.keys;delete act.keys;notes.push(ctrlName+': "keys":"'+act.controls+'" treated as a control');}
   if(act.keys){ const ids=fam.keyRoles[act.keys]||[]; const id=ids.find(i=>byId[i]);
-    if(id){const r=resolve(byId[id][0].name); act.controls=r.name; delete act.keys; if(act.value===undefined) act.value=isDeact?0:1; if(!isDeact) act.hold=true; act._ctrl=r.ctrl; act._lever=leverOf(r); act._fromKey=true; notes.push(ctrlName+': key '+JSON.stringify(ids)+' -> direct control '+r.name);}
+    const r=id?resolve(byId[id][0].name):null; if(r){act.controls=r.name; delete act.keys; if(act.value===undefined) act.value=isDeact?0:1; if(!isDeact) act.hold=true; act._ctrl=r.ctrl; act._lever=leverOf(r); act._fromKey=true; notes.push(ctrlName+': key '+JSON.stringify(ids)+' -> direct control '+r.name);}
     return act; }
   if(act.controls){ const r=resolve(act.controls); if(!r){return null;} act.controls=r.name; act._ctrl=r.ctrl; act._lever=leverOf(r); }
   return act;

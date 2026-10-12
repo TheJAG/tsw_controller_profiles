@@ -138,7 +138,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 
 **🇯🇵 Japan**
 
-`TODO ◼️` **JR East KiHa 40**  
+`SOON 🟨` **JR East KiHa 40** <sub>— DTG · [profile](releases/tsw-kiha40-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-kiha40-dtg-thejag.pdf)</sub>  
 
 **🇺🇸 United States & 🇨🇦 Canada**
 

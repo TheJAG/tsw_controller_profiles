@@ -1,0 +1,560 @@
+{
+  "name": "TSW | KiHa40 | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_UWS_Kiha40-500_Base_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser Handle_Reverser_F(Lever) (Backward -1 / Neutral 0 / Forward 1; the zones take any value), inverted: Forward at the far end. Needs the handles plugged and the master key on (PARK BRK up)",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Handle_Reverser_F(Lever)",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "steps": [
+              -1,
+              0,
+              1
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Throttle Handle_Regulator_F(Lever) Idle 0 .. P5 5 (integer notches, ±0.5 bands), plain as the Class 153: pulled towards you to notch up, Idle at the far end",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Handle_Regulator_F(Lever)",
+          "input_value": {
+            "min": 0,
+            "max": 5,
+            "steps": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "ME23 brake valve Handle_Brake_F(Lever) Release 0 / Holding 0.25 / Handle Off 0.5 / Lap 0.75 / Apply 1 / Emergency 1.5, inverted as the Class 153 brake: Emergency at the far end, Release nearest",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Handle_Brake_F(Lever)",
+          "input_value": {
+            "min": 0,
+            "max": 1.5,
+            "steps": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1,
+              1.5
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "FlapLever",
+      "description": "Gear lever Handle_GearLever_F(Lever) Hydraulic -1 / Neutral 0 / Direct 1, inverted: Direct drive at the far end, Hydraulic nearest",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Handle_GearLever_F(Lever)",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "steps": [
+              -1,
+              0,
+              1
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Handles in: plug the master, brake, engine and gear handles (Handle_*_Active_F(Toggle) Plugged 1 / Removed 0), then the master key Handle_MasterKey_F(Lever) Activated 1. PARK BRK up = handles in, key on",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Handle_Master_Active_F(Toggle)",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "Handle_Master_Active_F(Toggle)",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Handle_Brake_Active_F(Toggle)",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "Handle_Brake_Active_F(Toggle)",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Handle_Engine_Active_F(Toggle)",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "Handle_Engine_Active_F(Toggle)",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Handle_Gear_Active_F(Toggle)",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "Handle_Gear_Active_F(Toggle)",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Handle_MasterKey_F(Lever)",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "Handle_MasterKey_F(Lever)",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "GearLever",
+      "description": "ATS acknowledge (CB_ATSAcknowledge_F(Push), AWS_Reset, held)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "CB_ATSAcknowledge_F(Push)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "CB_ATSAcknowledge_F(Push)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "description": "EB alerter reset (CB_EBReset_F(Push), Alerter)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "CB_EBReset_F(Push)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "CB_EBReset_F(Push)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Horn (CB_Horn_F(Push))",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "CB_Horn_F(Push)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "CB_Horn_F(Push)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "Engine start handle Handle_EngineStart_F(Lever): Start 2 while up, back to Preheat / run 1 when down",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Handle_EngineStart_F(Lever)",
+          "value": 2,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Handle_EngineStart_F(Lever)",
+          "value": 1,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "Engine stop (Handle_EngineStop_F(Push) 1, back to 0) while up",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Handle_EngineStop_F(Push)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Handle_EngineStop_F(Push)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "ATS power (CB_ATSPower_F(Toggle), AWS_Isolation: 1 / 0). Lit = on",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "CB_ATSPower_F(Toggle)",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "CB_ATSPower_F(Toggle)",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wiper off (CL_WiperD_F(Lever) 0)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CL_WiperD_F(Lever)",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wiper on (CL_WiperD_F(Lever) 0.05)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CL_WiperD_F(Lever)",
+            "value": 0.05,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Lights | Off",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_HeadLight_F(Toggle)",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_HeadLightDim_F(Toggle)",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_GaugeLight_F(Toggle)",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_CabLight_F(Toggle)",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Lights | Headlight dimmed (CB_HeadLightDim_F 1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_HeadLight_F(Toggle)",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_HeadLightDim_F(Toggle)",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_GaugeLight_F(Toggle)",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_CabLight_F(Toggle)",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Lights | Headlight bright",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_HeadLight_F(Toggle)",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_HeadLightDim_F(Toggle)",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_GaugeLight_F(Toggle)",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_CabLight_F(Toggle)",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Lights | Headlight bright, gauge lights",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_HeadLight_F(Toggle)",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_HeadLightDim_F(Toggle)",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_GaugeLight_F(Toggle)",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_CabLight_F(Toggle)",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Lights | Headlight bright, gauge and cab lights",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_HeadLight_F(Toggle)",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_HeadLightDim_F(Toggle)",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_GaugeLight_F(Toggle)",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "CB_CabLight_F(Toggle)",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}
