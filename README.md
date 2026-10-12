@@ -61,7 +61,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **LMS Class 8F** <sub>— DTG · [profile](releases/tsw-lms-8f-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-lms-8f-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **LMS Jubilee Class (6P)** <sub>— DTG · [profile](releases/tsw-lms-jubilee-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-lms-jubilee-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **LU 1938 Stock**  
-`TODO ◼️` **LU 1972 Mark 2 Stock**  
+`SOON 🟨` **LU 1972 Mark 2 Stock** <sub>— DTG · [profile](releases/tsw-lu-1972-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-lu-1972-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **Thomas & Friends: Thomas**  
 `TODO ◼️` **Thomas & Friends: Diesel**  
 
