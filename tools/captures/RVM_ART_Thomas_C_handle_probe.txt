@@ -1,0 +1,22 @@
+RVM_ART_Thomas_C (Thomas the Tank Engine, DTG Artemis, West Somerset Railway "Thomas at the WSR", 14:24 Bishops Lydeard - Minehead), probed 2026-10-12.
+UsesSimpleControls = true. 21 nodes only; no regulator, cut-off, brake valve, blower, injectors, dampers, cocks, sander, AWS, keys.
+Simulation is an electric model (ElectricalMotorV2, ChopperV2, DirectBrakeControl); no writable Simulation nodes.
+
+ThrottleControl (IrregularLever, identifier SimpleThrottle), range -1..1, 1 notch, DefaultInputValue 0.5 (but rests at 0).
+ Named values on Output: Brake/Reverse -1.5..-0.5, Throttle/Forward 0.5..1.5.
+ SPRING-CENTRED: a single set is not kept; .InputValue reads 0, Function.GetCurrentInputValue shows the live value while sets keep arriving
+ and returns to 0 within ~100 ms of the last set. Held by re-sending every ~40 ms (set -> live input / output):
+   +-0.1, +-0.25 -> 0 (dead zone)
+   0.5 -> 0.12..0.21 / 0.04..0.12     -0.5 -> -0.13..-0.17 / -0.08..-0.12
+   0.6 -> 0.22 / 0.18                 -0.75 -> -0.37 / -0.33
+   0.75 -> 0.41 / 0.33                -1 -> -0.60..-0.75 / -0.51..-0.71
+   1 -> 0.62..0.66 / 0.58..0.62
+ Holding + at standstill: Reverser(Proxy) goes to 1 and the train accelerates (0.5 held 1.5 s -> 0.26 m/s).
+ Holding - while moving forward brakes; once stopped it continues as Reverse (Reverser -1) and accelerates backwards
+ (-1 held 2.5 s from 0.26 m/s fwd -> 3.2 m/s backwards). Holding + while reversing brakes, then Forward.
+ Releasing (no sets): the train coasts (speed held ~3.1 m/s), no automatic brake.
+Reverser(Proxy) (IrregularLever, no identifier), -1 / 0 / 1, notches 0/1/2, zones <= -0.5 / -0.5..0.5 / >= 0.5; sets hold at standstill.
+ Any non-zero ThrottleControl set at standstill resets it to 0 (an exact 0 keeps it); while driving it follows the throttle sign.
+Whislte (PushButton, Horn) 0/1 stores both.   Torch (PushButton, CabLights) 0/1.   Headlights (PushButton, Headlights) Off 0 / On 1.
+CabDoor_L/_R (RailVehicleDoorComponent) only. Passenger doors are on the coaches (Annie RVM_ART_Annie_C, Clarabel RVM_ART_Clarabel_C:
+ PassengerDoor_L1..4 / R1..4, DoorManager).
