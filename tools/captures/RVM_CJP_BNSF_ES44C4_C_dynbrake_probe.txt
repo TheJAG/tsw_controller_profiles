@@ -1,0 +1,22 @@
+BNSF ES44C4 (RVM_CJP_BNSF_ES44C4_C), DynamicBrake(Lever) probe, 2026-10-12, Barstow, stationary,
+IndependentBrake 1 (full), AutomaticBrake 0.15 (Minimum), Throttle 0 (Idle).
+capture_train.js swept it with Reverser(Lever) in Neutral: one notch (Off), every set stored 0.02.
+The dynamic brake is interlocked with the reverser: it only moves with the reverser out of Neutral.
+
+Reverser 0.95 (Forward):            Reverser 0 (Neutral):
+set   stored  output  notch          set   stored  output
+0     0       -1      0 Off          0     0       -1
+0.05  0.02    -1      0 Off          0.05  0.02    -1
+0.1   0.1111   0      1 Set Up       0.1+  0.02    -1  (locked)
+0.15  0.15     0      1
+0.2   0.2      1      1  (dynamic continuous from here)
+0.3   0.3      1.70   1
+0.4   0.4      2.60   1
+0.5   0.5      3.50   1
+0.6   0.6      4.40   1
+0.7   0.7      5.30   1
+0.8   0.8      6.20   1
+0.9   0.9      7.10   1
+1     1        8      1
+Output = 1 + (in - 0.2) * 9 between 0.2 and 1 (DB 1..8, not quantised). Off 0..0.02 (snaps 0.02 above 0), Set Up 0.1111 (0.1..0.15).
+Restored: DynamicBrake 0, Reverser 0, train did not move.
