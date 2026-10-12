@@ -1,0 +1,19 @@
+BNSF GP60M (RVM_GP60M_BNSF2_C, tile "GP60M BNSF H2"), hand probe 2026-10-12, Cajon Pass "BNSF GP60M Timetable",
+ZLACNYC1 Part 1 12:15 San Bernardino yard, stationary. probe_lever.js, each value set from the previous one.
+
+ThrottleAndBrake (identifier Throttle, -1..1, combined throttle + dynamic brake). Sweep (reverser Neutral) saw Idle only
+below 0.17: the dynamic side is LOCKED with the reverser in Neutral. Probed with Reverser 1 (Forward), stepping down:
+  set 0.17..-0.04 -> stored 0.12 Idle (output 0)
+  set -0.06..-0.24 -> stored -0.2 Set-up (output -1)
+  set -0.26..-0.30 -> stored -0.3 B1 (output -2), then continuous: stored = set, output = -2 - 10*(|in| - 0.3), -1 -> -9 (B8)
+Power side (Neutral): Idle 0.12 (<=0.17), N1 0.23 (0.18..0.25), N2 0.34 (0.30..), N3 0.45 (0.40..0.50), N4 0.56, N5 0.67,
+  N6 0.78, N7 0.89, N8 1.0 (0.95+); in-between sets snap to the nearest notch value, the notch values store exactly.
+Reverser: stores -1 / 0 / 1 exactly (-0.5..0.35 -> 0, >=0.5 -> 1); the sweep's -0.3437 / 0.6947 were artefacts.
+IndependentBrake (loads 0.2): 0..0.22 -> stored 0.2 Release (output 0); 0.24..0.25 -> 0.25; continuous 0.25..1,
+  output (in - 0.25)/0.75 (Full Application 1). The sweep saw "Release" twice because output 0 at both ends.
+AutomaticBrake (loads 0.8 Handle Off): Release 0 (<=0.05), Minimum Reduction 0.2 (0.1..0.2), Service continuous
+  0.21..0.6 (output (in-0.2)/0.4; 0.62 stores 0.6), Full Service 0.65 (0.64..0.66), Suppression 0.7, Handle Off 0.8 (0.9 -> 0.8),
+  Emergency 1 (0.95+).
+AutoBrakeBailOff (BailOff, SimpleLever): Bail Off 0.9936 (>=0.5), rest 0.
+Load state worth noting: AutomaticBrake 0.8 Handle Off, BrakeCutoutValve 1 Cut Out, MU-2A_Valve 1 Trail (trailing-unit set-up),
+IndependentBrakeValve 1 Open In, FeedValve 1. Restored: Reverser 0, ThrottleAndBrake 0.12, brakes as loaded; train did not move.
