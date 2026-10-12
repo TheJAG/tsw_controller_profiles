@@ -179,7 +179,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **NJ Transit ALP-45DP** <sub>— DTG · [profile](releases/tsw-njt-alp45dp-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-njt-alp45dp-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **NJ Transit ALP-46** <sub>— DTG · [profile](releases/tsw-njt-alp46-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-njt-alp46-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **NJ Transit Arrow III** <sub>— DTG · [profile](releases/tsw-njt-arrow3-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-njt-arrow3-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **NJ Transit Bi-Level cab car** <sub>— DTG</sub>  
+`SOON 🟨` **NJ Transit Bi-Level cab car** <sub>— DTG · [profile](releases/tsw-njt-bilevel-cab-car-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-njt-bilevel-cab-car-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Norfolk Southern ES44AC** <sub>— Skyhook Games · [profile](releases/tsw-ns-es44ac-skyhook-thejag.tswprofile) · [manual](profiles/documentation/tsw-ns-es44ac-skyhook-thejag.pdf)</sub>  
 `SOON 🟨` **Norfolk Southern GP38-2** <sub>— DTG · [profile](releases/tsw-ns-gp38-2-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-ns-gp38-2-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Santa Fe C40-8W** <sub>— DTG · [profile](releases/tsw-santafe-c40-8w-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-santafe-c40-8w-dtg-thejag.pdf)</sub>  

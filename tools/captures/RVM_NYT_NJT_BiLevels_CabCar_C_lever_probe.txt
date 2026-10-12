@@ -1,0 +1,53 @@
+# RVM_NYT_NJT_BiLevels_CabCar_C lever probe (capture agent, 2026-10-13, NEC New York - Trenton timetable, tile "Multi-Level Commuter Cab Car NJT", 3838 Trenton - NY Penn Station 10:39, 10 vehicles 767.9 t, cab car leading with the ALP-46 pushing; loaded STATIONARY, ReverserHandle (MasterSwitch) In 1, Reverser 0.66 Neutral, MasterController 0 Idle, AutomaticBrake 0.4 Lap).
+# Summary: one desk, no cab suffixes, IS_GetActiveCab false/false. Combined MasterController -1..1 in 0.1 steps (Full Brake -1 / B9..B1 / Idle 0 / P1..P9 / Full Power 1). Reverser Isolated 0 / Reverse 0.33 / Neutral 0.66 / Forward 1 (zones 0..0.16 / 0.17..0.49 / 0.5..0.83 / 0.84..1; the sweep's 0.2603 / 0.5915 / 0.9429 are artefacts). AutomaticBrake six detents Release 0 / Hold 0.2 / Lap 0.4 / Service 0.6 / Handle Off 0.8 / Emergency 1, no service zone. No IndependentBrake, no DynamicBrake node.
+## Reverser --values
+current InputValue 0.6600000262260437 (what the game stores after the last set, e.g. by the TCA through the mod)
+set 0.0000 -> stored 0.000000 output -1 notch 0 
+set 0.1000 -> stored 0.000000 output -1 notch 0   <-- game changed the value
+set 0.2603 -> stored 0.330000 output 0 notch 1   <-- game changed the value
+set 0.3330 -> stored 0.330000 output 0 notch 1   <-- game changed the value
+set 0.4500 -> stored 0.330000 output 0 notch 1   <-- game changed the value
+set 0.5000 -> stored 0.660000 output 1 notch 2   <-- game changed the value
+set 0.5915 -> stored 0.660000 output 1 notch 2   <-- game changed the value
+set 0.6660 -> stored 0.660000 output 1 notch 2   <-- game changed the value
+set 0.8000 -> stored 0.660000 output 1 notch 2   <-- game changed the value
+set 0.9429 -> stored 1.000000 output 2 notch 3   <-- game changed the value
+set 1.0000 -> stored 1.000000 output 2 notch 3 
+restored 0.6600000262260437
+## MasterController --values (Reverser as loaded)
+current InputValue 0 (what the game stores after the last set, e.g. by the TCA through the mod)
+set -1.0000 -> stored -1.000000 output -10 notch 0 
+set -0.9700 -> stored -1.000000 output -10 notch 0   <-- game changed the value
+set -0.9000 -> stored -0.900000 output -9 notch 1 
+set -0.5500 -> stored -0.500000 output -5 notch 5   <-- game changed the value
+set -0.1000 -> stored -0.100000 output -1 notch 9 
+set -0.0500 -> stored 0.000000 output 0 notch 10   <-- game changed the value
+set 0.0000 -> stored 0.000000 output 0 notch 10 
+set 0.0400 -> stored 0.000000 output 0 notch 10   <-- game changed the value
+set 0.0500 -> stored 0.100000 output 1 notch 11   <-- game changed the value
+set 0.1000 -> stored 0.100000 output 1 notch 11 
+set 0.5500 -> stored 0.600000 output 6 notch 16   <-- game changed the value
+set 0.9000 -> stored 0.900000 output 9 notch 19 
+set 0.9500 -> stored 1.000000 output 10 notch 20   <-- game changed the value
+set 1.0000 -> stored 1.000000 output 10 notch 20 
+restored 0
+## AutomaticBrake --values
+current InputValue 0.4000000059604645 (what the game stores after the last set, e.g. by the TCA through the mod)
+set 0.0000 -> stored 0.000000 output -1 notch 0 
+set 0.0500 -> stored 0.000000 output -1 notch 0   <-- game changed the value
+set 0.1000 -> stored 0.200000 output 0 notch 1   <-- game changed the value
+set 0.1500 -> stored 0.200000 output 0 notch 1   <-- game changed the value
+set 0.2000 -> stored 0.200000 output 0 notch 1 
+set 0.3000 -> stored 0.400000 output 1 notch 2   <-- game changed the value
+set 0.4000 -> stored 0.400000 output 1 notch 2 
+set 0.4500 -> stored 0.400000 output 1 notch 2   <-- game changed the value
+set 0.5000 -> stored 0.400000 output 1 notch 2   <-- game changed the value
+set 0.5500 -> stored 0.600000 output 2 notch 3   <-- game changed the value
+set 0.6000 -> stored 0.600000 output 2 notch 3 
+set 0.7000 -> stored 0.600000 output 2 notch 3   <-- game changed the value
+set 0.7500 -> stored 0.800000 output 3 notch 4   <-- game changed the value
+set 0.8000 -> stored 0.800000 output 3 notch 4 
+set 0.9000 -> stored 0.800000 output 3 notch 4   <-- game changed the value
+set 0.9500 -> stored 1.000000 output 4 notch 5   <-- game changed the value
+set 1.0000 -> stored 1.000000 output 4 notch 5 
+restored 0.4000000059604645

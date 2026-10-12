@@ -1,0 +1,161 @@
+{
+  "name": "tsw-njt-bilevel-cab-car-dtg-thejag",
+  "title": "Multi-Level cab car",
+  "eyebrow": "NJ Transit · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | NJ Transit Bi-Level cab car | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "Northeast Corridor: New York – Trenton",
+  "colors": {
+    "navy": "#1f3b52",
+    "blue": "#4d7593",
+    "red": "#c8102e",
+    "paper": "#f3f6f8"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-njtransit-slate.svg",
+      "alt": "NJ Transit"
+    },
+    {
+      "file": "../../assets/logo-dtg-slate.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4679660",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/njt-bilevel-cab-car-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Forward",
+        "Neutral",
+        "Reverse"
+      ],
+      "start": 1
+    },
+    "leftThrottle": {
+      "name": "Power / brake",
+      "notches": [
+        "P max",
+        null,
+        "P8",
+        null,
+        "P6",
+        null,
+        "P4",
+        null,
+        "P2",
+        null,
+        "Idle",
+        null,
+        "B2",
+        null,
+        "B4",
+        null,
+        "B6",
+        null,
+        "B8",
+        null,
+        "B max"
+      ],
+      "start": 10
+    },
+    "rightThrottle": {
+      "name": "Automatic brake",
+      "notches": [
+        "Emergency",
+        "Handle off",
+        "Service",
+        "Lap",
+        "Hold",
+        "Release"
+      ],
+      "start": 3
+    },
+    "flap": null,
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Horn"
+    },
+    "gearLever": {
+      "name": "Acknowledge"
+    },
+    "autoBrk": {
+      "name": "Lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Dim"
+        },
+        {
+          "short": "2",
+          "desc": "Bright"
+        },
+        {
+          "short": "3",
+          "desc": "+ aux auto"
+        },
+        {
+          "short": "HI",
+          "desc": "Aux manual"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Bell",
+      "start": true
+    },
+    "eng2": {
+      "name": "Pantograph up",
+      "start": true
+    },
+    "leftAux": {
+      "name": "ACSES / ASES"
+    },
+    "rightAux": {
+      "name": "Alerter"
+    },
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "off",
+      "right": "low"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Reverser handle",
+      "flat": "out",
+      "up": "in"
+    }
+  },
+  "setup": [
+    "Reverser handle in (PARK BRK up; the car loads with it in); pantograph up on the loco (ENG 2)",
+    "ACSES / ASES and alerter in (aux squares lit; both load cut out)",
+    "Lights to Bright",
+    "Handle at Idle, automatic brake at Lap or Service (parked); reverser from Neutral to Forward"
+  ],
+  "depart": [
+    "Close doors (RUD TRIM), check the signal; bell on (ENG 1)",
+    "Automatic brake to Release",
+    "Handle away from you through Idle into P1..P max",
+    "Acknowledge the alerter with the gear lever",
+    "Brake: handle back through Idle into B1..B max (the loco's dynamic / blended brake), automatic brake to Service and Lap; Emergency at the far end"
+  ]
+}
