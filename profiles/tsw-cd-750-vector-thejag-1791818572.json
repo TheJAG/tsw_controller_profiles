@@ -1,0 +1,620 @@
+{
+  "name": "TSW | CD Class 750 | VECTOR | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_LBSP_CD750_Base_C"
+    },
+    {
+      "class_name": "RVM_LBSP_CD750_CDC_C"
+    },
+    {
+      "class_name": "RVM_LBSP_CD750_GreenYellowStripe_C"
+    },
+    {
+      "class_name": "RVM_LBSP_CD750_RedYellow_C"
+    },
+    {
+      "class_name": "RVM_LBSP_CD750_RedYellowStar_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser ReverserCab_1 (Backward -2 / Engine Only -1 / Off 0 / Engine Only 1 / Forward 2, snaps at ±0.5), inverted: Forward at the far end. Needs the reverser handle in (PARK BRK up)",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "ReverserCab_1",
+          "input_value": {
+            "min": -2,
+            "max": 2,
+            "steps": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Controller handwheel ThrottleCab_1 (Neutral 0 / notches 1..8 stored at 2..9; moves only with the reverser out of Off), inverted: 8 at the far end, 0 nearest",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "ThrottleCab_1",
+          "input_value": {
+            "min": 0,
+            "max": 9,
+            "steps": [
+              0,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "Train brake valve BS2Cab_1 (Quick Release 0 / Release 0.14 / Neutral 0.22 / Apply zone 0.26..0.82 in 0.04 steps / Cutout 0.86 / Emergency 1), plain: Quick Release at the far end (raw 0 ±0.04), Release 0.1, Neutral 0.2, apply zone 0.26..0.86, Cutout 0.92 ±0.03, Emergency 1 nearest",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "BS2Cab_1",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.14,
+              0.22,
+              null,
+              0.86,
+              1
+            ],
+            "step_thresholds": [
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.1,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.2,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.26,
+                "threshold_end": 0.86
+              },
+              {
+                "threshold": 0.92,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.04
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "FlapLever",
+      "description": "Independent brake BPCab_1 (BP1, Release 0 / continuous / Full 1), plain: Release at the far end, Full nearest",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "BPCab_1",
+          "input_value": {
+            "min": 0,
+            "max": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Reverser handle ReverserVisibilityDummy_1 (In 1 / Out 0) and brake valve key BS2KeyCab_1 (Unlocked 1 / Locked 0): PARK BRK up = handle in, key unlocked. The reverser and the controller only move with the handle in",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "ReverserVisibilityDummy_1",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "ReverserVisibilityDummy_1",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "BS2KeyCab_1",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "BS2KeyCab_1",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "GearLever",
+      "description": "Vigilance acknowledge (VigilanceButtonRCab_1, held)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "VigilanceButtonRCab_1",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "VigilanceButtonRCab_1",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "description": "Sand (SanderPedalCab_1, held)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "SanderPedalCab_1",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "SanderPedalCab_1",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Horn (HornPedalACab_1, held)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "HornPedalACab_1",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "HornPedalACab_1",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "Engine start (EngineStartButtonCab_1 1 while up, 0 when down): reverser to Engine Only first, hold up about 8 s",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "EngineStartButtonCab_1",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "EngineStartButtonCab_1",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "Loco brake release OL2Cab_1 (1 while up, 0 when down)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "OL2Cab_1",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "OL2Cab_1",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "Train protection VZ_SwitchMode (Active 4 / Off 0). Lit = active; loads in Banking 1",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "VZ_SwitchMode",
+          "value": 4,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "VZ_SwitchMode",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "Whistle (WhistleButtonCab_1, held)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "WhistleButtonCab_1",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "WhistleButtonCab_1",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wiper off (WiperSwitchMainCab_1 0)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "WiperSwitchMainCab_1",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wiper on (WiperSwitchMainCab_1 1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "WiperSwitchMainCab_1",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Lights | Off",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightSwitchCab_1",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightFRSwitchCab_1",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightFLSwitchCab_1",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightBRSwitchCab_1",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightBLSwitchCab_1",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Lights | Front white lamps (LightFR/FL 1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightSwitchCab_1",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightFRSwitchCab_1",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightFLSwitchCab_1",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightBRSwitchCab_1",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightBLSwitchCab_1",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Lights | Headlight reduced (HeadlightSwitchCab_1 -1) and front white lamps",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightSwitchCab_1",
+            "value": -1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightFRSwitchCab_1",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightFLSwitchCab_1",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightBRSwitchCab_1",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightBLSwitchCab_1",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Lights | Headlight full (1) and front white lamps",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightSwitchCab_1",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightFRSwitchCab_1",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightFLSwitchCab_1",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightBRSwitchCab_1",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightBLSwitchCab_1",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Lights | Headlight full, front white, rear red lamps (LightBR/BL -1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "HeadlightSwitchCab_1",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightFRSwitchCab_1",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightFLSwitchCab_1",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightBRSwitchCab_1",
+            "value": -1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "LightBLSwitchCab_1",
+            "value": -1,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}
