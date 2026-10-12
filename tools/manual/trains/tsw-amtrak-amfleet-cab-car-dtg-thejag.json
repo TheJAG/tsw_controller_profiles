@@ -1,0 +1,153 @@
+{
+  "name": "tsw-amtrak-amfleet-cab-car-dtg-thejag",
+  "title": "Amfleet cab car",
+  "eyebrow": "Amtrak · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | Amtrak Amfleet cab car | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "Northeast Corridor: New York – Trenton",
+  "colors": {
+    "navy": "#1f3b52",
+    "blue": "#4d7593",
+    "red": "#c8102e",
+    "paper": "#f3f6f8"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-amtrak-slate.svg",
+      "alt": "Amtrak"
+    },
+    {
+      "file": "../../assets/logo-dtg-slate.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4679660",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/amtrak-cab-car-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Forward",
+        "Neutral",
+        "Reverse"
+      ],
+      "start": 1
+    },
+    "leftThrottle": {
+      "name": "Throttle",
+      "notches": [
+        "8",
+        "7",
+        "6",
+        "5",
+        "4",
+        "3",
+        "2",
+        "1",
+        "Off"
+      ],
+      "start": 8
+    },
+    "rightThrottle": {
+      "name": "Automatic brake",
+      "continuous": true,
+      "notches": [
+        "Emergency",
+        "Handle off",
+        "Full service",
+        null,
+        "Minimum",
+        "Release"
+      ],
+      "start": 2
+    },
+    "flap": null,
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Horn"
+    },
+    "gearLever": {
+      "name": "Acknowledge"
+    },
+    "autoBrk": {
+      "name": "Lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Dim"
+        },
+        {
+          "short": "2",
+          "desc": "Bright"
+        },
+        {
+          "short": "3",
+          "desc": "+ strobes"
+        },
+        {
+          "short": "HI",
+          "desc": "Strobes red"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Bell",
+      "start": true
+    },
+    "eng2": {
+      "name": "Pantograph",
+      "start": true
+    },
+    "leftAux": {
+      "name": "ACSES · ATC"
+    },
+    "rightAux": {
+      "name": "Alerter"
+    },
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "off",
+      "right": "on"
+    },
+    "roundAux": {
+      "name": "MCB"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Reverser key",
+      "flat": "out",
+      "up": "in"
+    }
+  },
+  "setup": [
+    "Throttle at Off, then PARK BRK up: reverser key in (Neutral), brake mode Lead",
+    "Pantograph up (ENG 2), MCB closed (round aux lit)",
+    "ACSES / ATC and alerter in (aux squares lit); lights to Bright",
+    "Reverser to Forward (the throttle is dead in Neutral); automatic brake at Full service (parked)"
+  ],
+  "depart": [
+    "Close doors (RUD TRIM), check the signal; bell on (ENG 1)",
+    "Automatic brake to Release",
+    "Throttle notch by notch (the ACS-64 at the back follows)",
+    "Acknowledge the alerter and cab signals with the gear lever",
+    "Brake: throttle to Off, automatic brake into the service zone; Emergency at the far end. No independent or dynamic brake on the cab car"
+  ]
+}

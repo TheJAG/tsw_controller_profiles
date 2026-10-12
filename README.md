@@ -144,7 +144,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 
 `SOON 🟨` **Amtrak ACS-64** <sub>— DTG · [profile](releases/tsw-amtrak-acs64-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-amtrak-acs64-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Amtrak Acela** <sub>— DTG · [profile](releases/tsw-amtrak-acela-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-amtrak-acela-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **Amtrak Amfleet cab car** <sub>— DTG</sub>  
+`SOON 🟨` **Amtrak Amfleet cab car** <sub>— DTG · [profile](releases/tsw-amtrak-amfleet-cab-car-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-amtrak-amfleet-cab-car-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BNSF ES44C4** <sub>— DTG · [profile](releases/tsw-bnsf-es44c4-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-bnsf-es44c4-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BNSF GP60M / GP60B** <sub>— DTG · [profile](releases/tsw-bnsf-gp60m-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-bnsf-gp60m-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BNSF SD40-2** <sub>— DTG · [profile](releases/tsw-bnsf-sd40-2-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-bnsf-sd40-2-dtg-thejag.pdf)</sub>  
