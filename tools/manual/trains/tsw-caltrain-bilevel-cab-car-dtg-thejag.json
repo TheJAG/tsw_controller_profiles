@@ -1,0 +1,163 @@
+{
+  "name": "tsw-caltrain-bilevel-cab-car-dtg-thejag",
+  "title": "Bi-Level cab car",
+  "eyebrow": "Caltrain · Dovetail Games · TCA Quadrant Airbus",
+  "profileName": "TSW | Caltrain Bi-Level cab car | DTG | TheJAG",
+  "developer": "Dovetail Games",
+  "route": "Peninsula Corridor: San Francisco – San Jose",
+  "colors": {
+    "navy": "#1f3b52",
+    "blue": "#4d7593",
+    "red": "#c8102e",
+    "paper": "#f3f6f8"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-caltrain-slate.svg",
+      "alt": "Caltrain"
+    },
+    {
+      "file": "../../assets/logo-dtg-slate.png",
+      "alt": "Dovetail Games"
+    }
+  ],
+  "dlc": "store.steampowered.com/app/4679010",
+  "credit": "© TheJAG",
+  "cab": {
+    "file": "../../assets/caltrain-bilevel-cab-car-cab.jpg",
+    "height": 196,
+    "position": "50% 50%"
+  },
+  "controls": {
+    "speedbrake": {
+      "name": "Reverser",
+      "notches": [
+        "Forward",
+        "Neutral",
+        "Reverse"
+      ],
+      "start": 1
+    },
+    "leftThrottle": {
+      "name": "Power / dynamic",
+      "notches": [
+        "P8",
+        null,
+        null,
+        null,
+        "P4",
+        null,
+        null,
+        null,
+        "Idle",
+        null,
+        null,
+        null,
+        null,
+        "B4",
+        null,
+        null,
+        null,
+        "B8"
+      ],
+      "start": 8
+    },
+    "rightThrottle": {
+      "name": "Automatic brake",
+      "continuous": true,
+      "notches": [
+        "Emergency",
+        "Handle off",
+        "Suppression",
+        "Full service",
+        null,
+        "Initial",
+        "Release"
+      ],
+      "start": 3
+    },
+    "flap": null,
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
+    "rightThrottleButton": {
+      "name": "Horn"
+    },
+    "gearLever": {
+      "name": "Reverser handle"
+    },
+    "autoBrk": {
+      "name": "Lights",
+      "positions": [
+        {
+          "short": "0",
+          "desc": "–"
+        },
+        {
+          "short": "BTV",
+          "desc": "Off"
+        },
+        {
+          "short": "LO",
+          "desc": "Dim"
+        },
+        {
+          "short": "2",
+          "desc": "Dim + aux"
+        },
+        {
+          "short": "3",
+          "desc": "Bright + aux"
+        },
+        {
+          "short": "HI",
+          "desc": "Bright + aux"
+        }
+      ],
+      "start": 1
+    },
+    "eng1": {
+      "name": "Bell",
+      "start": true
+    },
+    "eng2": {
+      "name": "Alerter reset",
+      "start": true
+    },
+    "leftAux": {
+      "name": "EP brake"
+    },
+    "rightAux": {
+      "name": "Strobes"
+    },
+    "modeSwitch": {
+      "name": "Wipers",
+      "left": "off",
+      "right": "on"
+    },
+    "roundAux": {
+      "name": "Parking brake"
+    },
+    "rudTrim": {
+      "name": "Doors L / R"
+    },
+    "parkBrk": {
+      "name": "Cab set-up",
+      "flat": "off",
+      "up": "on"
+    }
+  },
+  "setup": [
+    "PARK BRK up: cab set-up key, brake cut-in, fuel pump, generator field, engine run, alerter and PCS breakers on (the car loads with all of them off)",
+    "Lights to Dim + aux; parking brake off (round aux)",
+    "Handle at Idle, automatic brake at Full service (parked)",
+    "Gear lever (reverser handle press), reverser to Forward, gear lever again: the power handle is now free"
+  ],
+  "depart": [
+    "Close doors (RUD TRIM), check the signal; bell on (ENG 1)",
+    "Automatic brake to Release",
+    "Handle away from you through Idle into P1..P8 (one notch at a time through the gates)",
+    "Reset the alerter with ENG 2",
+    "Brake: handle back through Idle and Setup into B1..B8, automatic brake into the service zone; Emergency at the far end. After any reverser move press the gear lever before powering"
+  ]
+}
