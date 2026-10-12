@@ -1,0 +1,325 @@
+# RVM_SMH_UP_SD70ACe_C lever probe (capture agent, 2026-10-13, Sherman Hill timetable, tile "SD70ACe UP" -> layer 'Sherman Hill: Cheyenne - Laramie', Cheyenne Yard - Laramie Yard (Intermodal) 12:24, take-over, 106 cars 9314 t, UP 8460 leading; loaded STATIONARY, AutomaticBrake 0.9 Handle Off, IndependentBrake 0.2 Release).
+# Summary: EMD AAR stand. Throttle Idle 0 / N1..N8 stored 0.125 0.25 0.375 0.5 0.625 0.75 0.825 (sic, N7) 1.0. DynamicBrake Off 0 / Set Up 0.111 / continuous 0.2..1 (output 1 + 9 x (in - 0.2), 8 at 1).
+# AutomaticBrake Release 0 / Minimum 0.1 / service 0.15..0.65 (output 0.01..0.99) / Full Service 0.7 / Suppression 0.8 / Handle Off 0.9 / Emergency 1. IndependentBrake Release 0.2 / continuous 0.21..1 (output (in-0.2)/0.8); the named Bail Off zone (output -1) is NOT reachable through the API (sets below 0.2, ramps, 25 sets in 2 s all store 0.2). Reverser -1 / 0 / 1.
+# INTERLOCKS LAG ONE EVENT (as the DTG Santa Fe F7, tools/GOTCHAS.md): (a) after the throttle returns to Idle from a notch the reverser stays locked until a second throttle set inside Idle (0.01); (b) after the reverser moves into Forward or Reverse from Neutral the DynamicBrake stays locked in Off until a throttle set inside Idle (0.01/0.02), or a direct Reverse<->Forward move; (c) the throttle locks while DynamicBrake is out of Off and is free right after DynamicBrake 0. The capture sweep's one-notch DynamicBrake is this lag, not a key. ReverserHandle (MasterSwitch) does NOT lock the reverser (moved with it at 0 and at 1); cycling it 0 -> 1 also refreshed the reverser lock once.
+# Loads part cold: EngineRun 0, GeneratorField 0, FuelPump 0, Fuse_EAD (WarningDevices) 0, Fuse_CabSignal (SignallingSystems) 0; switching them on made no difference to any lever. No brake cut-out / MU-2A valve node exists. Left at AutomaticBrake 0.7, IndependentBrake 1, all cold switches back at 0, ReverserHandle 0.
+## probe 1 (load state, sweeps; the reverser was locked by (a) after the throttle probe, so the first DynamicBrake 'Forward' block ran in Neutral)
+moving null speed null
+load ReverserHandle ["0.0000",0,null]
+load GeneratorField ["0.0000",0,null]
+load EngineRun ["0.0000",0,null]
+load FuelPump ["0.0000",0,null]
+load Fuse_EAD ["0.0000",0,null]
+load Fuse_CabSignal ["0.0000",0,null]
+load Fuse_DynamicBrake ["1.0000",1,null]
+load IsolationSwitch ["0.5000",0,1]
+load DynamicBrakeCutIn ["0.5000",1,1]
+load EmergencyBrakeValve ["0.0000",0,0]
+load EOT_Switch ["0.0000",0,null]
+load BankingCommButton ["0.0000",0,null]
+load NewBell ["0.5000",0,0]
+load Horn ["0.0000",0,0]
+load Sander ["0.0000",0,null]
+load Reverser ["0.0000",0,1]
+load Throttle ["0.0000",0,0]
+load DynamicBrake ["0.0000",-1,0]
+load AutomaticBrake ["0.9000",3,5]
+load IndependentBrake ["0.2000",0,0]
+ReverserHandle after set 1 ["1.0000",1,null]
+### Reverser
+set -1 -> stored -1.0000 out -1 notch 0
+set -0.75 -> stored -1.0000 out -1 notch 0
+set -0.5 -> stored 0.0000 out 0 notch 1
+set -0.25 -> stored 0.0000 out 0 notch 1
+set 0 -> stored 0.0000 out 0 notch 1
+set 0.25 -> stored 0.0000 out 0 notch 1
+set 0.5 -> stored 1.0000 out 1 notch 2
+set 0.75 -> stored 1.0000 out 1 notch 2
+set 1 -> stored 1.0000 out 1 notch 2
+### Throttle
+set 0 -> stored 0.0000 out 0 notch 0
+set 0.05 -> stored 0.0000 out 0 notch 0
+set 0.1 -> stored 0.1250 out 1 notch 1
+set 0.125 -> stored 0.1250 out 1 notch 1
+set 0.2 -> stored 0.2500 out 2 notch 2
+set 0.25 -> stored 0.2500 out 2 notch 2
+set 0.3 -> stored 0.2500 out 2 notch 2
+set 0.375 -> stored 0.3750 out 3 notch 3
+set 0.45 -> stored 0.5000 out 4 notch 4
+set 0.5 -> stored 0.5000 out 4 notch 4
+set 0.6 -> stored 0.6250 out 5 notch 5
+set 0.625 -> stored 0.6250 out 5 notch 5
+set 0.7 -> stored 0.7500 out 6 notch 6
+set 0.75 -> stored 0.7500 out 6 notch 6
+set 0.8 -> stored 0.8250 out 7 notch 7
+set 0.825 -> stored 0.8250 out 7 notch 7
+set 0.85 -> stored 0.8250 out 7 notch 7
+set 0.875 -> stored 0.8250 out 7 notch 7
+set 0.9 -> stored 0.8250 out 7 notch 7
+set 0.95 -> stored 1.0000 out 8 notch 8
+set 1 -> stored 1.0000 out 8 notch 8
+### Throttle
+set 0.5 -> stored 0.5000 out 4 notch 4
+set 0 -> stored 0.0000 out 0 notch 0
+-- DynamicBrake with Reverser Neutral
+### DynamicBrake
+set 0.1 -> stored 0.0000 out -1 notch 0
+set 0.5 -> stored 0.0000 out -1 notch 0
+set 0 -> stored 0.0000 out -1 notch 0
+-- DynamicBrake with Reverser Forward, throttle Idle
+### DynamicBrake
+set 0 -> stored 0.0000 out -1 notch 0
+set 0.05 -> stored 0.0000 out -1 notch 0
+set 0.08 -> stored 0.0000 out -1 notch 0
+set 0.1 -> stored 0.0000 out -1 notch 0
+set 0.11 -> stored 0.0000 out -1 notch 0
+set 0.15 -> stored 0.0000 out -1 notch 0
+set 0.2 -> stored 0.0000 out -1 notch 0
+set 0.21 -> stored 0.0000 out -1 notch 0
+set 0.25 -> stored 0.0000 out -1 notch 0
+set 0.3 -> stored 0.0000 out -1 notch 0
+set 0.4 -> stored 0.0000 out -1 notch 0
+set 0.5 -> stored 0.0000 out -1 notch 0
+set 0.6 -> stored 0.0000 out -1 notch 0
+set 0.7 -> stored 0.0000 out -1 notch 0
+set 0.8 -> stored 0.0000 out -1 notch 0
+set 0.9 -> stored 0.0000 out -1 notch 0
+set 1 -> stored 0.0000 out -1 notch 0
+### DynamicBrake
+set 0.5 -> stored 0.0000 out -1 notch 0
+set 0.2 -> stored 0.0000 out -1 notch 0
+set 0 -> stored 0.0000 out -1 notch 0
+### AutomaticBrake
+set 0 -> stored 0.0000 out -1 notch 0
+set 0.05 -> stored 0.1000 out 0 notch 1
+set 0.1 -> stored 0.1000 out 0 notch 1
+set 0.15 -> stored 0.1500 out 0.009999999776482582 notch 2
+set 0.16 -> stored 0.1600 out 0.029599983245134354 notch 2
+set 0.2 -> stored 0.2000 out 0.1080000028014183 notch 2
+set 0.3 -> stored 0.3000 out 0.30400004982948303 notch 2
+set 0.4 -> stored 0.4000 out 0.5000000596046448 notch 2
+set 0.5 -> stored 0.5000 out 0.6960000395774841 notch 2
+set 0.6 -> stored 0.6000 out 0.8920000791549683 notch 2
+set 0.65 -> stored 0.6500 out 0.9900000095367432 notch 2
+set 0.7 -> stored 0.7000 out 0.9950000047683716 notch 3
+set 0.75 -> stored 0.8000 out 2 notch 4
+set 0.8 -> stored 0.8000 out 2 notch 4
+set 0.85 -> stored 0.9000 out 3 notch 5
+set 0.9 -> stored 0.9000 out 3 notch 5
+set 0.95 -> stored 1.0000 out 4 notch 6
+set 1 -> stored 1.0000 out 4 notch 6
+set 0.9 -> stored 0.9000 out 3 notch 5
+set 0.7 -> stored 0.7000 out 0.9950000047683716 notch 3
+### IndependentBrake
+set 1 -> stored 1.0000 out 1 notch 1
+set 0.8 -> stored 0.8000 out 0.75 notch 1
+set 0.6 -> stored 0.6000 out 0.5 notch 1
+set 0.4 -> stored 0.4000 out 0.25 notch 1
+set 0.3 -> stored 0.3000 out 0.12999999523162842 notch 1
+set 0.25 -> stored 0.2500 out 0.05999999865889549 notch 1
+set 0.21 -> stored 0.2100 out 0.009999999776482582 notch 1
+set 0.2 -> stored 0.2000 out 0 notch 0
+set 0.1 -> stored 0.2000 out 0 notch 0
+set 0.05 -> stored 0.2000 out 0 notch 0
+set 0 -> stored 0.2000 out 0 notch 0
+IndependentBrake after 150ms more ["0.2000",0,0]
+IndependentBrake after 1.2s ["0.2000",0,0]
+-- 25 sets of 0 in 2 s
+IndependentBrake held ["0.2000",0,0]
+IndependentBrake 1s after ["0.2000",0,0]
+final {"rh":["1.0000",1,null],"rev":["0.0000",0,1],"thr":["0.0000",0,0],"db":["0.0000",-1,0],"ab":["0.7000",0.9950000047683716,3],"ib":["1.0000",1,1]}
+## probe 2 (interlock tests, in order)
+set FuelPump 1 -> ["1.0000",1,null]
+set EngineRun 1 -> ["1.0000",1,null]
+set GeneratorField 1 -> ["1.0000",1,null]
+set Fuse_EAD 1 -> ["1.0000",1,null]
+-- DynamicBrake with Reverser 1
+### DynamicBrake
+set 0 -> stored 0.0000 out -1 notch 0
+set 0.05 -> stored 0.0000 out -1 notch 0
+set 0.08 -> stored 0.0000 out -1 notch 0
+set 0.1 -> stored 0.0000 out -1 notch 0
+set 0.11 -> stored 0.0000 out -1 notch 0
+set 0.15 -> stored 0.0000 out -1 notch 0
+set 0.2 -> stored 0.0000 out -1 notch 0
+set 0.21 -> stored 0.0000 out -1 notch 0
+set 0.25 -> stored 0.0000 out -1 notch 0
+set 0.3 -> stored 0.0000 out -1 notch 0
+set 0.4 -> stored 0.0000 out -1 notch 0
+set 0.5 -> stored 0.0000 out -1 notch 0
+set 0.6 -> stored 0.0000 out -1 notch 0
+set 0.7 -> stored 0.0000 out -1 notch 0
+set 0.8 -> stored 0.0000 out -1 notch 0
+set 0.9 -> stored 0.0000 out -1 notch 0
+set 1 -> stored 0.0000 out -1 notch 0
+### DynamicBrake
+set 0.5 -> stored 0.0000 out -1 notch 0
+set 0.2 -> stored 0.0000 out -1 notch 0
+set 0 -> stored 0.0000 out -1 notch 0
+set Reverser 1 -> ["0.0000",0,1]
+-- ramp DynamicBrake
+after ramp ["0.0000",-1,0]
+set Reverser -1 -> ["0.0000",0,1]
+set AutomaticBrake 0.9 -> ["0.9000",3,5]
+set Reverser 1 -> ["0.0000",0,1]
+set Reverser 0 -> ["0.0000",0,1]
+set AutomaticBrake 1 -> ["1.0000",4,6]
+set Reverser 1 -> ["0.0000",0,1]
+set Reverser 0 -> ["0.0000",0,1]
+set GeneratorField 0 -> ["0.0000",0,null]
+set Reverser 1 -> ["0.0000",0,1]
+set Fuse_EAD 0 -> ["0.0000",0,null]
+set Reverser 1 -> ["0.0000",0,1]
+set Reverser 0 -> ["0.0000",0,1]
+set EngineRun 0 -> ["0.0000",0,null]
+set FuelPump 0 -> ["0.0000",0,null]
+set Reverser 1 -> ["0.0000",0,1]
+set Reverser 0 -> ["0.0000",0,1]
+set Throttle 0.25 -> ["0.2500",2,2]
+set Throttle 0 -> ["0.0000",0,0]
+set ReverserHandle 0 -> ["0.0000",0,null]
+set Reverser 1 -> ["1.0000",1,2]
+set Reverser 0 -> ["0.0000",0,1]
+set ReverserHandle 1 -> ["1.0000",1,null]
+set Reverser 1 -> ["1.0000",1,2]
+set Reverser 0 -> ["0.0000",0,1]
+-- DynamicBrake with Reverser 1
+### DynamicBrake
+set 0 -> stored 0.0000 out -1 notch 0
+set 0.05 -> stored 0.0000 out -1 notch 0
+set 0.08 -> stored 0.0000 out -1 notch 0
+set 0.1 -> stored 0.0000 out -1 notch 0
+set 0.11 -> stored 0.0000 out -1 notch 0
+set 0.15 -> stored 0.0000 out -1 notch 0
+set 0.2 -> stored 0.0000 out -1 notch 0
+set 0.21 -> stored 0.0000 out -1 notch 0
+set 0.25 -> stored 0.0000 out -1 notch 0
+set 0.3 -> stored 0.0000 out -1 notch 0
+set 0.4 -> stored 0.0000 out -1 notch 0
+set 0.5 -> stored 0.0000 out -1 notch 0
+set 0.6 -> stored 0.0000 out -1 notch 0
+set 0.7 -> stored 0.0000 out -1 notch 0
+set 0.8 -> stored 0.0000 out -1 notch 0
+set 0.9 -> stored 0.0000 out -1 notch 0
+set 1 -> stored 0.0000 out -1 notch 0
+### DynamicBrake
+set 0.5 -> stored 0.0000 out -1 notch 0
+set 0.2 -> stored 0.0000 out -1 notch 0
+set 0 -> stored 0.0000 out -1 notch 0
+set Reverser 0 -> ["0.0000",0,1]
+set AutomaticBrake 0.7 -> ["0.7000",0.9950000047683716,3]
+set Reverser 1 -> ["1.0000",1,2]
+set DynamicBrake 0.5 -> ["0.0000",-1,0]
+set DynamicBrake 0.15 -> ["0.0000",-1,0]
+set GeneratorField 1 -> ["1.0000",1,null]
+set DynamicBrake 0.5 -> ["0.0000",-1,0]
+set EngineRun 1 -> ["1.0000",1,null]
+set FuelPump 1 -> ["1.0000",1,null]
+set DynamicBrake 0.5 -> ["0.0000",-1,0]
+set Reverser 1 -> ["1.0000",1,2]
+-- ramp DynamicBrake
+after ramp ["0.0000",-1,0]
+set Reverser -1 -> ["-1.0000",-1,0]
+set DynamicBrake 0.5 -> ["0.5000",3.5001285076141357,1]
+set Reverser 1 -> ["1.0000",1,2]
+-- DynamicBrake with Reverser -1
+### DynamicBrake
+set 0 -> stored 0.0000 out -1 notch 0
+set 0.05 -> stored 0.0000 out -1 notch 0
+set 0.08 -> stored 0.1110 out 0 notch 1
+set 0.1 -> stored 0.1110 out 0 notch 1
+set 0.11 -> stored 0.1110 out 0 notch 1
+set 0.15 -> stored 0.1500 out 0 notch 1
+set 0.2 -> stored 0.2000 out 1 notch 1
+set 0.21 -> stored 0.2100 out 1 notch 1
+set 0.25 -> stored 0.2500 out 1.2501927614212036 notch 1
+set 0.3 -> stored 0.3000 out 1.7001800537109375 notch 1
+set 0.4 -> stored 0.4000 out 2.600154399871826 notch 1
+set 0.5 -> stored 0.5000 out 3.5001285076141357 notch 1
+set 0.6 -> stored 0.6000 out 4.400103569030762 notch 1
+set 0.7 -> stored 0.7000 out 5.300076961517334 notch 1
+set 0.8 -> stored 0.8000 out 6.200051784515381 notch 1
+set 0.9 -> stored 0.9000 out 7.100025177001953 notch 1
+set 1 -> stored 1.0000 out 8 notch 1
+### DynamicBrake
+set 0.5 -> stored 0.5000 out 3.5001285076141357 notch 1
+set 0.2 -> stored 0.2000 out 1 notch 1
+set 0 -> stored 0.0000 out -1 notch 0
+set DynamicBrake 0.5 -> ["0.5000",3.5001285076141357,1]
+set Reverser 1 -> ["1.0000",1,2]
+set DynamicBrake 0.6 -> ["0.6000",4.400103569030762,1]
+set DynamicBrake 0 -> ["0.0000",-1,0]
+set Reverser 1 -> ["1.0000",1,2]
+set DynamicBrake 0.5 -> ["0.5000",3.5001285076141357,1]
+set Reverser 0 -> ["0.0000",0,1]
+set DynamicBrake 0.5 -> ["0.5000",3.5001285076141357,1]
+set DynamicBrake 0 -> ["0.0000",-1,0]
+set Reverser 0 -> ["0.0000",0,1]
+set DynamicBrake 0.5 -> ["0.0000",-1,0]
+set DynamicBrake 0 -> ["0.0000",-1,0]
+set Reverser 1 -> ["0.0000",0,1]
+set GeneratorField 0 -> ["0.0000",0,null]
+set DynamicBrake 0.5 -> ["0.0000",-1,0]
+set DynamicBrake 0 -> ["0.0000",-1,0]
+set GeneratorField 1 -> ["1.0000",1,null]
+set DynamicBrake 0.5 -> ["0.0000",-1,0]
+set DynamicBrake 0 -> ["0.0000",-1,0]
+set EngineRun 0 -> ["0.0000",0,null]
+set DynamicBrake 0.5 -> ["0.0000",-1,0]
+set DynamicBrake 0 -> ["0.0000",-1,0]
+set EngineRun 1 -> ["1.0000",1,null]
+set FuelPump 0 -> ["0.0000",0,null]
+set DynamicBrake 0.5 -> ["0.0000",-1,0]
+set DynamicBrake 0 -> ["0.0000",-1,0]
+set FuelPump 1 -> ["1.0000",1,null]
+set DynamicBrake 0.5 -> ["0.0000",-1,0]
+set DynamicBrake 0 -> ["0.0000",-1,0]
+set Reverser 1 -> ["0.0000",0,1]
+set Throttle 0.01 -> ["0.0000",0,0]
+set Reverser 1 -> ["1.0000",1,2]
+set DynamicBrake 0.02 -> ["0.0000",-1,0]
+set Reverser 1 -> ["1.0000",1,2]
+set Reverser 1.01 -> ["1.0000",1,2]
+set DynamicBrake 0.5 -> ["0.0000",-1,0]
+set DynamicBrake 0.51 -> ["0.0000",-1,0]
+set Throttle 0.02 -> ["0.0000",0,0]
+set DynamicBrake 0.5 -> ["0.5000",3.5001285076141357,1]
+set Reverser 0.9 -> ["1.0000",1,2]
+set DynamicBrake 0.5 -> ["0.5000",3.5001285076141357,1]
+set Reverser 0.6 -> ["1.0000",1,2]
+set DynamicBrake 0.5 -> ["0.5000",3.5001285076141357,1]
+set Throttle 0.25 -> ["0.0000",0,0]
+set DynamicBrake 0 -> ["0.0000",-1,0]
+set Throttle 0.25 -> ["0.2500",2,2]
+set DynamicBrake 0.01 -> ["0.0000",-1,0]
+set Throttle 0.25 -> ["0.2500",2,2]
+set Throttle 0 -> ["0.0000",0,0]
+set Reverser 0 -> ["1.0000",1,2]
+set Reverser -1 -> ["1.0000",1,2]
+set Throttle 0.01 -> ["0.0000",0,0]
+set Reverser 0 -> ["0.0000",0,1]
+set Reverser 1 -> ["1.0000",1,2]
+set Throttle 0.25 -> ["0.2500",2,2]
+set Throttle 0 -> ["0.0000",0,0]
+set Throttle 0.01 -> ["0.0000",0,0]
+set Reverser 0 -> ["0.0000",0,1]
+set IndependentBrake 0.2 -> ["0.2000",0,0]
+-- ramp IndependentBrake 0.25 -> 0
+at end ["0.2000",0,0]
+0.5s later ["0.2000",0,0]
+set IndependentBrake -0.5 -> ["0.2000",0,0]
+set IndependentBrake -1 -> ["0.2000",0,0]
+set IndependentBrake 0.19 -> ["0.2000",0,0]
+set IndependentBrake 1 -> ["1.0000",1,1]
+## restore
+set DynamicBrake 0 -> ["0.0000",-1,0]
+set Throttle 0 -> ["0.0000",0,0]
+set Throttle 0.01 -> ["0.0000",0,0]
+set Reverser 0 -> ["0.0000",0,1]
+set AutomaticBrake 0.7 -> ["0.7000",0.9950000047683716,3]
+set IndependentBrake 1 -> ["1.0000",1,1]
+set GeneratorField 0 -> ["0.0000",0,null]
+set EngineRun 0 -> ["0.0000",0,null]
+set FuelPump 0 -> ["0.0000",0,null]
+set Fuse_EAD 0 -> ["0.0000",0,null]
+set ReverserHandle 0 -> ["0.0000",0,null]
