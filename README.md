@@ -171,7 +171,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **Metrolink F125** <sub>— DTG · [profile](releases/tsw-metrolink-f125-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metrolink-f125-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Metrolink F59PH** <sub>— DTG · [profile](releases/tsw-metrolink-f59ph-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metrolink-f59ph-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Metrolink MP36PH-3C** <sub>— DTG · [profile](releases/tsw-metrolink-mp36ph-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metrolink-mp36ph-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **Metro-North M3a**  
+`SOON 🟨` **Metro-North M3a** <sub>— DTG · [profile](releases/tsw-metro-north-m3a-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metro-north-m3a-dtg-thejag.pdf)</sub>  
 `TODO ◼️` **Metro-North M7a**  
 `TODO ◼️` **Metro-North M8**  
 `TODO ◼️` **Metrolink Bi-Level cab car** <sub>— DTG</sub>  
