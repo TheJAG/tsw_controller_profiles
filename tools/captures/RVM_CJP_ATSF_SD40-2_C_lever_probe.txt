@@ -1,0 +1,101 @@
+# RVM_CJP_ATSF_SD40-2_C lever probe (capture agent, 2026-10-13, Cajon Pass timetable 'Santa Fe in the 1990s', SD40-2 UP tile -> layer 'SD40-2 ATSF / CajonPass', AT&SF Train 998 2nd Section Part 1 (Manifest), Barstow 12:00 -> Victorville, 57 cars).
+# Load state: ReverserHandle 0 (Out; MasterSwitch push button, In 1; with it Out the reverser and throttle store nothing), GeneratorField 0 Off, EngineRun 0, ControlFuelPump 0, MainBreaker 1,
+# CutOffPilotValve 0 (Cut-Out; Freight 1, Passenger 2), MU-2A_Valve 1 (Trail 6/26; Lead 0, Trail 24 2), Fuse_WarningDevices 0 Open, AutomaticBrake 0.9 Handle Off, IndependentBrake 0.25 Release, NewHandbrake 0.5.
+# Probed with ReverserHandle In (1), IndependentBrake 1. All restored to the load state afterwards; the train did not move.
+# Summary: Reverser -1/0/1 snaps; Throttle Idle 0, N1 0.13, then k/8; DynamicBrake LOCKED with Reverser Neutral, with Forward: Off 0 / Setup 0.11 / 0.21 = 1 / continuous to 1 = 8 (1 + 8.86*(in-0.21));
+# AutomaticBrake Release 0 / Initial Reduction 0.125 / service 0.2..0.6 / Full Service 0.65 / Suppression 0.7, 0.75 / Handle Off 0.9 / Emergency 1; IndependentBrake Release 0.25 (below stores 0.25) / continuous to 1;
+# IndependentBrake_BailOff (MoveToLap) rests 0.25, SPRING: one set of 0 springs back unseen, 25 back-to-back sets -> stored 0.0636 output -1 Bail Off, back to 0.25 within 1.5 s.
+load ReverserHandle [ '0.0000', 0, null ]
+ReverserHandle after set 1 [ '1.0000', 1, null ]
+### Reverser
+set -1 -> stored -1.0000 out -1 notch 0
+set -0.75 -> stored -1.0000 out -1 notch 0
+set -0.5 -> stored 0.0000 out 0 notch 1
+set -0.25 -> stored 0.0000 out 0 notch 1
+set 0 -> stored 0.0000 out 0 notch 1
+set 0.25 -> stored 0.0000 out 0 notch 1
+set 0.5 -> stored 1.0000 out 1 notch 2
+set 0.75 -> stored 1.0000 out 1 notch 2
+set 1 -> stored 1.0000 out 1 notch 2
+### Throttle
+set 0 -> stored 0.0000 out 0 notch 0
+set 0.05 -> stored 0.0000 out 0 notch 0
+set 0.1 -> stored 0.1300 out 1 notch 1
+set 0.13 -> stored 0.1300 out 1 notch 1
+set 0.2 -> stored 0.2500 out 2 notch 2
+set 0.25 -> stored 0.2500 out 2 notch 2
+set 0.375 -> stored 0.3750 out 3 notch 3
+set 0.5 -> stored 0.5000 out 4 notch 4
+set 0.625 -> stored 0.6250 out 5 notch 5
+set 0.75 -> stored 0.7500 out 6 notch 6
+set 0.875 -> stored 0.8750 out 7 notch 7
+set 0.95 -> stored 1.0000 out 8 notch 8
+set 1 -> stored 1.0000 out 8 notch 8
+-- DynamicBrake with Reverser Neutral
+### DynamicBrake
+set 0.1 -> stored 0.0000 out -1 notch 0
+set 0.5 -> stored 0.0000 out -1 notch 0
+-- DynamicBrake with Reverser Forward
+### DynamicBrake
+set 0 -> stored 0.0000 out -1 notch 0
+set 0.05 -> stored 0.0000 out -1 notch 0
+set 0.08 -> stored 0.1100 out 0 notch 1
+set 0.11 -> stored 0.1100 out 0 notch 1
+set 0.14 -> stored 0.1100 out 0 notch 1
+set 0.18 -> stored 0.2100 out 1 notch 2
+set 0.2 -> stored 0.2100 out 1 notch 2
+set 0.21 -> stored 0.2100 out 1 notch 2
+set 0.24 -> stored 0.2400 out 1.2658227682113647 notch 2
+set 0.26 -> stored 0.2600 out 1.443037986755371 notch 2
+set 0.3 -> stored 0.3000 out 1.7974684238433838 notch 2
+set 0.5 -> stored 0.5000 out 3.569620370864868 notch 2
+set 0.75 -> stored 0.7500 out 5.784810543060303 notch 2
+set 1 -> stored 1.0000 out 8 notch 2
+### AutomaticBrake
+set 0 -> stored 0.0000 out -1 notch 0
+set 0.05 -> stored 0.0000 out -1 notch 0
+set 0.075 -> stored 0.1250 out 0 notch 1
+set 0.1 -> stored 0.1250 out 0 notch 1
+set 0.125 -> stored 0.1250 out 0 notch 1
+set 0.15 -> stored 0.1250 out 0 notch 1
+set 0.175 -> stored 0.2000 out 0.00009999999747378752 notch 2
+set 0.2 -> stored 0.2000 out 0.00009999999747378752 notch 2
+set 0.4 -> stored 0.4000 out 0.4999999403953552 notch 2
+set 0.6 -> stored 0.6000 out 0.9998999834060669 notch 2
+set 0.625 -> stored 0.6500 out 1 notch 3
+set 0.65 -> stored 0.6500 out 1 notch 3
+set 0.675 -> stored 0.7000 out 2 notch 4
+set 0.7 -> stored 0.7000 out 2 notch 4
+set 0.725 -> stored 0.7500 out 2 notch 5
+set 0.75 -> stored 0.7500 out 2 notch 5
+set 0.8 -> stored 0.7500 out 2 notch 5
+set 0.825 -> stored 0.9000 out 3 notch 6
+set 0.85 -> stored 0.9000 out 3 notch 6
+set 0.9 -> stored 0.9000 out 3 notch 6
+set 0.925 -> stored 0.9000 out 3 notch 6
+set 0.95 -> stored 1.0000 out 4 notch 7
+set 1 -> stored 1.0000 out 4 notch 7
+### IndependentBrake
+set 1 -> stored 1.0000 out 1 notch 2
+set 0.75 -> stored 0.7500 out 0.6666666865348816 notch 2
+set 0.5 -> stored 0.5000 out 0.3333333432674408 notch 2
+set 0.3 -> stored 0.3000 out 0.06666668504476547 notch 2
+set 0.26 -> stored 0.2600 out 0.013333320617675781 notch 2
+set 0.25 -> stored 0.2500 out 0 notch 1
+set 0.2 -> stored 0.2500 out 0 notch 1
+set 0.1 -> stored 0.2500 out 0 notch 1
+set 0 -> stored 0.2500 out 0 notch 1
+IndependentBrake 1.5 s after set 0 [ '0.2500', 0, 1 ]
+### IndependentBrake_BailOff
+set 0.25 -> stored 0.2500 out 0 notch 0
+set 0 -> stored 0.2500 out 0 notch 0
+BailOff 1 s after set 0 [ '0.2500', 0, 0 ] Indep [ '0.2500', 0, 1 ]
+BailOff after 25 sets [ '0.0636', -1, 0 ] Indep [ '0.2500', 0, 1 ]
+BailOff 1.5 s later [ '0.2500', 0, 0 ]
+final ReverserHandle [ '0.0000', 0, null ]
+final Reverser [ '0.0000', 0, 1 ]
+final Throttle [ '0.0000', 0, 0 ]
+final DynamicBrake [ '0.0000', -1, 0 ]
+final AutomaticBrake [ '0.9000', 3, 6 ]
+final IndependentBrake [ '0.2500', 0, 1 ]
+final IndependentBrake_BailOff [ '0.2500', 0, 0 ]
