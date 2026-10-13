@@ -1,0 +1,79 @@
+# Tri-Rail Rotem cab car, P628 Miami Airport - Mangonia Park 14:18 (driven Miami Airport - Boca Raton), cab car leading, 2026-10-13
+# reverser with ReverserHandle 0, CabSetup 0
+set Reverser 1 -> 1
+set Reverser -1 -> -1
+set Reverser 0 -> 0
+# ReverserHandle 1, CabSetup 1
+set ReverserHandle 1 -> 1
+set CabSetup 1 -> 1
+set Reverser 1 -> 1
+set Reverser 0 -> 0
+set Reverser -1 -> -1
+set Reverser 0.5 -> 1
+set Reverser 1 -> 1
+## MasterController (Reverser Forward 1)
+current InputValue 0 (what the game stores after the last set, e.g. by the TCA through the mod)
+set 0.0000 -> stored 0.000000 output 0 notch 2 
+set -0.0500 -> stored 0.000000 output 0 notch 2   <-- game changed the value
+set -0.1000 -> stored -0.150000 output -1 notch 1   <-- game changed the value
+set -0.1500 -> stored -0.150000 output -1 notch 1 
+set -0.2500 -> stored -0.150000 output -1 notch 1   <-- game changed the value
+set -0.3000 -> stored -0.400000 output -1.0099999904632568 notch 0   <-- game changed the value
+set -0.4000 -> stored -0.400000 output -1.0099999904632568 notch 0 
+set -0.5000 -> stored -0.500000 output -1.1700000762939453 notch 0 
+set -0.7000 -> stored -0.700000 output -1.5 notch 0 
+set -1.0000 -> stored -1.000000 output -2 notch 0 
+set 0.1250 -> stored 0.125000 output 1 notch 3 
+set 0.2500 -> stored 0.250000 output 2 notch 4 
+set 0.3750 -> stored 0.375000 output 3 notch 5 
+set 0.5000 -> stored 0.500000 output 4 notch 6 
+set 0.6250 -> stored 0.625000 output 5 notch 7 
+set 0.7500 -> stored 0.750000 output 6 notch 8 
+set 0.8750 -> stored 0.875000 output 7 notch 9 
+set 1.0000 -> stored 1.000000 output 8 notch 10 
+set 0.0000 -> stored 0.000000 output 0 notch 2 
+restored 0
+## AutomaticBrake
+current InputValue 0.8999999761581421 (what the game stores after the last set, e.g. by the TCA through the mod)
+set 0.9000 -> stored 0.900000 output 3 notch 5 
+set 0.0000 -> stored 0.550000 output 2 notch 4   <-- game changed the value
+set 0.0200 -> stored 0.000000 output -1 notch 0   <-- game changed the value
+set 0.0500 -> stored 0.075000 output 0 notch 1   <-- game changed the value
+set 0.0750 -> stored 0.075000 output 0 notch 1 
+set 0.0800 -> stored 0.080000 output 0.009999999776482582 notch 2 
+set 0.3000 -> stored 0.300000 output 0.5999999642372131 notch 2 
+set 0.4400 -> stored 0.440000 output 0.9799999594688416 notch 2 
+set 0.4500 -> stored 0.450000 output 1 notch 3 
+set 0.5000 -> stored 0.550000 output 2 notch 4   <-- game changed the value
+set 0.5500 -> stored 0.550000 output 2 notch 4 
+set 0.7000 -> stored 0.550000 output 2 notch 4   <-- game changed the value
+set 0.8000 -> stored 0.900000 output 3 notch 5   <-- game changed the value
+set 0.9000 -> stored 0.900000 output 3 notch 5 
+set 0.9500 -> stored 1.000000 output 4 notch 6   <-- game changed the value
+set 1.0000 -> stored 1.000000 output 4 notch 6 
+set 0.9000 -> stored 0.900000 output 3 notch 5 
+restored 0.8999999761581421
+## interlocks (ReverserHandle 1, CabSetup 1)
+# reverser with handle in P2
+set MasterController 0.25 -> 0.25
+set Reverser 0 -> 1
+set Reverser -1 -> 1
+set MasterController 0 -> 0
+set Reverser 0 -> 0
+# dynamic in Neutral
+set MasterController -0.15 -> 0
+set MasterController -0.5 -> 0
+set MasterController 0.25 -> 0.25
+set MasterController 0 -> 0
+# ReverserHandle 0, Reverser Forward
+set ReverserHandle 0 -> 0
+set Reverser 1 -> 1
+set MasterController 0.25 -> 0.25
+set MasterController -0.5 -> -0.5
+set MasterController 0 -> 0
+# CabSetup 0, ReverserHandle 1
+set ReverserHandle 1 -> 1
+set CabSetup 0 -> 0
+set MasterController 0.25 -> 0.25
+set MasterController -0.5 -> -0.5
+set MasterController 0 -> 0
