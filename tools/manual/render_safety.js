@@ -81,10 +81,11 @@ function signalSvg(sig, H) {
   const cx = W / 2, top = 6;
   const content = ps.reduce((a, p) => a + p.h + gap, 0) - gap;
   let s = '';
-  const postTop = sig.post === false ? H : top + 10;
+  let y = sig.post === false ? (H - content) / 2 : sig.post === 'short' ? Math.max(top, H - content - 26) : top;
+  // the post starts behind the first part, never above it
+  const postTop = y + Math.min(10, ps.length ? ps[0].h / 2 : 0);
   if (sig.post !== false) s += `<rect x="${cx - 3}" y="${postTop}" width="6" height="${H - postTop}" class="post"/>`;
   s += `<line x1="6" y1="${H}" x2="${W - 6}" y2="${H}" class="ground"/>`;
-  let y = sig.post === false ? (H - content) / 2 : sig.post === 'short' ? Math.max(top, H - content - 26) : top;
   ps.forEach(p => { s += p.draw(cx, y); y += p.h + gap; });
   return `<svg viewBox="0 0 ${W} ${H + 3}" width="${W}" height="${H + 3}" class="sig">${s}</svg>`;
 }
@@ -133,8 +134,9 @@ h1, h2, h3 { font-family: var(--display); margin: 0; line-height: 1; }
 .head h1 { font-size: 46px; font-weight: 700; color: var(--navy); letter-spacing: -.01em; }
 .head.small { padding-top: 16px; } .head.small h1 { font-size: 26px; } .head.small .logo { height: 20px; }
 .head .sub { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; font-family: var(--display); font-weight: 600; }
-.body { position: absolute; top: ${'var(--top)'}; left: 36px; right: 36px; bottom: 30px; overflow: hidden; }
-.sheet { --top: 92px; } .sheet:not(:first-child) { --top: 62px; }
+.sheet { display: flex; flex-direction: column; }
+/* the body takes the room between the header and the footer, so the overflow check also catches text running into the footer */
+.body { flex: 1 1 auto; min-height: 0; margin: 0 36px 4px; overflow: hidden; }
 section { margin-top: 12px; }
 h2 { font-size: 15px; color: var(--navy); margin-bottom: 6px; border-bottom: 1.5px solid var(--navy); padding-bottom: 3px; }
 h3 { font-size: 13px; color: var(--navy); margin-bottom: 3px; }
@@ -167,7 +169,7 @@ th { font-family: var(--display); font-weight: 700; font-size: 11.5px; color: #f
 td { padding: 3px 6px; border-bottom: 1px solid var(--rule); vertical-align: top; }
 .callout { background: #fff; border-left: 4px solid var(--red); border-radius: 4px; padding: 7px 10px; font-size: 11px; }
 .callout b:first-child { font-family: var(--display); font-size: 13px; color: var(--red); margin-right: 4px; }
-.foot { position: absolute; bottom: 0; left: 0; right: 0; padding: 8px 36px; font-size: 9.5px; color: var(--muted); display: flex; justify-content: space-between; gap: 20px; }
+.foot { flex: 0 0 auto; padding: 6px 36px 8px; font-size: 9.5px; color: var(--muted); display: flex; justify-content: space-between; gap: 20px; }
 .foot span:first-child { flex: 1; } .foot span:last-child { flex: 0 0 auto; }
 </style></head><body>${pages}
 <script>
