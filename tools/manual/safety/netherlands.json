@@ -30,7 +30,7 @@
         {
           "kind": "intro",
           "paragraphs": [
-            "Dutch signals show the **speed**, not the route: green, yellow or red, with a lit **number × 10 km/h** below. **Flashing** = the speed applies **from this signal**; steady yellow = **reach it by the next signal**. In TSW 7: **NS ICMm** and **NS SNG** on **Zwolle – Groningen**, under **ATB-EG**, **ATB-Vv** and the **deadman**. Quadrant controls are from TheJAG's profiles."
+            "Dutch signals show the **speed**, not the route: green, yellow or red, with a lit **number × 10 km/h** below. **Flashing green** = the speed applies **from this signal**; **yellow + number** = **reach it by the next signal**; a flashing number or flashing yellow are special cases (see the cards). In TSW 7: **NS ICMm** and **NS SNG** on **Zwolle – Groningen**, under **ATB-EG**, **ATB-Vv** and the **deadman**. Quadrant controls are from TheJAG's profiles."
           ]
         },
         {
@@ -43,7 +43,7 @@
               "full": "Automatische Treinbeïnvloeding, eerste generatie",
               "summary": "Coded track circuits set a ceiling of 40, 60, 80, 130 or 140 km/h. Overspeed rings a bell; brake within ~**3 s** or ATB brakes.",
               "where": "Whole Zwolle – Groningen line; ICMm and SNG",
-              "quadrant": "Left aux square: ATB fuse (ICMm) / ATB-ERTMS cut-out (SNG)"
+              "quadrant": "Left aux square: ATB fuse (ICMm) / ATB / ERTMS cut-out (SNG)"
             },
             {
               "name": "ATB-Vv",
@@ -89,7 +89,7 @@
                 ]
               },
               "name": "Green (groen)",
-              "meaning": "Proceed at the local (line) speed. ATB code 130 or 140.",
+              "meaning": "Proceed at the local (line) speed. ATB code [13] or [14].",
               "drive": "Accelerate to the speed on the boards."
             },
             {
@@ -173,7 +173,7 @@
                 ]
               },
               "name": "Yellow + 8",
-              "meaning": "Next signal limits to 80 km/h. Reach 80 before it. ATB code [8].",
+              "meaning": "Reduce to 80 km/h, reached before the next signal. ATB code [8].",
               "drive": "Brake to 80 km/h before the next signal."
             },
             {
@@ -241,7 +241,7 @@
         {
           "kind": "callout",
           "title": "Passing red:",
-          "text": "ATB-EG never enforces below 40 km/h, so it lets you pass a red signal at up to 40 km/h. Stop short yourself; in TSW only ATB-Vv beacons can save you, and only at selected signals."
+          "text": "ATB-EG never enforces below 40 km/h, so it lets you pass a red signal below about 45 km/h (40 + 5). Stop short yourself; in TSW only ATB-Vv beacons can save you, and only at selected signals."
         }
       ]
     },
@@ -250,7 +250,7 @@
         {
           "kind": "aspects",
           "title": "Boards and other signals",
-          "note": "Board numbers are × 10 km/h; a small 5 top right adds 5 (12⁵ = 125 km/h).",
+          "note": "Board numbers are × 10 km/h.",
           "cols": 6,
           "items": [
             {
@@ -334,7 +334,7 @@
                 ]
               },
               "name": "Line speed",
-              "meaning": "Older board: line speed ahead; being replaced by white boards.",
+              "meaning": "Green triangle (sein 316): line speed may be resumed.",
               "drive": "Accelerate once the rear of the train has passed."
             },
             {
@@ -353,7 +353,7 @@
               },
               "name": "Train length",
               "meaning": "Treinlengtebord: stop marker for trains of up to this many cars.",
-              "drive": "ICMm: own car count or next up. 6-car SNG: use 5."
+              "drive": "Stop at the board for your vehicle count, or the next one up."
             },
             {
               "signal": {
@@ -384,7 +384,7 @@
               },
               "name": "Departure light",
               "meaning": "Vertrekseinlicht: the departure procedure may start.",
-              "drive": "Wait for it (and a green) before the doors close."
+              "drive": "Wait for it (and a proceed aspect) before the doors close."
             }
           ]
         },
@@ -475,14 +475,14 @@
               "steps": [
                 "Keep the deadman fuse on: right aux square (ICMm fuse, SNG cut-out in).",
                 "When the warning sounds, lift the gear lever (game key Q).",
-                "Miss it and the train makes an emergency brake application; stop, then recover as the train asks."
+                "Miss it and the train brakes; acknowledge, then release and drive on (TSW behaviour not yet verified)."
               ],
               "note": "The real system is a held pedal or a periodic button; TSW reacts to Q."
             },
             {
               "title": "Before departure",
               "steps": [
-                "Left aux square on: ATB fuse (ICMm) or ATB / ERTMS cut-in (SNG). Off gives [BD] and five bells.",
+                "Left aux square on: ATB fuse (ICMm) or ATB / ERTMS cut-out set to cut in (SNG). Off gives [BD] and five bells.",
                 "Right aux square on: deadman fuse / cut-in.",
                 "Check the cab code matches the signal, then pull away."
               ]
@@ -491,7 +491,7 @@
               "title": "Boards to know",
               "bullets": [
                 "Verkenbord: platform ahead at braking distance; start braking for the stop.",
-                "CODE board: changeover between ATB-EG and ATB-NG.",
+                "CODE board: ATB-EG / ATB-NG changeover at the route fringes (ATB-NG itself is not simulated).",
                 "A / E boards: start and end of a temporary speed restriction."
               ]
             }
