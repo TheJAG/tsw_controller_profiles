@@ -2,6 +2,12 @@
 
 This is a bunch of controller profiles for Train Sim World and Train Sim Classic for use in the excellent [TSW Controller App](https://github.com/LiamMartens/tsw-controller-app) by Liam Martens. These are for the Thrustmaster TCA Quadrant Airbus Edition. Each profile has a Quick Reference Manual associated with it.
 
+**🛡️ Safety systems**
+
+One manual per country: the signal aspects, drawn, and how to drive under each train protection system, with the Quadrant controls from the profiles.
+
+🇳🇱 **Netherlands** <sub>— ATB-EG · ATB-Vv · deadman · [manual](profiles/documentation/tsw-safety-netherlands-thejag.pdf)</sub>  
+
 The following trains are / will be supported. Ticked :heavy_check_mark: means available!
 
 <br><img width="250" height="114" alt="image" src="https://github.com/user-attachments/assets/7d63d5d6-765a-4ba8-b818-8febac2b1fd3" />  <br>

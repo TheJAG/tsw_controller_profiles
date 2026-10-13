@@ -36,6 +36,8 @@ The sweep runs over the lever's own input range (a combined power/brake handle i
 
 `manual/render_manual.js trains/<train>.json [outdir]` renders the one-page schematic manual from a data file and prints it to A4 PDF with headless Chrome or Edge (HTML and PDF land in `profiles/documentation/`). The data file names the train, logos, side-view drawing, colours, every TCA control with its function, notch names and `start` index (the green "recommended starting position"), the AUTO BRK rotary positions with descriptions, the mode switch left/right meanings, the PARK BRK flat/up meanings, and the two checklists. `manual/trains/tsw-class-333-dtg-thejag.json` is the reference example. Unassigned controls are left `null` and drawn greyed.
 
+`manual/render_safety.js safety/<country>.json [outdir]` renders a country's safety-systems manual (signal aspects drawn as SVG, the train protection systems, how to drive under them) over several A4 pages in the same style, and fails when a page overflows. Data format: `manual/safety/README.md`.
+
 ## Building a manual from the old Word templates
 
 `gen_manual.js <template.docx> <spec.json> <out.docx>` clones an existing manual and rewrites it from a spec (see `specs/`). Only needed for the manuals made before the Class 333. The spec can:

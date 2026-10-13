@@ -1,0 +1,503 @@
+{
+  "name": "tsw-safety-netherlands-thejag",
+  "title": "Safety systems · Netherlands",
+  "eyebrow": "Signals and train protection · Train Sim World · TCA Quadrant Airbus",
+  "colors": {
+    "navy": "#003082",
+    "blue": "#2f5fb3",
+    "paper": "#f3f5f9"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-ns.svg",
+      "alt": "Nederlandse Spoorwegen"
+    }
+  ],
+  "credit": "© TheJAG",
+  "sources": [
+    "Regeling spoorverkeer, Bijlage 4 (Seinen), wetten.overheid.nl",
+    "Dovetail Games: Zwolle – Groningen ATB guide",
+    "en.wikipedia: Dutch railway signalling",
+    "en.wikipedia: Automatische Treinbeïnvloeding",
+    "nl.wikipedia: Automatische treinbeïnvloeding",
+    "OV in Nederland Wiki: Seinen",
+    "IRSE Nederland: Seinen",
+    "Dovetail Games forums"
+  ],
+  "pages": [
+    {
+      "sections": [
+        {
+          "kind": "intro",
+          "paragraphs": [
+            "Dutch signals show the **speed**, not the route: green, yellow or red, with a lit **number × 10 km/h** below. **Flashing** = the speed applies **from this signal**; steady yellow = **reach it by the next signal**. In TSW 7: **NS ICMm** and **NS SNG** on **Zwolle – Groningen**, under **ATB-EG**, **ATB-Vv** and the **deadman**. Quadrant controls are from TheJAG's profiles."
+          ]
+        },
+        {
+          "kind": "systems",
+          "title": "Safety systems",
+          "cols": 4,
+          "items": [
+            {
+              "name": "ATB-EG",
+              "full": "Automatische Treinbeïnvloeding, eerste generatie",
+              "summary": "Coded track circuits set a ceiling of 40, 60, 80, 130 or 140 km/h. Overspeed rings a bell; brake within ~**3 s** or ATB brakes.",
+              "where": "Whole Zwolle – Groningen line; ICMm and SNG",
+              "quadrant": "Left aux square: ATB fuse (ICMm) / ATB-ERTMS cut-out (SNG)"
+            },
+            {
+              "name": "ATB-Vv",
+              "full": "ATB verbeterde versie",
+              "summary": "Beacons 120, 30 and 3 m before selected red signals impose a braking curve to a stop. Acts only under code [–] or [BD].",
+              "where": "Selected stop signals on Zwolle – Groningen",
+              "quadrant": "Shares the ATB fuse / cut-out (left aux square)"
+            },
+            {
+              "name": "Deadman",
+              "full": "Dodemansinrichting",
+              "summary": "Driver-alive check. Answer the warning in time or the train makes an emergency brake application.",
+              "where": "ICMm and SNG",
+              "quadrant": "Gear lever up = acknowledge (game key Q); right aux square = deadman fuse / cut-out"
+            },
+            {
+              "name": "ATB-NG · ETCS",
+              "full": "ATB nieuwe generatie · European Train Control System",
+              "summary": "ATB-NG (balises, 10 km/h steps) on Dutch diesel lines; ETCS on Betuweroute, HSL-Zuid, Hanzelijn. Not in TSW 7.",
+              "where": "Not on any TSW Dutch route",
+              "quadrant": ""
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Main signal aspects (hoofdseinen)",
+          "note": "Lamps top to bottom: green, yellow, red; white number below. Dwarf signals: same colours, max 40 km/h.",
+          "cols": 4,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green",
+                      "yellow-",
+                      "red-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Green (groen)",
+              "meaning": "Proceed at the local (line) speed. ATB code 130 or 140.",
+              "drive": "Accelerate to the speed on the boards."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green*",
+                      "yellow-",
+                      "red-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Flashing green",
+              "meaning": "Proceed at max 40 km/h from this signal. ATB code [–] 40.",
+              "drive": "Be at 40 km/h passing the signal; usually a diverging route."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green*",
+                      "yellow-",
+                      "red-"
+                    ]
+                  },
+                  {
+                    "kind": "number",
+                    "text": "8",
+                    "color": "white",
+                    "s": "on"
+                  }
+                ]
+              },
+              "name": "Flashing green + 8",
+              "meaning": "Proceed at max 80 km/h from this signal (number × 10).",
+              "drive": "Hold 80 km/h until a speed board lets you go faster."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green-",
+                      "yellow",
+                      "red-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Yellow (geel)",
+              "meaning": "Next signal may be red. Limit speed to 40 km/h. ATB code [–] 40.",
+              "drive": "Brake now to 40 km/h and be ready to stop at the next signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green-",
+                      "yellow",
+                      "red-"
+                    ]
+                  },
+                  {
+                    "kind": "number",
+                    "text": "8",
+                    "color": "white",
+                    "s": "on"
+                  }
+                ]
+              },
+              "name": "Yellow + 8",
+              "meaning": "Next signal limits to 80 km/h. Reach 80 before it. ATB code [8].",
+              "drive": "Brake to 80 km/h before the next signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green-",
+                      "yellow",
+                      "red-"
+                    ]
+                  },
+                  {
+                    "kind": "number",
+                    "text": "6",
+                    "color": "white",
+                    "s": "flash"
+                  }
+                ]
+              },
+              "name": "Yellow + flashing 6",
+              "meaning": "Limit to 60 km/h; short section, may not be reachable by the next signal.",
+              "drive": "Brake to 60; keep braking if the next signal asks for less."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green-",
+                      "yellow*",
+                      "red-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Flashing yellow",
+              "meaning": "Drive on sight (rijden op zicht): track beyond may be occupied. Max 40 km/h.",
+              "drive": "Creep, max 40 km/h, able to stop short of any obstruction."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green-",
+                      "yellow-",
+                      "red"
+                    ]
+                  }
+                ]
+              },
+              "name": "Red (rood)",
+              "meaning": "Stop before the signal. ATB-EG does not stop you; ATB-Vv may.",
+              "drive": "Stop short of the signal; wait for a proceed aspect."
+            }
+          ]
+        },
+        {
+          "kind": "callout",
+          "title": "Passing red:",
+          "text": "ATB-EG never enforces below 40 km/h, so it lets you pass a red signal at up to 40 km/h. Stop short yourself; in TSW only ATB-Vv beacons can save you, and only at selected signals."
+        }
+      ]
+    },
+    {
+      "sections": [
+        {
+          "kind": "aspects",
+          "title": "Boards and other signals",
+          "note": "Board numbers are × 10 km/h; a small 5 top right adds 5 (12⁵ = 125 km/h).",
+          "cols": 6,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green-",
+                      "yellow-",
+                      "red"
+                    ]
+                  },
+                  {
+                    "kind": "gap",
+                    "h": 4
+                  },
+                  {
+                    "kind": "plate",
+                    "text": "P",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "rect"
+                  }
+                ]
+              },
+              "name": "P-sein",
+              "meaning": "Automatic block signal (P-bord). Red still means stop.",
+              "drive": "Call the signaller; pass on sight only if no contact is possible."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "8",
+                    "fg": "black",
+                    "bg": "yellow",
+                    "border": "black",
+                    "shape": "triangle-down"
+                  }
+                ]
+              },
+              "name": "Speed reduction",
+              "meaning": "Snelheidsverminderingsbord: lower limit ahead.",
+              "drive": "Be at 80 km/h by the next white speed board."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "8",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "square"
+                  }
+                ]
+              },
+              "name": "Speed board",
+              "meaning": "Snelheidsbord: local speed beyond the board.",
+              "drive": "Lower: from the front. Higher: once the rear has passed."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "13",
+                    "fg": "black",
+                    "bg": "green",
+                    "border": "black",
+                    "shape": "triangle"
+                  }
+                ]
+              },
+              "name": "Line speed",
+              "meaning": "Older board: line speed ahead; being replaced by white boards.",
+              "drive": "Accelerate once the rear of the train has passed."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "6",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "rect"
+                  }
+                ]
+              },
+              "name": "Train length",
+              "meaning": "Treinlengtebord: stop marker for trains of up to this many cars.",
+              "drive": "ICMm: own car count or next up. 6-car SNG: use 5."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 26,
+                    "h": 26,
+                    "lamps": [
+                      {
+                        "x": 13,
+                        "y": 13,
+                        "c": "white",
+                        "s": "flash"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "plate",
+                    "text": "V",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "rect"
+                  }
+                ]
+              },
+              "name": "Departure light",
+              "meaning": "Vertrekseinlicht: the departure procedure may start.",
+              "drive": "Wait for it (and a green) before the doors close."
+            }
+          ]
+        },
+        {
+          "kind": "table",
+          "title": "ATB-EG cab codes",
+          "head": [
+            "Code",
+            "Ceiling (+5 tolerance)",
+            "Usually sent by",
+            "Cab display"
+          ],
+          "rows": [
+            [
+              "**[14]**",
+              "140 km/h",
+              "Green on a 140 line",
+              "Green lamp / green mark"
+            ],
+            [
+              "**[13]**",
+              "130 km/h",
+              "Green, or a number 9–13",
+              "Yellow 13"
+            ],
+            [
+              "**[8]**",
+              "80 km/h",
+              "Number 7 or 8 (yellow or flashing green)",
+              "Yellow 8"
+            ],
+            [
+              "**[6]**",
+              "60 km/h",
+              "Number 5 or 6",
+              "Yellow 6"
+            ],
+            [
+              "**[–]**",
+              "40 km/h",
+              "Yellow, flashing green, flashing yellow, red",
+              "Lowest yellow lamp"
+            ],
+            [
+              "**[BD]**",
+              "No limit",
+              "ATB isolated or failed (buiten dienst)",
+              "Blue lamp, five bells"
+            ]
+          ]
+        },
+        {
+          "kind": "howto",
+          "title": "How to drive under ATB-EG and the deadman",
+          "cols": 3,
+          "blocks": [
+            {
+              "title": "Code drops (speed reduction)",
+              "steps": [
+                "A single chime and the cab display shows the lower code, after a short random delay in TSW.",
+                "Already below the new ceiling: nothing to do.",
+                "Above it (+5 km/h): a continuous bell. Brake within about 3 s.",
+                "Make at least a minimum brake application (ICMm step 1 or more, SNG min brake or more); the bell stops.",
+                "Three short bells below ceiling +5: you may release the brake."
+              ],
+              "note": "Brake on time for the signals anyway: ATB only checks you brake, not that you stop in time."
+            },
+            {
+              "title": "ATB brake (forced brake)",
+              "steps": [
+                "No brake within ~3 s, or overspeed: ATB brakes to a stop; red ATB lamp lit.",
+                "When stopped, set full brake on the right throttle: ICMm step 7, SNG Max brake.",
+                "Press Ontgrendelen (unlock) in the cab with the mouse; it is not on the Quadrant.",
+                "Wait for the red lamp to go out, then release and drive on."
+              ]
+            },
+            {
+              "title": "ATB-Vv at red signals",
+              "bullets": [
+                "Acts only under code [–] or [BD]; the beacons are not shown to you.",
+                "After the 30 m beacon the limit is 10 km/h (+5).",
+                "Over the braking curve: forced brake to a stop.",
+                "A release loop up to 60 m before the signal, or a new code above [–], lifts the curve."
+              ]
+            },
+            {
+              "title": "Deadman (dodemansinrichting)",
+              "steps": [
+                "Keep the deadman fuse on: right aux square (ICMm fuse, SNG cut-out in).",
+                "When the warning sounds, lift the gear lever (game key Q).",
+                "Miss it and the train makes an emergency brake application; stop, then recover as the train asks."
+              ],
+              "note": "The real system is a held pedal or a periodic button; TSW reacts to Q."
+            },
+            {
+              "title": "Before departure",
+              "steps": [
+                "Left aux square on: ATB fuse (ICMm) or ATB / ERTMS cut-in (SNG). Off gives [BD] and five bells.",
+                "Right aux square on: deadman fuse / cut-in.",
+                "Check the cab code matches the signal, then pull away."
+              ]
+            },
+            {
+              "title": "Boards to know",
+              "bullets": [
+                "Verkenbord: platform ahead at braking distance; start braking for the stop.",
+                "CODE board: changeover between ATB-EG and ATB-NG.",
+                "A / E boards: start and end of a temporary speed restriction."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
