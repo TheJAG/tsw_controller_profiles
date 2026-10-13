@@ -167,7 +167,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `TODO ◼️` **MBTA bi-level cab car** <sub>— DTG</sub>  
 `SOON 🟨` **MBTA F40PH-3C** <sub>— DTG · [profile](releases/tsw-mbta-f40ph-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-mbta-f40ph-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **MBTA HSP46** <sub>— DTG · [profile](releases/tsw-mbta-hsp46-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-mbta-hsp46-dtg-thejag.pdf)</sub>  
-`TODO ◼️` **MBTA single-deck cab car** <sub>— DTG</sub>  
+`SOON 🟨` **MBTA single-deck cab car** <sub>— DTG · [profile](releases/tsw-mbta-cab-car-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-mbta-cab-car-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Metrolink F125** <sub>— DTG · [profile](releases/tsw-metrolink-f125-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metrolink-f125-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Metrolink F59PH** <sub>— DTG · [profile](releases/tsw-metrolink-f59ph-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metrolink-f59ph-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **Metrolink MP36PH-3C** <sub>— DTG · [profile](releases/tsw-metrolink-mp36ph-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-metrolink-mp36ph-dtg-thejag.pdf)</sub>  
