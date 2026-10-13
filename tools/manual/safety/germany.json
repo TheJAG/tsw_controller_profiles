@@ -1,0 +1,1266 @@
+{
+  "name": "tsw-safety-germany-thejag",
+  "title": "Safety systems · Germany",
+  "eyebrow": "Signals and train protection · Train Sim World · TCA Quadrant Airbus",
+  "colors": {
+    "navy": "#3a3d4d",
+    "blue": "#ec0016",
+    "red": "#ec0016",
+    "paper": "#f6f4f4"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-db-grey.png",
+      "alt": "Deutsche Bahn"
+    }
+  ],
+  "credit": "© TheJAG",
+  "sources": [
+    "Eisenbahn-Signalordnung (ESO)",
+    "DB Ril 301 Signalbuch",
+    "DB Ril 483 (PZB 90, LZB)",
+    "de.wikipedia: PZB, LZB, Sicherheitsfahrschaltung, Signale H/V, Ks, Hl"
+  ],
+  "pages": [
+    {
+      "sections": [
+        {
+          "kind": "intro",
+          "paragraphs": [
+            "German signals mostly show **what to expect**: a main signal (Hauptsignal) says whether you may pass it and at what speed, a distant signal (Vorsignal) what the next main signal shows. Speeds on signals and boards are **number × 10 km/h**. Four signal families appear on the TSW 7 routes: **H/V** (West), **Ks** (new lines), **Hl** (former DR, e.g. Leipzig – Dresden) and semaphores. **PZB 90** watches every signal, **LZB** takes over on high-speed lines, and the **SiFa** checks that you are awake. Quadrant controls are from TheJAG's German profiles."
+          ]
+        },
+        {
+          "kind": "systems",
+          "title": "Safety systems",
+          "cols": 4,
+          "items": [
+            {
+              "name": "PZB 90",
+              "full": "Punktförmige Zugbeeinflussung",
+              "summary": "Track magnets at **1000 Hz** (distant signal), **500 Hz** (about 250 m before the main signal, not at every signal) and **2000 Hz** (main signal). Acknowledge, then brake within the speed curve or PZB brakes.",
+              "where": "Every German route",
+              "quadrant": "**ENG 2** Wachsam (acknowledge), **ENG 1** Frei (release), **round aux** Befehl 40; right aux square PZB on / off"
+            },
+            {
+              "name": "LZB",
+              "full": "Linienzugbeeinflussung",
+              "summary": "Continuous cab signalling by cable loop: target speed and distance up to 13 km ahead on the cab display; lineside signals may be dark. Above 160 km/h only under LZB.",
+              "where": "High-speed lines, e.g. Kassel – Würzburg, Nürnberg – Ingolstadt, Köln – Aachen, Leipzig – Dresden",
+              "quadrant": "LZB orders and Ende: **ENG 1** (Frei); nothing to press when LZB takes over"
+            },
+            {
+              "name": "SiFa",
+              "full": "Sicherheitsfahrschaltung",
+              "summary": "Driver vigilance: a lamp after about 30 s without a SiFa action, a buzzer 2.5 s later, an emergency brake 2.5 s after that.",
+              "where": "Every German train",
+              "quadrant": "**Gear lever** = SiFa reset; left aux square SiFa on / off"
+            },
+            {
+              "name": "ETCS",
+              "full": "European Train Control System",
+              "summary": "Replacing PZB / LZB on new lines in the real world.",
+              "where": "Not covered here; TSG's BR 101 Expert has an ETCS variant",
+              "quadrant": ""
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "H/V light signals (Hauptsignal / Vorsignal)",
+          "cols": 6,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 70,
+                    "lamps": [
+                      {
+                        "x": 15,
+                        "y": 13,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 15,
+                        "y": 35,
+                        "c": "red",
+                        "s": "on"
+                      },
+                      {
+                        "x": 33,
+                        "y": 35,
+                        "c": "red",
+                        "s": "on"
+                      },
+                      {
+                        "x": 15,
+                        "y": 57,
+                        "c": "yellow",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Hp 0",
+              "meaning": "Stop (Halt). One or two red lights.",
+              "drive": "Stop before the signal; 2000 Hz magnet is live."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 70,
+                    "lamps": [
+                      {
+                        "x": 15,
+                        "y": 13,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 15,
+                        "y": 35,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 33,
+                        "y": 35,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 15,
+                        "y": 57,
+                        "c": "yellow",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Hp 1",
+              "meaning": "Proceed (Fahrt) at line speed.",
+              "drive": "Drive on at the timetable / board speed."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "number",
+                    "text": "6",
+                    "color": "white",
+                    "s": "on"
+                  },
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 70,
+                    "lamps": [
+                      {
+                        "x": 15,
+                        "y": 13,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 15,
+                        "y": 35,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 33,
+                        "y": 35,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 15,
+                        "y": 57,
+                        "c": "yellow",
+                        "s": "on"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Hp 2 (+ Zs 3)",
+              "meaning": "Proceed slowly: 40 km/h, or the Zs 3 number × 10.",
+              "drive": "Be at the speed at the signal; applies through the points area beyond."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 50,
+                    "h": 66,
+                    "lamps": [
+                      {
+                        "x": 27,
+                        "y": 17,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 41,
+                        "y": 17,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 9,
+                        "y": 49,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 23,
+                        "y": 49,
+                        "c": "green",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Vr 0",
+              "meaning": "Expect stop at the next main signal.",
+              "drive": "Wachsam at the 1000 Hz magnet, then brake to stop."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 50,
+                    "h": 66,
+                    "lamps": [
+                      {
+                        "x": 27,
+                        "y": 17,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 41,
+                        "y": 17,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 9,
+                        "y": 49,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 23,
+                        "y": 49,
+                        "c": "green",
+                        "s": "on"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Vr 1",
+              "meaning": "Expect proceed at the next main signal.",
+              "drive": "Keep going."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 50,
+                    "h": 66,
+                    "lamps": [
+                      {
+                        "x": 27,
+                        "y": 17,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 41,
+                        "y": 17,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 9,
+                        "y": 49,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 23,
+                        "y": 49,
+                        "c": "green",
+                        "s": "off"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "number",
+                    "text": "6",
+                    "color": "yellow",
+                    "s": "on"
+                  }
+                ]
+              },
+              "name": "Vr 2 (+ Zs 3v)",
+              "meaning": "Expect slow: 40 km/h, or the Zs 3v number × 10.",
+              "drive": "Wachsam, brake to the speed by the main signal."
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Ks signals (Kombinationssignal)",
+          "note": "One head is main and distant signal at once. A white Zs 3 number above = speed from this signal; a yellow Zs 3v number below = speed at the next signal.",
+          "cols": 5,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 54,
+                    "lamps": [
+                      {
+                        "x": 23,
+                        "y": 16,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 12,
+                        "y": 38,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 34,
+                        "y": 38,
+                        "c": "yellow",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Ks 1",
+              "meaning": "Proceed; next signal shows proceed.",
+              "drive": "Drive on at line speed."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "number",
+                    "text": "8",
+                    "color": "white",
+                    "s": "on"
+                  },
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 54,
+                    "lamps": [
+                      {
+                        "x": 23,
+                        "y": 16,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 12,
+                        "y": 38,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 34,
+                        "y": 38,
+                        "c": "yellow",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Ks 1 + Zs 3",
+              "meaning": "Proceed at max 80 km/h from this signal.",
+              "drive": "Be at 80 at the signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 54,
+                    "lamps": [
+                      {
+                        "x": 23,
+                        "y": 16,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 12,
+                        "y": 38,
+                        "c": "green",
+                        "s": "flash"
+                      },
+                      {
+                        "x": 34,
+                        "y": 38,
+                        "c": "yellow",
+                        "s": "off"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "number",
+                    "text": "6",
+                    "color": "yellow",
+                    "s": "on"
+                  }
+                ]
+              },
+              "name": "Ks 1 flashing + Zs 3v",
+              "meaning": "Proceed; next signal limits to 60 km/h.",
+              "drive": "Wachsam at 1000 Hz (live for Zs 3v 1–6), brake to 60 by the next signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 54,
+                    "lamps": [
+                      {
+                        "x": 23,
+                        "y": 16,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 12,
+                        "y": 38,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 38,
+                        "c": "yellow",
+                        "s": "on"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Ks 2",
+              "meaning": "Expect stop at the next signal.",
+              "drive": "Wachsam at 1000 Hz, brake to stop."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 54,
+                    "lamps": [
+                      {
+                        "x": 23,
+                        "y": 16,
+                        "c": "red",
+                        "s": "on"
+                      },
+                      {
+                        "x": 12,
+                        "y": 38,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 38,
+                        "c": "yellow",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Hp 0",
+              "meaning": "Stop.",
+              "drive": "Stop before the signal."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sections": [
+        {
+          "kind": "aspects",
+          "title": "Hl signals (former Deutsche Reichsbahn)",
+          "note": "Upper lamps = the next signal, lower yellow = this signal (40 km/h; with a yellow light strip below 60; a green strip alone = 100).",
+          "cols": 6,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 74,
+                    "lamps": [
+                      {
+                        "x": 14,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 32,
+                        "y": 14,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 23,
+                        "y": 38,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 62,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 32,
+                        "y": 62,
+                        "c": "red",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Hl 1",
+              "meaning": "Line speed; next signal proceed.",
+              "drive": "Drive on."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 74,
+                    "lamps": [
+                      {
+                        "x": 14,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "flash"
+                      },
+                      {
+                        "x": 32,
+                        "y": 14,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 23,
+                        "y": 38,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 62,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 32,
+                        "y": 62,
+                        "c": "red",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Hl 7",
+              "meaning": "Line speed; expect 40 (or 60) at the next signal.",
+              "drive": "Wachsam, brake to 40."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 74,
+                    "lamps": [
+                      {
+                        "x": 14,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 32,
+                        "y": 14,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 23,
+                        "y": 38,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 62,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 32,
+                        "y": 62,
+                        "c": "red",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Hl 10",
+              "meaning": "Line speed; expect stop at the next signal.",
+              "drive": "Wachsam, brake to stop."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 74,
+                    "lamps": [
+                      {
+                        "x": 14,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 32,
+                        "y": 14,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 23,
+                        "y": 38,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 62,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 32,
+                        "y": 62,
+                        "c": "red",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Hl 3a",
+              "meaning": "40 km/h here; next signal proceed.",
+              "drive": "Be at 40 at the signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 74,
+                    "lamps": [
+                      {
+                        "x": 14,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 32,
+                        "y": 14,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 23,
+                        "y": 38,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 62,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 32,
+                        "y": 62,
+                        "c": "red",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Hl 12a",
+              "meaning": "40 km/h here; expect stop at the next signal.",
+              "drive": "Be at 40, then brake to stop."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 74,
+                    "lamps": [
+                      {
+                        "x": 14,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 32,
+                        "y": 14,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 23,
+                        "y": 38,
+                        "c": "red",
+                        "s": "on"
+                      },
+                      {
+                        "x": 14,
+                        "y": 62,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 32,
+                        "y": 62,
+                        "c": "red",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Hp 0",
+              "meaning": "Stop.",
+              "drive": "Stop before the signal."
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Semaphores (Formsignale)",
+          "cols": 5,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "arm",
+                    "type": "de",
+                    "angle": 0
+                  }
+                ]
+              },
+              "name": "Hp 0",
+              "meaning": "Arm horizontal: stop.",
+              "drive": "Stop before the signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "arm",
+                    "type": "de",
+                    "angle": 45
+                  }
+                ]
+              },
+              "name": "Hp 1",
+              "meaning": "Arm raised: proceed.",
+              "drive": "Drive on."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "arm",
+                    "type": "de",
+                    "angle": 45
+                  },
+                  {
+                    "kind": "gap",
+                    "h": 4
+                  },
+                  {
+                    "kind": "arm",
+                    "type": "de",
+                    "angle": 45
+                  }
+                ]
+              },
+              "name": "Hp 2",
+              "meaning": "Two arms raised: proceed at 40 km/h.",
+              "drive": "Be at 40 at the signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "",
+                    "fg": "black",
+                    "bg": "yellow",
+                    "border": "black",
+                    "shape": "circle",
+                    "w": 34
+                  }
+                ]
+              },
+              "name": "Vr 0",
+              "meaning": "Yellow disc face-on: expect stop.",
+              "drive": "Wachsam, brake to stop."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "",
+                    "fg": "black",
+                    "bg": "yellow",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 36,
+                    "h": 7
+                  }
+                ]
+              },
+              "name": "Vr 1",
+              "meaning": "Disc turned flat: expect proceed.",
+              "drive": "Keep going."
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Additional signals and boards",
+          "cols": 6,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 70,
+                    "lamps": [
+                      {
+                        "x": 15,
+                        "y": 13,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 15,
+                        "y": 35,
+                        "c": "red",
+                        "s": "on"
+                      },
+                      {
+                        "x": 33,
+                        "y": 35,
+                        "c": "red",
+                        "s": "on"
+                      },
+                      {
+                        "x": 15,
+                        "y": 57,
+                        "c": "yellow",
+                        "s": "off"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "head",
+                    "w": 40,
+                    "h": 38,
+                    "lamps": [
+                      {
+                        "x": 20,
+                        "y": 11,
+                        "c": "white",
+                        "s": "on"
+                      },
+                      {
+                        "x": 10,
+                        "y": 28,
+                        "c": "white",
+                        "s": "on"
+                      },
+                      {
+                        "x": 30,
+                        "y": 28,
+                        "c": "white",
+                        "s": "on"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Zs 1",
+              "meaning": "Substitute signal: pass the red signal without a written order. Ks / Hl: one flashing white light.",
+              "drive": "Hold Befehl 40 over the 2000 Hz magnet, max 40."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 54,
+                    "lamps": [
+                      {
+                        "x": 23,
+                        "y": 16,
+                        "c": "red",
+                        "s": "on"
+                      },
+                      {
+                        "x": 12,
+                        "y": 38,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 38,
+                        "c": "yellow",
+                        "s": "off"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "head",
+                    "w": 40,
+                    "h": 38,
+                    "lamps": [
+                      {
+                        "x": 8,
+                        "y": 10,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 32,
+                        "y": 10,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 20,
+                        "y": 28,
+                        "c": "yellow",
+                        "s": "on"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Zs 7",
+              "meaning": "Caution: pass the red signal on sight.",
+              "drive": "Befehl 40, drive on sight, max 40."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 44,
+                    "h": 26,
+                    "lamps": [
+                      {
+                        "x": 12,
+                        "y": 18,
+                        "c": "white",
+                        "s": "on"
+                      },
+                      {
+                        "x": 32,
+                        "y": 8,
+                        "c": "white",
+                        "s": "on"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Sh 1",
+              "meaning": "Shunting allowed (dwarf or on a main signal).",
+              "drive": "Shunt on sight; not a train movement."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "8",
+                    "fg": "black",
+                    "bg": "yellow",
+                    "border": "black",
+                    "shape": "triangle-down"
+                  }
+                ]
+              },
+              "name": "Lf 6",
+              "meaning": "Speed restriction ahead: 80 km/h from the Lf 7.",
+              "drive": "Brake to reach 80 at the Lf 7."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "8",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 30,
+                    "h": 38
+                  }
+                ]
+              },
+              "name": "Lf 7",
+              "meaning": "Speed limit 80 km/h from here.",
+              "drive": "Lower: from the front. Higher: once the rear has passed."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "▲\n▲",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 28,
+                    "h": 42,
+                    "size": 12
+                  }
+                ]
+              },
+              "name": "Ne 2",
+              "meaning": "Distant signal board: a distant signal stands here.",
+              "drive": "Alone (no distant signal): 1000 Hz always live; Wachsam, expect stop. A dark distant signal here = Vr 0."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sections": [
+        {
+          "kind": "table",
+          "title": "PZB 90 magnets and speed checks",
+          "head": [
+            "Magnet",
+            "Where",
+            "Acknowledge",
+            "Train type O (85 lamp)",
+            "M (70)",
+            "U (55)"
+          ],
+          "rows": [
+            [
+              "**1000 Hz**",
+              "At the distant signal showing caution",
+              "Wachsam within **4 s**",
+              "165 → 85 km/h in 23 s",
+              "125 → 70 in 29 s",
+              "105 → 55 in 38 s"
+            ],
+            [
+              "**500 Hz**",
+              "About 250 m before some main signals at stop",
+              "–",
+              "65 → 45 km/h over 153 m",
+              "50 → 35",
+              "40 → 25"
+            ],
+            [
+              "**2000 Hz**",
+              "At the main signal at stop",
+              "–",
+              "Immediate emergency brake",
+              "",
+              ""
+            ],
+            [
+              "Restrictive",
+              "Below 10 km/h for 15 s, or a stop, inside a 1000 Hz (45) or 500 Hz (25) check",
+              "–",
+              "45 km/h (1000 Hz), 25 km/h (500 Hz)",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "kind": "howto",
+          "title": "How to drive under PZB 90, LZB and SiFa",
+          "cols": 3,
+          "blocks": [
+            {
+              "title": "1000 Hz: distant signal at caution",
+              "steps": [
+                "Passing a Vr 0 / Vr 2 / Ks 2 / Ks 1 flashing with Zs 3v ≤ 6 / Hl 7 / Hl 10 the PZB sounds: press **Wachsam** (ENG 2) within 4 s.",
+                "The 1000 Hz lamp lights for 1250 m: be below the train-type speed within the time.",
+                "Brake to the signal's speed or to a stop.",
+                "If the signal clears, press **Frei** (ENG 1) after 700 m to end the check."
+              ]
+            },
+            {
+              "title": "500 Hz and 2000 Hz: approaching red",
+              "steps": [
+                "250 m before a red main signal the 500 Hz magnet checks a falling curve to 45 / 35 / 25 km/h.",
+                "Stop before the signal: the 2000 Hz magnet brakes at once if you pass it at stop.",
+                "Frei cannot end the 500 Hz check."
+              ]
+            },
+            {
+              "title": "Befehl 40: passing a red signal",
+              "steps": [
+                "Only with Zs 1, Zs 7 or a written order.",
+                "Hold **Befehl 40** (round aux) while the front passes the 2000 Hz magnet.",
+                "Max 40 km/h to the next main signal; on sight only with Zs 7 or when ordered."
+              ]
+            },
+            {
+              "title": "Emergency brake (Zwangsbremsung)",
+              "steps": [
+                "The train stops; the flashing lamp shows why: yellow 1000 Hz, red 500 Hz, white Befehl 40.",
+                "At a stand, press **Frei** (ENG 1).",
+                "Release the brake and drive on, restrictive (45 / 25 km/h) where the check is still running."
+              ]
+            },
+            {
+              "title": "Start and restrictive mode",
+              "bullets": [
+                "After switching on or a stop inside a check, PZB runs restrictive: the **70 and 85 lamps flash alternately**.",
+                "Start programme: max 45 km/h for 550 m; Frei ends it when no check is running.",
+                "Pick the train type in the cab (O passenger, M / U freight)."
+              ]
+            },
+            {
+              "title": "LZB",
+              "bullets": [
+                "Entering: **Ü** and **B** light; nothing to press.",
+                "Follow **V-Soll** on the display; signals may be dark. Leave the AFB (flap lever, where fitted) at line speed: LZB lowers the set-point itself.",
+                "**Ende** flashes about 1700 m before the exit: press **Frei** (ENG 1) within 10 s. At the exit Ü goes out and PZB rules again.",
+                "Ü flashing (transmission lost) or **V 40**: Frei, then max 40 (V 40 on sight). **E 40**: no button, max 40."
+              ]
+            },
+            {
+              "title": "SiFa",
+              "steps": [
+                "Keep the SiFa on (left aux square).",
+                "When the SiFa lamp lights, flick the **gear lever**; any SiFa action resets the timer.",
+                "Missed: emergency brake; stop, reset the SiFa, release and drive on."
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "callout",
+          "title": "Before departure:",
+          "text": "SiFa and PZB on: aux squares lit on most locos, unlit where the square is the Störschalter or isolation switch (ICE, S-Bahn 42x, 612); see the train's manual. Set the right train type, check the signal. With PZB restrictive after start-up keep below 45 km/h until the check ends."
+        }
+      ]
+    }
+  ]
+}

@@ -29,5 +29,5 @@ Each entry in `pages` is one A4 sheet; page 1 carries the big header.
 - `{ kind: "head", w, h, lamps: [ { x, y, c, s: on|off|flash, r? } ], shape?: "rect"|"round"|"none" }`: free lamp layout (position lights, lunar whites, route indicators).
 - `{ kind: "number", text, color, s: on|flash|off }`: a lit number indicator.
 - `{ kind: "plate", text ("\n" breaks lines), fg, bg, border, shape: rect|triangle|triangle-down|diamond|circle|square, w?, h?, size?, rx? }`: an unlit board.
-- `{ kind: "arm", angle (degrees, + raised), type: stop|distant, side: right|left }`: a semaphore arm.
+- `{ kind: "arm", angle (degrees, + raised), type: stop|distant|de, side: right|left }`: a semaphore arm (`stop` and `distant` British, `de` the German white arm with a red rim and end disc).
 - `{ kind: "gap", h }`: empty space between parts.

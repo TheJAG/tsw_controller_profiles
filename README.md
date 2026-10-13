@@ -6,6 +6,7 @@ This is a bunch of controller profiles for Train Sim World and Train Sim Classic
 
 One manual per country: the signal aspects, drawn, and how to drive under each train protection system, with the Quadrant controls from the profiles.
 
+🇩🇪 **Germany** <sub>— PZB 90 · LZB · SiFa · [manual](profiles/documentation/tsw-safety-germany-thejag.pdf)</sub>  
 🇳🇱 **Netherlands** <sub>— ATB-EG · ATB-Vv · deadman · [manual](profiles/documentation/tsw-safety-netherlands-thejag.pdf)</sub>  
 
 The following trains are / will be supported. Ticked :heavy_check_mark: means available!

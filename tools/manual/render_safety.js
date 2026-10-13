@@ -65,6 +65,11 @@ function part(p) {
   if (p.kind === 'arm') {
     // semaphore arm pivoting on the post; angle in degrees, positive = raised (upper quadrant), negative = lowered
     const side = p.side === 'left' ? -1 : 1, L = 46, distant = p.type === 'distant';
+    if (p.type === 'de') { // German Formhauptsignal: white arm with a red rim, round disc at the end
+      const rise = L * Math.sin((p.angle || 0) * Math.PI / 180);
+      return { w: 2 * L + 20, h: 22 + Math.abs(rise), draw: (cx, y) => { const py = y + 11 + Math.max(0, rise);
+        return `<g transform="translate(${cx} ${py}) scale(${side} 1) rotate(${-(p.angle || 0)})"><rect x="0" y="-4.5" width="${L - 6}" height="9" fill="#fff" stroke="${INK.red}" stroke-width="2.2"/><circle cx="${L}" cy="0" r="9" fill="#fff" stroke="${INK.red}" stroke-width="2.6"/></g><circle cx="${cx}" cy="${py}" r="3" fill="#222"/>`; } };
+    }
     const rise = L * Math.sin((p.angle || 0) * Math.PI / 180);
     return { w: 2 * L + 8, h: 14 + Math.abs(rise), draw: (cx, y) => { const py = y + 7 + Math.max(0, rise);
       const body = distant ? `<path d="M0 -5 L${L} -5 L${L - 8} 0 L${L} 5 L0 5Z" fill="${INK.yellow}" stroke="#222" stroke-width="1"/><path d="M${L - 16} -5 L${L - 22} 0 L${L - 16} 5" fill="none" stroke="#222" stroke-width="2.5"/>`
