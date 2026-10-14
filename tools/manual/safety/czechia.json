@@ -1,0 +1,493 @@
+{
+  "name": "tsw-safety-czechia-thejag",
+  "title": "Safety systems · Czechia",
+  "eyebrow": "Signals and train protection · Train Sim World · TCA Quadrant Airbus",
+  "colors": {
+    "navy": "#1f3d63",
+    "blue": "#4f78a6",
+    "red": "#009ee0",
+    "paper": "#f1f5f9"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-cd-cdblue.svg",
+      "alt": "České dráhy"
+    }
+  ],
+  "credit": "© TheJAG",
+  "sources": [
+    "Vector Simulations: Liberec – Stará Paka manual",
+    "DTG: Liberec signalling deep dive",
+    "vyhláška 173/1995 Sb. příloha 1 / SŽ D1",
+    "cs.wikipedia: Železniční návěstidlo, Liniový vlakový zabezpečovač LS"
+  ],
+  "pages": [
+    {
+      "sections": [
+        {
+          "kind": "intro",
+          "paragraphs": [
+            "Czech main signals combine **this signal's speed** (the lower yellow lamp, with light strips below the head: none = 40, yellow strip = 60, one green = 80, two green = 100 km/h) and **what the next signal shows** (the upper lamps): green = volno, yellow = výstraha (stop), slow-flashing yellow = expect 40, fast-flashing yellow = expect 60, slow-flashing green = expect 80, fast-flashing green = expect 100. The **LS** cab system repeats the signals where the track carries codes; **Liberec – Stará Paka has no codes**, so there it only checks your vigilance. Speeds in km/h. Quadrant controls are from TheJAG's ČD 750 and 843 profiles."
+          ]
+        },
+        {
+          "kind": "systems",
+          "title": "Safety systems",
+          "cols": 2,
+          "items": [
+            {
+              "name": "LS (LS 90 · LS IV / LVZ)",
+              "full": "Liniový vlakový zabezpečovač",
+              "summary": "On coded track the cab repeater shows the next signal: green, yellow, yellow ring (reduced speed), red; **blue = no vigilance press needed**. A more restrictive code asks for a press. On uncoded track (this route) it runs the vigilance check only.",
+              "where": "843: LS 90. 750: LS IV type LVZ (same behaviour)",
+              "quadrant": "843: left aux = LS 90 (On / Isolated); 750: left aux = LVZ (Active / Off)"
+            },
+            {
+              "name": "Vigilance",
+              "full": "Kontrola bdělosti",
+              "summary": "When the **blue lamp goes out**, press the vigilance button within about **7 s**; then a **siren** for 5 s more, then the emergency brake. The checks pause while the loco brake is applied.",
+              "where": "ČD 750 and 843",
+              "quadrant": "**Gear lever** = vigilance button"
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Main signals (hlavní návěstidla)",
+          "cols": 4,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow-",
+                      "green-",
+                      "red",
+                      "white-",
+                      "yellow-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Stůj",
+              "meaning": "Stop.",
+              "drive": "Stop before the signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow-",
+                      "green",
+                      "red-",
+                      "white-",
+                      "yellow-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Volno",
+              "meaning": "Proceed; next signal at least proceed.",
+              "drive": "Line speed."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow",
+                      "green-",
+                      "red-",
+                      "white-",
+                      "yellow-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Výstraha",
+              "meaning": "Next signal at Stůj.",
+              "drive": "Brake to stop at the next signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow*",
+                      "green-",
+                      "red-",
+                      "white-",
+                      "yellow-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Očekávej 40",
+              "meaning": "Slow-flashing yellow: next signal 40 km/h.",
+              "drive": "Brake to 40 by the next signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow-",
+                      "green",
+                      "red-",
+                      "white-",
+                      "yellow"
+                    ]
+                  }
+                ]
+              },
+              "name": "Rychlost 40 a volno",
+              "meaning": "40 km/h from here (until the last points are cleared); next signal proceed.",
+              "drive": "Be at 40 at the signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow",
+                      "green-",
+                      "red-",
+                      "white-",
+                      "yellow"
+                    ]
+                  }
+                ]
+              },
+              "name": "Rychlost 40 a výstraha",
+              "meaning": "40 km/h from here; next signal at Stůj.",
+              "drive": "Be at 40, then brake to stop."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow-",
+                      "green",
+                      "red-",
+                      "white-",
+                      "yellow"
+                    ]
+                  },
+                  {
+                    "kind": "gap",
+                    "h": 2
+                  },
+                  {
+                    "kind": "head",
+                    "w": 34,
+                    "h": 24,
+                    "lamps": [
+                      {
+                        "x": 5,
+                        "y": 5,
+                        "c": "green",
+                        "s": "off",
+                        "r": 2
+                      },
+                      {
+                        "x": 11,
+                        "y": 5,
+                        "c": "green",
+                        "s": "off",
+                        "r": 2
+                      },
+                      {
+                        "x": 17,
+                        "y": 5,
+                        "c": "green",
+                        "s": "off",
+                        "r": 2
+                      },
+                      {
+                        "x": 23,
+                        "y": 5,
+                        "c": "green",
+                        "s": "off",
+                        "r": 2
+                      },
+                      {
+                        "x": 29,
+                        "y": 5,
+                        "c": "green",
+                        "s": "off",
+                        "r": 2
+                      },
+                      {
+                        "x": 5,
+                        "y": 12,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 2
+                      },
+                      {
+                        "x": 11,
+                        "y": 12,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 2
+                      },
+                      {
+                        "x": 17,
+                        "y": 12,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 2
+                      },
+                      {
+                        "x": 23,
+                        "y": 12,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 2
+                      },
+                      {
+                        "x": 29,
+                        "y": 12,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 2
+                      },
+                      {
+                        "x": 5,
+                        "y": 19,
+                        "c": "green",
+                        "s": "off",
+                        "r": 2
+                      },
+                      {
+                        "x": 11,
+                        "y": 19,
+                        "c": "green",
+                        "s": "off",
+                        "r": 2
+                      },
+                      {
+                        "x": 17,
+                        "y": 19,
+                        "c": "green",
+                        "s": "off",
+                        "r": 2
+                      },
+                      {
+                        "x": 23,
+                        "y": 19,
+                        "c": "green",
+                        "s": "off",
+                        "r": 2
+                      },
+                      {
+                        "x": 29,
+                        "y": 19,
+                        "c": "green",
+                        "s": "off",
+                        "r": 2
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Rychlost 60 a volno",
+              "meaning": "Lower yellow + yellow strip: 60 km/h (one green strip 80, two 100).",
+              "drive": "Be at 60 at the signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow-",
+                      "green-",
+                      "red",
+                      "white*",
+                      "yellow-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Přivolávací návěst",
+              "meaning": "Red + flashing white: pass the signal at Stůj.",
+              "drive": "Max 40 on sight, ready to stop."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sections": [
+        {
+          "kind": "aspects",
+          "title": "Distant signals, boards and shunting",
+          "cols": 5,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow",
+                      "green-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Předvěst: výstraha",
+              "meaning": "Distant signal: the main signal shows Stůj (flashing = expect a speed).",
+              "drive": "Brake to stop at the main signal."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "6",
+                    "fg": "black",
+                    "bg": "yellow",
+                    "border": "white",
+                    "shape": "triangle-down",
+                    "w": 44,
+                    "bw": 3
+                  }
+                ]
+              },
+              "name": "Předvěstník",
+              "meaning": "A lower limit ahead: 60 km/h (tens).",
+              "drive": "Brake to reach it by the rychlostník."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "60",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 36,
+                    "h": 32
+                  }
+                ]
+              },
+              "name": "Rychlostník",
+              "meaning": "The limit from here, in km/h.",
+              "drive": "Lower: by the board. Higher: once the rear has passed."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "///",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 30,
+                    "h": 40,
+                    "size": 16
+                  }
+                ]
+              },
+              "name": "Vzdálenostní upozorňovadlo",
+              "meaning": "Countdown boards (3, 2, 1 stripes) to a distant signal.",
+              "drive": "Watch for the distant signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow-",
+                      "green-",
+                      "red-",
+                      "white",
+                      "yellow-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Posun dovolen",
+              "meaning": "Shunting allowed.",
+              "drive": "Shunt only: max 40 (30 propelling)."
+            }
+          ]
+        },
+        {
+          "kind": "howto",
+          "title": "How to drive under LS and the vigilance check",
+          "cols": 3,
+          "blocks": [
+            {
+              "title": "On this route (no codes)",
+              "steps": [
+                "Drive to the lineside signals; the repeater shows no code.",
+                "When the **blue lamp goes out**, press **vigilance** (gear lever) within about 7 s.",
+                "Missed, the siren sounds: you have 5 s more, then the emergency brake."
+              ]
+            },
+            {
+              "title": "After an LS emergency brake",
+              "steps": [
+                "Stop.",
+                "843: switch LS 90 off and on (left aux twice).",
+                "750: switch the LVZ off and on at the console in the engine room (or the left aux), then release the brake."
+              ]
+            },
+            {
+              "title": "With LS codes (main lines)",
+              "bullets": [
+                "The repeater shows the next signal: green, yellow, yellow ring (reduced speed), red.",
+                "Blue lit: no press needed.",
+                "A more restrictive code: press **vigilance** at once, then brake to the signal."
+              ]
+            },
+            {
+              "title": "Before departure",
+              "steps": [
+                "Loco brake fully applied.",
+                "Train protection to **Start**, wait for the start lamp, then **On / Active** (843 LS 90, 750 LVZ). The profile's left aux sets On directly; if the system does not arm, use Start in the cab first.",
+                "Check the signal, close the doors, release the brake."
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "callout",
+          "title": "Remember:",
+          "text": "The lower yellow lamp and the strips below it are the speed at this signal; the upper lamp tells you what the next signal shows."
+        }
+      ]
+    }
+  ]
+}

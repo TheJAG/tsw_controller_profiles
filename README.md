@@ -7,6 +7,7 @@ This is a bunch of controller profiles for Train Sim World and Train Sim Classic
 One manual per country: the signal aspects, drawn, and how to drive under each train protection system, with the Quadrant controls from the profiles.
 
 🇬🇧 **United Kingdom** <sub>— AWS · TPWS · DSD / vigilance · DRA · tripcock · TVM 430 · [manual](profiles/documentation/tsw-safety-united-kingdom-thejag.pdf)</sub>  
+🇨🇿 **Czechia** <sub>— LS 90 · LS IV / LVZ · vigilance · [manual](profiles/documentation/tsw-safety-czechia-thejag.pdf)</sub>  
 🇩🇪 **Germany** <sub>— PZB 90 · LZB · SiFa · [manual](profiles/documentation/tsw-safety-germany-thejag.pdf)</sub>  
 🇫🇷 **France** <sub>— TVM 430 · KVB · crocodile · VACMA · [manual](profiles/documentation/tsw-safety-france-thejag.pdf)</sub>  
 🇯🇵 **Japan** <sub>— ATS-SN · EB · [manual](profiles/documentation/tsw-safety-japan-thejag.pdf)</sub>  
