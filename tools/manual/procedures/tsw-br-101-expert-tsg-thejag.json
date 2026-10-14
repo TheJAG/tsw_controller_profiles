@@ -1,0 +1,86 @@
+{
+  "title": "Aufrüsten: from cold to departure",
+  "intro": "A cold-start service finds the BR 101 dark with the parking brake on; a timetable service loads it with the cab unoccupied, SiFa isolated and the LZB/PZB breaker open. On a loco that is already powered, start at step 8.",
+  "sections": [
+    {
+      "title": "Back wall and machine room",
+      "steps": [
+        { "text": "Loco under the wire; parking brake light (Federspeicher anlegen) on.", "where": "Cab 1 back wall" },
+        { "text": "Battery (Batterie) ON; the voltage must read above 95 V.", "where": "Cab 1 back wall" },
+        { "text": "Pantograph selector to Auto (or the one you want); every LSS breaker on this wall set.", "where": "Cab 1 back wall" },
+        { "text": "Open the SIFA and the red PZB/LZB cut-off valves; all others open except drain, towing, bypass and relay.", "where": "valve cabinet" },
+        { "text": "Set every breaker, including LSS 44F01 LZB/PZB-Hauptschalter in the third row.", "where": "breakers by Cab 2" },
+        { "text": "Auxiliary reservoir under 7 bar: close LSS 34F05 (auxiliary compressor); if it will not run, drain below 4.8 bar first.", "where": "machine room" },
+        { "text": "Leave the machine room before raising the pantograph: entering it with the Hauptschalter closed is prohibited." }
+      ]
+    },
+    {
+      "title": "Occupy Cab 1 and power up",
+      "steps": [
+        { "text": "Sit down; Fahrschalter (power handle) at Off, or the reverser will not move.", "tca": "Left throttle" },
+        { "text": "Reverser key in and brake key unlocked; keep PARK BRK up, the key is held only while it is.", "tca": "PARK BRK" },
+        { "text": "Richtungsschalter from Off to Neutral; wait for the screens to boot (over a minute).", "tca": "Speedbrake lever" },
+        { "text": "Raise the pantograph (SA heben), close the Hauptschalter (HS ein). 'Druckluft HS zu gering' = under 7 bar.", "where": "desk" },
+        { "text": "Press [St] and check for faults.", "where": "left screen" },
+        { "text": "Lights as required; off on an end coupled to a coach.", "tca": "AUTO BRK" }
+      ]
+    },
+    {
+      "title": "Brake system preparation",
+      "steps": [
+        { "text": "NBÜ/ep switch to 0 in both cabs; pn/el switch to pn.", "where": "back wall" },
+        { "text": "Führerbremsventil to Running; ease the direct brake until the C-pressure is below 0.5 bar.", "tca": "Right throttle" },
+        { "text": "Parking brake light stays lit; wait for the main reservoir (red needle) to reach 10 bar." },
+        { "text": "pn test: brake pipe down to 4.2 bar, C-pressure rises on both bogies; release.", "tca": "Right throttle" },
+        { "text": "pn/el switch to el and repeat the 4.2 bar application and release.", "tca": "Right throttle" },
+        { "text": "Direct brake to 2 bar C-pressure, release, then apply it again to hold the loco.", "where": "desk" }
+      ]
+    },
+    {
+      "title": "Safety systems and tests",
+      "steps": [
+        { "text": "SiFa and PZB to normal (LZB / INDUSI buttons on the ZDE panel). LZB stays isolated only light or under four braked coaches.", "tca": "Left aux / Right aux" },
+        { "text": "For the PZB/LZB test: Forward, brake key unlocked, train brake released, direct brake on.", "tca": "Speedbrake lever" },
+        { "text": "Press Prüftaste/Stör: lamps and sounds, two emergency applications, LZB calibration; then Prüftaste Lampen.", "where": "MFA" },
+        { "text": "SiFa test: hold the pedal (Q): light at 30 s, 'SIFA' 2.5 s later, Zwangsbremsung 2.5 s after that.", "where": "SiFa pedal" },
+        { "text": "Test the horn.", "tca": "Right throttle button" },
+        { "text": "Brake test: brake pipe 5 bar, brake key locked 60 s, it may drop 0.3 bar at most; unlock.", "where": "brake key in the cab" },
+        { "text": "Brake to 4.2 bar; with a cab car lock the brake key 10 s, the pipe must not rise.", "tca": "Right throttle" },
+        { "text": "Walk the train: every coach braked, then released. A sticking coach: overcharge to 5.3–5.5 bar.", "where": "outside" },
+        { "text": "With a cab car: hold Continuity Test until the main reservoir drops below 5 bar; it must climb to 8.", "where": "cab car" }
+      ]
+    },
+    {
+      "title": "Train data (ZDE)",
+      "steps": [
+        { "text": "BRA: 9 for passenger; 2 freight in G, 4 freight in P.", "where": "ZDE panel" },
+        { "text": "Brh: EBuLa [0], [9] SD, [2] Brh berechnen; enter braked weight and mass, [E].", "where": "EBuLa" },
+        { "text": "Convert it with the ZDE sheet (Brh im Zug) to the BRH to enter; a typical IC is 180, entered as 18.", "where": "back wall sheet" },
+        { "text": "ZL: length in tens of metres, rounded up (254 m = 26). VMZ: lowest limit in tens (200 km/h = 20)." },
+        { "text": "Set BRA, BRH, ZL, VMZ, press ZD. [55] and [Stör] flashing = base data (Grunddaten) still active.", "where": "ZDE panel" },
+        { "text": "Check: hold PZB Wachsam and PZB Frei together; the MFA shows the data.", "tca": "ENG 1 + ENG 2" },
+        { "text": "Enter the train number and set up the GSM-R radio.", "where": "left screen" }
+      ]
+    },
+    {
+      "title": "Departure, and leaving the cab",
+      "steps": [
+        { "text": "Richtungsschalter to Forward; hold the ZS (train supply) switch at Start until 'ZS Aus' goes out.", "tca": "Speedbrake lever" },
+        { "text": "Release the doors on the platform side; after 'Schließvorgang eingeleitet' and Zp 9, back to Lock All.", "tca": "RUD TRIM" },
+        { "text": "Parking brake off: with 1.5 bar or more C-pressure press the right (release) button.", "where": "back wall" },
+        { "text": "Führerbremsventil to Running, release the direct brake (keep it on until power on a gradient).", "tca": "Right throttle" },
+        { "text": "Fahrschalter through Min upwards; or AFB on ('AFB' three times), Fahrschalter to 0 once, set the speed.", "tca": "Left throttle / Flap lever" },
+        { "text": "On the move: SiFa reset, PZB Wachsam, Frei, Befehl 40.", "tca": "Gear lever / ENG 2 / ENG 1 / Round aux" },
+        { "text": "Leaving: full service, parking brake on (left button), brake key locked, reverser Off and out.", "tca": "Speedbrake lever / PARK BRK" }
+      ]
+    }
+  ],
+  "notes": [
+    "Reverser stuck: keep PARK BRK up (the reverser key is held only while it is) and the Fahrschalter at Off ('Z-Steller nicht in Null').",
+    "No pantograph or Hauptschalter: the auxiliary reservoir needs 3.5 bar for the pantograph, 7 bar for the HS (LSS 34F05, or drain below 4.8 bar).",
+    "PARK BRK moves both keys. For the brake-key leak tests, lock the brake key in the cab with the mouse so the reverser key stays in.",
+    "AFB will not take: brake on el with the HSM breaker set, train data entered, brake key unlocked, Forward, Fahrschalter back to 0 once.",
+    "SiFa / PZB dead: open their cut-off valves and set LSS 44F01 first; the aux squares only switch the isolation buttons."
+  ],
+  "source": "Source: BR 101 & Cab-Car Expert Manual, Final Version 3.0, Train Sim Germany"
+}

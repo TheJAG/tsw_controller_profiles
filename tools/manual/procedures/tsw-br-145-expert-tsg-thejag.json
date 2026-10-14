@@ -1,0 +1,93 @@
+{
+  "title": "Aufrüsten: from cold to departure",
+  "intro": "A cold-start service finds the BR 145 dark; a timetable service loads it with no cab occupied ('Kein Führerstand besetzt'), SiFa isolated and its cut-off valves closed. The order: Cab 1, machine room, Cab 2, Cab 1 again.",
+  "sections": [
+    {
+      "title": "Cab 1: battery and desk",
+      "steps": [
+        { "text": "Loco under the wire; at least one brake applied (red square with a black dot)." },
+        { "text": "Battery (Batterie) on; every breaker on this wall closed, switches normal, auxiliary controls off.", "where": "Cab 1 back wall" },
+        { "text": "Headlights as required.", "tca": "AUTO BRK" },
+        { "text": "Fahrschalter at Off; reverser key in, and keep PARK BRK up: the key is held only while it is.", "tca": "Left throttle / PARK BRK" },
+        { "text": "Richtungsschalter to V (Forward); this occupies the cab.", "tca": "Speedbrake lever" },
+        { "text": "Signal and instrument lights on, AFB off; ease the direct brake to 0.5 bar C-pressure or less.", "where": "desk" },
+        { "text": "Parking brake on (light lit).", "where": "back wall" }
+      ]
+    },
+    {
+      "title": "Machine room and Cab 2",
+      "steps": [
+        { "text": "Close every LSS and MSS breaker in the HBG 1, FML 2 and HBG 2 cabinets.", "where": "machine room" },
+        { "text": "SiFa, LZB and PZB isolation switches to normal.", "tca": "Left aux / Right aux", "where": "HBG 1" },
+        { "text": "Open the SiFa and LZB/PZB cut-off valves; the pantograph cut-off valve open." },
+        { "text": "Leave the driver's brake cut-off valve closed, as the manual's start-up wants." },
+        { "text": "Cab 2: breakers closed, switches normal, lights as required, direct brake at Hold, test the horn pedal.", "where": "Cab 2" },
+        { "text": "Cab 2: air compressor switch on, signal and instrument lights on; walk back to Cab 1.", "where": "Cab 2" }
+      ]
+    },
+    {
+      "title": "Power up",
+      "steps": [
+        { "text": "Raise the pantograph, close the Hauptschalter, switch the air compressor on.", "where": "Cab 1 desk" },
+        { "text": "Train number: MTD [4] Zug-BeSy, [2] Zug-/Tf.Nr., [E] for the driver ID; set up GSM-R.", "where": "left MTD" }
+      ]
+    },
+    {
+      "title": "Brake preparation and tests",
+      "steps": [
+        { "text": "Führerbremsventil at Running; the brake pipe stays at 5 bar.", "tca": "Right throttle" },
+        { "text": "Richtungsschalter to M (Neutral): still 5 bar; back to V.", "tca": "Speedbrake lever" },
+        { "text": "Electric brake handle to Decouple (in the cab), brake pipe down 0.8 bar, release.", "tca": "Right throttle" },
+        { "text": "MTD W, Prüfen, soft key 5 'BrR 2 Ein'; after the HSM change repeat Decouple, 0.8 bar, release.", "where": "left MTD" },
+        { "text": "Apply and release the direct brake, watching the C-pressure gauge.", "where": "desk" },
+        { "text": "PZB/LZB test with a direction set and the train brake released: MTD [4] ZugBesy, [8] Prüfen.", "where": "left MTD" },
+        { "text": "It shows the MFA lamps, two emergency applications that empty and refill the pipe, LZB 1200 / 1000 / 120 / 115.", "where": "MFA" },
+        { "text": "SiFa test: direct brake on, hold the pedal (Q) 35 s: light at 30 s, 'Sifa' three times, then emergency brake.", "where": "SiFa pedal" },
+        { "text": "Direct brake on, release the parking brake, machine room and cab lights off, test the horn.", "tca": "Right throttle button" },
+        { "text": "Rolling test: release all brakes, a little power, roll a few metres, power to 0, stop on the direct brake.", "tca": "Left throttle" }
+      ]
+    },
+    {
+      "title": "Wagons: brake test (Bremsprobe)",
+      "steps": [
+        { "text": "Parking and hand brakes on, NBÜ/ep at 0, fill the brake pipe to 5 bar.", "tca": "Right throttle" },
+        { "text": "First wagon released: kick a brake shoe (it moves) or hammer a wheel (a bright, long ring).", "where": "outside" },
+        { "text": "Richtungsschalter to M cuts the brake valve off: at most 0.5 bar lost in 60 s (0.3 passenger).", "tca": "Speedbrake lever" },
+        { "text": "Back to V, let the pipe reach 5.0 bar, then brake to 4.2 bar or lower.", "tca": "Speedbrake lever / Right throttle" },
+        { "text": "Walk one side: brakes applied, couplers tight, hoses joined, cocks open, hand brakes off.", "where": "outside" },
+        { "text": "Rear: angle cock closed, hose and coupler on their hooks, Zg 2 tail signals present.", "where": "last wagon" },
+        { "text": "Release to 5.0 bar; walk the other side: brakes released, brake mode and load as the Wagenliste says.", "tca": "Right throttle" },
+        { "text": "Continuity: open the rear angle cock 15 s; the last wagon brakes, then releases.", "where": "last wagon" }
+      ]
+    },
+    {
+      "title": "Train data (ZDE)",
+      "steps": [
+        { "text": "BRA from the loco's brake mode: R = 9, P = 4, G = 2.", "where": "Bremszettel" },
+        { "text": "BRH: convert the Brh % with the BR 145 ZDE sheet (76–95 % gives 080)." },
+        { "text": "ZL: length rounded up to tens (533 m = 54). VMZ: the formation limit, else the timetable speed." },
+        { "text": "MTD [4] ZugBesy, [1] ZDE: BRA, BRH, ZL, VMZ, [E] twice, then hold PZB Wachsam a second.", "tca": "ENG 2" },
+        { "text": "Check: hold Wachsam and Frei together; [85] lights and the MFA shows the data.", "tca": "ENG 1 + ENG 2" }
+      ]
+    },
+    {
+      "title": "Departure and Abrüsten",
+      "steps": [
+        { "text": "At V: parking brake off, Führerbremsventil to Running, release the direct brake.", "tca": "Speedbrake lever / Right throttle" },
+        { "text": "Fahrschalter through Min upwards; or AFB on, Fahrschalter back to 0, set the speed.", "tca": "Left throttle / Flap lever" },
+        { "text": "On the move: SiFa reset, PZB Wachsam, Frei, Befehl 40.", "tca": "Gear lever / ENG 2 / ENG 1 / Round aux" },
+        { "text": "Abrüsten: radio off or mode C, direct brake to 0.5 bar, parking brake on, sand both ways.", "tca": "Left throttle button" },
+        { "text": "Open the Hauptschalter, lower the pantograph, Richtungsschalter to 0, reverser key out.", "tca": "Speedbrake lever / PARK BRK" },
+        { "text": "Isolate SiFa, close windows and doors, lights off in both cabs and the machine room, battery off.", "tca": "Left aux" }
+      ]
+    }
+  ],
+  "notes": [
+    "Reverser stuck: keep PARK BRK up (the key is held only while it is) and the Fahrschalter at Off. The Fahrschalter moves only at V.",
+    "'Kein Führerstand besetzt' stays: key in and a direction set. The profile drives the front (F) cab only.",
+    "SiFa or PZB will not come on: open their cut-off valves in the machine room; the aux squares only set the isolation switches.",
+    "AFB brakes freight at 0.3 m/s²; do not let it brake and release in quick succession, the distributors can stick.",
+    "PZB isolated: 100 km/h enforced (50 km/h allowed from 2012). Isolate LZB light or at Brh 65 % or less."
+  ],
+  "source": "Source: BR 145 Expert Manual, Version 1.0, Train Sim Germany"
+}

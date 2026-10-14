@@ -136,7 +136,8 @@ function checkProfile(file) {
   const pdf = rel('profiles/documentation/' + slug + '.pdf');
   if (fs.existsSync(pdf)) {
     const pages = (fs.readFileSync(pdf, 'latin1').match(/\/Type\s*\/Page(?![s\w])/g) || []).length;
-    if (pages !== 1) err('manual PDF has ' + pages + ' pages; it must be one A4 page');
+    const want = fs.existsSync(rel('tools/manual/procedures/' + slug + '.json')) ? 2 : 1;
+    if (pages !== want) err('manual PDF has ' + pages + ' pages; it must be ' + (want === 1 ? 'one A4 page' : 'two A4 pages (schematic + procedure)'));
   } else err('manual PDF missing: profiles/documentation/' + slug + '.pdf');
   return { errors, warnings, slug };
 }

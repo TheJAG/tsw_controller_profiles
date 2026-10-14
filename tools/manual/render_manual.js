@@ -1,4 +1,4 @@
-// Quick Reference Manual generator (schematic layout, A4, one page).
+// Quick Reference Manual generator (schematic layout, A4, one page; a second page when tools/manual/procedures/<name>.json exists).
 // Usage (from repo root): node tools/manual/render_manual.js tools/manual/trains/<train>.json [outdir]
 // Produces <outdir>/<name>.html (self-contained) and <outdir>/<name>.pdf printed with headless Chrome/Edge.
 // Default outdir: profiles/documentation
@@ -11,6 +11,10 @@ const D = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 // tools/mk script, which rewrites the data file, does not drop them. A diagram key inside the data file wins.
 const diagTable = path.join(__dirname, 'diagrams.json');
 if (!D.diagram && fs.existsSync(diagTable)) { const tbl = JSON.parse(fs.readFileSync(diagTable, 'utf8')); if (tbl[D.name]) D.diagram = tbl[D.name]; }
+// Optional second page: a step-by-step start-up procedure (tools/manual/procedures/<name>.json, also kept outside the data file
+// for the same reason). Shape: { title, intro, sections: [{ title, steps: [{ text, tca?, where? }] }], notes: [], source }.
+const procFile = path.join(__dirname, 'procedures', D.name + '.json');
+const P = D.procedure || (fs.existsSync(procFile) ? JSON.parse(fs.readFileSync(procFile, 'utf8')) : null);
 const dataDir = path.dirname(path.resolve(dataPath));
 const repoRoot = path.resolve(__dirname, '..', '..');
 const outDir = path.resolve(process.argv[3] || path.join(repoRoot, 'profiles', 'documentation'));
@@ -97,6 +101,23 @@ function schematic() {
 }
 
 const li = arr => (arr || []).map(x => `<li>${esc(x)}</li>`).join('');
+
+// page 2: numbered start-up procedure in two columns; numbering runs on across sections because the order is the procedure
+function procedurePage() {
+  let n = 0;
+  const sections = (P.sections || []).map(s => `<section class="psec"><h2>${esc(s.title)}</h2><ol>${(s.steps || []).map(st => {
+    n++;
+    return `<li><span class="pn">${n}</span><span class="pt">${st.where ? `<span class="pw">${esc(st.where)}</span> ` : ''}${esc(st.text)}${st.tca ? ' ' + st.tca.split(' / ').map(c => `<span class="pc">${esc(c)}</span>`).join(' ') : ''}</span></li>`;
+  }).join('')}</ol></section>`).join('');
+  const notes = (P.notes || []).length ? `<div class="pnotes"><h2>${esc(P.notesTitle || 'If it will not move')}</h2><ul>${li(P.notes)}</ul></div>` : '';
+  return `<div class="sheet proc">
+<div class="head"><div><div class="sub">${esc(D.eyebrow || '')}</div><h1>${esc(D.title)} <span class="h1sub">${esc(P.title || 'Start-up procedure')}</span></h1></div><div style="display:flex;gap:14px">${logos}</div></div>
+${P.intro ? `<p class="pintro">${esc(P.intro)}</p>` : ''}
+<div class="pcols">${sections}</div>
+${notes}
+<div class="foot"><span>${esc(P.source || '')}</span><span>${esc(['Grey tags: the TCA control for that step', D.dlc].filter(Boolean).join(' · '))}</span><span>${esc(D.credit || '')}</span></div>
+</div>`;
+}
 const logos = (D.logos || []).map(l => `<img class="logo" src="${dataUri(l.file)}" alt="${esc(l.alt || '')}" style="${l.invertToNavy ? 'filter:invert(1) brightness(.25) sepia(1) hue-rotate(190deg) saturate(3)' : ''}">`).join('');
 
 const html = `<!doctype html><html><head><meta charset="utf-8"><title>${esc(D.title)} · TCA quick reference</title>
@@ -154,7 +175,24 @@ ul { margin: 0; padding-left: 16px; }
 /* side view: same height on every manual (the Class 333 drawing at full width is 48px), centred, background stripped in-page; diagram.fit = 'clip' keeps the height and cuts the drawing off at the right edge, 'width' fits the whole drawing at a lower height */
 .diagram { position: absolute; left: 36px; right: 36px; bottom: 30px; text-align: center; }
 ${(D.diagram && D.diagram.fit) === 'width' ? '.diagram img { width: 100%; height: auto; display: block; }' : (D.diagram && D.diagram.fit) === 'clip' ? '.diagram { text-align: left; overflow: hidden; -webkit-mask-image: linear-gradient(to right, #000 88%, transparent); mask-image: linear-gradient(to right, #000 88%, transparent); } .diagram img { height: ' + (D.diagram.height || 48) + 'px; width: auto; max-width: none; display: block; }' : '.diagram img { height: ' + (D.diagram && D.diagram.height || 48) + 'px; width: auto; max-width: 100%; display: inline-block; }'}
-.foot { position: absolute; bottom: 0; left: 0; right: 0; padding: 8px 36px; font-size: 10px; color: var(--muted); display: flex; justify-content: space-between; }
+.foot { position: absolute; bottom: 0; left: 0; right: 0; padding: 8px 36px; font-size: 10px; color: var(--muted); display: flex; justify-content: space-between; gap: 16px; }
+.foot span:last-child { white-space: nowrap; }
+.sheet { break-after: page; }
+.sheet:last-of-type { break-after: auto; }
+/* page 2: procedure */
+.proc .head h1 .h1sub { font-size: 26px; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+.pintro { margin: 6px 36px 0; font-size: 11.5px; line-height: 1.4; max-width: 660px; }
+.pcols { column-count: 2; column-gap: 24px; padding: 10px 36px 0; }
+.psec { break-inside: avoid; margin-bottom: 10px; }
+.psec h2 { font-size: 15px; color: var(--navy); border-bottom: 1.5px solid var(--navy); padding-bottom: 3px; margin-bottom: 4px; }
+.psec ol { list-style: none; margin: 0; padding: 0; }
+.psec li { display: grid; grid-template-columns: 19px 1fr; gap: 5px; align-items: start; font-size: 10.2px; line-height: 1.28; padding: 1.5px 0; }
+.pn { font-family: var(--display); font-weight: 700; font-size: 11px; color: #fff; background: var(--navy); border-radius: 50%; width: 17px; height: 17px; display: inline-flex; align-items: center; justify-content: center; margin-top: 1px; }
+.pw { font-family: var(--display); font-weight: 600; font-size: 9.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.pc { display: inline-block; font-family: var(--display); font-weight: 600; font-size: 9.5px; color: var(--navy); background: #fff; border: 1px solid var(--navy); border-radius: 7px; padding: 0 5px; line-height: 13px; white-space: nowrap; }
+.pnotes { margin: 4px 36px 0; background: #fff; border: 1.5px solid var(--navy); border-radius: 8px; padding: 8px 12px; }
+.pnotes h2 { font-size: 14px; color: var(--navy); margin-bottom: 3px; }
+.pnotes li { font-size: 10px; line-height: 1.3; }
 </style></head><body><div class="sheet${D.cab ? ' withcab' : ''}${D.diagram ? '' : ' nodiag'}">
 <div class="head"><div><div class="sub">${esc(D.eyebrow || '')}</div><h1>${esc(D.title)}</h1></div><div style="display:flex;gap:14px">${logos}</div></div>
 <div class="schem">${schematic()}</div>
@@ -167,6 +205,7 @@ ${D.cab ? `<div class="cab"><img src="${dataUri(D.cab.file)}" alt="${esc(D.title
 ${D.diagram ? `<div class="diagram"><img id="diag" src="${dataUri(D.diagram.file)}" alt="${esc(D.title)} side view"></div>` : ''}
 <div class="foot"><span>${esc(D.diagram && D.diagram.source || '')}</span><span>${esc([D.dlc, D.cab ? 'Profile: ' + (D.profileName || '') : ''].filter(Boolean).join(' · '))}</span><span>${esc(D.credit || '')}</span></div>
 </div>
+${P ? procedurePage() : ''}
 ${D.diagram && D.diagram.clean !== false ? `<script>
 // strip the flat background around the side view: flood fill from the picture edges, pixels close to the edge colour become transparent
 (function(){var img=document.getElementById('diag');if(!img)return;var tol=${Number(D.diagram.tolerance) || 40};
