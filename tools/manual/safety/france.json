@@ -1,0 +1,1044 @@
+{
+  "name": "tsw-safety-france-thejag",
+  "title": "Safety systems · France",
+  "eyebrow": "Signals and train protection · Train Sim World · TCA Quadrant Airbus",
+  "colors": {
+    "navy": "#46284a",
+    "blue": "#7a5a80",
+    "red": "#d23732",
+    "paper": "#f6f3f7"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-sncf-aubergine.svg",
+      "alt": "SNCF"
+    }
+  ],
+  "credit": "© TheJAG",
+  "sources": [
+    "Dovetail Games: LGV Méditerranée driver's manual",
+    "SNCF S1A (IN 1482) Signalisation au sol",
+    "SNCF S1C (IN 1493) Répétition des signaux, contrôles de vitesse",
+    "fr.wikipedia: Transmission voie-machine, Contrôle de vitesse par balises, Crocodile, VACMA"
+  ],
+  "pages": [
+    {
+      "sections": [
+        {
+          "kind": "intro",
+          "paragraphs": [
+            "On the **LGV Méditerranée** (Avignon TGV included) there are no lineside signals: **TVM 430** shows the speed for each block in the cab, and the track carries only block marker boards. On the classic line into **Marseille Saint-Charles** the lineside **signaux** apply, with **KVB** checking speeds and stops and the **crocodile** repeating warning signals in the cab. The **VACMA** checks that you are awake. Speeds are in km/h. Quadrant controls are from TheJAG's TGV Duplex profile."
+          ]
+        },
+        {
+          "kind": "systems",
+          "title": "Safety systems",
+          "cols": 4,
+          "items": [
+            {
+              "name": "TVM 430",
+              "full": "Transmission Voie-Machine",
+              "summary": "Cab signalling through the rails. White on green = line speed; black on a **white diamond** = reach this speed by the next marker; white on **black** = applies now; **flashing** = a further reduction follows. Overspeed brakes the train.",
+              "where": "LGV Méditerranée",
+              "quadrant": "Left aux square = KVB, crocodile and TVM to Normal"
+            },
+            {
+              "name": "KVB",
+              "full": "Contrôle de Vitesse par Balises",
+              "summary": "Beacons check the speed to stop signals and limits against a braking curve: an alert 5 km/h over, then the brake. Display codes: **00 / 000** stop ahead, **P / L** limits, **FU** it has braked.",
+              "where": "In and around Marseille",
+              "quadrant": "Left aux square = KVB, crocodile and TVM to Normal"
+            },
+            {
+              "name": "Crocodile",
+              "full": "Répétition des signaux (RS)",
+              "summary": "A contact ramp at warning signals. Closed-signal warning: the alert lamp flashes (with a bip); press **Acknowledge**; it stays lit until you pass the signal. Open signal: a tone only. Real world: 5 s, then the brake.",
+              "where": "Classic line into Marseille",
+              "quadrant": "**Gear lever** = Acknowledge; left aux square = KVB, crocodile and TVM to Normal"
+            },
+            {
+              "name": "VACMA",
+              "full": "Veille Automatique à Contrôle de Maintien d'Appui",
+              "summary": "Real: hold the pedal; release and press again when the buzzer asks. **In TSW**: above 8 km/h a buzzer every 60 s; press Acknowledge within 5 s or the emergency brake applies.",
+              "where": "Every SNCF train",
+              "quadrant": "**Gear lever** = Acknowledge; right aux square = VACMA to Normal"
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Lineside signals (cible)",
+          "note": "Classic line only. Flashing (rays) changes the meaning: see each card. The small œilleton bottom left is lit with a sémaphore on a panel with an Nf plate.",
+          "cols": 5,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 48,
+                    "h": 128,
+                    "lamps": [
+                      {
+                        "x": 14,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 36,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 36,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 58,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 14,
+                        "y": 80,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 102,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 10,
+                        "y": 120,
+                        "c": "lunar",
+                        "s": "off",
+                        "r": 4
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Voie libre",
+              "meaning": "Clear: line speed.",
+              "drive": "Drive on."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 48,
+                    "h": 128,
+                    "lamps": [
+                      {
+                        "x": 14,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 36,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 36,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 58,
+                        "c": "green",
+                        "s": "flash"
+                      },
+                      {
+                        "x": 14,
+                        "y": 80,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 102,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 10,
+                        "y": 120,
+                        "c": "lunar",
+                        "s": "off",
+                        "r": 4
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Feu vert clignotant",
+              "meaning": "Trains above 160: be at 160 at the next signal.",
+              "drive": "Brake to 160; crocodile tone only."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 48,
+                    "h": 128,
+                    "lamps": [
+                      {
+                        "x": 14,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 36,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 36,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 58,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 80,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 102,
+                        "c": "yellow",
+                        "s": "flash"
+                      },
+                      {
+                        "x": 10,
+                        "y": 120,
+                        "c": "lunar",
+                        "s": "off",
+                        "r": 4
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Feu jaune clignotant",
+              "meaning": "Next signal is an avertissement at a short distance from its stop signal.",
+              "drive": "Acknowledge; brake so you can stop in that short distance."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 48,
+                    "h": 128,
+                    "lamps": [
+                      {
+                        "x": 14,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 36,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 36,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 58,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 80,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 102,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 10,
+                        "y": 120,
+                        "c": "lunar",
+                        "s": "off",
+                        "r": 4
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Avertissement",
+              "meaning": "Be able to stop at the next stop signal.",
+              "drive": "Acknowledge the crocodile; brake to stop."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 48,
+                    "h": 128,
+                    "lamps": [
+                      {
+                        "x": 14,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 36,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 36,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 58,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 80,
+                        "c": "red",
+                        "s": "on"
+                      },
+                      {
+                        "x": 14,
+                        "y": 102,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 10,
+                        "y": 120,
+                        "c": "lunar",
+                        "s": "on",
+                        "r": 4
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Sémaphore",
+              "meaning": "Stop (block signal, œilleton lit).",
+              "drive": "Stop; then on sight at max 30 if allowed."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 48,
+                    "h": 128,
+                    "lamps": [
+                      {
+                        "x": 14,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 36,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 36,
+                        "c": "red",
+                        "s": "on"
+                      },
+                      {
+                        "x": 14,
+                        "y": 58,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 80,
+                        "c": "red",
+                        "s": "on"
+                      },
+                      {
+                        "x": 14,
+                        "y": 102,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 10,
+                        "y": 120,
+                        "c": "lunar",
+                        "s": "off",
+                        "r": 4
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Carré",
+              "meaning": "Absolute stop (interlocking); œilleton dark.",
+              "drive": "Stop; pass only on an order."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 48,
+                    "h": 128,
+                    "lamps": [
+                      {
+                        "x": 14,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 36,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 36,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 58,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 80,
+                        "c": "red",
+                        "s": "flash"
+                      },
+                      {
+                        "x": 14,
+                        "y": 102,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 10,
+                        "y": 120,
+                        "c": "lunar",
+                        "s": "off",
+                        "r": 4
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Feu rouge clignotant",
+              "meaning": "Pass without stopping, on sight to the end of the block.",
+              "drive": "Max 15 km/h, ready to stop."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 48,
+                    "h": 128,
+                    "lamps": [
+                      {
+                        "x": 14,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 34,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 34,
+                        "y": 36,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 36,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 58,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 80,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 102,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 10,
+                        "y": 120,
+                        "c": "lunar",
+                        "s": "off",
+                        "r": 4
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Ralentissement 30",
+              "meaning": "Points at 30 at the next signal.",
+              "drive": "Acknowledge; be at 30 at the next signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 48,
+                    "h": 128,
+                    "lamps": [
+                      {
+                        "x": 14,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "flash"
+                      },
+                      {
+                        "x": 34,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "flash"
+                      },
+                      {
+                        "x": 34,
+                        "y": 36,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 36,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 58,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 80,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 102,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 10,
+                        "y": 120,
+                        "c": "lunar",
+                        "s": "off",
+                        "r": 4
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Ralentissement 60",
+              "meaning": "Points at 60 at the next signal.",
+              "drive": "Acknowledge; be at 60 at the next signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 48,
+                    "h": 128,
+                    "lamps": [
+                      {
+                        "x": 14,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 14,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 34,
+                        "y": 36,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 14,
+                        "y": 36,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 58,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 80,
+                        "c": "red",
+                        "s": "off"
+                      },
+                      {
+                        "x": 14,
+                        "y": 102,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 10,
+                        "y": 120,
+                        "c": "lunar",
+                        "s": "off",
+                        "r": 4
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Rappel 30 / 60",
+              "meaning": "Steady 30, flashing 60 over the points at this signal.",
+              "drive": "Hold it until the rear has cleared the points."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sections": [
+        {
+          "kind": "aspects",
+          "title": "TVM 430 cab display",
+          "note": "Typical TVM 430 steps on a 320 line: 320, 300, 270, 230, 170, 80, 000; other values appear in TSW.",
+          "cols": 5,
+          "items": [
+            {
+              "signal": {
+                "post": false,
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "320",
+                    "fg": "white",
+                    "bg": "green",
+                    "border": "none",
+                    "shape": "rect",
+                    "w": 56,
+                    "h": 34,
+                    "size": 20
+                  }
+                ]
+              },
+              "name": "Line speed",
+              "meaning": "White on green: line speed here and in the next block.",
+              "drive": "Drive at the line speed."
+            },
+            {
+              "signal": {
+                "post": false,
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "270",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "diamond",
+                    "w": 62,
+                    "size": 16
+                  }
+                ]
+              },
+              "name": "Announcement",
+              "meaning": "Black on a white diamond: the next block is limited to this.",
+              "drive": "Brake to reach it by the next marker."
+            },
+            {
+              "signal": {
+                "post": false,
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "270",
+                    "fg": "white",
+                    "bg": "black",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 56,
+                    "h": 34,
+                    "size": 20
+                  }
+                ]
+              },
+              "name": "Execution",
+              "meaning": "White on black: this speed applies now.",
+              "drive": "Hold at or below it."
+            },
+            {
+              "signal": {
+                "post": false,
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "000",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "diamond",
+                    "w": 62,
+                    "size": 16
+                  }
+                ]
+              },
+              "name": "000",
+              "meaning": "Stop ahead: be able to stop before the next marker.",
+              "drive": "Stop at an Nf marker; an F marker may be passed."
+            },
+            {
+              "signal": {
+                "post": false,
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "■ ■ ■",
+                    "fg": "red",
+                    "bg": "black",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 56,
+                    "h": 34,
+                    "size": 14
+                  }
+                ]
+              },
+              "name": "Red squares",
+              "meaning": "Full stop within range / rouge cabine.",
+              "drive": "Stop; on sight at max 30 if allowed."
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Boards",
+          "cols": 6,
+          "items": [
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "▶",
+                    "fg": "yellow",
+                    "bg": "#1f4fb5",
+                    "border": "black",
+                    "shape": "square",
+                    "w": 34,
+                    "size": 20
+                  },
+                  {
+                    "kind": "plate",
+                    "text": "Nf",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 26,
+                    "h": 16,
+                    "size": 10
+                  }
+                ]
+              },
+              "name": "Repère TVM",
+              "meaning": "Block marker; the triangle points at its track. Nf = do not pass at 000.",
+              "drive": "Reach the displayed speed by the marker."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "CAB",
+                    "fg": "white",
+                    "bg": "black",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 40,
+                    "h": 24,
+                    "size": 13
+                  }
+                ]
+              },
+              "name": "Entrée CAB",
+              "meaning": "Start of TVM cab signalling (an advance board comes first).",
+              "drive": "Follow the cab display from here."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "CAB",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 40,
+                    "h": 24,
+                    "size": 13,
+                    "bar": "red"
+                  }
+                ]
+              },
+              "name": "Sortie CAB",
+              "meaning": "End of TVM: lineside signals from here.",
+              "drive": "Watch the signals; KVB and crocodile take over."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "160",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "diamond",
+                    "w": 46,
+                    "size": 13
+                  }
+                ]
+              },
+              "name": "TIV à distance",
+              "meaning": "A lower limit ahead (lozenge = with crocodile).",
+              "drive": "Acknowledge; brake to reach it by the Z board."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "Z",
+                    "fg": "white",
+                    "bg": "black",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 30,
+                    "h": 34
+                  }
+                ]
+              },
+              "name": "Z",
+              "meaning": "Start of the speed limit.",
+              "drive": "Be at the limit here."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "R",
+                    "fg": "white",
+                    "bg": "black",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 30,
+                    "h": 34
+                  }
+                ]
+              },
+              "name": "R",
+              "meaning": "End of the speed limit.",
+              "drive": "Accelerate once the rear has passed."
+            }
+          ]
+        },
+        {
+          "kind": "howto",
+          "title": "How to drive under TVM, KVB, the crocodile and the VACMA",
+          "cols": 3,
+          "blocks": [
+            {
+              "title": "TVM 430 on the LGV",
+              "steps": [
+                "Drive to the speed on the cab display.",
+                "**White diamond**: brake now so you reach it by the next block marker.",
+                "**White on black**: hold at or below it in this block.",
+                "**Flashing**: the block after the next is slower still.",
+                "**000**: be able to stop at the next marker (Nf: stop there)."
+              ]
+            },
+            {
+              "title": "Crocodile and KVB near Marseille",
+              "steps": [
+                "At a closed-signal warning the alert lamp flashes: press **Acknowledge** (gear lever).",
+                "Brake for the next signal; KVB checks your curve (00 / 000 on its display).",
+                "KVB overspeed: alert, then the emergency brake (FU). Stop, Acknowledge, reset the controls, drive on on sight."
+              ]
+            },
+            {
+              "title": "VACMA",
+              "steps": [
+                "Keep the VACMA at Normal (right aux square).",
+                "Above 8 km/h the buzzer sounds every 60 s: press **Acknowledge** (gear lever) within 5 s.",
+                "Missed: emergency brake. Wait for a complete stop, Acknowledge, release and drive on."
+              ]
+            },
+            {
+              "title": "Before departure",
+              "steps": [
+                "KVB / crocodile / TVM and VACMA to Normal (aux squares lit): the train loads with them isolated.",
+                "Check the signal or the TVM display, and the doors.",
+                "Frein direct to Release, handle into power."
+              ]
+            },
+            {
+              "title": "At a signal at stop",
+              "bullets": [
+                "Sémaphore (œilleton lit): stop; then on sight at max 30 km/h where allowed.",
+                "Carré: stop; pass only on an order from the agent-circulation.",
+                "Feu rouge clignotant: no stop, on sight at max 15 km/h."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

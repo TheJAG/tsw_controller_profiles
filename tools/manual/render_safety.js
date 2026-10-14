@@ -60,6 +60,7 @@ function part(p) {
       else g = `<rect x="${x + 0.75}" y="${y + 0.75}" width="${w - 1.5}" height="${h - 1.5}" rx="${p.rx != null ? p.rx : 2}"`;
       g += ` fill="${bg}" stroke="${bd}" stroke-width="${p.bw || 1.5}" stroke-linejoin="round"/>`;
       const ty = shape === 'triangle' ? y + h * 0.62 : shape === 'triangle-down' ? y + h * 0.38 : y + h / 2;
+      if (p.bar) g += `<line x1="${x + 3}" y1="${y + h - 3}" x2="${x + w - 3}" y2="${y + 3}" stroke="${col(p.bar === true ? (p.fg || 'black') : p.bar)}" stroke-width="3"/>`;
       return g + lines.map((l, i) => `<text x="${cx}" y="${(ty + (i - (lines.length - 1) / 2) * fs * 1.05 + fs * 0.36).toFixed(1)}" class="pt" style="font-size:${fs}px" fill="${fg}" text-anchor="middle">${esc(l)}</text>`).join('');
     } };
   }
