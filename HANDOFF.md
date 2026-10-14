@@ -2,6 +2,8 @@
 
 Short status page, updated with each train. The recipe and working rules live in `CLAUDE.md`, layout and manual rules in `tools/CONVENTIONS.md`, lever and vendor quirks in `tools/GOTCHAS.md`, the pipeline in `tools/README.md`, the subagent brief in `tools/CAPTURE_AGENT.md`. A new session needs nothing else: "continue with the NS SNG" is a complete prompt.
 
+**Cab test checklist (since 2026-10-14):** https://claude.ai/artifact/GsvCi4ZJBvjygdJP24TE5r, a private artifact page with one block per train (the 145 SOON trains plus 7 DONE rechecks) listing what the cab test must decide, taken from the entries below. The user marks each check ✓ / ✗ and adds a note there over many days. "Read the checklist" means: `ArtifactData` list of collection `results` (doc id = train slug, `{marks: {c1: "ok"|"issue"}, note}`), the check texts are in collection `trains` (`{name, dev, confidence, checks: [{id, text}], handoffLine}`). Fix the ✗ items and notes, then update that train's `trains` doc (drop settled checks, add new ones with fresh ids, never reuse an id) and promote a train with every check ✓ to `DONE ✅`.
+
 ## Done (2026-10-10)
 
 - Phase A tooling: `capture_train.js`, `draft_profile.js` (+ `families.json`), `draft_manual.js`, `readme_status.js` (+ `trains.json`), `crop_image.ps1`, `stitch_cars.ps1`, `tsw_input.ps1`. Verified: the drafter regenerates the Class 153 profile from its capture.

@@ -17,7 +17,7 @@ This folder is both the live config dir of the TSW Controller App (`C:\Games\Too
 4. `node tools/build_release.js profiles/<file>.json` writes the release and runs `tools/check.js` on the profile; fix every error it prints.
 5. Manual: `node tools/manual/render_manual.js tools/manual/trains/<slug>.json` writes the HTML and the A4 PDF into `profiles/documentation/` and runs the full check (manual data, assets, one page). Look at the page before committing: `powershell -NoProfile -File tools/pdf2png.ps1 <pdf> <scratch dir>` renders an 800 px PNG. Publish the HTML as an artifact in the chat so the user sees it right away. (`tools/draft_manual.js` scaffolds manual data for a train without an mk script; the Word path `tools/gen_manual.js` + `tools/specs/` is only for touching up the pre-333 manuals.)
 6. README line via `node tools/readme_status.js "<README name>" <soon|done> --profile <slug> --dev DTG` (`--add "<country>"` for a new name; it also regenerates `tools/trains.json`). `SOON 🟨` while the cab test is pending, `DONE ✅` after it.
-7. The user tests on the controller and reports; iterate, then rebuild the release and the manual.
+7. The user tests on the controller and reports, through the cab test checklist artifact (link and data layout at the top of `HANDOFF.md`; add a new train's open points there as a `trains` doc); iterate, then rebuild the release and the manual.
 
 ## Working rules (user decisions, 2026-10-10)
 
