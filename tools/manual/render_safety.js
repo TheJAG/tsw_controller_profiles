@@ -118,7 +118,7 @@ function section(S) {
 const logos = (D.logos || []).map(l => `<img class="logo" src="${dataUri(l.file)}" alt="${esc(l.alt || '')}">`).join('');
 const N = D.pages.length;
 const pages = D.pages.map((P, i) => `<div class="sheet" data-page="${i + 1}">
-<div class="head${i ? ' small' : ''}"><div><div class="sub">${esc(D.eyebrow || '')}</div><h1>${esc(D.title)}</h1></div><div style="display:flex;gap:14px">${logos}</div></div>
+<div class="head${i ? ' small' : ''}"><div class="ht"><div class="sub">${esc(D.eyebrow || '')}</div><h1>${esc(D.title)}</h1></div><div style="display:flex;gap:14px">${logos}</div></div>
 <div class="body">${P.sections.map(section).join('')}</div>
 <div class="foot"><span>${esc(D.sources && D.sources.length ? 'Sources: ' + D.sources.join(' · ') : '')}</span><span>${i + 1} / ${N}</span><span>${esc(D.credit || '')}</span></div>
 </div>`).join('');
@@ -134,10 +134,13 @@ html, body { margin: 0; padding: 0; background: #fff; }
 .sheet:last-child { break-after: auto; }
 .sheet * { box-sizing: border-box; }
 h1, h2, h3 { font-family: var(--display); margin: 0; line-height: 1; }
-.logo { height: 28px; width: auto; display: block; }
-.head { padding: 22px 36px 4px; display: flex; align-items: flex-end; justify-content: space-between; }
+.logo { height: 28px; width: auto; max-width: 150px; object-fit: contain; display: block; }
+.head { padding: 22px 36px 4px; display: flex; gap: 20px; align-items: flex-end; justify-content: space-between; }
 .head h1 { font-size: 46px; font-weight: 700; color: var(--navy); letter-spacing: -.01em; }
 .head.small { padding-top: 16px; } .head.small h1 { font-size: 26px; } .head.small .logo { height: 20px; }
+/* header stays on one line: a long title next to wide logos gets a smaller size */
+.head .ht { flex: 1 1 auto; min-width: 0; } .head .ht h1, .head .sub { white-space: nowrap; } .head > div:last-child { flex: 0 0 auto; }
+.head:not(.small) h1 { font-size: ${D.title.length > 24 ? 38 : 46}px; }
 .head .sub { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; font-family: var(--display); font-weight: 600; }
 .sheet { display: flex; flex-direction: column; }
 /* the body takes the room between the header and the footer, so the overflow check also catches text running into the footer */

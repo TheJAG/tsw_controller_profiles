@@ -1,0 +1,1287 @@
+{
+  "name": "tsw-safety-united-states-canada-thejag",
+  "title": "Safety systems · US & Canada",
+  "eyebrow": "Signals and train protection · Train Sim World · TCA Quadrant Airbus",
+  "colors": {
+    "navy": "#1f3b52",
+    "blue": "#4d7593",
+    "red": "#c8102e",
+    "paper": "#f3f6f8"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-amtrak-slate.svg",
+      "alt": "Amtrak"
+    },
+    {
+      "file": "../../assets/logo-cn-slate.svg",
+      "alt": "CN"
+    }
+  ],
+  "credit": "© TheJAG",
+  "sources": [
+    "GCOR (General Code of Operating Rules)",
+    "NORAC Operating Rules",
+    "Amtrak NORAC / cab signal instructions",
+    "CROR (Canadian Rail Operating Rules)",
+    "FRA 49 CFR 236",
+    "en.wikipedia: Railroad signal, Cab signaling, ACSES, Positive train control, Alerter"
+  ],
+  "pages": [
+    {
+      "sections": [
+        {
+          "kind": "intro",
+          "paragraphs": [
+            "Each railroad's rule book names the aspects. **NORAC** (Northeast Corridor, NJ Transit, Horseshoe Curve) and **CROR** (Canada) are speed signalling: the aspect names the speed, Limited 45, Medium 30, Slow 15 mph. **GCOR** (BNSF, UP, Metrolink, Caltrain, Tri-Rail) is route signalling: \"Diverging\" means the turnout at its posted speed. LIRR and Metro-North have their own books with the same aspects. **Restricted speed**: max 20 mph (Canada 15), able to stop within half the range of vision. On the corridor the **cab signal** rules and **ACSES** enforces the limits; the **alerter** checks that you are awake."
+          ]
+        },
+        {
+          "kind": "systems",
+          "title": "Safety systems",
+          "cols": 3,
+          "items": [
+            {
+              "name": "Cab signals · ATC",
+              "full": "Pulse-code cab signals with Automatic Train Control",
+              "summary": "The cab display repeats the signal aspect and its speed. On a downgrade an alarm sounds: **acknowledge** within about 6 s and make a **suppression** brake application, or ATC applies a penalty brake.",
+              "where": "Northeast Corridor, LIRR, Metro-North, NJ Transit, MBTA, Tri-Rail; Sherman Hill (UP, buggy display)",
+              "quadrant": "**Gear lever** on the Amtrak, LIRR, Metro-North stock and the NJT Multi-Level; **ENG 2** on the MBTA cab cars and the SD70ACe. NJT locos, Arrow III, Tri-Rail locos: in the cab"
+            },
+            {
+              "name": "ACSES II",
+              "full": "Advanced Civil Speed Enforcement System",
+              "summary": "Transponders give the civil speed limits and **positive stops** at home signals. The display shows the target speed; brake before the restriction. Warning: about 8 s to brake.",
+              "where": "Amtrak NEC, NJ Transit, Metro-North, LIRR, MBTA",
+              "quadrant": "Left aux square = ACSES · ATC fuse or cut-out"
+            },
+            {
+              "name": "PTC (I-ETMS)",
+              "full": "Positive Train Control",
+              "summary": "In the real world GPS and wayside messages enforce signals, speed limits and authorities. **In TSW not enforced**: the PTC fuse only lights the display.",
+              "where": "Real: BNSF, UP, Metrolink, Caltrain (I-ETMS), Tri-Rail. TSW: fuse on the F125, F59PHR, MP36, Arrow III, Tri-Rail locos",
+              "quadrant": "PTC fuse on the left aux square where fitted"
+            },
+            {
+              "name": "ATS",
+              "full": "Automatic Train Stop (intermittent)",
+              "summary": "An inductor at each signal showing anything but Clear sounds an alarm: **acknowledge** (forestall) within about 8 s or the brakes apply.",
+              "where": "Ex-Santa Fe lines: Metrolink San Bernardino and Antelope Valley; TSW's Tri-Rail Rotem also has it",
+              "quadrant": "**ENG 2** ATS ack on the Rotem cab cars; F125, F59PHR, MP36: in the cab. Left aux = ATS fuse"
+            },
+            {
+              "name": "Alerter",
+              "full": "Driver vigilance",
+              "summary": "With no control moved for a while (shorter at speed), a light then a buzzer: **reset** or the train gets a penalty brake. Any control movement also resets.",
+              "where": "Every modern locomotive and cab car",
+              "quadrant": "**Gear lever** = alerter reset on most locos; Caltrain Bi-Level: ENG 2; F7s: safety pedal / deadman. Aux square = alerter fuse"
+            },
+            {
+              "name": "CROR signals",
+              "full": "Canadian Rail Operating Rules",
+              "summary": "Canada names aspects by this and the next signal: Clear to Stop, Clear to Limited, Limited to Clear. Same lamps, different grammar (flashing green = Clear to Limited).",
+              "where": "Oakville Subdivision (CN, Metrolinx)",
+              "quadrant": "CN locos: gear lever = alerter"
+            }
+          ]
+        },
+        {
+          "kind": "table",
+          "title": "Cab signal aspects (Northeast Corridor, 9-aspect)",
+          "head": [
+            "Cab aspect",
+            "Max speed",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "**Clear 150 / 125 / 100**",
+              "150, 125 or 100 mph",
+              "Proceed; ACSES enforces the civil limit"
+            ],
+            [
+              "**Cab Speed 80 / 60**",
+              "80 or 60 mph",
+              "Proceed at the cab speed (wayside: flashing green); used for high-speed turnouts"
+            ],
+            [
+              "**Approach Limited**",
+              "45 mph",
+              "Proceed approaching the next signal at Limited speed"
+            ],
+            [
+              "**Approach Medium**",
+              "30 mph",
+              "Proceed approaching the next signal at Medium speed"
+            ],
+            [
+              "**Approach**",
+              "30 mph",
+              "Prepared to stop at the next signal"
+            ],
+            [
+              "**Restricting**",
+              "20 mph",
+              "Restricted speed"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "sections": [
+        {
+          "kind": "aspects",
+          "title": "Colour-light signals (GCOR, two heads)",
+          "note": "Upper head = the main route, lower head = the diverging route. A number plate makes a signal permissive: Stop and Proceed at restricted speed. Rays = flashing.",
+          "cols": 6,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  },
+                  {
+                    "kind": "gap",
+                    "h": 2
+                  },
+                  {
+                    "kind": "head",
+                    "column": [
+                      "red"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  }
+                ]
+              },
+              "name": "Clear",
+              "meaning": "Proceed at track speed.",
+              "drive": "Track speed."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow*"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  },
+                  {
+                    "kind": "gap",
+                    "h": 2
+                  },
+                  {
+                    "kind": "head",
+                    "column": [
+                      "red"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  }
+                ]
+              },
+              "name": "Advance Approach",
+              "meaning": "Prepare to pass the next signal at 40 mph (UP) or 50 mph (BNSF).",
+              "drive": "Start braking; next signal Approach."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  },
+                  {
+                    "kind": "gap",
+                    "h": 2
+                  },
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  }
+                ]
+              },
+              "name": "Approach Diverging",
+              "meaning": "Prepare to take the diverging route at the next signal (BNSF: Approach Medium).",
+              "drive": "Be at the turnout speed at the next signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  },
+                  {
+                    "kind": "gap",
+                    "h": 2
+                  },
+                  {
+                    "kind": "head",
+                    "column": [
+                      "red"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  }
+                ]
+              },
+              "name": "Approach",
+              "meaning": "Prepare to stop at the next signal.",
+              "drive": "Reduce to 30 mph at once, stop short of the next signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "red"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  },
+                  {
+                    "kind": "gap",
+                    "h": 2
+                  },
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  }
+                ]
+              },
+              "name": "Diverging Clear",
+              "meaning": "Take the diverging route at its posted speed.",
+              "drive": "Turnout speed through the points."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "red"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  },
+                  {
+                    "kind": "gap",
+                    "h": 2
+                  },
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  }
+                ]
+              },
+              "name": "Diverging Approach",
+              "meaning": "Diverging route, then prepare to stop at the next signal.",
+              "drive": "Turnout speed, then brake."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "red*"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  },
+                  {
+                    "kind": "gap",
+                    "h": 2
+                  },
+                  {
+                    "kind": "head",
+                    "column": [
+                      "red"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  }
+                ]
+              },
+              "name": "Restricting",
+              "meaning": "Proceed at restricted speed.",
+              "drive": "Max 20 mph, ready to stop short."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "red"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  },
+                  {
+                    "kind": "gap",
+                    "h": 2
+                  },
+                  {
+                    "kind": "head",
+                    "column": [
+                      "red"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  },
+                  {
+                    "kind": "plate",
+                    "text": "123",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 34,
+                    "h": 20,
+                    "size": 12
+                  }
+                ]
+              },
+              "name": "Stop and Proceed",
+              "meaning": "Number plate: stop, then proceed at restricted speed.",
+              "drive": "Stop, then max 20 mph."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "red"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  },
+                  {
+                    "kind": "gap",
+                    "h": 2
+                  },
+                  {
+                    "kind": "head",
+                    "column": [
+                      "red"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  }
+                ]
+              },
+              "name": "Stop",
+              "meaning": "Absolute signal at an interlocking: stop.",
+              "drive": "Stop before the signal; ACSES enforces it on the corridor."
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Position-light signals (Pennsylvania Railroad)",
+          "note": "Rows of three lights: the angle of the row is the aspect. Horseshoe Curve keeps the amber originals; on the NEC (New York – Trenton) the same rows are coloured: vertical green, diagonal yellow, horizontal red. Sand Patch has B&O colour-position lights.",
+          "cols": 5,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 60,
+                    "h": 60,
+                    "lamps": [
+                      {
+                        "x": 30,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 30,
+                        "y": 10,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 30,
+                        "y": 50,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 10,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 50,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 16,
+                        "y": 16,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 44,
+                        "y": 16,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 16,
+                        "y": 44,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 44,
+                        "y": 44,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      }
+                    ],
+                    "shape": "round"
+                  }
+                ]
+              },
+              "name": "Clear",
+              "meaning": "Vertical row: proceed.",
+              "drive": "Track speed."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 60,
+                    "h": 60,
+                    "lamps": [
+                      {
+                        "x": 30,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 30,
+                        "y": 10,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 30,
+                        "y": 50,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 10,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 50,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 16,
+                        "y": 16,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 44,
+                        "y": 16,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 16,
+                        "y": 44,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 44,
+                        "y": 44,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      }
+                    ],
+                    "shape": "round"
+                  }
+                ]
+              },
+              "name": "Approach",
+              "meaning": "Diagonal row: prepare to stop at the next signal.",
+              "drive": "Brake to stop short of the next signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 60,
+                    "h": 60,
+                    "lamps": [
+                      {
+                        "x": 30,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 30,
+                        "y": 10,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 30,
+                        "y": 50,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 10,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 50,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 16,
+                        "y": 16,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 44,
+                        "y": 16,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 16,
+                        "y": 44,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 44,
+                        "y": 44,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      }
+                    ],
+                    "shape": "round"
+                  },
+                  {
+                    "kind": "gap",
+                    "h": 2
+                  },
+                  {
+                    "kind": "head",
+                    "w": 60,
+                    "h": 60,
+                    "lamps": [
+                      {
+                        "x": 30,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 30,
+                        "y": 10,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 30,
+                        "y": 50,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 10,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 50,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 16,
+                        "y": 16,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 44,
+                        "y": 16,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 16,
+                        "y": 44,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 44,
+                        "y": 44,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      }
+                    ],
+                    "shape": "round"
+                  }
+                ]
+              },
+              "name": "Medium Clear",
+              "meaning": "Horizontal over vertical: medium speed through the interlocking.",
+              "drive": "Max 30 mph through the points."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 60,
+                    "h": 60,
+                    "lamps": [
+                      {
+                        "x": 30,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 30,
+                        "y": 10,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 30,
+                        "y": 50,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 10,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 50,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 16,
+                        "y": 16,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 44,
+                        "y": 16,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 16,
+                        "y": 44,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 44,
+                        "y": 44,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      }
+                    ],
+                    "shape": "round"
+                  },
+                  {
+                    "kind": "gap",
+                    "h": 2
+                  },
+                  {
+                    "kind": "head",
+                    "w": 60,
+                    "h": 60,
+                    "lamps": [
+                      {
+                        "x": 30,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 30,
+                        "y": 10,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 30,
+                        "y": 50,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 10,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 50,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 16,
+                        "y": 16,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 44,
+                        "y": 16,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 16,
+                        "y": 44,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 44,
+                        "y": 44,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      }
+                    ],
+                    "shape": "round"
+                  }
+                ]
+              },
+              "name": "Restricting",
+              "meaning": "Horizontal over the falling diagonal: restricted speed.",
+              "drive": "Max 20 mph, ready to stop."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 60,
+                    "h": 60,
+                    "lamps": [
+                      {
+                        "x": 30,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 30,
+                        "y": 10,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 30,
+                        "y": 50,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 10,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 50,
+                        "y": 30,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 16,
+                        "y": 16,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 44,
+                        "y": 16,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 16,
+                        "y": 44,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      },
+                      {
+                        "x": 44,
+                        "y": 44,
+                        "c": "yellow",
+                        "s": "off",
+                        "r": 5.5
+                      }
+                    ],
+                    "shape": "round"
+                  }
+                ]
+              },
+              "name": "Stop",
+              "meaning": "Horizontal row: stop.",
+              "drive": "Stop before the signal."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sections": [
+        {
+          "kind": "aspects",
+          "title": "CROR signals (Canada)",
+          "cols": 4,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  },
+                  {
+                    "kind": "gap",
+                    "h": 2
+                  },
+                  {
+                    "kind": "head",
+                    "column": [
+                      "red"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  }
+                ]
+              },
+              "name": "Clear",
+              "meaning": "Proceed.",
+              "drive": "Track speed."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow*"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  },
+                  {
+                    "kind": "gap",
+                    "h": 2
+                  },
+                  {
+                    "kind": "head",
+                    "column": [
+                      "red"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  }
+                ]
+              },
+              "name": "Advance Clear to Stop",
+              "meaning": "Proceed, preparing to stop at the second signal.",
+              "drive": "Next signal Clear to Stop."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  },
+                  {
+                    "kind": "gap",
+                    "h": 2
+                  },
+                  {
+                    "kind": "head",
+                    "column": [
+                      "red"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  }
+                ]
+              },
+              "name": "Clear to Stop",
+              "meaning": "Proceed, preparing to stop at the next signal.",
+              "drive": "Brake to stop short of it."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "red"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  },
+                  {
+                    "kind": "gap",
+                    "h": 2
+                  },
+                  {
+                    "kind": "head",
+                    "column": [
+                      "red"
+                    ],
+                    "shape": "round",
+                    "r": 8
+                  }
+                ]
+              },
+              "name": "Stop",
+              "meaning": "Stop.",
+              "drive": "Stop before the signal."
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Signs and boards",
+          "cols": 5,
+          "items": [
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "60\n50",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 34,
+                    "h": 46
+                  }
+                ]
+              },
+              "name": "Speed sign",
+              "meaning": "Maximum speed from here; two numbers = passenger / freight.",
+              "drive": "Lower: by the sign. Higher: once the rear has passed."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "",
+                    "fg": "black",
+                    "bg": "yellow",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 36,
+                    "h": 26
+                  }
+                ]
+              },
+              "name": "Yellow board",
+              "meaning": "Temporary speed restriction ahead (slow order).",
+              "drive": "Brake to the slow order speed."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "",
+                    "fg": "black",
+                    "bg": "green",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 36,
+                    "h": 26
+                  }
+                ]
+              },
+              "name": "Green board",
+              "meaning": "End of the slow order.",
+              "drive": "Resume once the rear has passed."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "W",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 30,
+                    "h": 36
+                  }
+                ]
+              },
+              "name": "Whistle post",
+              "meaning": "A grade crossing ahead.",
+              "drive": "Horn: long, long, short, long; bell on."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "",
+                    "fg": "black",
+                    "bg": "red",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 36,
+                    "h": 26
+                  }
+                ]
+              },
+              "name": "Red flag / board",
+              "meaning": "Stop: work on the track ahead.",
+              "drive": "Stop; proceed only when authorised."
+            }
+          ]
+        },
+        {
+          "kind": "howto",
+          "title": "How to drive under cab signals, ACSES, PTC, ATS and the alerter",
+          "cols": 3,
+          "blocks": [
+            {
+              "title": "Cab signal downgrade (ATC)",
+              "steps": [
+                "The cab display drops (e.g. Clear to Approach) and the alarm sounds.",
+                "Within about 6 s: **Acknowledge** (see the card for your train) and put the automatic brake in **Suppression** (EMUs: controller to Coast and brake).",
+                "Release once below the new cab-signal speed.",
+                "Some trains (LIRR) want every cab-speed change acknowledged, upgrades too."
+              ]
+            },
+            {
+              "title": "ACSES speed and stop enforcement",
+              "steps": [
+                "Watch the ACSES target speed and distance on the display.",
+                "When the warning sounds, acknowledge and brake to the target before the restriction.",
+                "Positive stop: ACSES stops you within 1000 ft of an absolute signal at Stop. With permission press Stop Release (in the cab), then max 15 mph through the interlocking."
+              ]
+            },
+            {
+              "title": "PTC in TSW",
+              "bullets": [
+                "Keep the PTC fuse in where the train has one; the display may light, but TSW does not enforce PTC.",
+                "Drive to the wayside signals and the speed signs yourself.",
+                "Real I-ETMS counts down to an enforcement; brake and the warning clears."
+              ]
+            },
+            {
+              "title": "ATS (Metrolink, Tri-Rail Rotem)",
+              "steps": [
+                "Passing an inductor at any signal but Clear the ATS alarm sounds.",
+                "Press **ATS acknowledge** within about 8 s: ENG 2 on the Rotem cab cars, in the cab on the F125, F59PHR and MP36.",
+                "Then drive to the signal aspect."
+              ]
+            },
+            {
+              "title": "Alerter",
+              "steps": [
+                "Keep the alerter cut in (aux square, fuse in).",
+                "When the alerter light flashes or the buzzer sounds, reset it with the **gear lever** (or move a control).",
+                "Missed: penalty brake. Stop, brake handle to Suppression, reset, then release."
+              ]
+            },
+            {
+              "title": "Penalty brake recovery",
+              "steps": [
+                "Throttle to Idle, automatic brake handle to **Suppression** (or Full Service).",
+                "Wait until the PCS lamp goes out (a minute or so).",
+                "Release the brake, recharge, then continue."
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "callout",
+          "title": "Before departure:",
+          "text": "Alerter, ATC / ACSES (or PTC, ATS) cut in: fuses in, cut-out squares as the train's manual says. Cab signal and wayside signal agree. Check in the train's manual which control acknowledges the cab signal: gear lever, ENG 2 or the cab."
+        }
+      ]
+    }
+  ]
+}
