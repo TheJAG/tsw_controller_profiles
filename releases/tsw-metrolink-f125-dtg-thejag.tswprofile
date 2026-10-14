@@ -215,20 +215,36 @@
     },
     {
       "name": "GearLever",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "ResetAlerterButton",
-          "value": 1,
-          "hold": true
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "ResetAlerterButton",
+            "value": 1,
+            "hold": true
+          },
+          "action_deactivate": {
+            "controls": "ResetAlerterButton",
+            "value": 0,
+            "hold": false
+          }
         },
-        "action_deactivate": {
-          "controls": "ResetAlerterButton",
-          "value": 0,
-          "hold": false
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "AcknowledgeATSButton",
+            "value": 1,
+            "hold": true
+          },
+          "action_deactivate": {
+            "controls": "AcknowledgeATSButton",
+            "value": 0,
+            "hold": false
+          }
         }
-      }
+      ]
     },
     {
       "name": "LeftThrottleButton",

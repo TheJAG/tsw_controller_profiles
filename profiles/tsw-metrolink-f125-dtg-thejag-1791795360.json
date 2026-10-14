@@ -235,21 +235,37 @@
     },
     {
       "name": "GearLever",
-      "description": "Alerter reset (ResetAlerterButton, held)",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "ResetAlerterButton",
-          "value": 1,
-          "hold": true
+      "description": "Alerter reset (ResetAlerterButton, held); also the ATS acknowledge (AcknowledgeATSButton, held): one press answers both",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "ResetAlerterButton",
+            "value": 1,
+            "hold": true
+          },
+          "action_deactivate": {
+            "controls": "ResetAlerterButton",
+            "value": 0,
+            "hold": false
+          }
         },
-        "action_deactivate": {
-          "controls": "ResetAlerterButton",
-          "value": 0,
-          "hold": false
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "AcknowledgeATSButton",
+            "value": 1,
+            "hold": true
+          },
+          "action_deactivate": {
+            "controls": "AcknowledgeATSButton",
+            "value": 0,
+            "hold": false
+          }
         }
-      }
+      ]
     },
     {
       "name": "LeftThrottleButton",

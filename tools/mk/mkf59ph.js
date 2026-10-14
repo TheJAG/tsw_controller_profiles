@@ -30,7 +30,7 @@ p.controls=[
  {name:'RightThrottle',description:'Automatic brake AutomaticBrake (Release 0 / Minimum 0.095 / service continuous 0.15..0.60 / Full Service 0.65 / Suppression 0.745 / Handle Off 0.845 / Emergency 1), inverted: Emergency at the far end (raw 0 ±0.04), Handle Off 0.1, Suppression 0.2, Full Service 0.3, service zone 0.36..0.86, Minimum 0.9 ±0.03, Release 1 ±0.06 nearest',assignments:[{type:'direct_control',controls:'AutomaticBrake',input_value:{min:0,max:1,steps:[0,0.095,null,0.65,0.745,0.845,1],invert:true,step_thresholds:[{threshold:1,threshold_tolerance:0.06},{threshold:0.9,threshold_tolerance:0.03},{threshold:0.86,threshold_end:0.36},{threshold:0.3,threshold_tolerance:0.04},{threshold:0.2,threshold_tolerance:0.04},{threshold:0.1,threshold_tolerance:0.04},{threshold:0,threshold_tolerance:0.04}]}}]},
  {name:'FlapLever',description:'Independent brake IndependentBrake (Release 0.1 / continuous 0.125..1), inverted: Full at the far end, Released nearest',assignments:[{type:'direct_control',controls:'IndependentBrake',input_value:{min:0.1,max:1,invert:true}}]},
  {name:'ParkingBrake',description:'Desk up: ReverserHandle (MasterSwitch In 1 / Out 0) and CutOffPilotValve (Passenger 1 / Out 0); the loco loads with the handle out and the brake valve cut out. PARK BRK up = handle in, brakes in Passenger',assignments:[pair('ReverserHandle',1,0),pair('CutOffPilotValve',1,0)]},
- mom('GearLever','Alerter reset (AlerterReset, held)','AlerterReset',1,0),
+ {name:'GearLever',description:'Alerter reset (AlerterReset, held); also the ATS acknowledge (ATS_Acknowledge, held): one press answers both',assignments:[mom('x','','AlerterReset',1,0).assignment,mom('x','','ATS_Acknowledge',1,0).assignment]},
  mom('LeftThrottleButton','Sand (SandMomentary)','SandMomentary',1,0),
  mom('RightThrottleButton','Horn (Horn)','Horn',1,0),
  {name:'LeftEngineOn',description:'Bell (BellProxy On 1 while up, Off 0 when down)',assignments:[pair('BellProxy',1,0)]},
@@ -56,12 +56,12 @@ controls:{
  leftThrottle:{name:'Throttle / dynamic',notches:['N8','N7','N6','N5','N4','N3','N2','N1','Idle','Setup',null,'Dyn. full'],start:8},
  rightThrottle:{name:'Automatic brake',continuous:true,notches:['Emergency','Handle off','Suppression','Full service',null,'Minimum','Release'],start:3},
  flap:{name:'Independent',continuous:true,notches:['Full',null,null,null,'Released'],start:4},
- leftThrottleButton:{name:'Sand'}, rightThrottleButton:{name:'Horn'}, gearLever:{name:'Alerter'},
+ leftThrottleButton:{name:'Sand'}, rightThrottleButton:{name:'Horn'}, gearLever:{name:'Alerter · ATS ack.'},
  autoBrk:{name:'Lights',positions:[{short:'0',desc:'–'},{short:'BTV',desc:'Off'},{short:'LO',desc:'Dim'},{short:'2',desc:'Bright'},{short:'3',desc:'+ ditch'},{short:'HI',desc:'+ rear dim'}],start:1},
  eng1:{name:'Bell',start:true}, eng2:{name:'Bail-off',start:true},
  leftAux:{name:'ATS'}, rightAux:{name:'Alerter'},
  modeSwitch:{name:'Wiper',left:'off',right:'on'}, roundAux:{name:'Crossing lights'}, rudTrim:{name:'Doors L / R'},
  parkBrk:{name:'Handle · brake valve',flat:'off',up:'on'}},
 setup:['PARK BRK up: reverser handle in, brake valve to Passenger (the loco loads with the valve cut out)','Reverser from Neutral to Forward','ATS and alerter on (aux squares lit)','Lights to Bright','Independent at Full, automatic brake at Full service (parked)'],
-depart:['Check the signal; bell on (ENG 1)','Automatic brake to Release; independent to Released, ENG 2 up to bail off','Handle away from you: N1 … N8 (the game stops at N1 first)','Reset the alerter with the gear lever','Brake: handle back through Idle and Setup into the dynamic zone; automatic brake into the service zone; Emergency at the far end']};
+depart:['Check the signal; bell on (ENG 1)','Automatic brake to Release; independent to Released, ENG 2 up to bail off','Handle away from you: N1 … N8 (the game stops at N1 first)','Reset the alerter and the ATS with the gear lever','Brake: handle back through Idle and Setup into the dynamic zone; automatic brake into the service zone; Emergency at the far end']};
 fs.writeFileSync('tools/manual/trains/tsw-metrolink-f59ph-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');

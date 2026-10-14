@@ -23,7 +23,7 @@ p.controls=[
  {name:'LeftThrottle',description:'Master controller Throttle -1..1 with the direction built in: P-3 Rev -1 / P-2 Rev -0.8 / P-1 Rev -0.6 / Switch Rev -0.4 / Off Rev -0.2 / Safety 0 / Off Fwd 0.2 / Switch Fwd 0.4 / P-1 Fwd 0.6 / P-2 Fwd 0.8 / P-3 Fwd 1; inverted: P-3 Forwards at the far end, Safety in the middle, P-3 Reverse nearest; eleven even bands. Needs the control plug in (PARK BRK up)',assignments:[{type:'direct_control',controls:'Throttle',input_value:{min:-1,max:1,steps:[-1,-0.8,-0.6,-0.4,-0.2,0,0.2,0.4,0.6,0.8,1],invert:true}}]},
  {name:'RightThrottle',description:'Automatic brake AutomaticBrake_26C (Release 0 / Minimum 0.125 / service continuous 0.2..0.64 / Full Service 0.65 / Suppression 0.7 / Handle Off 0.85 / Emergency 1), inverted: Emergency at the far end (raw 0 ±0.04), Handle Off 0.1, Suppression 0.2, Full Service 0.3, service zone 0.36..0.86, Minimum 0.9 ±0.03, Release 1 ±0.06 nearest',assignments:[{type:'direct_control',controls:'AutomaticBrake_26C',input_value:{min:0,max:1,steps:[0,0.125,null,0.65,0.7,0.85,1],invert:true,step_thresholds:[{threshold:1,threshold_tolerance:0.06},{threshold:0.9,threshold_tolerance:0.03},{threshold:0.86,threshold_end:0.36},{threshold:0.3,threshold_tolerance:0.04},{threshold:0.2,threshold_tolerance:0.04},{threshold:0.1,threshold_tolerance:0.04},{threshold:0,threshold_tolerance:0.04}]}}]},
  {name:'ParkingBrake',description:'Control plug ControlPlug (MasterSwitch In 1 / Out 0), brake cut-out valve AutomaticBrakeCutoutValve (Cut-In 1 / Cut-Out 0) and horn cut-out cock Horn_CutOutCock (Cut-In 1 / Cut-Out 0): PARK BRK up = plug in, brake and horn cut in; all three load out',assignments:[pair('ControlPlug',1,0),pair('AutomaticBrakeCutoutValve',1,0),pair('Horn_CutOutCock',1,0)]},
- mom('GearLever','Alerter reset (AlerterReset push button, held)','AlerterReset',1,0),
+ {name:'GearLever',description:'Alerter reset (AlerterReset push button, held); also the cab signal acknowledge (ATCAcknowledge, held): one press answers both',assignments:[mom('x','','AlerterReset',1,0).assignment,mom('x','','ATCAcknowledge',1,0).assignment]},
  mom('LeftThrottleButton','Sand (Sander push button, held)','Sander',1,0),
  mom('RightThrottleButton','Horn (Horn spring lever 1 while held, 0 released; needs the horn cock cut in)','Horn',1,0),
  {name:'LeftEngineOn',description:'Bell (Bell push button 1 while up, 0 when down)',assignments:[pair('Bell',1,0)]},
@@ -49,12 +49,12 @@ controls:{
  leftThrottle:{name:'Master controller',notches:['P3 F','P2 F','P1 F','Sw F','Off F','Safety','Off R','Sw R','P1 R','P2 R','P3 R'],start:5},
  rightThrottle:{name:'Automatic brake',continuous:true,notches:['Emergency','Handle off','Suppression','Full service',null,'Minimum','Release'],start:3},
  flap:null,
- leftThrottleButton:{name:'Sand'}, rightThrottleButton:{name:'Horn'}, gearLever:{name:'Alerter'},
+ leftThrottleButton:{name:'Sand'}, rightThrottleButton:{name:'Horn'}, gearLever:{name:'Alerter · cab signal ack.'},
  autoBrk:{name:'Lights',positions:[{short:'0',desc:'–'},{short:'BTV',desc:'Off'},{short:'LO',desc:'Dim'},{short:'2',desc:'Bright'},{short:'3',desc:'+ ditch'},{short:'HI',desc:'Markers only'}],start:1},
  eng1:{name:'Bell',start:true}, eng2:{name:'Deadman',start:true},
  leftAux:{name:'PTC · cab signal'}, rightAux:{name:'Alerter'},
  modeSwitch:{name:'Wiper',left:'off',right:'on'}, roundAux:{name:'Pan raise'}, rudTrim:{name:'Doors L / R'},
  parkBrk:{name:'Plug · brake · horn',flat:'out',up:'in'}},
 setup:['PARK BRK up: control plug in, brake valve and horn cock cut in (all three load out)','PTC / cab signal and alerter on (aux squares lit; they load cut out)','Deadman: ENG 2 up','Lights to Bright','Automatic brake at Full service (parked), controller at Safety'],
-depart:['Close doors (RUD TRIM), check the signal; bell (ENG 1)','Automatic brake to Release','Controller away from you from Safety: Off, Switch, P-1 … P-3 forwards (the near half is the same in reverse)','Reset the alerter with the gear lever','Brake: controller back to Off, automatic brake into the service zone; Emergency at the far end']};
+depart:['Close doors (RUD TRIM), check the signal; bell (ENG 1)','Automatic brake to Release','Controller away from you from Safety: Off, Switch, P-1 … P-3 forwards (the near half is the same in reverse)','Reset the alerter and the cab signal with the gear lever','Brake: controller back to Off, automatic brake into the service zone; Emergency at the far end']};
 fs.writeFileSync('tools/manual/trains/tsw-njt-arrow3-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');

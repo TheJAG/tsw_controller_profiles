@@ -26,7 +26,7 @@ p.controls=[
  {name:'RightThrottle',description:'Automatic brake AutomaticBrake (Release 0 / Hold 0.2 / Lap 0.4 / Service 0.6 / Handle Off 0.8 / Emergency 1, all notches), inverted: Emergency at the far end, Release nearest, six even bands',assignments:[{type:'direct_control',controls:'AutomaticBrake',input_value:{min:0,max:1,steps:[0,0.2,0.4,0.6,0.8,1],invert:true}}]},
  {name:'FlapLever',description:'Independent brake IndependentBrake (Release 0.1 / continuous to Full 1), inverted: Full at the far end, Release nearest',assignments:[{type:'direct_control',controls:'IndependentBrake',input_value:{min:0.1,max:1,invert:true}}]},
  {name:'ParkingBrake',description:'Reverser handle ReverserHandle (MasterSwitch push button: Inserted 1 / 0): PARK BRK up = handle in; the loco loads with it out and the reverser in Isolate',assignments:[pair('ReverserHandle',1,0)]},
- mom('GearLever','Alerter acknowledge / penalty reset (AlerterAcknowledge/PenaltyReset push button, held)','AlerterAcknowledge/PenaltyReset',1,0),
+ {name:'GearLever',description:'Alerter acknowledge / penalty reset (AlerterAcknowledge/PenaltyReset push button, held); also the cab signal acknowledge (SDU_Acknowledge, held): one press answers both',assignments:[mom('x','','AlerterAcknowledge/PenaltyReset',1,0).assignment,mom('x','','SDU_Acknowledge',1,0).assignment]},
  mom('LeftThrottleButton','Sand (Sand spring lever: 1 while held, rest 0.5)','Sand',1,0.5),
  mom('RightThrottleButton','Horn (Horn lever 1 while held, 0 released)','Horn',1,0),
  {name:'LeftEngineOn',description:'Bell (Bell On 1 while up, Off 0 when down)',assignments:[pair('Bell',1,0)]},
@@ -52,12 +52,12 @@ controls:{
  leftThrottle:{name:'Throttle / dynamic',continuous:true,notches:['Power max',null,'Off',null,'Dyn. max'],start:2},
  rightThrottle:{name:'Automatic brake',notches:['Emergency','Handle off','Service','Lap','Hold','Release'],start:2},
  flap:{name:'Independent',continuous:true,notches:['Full',null,null,null,'Release'],start:0},
- leftThrottleButton:{name:'Sand'}, rightThrottleButton:{name:'Horn'}, gearLever:{name:'Alerter'},
+ leftThrottleButton:{name:'Sand'}, rightThrottleButton:{name:'Horn'}, gearLever:{name:'Alerter · cab signal ack.'},
  autoBrk:{name:'Lights',positions:[{short:'0',desc:'–'},{short:'BTV',desc:'Off'},{short:'LO',desc:'Dim'},{short:'2',desc:'Bright'},{short:'3',desc:'+ ditch auto'},{short:'HI',desc:'+ ditch manual'}],start:1},
  eng1:{name:'Bell',start:true}, eng2:{name:'Bail-off',start:true},
  leftAux:{name:'ATC · ACSES'}, rightAux:{name:'Alerter'},
  modeSwitch:{name:'Wiper',left:'off',right:'low'}, roundAux:{name:'Pantograph'}, rudTrim:{name:'Doors L / R'},
  parkBrk:{name:'Reverser handle',flat:'out',up:'in'}},
 setup:['PARK BRK up: reverser handle in (the reverser loads in Isolate)','Handle at Off, then reverser from Neutral to Forward (it only moves at Off)','ATC / ACSES and alerter on (aux squares lit; all load isolated)','Lights to Bright, ditch lights auto; the loco loads in electric with the pantograph up (diesel start is on the display)','Independent at Full, automatic brake at Service (parked)'],
-depart:['Close doors (RUD TRIM), check the signal; bell on (ENG 1)','Automatic brake to Release, independent to Release (ENG 2 up to bail off)','Handle away from you into the power zone','Acknowledge the alerter with the gear lever','Brake: handle back through Off into the dynamic zone; automatic brake to Service, Lap holds; Emergency at the far end']};
+depart:['Close doors (RUD TRIM), check the signal; bell on (ENG 1)','Automatic brake to Release, independent to Release (ENG 2 up to bail off)','Handle away from you into the power zone','Acknowledge the alerter and the cab signal with the gear lever','Brake: handle back through Off into the dynamic zone; automatic brake to Service, Lap holds; Emergency at the far end']};
 fs.writeFileSync('tools/manual/trains/tsw-njt-alp45dp-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');

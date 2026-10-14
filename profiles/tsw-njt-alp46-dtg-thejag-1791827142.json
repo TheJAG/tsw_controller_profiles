@@ -139,21 +139,37 @@
     },
     {
       "name": "GearLever",
-      "description": "Alerter acknowledge (AlerterAcknowledge_F/_B push button, held)",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "AlerterAcknowledge_{SIDE:F:B}",
-          "value": 1,
-          "hold": true
+      "description": "Alerter acknowledge (AlerterAcknowledge_F/_B push button, held); also the cab signal acknowledge (SDU_Acknowledge_{SIDE:F:B}, held): one press answers both",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "AlerterAcknowledge_{SIDE:F:B}",
+            "value": 1,
+            "hold": true
+          },
+          "action_deactivate": {
+            "controls": "AlerterAcknowledge_{SIDE:F:B}",
+            "value": 0,
+            "hold": false
+          }
         },
-        "action_deactivate": {
-          "controls": "AlerterAcknowledge_{SIDE:F:B}",
-          "value": 0,
-          "hold": false
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "SDU_Acknowledge_{SIDE:F:B}",
+            "value": 1,
+            "hold": true
+          },
+          "action_deactivate": {
+            "controls": "SDU_Acknowledge_{SIDE:F:B}",
+            "value": 0,
+            "hold": false
+          }
         }
-      }
+      ]
     },
     {
       "name": "LeftThrottleButton",

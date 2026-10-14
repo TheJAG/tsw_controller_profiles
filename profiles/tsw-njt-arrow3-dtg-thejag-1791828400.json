@@ -148,21 +148,37 @@
     },
     {
       "name": "GearLever",
-      "description": "Alerter reset (AlerterReset push button, held)",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "AlerterReset",
-          "value": 1,
-          "hold": true
+      "description": "Alerter reset (AlerterReset push button, held); also the cab signal acknowledge (ATCAcknowledge, held): one press answers both",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "AlerterReset",
+            "value": 1,
+            "hold": true
+          },
+          "action_deactivate": {
+            "controls": "AlerterReset",
+            "value": 0,
+            "hold": false
+          }
         },
-        "action_deactivate": {
-          "controls": "AlerterReset",
-          "value": 0,
-          "hold": false
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "ATCAcknowledge",
+            "value": 1,
+            "hold": true
+          },
+          "action_deactivate": {
+            "controls": "ATCAcknowledge",
+            "value": 0,
+            "hold": false
+          }
         }
-      }
+      ]
     },
     {
       "name": "LeftThrottleButton",

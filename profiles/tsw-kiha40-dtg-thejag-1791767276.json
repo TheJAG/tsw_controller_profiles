@@ -200,6 +200,24 @@
       }
     },
     {
+      "name": "RoundAuxButton",
+      "description": "ATS Alert Release (CB_AlertRelease_F(Push), held): silences the alert sound after an ATS acknowledge and after the power-on self-test",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "CB_AlertRelease_F(Push)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "CB_AlertRelease_F(Push)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
       "name": "LeftThrottleButton",
       "description": "EB alerter reset (CB_EBReset_F(Push), Alerter)",
       "assignment": {
@@ -295,7 +313,7 @@
     },
     {
       "name": "LeftAuxButton",
-      "description": "ATS power (CB_ATSPower_F(Toggle), AWS_Isolation: 1 / 0). Lit = on",
+      "description": "ATS and EB power (CB_ATSPower_F(Toggle), AWS_Isolation: 1 / 0; one switch powers both). Lit = on",
       "assignment": {
         "type": "toggle",
         "threshold": 0.9,
