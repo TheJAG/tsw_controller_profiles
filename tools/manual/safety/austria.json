@@ -1,0 +1,904 @@
+{
+  "name": "tsw-safety-austria-thejag",
+  "title": "Safety systems · Austria",
+  "eyebrow": "Signals and train protection · Train Sim World · TCA Quadrant Airbus",
+  "colors": {
+    "navy": "#3a3735",
+    "blue": "#6e6a67",
+    "red": "#E2002A",
+    "paper": "#f6f4f3"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-oebb-grey.svg",
+      "alt": "ÖBB"
+    }
+  ],
+  "credit": "© TheJAG",
+  "sources": [
+    "Dovetail Games / TSG: Mittenwaldbahn manual",
+    "ÖBB 30.02 Signalbuch, 30.01 Betriebsvorschrift V3",
+    "de.wikipedia: Eisenbahnsignale in Österreich, PZB, Sicherheitsfahrschaltung",
+    "Commons: Diagrams of railway signals in Austria"
+  ],
+  "pages": [
+    {
+      "sections": [
+        {
+          "kind": "intro",
+          "paragraphs": [
+            "Austrian main signals say whether and how fast you may pass (**Halt**, **Frei**, **Frei mit 40**, **Frei mit 60**); distant signals (**Vorsignale**) what the next main signal shows. Other speeds come from speed indicators beside the signal. On the **Semmeringbahn** (1116, 4024) **PZB 90** watches the signals; on the **Mittenwaldbahn** (1020, 1989) it is the older **Indusi I60**, and the German section to the border has German signals (see the Germany manual). Speeds in km/h. Quadrant controls are from TheJAG's ÖBB profiles: the same layout as the German trains."
+          ]
+        },
+        {
+          "kind": "systems",
+          "title": "Safety systems",
+          "cols": 4,
+          "items": [
+            {
+              "name": "PZB 90",
+              "full": "Punktförmige Zugbeeinflussung",
+              "summary": "Magnets at **1000 Hz** (distant signal), **500 Hz** (before some main signals; rare in Austria) and **2000 Hz** (main signal). Acknowledge, then keep within the speed curve.",
+              "where": "Semmeringbahn: 1116, 4024",
+              "quadrant": "**ENG 2** Wachsam, **ENG 1** Frei, **round aux** Befehl 40; right aux square PZB on / off"
+            },
+            {
+              "name": "Indusi I60",
+              "full": "Induktive Zugsicherung (1989)",
+              "summary": "After **Wachsam** (4 s) be at or below 95 (O) / 75 (M) km/h within **34 s**: one check, no curve. 500 Hz: a spot check at 40. **Frei only releases a penalty brake.**",
+              "where": "Mittenwaldbahn: 1020",
+              "quadrant": "Same buttons: ENG 2 Wachsam, ENG 1 Frei, round aux Befehl; right aux Indusi"
+            },
+            {
+              "name": "SiFa",
+              "full": "Sicherheitsfahrschaltung",
+              "summary": "1116 / 4024: after 30 s a lamp, 2.5 s later a buzzer, 2.5 s later the emergency brake. **1020: no lamp**: a buzzer after 30 s, an alarm 75 m later, the brake 75 m after that.",
+              "where": "Every ÖBB train",
+              "quadrant": "**Gear lever** = SiFa reset; left aux square SiFa on / off"
+            },
+            {
+              "name": "LZB / ETCS",
+              "full": "Continuous systems",
+              "summary": "LZB on parts of the Westbahn and ETCS on new lines in the real world; neither on these TSW routes.",
+              "where": "–",
+              "quadrant": ""
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Main signals (Hauptsignale)",
+          "note": "1980 type shown (Semmeringbahn). The 1954 type on the Mittenwaldbahn is one column, top to bottom green, red, yellow, green, with the same combinations.",
+          "cols": 6,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 97,
+                    "lamps": [
+                      {
+                        "x": 34,
+                        "y": 12,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 28,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 34,
+                        "y": 43,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 34,
+                        "y": 62,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 85,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 12,
+                        "y": 12,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 12,
+                        "y": 48,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 12,
+                        "y": 85,
+                        "c": "red",
+                        "s": "on"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Halt",
+              "meaning": "Stop.",
+              "drive": "Stop before the signal; 2000 Hz live."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 97,
+                    "lamps": [
+                      {
+                        "x": 34,
+                        "y": 12,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 34,
+                        "y": 28,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 34,
+                        "y": 43,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 34,
+                        "y": 62,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 85,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 12,
+                        "y": 12,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 12,
+                        "y": 48,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 12,
+                        "y": 85,
+                        "c": "red",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Frei",
+              "meaning": "Proceed at the permitted speed.",
+              "drive": "Drive on."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 97,
+                    "lamps": [
+                      {
+                        "x": 34,
+                        "y": 12,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 34,
+                        "y": 28,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 34,
+                        "y": 43,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 34,
+                        "y": 62,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 34,
+                        "y": 85,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 12,
+                        "y": 12,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 12,
+                        "y": 48,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 12,
+                        "y": 85,
+                        "c": "red",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Frei mit 40",
+              "meaning": "Green over yellow: max 40 km/h.",
+              "drive": "Be at 40 at the signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 97,
+                    "lamps": [
+                      {
+                        "x": 34,
+                        "y": 12,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 34,
+                        "y": 28,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 34,
+                        "y": 43,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 34,
+                        "y": 62,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 85,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 12,
+                        "y": 12,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 12,
+                        "y": 48,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 12,
+                        "y": 85,
+                        "c": "red",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Frei mit 60",
+              "meaning": "Two greens: max 60 km/h.",
+              "drive": "Be at 60 at the signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 97,
+                    "lamps": [
+                      {
+                        "x": 34,
+                        "y": 12,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 28,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 34,
+                        "y": 43,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 34,
+                        "y": 62,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 85,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 12,
+                        "y": 12,
+                        "c": "white",
+                        "s": "flash",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 12,
+                        "y": 48,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 12,
+                        "y": 85,
+                        "c": "red",
+                        "s": "on"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Ersatzsignal",
+              "meaning": "Flashing white: pass the signal at Halt.",
+              "drive": "Hold Befehl over the 2000 Hz; max 40 through the points."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 46,
+                    "h": 97,
+                    "lamps": [
+                      {
+                        "x": 34,
+                        "y": 12,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 28,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 34,
+                        "y": 43,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 34,
+                        "y": 62,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 34,
+                        "y": 85,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 12,
+                        "y": 12,
+                        "c": "red",
+                        "s": "flash",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 12,
+                        "y": 48,
+                        "c": "white",
+                        "s": "off",
+                        "r": 3.5
+                      },
+                      {
+                        "x": 12,
+                        "y": 85,
+                        "c": "red",
+                        "s": "on"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Vorsichtssignal",
+              "meaning": "Flashing red: pass on sight.",
+              "drive": "On sight, max 30 (TSW: 40)."
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Distant signals (Vorsignale)",
+          "note": "On the Mittenwaldbahn every Vorsicht and \"frei mit 40 / 60\" must be acknowledged, magnet or not.",
+          "cols": 4,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 50,
+                    "h": 50,
+                    "lamps": [
+                      {
+                        "x": 10,
+                        "y": 10,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 40,
+                        "y": 10,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 40,
+                        "y": 25,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 10,
+                        "y": 40,
+                        "c": "green",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Vorsicht",
+              "meaning": "The main signal shows Halt.",
+              "drive": "Wachsam, brake to stop."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 50,
+                    "h": 50,
+                    "lamps": [
+                      {
+                        "x": 10,
+                        "y": 10,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 40,
+                        "y": 10,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 40,
+                        "y": 25,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 10,
+                        "y": 40,
+                        "c": "green",
+                        "s": "on"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Hauptsignal frei",
+              "meaning": "The main signal shows Frei.",
+              "drive": "Keep going."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 50,
+                    "h": 50,
+                    "lamps": [
+                      {
+                        "x": 10,
+                        "y": 10,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 40,
+                        "y": 10,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 40,
+                        "y": 25,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 10,
+                        "y": 40,
+                        "c": "green",
+                        "s": "on"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Hauptsignal frei mit 40",
+              "meaning": "The main signal shows Frei mit 40.",
+              "drive": "Wachsam, brake to 40."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 50,
+                    "h": 50,
+                    "lamps": [
+                      {
+                        "x": 10,
+                        "y": 10,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 40,
+                        "y": 10,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 40,
+                        "y": 25,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 10,
+                        "y": 40,
+                        "c": "green",
+                        "s": "on"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Hauptsignal frei mit 60",
+              "meaning": "The main signal shows Frei mit 60.",
+              "drive": "Wachsam, brake to 60."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sections": [
+        {
+          "kind": "aspects",
+          "title": "Speed signals and boards",
+          "note": "Digits are tens of km/h.",
+          "cols": 4,
+          "items": [
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "6",
+                    "fg": "yellow",
+                    "bg": "black",
+                    "border": "yellow",
+                    "shape": "triangle",
+                    "w": 46,
+                    "bw": 3
+                  }
+                ]
+              },
+              "name": "Geschwindigkeits-voranzeiger",
+              "meaning": "With a distant signal: the main signal's speed will be 60.",
+              "drive": "Brake to 60 by the main signal."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "6",
+                    "fg": "white",
+                    "bg": "black",
+                    "border": "white",
+                    "shape": "square",
+                    "w": 34,
+                    "bw": 3
+                  }
+                ]
+              },
+              "name": "Geschwindigkeits-anzeiger",
+              "meaning": "With a main signal: 60 from here; overrules the signal's speed.",
+              "drive": "Be at 60 at the signal."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "8",
+                    "fg": "#E2002A",
+                    "bg": "white",
+                    "border": "#E2002A",
+                    "shape": "triangle-down",
+                    "w": 46,
+                    "bw": 3
+                  }
+                ]
+              },
+              "name": "Ankündigungstafel",
+              "meaning": "Line speed changes ahead (700–1000 m).",
+              "drive": "Brake to the new speed by the Geschwindigkeitstafel."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "8",
+                    "fg": "#E2002A",
+                    "bg": "white",
+                    "border": "#E2002A",
+                    "shape": "square",
+                    "w": 34,
+                    "bw": 3
+                  }
+                ]
+              },
+              "name": "Geschwindigkeitstafel",
+              "meaning": "Line speed from here; the next tafel can raise it.",
+              "drive": "Lower: by the board. Higher: once the rear has passed."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "4",
+                    "fg": "black",
+                    "bg": "yellow",
+                    "border": "white",
+                    "shape": "triangle",
+                    "w": 46,
+                    "bw": 3
+                  }
+                ]
+              },
+              "name": "Ankündigungssignal",
+              "meaning": "Temporary restriction (Langsamfahrstelle) ahead.",
+              "drive": "Brake to the speed by the Anfangssignal."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "4",
+                    "fg": "black",
+                    "bg": "yellow",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 32,
+                    "h": 38
+                  }
+                ]
+              },
+              "name": "Anfangssignal",
+              "meaning": "Start of the Langsamfahrstelle.",
+              "drive": "Be at the speed here."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "E",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 32,
+                    "h": 38
+                  }
+                ]
+              },
+              "name": "Endsignal",
+              "meaning": "End of the Langsamfahrstelle.",
+              "drive": "Accelerate once the rear has passed."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "///",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 28,
+                    "h": 42,
+                    "size": 15
+                  }
+                ]
+              },
+              "name": "Abstandstafel",
+              "meaning": "Three, two, one stripes: the distant signal is coming.",
+              "drive": "Watch for the distant signal."
+            }
+          ]
+        },
+        {
+          "kind": "table",
+          "title": "PZB 90 (1116, 4024) and Indusi I60 (1020)",
+          "head": [
+            "Magnet",
+            "PZB 90",
+            "Indusi I60"
+          ],
+          "rows": [
+            [
+              "**1000 Hz** at a distant at Vorsicht",
+              "Wachsam within 4 s; curve by train type over 1250 m; Frei after 700 m once the signal has cleared",
+              "Wachsam within 4 s; ≤ 95 (O) / 75 (M) km/h within 34 s; the lamp goes out by itself"
+            ],
+            [
+              "**500 Hz** (rare)",
+              "Falling curve to 45 / 35 / 25 km/h; Frei not possible",
+              "Spot check: ≤ 40 km/h"
+            ],
+            [
+              "**2000 Hz** at Halt",
+              "Immediate emergency brake; Befehl 40 held with an order",
+              "Immediate emergency brake; Befehl held at ≤ 40 km/h"
+            ],
+            [
+              "After a penalty brake",
+              "Stop, Frei, release; restrictive mode where a check runs",
+              "Brake pipe at ~0 bar, then Frei, release"
+            ]
+          ]
+        },
+        {
+          "kind": "howto",
+          "title": "How to drive",
+          "cols": 3,
+          "blocks": [
+            {
+              "title": "Approaching Vorsicht",
+              "steps": [
+                "PZB / Indusi sounds at the distant signal: press **Wachsam** (ENG 2) within 4 s.",
+                "Brake: PZB 90 by its curve; Indusi to 95 / 75 within 34 s.",
+                "Stop before the main signal at Halt."
+              ]
+            },
+            {
+              "title": "Passing Halt with an order",
+              "steps": [
+                "Ersatzsignal or a written order only.",
+                "Hold **Befehl** (round aux) while the front passes the 2000 Hz magnet, at max 40.",
+                "Max 40 through the points."
+              ]
+            },
+            {
+              "title": "SiFa",
+              "steps": [
+                "Reset with the **gear lever** when it warns (1116 / 4024 lamp; 1020 buzzer).",
+                "Missed: emergency brake; stop, reset, release."
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "callout",
+          "title": "Before departure:",
+          "text": "All three load with SiFa and PZB / Indusi off: switch both on (aux squares lit). Set the train type: in the cab on the 1116 / 4024; on the 1020 the Indusi mode knob is in the compartment near cab 2."
+        }
+      ]
+    }
+  ]
+}
