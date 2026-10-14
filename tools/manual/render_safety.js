@@ -36,7 +36,7 @@ function part(p) {
   }
   if (p.kind === 'head') {
     const w = p.w || 40, h = p.h || 40;
-    return { w, h, draw: (cx, y) => (p.shape === 'none' ? '' : `<rect x="${cx - w / 2}" y="${y}" width="${w}" height="${h}" rx="${p.shape === 'round' ? Math.min(w, h) / 2 : 5}" class="head"/>`) +
+    return { w, h, draw: (cx, y) => (p.shape === 'none' ? '' : `<rect x="${cx - w / 2}" y="${y}" width="${w}" height="${h}" rx="${p.shape === 'round' ? Math.min(w, h) / 2 : p.rx != null ? p.rx : 5}" class="head"${p.fill ? ` style="fill:${col(p.fill)}"` : ''}/>`) +
       (p.lamps || []).map(l => lamp(cx - w / 2 + l.x, y + l.y, l.c, l.s || 'on', l.r || 7)).join('') };
   }
   if (p.kind === 'number') {
@@ -57,7 +57,7 @@ function part(p) {
       else if (shape === 'diamond') g = `<path d="M${cx} ${y + 1} L${x + w - 1} ${y + h / 2} L${cx} ${y + h - 1} L${x + 1} ${y + h / 2}Z"`;
       else if (shape === 'circle') g = `<circle cx="${cx}" cy="${y + h / 2}" r="${w / 2 - 1}"`;
       else g = `<rect x="${x + 0.75}" y="${y + 0.75}" width="${w - 1.5}" height="${h - 1.5}" rx="${p.rx != null ? p.rx : 2}"`;
-      g += ` fill="${bg}" stroke="${bd}" stroke-width="1.5" stroke-linejoin="round"/>`;
+      g += ` fill="${bg}" stroke="${bd}" stroke-width="${p.bw || 1.5}" stroke-linejoin="round"/>`;
       const ty = shape === 'triangle' ? y + h * 0.62 : shape === 'triangle-down' ? y + h * 0.38 : y + h / 2;
       return g + lines.map((l, i) => `<text x="${cx}" y="${(ty + (i - (lines.length - 1) / 2) * fs * 1.05 + fs * 0.36).toFixed(1)}" class="pt" style="font-size:${fs}px" fill="${fg}" text-anchor="middle">${esc(l)}</text>`).join('');
     } };

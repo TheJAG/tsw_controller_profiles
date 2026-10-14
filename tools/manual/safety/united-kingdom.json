@@ -1,0 +1,757 @@
+{
+  "name": "tsw-safety-united-kingdom-thejag",
+  "title": "Safety systems · United Kingdom",
+  "eyebrow": "Signals and train protection · Train Sim World · TCA Quadrant Airbus",
+  "colors": {
+    "navy": "#223261",
+    "blue": "#4a66a8",
+    "paper": "#f3f5f9"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-britishrail-navy.svg",
+      "alt": "British Rail"
+    }
+  ],
+  "credit": "© TheJAG",
+  "sources": [
+    "RSSB GERT8000 Rule Book (modules S1, S3, TW1)",
+    "RSSB GKRT0045 lineside signals",
+    "Network Rail",
+    "en.wikipedia: UK railway signalling, AWS, TPWS, Driver's Safety Device, DRA"
+  ],
+  "pages": [
+    {
+      "sections": [
+        {
+          "kind": "intro",
+          "paragraphs": [
+            "British colour-light signals show **how many sections ahead are clear**, not the speed: green, double yellow, single yellow, red. Speed comes from the **lineside speed signs** and the route knowledge. Junction indicators and route indicators show a diverging route. **AWS** warns you at every caution, **TPWS** stops you at a red signal or an overspeed, the **DSD / vigilance** checks that you are awake. Quadrant controls are from TheJAG's UK profiles."
+          ]
+        },
+        {
+          "kind": "systems",
+          "title": "Safety systems",
+          "cols": 3,
+          "items": [
+            {
+              "name": "AWS",
+              "full": "Automatic Warning System",
+              "summary": "A magnet 180 m before colour-light and distant signals and warning boards. **Bell / chime** = clear (green). **Horn** = caution, red or a speed warning: acknowledge within about **2.7 s** or the brakes apply. The black and yellow **sunflower** then shows you did.",
+              "where": "Every Network Rail route",
+              "quadrant": "**Gear lever** = AWS reset; left aux square = AWS (/ TPWS) isolation"
+            },
+            {
+              "name": "TPWS",
+              "full": "Train Protection and Warning System",
+              "summary": "Loops at red signals, speed restrictions and buffer stops. **Train stop**: passing a red signal brakes the train. **Overspeed sensor**: approaching too fast brakes it. Brake demand lamp flashes; the brakes release 60 s after the demand.",
+              "where": "Every Network Rail route",
+              "quadrant": "Shares the AWS isolation (left aux square) on most units; Train Stop Override in the cab"
+            },
+            {
+              "name": "DSD / vigilance",
+              "full": "Driver's Safety Device, Driver Vigilance Device (DVD)",
+              "summary": "A pedal or handle held while driving; let go and the train brakes. Vigilance adds an alarm about every 60 s that you acknowledge.",
+              "where": "Every modern unit and loco",
+              "quadrant": "Gear lever acknowledges in TSW (Q); right aux square = DSD / DVD isolation on most units"
+            },
+            {
+              "name": "DRA",
+              "full": "Driver's Reminder Appliance",
+              "summary": "A button you set when stopped at a red signal or a platform with the signal at danger: it cuts traction until you release it.",
+              "where": "Units and locos that have one",
+              "quadrant": "Round aux on the 385 and the 90; in the cab on the others"
+            },
+            {
+              "name": "Tripcock",
+              "full": "London Underground trainstops",
+              "summary": "A trainstop arm next to each LU signal is raised at red; passing it trips the tripcock on the train and brakes it.",
+              "where": "LU 1938 and 1972 Stock (Bakerloo line)",
+              "quadrant": "1972: **ENG 1** tripcock reset, gear lever valve reset"
+            },
+            {
+              "name": "TVM 430 / ETCS",
+              "full": "Cab signalling",
+              "summary": "HS1 uses French TVM 430 cab signals (no lineside signals) KVB in the St Pancras area (not simulated). No TSW 7 UK route in this collection has ETCS.",
+              "where": "Southeastern Highspeed (Class 395 on HS1)",
+              "quadrant": ""
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Colour-light signals (4-aspect)",
+          "note": "Rays = flashing. A 3-aspect signal has no top yellow and no double yellow.",
+          "cols": 6,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow-",
+                      "green",
+                      "yellow-",
+                      "red-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Green",
+              "meaning": "Proceed; the next signal shows a proceed aspect.",
+              "drive": "Line speed. AWS bell."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow",
+                      "green-",
+                      "yellow",
+                      "red-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Double yellow",
+              "meaning": "Preliminary caution: the next signal shows single yellow.",
+              "drive": "AWS horn: acknowledge. Start to brake."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow-",
+                      "green-",
+                      "yellow",
+                      "red-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Single yellow",
+              "meaning": "Caution: be prepared to stop at the next signal.",
+              "drive": "Acknowledge AWS; brake to stop at the next signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow-",
+                      "green-",
+                      "yellow-",
+                      "red"
+                    ]
+                  }
+                ]
+              },
+              "name": "Red",
+              "meaning": "Danger: stop.",
+              "drive": "Stop before the signal; TPWS train stop."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow*",
+                      "green-",
+                      "yellow*",
+                      "red-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Flashing double yellow",
+              "meaning": "Diverging junction ahead at a speed; next signal flashing single yellow.",
+              "drive": "Acknowledge; brake toward the junction speed."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow-",
+                      "green-",
+                      "yellow*",
+                      "red-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Flashing single yellow",
+              "meaning": "Next signal shows a junction indicator for a diverging route.",
+              "drive": "Be at the turnout speed at the junction."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sections": [
+        {
+          "kind": "aspects",
+          "title": "Route, subsidiary and ground signals",
+          "cols": 5,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 52,
+                    "h": 44,
+                    "lamps": [
+                      {
+                        "x": 44,
+                        "y": 38,
+                        "c": "lunar",
+                        "s": "on",
+                        "r": 4.5
+                      },
+                      {
+                        "x": 35,
+                        "y": 30,
+                        "c": "lunar",
+                        "s": "on",
+                        "r": 4.5
+                      },
+                      {
+                        "x": 26,
+                        "y": 22,
+                        "c": "lunar",
+                        "s": "on",
+                        "r": 4.5
+                      },
+                      {
+                        "x": 17,
+                        "y": 14,
+                        "c": "lunar",
+                        "s": "on",
+                        "r": 4.5
+                      },
+                      {
+                        "x": 8,
+                        "y": 6,
+                        "c": "lunar",
+                        "s": "on",
+                        "r": 4.5
+                      }
+                    ],
+                    "shape": "rect"
+                  },
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow-",
+                      "green",
+                      "yellow-",
+                      "red-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Junction indicator",
+              "meaning": "Five white lights: the route diverges to the left (or right).",
+              "drive": "Take the turnout at its speed sign."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "number",
+                    "text": "M",
+                    "color": "white"
+                  },
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow-",
+                      "green-",
+                      "yellow",
+                      "red-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Route indicator",
+              "meaning": "Theatre box: a lit letter or number names the route or platform.",
+              "drive": "Check the route is the one you expect."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow-",
+                      "green-",
+                      "yellow-",
+                      "red"
+                    ]
+                  },
+                  {
+                    "kind": "head",
+                    "w": 34,
+                    "h": 30,
+                    "lamps": [
+                      {
+                        "x": 9,
+                        "y": 8,
+                        "c": "white",
+                        "s": "on",
+                        "r": 5
+                      },
+                      {
+                        "x": 25,
+                        "y": 22,
+                        "c": "white",
+                        "s": "on",
+                        "r": 5
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Position light subsidiary",
+              "meaning": "Red with two white lights: pass the red signal; the line ahead may be occupied.",
+              "drive": "Pass at caution, ready to stop short of any obstruction."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 44,
+                    "h": 38,
+                    "lamps": [
+                      {
+                        "x": 11,
+                        "y": 27,
+                        "c": "red",
+                        "s": "on",
+                        "r": 6
+                      },
+                      {
+                        "x": 33,
+                        "y": 27,
+                        "c": "red",
+                        "s": "on",
+                        "r": 6
+                      },
+                      {
+                        "x": 11,
+                        "y": 11,
+                        "c": "white",
+                        "s": "off",
+                        "r": 6
+                      }
+                    ],
+                    "shape": "round"
+                  }
+                ]
+              },
+              "name": "Ground signal: stop",
+              "meaning": "Two reds horizontal (older signals: red and white): stop.",
+              "drive": "Stop short of it."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 44,
+                    "h": 38,
+                    "lamps": [
+                      {
+                        "x": 11,
+                        "y": 27,
+                        "c": "red",
+                        "s": "off",
+                        "r": 6
+                      },
+                      {
+                        "x": 33,
+                        "y": 27,
+                        "c": "white",
+                        "s": "on",
+                        "r": 6
+                      },
+                      {
+                        "x": 11,
+                        "y": 11,
+                        "c": "white",
+                        "s": "on",
+                        "r": 6
+                      }
+                    ],
+                    "shape": "round"
+                  }
+                ]
+              },
+              "name": "Ground signal: proceed",
+              "meaning": "Two white lights at 45°: proceed (shunt).",
+              "drive": "Proceed at caution to the next signal or limit."
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Semaphores",
+          "note": "Stop arm: red with a white stripe. Distant arm: yellow with a black chevron and fishtail end. Lower quadrant arms drop for off, upper quadrant arms rise.",
+          "cols": 5,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "arm",
+                    "type": "stop",
+                    "angle": 0,
+                    "side": "left"
+                  }
+                ]
+              },
+              "name": "Stop: on",
+              "meaning": "Arm horizontal: danger.",
+              "drive": "Stop before the signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "arm",
+                    "type": "stop",
+                    "angle": -45,
+                    "side": "left"
+                  }
+                ]
+              },
+              "name": "Stop: off (lower quadrant)",
+              "meaning": "Arm lowered: proceed.",
+              "drive": "Proceed."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "arm",
+                    "type": "stop",
+                    "angle": 45,
+                    "side": "left"
+                  }
+                ]
+              },
+              "name": "Stop: off (upper quadrant)",
+              "meaning": "Arm raised: proceed.",
+              "drive": "Proceed."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "arm",
+                    "type": "distant",
+                    "angle": 0,
+                    "side": "left"
+                  }
+                ]
+              },
+              "name": "Distant: on",
+              "meaning": "Caution: the stop signal ahead may be at danger.",
+              "drive": "AWS horn: acknowledge, be ready to stop."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "arm",
+                    "type": "distant",
+                    "angle": 45,
+                    "side": "left"
+                  }
+                ]
+              },
+              "name": "Distant: off",
+              "meaning": "All the stop signals of the box ahead are off.",
+              "drive": "AWS bell; proceed."
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Speed signs and boards",
+          "cols": 6,
+          "items": [
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "60",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "red",
+                    "shape": "circle",
+                    "w": 40,
+                    "bw": 4.5
+                  }
+                ]
+              },
+              "name": "Speed sign",
+              "meaning": "Permissible speed from here, in mph (older lines: yellow cut-out figures).",
+              "drive": "Lower: by the sign. Higher: once the rear has passed."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "40",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "yellow",
+                    "shape": "triangle-down",
+                    "w": 48,
+                    "bw": 4
+                  }
+                ]
+              },
+              "name": "PSR warning",
+              "meaning": "A lower permissible speed ahead; AWS magnet 180 m before it.",
+              "drive": "AWS horn: acknowledge, brake to the speed."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "20",
+                    "fg": "black",
+                    "bg": "yellow",
+                    "border": "black",
+                    "shape": "square",
+                    "w": 36
+                  },
+                  {
+                    "kind": "head",
+                    "w": 44,
+                    "h": 18,
+                    "fill": "yellow",
+                    "rx": 1,
+                    "lamps": [
+                      {
+                        "x": 12,
+                        "y": 9,
+                        "c": "white",
+                        "s": "on",
+                        "r": 5
+                      },
+                      {
+                        "x": 32,
+                        "y": 9,
+                        "c": "white",
+                        "s": "on",
+                        "r": 5
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "TSR warning",
+              "meaning": "Temporary restriction ahead; AWS magnet. Two white discs (flashing white lights on lit boards).",
+              "drive": "AWS horn: acknowledge, brake to the speed."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "20",
+                    "fg": "black",
+                    "bg": "yellow",
+                    "border": "black",
+                    "shape": "square",
+                    "w": 36
+                  }
+                ]
+              },
+              "name": "TSR speed",
+              "meaning": "Temporary limit starts here.",
+              "drive": "Be at the speed by the board."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "T",
+                    "fg": "black",
+                    "bg": "yellow",
+                    "border": "black",
+                    "shape": "square",
+                    "w": 36
+                  }
+                ]
+              },
+              "name": "TSR end",
+              "meaning": "Temporary limit ends.",
+              "drive": "Accelerate once the rear has passed."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "✕",
+                    "fg": "white",
+                    "bg": "#0b5cad",
+                    "border": "none",
+                    "shape": "square",
+                    "w": 34,
+                    "size": 22
+                  }
+                ]
+              },
+              "name": "AWS cancelling",
+              "meaning": "An AWS magnet for the other direction: no warning for you. Yellow with a black cross at a TSR.",
+              "drive": "Ignore any AWS indication here."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sections": [
+        {
+          "kind": "table",
+          "title": "AWS and TPWS at a glance",
+          "head": [
+            "Event",
+            "In the cab",
+            "What to do"
+          ],
+          "rows": [
+            [
+              "Green signal, distant off",
+              "Bell or chime; sunflower black",
+              "Nothing"
+            ],
+            [
+              "Caution, red, PSR / TSR warning",
+              "Horn",
+              "**AWS reset** (gear lever) within about 2.7 s; sunflower turns yellow and black"
+            ],
+            [
+              "AWS not acknowledged",
+              "Brakes apply",
+              "Stop, acknowledge, then release the brake"
+            ],
+            [
+              "TPWS overspeed or train stop",
+              "Brake demand lamp flashes, brakes apply",
+              "Acknowledge (lamp goes steady); report to the signaller; the brakes release 60 s after the demand"
+            ],
+            [
+              "DSD released / vigilance alarm missed",
+              "Buzzer, then brakes",
+              "Stop, hold the DSD / acknowledge, release the brake"
+            ]
+          ]
+        },
+        {
+          "kind": "howto",
+          "title": "How to drive under AWS, TPWS and the DSD",
+          "cols": 3,
+          "blocks": [
+            {
+              "title": "Approaching a caution",
+              "steps": [
+                "Double yellow: AWS horn, press **AWS reset** (gear lever). Start braking.",
+                "Single yellow: AWS horn again, reset. Brake to stop at the next signal.",
+                "Keep below the TPWS trigger speed on the approach to the red; stop short."
+              ]
+            },
+            {
+              "title": "At a red signal",
+              "steps": [
+                "Stop before the signal. Set the **DRA** if you are waiting.",
+                "Contact the signaller if the signal does not clear.",
+                "To pass at danger with authority, press **Train Stop Override** (in the cab): it covers the train stop for about 20 s (60 s on the 66), never the overspeed sensor.",
+                "Release the DRA when the signal clears, then take power."
+              ]
+            },
+            {
+              "title": "TPWS intervention",
+              "steps": [
+                "Brakes apply and the brake demand lamp flashes.",
+                "Leave the controls; let the train stop.",
+                "Acknowledge with **AWS reset**: the lamp goes steady. Report to the signaller; the brakes release 60 s after the demand."
+              ]
+            },
+            {
+              "title": "Speed restrictions",
+              "bullets": [
+                "PSR and TSR warning boards carry an AWS magnet: horn, reset, brake.",
+                "Be at the speed by the speed sign; TPWS overspeed sensors guard some restrictions.",
+                "Higher speed only once the rear of the train has passed the sign."
+              ]
+            },
+            {
+              "title": "DSD and vigilance",
+              "steps": [
+                "Keep the DSD / DVD switched in (right aux square: isolation off).",
+                "When the vigilance buzzer sounds, acknowledge with the **gear lever**.",
+                "Missed: the brakes apply; stop, acknowledge, release and drive on."
+              ]
+            },
+            {
+              "title": "London Underground (1938, 1972 Stock)",
+              "bullets": [
+                "Signals: red / green; a trainstop arm is raised at red.",
+                "Passing a red trips the tripcock: emergency brake.",
+                "A trip counts as a signal passed at danger: stop, report, then reset the tripcock (**ENG 1**) and the valve (**gear lever**, 1972) and continue slowly."
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "callout",
+          "title": "Before departure:",
+          "text": "AWS / TPWS and DSD isolation lights out: on most units the aux squares are isolation switches, unlit = in service (the 380 starts isolated). Flying Scotsman: left aux lit = AWS on; the LMS steam locos have no AWS. DRA released, the signal off."
+        }
+      ]
+    }
+  ]
+}
