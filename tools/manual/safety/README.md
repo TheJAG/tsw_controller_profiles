@@ -28,6 +28,6 @@ Each entry in `pages` is one A4 sheet; page 1 carries the big header.
 - `{ kind: "head", column: ["red-", "yellow*", "green"] }`: a black head with lamps in a column; a colour (red, yellow, green, white, lunar, blue, orange, purple) plus nothing = lit, `*` = flashing (drawn with rays), `-` = dark. `shape: "round"` rounds the head, `r` sets the lamp radius (7).
 - `{ kind: "head", w, h, lamps: [ { x, y, c, s: on|off|flash, r? } ], shape?: "rect"|"round"|"none", fill?, rx? }`: free lamp layout (position lights, lunar whites, route indicators); `fill` colours the backplate (a yellow board with lamps).
 - `{ kind: "number", text, color, s: on|flash|off }`: a lit number indicator.
-- `{ kind: "plate", text ("\n" breaks lines), fg, bg, border, shape: rect|triangle|triangle-down|diamond|circle|square, w?, h?, size?, rx?, bw? (border width) }`; `border: "none"` drops the rim: an unlit board.
+- `{ kind: "plate", text ("\n" breaks lines), fg, bg, border, shape: rect|triangle|triangle-down|diamond|circle|square|hourglass (two triangles meeting in the centre, in fg), w?, h?, size?, rx?, bw? (border width) }`; `border: "none"` drops the rim: an unlit board.
 - `{ kind: "arm", angle (degrees, + raised), type: stop|distant|de, side: right|left }`: a semaphore arm (`stop` and `distant` British, `de` the German white arm with a red rim and end disc).
 - `{ kind: "gap", h }`: empty space between parts.

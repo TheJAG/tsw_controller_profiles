@@ -49,13 +49,14 @@ function part(p) {
     const long = Math.max(...lines.map(l => l.length)), fs = p.size || (long > 3 ? 11 : lines.length > 1 ? 13 : 17);
     let w = p.w || Math.max(30, long * fs * 0.62 + 12), h = p.h || Math.max(30, lines.length * fs * 1.05 + 10);
     if (shape === 'triangle' || shape === 'triangle-down') { w = p.w || Math.max(w + 12, 42); h = p.h || Math.round(w * 0.87); }
-    if (shape === 'diamond' || shape === 'circle' || shape === 'square') { w = h = p.w || Math.max(w, h, 34); }
+    if (shape === 'diamond' || shape === 'circle' || shape === 'square' || shape === 'hourglass') { w = h = p.w || Math.max(w, h, 34); }
     return { w, h, draw: (cx, y) => {
       let g; const x = cx - w / 2;
       if (shape === 'triangle') g = `<path d="M${cx} ${y + 1} L${x + w - 1} ${y + h - 1} L${x + 1} ${y + h - 1}Z"`;
       else if (shape === 'triangle-down') g = `<path d="M${x + 1} ${y + 1} L${x + w - 1} ${y + 1} L${cx} ${y + h - 1}Z"`;
       else if (shape === 'diamond') g = `<path d="M${cx} ${y + 1} L${x + w - 1} ${y + h / 2} L${cx} ${y + h - 1} L${x + 1} ${y + h / 2}Z"`;
       else if (shape === 'circle') g = `<circle cx="${cx}" cy="${y + h / 2}" r="${w / 2 - 1}"`;
+      else if (shape === 'hourglass') return `<rect x="${x + 0.75}" y="${y + 0.75}" width="${w - 1.5}" height="${h - 1.5}" fill="${bg}" stroke="${bd}" stroke-width="${p.bw || 1.5}"/><path d="M${x + 3} ${y + 3} L${x + w - 3} ${y + 3} L${cx} ${y + h / 2}Z M${x + 3} ${y + h - 3} L${x + w - 3} ${y + h - 3} L${cx} ${y + h / 2}Z" fill="${fg}"/>`;
       else g = `<rect x="${x + 0.75}" y="${y + 0.75}" width="${w - 1.5}" height="${h - 1.5}" rx="${p.rx != null ? p.rx : 2}"`;
       g += ` fill="${bg}" stroke="${bd}" stroke-width="${p.bw || 1.5}" stroke-linejoin="round"/>`;
       const ty = shape === 'triangle' ? y + h * 0.62 : shape === 'triangle-down' ? y + h * 0.38 : y + h / 2;

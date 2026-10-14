@@ -1,0 +1,761 @@
+{
+  "name": "tsw-safety-japan-thejag",
+  "title": "Safety systems · Japan",
+  "eyebrow": "Signals and train protection · Train Sim World · TCA Quadrant Airbus",
+  "colors": {
+    "navy": "#2e4a3d",
+    "blue": "#5e8a73",
+    "red": "#2cb431",
+    "paper": "#f3f6f4"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-jreast-greengrey.svg",
+      "alt": "JR East"
+    }
+  ],
+  "credit": "© TheJAG",
+  "sources": [
+    "Dovetail Games: Tadami Line / KiHa 40 driver's manual",
+    "MLIT 鉄道に関する技術上の基準を定める省令",
+    "ja.wikipedia: 自動列車停止装置, 日本の鉄道信号, EB装置, 只見線",
+    "en.wikipedia: Japanese railway signals"
+  ],
+  "pages": [
+    {
+      "sections": [
+        {
+          "kind": "intro",
+          "paragraphs": [
+            "Japanese signals give a **speed class** for the section ahead. On the TSW **Tadami Line** (single track, 65 km/h) the main signals have three aspects, **Clear**, **Caution** (45 km/h) and **Stop**, with a four-lamp **distant signal** before each station and **repeaters** where the view is short. The **JR East KiHa 40** runs under **ATS-SN** and the **EB** vigilance device. Busier JR lines add **Reduce speed** and **Restricted speed** on five-lamp heads (shown for reference). Quadrant controls are from TheJAG's KiHa 40 profile; \"gear lever\" means the Quadrant's gear lever (the KiHa's own gear is on the flap lever)."
+          ]
+        },
+        {
+          "kind": "systems",
+          "title": "Safety systems",
+          "cols": 3,
+          "items": [
+            {
+              "name": "ATS-SN",
+              "full": "自動列車停止装置 S type, N variant",
+              "summary": "A coil about 600 m before a signal at stop rings the **bell**: brake and press **ATS Acknowledge** (確認扱い) within **5 s**, or the emergency brake applies. The **alert sound** then continues. A coil **at** the signal brakes at once if it is passed at stop, and a departure coil does the same if you start against a starting signal at stop.",
+              "where": "The whole Tadami Line in TSW",
+              "quadrant": "**Gear lever** = ATS Acknowledge; **left aux** = ATS and EB power. Alert Release (警報持続解除): in the cab"
+            },
+            {
+              "name": "ATS-P / Ps",
+              "full": "Pattern-type ATS",
+              "summary": "Checks a braking curve to signals and restrictions and brakes automatically; no acknowledge. On the real line Ps covers the Aizu-Wakamatsu and Koide station areas; **TSW simulates SN only**.",
+              "where": "P: Tokyo area and main lines. Ps: JR East regional lines (Sendai, Niigata areas)",
+              "quadrant": ""
+            },
+            {
+              "name": "EB",
+              "full": "EB装置 (Emergency Brake device)",
+              "summary": "Above **15 km/h**, with no throttle, brake or horn movement for about **60 s**, a buzzer and lamp: reset within about **5 s** or the emergency brake applies.",
+              "where": "Most JR trains, the KiHa 40 included",
+              "quadrant": "**Left throttle button** = EB Reset"
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Tadami Line signals",
+          "note": "Main signals (home 場内, starting 出発, block 閉塞): three lamps. Distant signal (遠方信号機): square backboard, four positions, one left empty.",
+          "cols": 6,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green",
+                      "yellow-",
+                      "red-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Clear (進行)",
+              "meaning": "Line speed.",
+              "drive": "Drive at the line speed."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green-",
+                      "yellow",
+                      "red-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Caution (注意)",
+              "meaning": "Next signal at stop: 45 km/h.",
+              "drive": "Brake to 45; prepare to stop."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green-",
+                      "yellow-",
+                      "red"
+                    ]
+                  }
+                ]
+              },
+              "name": "Stop (停止)",
+              "meaning": "Do not pass.",
+              "drive": "Stop before the signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 36,
+                    "h": 82,
+                    "lamps": [
+                      {
+                        "x": 18,
+                        "y": 13,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 18,
+                        "y": 49,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 18,
+                        "y": 67,
+                        "c": "green",
+                        "s": "on"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Distant: Clear",
+              "meaning": "The home signal shows Clear.",
+              "drive": "Keep going."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 36,
+                    "h": 82,
+                    "lamps": [
+                      {
+                        "x": 18,
+                        "y": 13,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 18,
+                        "y": 49,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 18,
+                        "y": 67,
+                        "c": "green",
+                        "s": "on"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Distant: Advanced caution",
+              "meaning": "The home signal shows Caution.",
+              "drive": "Prepare for 45 at the home signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 36,
+                    "h": 82,
+                    "lamps": [
+                      {
+                        "x": 18,
+                        "y": 13,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 18,
+                        "y": 49,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 18,
+                        "y": 67,
+                        "c": "green",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Distant: Caution",
+              "meaning": "The home signal is at stop: 45 km/h.",
+              "drive": "Brake to 45, prepare to stop."
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Repeaters, route indicators and the five-lamp head",
+          "note": "Five-lamp heads (yellow, yellow, red, yellow, green) are not on the Tadami Line; typical JR speeds shown.",
+          "cols": 6,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 52,
+                    "h": 52,
+                    "lamps": [
+                      {
+                        "x": 26,
+                        "y": 26,
+                        "c": "white",
+                        "s": "on",
+                        "r": 5
+                      },
+                      {
+                        "x": 26,
+                        "y": 9,
+                        "c": "white",
+                        "s": "on",
+                        "r": 5
+                      },
+                      {
+                        "x": 26,
+                        "y": 43,
+                        "c": "white",
+                        "s": "on",
+                        "r": 5
+                      },
+                      {
+                        "x": 9,
+                        "y": 26,
+                        "c": "white",
+                        "s": "off",
+                        "r": 5
+                      },
+                      {
+                        "x": 43,
+                        "y": 26,
+                        "c": "white",
+                        "s": "off",
+                        "r": 5
+                      },
+                      {
+                        "x": 38,
+                        "y": 14,
+                        "c": "white",
+                        "s": "off",
+                        "r": 5
+                      },
+                      {
+                        "x": 14,
+                        "y": 38,
+                        "c": "white",
+                        "s": "off",
+                        "r": 5
+                      }
+                    ],
+                    "shape": "round"
+                  }
+                ]
+              },
+              "name": "Repeater: proceed (進行中継)",
+              "meaning": "Vertical: the main signal ahead shows Clear.",
+              "drive": "Keep going."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 52,
+                    "h": 52,
+                    "lamps": [
+                      {
+                        "x": 26,
+                        "y": 26,
+                        "c": "white",
+                        "s": "on",
+                        "r": 5
+                      },
+                      {
+                        "x": 26,
+                        "y": 9,
+                        "c": "white",
+                        "s": "off",
+                        "r": 5
+                      },
+                      {
+                        "x": 26,
+                        "y": 43,
+                        "c": "white",
+                        "s": "off",
+                        "r": 5
+                      },
+                      {
+                        "x": 9,
+                        "y": 26,
+                        "c": "white",
+                        "s": "off",
+                        "r": 5
+                      },
+                      {
+                        "x": 43,
+                        "y": 26,
+                        "c": "white",
+                        "s": "off",
+                        "r": 5
+                      },
+                      {
+                        "x": 38,
+                        "y": 14,
+                        "c": "white",
+                        "s": "on",
+                        "r": 5
+                      },
+                      {
+                        "x": 14,
+                        "y": 38,
+                        "c": "white",
+                        "s": "on",
+                        "r": 5
+                      }
+                    ],
+                    "shape": "round"
+                  }
+                ]
+              },
+              "name": "Repeater: restricted (制限中継)",
+              "meaning": "Diagonal: Caution (or Reduce / Restricted speed).",
+              "drive": "Prepare to slow down."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 52,
+                    "h": 52,
+                    "lamps": [
+                      {
+                        "x": 26,
+                        "y": 26,
+                        "c": "white",
+                        "s": "on",
+                        "r": 5
+                      },
+                      {
+                        "x": 26,
+                        "y": 9,
+                        "c": "white",
+                        "s": "off",
+                        "r": 5
+                      },
+                      {
+                        "x": 26,
+                        "y": 43,
+                        "c": "white",
+                        "s": "off",
+                        "r": 5
+                      },
+                      {
+                        "x": 9,
+                        "y": 26,
+                        "c": "white",
+                        "s": "on",
+                        "r": 5
+                      },
+                      {
+                        "x": 43,
+                        "y": 26,
+                        "c": "white",
+                        "s": "on",
+                        "r": 5
+                      },
+                      {
+                        "x": 38,
+                        "y": 14,
+                        "c": "white",
+                        "s": "off",
+                        "r": 5
+                      },
+                      {
+                        "x": 14,
+                        "y": 38,
+                        "c": "white",
+                        "s": "off",
+                        "r": 5
+                      }
+                    ],
+                    "shape": "round"
+                  }
+                ]
+              },
+              "name": "Repeater: stop (停止中継)",
+              "meaning": "Horizontal: the main signal is at stop.",
+              "drive": "Prepare to stop."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green-",
+                      "yellow",
+                      "red-"
+                    ]
+                  },
+                  {
+                    "kind": "head",
+                    "w": 42,
+                    "h": 50,
+                    "lamps": [
+                      {
+                        "x": 9,
+                        "y": 8,
+                        "c": "white",
+                        "s": "on",
+                        "r": 4
+                      },
+                      {
+                        "x": 9,
+                        "y": 19,
+                        "c": "white",
+                        "s": "on",
+                        "r": 4
+                      },
+                      {
+                        "x": 9,
+                        "y": 30,
+                        "c": "white",
+                        "s": "on",
+                        "r": 4
+                      },
+                      {
+                        "x": 9,
+                        "y": 41,
+                        "c": "white",
+                        "s": "on",
+                        "r": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 8,
+                        "c": "white",
+                        "s": "off",
+                        "r": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 19,
+                        "c": "white",
+                        "s": "off",
+                        "r": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 30,
+                        "c": "white",
+                        "s": "off",
+                        "r": 4
+                      },
+                      {
+                        "x": 21,
+                        "y": 41,
+                        "c": "white",
+                        "s": "off",
+                        "r": 4
+                      },
+                      {
+                        "x": 33,
+                        "y": 8,
+                        "c": "white",
+                        "s": "off",
+                        "r": 4
+                      },
+                      {
+                        "x": 33,
+                        "y": 19,
+                        "c": "white",
+                        "s": "off",
+                        "r": 4
+                      },
+                      {
+                        "x": 33,
+                        "y": 30,
+                        "c": "white",
+                        "s": "off",
+                        "r": 4
+                      },
+                      {
+                        "x": 33,
+                        "y": 41,
+                        "c": "white",
+                        "s": "off",
+                        "r": 4
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Route indicator (進路表示機)",
+              "meaning": "Under the head, lit with the signal: the lit column is the route (left here).",
+              "drive": "Check it is your track."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow-",
+                      "yellow",
+                      "red-",
+                      "yellow-",
+                      "green"
+                    ]
+                  }
+                ]
+              },
+              "name": "Reduce speed (減速)",
+              "meaning": "Next signal at caution: about 65 km/h.",
+              "drive": "Brake to the speed at the signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "yellow",
+                      "yellow-",
+                      "red-",
+                      "yellow",
+                      "green-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Restricted (警戒)",
+              "meaning": "Short overlap to the next stop signal: 25 km/h.",
+              "drive": "Max 25, stop at the next signal."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sections": [
+        {
+          "kind": "aspects",
+          "title": "Signs on the Tadami Line",
+          "cols": 5,
+          "items": [
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "45",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 36,
+                    "h": 40
+                  }
+                ]
+              },
+              "name": "Speed limit (速度制限標識)",
+              "meaning": "A curve or points limit from here.",
+              "drive": "Be at the speed by the sign."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "hourglass",
+                    "w": 36
+                  }
+                ]
+              },
+              "name": "Limit end (速度制限解除標識)",
+              "meaning": "The limit ends.",
+              "drive": "Accelerate once the rear has passed."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "▼",
+                    "fg": "black",
+                    "bg": "yellow",
+                    "border": "black",
+                    "shape": "square",
+                    "w": 34,
+                    "size": 20
+                  }
+                ]
+              },
+              "name": "Departure coil",
+              "meaning": "ATS departure coil: do not pass with the starting signal at stop.",
+              "drive": "Wait for the starting signal."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "✕",
+                    "fg": "black",
+                    "bg": "yellow",
+                    "border": "black",
+                    "shape": "square",
+                    "w": 34,
+                    "size": 22
+                  }
+                ]
+              },
+              "name": "Whistle sign",
+              "meaning": "Sound the horn.",
+              "drive": "Horn (right throttle button)."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "2",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "red",
+                    "shape": "diamond",
+                    "w": 40,
+                    "bw": 3
+                  }
+                ]
+              },
+              "name": "Stop position (停止位置目標)",
+              "meaning": "Stop here with a train of this many cars.",
+              "drive": "Stop at your car count."
+            }
+          ]
+        },
+        {
+          "kind": "howto",
+          "title": "How to drive under ATS-SN and the EB",
+          "cols": 3,
+          "blocks": [
+            {
+              "title": "ATS-SN: approaching a stop signal",
+              "steps": [
+                "About 600 m before a signal at stop the **bell** rings.",
+                "Brake handle to Lap or Apply, and within 5 s press **ATS Acknowledge** (gear lever).",
+                "The **alert sound** continues: stop before the signal.",
+                "Once stopped (or when the signal clears) press **Alert Release** in the cab, then drive on."
+              ]
+            },
+            {
+              "title": "ATS emergency brake",
+              "steps": [
+                "Passing a signal at stop, or no acknowledge in time: emergency brake.",
+                "Brake handle to **Emergency**, wait for a complete stop.",
+                "Press **ATS Acknowledge** (gear lever).",
+                "Release the brake once the brake pipe has recovered; wait for the signal."
+              ]
+            },
+            {
+              "title": "EB (vigilance)",
+              "steps": [
+                "Above 15 km/h, moving the throttle, brake or horn resets the timer.",
+                "After about 60 s without one the EB buzzer sounds: press **EB Reset** (left throttle button).",
+                "Missed: emergency brake. Brake handle to Emergency, the warning stops; then release."
+              ]
+            },
+            {
+              "title": "Before departure",
+              "steps": [
+                "**ATS and EB power** on (left aux): the self-test rings the bell for 2 s, then the alert sound.",
+                "Press **Alert Release** in the cab to silence it.",
+                "Check the starting signal and the departure time, close the doors (RUD TRIM), release the brake, notch up."
+              ]
+            },
+            {
+              "title": "Single track",
+              "bullets": [
+                "The Tadami Line is single track with crossing loops (Nishi-Wakamatsu, Aizu-Bange, Aizu-Miyashita, Aizu-Kawaguchi).",
+                "At a loop the starting signal governs: wait for it to clear.",
+                "The departure coil brakes the train if you start against it."
+              ]
+            },
+            {
+              "title": "Speed",
+              "bullets": [
+                "Line speed 65 km/h; Caution 45 km/h.",
+                "Speed signs set curve and points limits; higher speed only once the rear has passed the end sign.",
+                "ATS-SN does not check your speed: brake to stop yourself."
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "callout",
+          "title": "Remember:",
+          "text": "ATS-SN only checks that you acknowledged; it does not watch your speed afterwards. The coil at the signal is the last line of defence and stops the train at once."
+        }
+      ]
+    }
+  ]
+}
