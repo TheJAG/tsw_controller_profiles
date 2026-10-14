@@ -1,0 +1,671 @@
+{
+  "name": "tsw-safety-switzerland-thejag",
+  "title": "Safety systems · Switzerland",
+  "eyebrow": "Signals and train protection · Train Sim World · TCA Quadrant Airbus",
+  "colors": {
+    "navy": "#5a2a2e",
+    "blue": "#8a5a5e",
+    "red": "#eb0000",
+    "paper": "#f7f3f3"
+  },
+  "logos": [
+    {
+      "file": "../../assets/logo-sbb-maroon.svg",
+      "alt": "SBB CFF FFS"
+    },
+    {
+      "file": "../../assets/logo-rhb-maroon.svg",
+      "alt": "RhB"
+    }
+  ],
+  "credit": "© TheJAG",
+  "sources": [
+    "Rivet Games: Berninalinie, Arosalinie and Luzern – Sursee driver's manuals",
+    "Schweizerische Fahrdienstvorschriften R 300.2",
+    "RhB Betriebsvorschriften",
+    "de.wikipedia: Eisenbahnsignale in der Schweiz, Integra-Signum, Zugsicherung auf Schmalspurbahnen in der Schweiz"
+  ],
+  "pages": [
+    {
+      "sections": [
+        {
+          "kind": "intro",
+          "paragraphs": [
+            "Swiss main signals (system L) show a **Fahrbegriff**, a speed for the route: FB 1 = line speed, FB 2 = 40, FB 3 = 60, FB 5 = 90, FB 6 = 40 \"Kurze Fahrt\" (short distance to a Halt). **On the RhB** the same aspects mean FB 2 = 30, FB 3 = 45, FB 6 = 30, and there is no FB 5. Distant signals announce the next main signal; Luzern – Sursee also has **system N** signals with numbers. Speeds in km/h. Quadrant controls are from TheJAG's profiles: RhB Allegra (Berninalinie), RhB Ge 4/4 II (Arosalinie), SBB RABe 523 (Luzern – Sursee)."
+          ]
+        },
+        {
+          "kind": "systems",
+          "title": "Safety systems",
+          "cols": 4,
+          "items": [
+            {
+              "name": "Integra-Signum",
+              "full": "SBB intermittent train protection (TSW: ETCS STM level)",
+              "summary": "A distant at Warnung (and a main signal at Kurze Fahrt) gives a buzzer and a yellow lamp: **acknowledge** at once (real: within 100 m or 5 s) or the train brakes. Passing a Halt brakes at once.",
+              "where": "Luzern – Sursee (RABe 523)",
+              "quadrant": "**Gear lever** = Signum reset"
+            },
+            {
+              "name": "ETCS Level 1",
+              "full": "TSW: Staff Responsible, then Full Supervision (the real line runs Limited Supervision)",
+              "summary": "Select the level on the right display at a stand and confirm. Level 1 starts in SR (40 km/h to the first balise), then FS: speed monitoring and a braking curve with a warning tone. Level 0 only checks above 100 km/h.",
+              "where": "Luzern – Sursee (RABe 523)",
+              "quadrant": "**ENG 1** = confirm the level; left aux = ETCS on"
+            },
+            {
+              "name": "ZSI-90 / ZS",
+              "full": "RhB Zugsicherung (TSW); today ZSI 127",
+              "summary": "Track magnets at a distant at Warnung and at Kurze Fahrt: two beeps and a flashing yellow lamp, press **ZS** or the emergency brake applies. Green lamp after a proceed aspect. Real RhB now runs balise-based ZSI 127.",
+              "where": "Berninalinie, Arosalinie",
+              "quadrant": "Allegra: **ENG 1** = ZS, left aux = ZSI on. Ge 4/4 II: **gear lever** = ZSI acknowledge (always on)"
+            },
+            {
+              "name": "SiSte / deadman",
+              "full": "Sicherheitssteuerung, Totmannpedal",
+              "summary": "Allegra: SiSte, a timed vigilance like the SiFa: reset when the button lights. Ge 4/4 II: a deadman pedal, no timed alarm. RABe 523: none simulated.",
+              "where": "Allegra, Ge 4/4 II",
+              "quadrant": "Allegra: **gear lever** = SiSte reset, right aux = SiSte on. Ge 4/4 II: left aux = deadman cut-out (lit = cut out)"
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Main signals (system L)",
+          "note": "FDV five-lamp column: green, red, orange, green, green; FB 6 lights the second and fourth positions orange. RhB speeds in brackets.",
+          "cols": 6,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green-",
+                      "red",
+                      "yellow-",
+                      "green-",
+                      "green-"
+                    ]
+                  }
+                ]
+              },
+              "name": "Halt",
+              "meaning": "Stop.",
+              "drive": "Stop before the signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green",
+                      "red-",
+                      "yellow-",
+                      "green-",
+                      "green-"
+                    ]
+                  }
+                ]
+              },
+              "name": "FB 1",
+              "meaning": "Line speed.",
+              "drive": "Drive on."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green",
+                      "red-",
+                      "yellow",
+                      "green-",
+                      "green-"
+                    ]
+                  }
+                ]
+              },
+              "name": "FB 2",
+              "meaning": "Max 40 (RhB 30).",
+              "drive": "Be at the speed at the signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green",
+                      "red-",
+                      "yellow-",
+                      "green",
+                      "green-"
+                    ]
+                  }
+                ]
+              },
+              "name": "FB 3",
+              "meaning": "Max 60 (RhB 45).",
+              "drive": "Be at the speed at the signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green",
+                      "red-",
+                      "green",
+                      "yellow-",
+                      "green"
+                    ]
+                  }
+                ]
+              },
+              "name": "FB 5",
+              "meaning": "Max 90 (not on the RhB).",
+              "drive": "Be at 90 at the signal."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "column": [
+                      "green-",
+                      "yellow",
+                      "green-",
+                      "yellow",
+                      "green-"
+                    ]
+                  }
+                ]
+              },
+              "name": "FB 6 Kurze Fahrt",
+              "meaning": "Max 40 (RhB 30); a Halt follows at a short distance.",
+              "drive": "Acknowledge Signum / ZS; be ready to stop."
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Distant signals (system L)",
+          "cols": 4,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 52,
+                    "h": 60,
+                    "lamps": [
+                      {
+                        "x": 13,
+                        "y": 13,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 39,
+                        "y": 13,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 39,
+                        "y": 30,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 13,
+                        "y": 47,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 39,
+                        "y": 47,
+                        "c": "yellow",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Warnung",
+              "meaning": "The next main signal shows Halt.",
+              "drive": "Acknowledge Signum / ZS; brake to stop."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 52,
+                    "h": 60,
+                    "lamps": [
+                      {
+                        "x": 13,
+                        "y": 13,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 39,
+                        "y": 13,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 39,
+                        "y": 30,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 13,
+                        "y": 47,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 39,
+                        "y": 47,
+                        "c": "yellow",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Ankündigung FB 1",
+              "meaning": "The next main signal shows line speed.",
+              "drive": "Keep going."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 52,
+                    "h": 60,
+                    "lamps": [
+                      {
+                        "x": 13,
+                        "y": 13,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 39,
+                        "y": 13,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 39,
+                        "y": 30,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 13,
+                        "y": 47,
+                        "c": "green",
+                        "s": "off"
+                      },
+                      {
+                        "x": 39,
+                        "y": 47,
+                        "c": "yellow",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Ankündigung FB 2 / 6",
+              "meaning": "Next main signal: 40 (RhB 30).",
+              "drive": "Brake to the speed."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 52,
+                    "h": 60,
+                    "lamps": [
+                      {
+                        "x": 13,
+                        "y": 13,
+                        "c": "yellow",
+                        "s": "on"
+                      },
+                      {
+                        "x": 39,
+                        "y": 13,
+                        "c": "yellow",
+                        "s": "off"
+                      },
+                      {
+                        "x": 39,
+                        "y": 30,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 13,
+                        "y": 47,
+                        "c": "green",
+                        "s": "on"
+                      },
+                      {
+                        "x": 39,
+                        "y": 47,
+                        "c": "yellow",
+                        "s": "off"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "Ankündigung FB 3",
+              "meaning": "Next main signal: 60 (RhB 45).",
+              "drive": "Brake to the speed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sections": [
+        {
+          "kind": "aspects",
+          "title": "System N (Luzern – Sursee)",
+          "note": "One lamp; a number gives the speed in tens of km/h. Main signals have a white ring, distant signals a white square frame.",
+          "cols": 4,
+          "items": [
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 40,
+                    "h": 40,
+                    "lamps": [
+                      {
+                        "x": 20,
+                        "y": 20,
+                        "c": "green",
+                        "s": "on",
+                        "r": 9
+                      }
+                    ],
+                    "shape": "round"
+                  },
+                  {
+                    "kind": "number",
+                    "text": "7",
+                    "color": "white",
+                    "s": "on"
+                  }
+                ]
+              },
+              "name": "Green + 7",
+              "meaning": "70 km/h from this signal.",
+              "drive": "Be at 70 here."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 40,
+                    "h": 40,
+                    "lamps": [
+                      {
+                        "x": 20,
+                        "y": 20,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 9
+                      }
+                    ],
+                    "shape": "round"
+                  },
+                  {
+                    "kind": "number",
+                    "text": "7",
+                    "color": "white",
+                    "s": "on"
+                  }
+                ]
+              },
+              "name": "Orange + 7",
+              "meaning": "70 km/h at the next signal.",
+              "drive": "Brake to 70."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 40,
+                    "h": 40,
+                    "lamps": [
+                      {
+                        "x": 20,
+                        "y": 20,
+                        "c": "yellow",
+                        "s": "on",
+                        "r": 9
+                      }
+                    ],
+                    "shape": "round"
+                  }
+                ]
+              },
+              "name": "Orange",
+              "meaning": "The next signal shows Halt.",
+              "drive": "Acknowledge Signum; brake to stop."
+            },
+            {
+              "signal": {
+                "post": true,
+                "parts": [
+                  {
+                    "kind": "head",
+                    "w": 40,
+                    "h": 40,
+                    "lamps": [
+                      {
+                        "x": 20,
+                        "y": 20,
+                        "c": "green",
+                        "s": "on",
+                        "r": 9
+                      }
+                    ],
+                    "shape": "round"
+                  },
+                  {
+                    "kind": "number",
+                    "text": "4",
+                    "color": "white",
+                    "s": "flash"
+                  }
+                ]
+              },
+              "name": "Flashing number",
+              "meaning": "Kurze Fahrt: a Halt follows at a short distance.",
+              "drive": "Acknowledge; be ready to stop."
+            }
+          ]
+        },
+        {
+          "kind": "aspects",
+          "title": "Speed signs and boards",
+          "cols": 5,
+          "items": [
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "80",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "rect",
+                    "w": 34,
+                    "h": 44
+                  }
+                ]
+              },
+              "name": "Vorsignal verm. Geschw.",
+              "meaning": "A lower speed ahead, in full km/h (two numbers: per train series).",
+              "drive": "Brake to reach it by the Anfangssignal."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "///",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "square",
+                    "w": 36,
+                    "size": 16
+                  }
+                ]
+              },
+              "name": "Anfangssignal",
+              "meaning": "The reduced speed starts here.",
+              "drive": "Be at the speed here."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "| |",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "square",
+                    "w": 36,
+                    "size": 18
+                  }
+                ]
+              },
+              "name": "Endsignal",
+              "meaning": "The reduced speed ends.",
+              "drive": "Accelerate once the last vehicle has passed."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "△",
+                    "fg": "black",
+                    "bg": "white",
+                    "border": "black",
+                    "shape": "square",
+                    "w": 36,
+                    "size": 20
+                  }
+                ]
+              },
+              "name": "Merktafel Zugsicherung",
+              "meaning": "At a distant: the train protection also acts at FB 2 / 3 here.",
+              "drive": "Be ready to acknowledge."
+            },
+            {
+              "signal": {
+                "post": "short",
+                "parts": [
+                  {
+                    "kind": "plate",
+                    "text": "",
+                    "fg": "white",
+                    "bg": "black",
+                    "border": "black",
+                    "shape": "square",
+                    "w": 36,
+                    "bar": "white"
+                  }
+                ]
+              },
+              "name": "Fehlendes Vorsignal",
+              "meaning": "An entry signal follows at braking distance with no distant signal.",
+              "drive": "Expect Halt."
+            }
+          ]
+        },
+        {
+          "kind": "howto",
+          "title": "How to drive",
+          "cols": 3,
+          "blocks": [
+            {
+              "title": "RABe 523: Signum and ETCS",
+              "steps": [
+                "At a stand select the ETCS level on the right display, then confirm with **ENG 1**.",
+                "Level 1: 40 km/h in SR to the first balise, then follow the FS speed and curve.",
+                "STM / Signum: at a Warnung press **Signum reset** (gear lever) at once."
+              ]
+            },
+            {
+              "title": "RhB: ZS / ZSI",
+              "steps": [
+                "Switch the ZSI on (Allegra left aux; always on in the Ge 4/4 II).",
+                "At a distant at Warnung or a Kurze Fahrt: two beeps, yellow lamp flashing: press **ZS** (Allegra ENG 1, Ge 4/4 II gear lever).",
+                "Missed: red lamp and emergency brake; stop, release."
+              ]
+            },
+            {
+              "title": "Vigilance",
+              "steps": [
+                "Allegra: SiSte on (right aux); reset with the **gear lever** when its button lights.",
+                "Ge 4/4 II: keep the deadman cut in: left aux **dark**.",
+                "Missed: emergency brake; stop, reset, release."
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "callout",
+          "title": "Before departure:",
+          "text": "Allegra: ZSI and SiSte on (both load off; aux squares lit). Ge 4/4 II: deadman cut in (left aux dark). RABe 523: ETCS on, level selected and confirmed. Check the signal, close the doors."
+        }
+      ]
+    }
+  ]
+}

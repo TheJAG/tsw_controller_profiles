@@ -9,6 +9,7 @@ One manual per country: the signal aspects, drawn, and how to drive under each t
 🇬🇧 **United Kingdom** <sub>— AWS · TPWS · DSD / vigilance · DRA · tripcock · TVM 430 · [manual](profiles/documentation/tsw-safety-united-kingdom-thejag.pdf)</sub>  
 🇦🇹 **Austria** <sub>— PZB 90 · Indusi I60 · SiFa · [manual](profiles/documentation/tsw-safety-austria-thejag.pdf)</sub>  
 🇨🇿 **Czechia** <sub>— LS 90 · LS IV / LVZ · vigilance · [manual](profiles/documentation/tsw-safety-czechia-thejag.pdf)</sub>  
+🇨🇭 **Switzerland** <sub>— Integra-Signum · ETCS · ZSI / ZS · SiSte · [manual](profiles/documentation/tsw-safety-switzerland-thejag.pdf)</sub>  
 🇩🇪 **Germany** <sub>— PZB 90 · LZB · SiFa · [manual](profiles/documentation/tsw-safety-germany-thejag.pdf)</sub>  
 🇫🇷 **France** <sub>— TVM 430 · KVB · crocodile · VACMA · [manual](profiles/documentation/tsw-safety-france-thejag.pdf)</sub>  
 🇯🇵 **Japan** <sub>— ATS-SN · EB · [manual](profiles/documentation/tsw-safety-japan-thejag.pdf)</sub>  
