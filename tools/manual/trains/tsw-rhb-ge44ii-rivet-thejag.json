@@ -1,10 +1,10 @@
 {
-  "name": "tsw-rhb-allegra-dtg-thejag",
-  "title": "ABe 8/12 Allegra",
-  "eyebrow": "Rhätische Bahn · Dovetail Games · TCA Quadrant Airbus",
-  "profileName": "TSW | RhB Allegra | DTG | TheJAG",
-  "developer": "Dovetail Games",
-  "route": "Berninalinie: Tirano – Ospizio Bernina",
+  "name": "tsw-rhb-ge44ii-rivet-thejag",
+  "title": "Ge 4/4 II",
+  "eyebrow": "Rhätische Bahn · Rivet Games · TCA Quadrant Airbus",
+  "profileName": "TSW | RhB Ge44ii | Rivet | TheJAG",
+  "developer": "Rivet Games",
+  "route": "Arosalinie: Chur – Arosa",
   "colors": {
     "navy": "#5a2a2e",
     "blue": "#8a5a5e",
@@ -17,14 +17,14 @@
       "alt": "Rhätische Bahn"
     },
     {
-      "file": "../../assets/logo-dtg-maroon.png",
-      "alt": "Dovetail Games"
+      "file": "../../assets/logo-rivet-maroon.png",
+      "alt": "Rivet Games"
     }
   ],
-  "dlc": "store.steampowered.com/app/4679980",
+  "dlc": "store.steampowered.com/app/4679150",
   "credit": "© TheJAG",
   "cab": {
-    "file": "../../assets/rhb-allegra-dtg-cab.jpg",
+    "file": "../../assets/rhb-ge44ii-dtg-cab.jpg",
     "height": 196,
     "position": "50% 50%"
   },
@@ -33,28 +33,25 @@
       "name": "Reverser",
       "notches": [
         "Forward",
-        "0",
+        "Neutral",
         "Reverse"
       ],
       "start": 1
     },
-    "rightThrottle": {
-      "name": "Zugkraft / Bremskraft",
+    "leftThrottle": {
+      "name": "Handwheel",
       "continuous": true,
       "notches": [
         "Max power",
         null,
-        "Min power",
-        "0",
-        "Min brake",
+        "Off",
         null,
-        "Max brake",
-        "Emergency"
+        "Max brake"
       ],
-      "start": 6
+      "start": 2
     },
-    "leftThrottle": {
-      "name": "Zugbremse",
+    "rightThrottle": {
+      "name": "Vacuum brake",
       "continuous": true,
       "notches": [
         "Emergency",
@@ -66,23 +63,25 @@
       "start": 1
     },
     "flap": {
-      "name": "Vmax setter",
+      "name": "Loco brake",
       "continuous": true,
       "notches": [
-        "120 km/h",
+        "Full",
         null,
         null,
         null,
-        "0"
+        "Release"
       ],
-      "start": 4
+      "start": 0
     },
-    "leftThrottleButton": null,
+    "leftThrottleButton": {
+      "name": "Sand"
+    },
     "rightThrottleButton": {
       "name": "Horn"
     },
     "gearLever": {
-      "name": "SISTE reset"
+      "name": "ZSI ack."
     },
     "autoBrk": {
       "name": "Lights",
@@ -97,36 +96,31 @@
         },
         {
           "short": "LO",
-          "desc": "Dimmed"
+          "desc": "Headlights 1"
         },
         {
           "short": "2",
-          "desc": "Full"
+          "desc": "Headlights 2"
         },
         {
           "short": "3",
-          "desc": "Full + white"
+          "desc": "Headlights 3"
         },
         {
           "short": "HI",
-          "desc": "Red tail"
+          "desc": "+ train lights"
         }
       ],
       "start": 1
     },
-    "eng1": {
-      "name": "ZS ack.",
-      "start": true
-    },
+    "eng1": null,
     "eng2": null,
     "leftAux": {
-      "name": "Train protection"
+      "name": "Deadman cut-out"
     },
-    "rightAux": {
-      "name": "Vigilance"
-    },
+    "rightAux": null,
     "modeSwitch": {
-      "name": "Wipers",
+      "name": "Wiper",
       "left": "off",
       "right": "on"
     },
@@ -141,17 +135,17 @@
     }
   },
   "setup": [
-    "Master key in (PARK BRK up); battery and pantograph in the cab",
-    "Reverser from 0 to Forward",
-    "Train protection and vigilance on (aux squares)",
-    "Lights to Full",
-    "Zugbremse at Full service, handle at Max brake (parked)"
+    "Master key in (PARK BRK up); pantograph, main switch and compressor in the cab",
+    "Reverser from Neutral to Forward",
+    "Deadman cut-out light out (left aux)",
+    "Lights to Headlights 3",
+    "Loco brake at Full, vacuum brake at Full service (parked); handwheel at Off"
   ],
   "depart": [
     "Close doors (RUD TRIM), check the signal",
-    "Zugbremse to Release, handle to 0",
-    "Handle past Min power into the power zone; set a Vmax on the flap lever if you use the cruise control",
-    "Acknowledge the SISTE with the gear lever, the ZS with ENG 1",
-    "Brake: handle back through 0 into the brake zone; Zugbremse into the service zone; Emergency at the far ends"
+    "Vacuum brake to Release, then Minimum; loco brake to Release",
+    "Handwheel from Off into the power zone, notch by notch",
+    "Acknowledge the ZSI with the gear lever",
+    "Brake: handwheel back through Off into the electric brake zone, vacuum brake into the service zone; Emergency at the far end"
   ]
 }

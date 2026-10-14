@@ -1,4 +1,4 @@
-// RhB ABe 8/12 Allegra (DTG, Berninalinie), 2026-10-12. Own layout on the SNG combined-handle pattern; as in the cab the Zugbremse
+// RhB ABe 8/12 Allegra (Rivet Games for DTG, Berninalinie), 2026-10-12. Own layout on the SNG combined-handle pattern; as in the cab the Zugbremse
 // sits on the driver's left and the Zugkraft / Bremskraft handle on the right. One desk, no cab suffixes;
 // IS_GetActiveCab false/false. API probe (MasterKey on, reverser Forward): IrregularLever_Throttle_Brake -1.29..1 is continuous on both
 // sides and takes jumps: power 0.2..1 (sets 0.1..0.2 give 0.2 = min power), 0 dead band -0.1..0.1, brake -0.2..-1 (sets -1..-1.14 give
@@ -40,7 +40,7 @@ p.controls=[
 ];
 fs.writeFileSync(f,JSON.stringify(p,null,2)+'\n');
 console.log(p.rail_class_information.map(c=>c.class_name).join(' '));
-const m={name:'tsw-rhb-allegra-dtg-thejag',title:'ABe 8/12 Allegra',eyebrow:'Rhätische Bahn · Dovetail Games · TCA Quadrant Airbus',profileName:p.name,developer:'Dovetail Games',route:'Berninalinie: Tirano – Ospizio Bernina',colors:{navy:'#5a2a2e',blue:'#8a5a5e',red:'#eb0000',paper:'#f7f3f3'},logos:[{file:'../../assets/logo-rhb-maroon.svg',alt:'Rhätische Bahn'},{file:'../../assets/logo-dtg-maroon.png',alt:'Dovetail Games'}],dlc,credit:'© TheJAG',cab:{file:'../../assets/rhb-allegra-dtg-cab.jpg',height:196,position:'50% 50%'},
+const m={name:'tsw-rhb-allegra-rivet-thejag',title:'ABe 8/12 Allegra',eyebrow:'Rhätische Bahn · Rivet Games · TCA Quadrant Airbus',profileName:p.name,developer:'Rivet Games',route:'Berninalinie: Tirano – Ospizio Bernina',colors:{navy:'#5a2a2e',blue:'#8a5a5e',red:'#eb0000',paper:'#f7f3f3'},logos:[{file:'../../assets/logo-rhb-maroon.svg',alt:'Rhätische Bahn'},{file:'../../assets/logo-rivet-maroon.png',alt:'Rivet Games'}],dlc,credit:'© TheJAG',cab:{file:'../../assets/rhb-allegra-dtg-cab.jpg',height:196,position:'50% 50%'},
 controls:{
  speedbrake:{name:'Reverser',notches:['Forward','0','Reverse'],start:1},
  rightThrottle:{name:'Zugkraft / Bremskraft',continuous:true,notches:['Max power',null,'Min power','0','Min brake',null,'Max brake','Emergency'],start:6},
@@ -54,4 +54,4 @@ controls:{
  parkBrk:{name:'Master key',flat:'out',up:'in'}},
 setup:['Master key in (PARK BRK up); battery and pantograph in the cab','Reverser from 0 to Forward','Train protection and vigilance on (aux squares)','Lights to Full','Zugbremse at Full service, handle at Max brake (parked)'],
 depart:['Close doors (RUD TRIM), check the signal','Zugbremse to Release, handle to 0','Handle past Min power into the power zone; set a Vmax on the flap lever if you use the cruise control','Acknowledge the SISTE with the gear lever, the ZS with ENG 1','Brake: handle back through 0 into the brake zone; Zugbremse into the service zone; Emergency at the far ends']};
-fs.writeFileSync('tools/manual/trains/tsw-rhb-allegra-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
+fs.writeFileSync('tools/manual/trains/tsw-rhb-allegra-rivet-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');

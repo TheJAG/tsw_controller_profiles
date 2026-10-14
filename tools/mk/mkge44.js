@@ -1,4 +1,4 @@
-// RhB Ge 4/4 II (DTG, Arosalinie / RhB Anniversary Collection liveries), 2026-10-12. Own layout. Two cabs `_F` / `_B`; both GetActiveCab
+// RhB Ge 4/4 II (Rivet Games for DTG, Arosalinie / RhB Anniversary Collection liveries), 2026-10-12. Own layout. Two cabs `_F` / `_B`; both GetActiveCab
 // functions fail, so the F cab is wired by name. API probe (MasterKey_F on, reverser Forward): DrivingControlWheel_F is one handwheel for
 // brake and power, rest Off 0.51 (0.48..0.53), electric brake continuous 0..0.47 (output -4..-0.5), power in 22 notches 0.55..1 (0.5 /
 // 1 / 1.5 ... 10, the game snaps and moves one notch per set at times); Train_Vacuum_Brake_F Release 0.02 (sets 0.01..0.03; a set to 0
@@ -38,7 +38,7 @@ p.controls=[
 ];
 fs.writeFileSync(f,JSON.stringify(p,null,2)+'\n');
 console.log(p.rail_class_information.map(c=>c.class_name).join(' '));
-const m={name:'tsw-rhb-ge44ii-dtg-thejag',title:'Ge 4/4 II',eyebrow:'Rhätische Bahn · Dovetail Games · TCA Quadrant Airbus',profileName:p.name,developer:'Dovetail Games',route:'Arosalinie: Chur – Arosa',colors:{navy:'#5a2a2e',blue:'#8a5a5e',red:'#eb0000',paper:'#f7f3f3'},logos:[{file:'../../assets/logo-rhb-maroon.svg',alt:'Rhätische Bahn'},{file:'../../assets/logo-dtg-maroon.png',alt:'Dovetail Games'}],dlc,credit:'© TheJAG',cab:{file:'../../assets/rhb-ge44ii-dtg-cab.jpg',height:196,position:'50% 50%'},
+const m={name:'tsw-rhb-ge44ii-rivet-thejag',title:'Ge 4/4 II',eyebrow:'Rhätische Bahn · Rivet Games · TCA Quadrant Airbus',profileName:p.name,developer:'Rivet Games',route:'Arosalinie: Chur – Arosa',colors:{navy:'#5a2a2e',blue:'#8a5a5e',red:'#eb0000',paper:'#f7f3f3'},logos:[{file:'../../assets/logo-rhb-maroon.svg',alt:'Rhätische Bahn'},{file:'../../assets/logo-rivet-maroon.png',alt:'Rivet Games'}],dlc,credit:'© TheJAG',cab:{file:'../../assets/rhb-ge44ii-dtg-cab.jpg',height:196,position:'50% 50%'},
 controls:{
  speedbrake:{name:'Reverser',notches:['Forward','Neutral','Reverse'],start:1},
  leftThrottle:{name:'Handwheel',continuous:true,notches:['Max power',null,'Off',null,'Max brake'],start:2},
@@ -52,4 +52,4 @@ controls:{
  parkBrk:{name:'Master key',flat:'out',up:'in'}},
 setup:['Master key in (PARK BRK up); pantograph, main switch and compressor in the cab','Reverser from Neutral to Forward','Deadman cut-out light out (left aux)','Lights to Headlights 3','Loco brake at Full, vacuum brake at Full service (parked); handwheel at Off'],
 depart:['Close doors (RUD TRIM), check the signal','Vacuum brake to Release, then Minimum; loco brake to Release','Handwheel from Off into the power zone, notch by notch','Acknowledge the ZSI with the gear lever','Brake: handwheel back through Off into the electric brake zone, vacuum brake into the service zone; Emergency at the far end']};
-fs.writeFileSync('tools/manual/trains/tsw-rhb-ge44ii-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
+fs.writeFileSync('tools/manual/trains/tsw-rhb-ge44ii-rivet-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
