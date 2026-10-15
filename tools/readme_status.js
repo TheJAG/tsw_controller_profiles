@@ -34,7 +34,29 @@ function sync(){ const regPath=path.join(__dirname,'trains.json'); const old=fs.
   const reg=index().map(e=>{const o=extra.get(e.game+'|'+e.name)||{}; const r={game:e.game,country:e.country,name:e.name,status:e.status,dev:e.dev,profile:e.profile,manual:e.manual};
     for(const k of ['route','pak','classes','family','capture','notes']) if(o[k]!==undefined) r[k]=o[k]; return r;});
   fs.writeFileSync(regPath,JSON.stringify(reg,null,2).replace(/(\n\s+)("classes": \[)([^\]]*)\]/g,(m,ws,k,v)=>ws+k+v.replace(/\s*\n\s*/g,' ').trim()+']')+'\n');
-  console.log('trains.json: '+reg.length+' trains ('+reg.filter(t=>t.status==='done').length+' done, '+reg.filter(t=>t.status==='soon').length+' soon)'); }
+  console.log('trains.json: '+reg.length+' trains ('+reg.filter(t=>t.status==='done').length+' done, '+reg.filter(t=>t.status==='soon').length+' soon)');
+  guides(reg); }
+// tools/guides.json: per train its TSW vehicle classes (from the profile JSON) and guide paths, plus the safety manuals;
+// fetched by TSW Route Guides from raw.githubusercontent.com to find the guide for the train being driven.
+// `generated` changes only when the rest of the file does.
+const countryName=h=>h?h.replace(/[\u{1F1E6}-\u{1F1FF}]/gu,'').replace(/\s+/g,' ').trim():null;
+const countrySlug=n=>n?n.toLowerCase().replace(/&/g,' ').replace(/[^a-z\s-]/g,'').trim().replace(/[\s-]+/g,'-'):null;
+function guides(reg){ const profDir=path.join(root,'profiles'), docDir=path.join(profDir,'documentation');
+  const profFiles=fs.readdirSync(profDir).filter(f=>f.endsWith('.json'));
+  const doc=(slug,ext)=>slug&&fs.existsSync(path.join(docDir,slug+ext))?'profiles/documentation/'+slug+ext:null;
+  const classesOf=slug=>{ if(!slug) return []; const re=new RegExp('^'+slug.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'-(\\d+)\\.json$');
+    const f=profFiles.map(f=>[f,re.exec(f)]).filter(x=>x[1]).sort((a,b)=>Number(b[1][1])-Number(a[1][1]))[0]; if(!f) return [];
+    try{ const j=JSON.parse(fs.readFileSync(path.join(profDir,f[0]),'utf8')); return [...new Set((j.rail_class_information||[]).map(c=>c.class_name).filter(Boolean))].sort(); }catch(e){ return []; } };
+  const trains=reg.map(t=>{ const slug=t.profile?path.basename(t.profile,'.tswprofile'):null; const cn=countryName(t.country);
+    return {game:t.game,name:t.name,country:countrySlug(cn),country_name:cn,dev:t.dev,status:t.status,slug,classes:classesOf(slug),html:doc(slug,'.html'),pdf:doc(slug,'.pdf')}; });
+  const safeDir=path.join(__dirname,'manual','safety');
+  const safety=fs.readdirSync(safeDir).filter(f=>f.endsWith('.json')).sort().map(f=>{ const j=JSON.parse(fs.readFileSync(path.join(safeDir,f),'utf8'));
+    const country=f.replace(/\.json$/,''); const t=trains.find(x=>x.country===country); const name=j.name||('tsw-safety-'+country+'-thejag');
+    return {country,country_name:t?t.country_name:String(j.title||'').replace(/^Safety systems · /,''),html:doc(name,'.html'),pdf:doc(name,'.pdf')}; });
+  const outPath=path.join(__dirname,'guides.json'); let generated=new Date().toISOString().replace(/\.\d+Z$/,'Z');
+  try{ const prev=JSON.parse(fs.readFileSync(outPath,'utf8')); if(JSON.stringify({trains:prev.trains,safety:prev.safety})===JSON.stringify({trains,safety})) generated=prev.generated; }catch(e){}
+  fs.writeFileSync(outPath,JSON.stringify({generated,trains,safety},null,2).replace(/(\n\s+)("classes": \[)([^\]]*)\]/g,(m,ws,k,v)=>ws+k+v.replace(/\s*\n\s*/g,' ').trim()+']')+'\n');
+  console.log('guides.json: '+trains.length+' trains ('+trains.filter(t=>t.classes.length).length+' with classes, '+trains.filter(t=>t.html).length+' with a guide), '+safety.length+' safety manuals'); }
 if(opt.sync&&!pos.length){sync();process.exit(0);}
 if(pos.length<2||!STATUS[pos[1]]){console.error('usage: node tools/readme_status.js "<name>" <todo|soon|done> [--game tsw|tsc|rt] [--dev DTG] [--profile slug] [--no-manual] [--add "<country>"] | --sync');process.exit(1);}
 const [name,status]=pos; const idx=index();
