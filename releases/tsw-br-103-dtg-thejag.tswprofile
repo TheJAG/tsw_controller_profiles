@@ -30,7 +30,42 @@
           "input_value": {
             "min": 0,
             "max": 1,
-            "invert": true
+            "steps": [
+              0,
+              0.0257,
+              0.0513,
+              0.077,
+              null,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.045
+              },
+              {
+                "threshold": 0.905,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.84,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.775,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.72,
+                "threshold_end": 0.02,
+                "threshold_tolerance": 0
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.02
+              }
+            ]
           }
         }
       ]
@@ -41,10 +76,12 @@
         {
           "type": "direct_control",
           "controls": "TrainBrake_{SIDE:F:B}",
+          "hold": true,
           "input_value": {
-            "min": 0.1,
+            "min": 0,
             "max": 1,
             "steps": [
+              0,
               0.1,
               0.2,
               0.3,
@@ -58,15 +95,15 @@
             "step_thresholds": [
               {
                 "threshold": 0,
-                "threshold_tolerance": 0.05
-              },
-              {
-                "threshold": 0.12,
                 "threshold_tolerance": 0.04
               },
               {
-                "threshold": 0.22,
-                "threshold_tolerance": 0.04
+                "threshold": 0.1,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.2,
+                "threshold_tolerance": 0.035
               },
               {
                 "threshold": 0.31,
@@ -77,12 +114,16 @@
                 "threshold_tolerance": 0.035
               },
               {
-                "threshold": 0.56,
-                "threshold_tolerance": 0.04
+                "threshold": 0.535,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.63,
+                "threshold_tolerance": 0.035
               },
               {
                 "threshold": 0.724,
-                "threshold_tolerance": 0.04
+                "threshold_tolerance": 0.035
               },
               {
                 "threshold": 0.84,
@@ -103,6 +144,7 @@
         {
           "type": "direct_control",
           "controls": "LocoBrake_{SIDE:F:B}",
+          "hold": true,
           "input_value": {
             "min": -1,
             "max": 1,
@@ -115,14 +157,14 @@
             "step_thresholds": [
               {
                 "threshold": 0,
-                "threshold_tolerance": 0.1
+                "threshold_tolerance": 0.12
               },
               {
                 "threshold": 0.3,
-                "threshold_tolerance": 0.1
+                "threshold_tolerance": 0.12
               },
               {
-                "threshold": 0.45,
+                "threshold": 0.5,
                 "threshold_end": 0.955,
                 "threshold_tolerance": 0
               },

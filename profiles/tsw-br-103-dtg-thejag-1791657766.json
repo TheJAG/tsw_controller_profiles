@@ -33,7 +33,7 @@
     },
     {
       "name": "LeftThrottle",
-      "description": "Nockenfahrschalter handwheel, 40 taps (0..39): sent continuously, the game snaps to k/39 itself; more taps = push away (inverted)",
+      "description": "Nockenfahrschalter handwheel, 40 taps (0..39), more taps = push away (inverted). Taps 0..3 have their own wide bands so a departure in tap 1 or 2 is easy to select (user, 2026-10-16): 0 at raw 1 ±0.045, 1 at 0.905 ±0.03, 2 at 0.84 ±0.03 (FLX detent), 3 at 0.775 ±0.03; taps 3..39 continuous from raw 0.72 to 0.02 (the game snaps to k/39 itself), 39 at 0 ±0.02",
       "assignments": [
         {
           "type": "direct_control",
@@ -41,22 +41,59 @@
           "input_value": {
             "min": 0,
             "max": 1,
-            "invert": true
+            "steps": [
+              0,
+              0.0257,
+              0.0513,
+              0.077,
+              null,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.045
+              },
+              {
+                "threshold": 0.905,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.84,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.775,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.72,
+                "threshold_end": 0.02,
+                "threshold_tolerance": 0
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.02
+              }
+            ]
           }
         }
       ]
     },
     {
       "name": "RightThrottle",
-      "description": "Führerbremsventil (Running 0.1 / Off 0.2 / Minimum 0.3 / 0.4 / 0.5 / 0.6 / 0.7 / Full service 0.8 / Emergency 1), plain: F (release) at the far end, 7 nearest; bands centred on the TCA detents",
+      "description": "Führerbremsventil (Release 0 / Running 0.1 / Off 0.2 / Minimum 0.3 / 0.4 / 0.5 / 0.6 / 0.7 / Full service 0.8 / Emergency 1), plain: Release (Füllstoß) at the far end, Emergency nearest; bands centred on the TCA detents. Release is a spring position the game only keeps while the value is held (API probe 2026-10-17: Interacting + value), so the assignment holds its value; the valve moves one gate per set and the held re-sends walk it through",
       "assignments": [
         {
           "type": "direct_control",
           "controls": "TrainBrake_{SIDE:F:B}",
+          "hold": true,
           "input_value": {
-            "min": 0.1,
+            "min": 0,
             "max": 1,
             "steps": [
+              0,
               0.1,
               0.2,
               0.3,
@@ -70,15 +107,15 @@
             "step_thresholds": [
               {
                 "threshold": 0,
-                "threshold_tolerance": 0.05
-              },
-              {
-                "threshold": 0.12,
                 "threshold_tolerance": 0.04
               },
               {
-                "threshold": 0.22,
-                "threshold_tolerance": 0.04
+                "threshold": 0.1,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.2,
+                "threshold_tolerance": 0.035
               },
               {
                 "threshold": 0.31,
@@ -89,12 +126,16 @@
                 "threshold_tolerance": 0.035
               },
               {
-                "threshold": 0.56,
-                "threshold_tolerance": 0.04
+                "threshold": 0.535,
+                "threshold_tolerance": 0.035
+              },
+              {
+                "threshold": 0.63,
+                "threshold_tolerance": 0.035
               },
               {
                 "threshold": 0.724,
-                "threshold_tolerance": 0.04
+                "threshold_tolerance": 0.035
               },
               {
                 "threshold": 0.84,
@@ -111,11 +152,12 @@
     },
     {
       "name": "FlapLever",
-      "description": "Zusatzbremse (Release -1 / Hold 0 / Apply continuous 0..1), plain: Release at the far end",
+      "description": "Zusatzbremse (Release -1 / Hold 0 / Apply continuous 0..1), plain: Release at the far end, full Apply nearest. Apply is a spring position the game drops back to Hold within a frame unless the value is held (API probe 2026-10-17: Interacting + value keeps 0.5 or 1 applied), so the assignment holds its value",
       "assignments": [
         {
           "type": "direct_control",
           "controls": "LocoBrake_{SIDE:F:B}",
+          "hold": true,
           "input_value": {
             "min": -1,
             "max": 1,
@@ -128,14 +170,14 @@
             "step_thresholds": [
               {
                 "threshold": 0,
-                "threshold_tolerance": 0.1
+                "threshold_tolerance": 0.12
               },
               {
                 "threshold": 0.3,
-                "threshold_tolerance": 0.1
+                "threshold_tolerance": 0.12
               },
               {
-                "threshold": 0.45,
+                "threshold": 0.5,
                 "threshold_end": 0.955,
                 "threshold_tolerance": 0
               },
