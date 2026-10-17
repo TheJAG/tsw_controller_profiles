@@ -15,6 +15,9 @@
       "class_name": "RVM_BCC_RR_Class323_PTS_C"
     },
     {
+      "class_name": "RVM_MGP_NT_Class323_Base_GuardControlLayout_C"
+    },
+    {
       "class_name": "RVM_MGP_NT_Class323_DMS_A_C"
     },
     {
@@ -66,7 +69,7 @@
     },
     {
       "name": "LeftThrottle",
-      "description": "Power / brake handle (B3 / B2 / B1 / Off / P1 / P2 / P3 / P4; Emergency at -1 is left out on purpose, as in the old 323 profile)",
+      "description": "Power / brake handle (B3 / B2 / B1 / Off / P1 / P2 / P3 / P4; Emergency at -1 is left out on purpose, as in the user's earlier key-based profile). Power is pulled towards you as on the 333, so the lever is plain: B3 at the far end, P4 nearest the driver (cab test 2026-10-17)",
       "assignments": [
         {
           "type": "direct_control",
@@ -84,7 +87,7 @@
               0.75,
               1
             ],
-            "invert": true
+            "invert": false
           }
         }
       ]
@@ -136,19 +139,21 @@
     },
     {
       "name": "RightThrottleButton",
-      "description": "Pantograph raise",
+      "description": "DRA (lit = Set / unlit = Reset); the pantograph is raised in the cab (user, 2026-10-17)",
       "assignment": {
-        "type": "momentary",
+        "type": "toggle",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "PantographRaise",
+          "controls": "DRA_Switch",
           "value": 1,
-          "hold": true
+          "hold": false,
+          "enable_api_fallback": true
         },
         "action_deactivate": {
-          "controls": "PantographRaise",
+          "controls": "DRA_Switch",
           "value": 0,
-          "hold": false
+          "hold": false,
+          "enable_api_fallback": true
         }
       }
     },

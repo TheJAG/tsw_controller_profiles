@@ -40,7 +40,7 @@
               0.75,
               1
             ],
-            "invert": true
+            "invert": false
           }
         }
       ]
@@ -90,17 +90,19 @@
     {
       "name": "RightThrottleButton",
       "assignment": {
-        "type": "momentary",
+        "type": "toggle",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "PantographRaise",
+          "controls": "DRA_Switch",
           "value": 1,
-          "hold": true
+          "hold": false,
+          "enable_api_fallback": true
         },
         "action_deactivate": {
-          "controls": "PantographRaise",
+          "controls": "DRA_Switch",
           "value": 0,
-          "hold": false
+          "hold": false,
+          "enable_api_fallback": true
         }
       }
     },
@@ -555,6 +557,9 @@
     },
     {
       "class_name": "RVM_BCC_RR_Class323_PTS_C"
+    },
+    {
+      "class_name": "RVM_MGP_NT_Class323_Base_GuardControlLayout_C"
     },
     {
       "class_name": "RVM_MGP_NT_Class323_DMS_A_C"

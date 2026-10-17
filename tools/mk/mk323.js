@@ -9,11 +9,11 @@ const tog=(name,desc,node,on,off)=>({name,description:desc,assignment:{type:'tog
 const set=(node,v)=>({type:'momentary',threshold:0.9,action_activate:{controls:node,value:v,hold:false}});
 const rel=(node,v)=>({type:'momentary',threshold:0.9,action_activate:{controls:node,value:v,relative:true,hold:false,enable_api_fallback:true}});
 const ins=(after,item)=>{const i=p.controls.findIndex(c=>c.name===after);p.controls.splice(i+1,0,item);};
-p.controls=p.controls.filter(c=>!['LeftAuxButton','RightAuxButton'].includes(c.name));
-ins('SpeedbrakeLever',{name:'LeftThrottle',description:'Power / brake handle (B3 / B2 / B1 / Off / P1 / P2 / P3 / P4; Emergency at -1 is left out on purpose, as in the old 323 profile)',assignments:[{type:'direct_control',controls:'PowerBrakeHandle',input_value:{min:-0.6,max:1,steps:[-0.6,-0.4,-0.2,0,0.25,0.5,0.75,1],invert:true}}]});
+p.controls=p.controls.filter(c=>!['LeftAuxButton','RightAuxButton','LeftThrottle','RightThrottleButton'].includes(c.name)); // idempotent: the script re-inserts these
+ins('SpeedbrakeLever',{name:'LeftThrottle',description:'Power / brake handle (B3 / B2 / B1 / Off / P1 / P2 / P3 / P4; Emergency at -1 is left out on purpose, as in the user\'s earlier key-based profile). Power is pulled towards you as on the 333, so the lever is plain: B3 at the far end, P4 nearest the driver (cab test 2026-10-17)',assignments:[{type:'direct_control',controls:'PowerBrakeHandle',input_value:{min:-0.6,max:1,steps:[-0.6,-0.4,-0.2,0,0.25,0.5,0.75,1],invert:false}}]});
 by('ParkingBrake').description='Master key in / out';
 by('GearLever').description='AWS reset'; by('GearLever').assignment={type:'momentary',threshold:0.9,action_activate:{keys:'Q'}};
-ins('LeftThrottleButton',mom('RightThrottleButton','Pantograph raise','PantographRaise',1,0));
+ins('LeftThrottleButton',tog('RightThrottleButton','DRA (lit = Set / unlit = Reset); the pantograph is raised in the cab (user, 2026-10-17)','DRA_Switch',1,0));
 ins('RoundAuxButton',tog('LeftAuxButton','AWS isolation (lit = Isolated / unlit = Normal)','AWS_Isolation',1,0));
 ins('LeftAuxButton',tog('RightAuxButton','Vigilance isolation (lit = Isolated / unlit = Normal)','Vigilance_Isolation',1,0));
 by('RotaryCrank').description='Wipers one notch slower (Fast > Slow > Int 2 > Int 1 > Off)'; delete by('RotaryCrank').assignment; by('RotaryCrank').assignments=[rel('WiperControl',-0.25)];
