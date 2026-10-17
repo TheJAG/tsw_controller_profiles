@@ -48,6 +48,6 @@ controls:{
  leftAux:{name:'TPWS/AWS isolation'}, rightAux:{name:'DVD isolation'},
  modeSwitch:{name:'Wipers',left:'slower',right:'faster'}, roundAux:{name:'Guard buzzer'}, rudTrim:{name:'Doors L / R'},
  parkBrk:{name:'Master key',flat:'out',up:'in'}},
-setup:['Master key in (PARK BRK)','Reverser to Neutral','Pantograph up (in the cab), hold until line volts show','Check TPWS/AWS and DVD isolation lights are out','Headlights to Day','Open doors (RUD TRIM)'],
+setup:['Master key in (PARK BRK)','Reverser to Neutral','Pantograph up: hold the yellow switch left until the line volts show','Check TPWS/AWS and DVD isolation lights are out','Headlights to Day','Open doors (RUD TRIM)'],
 depart:['Close doors, wait for the guard buzzer','Check the signal, DRA off (right throttle button)','Reverser to Forward','Handle from Max brake through Off to the first power step','Pull further into the power zone as speed rises','Acknowledge AWS with the gear lever']};
 fs.writeFileSync('tools/manual/trains/tsw-class-350-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
