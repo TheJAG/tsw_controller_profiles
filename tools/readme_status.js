@@ -2,6 +2,7 @@
 // Usage (from repo root):
 //   node tools/readme_status.js "<README name>" <todo|soon|done> [--game tsw|tsc|rt] [--dev DTG] [--profile <release slug>] [--no-manual] [--add "<country>"]
 //   node tools/readme_status.js --sync          # only regenerate tools/trains.json from the README
+// A status change re-renders the train's manual (its cab-test badge reads tools/trains.json); --no-render skips that.
 // Line formats (trailing two spaces are part of the format):
 //   `TODO ◼️` **Name** <sub>— DEV</sub>
 //   `SOON 🟨` **Name** <sub>— DEV · [profile](releases/<slug>.tswprofile) · [manual](profiles/documentation/<slug>.pdf)</sub>
@@ -10,7 +11,7 @@
 const fs=require('fs'),path=require('path');
 const root=path.resolve(__dirname,'..');
 const argv=process.argv.slice(2); const opt={game:'tsw',manual:true}; const pos=[];
-for(let i=0;i<argv.length;i++){const a=argv[i]; if(a==='--sync') opt.sync=true; else if(a==='--no-manual') opt.manual=false; else if(a.startsWith('--')) opt[a.slice(2)]=argv[++i]; else pos.push(a);}
+for(let i=0;i<argv.length;i++){const a=argv[i]; if(a==='--sync') opt.sync=true; else if(a==='--no-manual') opt.manual=false; else if(a==='--no-render') opt.render=false; else if(a.startsWith('--')) opt[a.slice(2)]=argv[++i]; else pos.push(a);}
 const readmePath=path.join(root,'README.md');
 const raw=fs.readFileSync(readmePath,'utf8'); const eol=raw.includes('\r\n')?'\r\n':'\n';
 const lines=raw.split(/\r?\n/);
@@ -72,3 +73,6 @@ else { const sect=idx.filter(x=>x.game===opt.game&&(opt.game!=='tsw'||x.country=
   lines.splice(at,0,newLine); console.log('inserted at line '+(at+1)+': '+newLine.trim()); }
 fs.writeFileSync(readmePath,lines.join(eol));
 sync();
+// the manual's cab-test badge shows the README status, so a change re-renders the manual when its data file exists
+if(opt.render!==false&&slug&&(!e||e.status!==status)){ const data=path.join(__dirname,'manual','trains',slug+'.json');
+  if(fs.existsSync(data)){ console.log('re-rendering the manual for its cab-test badge'); const r=require('child_process').spawnSync(process.execPath,[path.join(__dirname,'manual','render_manual.js'),path.relative(root,data)],{stdio:'inherit',cwd:root}); if(r.status) process.exit(r.status); } }

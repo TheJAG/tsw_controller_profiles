@@ -24,6 +24,16 @@ const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g,
 
 const C = Object.assign({ navy: '#223261', blue: '#4a66a8', red: '#d7263d', green: '#1f9d55', paper: '#f3f5f9', ink: '#141a2b', muted: '#5b6478', rule: '#cfd5e2' }, D.colors || {});
 const quadrant = dataUri(D.quadrant || '../../assets/tca-quadrant-airbus.png');
+// Cab-test badge beside the title: the train's README status from tools/trains.json (kept by readme_status.js, which re-renders
+// the manual when a status changes), matched on the manual path. DONE = green tick "Cab tested", SOON = dashed "QA pending", at the start of the eyebrow line (user, 2026-10-17).
+const regPath = path.join(repoRoot, 'tools', 'trains.json');
+const regEntry = fs.existsSync(regPath) ? JSON.parse(fs.readFileSync(regPath, 'utf8')).find(t => t.manual && path.basename(t.manual, '.pdf') === D.name) : null;
+const status = D.status || (regEntry && regEntry.status) || null;
+const badge = status === 'done'
+  ? '<span class="badge ok"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#fff"/><path d="M4.3 8.4l2.4 2.4 5-5.2" fill="none" stroke="var(--green)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Cab tested</span>'
+  : status === 'soon'
+  ? '<span class="badge qa"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><rect x="3" y="2.5" width="10" height="12" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="5.5" y="1" width="5" height="3" rx="1" fill="currentColor"/><path d="M5.5 8h5M5.5 11h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>QA pending</span>'
+  : '';
 
 /* ---------- SVG helpers ---------- */
 const tx = (x, y, s, cls = 'lbl', anchor = 'middle') => `<text x="${x}" y="${y}" class="${cls}" text-anchor="${anchor}">${esc(s)}</text>`;
@@ -135,6 +145,10 @@ ul { margin: 0; padding-left: 16px; }
 .head { padding: 22px 36px 4px; display: flex; align-items: flex-end; justify-content: space-between; }
 .head h1 { font-size: 46px; font-weight: 700; color: var(--navy); letter-spacing: -.01em; }
 .head .sub { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; font-family: var(--display); font-weight: 600; }
+.head .sub { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+.badge { display: inline-flex; align-items: center; gap: 5px; font-family: var(--display); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; line-height: 1; border-radius: 10px; padding: 3.5px 8px 3.5px 6px; white-space: nowrap; }
+.badge.ok { background: var(--green); color: #fff; }
+.badge.qa { color: var(--muted); border: 1.5px dashed var(--muted); padding: 2px 7px 2px 5px; }
 .schem { padding: 2px 36px 0; }
 .schem svg { width: 100%; height: auto; display: block; }
 .schem text { font-family: var(--display); font-weight: 600; }
@@ -194,7 +208,7 @@ ${(D.diagram && D.diagram.fit) === 'width' ? '.diagram img { width: 100%; height
 .pnotes h2 { font-size: 14px; color: var(--navy); margin-bottom: 3px; }
 .pnotes li { font-size: 10px; line-height: 1.3; }
 </style></head><body><div class="sheet${D.cab ? ' withcab' : ''}${D.diagram ? '' : ' nodiag'}">
-<div class="head"><div><div class="sub">${esc(D.eyebrow || '')}</div><h1>${esc(D.title)}</h1></div><div style="display:flex;gap:14px">${logos}</div></div>
+<div class="head"><div><div class="sub">${badge}${esc(D.eyebrow || '')}</div><h1>${esc(D.title)}</h1></div><div style="display:flex;gap:14px">${logos}</div></div>
 <div class="schem">${schematic()}</div>
 <div class="lists${D.cab ? ' two' : ''}">
   <div><h2>${esc((D.lists && D.lists.setupTitle) || 'Cab setup')}</h2><ul>${li(D.setup)}</ul></div>
