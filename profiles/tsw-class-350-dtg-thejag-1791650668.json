@@ -90,20 +90,20 @@
     },
     {
       "name": "LeftThrottle",
-      "description": "Power / brake handle (Max brake 0.03 / brake % 0.06..0.45 / Min brake 0.46 / Off 0.5 / first power 0.53 / power % / full 1; Emergency at -0.1 is left out on purpose). Power is nearest the driver on the desk, so the lever is plain; BR 440 geometry mirrored: max brake raw 0 ±0.04, brake zone 0.05..0.42, min brake 0.45 ±0.03, Off 0.5 ±0.02, first power 0.55 ±0.03, power zone 0.58..0.955, full 1 ±0.04",
+      "description": "Power / brake handle (Max brake 0.05 / brake % 0.06..0.45 / Min brake 0.455 / Off 0.5 / first power 0.545 / power % / full 1; Emergency at -0.1 is left out on purpose). Step values are what the game stores (probe 2026-10-17: sets 0..0.04 snap to 0.05, 0.46..0.475 to 0.455, 0.53..0.54 to 0.545), so re-sends are silent. Power is nearest the driver on the desk, so the lever is plain: max brake raw 0 ±0.04, brake zone 0.05..0.40, min brake 0.44 ±0.025 (on the TCA soft stop), Off 0.5 ±0.03, first power 0.56 ±0.025, power zone 0.60..0.955, full 1 ±0.04",
       "assignments": [
         {
           "type": "direct_control",
           "controls": "IrregularLever_ThrottleBrake",
           "input_value": {
-            "min": 0.03,
+            "min": 0.05,
             "max": 1,
             "steps": [
-              0.03,
+              0.05,
               null,
-              0.46,
+              0.455,
               0.5,
-              0.53,
+              0.545,
               null,
               1
             ],
@@ -114,23 +114,23 @@
               },
               {
                 "threshold": 0.05,
-                "threshold_end": 0.42,
+                "threshold_end": 0.4,
                 "threshold_tolerance": 0
               },
               {
-                "threshold": 0.45,
-                "threshold_tolerance": 0.03
+                "threshold": 0.44,
+                "threshold_tolerance": 0.025
               },
               {
                 "threshold": 0.5,
-                "threshold_tolerance": 0.02
-              },
-              {
-                "threshold": 0.55,
                 "threshold_tolerance": 0.03
               },
               {
-                "threshold": 0.58,
+                "threshold": 0.56,
+                "threshold_tolerance": 0.025
+              },
+              {
+                "threshold": 0.6,
                 "threshold_end": 0.955,
                 "threshold_tolerance": 0
               },
@@ -194,18 +194,18 @@
     },
     {
       "name": "RightThrottleButton",
-      "description": "Pantograph (lit = up / unlit = down)",
+      "description": "DRA (lit = Set / unlit = Reset); the pantograph is raised in the cab (user, 2026-10-17)",
       "assignment": {
         "type": "toggle",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "PushButton_Pantograph",
+          "controls": "PushButton_DRA",
           "value": 1,
           "hold": false,
           "enable_api_fallback": true
         },
         "action_deactivate": {
-          "controls": "PushButton_Pantograph",
+          "controls": "PushButton_DRA",
           "value": 0,
           "hold": false,
           "enable_api_fallback": true
@@ -374,15 +374,6 @@
             "value": 0.4,
             "hold": false
           }
-        },
-        {
-          "type": "momentary",
-          "threshold": 0.9,
-          "action_activate": {
-            "controls": "PushButton_TailLights",
-            "value": 0,
-            "hold": false
-          }
         }
       ]
     },
@@ -396,15 +387,6 @@
           "action_activate": {
             "controls": "IrregularLever_Headlights",
             "value": 0.8,
-            "hold": false
-          }
-        },
-        {
-          "type": "momentary",
-          "threshold": 0.9,
-          "action_activate": {
-            "controls": "PushButton_TailLights",
-            "value": 0,
             "hold": false
           }
         }
@@ -422,15 +404,6 @@
             "value": 0.6,
             "hold": false
           }
-        },
-        {
-          "type": "momentary",
-          "threshold": 0.9,
-          "action_activate": {
-            "controls": "PushButton_TailLights",
-            "value": 0,
-            "hold": false
-          }
         }
       ]
     },
@@ -446,21 +419,12 @@
             "value": 1,
             "hold": false
           }
-        },
-        {
-          "type": "momentary",
-          "threshold": 0.9,
-          "action_activate": {
-            "controls": "PushButton_TailLights",
-            "value": 0,
-            "hold": false
-          }
         }
       ]
     },
     {
       "name": "AutoBrake4",
-      "description": "Headlights | Tail lights",
+      "description": "Headlights | Tail lights (on while the dial sits here, off when it leaves)",
       "assignments": [
         {
           "type": "momentary",
@@ -477,6 +441,11 @@
           "action_activate": {
             "controls": "PushButton_TailLights",
             "value": 1,
+            "hold": false
+          },
+          "action_deactivate": {
+            "controls": "PushButton_TailLights",
+            "value": 0,
             "hold": false
           }
         }

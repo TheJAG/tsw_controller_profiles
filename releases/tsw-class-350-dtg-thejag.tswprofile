@@ -28,14 +28,14 @@
           "type": "direct_control",
           "controls": "IrregularLever_ThrottleBrake",
           "input_value": {
-            "min": 0.03,
+            "min": 0.05,
             "max": 1,
             "steps": [
-              0.03,
+              0.05,
               null,
-              0.46,
+              0.455,
               0.5,
-              0.53,
+              0.545,
               null,
               1
             ],
@@ -46,23 +46,23 @@
               },
               {
                 "threshold": 0.05,
-                "threshold_end": 0.42,
+                "threshold_end": 0.4,
                 "threshold_tolerance": 0
               },
               {
-                "threshold": 0.45,
-                "threshold_tolerance": 0.03
+                "threshold": 0.44,
+                "threshold_tolerance": 0.025
               },
               {
                 "threshold": 0.5,
-                "threshold_tolerance": 0.02
-              },
-              {
-                "threshold": 0.55,
                 "threshold_tolerance": 0.03
               },
               {
-                "threshold": 0.58,
+                "threshold": 0.56,
+                "threshold_tolerance": 0.025
+              },
+              {
+                "threshold": 0.6,
                 "threshold_end": 0.955,
                 "threshold_tolerance": 0
               },
@@ -127,13 +127,13 @@
         "type": "toggle",
         "threshold": 0.9,
         "action_activate": {
-          "controls": "PushButton_Pantograph",
+          "controls": "PushButton_DRA",
           "value": 1,
           "hold": false,
           "enable_api_fallback": true
         },
         "action_deactivate": {
-          "controls": "PushButton_Pantograph",
+          "controls": "PushButton_DRA",
           "value": 0,
           "hold": false,
           "enable_api_fallback": true
@@ -292,15 +292,6 @@
             "value": 0.4,
             "hold": false
           }
-        },
-        {
-          "type": "momentary",
-          "threshold": 0.9,
-          "action_activate": {
-            "controls": "PushButton_TailLights",
-            "value": 0,
-            "hold": false
-          }
         }
       ]
     },
@@ -313,15 +304,6 @@
           "action_activate": {
             "controls": "IrregularLever_Headlights",
             "value": 0.8,
-            "hold": false
-          }
-        },
-        {
-          "type": "momentary",
-          "threshold": 0.9,
-          "action_activate": {
-            "controls": "PushButton_TailLights",
-            "value": 0,
             "hold": false
           }
         }
@@ -338,15 +320,6 @@
             "value": 0.6,
             "hold": false
           }
-        },
-        {
-          "type": "momentary",
-          "threshold": 0.9,
-          "action_activate": {
-            "controls": "PushButton_TailLights",
-            "value": 0,
-            "hold": false
-          }
         }
       ]
     },
@@ -359,15 +332,6 @@
           "action_activate": {
             "controls": "IrregularLever_Headlights",
             "value": 1,
-            "hold": false
-          }
-        },
-        {
-          "type": "momentary",
-          "threshold": 0.9,
-          "action_activate": {
-            "controls": "PushButton_TailLights",
-            "value": 0,
             "hold": false
           }
         }
@@ -391,6 +355,11 @@
           "action_activate": {
             "controls": "PushButton_TailLights",
             "value": 1,
+            "hold": false
+          },
+          "action_deactivate": {
+            "controls": "PushButton_TailLights",
+            "value": 0,
             "hold": false
           }
         }
