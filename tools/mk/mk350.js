@@ -49,5 +49,5 @@ controls:{
  modeSwitch:{name:'Wipers',left:'slower',right:'faster'}, roundAux:{name:'Guard buzzer'}, rudTrim:{name:'Doors L / R'},
  parkBrk:{name:'Master key',flat:'out',up:'in'}},
 setup:['Master key in (PARK BRK)','Close the cab door behind you (Close doors leaves it open)','Reverser to Neutral','Cold train only: battery on, AC traction selected, then hold the yellow pantograph switch left until the line volts show','Check TPWS/AWS and DVD isolation lights are out','Headlights to Day','Open doors (RUD TRIM)'],
-depart:['Close doors, wait for the guard buzzer','Check the signal, DRA off (right throttle button)','Reverser to Forward','Handle from Max brake through Off to the first power step','No power? Go to P1, pull right back to Max brake, then apply again','Pull further into the power zone as speed rises','Acknowledge AWS with the gear lever']};
+depart:['Close doors, wait for the guard buzzer','Check the signal, DRA off (right throttle button)','Reverser to Forward','Handle from Max brake through Off to the first power step','The first power detent is only 1 % power: pull on into the power zone to move off','Pull further into the power zone as speed rises','Acknowledge AWS with the gear lever']};
 fs.writeFileSync('tools/manual/trains/tsw-class-350-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
