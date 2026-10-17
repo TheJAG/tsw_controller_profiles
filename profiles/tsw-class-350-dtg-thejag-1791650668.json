@@ -90,7 +90,7 @@
     },
     {
       "name": "LeftThrottle",
-      "description": "Power / brake handle (Max brake 0.05 / brake % 0.06..0.45 / Min brake 0.455 / Off 0.5 / first power 0.545 / power % / full 1; Emergency at -0.1 is left out on purpose). Step values are what the game stores (probe 2026-10-17: sets 0..0.04 snap to 0.05, 0.46..0.475 to 0.455, 0.53..0.54 to 0.545), so re-sends are silent. Power is nearest the driver on the desk, so the lever is plain: max brake raw 0 ±0.04, brake zone 0.05..0.40, min brake 0.44 ±0.025 (on the TCA soft stop), Off 0.5 ±0.03, first power 0.56 ±0.025, power zone 0.60..0.955, full 1 ±0.04",
+      "description": "Power / brake handle (Max brake 0.05 / brake % 0.06..0.45 / Min brake 0.455 / Off 0.5 / first power 0.60 / power % / full 1; Emergency at -0.1 is left out on purpose). Brake step values are what the game stores (probe 2026-10-17: sets 0..0.04 snap to 0.05, 0.46..0.475 to 0.455), so re-sends are silent. First power is 0.60, not the stored detent 0.545: the power zone is linear from 0.55 (output 0.01, about 1 % power, the train does not move) to 1 (output 4), 0.60 gives output 0.45 = 11 % power and a gentle pull-away (probe 2026-10-18). Power is nearest the driver on the desk, so the lever is plain: max brake raw 0 ±0.04, brake zone 0.05..0.40, min brake 0.44 ±0.025 (on the TCA soft stop), Off 0.5 ±0.03, first power 0.56 ±0.025, power zone 0.60..0.955, full 1 ±0.04",
       "assignments": [
         {
           "type": "direct_control",
@@ -103,7 +103,7 @@
               null,
               0.455,
               0.5,
-              0.545,
+              0.6,
               null,
               1
             ],
