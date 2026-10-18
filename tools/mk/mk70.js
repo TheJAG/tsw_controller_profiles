@@ -45,7 +45,9 @@ p.controls = [
   mom('RightEngineOn', 'Horn | Low (EngineersHorn_F 0 while up, 0.5 rest)', HORN, 0, 0.5),
   key('RudderTrimLeft', 'Doors | Left', 'y'),
   key('RudderTrimRight', 'Doors | Right', 'u'),
-  mom('RoundAuxButton', 'Bail off the loco brake (AutoBrakeBailOff 1 while held; through the API the brake cylinder did not release, user test pending)', 'AutoBrakeBailOff', 1, 0),
+  { name: 'RoundAuxButton', description: 'Bail off: pushes the direct brake lever F_IndependentBrake down into its spring Bail Off position (0, held) while the button is held, back to Release 0.2 on release; the AutoBrakeBailOff push button is sent as well. Through the API neither released the loco brake cylinder under a train brake application (2026-10-18), user test pending', assignments: [
+    { type: 'momentary', threshold: 0.9, action_activate: { controls: IB, value: 0, hold: true }, action_deactivate: { controls: IB, value: 0.2, hold: false } },
+    momA('AutoBrakeBailOff', 1, 0)] },
   tog('LeftAuxButton', 'AWS / TPWS full isolation switch (F_Switch_TpwsFullIsolation Normal 1 / Isolated 0). Lit = Normal; loads Isolated', 'F_Switch_TpwsFullIsolation', 1, 0),
   tog('RightAuxButton', 'DVD (vigilance) isolation switch (DVD_IsolatorSwitch Normal 1 / Isolated 0). Lit = Normal; loads Isolated', 'DVD_IsolatorSwitch', 1, 0),
   { name: 'RotaryCrank', description: 'Wipers off (both F_WindscreenWiper levers 0)', assignments: [set(WL, 0), set(WR, 0)] },

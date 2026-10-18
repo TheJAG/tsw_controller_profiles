@@ -331,20 +331,38 @@
     },
     {
       "name": "RoundAuxButton",
-      "assignment": {
-        "type": "momentary",
-        "threshold": 0.9,
-        "action_activate": {
-          "controls": "AutoBrakeBailOff",
-          "value": 1,
-          "hold": true
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "F_IndependentBrake",
+            "value": 0,
+            "hold": true
+          },
+          "action_deactivate": {
+            "controls": "F_IndependentBrake",
+            "value": 0.2,
+            "hold": false
+          }
         },
-        "action_deactivate": {
-          "controls": "AutoBrakeBailOff",
-          "value": 0,
-          "hold": false
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "AutoBrakeBailOff",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "AutoBrakeBailOff",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
         }
-      }
+      ]
     },
     {
       "name": "LeftAuxButton",
