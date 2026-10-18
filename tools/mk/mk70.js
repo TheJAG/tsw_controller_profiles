@@ -46,7 +46,7 @@ p.controls = [
   mom('RightEngineOn', 'Horn | Low (EngineersHorn_F 0 while up, 0.5 rest)', HORN, 0, 0.5),
   key('RudderTrimLeft', 'Doors | Left', 'y'),
   key('RudderTrimRight', 'Doors | Right', 'u'),
-  tog('RoundAuxButton', 'Brake mode switch F_PassengerGoodsSwitch (Passenger 1 / Goods 0). Lit = Passenger; the loco loads in Goods. Bail-off is cosmetic on this add-on (the lever moves, the brake cylinder does not: user cab test 2026-10-18), so it is not on the TCA', 'F_PassengerGoodsSwitch', 1, 0),
+  tog('RoundAuxButton', 'Brake mode: the cab switch F_Switch_PassengerGoodsMode (Goods 1 / Passenger 0; it loads in Passenger, as the TMS bar "Auto Brk: Pass" shows). Lit = Goods. The other node F_PassengerGoodsSwitch (identifier BrakeMode, Passenger 1 / Goods 0) ignores API sets and does not follow the switch. Bail-off is cosmetic on this add-on (the lever moves, the brake cylinder does not: user cab test 2026-10-18), so it is not on the TCA', 'F_Switch_PassengerGoodsMode', 1, 0),
   tog('LeftAuxButton', 'AWS / TPWS full isolation switch (F_Switch_TpwsFullIsolation Normal 1 / Isolated 0). Lit = Normal; loads Isolated', 'F_Switch_TpwsFullIsolation', 1, 0),
   tog('RightAuxButton', 'DVD (vigilance) isolation switch (DVD_IsolatorSwitch Normal 1 / Isolated 0). Lit = Normal; loads Isolated', 'DVD_IsolatorSwitch', 1, 0),
   { name: 'RotaryCrank', description: 'Wipers off (both F_WindscreenWiper levers 0)', assignments: [set(WL, 0), set(WR, 0)] },
@@ -78,7 +78,7 @@ writeManual({
     'Headlights to Day (AUTO BRK); Tail in the rear cab when running light',
     'Automatic brake from Handle off to Full service (the loco loads with the brake pipe cut off), independent applied, throttle Idle',
     'Parking brake released in the cab; engine stopped itself while parked? Right throttle button starts it again',
-    'Brake mode on the round aux: lit = Passenger, out = Goods (as loaded, right for Class 70 freight); the cab switch sits on the rear-wall panel beneath the red fuel cut-off'],
+    'Brake mode on the round aux: the loco loads in Passenger; press it so it lights for Goods, the setting for Class 70 freight (the cab switch is on the rear-wall panel beneath the red fuel cut-off)'],
   depart: [
     'Check the signal; reverser to Forward a few seconds after PARK BRK (move it again if it does not take)',
     'Automatic brake to Release (pull back), wait for the brake pipe to reach 5 bar / 72 psi',
