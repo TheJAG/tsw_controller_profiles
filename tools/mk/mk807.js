@@ -40,7 +40,7 @@ p.controls=[
 ];
 fs.writeFileSync(f,JSON.stringify(p,null,2)+'\n');
 console.log(p.rail_class_information.map(c=>c.class_name).join(' '));
-const m={name:'tsw-class-807-dtg-thejag',title:'Class 807',eyebrow:'Avanti West Coast · Dovetail Games · TCA Quadrant Airbus',profileName:p.name,developer:'Dovetail Games',route:'WCML: Crewe – Milton Keynes',colors:{navy:'#223261',blue:'#4a66a8',paper:'#f3f5f9'},logos:[{file:'../../assets/logo-avanti-navy.svg',alt:'Avanti West Coast'},{file:'../../assets/logo-dtg-navy.png',alt:'Dovetail Games'}],diagram:{file:'../../assets/class-807-side.png',source:'Drawing: WestRail642fan, Wikimedia Commons, CC BY-SA 4.0',clean:false,fit:'clip'},dlc:'store.steampowered.com/app/4680670',credit:'© TheJAG',cab:{file:'../../assets/class-807-dtg-cab.jpg',height:196,position:'50% 55%'},
+const m={name:'tsw-class-807-aabs-thejag',title:'Class 807',eyebrow:'Avanti West Coast · All Aboard Studios · TCA Quadrant Airbus',profileName:p.name,developer:'All Aboard Studios',route:'WCML: Crewe – Milton Keynes',colors:{navy:'#223261',blue:'#4a66a8',paper:'#f3f5f9'},logos:[{file:'../../assets/logo-avanti-navy.svg',alt:'Avanti West Coast'},{ file: '../../assets/logo-aabs-navy.png', alt: 'All Aboard Studios' }],diagram:{file:'../../assets/class-807-side.png',source:'Drawing: WestRail642fan, Wikimedia Commons, CC BY-SA 4.0',clean:false,fit:'clip'},dlc:'store.steampowered.com/app/4680670',credit:'© TheJAG',cab:{file:'../../assets/class-807-dtg-cab.jpg',height:196,position:'50% 55%'},
 controls:{
  speedbrake:{name:'Reverser',notches:['Off','Forward','Neutral','Reverse'],start:0},
  leftThrottle:{name:'Power / brake',continuous:true,notches:['Max brake',null,'Min brake','Off','P1','P2','P3','P4'],start:0},
@@ -53,4 +53,4 @@ controls:{
  parkBrk:{name:'Master key',flat:'out',up:'in'}},
 setup:['Master key in (PARK BRK)','Pantograph up (right throttle button), wait for line volts','Reverser to Neutral','Check TPWS/AWS and DVD isolation lights are out','Headlights to Full','Open doors (RUD TRIM)'],
 depart:['Close doors, wait for the guard buzzer','Check the signal','Reverser to Forward','Handle from Max brake through Off to P1','Pull further to P2, P3 and P4 as speed rises','Acknowledge AWS with the gear lever']};
-fs.writeFileSync('tools/manual/trains/tsw-class-807-dtg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
+fs.writeFileSync('tools/manual/trains/tsw-class-807-aabs-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');

@@ -34,7 +34,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **BR Class 47** <sub>— Athena · [profile](releases/tsw-class-47-athena-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-47-athena-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 52** <sub>— DTG · [profile](releases/tsw-class-52-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-52-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 66** <sub>— DTG · [profile](releases/tsw-class-66-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-66-dtg-thejag.pdf)</sub>  
-`DONE ✅` **BR Class 70** <sub>— DTG · [profile](releases/tsw-class-70-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-70-dtg-thejag.pdf)</sub>  
+`DONE ✅` **BR Class 70** <sub>— All Aboard Studios · [profile](releases/tsw-class-70-aabs-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-70-aabs-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 86** <sub>— Just Trains · [profile](releases/tsw-class-86-jt-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-86-jt-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 87** <sub>— Just Trains · [profile](releases/tsw-class-87-jt-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-87-jt-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 90** <sub>— Alan Thomson Simulation · [profile](releases/tsw-class-90-ats-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-90-ats-thejag.pdf)</sub>  
@@ -69,8 +69,8 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `DONE ✅` **BR Class 710** <sub>— DTG · [profile](releases/tsw-class-710-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-710-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 801** <sub>— DTG · [profile](releases/tsw-class-801-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-801-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 802** <sub>— Rivet · [profile](releases/tsw-class-802-rivet-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-802-rivet-thejag.pdf)</sub>  
-`SOON 🟨` **BR Class 805** <sub>— DTG · [profile](releases/tsw-class-805-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-805-dtg-thejag.pdf)</sub>  
-`SOON 🟨` **BR Class 807** <sub>— DTG · [profile](releases/tsw-class-807-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-807-dtg-thejag.pdf)</sub>  
+`SOON 🟨` **BR Class 805** <sub>— All Aboard Studios · [profile](releases/tsw-class-805-aabs-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-805-aabs-thejag.pdf)</sub>  
+`SOON 🟨` **BR Class 807** <sub>— All Aboard Studios · [profile](releases/tsw-class-807-aabs-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-807-aabs-thejag.pdf)</sub>  
 `SOON 🟨` **Flying Scotsman** <sub>— DTG · [profile](releases/tsw-flying-scotsman-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-flying-scotsman-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **LMS Class 4F** <sub>— DTG · [profile](releases/tsw-lms-4f-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-lms-4f-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **LMS Class 8F** <sub>— DTG · [profile](releases/tsw-lms-8f-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-lms-8f-dtg-thejag.pdf)</sub>  

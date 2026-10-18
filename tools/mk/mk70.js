@@ -21,7 +21,7 @@
 // Round aux = Passenger / Goods brake mode instead (user decision 2026-10-18).
 const { load, save, writeManual, pakClasses, mom, tog, momA, key, set } = require('./lib');
 const { f, dlc, p } = load('store.steampowered.com/app/4680650');
-p.name = 'TSW | Class 70 | DTG | TheJAG';
+p.name = 'TSW | Class 70 | AABS | TheJAG';
 p.rail_class_information = pakClasses(/^(CL70_FL_RVM|RVM_AABS_Class70(New)?)$/);
 const R = 'F_Reverser', TH = 'F_Throttle', AB = 'F_AutomaticBrake', IB = 'F_IndependentBrake', MK = 'F_MasterKey', CE = 'F_CabEnable',
   HORN = 'EngineersHorn_F (Irregular Lever)', WL = 'F_WindscreenWiper_L (SimpleLever)', WR = 'F_WindscreenWiper_R (SimpleLever)', HL = 'F_HeadlightSelectorKnob';
@@ -55,10 +55,10 @@ p.controls = [
 ];
 save(f, p);
 writeManual({
-  name: 'tsw-class-70-dtg-thejag', title: 'Class 70', eyebrow: 'Freightliner · All Aboard Studios / Dovetail Games · TCA Quadrant Airbus', profileName: p.name,
-  developer: 'All Aboard Studios (published by Dovetail Games)', route: 'WCML Trent Valley: Crewe – Milton Keynes · Midland Main Line',
+  name: 'tsw-class-70-aabs-thejag', title: 'Class 70', eyebrow: 'Freightliner · All Aboard Studios · TCA Quadrant Airbus', profileName: p.name,
+  developer: 'All Aboard Studios', route: 'WCML Trent Valley: Crewe – Milton Keynes · Midland Main Line',
   colors: { navy: '#223261', blue: '#4a66a8', paper: '#f3f5f9' },
-  logos: [{ file: '../../assets/logo-freightliner-navy.svg', alt: 'Freightliner' }, { file: '../../assets/logo-dtg-navy.png', alt: 'Dovetail Games' }],
+  logos: [{ file: '../../assets/logo-freightliner-navy.svg', alt: 'Freightliner' }, { file: '../../assets/logo-aabs-navy.png', alt: 'All Aboard Studios' }],
   dlc, credit: '© TheJAG', cab: { file: '../../assets/class-70-dtg-cab.jpg', height: 196, position: '50% 50%' },
   controls: {
     speedbrake: { name: 'Reverser', notches: ['Forward', 'Neutral', 'Reverse'], start: 1 },
