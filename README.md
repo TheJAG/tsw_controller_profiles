@@ -34,7 +34,7 @@ The following trains are / will be supported. Ticked :heavy_check_mark: means av
 `SOON 🟨` **BR Class 47** <sub>— Athena · [profile](releases/tsw-class-47-athena-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-47-athena-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 52** <sub>— DTG · [profile](releases/tsw-class-52-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-52-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 66** <sub>— DTG · [profile](releases/tsw-class-66-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-66-dtg-thejag.pdf)</sub>  
-`SOON 🟨` **BR Class 70** <sub>— DTG · [profile](releases/tsw-class-70-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-70-dtg-thejag.pdf)</sub>  
+`DONE ✅` **BR Class 70** <sub>— DTG · [profile](releases/tsw-class-70-dtg-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-70-dtg-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 86** <sub>— Just Trains · [profile](releases/tsw-class-86-jt-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-86-jt-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 87** <sub>— Just Trains · [profile](releases/tsw-class-87-jt-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-87-jt-thejag.pdf)</sub>  
 `SOON 🟨` **BR Class 90** <sub>— Alan Thomson Simulation · [profile](releases/tsw-class-90-ats-thejag.tswprofile) · [manual](profiles/documentation/tsw-class-90-ats-thejag.pdf)</sub>  
