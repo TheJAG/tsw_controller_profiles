@@ -18,7 +18,7 @@
   "controls": [
     {
       "name": "SpeedbrakeLever",
-      "description": "Reverser F_Reverser (Reverse -1 / Neutral 0 / Forward 1; any value in a zone snaps), inverted: Forward at the far end, Reverse nearest. Sent twice (value, then value +-0.01) because the first set after the master key goes on is refused",
+      "description": "Reverser (Reverse -1 / Neutral 0 / Forward 1; any value in a zone snaps), inverted: Forward at the far end, Reverse nearest. Two nodes: F_Reverser is the cab lever and unlocks the throttle, the bare Reverser gives the traction direction. The first set after the master key goes on may be refused: move it again",
       "assignments": [
         {
           "type": "direct_control",
@@ -36,14 +36,14 @@
         },
         {
           "type": "direct_control",
-          "controls": "F_Reverser",
+          "controls": "Reverser",
           "input_value": {
             "min": -1,
             "max": 1,
             "steps": [
-              -0.99,
-              0.01,
-              0.99
+              -1,
+              0,
+              1
             ],
             "invert": true
           }
@@ -52,8 +52,56 @@
     },
     {
       "name": "LeftThrottle",
-      "description": "Automatic brake F_AutomaticBrake (Release 0 / Minimum Reduction 0.2 / service continuous 0.21..0.6 / Full Service 0.65 / Suppression 0.7 / Handle Off 0.8 / Emergency 1), inverted as on the desk (push away to apply): Emergency at the far end (raw 0 +-0.04), Handle Off 0.1 +-0.04, Suppression 0.2 +-0.04, Full Service 0.3 +-0.04 on the idle detent, service zone 0.36..0.86, Minimum 0.9 +-0.03, Release 1 +-0.06 nearest",
+      "description": "Automatic brake (Release 0 / Minimum Reduction 0.2 / service continuous 0.21..0.6 / Full Service 0.65 / Suppression 0.7 / Handle Off 0.8 / Emergency 1), inverted as on the desk (push away to apply): Emergency at the far end (raw 0 +-0.04), Handle Off 0.1 +-0.04, Suppression 0.2 +-0.04, Full Service 0.3 +-0.04 on the idle detent, service zone 0.36..0.86, Minimum 0.9 +-0.03, Release 1 +-0.06 nearest. Two nodes: the bare AutomaticBrake drives the 26C brake valve (it loads in Handle Off, brake pipe cut off), F_AutomaticBrake only moves the cab lever",
       "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "AutomaticBrake",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.2,
+              null,
+              0.65,
+              0.7,
+              0.8,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.06
+              },
+              {
+                "threshold": 0.9,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.86,
+                "threshold_end": 0.36
+              },
+              {
+                "threshold": 0.3,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.2,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.1,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.04
+              }
+            ]
+          }
+        },
         {
           "type": "direct_control",
           "controls": "F_AutomaticBrake",
@@ -106,7 +154,7 @@
     },
     {
       "name": "RightThrottle",
-      "description": "Throttle F_Throttle (Idle 0.2 / N1..N8 at 0.3..1.0, the stored values), inverted as on the desk (push away for power): N8 at the far end, Idle nearest; nine equal bands. Sent twice (notch, then notch +0.01, which snaps back) against the lagging reverser interlock; moves only with the reverser in Forward",
+      "description": "Throttle F_Throttle (Idle 0.2 / N1..N8 at 0.3..1.0, the stored values), inverted as on the desk (push away for power): N8 at the far end, Idle nearest; nine equal bands. Sent twice with the same value: from Idle the game takes only one notch per set (0.5 stores 0.3), the second set lands on the notch. Moves only with the reverser in Forward",
       "assignments": [
         {
           "type": "direct_control",
@@ -135,15 +183,15 @@
             "min": 0.2,
             "max": 1,
             "steps": [
-              0.21,
-              0.31,
-              0.41,
-              0.51,
-              0.61,
-              0.71,
-              0.81,
-              0.91,
-              0.99
+              0.2,
+              0.3,
+              0.4,
+              0.5,
+              0.6,
+              0.7,
+              0.8,
+              0.9,
+              1
             ],
             "invert": true
           }
@@ -310,7 +358,7 @@
     },
     {
       "name": "RoundAuxButton",
-      "description": "Bail off the loco brake (AutoBrakeBailOff 1 while held)",
+      "description": "Bail off the loco brake (AutoBrakeBailOff 1 while held; through the API the brake cylinder did not release, user test pending)",
       "assignment": {
         "type": "momentary",
         "threshold": 0.9,

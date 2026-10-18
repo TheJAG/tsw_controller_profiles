@@ -20,14 +20,14 @@
         },
         {
           "type": "direct_control",
-          "controls": "F_Reverser",
+          "controls": "Reverser",
           "input_value": {
             "min": -1,
             "max": 1,
             "steps": [
-              -0.99,
-              0.01,
-              0.99
+              -1,
+              0,
+              1
             ],
             "invert": true
           }
@@ -37,6 +37,54 @@
     {
       "name": "LeftThrottle",
       "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "AutomaticBrake",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.2,
+              null,
+              0.65,
+              0.7,
+              0.8,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.06
+              },
+              {
+                "threshold": 0.9,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.86,
+                "threshold_end": 0.36
+              },
+              {
+                "threshold": 0.3,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.2,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.1,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.04
+              }
+            ]
+          }
+        },
         {
           "type": "direct_control",
           "controls": "F_AutomaticBrake",
@@ -117,15 +165,15 @@
             "min": 0.2,
             "max": 1,
             "steps": [
-              0.21,
-              0.31,
-              0.41,
-              0.51,
-              0.61,
-              0.71,
-              0.81,
-              0.91,
-              0.99
+              0.2,
+              0.3,
+              0.4,
+              0.5,
+              0.6,
+              0.7,
+              0.8,
+              0.9,
+              1
             ],
             "invert": true
           }
