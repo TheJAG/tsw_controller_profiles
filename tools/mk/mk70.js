@@ -17,7 +17,8 @@
 // F_Throttle moves one notch per set from Idle (0.2 -> 0.5 stores 0.3, the next set goes anywhere), so the throttle is doubled
 // with the SAME values (a second identical set passes; the earlier +0.01 doubling made the cab lever wobble on every re-send).
 // Bail-off: AutoBrakeBailOff 1 (the SA26 fills its actuating pipe) and F_IndependentBrake 0 with Interacting both leave the loco
-// brake cylinder where it is under a Full Service application; kept on the round aux for the user's test.
+// brake cylinder where it is under a Full Service application, and the user's in-cab push-down does the same: cosmetic, left off.
+// Round aux = Passenger / Goods brake mode instead (user decision 2026-10-18).
 const { load, save, writeManual, pakClasses, mom, tog, momA, key, set } = require('./lib');
 const { f, dlc, p } = load('store.steampowered.com/app/4680650');
 p.name = 'TSW | Class 70 | DTG | TheJAG';
@@ -45,9 +46,7 @@ p.controls = [
   mom('RightEngineOn', 'Horn | Low (EngineersHorn_F 0 while up, 0.5 rest)', HORN, 0, 0.5),
   key('RudderTrimLeft', 'Doors | Left', 'y'),
   key('RudderTrimRight', 'Doors | Right', 'u'),
-  { name: 'RoundAuxButton', description: 'Bail off: pushes the direct brake lever F_IndependentBrake down into its spring Bail Off position (0, held) while the button is held, back to Release 0.2 on release; the AutoBrakeBailOff push button is sent as well. Through the API neither released the loco brake cylinder under a train brake application (2026-10-18), user test pending', assignments: [
-    { type: 'momentary', threshold: 0.9, action_activate: { controls: IB, value: 0, hold: true }, action_deactivate: { controls: IB, value: 0.2, hold: false } },
-    momA('AutoBrakeBailOff', 1, 0)] },
+  tog('RoundAuxButton', 'Brake mode switch F_PassengerGoodsSwitch (Passenger 1 / Goods 0). Lit = Passenger; the loco loads in Goods. Bail-off is cosmetic on this add-on (the lever moves, the brake cylinder does not: user cab test 2026-10-18), so it is not on the TCA', 'F_PassengerGoodsSwitch', 1, 0),
   tog('LeftAuxButton', 'AWS / TPWS full isolation switch (F_Switch_TpwsFullIsolation Normal 1 / Isolated 0). Lit = Normal; loads Isolated', 'F_Switch_TpwsFullIsolation', 1, 0),
   tog('RightAuxButton', 'DVD (vigilance) isolation switch (DVD_IsolatorSwitch Normal 1 / Isolated 0). Lit = Normal; loads Isolated', 'DVD_IsolatorSwitch', 1, 0),
   { name: 'RotaryCrank', description: 'Wipers off (both F_WindscreenWiper levers 0)', assignments: [set(WL, 0), set(WR, 0)] },
@@ -70,7 +69,7 @@ writeManual({
     autoBrk: { name: 'Headlights', positions: [{ short: '0', desc: 'Off' }, { short: 'BTV', desc: 'Day' }, { short: 'LO', desc: 'Night' }, { short: '2', desc: 'Marker' }, { short: '3', desc: 'Tail' }, { short: 'HI', desc: 'Hazard' }], start: 0 },
     eng1: { name: 'Horn high', start: true }, eng2: { name: 'Horn low', start: true },
     leftAux: { name: 'AWS/TPWS isolation' }, rightAux: { name: 'DVD isolation' },
-    modeSwitch: { name: 'Wipers', left: 'off', right: 'on' }, roundAux: { name: 'Bail off' }, rudTrim: { name: 'Doors L / R' },
+    modeSwitch: { name: 'Wipers', left: 'off', right: 'on' }, roundAux: { name: 'Passenger / Goods' }, rudTrim: { name: 'Doors L / R' },
     parkBrk: { name: 'Cab enable + master key', flat: 'out', up: 'in' } },
   setup: [
     'Cab enable and master key in (PARK BRK up); give the key a few seconds before the first reverser move',
@@ -79,13 +78,13 @@ writeManual({
     'Headlights to Day (AUTO BRK); Tail in the rear cab when running light',
     'Automatic brake from Handle off to Full service (the loco loads with the brake pipe cut off), independent applied, throttle Idle',
     'Parking brake released in the cab; engine stopped itself while parked? Right throttle button starts it again',
-    'Passenger / Goods brake mode: the switch sits on the rear-wall auxiliary panel beneath the red fuel cut-off button; Goods for freight (as loaded)'],
+    'Brake mode on the round aux: lit = Passenger, out = Goods (as loaded, right for Class 70 freight); the cab switch sits on the rear-wall panel beneath the red fuel cut-off'],
   depart: [
     'Check the signal; reverser to Forward a few seconds after PARK BRK (move it again if it does not take)',
     'Automatic brake to Release (pull back), wait for the brake pipe to reach 5 bar / 72 psi',
     'Independent brake to Release (flap lever back)',
     'Throttle notch by notch; a heavy train may need Notch 8 to get going, go easy in the wet',
     'Acknowledge AWS and the vigilance with the gear lever',
-    'Braking: throttle to Idle, automatic brake into the service zone; bail off the loco (round aux) on a heavy train',
+    'Braking: throttle to Idle, automatic brake into the service zone; the direct brake holds the loco at a stand (bail-off is cosmetic in this add-on)',
     'TMS says PCS Open (no power after an emergency or a vented pipe): stop, throttle Idle, automatic brake to Emergency for a full minute, then Release; it clears as the pipe recharges'],
 });
