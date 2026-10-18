@@ -1,0 +1,511 @@
+{
+  "name": "TSW | Class 70 | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "CL70_FL_RVM_C"
+    },
+    {
+      "class_name": "RVM_AABS_Class70_C"
+    },
+    {
+      "class_name": "RVM_AABS_Class70New_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Reverser F_Reverser (Reverse -1 / Neutral 0 / Forward 1; any value in a zone snaps), inverted: Forward at the far end, Reverse nearest. Sent twice (value, then value +-0.01) because the first set after the master key goes on is refused",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "F_Reverser",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "steps": [
+              -1,
+              0,
+              1
+            ],
+            "invert": true
+          }
+        },
+        {
+          "type": "direct_control",
+          "controls": "F_Reverser",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "steps": [
+              -0.99,
+              0.01,
+              0.99
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Automatic brake F_AutomaticBrake (Release 0 / Minimum Reduction 0.2 / service continuous 0.21..0.6 / Full Service 0.65 / Suppression 0.7 / Handle Off 0.8 / Emergency 1), inverted as on the desk (push away to apply): Emergency at the far end (raw 0 +-0.04), Handle Off 0.1 +-0.04, Suppression 0.2 +-0.04, Full Service 0.3 +-0.04 on the idle detent, service zone 0.36..0.86, Minimum 0.9 +-0.03, Release 1 +-0.06 nearest",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "F_AutomaticBrake",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.2,
+              null,
+              0.65,
+              0.7,
+              0.8,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.06
+              },
+              {
+                "threshold": 0.9,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.86,
+                "threshold_end": 0.36
+              },
+              {
+                "threshold": 0.3,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.2,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.1,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.04
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightThrottle",
+      "description": "Throttle F_Throttle (Idle 0.2 / N1..N8 at 0.3..1.0, the stored values), inverted as on the desk (push away for power): N8 at the far end, Idle nearest; nine equal bands. Sent twice (notch, then notch +0.01, which snaps back) against the lagging reverser interlock; moves only with the reverser in Forward",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "F_Throttle",
+          "input_value": {
+            "min": 0.2,
+            "max": 1,
+            "steps": [
+              0.2,
+              0.3,
+              0.4,
+              0.5,
+              0.6,
+              0.7,
+              0.8,
+              0.9,
+              1
+            ],
+            "invert": true
+          }
+        },
+        {
+          "type": "direct_control",
+          "controls": "F_Throttle",
+          "input_value": {
+            "min": 0.2,
+            "max": 1,
+            "steps": [
+              0.21,
+              0.31,
+              0.41,
+              0.51,
+              0.61,
+              0.71,
+              0.81,
+              0.91,
+              0.99
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "FlapLever",
+      "description": "Independent (loco) brake F_IndependentBrake, continuous: Release 0.2 nearest, full application 1 at the far end (inverted). Bail Off is the round aux",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "F_IndependentBrake",
+          "input_value": {
+            "min": 0.2,
+            "max": 1,
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Cab Enable (F_CabEnable 1 / 0, the loco loads with it off) and master key (F_MasterKey MasterSwitch 1 / 0). PARK BRK up = in; wait a few seconds before the first reverser move",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "F_CabEnable",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "F_CabEnable",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "F_MasterKey",
+            "value": 1,
+            "hold": false,
+            "enable_api_fallback": true
+          },
+          "action_deactivate": {
+            "controls": "F_MasterKey",
+            "value": 0,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "GearLever",
+      "description": "AWS reset / vigilance acknowledge",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "Q"
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "description": "Sand (Sand push button, held)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Sand",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Sand",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Engine start (F_Button_EngineStart, held; the engine stops itself when parked at Idle with the brakes on)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "F_Button_EngineStart",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "F_Button_EngineStart",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "Horn | High (EngineersHorn_F 1 while up, 0.5 rest)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "EngineersHorn_F (Irregular Lever)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "EngineersHorn_F (Irregular Lever)",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "Horn | Low (EngineersHorn_F 0 while up, 0.5 rest)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "EngineersHorn_F (Irregular Lever)",
+          "value": 0,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "EngineersHorn_F (Irregular Lever)",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "y"
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "keys": "u"
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "Bail off the loco brake (AutoBrakeBailOff 1 while held)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "AutoBrakeBailOff",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "AutoBrakeBailOff",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "AWS / TPWS full isolation switch (F_Switch_TpwsFullIsolation Normal 1 / Isolated 0). Lit = Normal; loads Isolated",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "F_Switch_TpwsFullIsolation",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "F_Switch_TpwsFullIsolation",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "DVD (vigilance) isolation switch (DVD_IsolatorSwitch Normal 1 / Isolated 0). Lit = Normal; loads Isolated",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "DVD_IsolatorSwitch",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "DVD_IsolatorSwitch",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wipers off (both F_WindscreenWiper levers 0)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "F_WindscreenWiper_L (SimpleLever)",
+            "value": 0,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "F_WindscreenWiper_R (SimpleLever)",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wipers on (both F_WindscreenWiper levers 1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "F_WindscreenWiper_L (SimpleLever)",
+            "value": 1,
+            "hold": false
+          }
+        },
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "F_WindscreenWiper_R (SimpleLever)",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Lights | Off (F_HeadlightSelectorKnob 0)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "F_HeadlightSelectorKnob",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Lights | Day (F_HeadlightSelectorKnob 1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "F_HeadlightSelectorKnob",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Lights | Night (F_HeadlightSelectorKnob 2)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "F_HeadlightSelectorKnob",
+            "value": 2,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Lights | Marker (F_HeadlightSelectorKnob 3)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "F_HeadlightSelectorKnob",
+            "value": 3,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake4",
+      "description": "Lights | Tail (F_HeadlightSelectorKnob 4)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "F_HeadlightSelectorKnob",
+            "value": 4,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake5",
+      "description": "Lights | Hazard (F_HeadlightSelectorKnob 5)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "F_HeadlightSelectorKnob",
+            "value": 5,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}
