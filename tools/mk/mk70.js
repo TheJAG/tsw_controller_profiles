@@ -85,5 +85,5 @@ writeManual({
     'Throttle notch by notch; a heavy train may need Notch 8 to get going, go easy in the wet',
     'Acknowledge AWS and the vigilance with the gear lever',
     'Braking: throttle to Idle, automatic brake into the service zone; bail off the loco (round aux) on a heavy train',
-    'TMS says PCS Open (no power after an emergency or a vented pipe): stop, automatic brake to Suppression for a full minute, then Release'],
+    'TMS says PCS Open (no power after an emergency or a vented pipe): stop, throttle Idle, automatic brake to Emergency for a full minute, then Release; it clears as the pipe recharges'],
 });
