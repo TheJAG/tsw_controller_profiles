@@ -42,7 +42,7 @@
   "controls": [
     {
       "name": "SpeedbrakeLever",
-      "description": "Direction selector DirectionSelectorSwitch (Reverse -0.3333 / Inter 0 / Forward 0.32 / Auto 0.65 / Off 0.99; any value in a zone), plain: Reverse at the far end, Off nearest",
+      "description": "Direction selector DirectionSelectorSwitch (Reverse -0.3333 / Inter 0 / Forward 0.32 / Auto 0.65 / Off 0.99; any value in a zone), inverted: Off at the far end, Reverse nearest",
       "assignments": [
         {
           "type": "direct_control",
@@ -56,14 +56,15 @@
               0.33,
               0.66,
               0.92
-            ]
+            ],
+            "invert": true
           }
         }
       ]
     },
     {
       "name": "LeftThrottle",
-      "description": "Combined traction / brake controller TractionBrakeController: Emergency -0.7777 / Service -0.6666 / Lap -0.5555 / Rheo 2 EP Max -0.4444 / EP Normal -0.3333 / EP Min -0.2222 / Rheo 1 Hold -0.1111 / Off and Release 0 / Shunt 0.1111 / Series 0.2222 / Parallel 0.3333 (eleven notches, the Class 171 bands), inverted: Emergency at the far end, Parallel nearest. Shutdown stays in the cab. Only moves with the keys in and the deadman held (PARK BRK up)",
+      "description": "Combined traction / brake controller TractionBrakeController: Emergency -0.7777 / Service -0.6666 / Lap -0.5555 / Rheo 2 EP Max -0.4444 / EP Normal -0.3333 / EP Min -0.2222 / Rheo 1 Hold -0.1111 / Off and Release 0 / Shunt 0.1111 / Series 0.2222 / Parallel 0.3333 (eleven notches, the Class 171 bands), plain: Emergency at the far end, Parallel nearest. Shutdown stays in the cab. Only moves with the keys in and the deadman held (PARK BRK up)",
       "assignments": [
         {
           "type": "direct_control",
@@ -84,7 +85,6 @@
               0.2222,
               0.3333
             ],
-            "invert": true,
             "step_thresholds": [
               {
                 "threshold": 0,

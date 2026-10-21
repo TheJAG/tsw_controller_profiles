@@ -8,6 +8,10 @@
 // No separate Westinghouse brake node. WhistleLever Low 1 / High -1 (rest 0); Wipers Park 0 / Run 0.84; AudibleWarningValveReset
 // (Alerter), TripcockResetButton, RPS_Isolate 0 / 1, SpeedControlCutoutSwitch 0 / 0.85; HeadLights_MCB, TailLight_L/R_MCB, GaugeLight_MCB
 // push buttons (Off 0 / On 1); doors DoorsOpen_L/R, DoorsClose_L/R push buttons (keys y / u used).
+// 2026-10-21, the user's cab test (through the TSW Route Guides lever card: "The reverser and PBC are the wrong way around"):
+// the direction selector turned round, inverted (Off at the far end, Reverse nearest, as the fleet's other reversers); the
+// controller's invert flag dropped: with step_thresholds the app inverts the input and the thresholds alike, so the flag did
+// nothing and Emergency was at the far end all along (the 171's rising bands), as the manual's pills say.
 const fs=require('fs');
 const f=process.argv[2]; const dlc=process.argv[3]||'store.steampowered.com/app/4679420';
 const p=JSON.parse(fs.readFileSync(f,'utf8'));
@@ -23,8 +27,8 @@ const set=(node,v)=>({type:'momentary',threshold:0.9,action_activate:{controls:n
 const pair=(node,onV,offV)=>({type:'momentary',threshold:0.9,action_activate:{controls:node,value:onV,hold:false,enable_api_fallback:true},action_deactivate:{controls:node,value:offV,hold:false,enable_api_fallback:true}});
 const lights=(h,g,t)=>[set('HeadLights_MCB',h),set('GaugeLight_MCB',g),set('TailLight_L_MCB',t),set('TailLight_R_MCB',t)];
 p.controls=[
- {name:'SpeedbrakeLever',description:'Direction selector DirectionSelectorSwitch (Reverse -0.3333 / Inter 0 / Forward 0.32 / Auto 0.65 / Off 0.99; any value in a zone), plain: Reverse at the far end, Off nearest',assignments:[{type:'direct_control',controls:'DirectionSelectorSwitch',input_value:{min:-0.3333,max:0.99,steps:[-0.25,0,0.33,0.66,0.92]}}]},
- {name:'LeftThrottle',description:'Combined traction / brake controller TractionBrakeController: Emergency -0.7777 / Service -0.6666 / Lap -0.5555 / Rheo 2 EP Max -0.4444 / EP Normal -0.3333 / EP Min -0.2222 / Rheo 1 Hold -0.1111 / Off and Release 0 / Shunt 0.1111 / Series 0.2222 / Parallel 0.3333 (eleven notches, the Class 171 bands), inverted: Emergency at the far end, Parallel nearest. Shutdown stays in the cab. Only moves with the keys in and the deadman held (PARK BRK up)',assignments:[{type:'direct_control',controls:'TractionBrakeController',input_value:{min:-0.7777,max:0.3333,steps:[-0.7777,-0.6666,-0.5555,-0.4444,-0.3333,-0.2222,-0.1111,0,0.1111,0.2222,0.3333],invert:true,step_thresholds:th11}}]},
+ {name:'SpeedbrakeLever',description:'Direction selector DirectionSelectorSwitch (Reverse -0.3333 / Inter 0 / Forward 0.32 / Auto 0.65 / Off 0.99; any value in a zone), inverted: Off at the far end, Reverse nearest',assignments:[{type:'direct_control',controls:'DirectionSelectorSwitch',input_value:{min:-0.3333,max:0.99,steps:[-0.25,0,0.33,0.66,0.92],invert:true}}]},
+ {name:'LeftThrottle',description:'Combined traction / brake controller TractionBrakeController: Emergency -0.7777 / Service -0.6666 / Lap -0.5555 / Rheo 2 EP Max -0.4444 / EP Normal -0.3333 / EP Min -0.2222 / Rheo 1 Hold -0.1111 / Off and Release 0 / Shunt 0.1111 / Series 0.2222 / Parallel 0.3333 (eleven notches, the Class 171 bands), plain: Emergency at the far end, Parallel nearest. Shutdown stays in the cab. Only moves with the keys in and the deadman held (PARK BRK up)',assignments:[{type:'direct_control',controls:'TractionBrakeController',input_value:{min:-0.7777,max:0.3333,steps:[-0.7777,-0.6666,-0.5555,-0.4444,-0.3333,-0.2222,-0.1111,0,0.1111,0.2222,0.3333],step_thresholds:th11}}]},
  {name:'ParkingBrake',description:'Cab in: DirectionSelectorKey 1 / 0, ControlSwitchKey 1 / 0, ControlSwitch On 1 / Off 0 and the DeadmansHandleButton pressed 1 / released 0 (the controller is dead without all four). PARK BRK up = keys in, deadman held',assignments:[pair('DirectionSelectorKey',1,0),pair('ControlSwitchKey',1,0),pair('ControlSwitch',1,0),pair('DeadmansHandleButton',1,0)]},
  mom('GearLever','Audible warning (deadman / tripcock) valve reset (AudibleWarningValveReset, Alerter, held)','AudibleWarningValveReset',1,0),
  mom('RightThrottleButton','Whistle low (WhistleLever 1, back to 0)','WhistleLever',1,0),
@@ -45,7 +49,7 @@ fs.writeFileSync(f,JSON.stringify(p,null,2)+'\n');
 console.log(p.rail_class_information.map(c=>c.class_name).join(' '));
 const m={name:'tsw-lu-1972-dtg-thejag',title:'1972 Tube Stock',eyebrow:'London Underground · Dovetail Games · TCA Quadrant Airbus',profileName:p.name,developer:'Dovetail Games',route:'Bakerloo Line: Harrow & Wealdstone – Elephant & Castle',logos:[{file:'../../assets/logo-lu-roundel-navy.svg',alt:'London Underground'},{file:'../../assets/logo-dtg-navy.png',alt:'Dovetail Games'}],dlc,credit:'© TheJAG',cab:{file:'../../assets/lu-1972-dtg-cab.jpg',height:196,position:'50% 50%'},
 controls:{
- speedbrake:{name:'Direction selector',notches:['Reverse','Inter','Forward','Auto','Off'],start:4},
+ speedbrake:{name:'Direction selector',notches:['Off','Auto','Forward','Inter','Reverse'],start:0},
  leftThrottle:{name:'Controller',notches:['Emergency','Service','Lap','EP max','EP normal','EP min','Hold','Off / release','Shunt','Series','Parallel'],start:1},
  rightThrottle:null, flap:null,
  leftThrottleButton:null, rightThrottleButton:{name:'Whistle'}, gearLever:{name:'Valve reset'},
