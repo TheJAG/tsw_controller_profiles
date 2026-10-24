@@ -50,6 +50,6 @@ controls:{
  leftAux:{name:'SiFa fuse'}, rightAux:{name:'PZB fuse'},
  modeSwitch:{name:'Wipers L + R',left:'back',right:'on'}, roundAux:{name:'PZB Befehl 40'}, rudTrim:{name:'Doors L / R'},
  parkBrk:{name:'Keys + brake cut-in',flat:'out',up:'in'}},
-setup:['Keys in and brake cut-off to Ein (PARK BRK up), battery on in the cab','Handbrake released; if the valve will not leave Running, flip PARK BRK down and up (cut-off Aus locks it there)','Engines Gruppe 1 and 2 started, transmission on, in the cab','SiFa and PZB fuses on (aux squares lit)','Führerbremsventil at Full service','Lights to Headlights'],
+setup:['Keys in and brake cut-off to Ein (PARK BRK up), battery on in the cab','Handbrake released; if the valve will not leave Running, flip PARK BRK down and up (cut-off Aus locks it there)','Engines Gruppe 1 and 2 started in the cab, then the Power switch ON (TransmissionPower): without it the Fahrschalter does nothing','SiFa and PZB fuses on (aux squares lit)','Führerbremsventil at Full service','Lights to Headlights'],
 depart:['Close doors, check the signal and PZB','Richtungsschalter to V','Brake to Running and wait for the pipe to charge','Fahrschalter up in notches 1 to 7','Acknowledge SiFa with the gear lever, PZB with the ENG switches','Brake: Min, then service steps 1 to 9 towards Full service; Lap holds the pressure']};
 fs.writeFileSync('tools/manual/trains/tsw-br-628-tsg-thejag.json',JSON.stringify(m,null,2)+'\n');console.log('manual data ok');
