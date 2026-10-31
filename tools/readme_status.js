@@ -1,6 +1,7 @@
 // Rewrite one train's README line and keep tools/trains.json (the registry) in sync.
 // Usage (from repo root):
-//   node tools/readme_status.js "<README name>" <todo|soon|done> [--game tsw|tsc|rt] [--dev DTG] [--profile <release slug>] [--no-manual] [--add "<country>"]
+//   node tools/readme_status.js "<README name>" <todo|soon|done> [--game tsw|tsc|rt] [--dev DTG] [--profile <release slug>] [--no-manual | --manual <slug>] [--add "<country>"]
+//   --manual <slug> links another train's manual (BR 1442 shares the BR 442 manual); guides.json follows the linked manual.
 //   node tools/readme_status.js --sync          # only regenerate tools/trains.json from the README
 // A status change re-renders the train's manual (its cab-test badge reads tools/trains.json); --no-render skips that.
 // Line formats (trailing two spaces are part of the format):
@@ -28,7 +29,7 @@ function index(){ const out=[]; let g=-1, country=null;
   return out; }
 function fmt(status,name,dev,slug,manual){ let s=STATUS[status]+' **'+name+'**';
   if(status==='todo'){ if(dev) s+=' <sub>— '+dev+'</sub>'; }
-  else { const parts=[dev||'?']; if(slug){parts.push('[profile](releases/'+slug+'.tswprofile)'); if(manual) parts.push('[manual](profiles/documentation/'+slug+'.pdf)');} s+=' <sub>— '+parts.join(' · ')+'</sub>'; }
+  else { const parts=[dev||'?']; if(slug){parts.push('[profile](releases/'+slug+'.tswprofile)'); if(manual) parts.push('[manual](profiles/documentation/'+(typeof manual==='string'?manual:slug)+'.pdf)');} s+=' <sub>— '+parts.join(' · ')+'</sub>'; }
   return s+'  '; }
 function sync(){ const regPath=path.join(__dirname,'trains.json'); const old=fs.existsSync(regPath)?JSON.parse(fs.readFileSync(regPath,'utf8')):[];
   const extra=new Map(old.map(t=>[t.game+'|'+t.name,t]));
@@ -48,8 +49,8 @@ function guides(reg){ const profDir=path.join(root,'profiles'), docDir=path.join
   const classesOf=slug=>{ if(!slug) return []; const re=new RegExp('^'+slug.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'-(\\d+)\\.json$');
     const f=profFiles.map(f=>[f,re.exec(f)]).filter(x=>x[1]).sort((a,b)=>Number(b[1][1])-Number(a[1][1]))[0]; if(!f) return [];
     try{ const j=JSON.parse(fs.readFileSync(path.join(profDir,f[0]),'utf8')); return [...new Set((j.rail_class_information||[]).map(c=>c.class_name).filter(Boolean))].sort(); }catch(e){ return []; } };
-  const trains=reg.map(t=>{ const slug=t.profile?path.basename(t.profile,'.tswprofile'):null; const cn=countryName(t.country);
-    return {game:t.game,name:t.name,country:countrySlug(cn),country_name:cn,dev:t.dev,status:t.status,slug,classes:classesOf(slug),html:doc(slug,'.html'),pdf:doc(slug,'.pdf')}; });
+  const trains=reg.map(t=>{ const slug=t.profile?path.basename(t.profile,'.tswprofile'):null; const cn=countryName(t.country); const mslug=t.manual?path.basename(t.manual,'.pdf'):slug;
+    return {game:t.game,name:t.name,country:countrySlug(cn),country_name:cn,dev:t.dev,status:t.status,slug,classes:classesOf(slug),html:doc(mslug,'.html'),pdf:doc(mslug,'.pdf')}; });
   const safeDir=path.join(__dirname,'manual','safety');
   const safety=fs.readdirSync(safeDir).filter(f=>f.endsWith('.json')).sort().map(f=>{ const j=JSON.parse(fs.readFileSync(path.join(safeDir,f),'utf8'));
     const country=f.replace(/\.json$/,''); const t=trains.find(x=>x.country===country); const name=j.name||('tsw-safety-'+country+'-thejag');

@@ -1,0 +1,397 @@
+{
+  "name": "TSW | BR 1442 | DTG | TheJAG",
+  "auto_select": true,
+  "apps": [
+    "Train Sim World"
+  ],
+  "rail_class_information": [
+    {
+      "class_name": "RVM_DB_Talent2_M1_C"
+    },
+    {
+      "class_name": "RVM_DB_Talent2_T1_C"
+    },
+    {
+      "class_name": "RVM_DB_Talent2_T2_C"
+    }
+  ],
+  "controls": [
+    {
+      "name": "SpeedbrakeLever",
+      "description": "Richtungsschalter (Reverse 0 / Neutral 0.5 / Forward 1), inverted: Forward at the far end. Only moves with the master switch On (cycle PARK BRK once if it stays in Neutral)",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "Reverser (Irregular Level)",
+          "input_value": {
+            "min": 0,
+            "max": 1,
+            "steps": [
+              0,
+              0.5,
+              1
+            ],
+            "invert": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "LeftThrottle",
+      "description": "Combined power / brake handle, the BR 442 geometry (Max brake -1 / brake % continuous -0.95..-0.2 / Min brake -0.2 (5 %) / 0 / Min power 0.2 (5 %) / power % continuous 0.2..1; Emergency at -1.29 left out on purpose). Inverted with the BR 440 geometry: max brake raw 1 +-0.04, brake zone 0.955..0.58, min brake 0.55 +-0.03, 0 at 0.5 +-0.02, min power 0.45 +-0.03, power zone 0.42..0.045, full 0 +-0.04",
+      "assignments": [
+        {
+          "type": "direct_control",
+          "controls": "ThrottleAndBrake (Irregular Lever)",
+          "input_value": {
+            "min": -1,
+            "max": 1,
+            "steps": [
+              -1,
+              null,
+              -0.2,
+              0,
+              0.2,
+              null,
+              1
+            ],
+            "invert": true,
+            "step_thresholds": [
+              {
+                "threshold": 1,
+                "threshold_tolerance": 0.04
+              },
+              {
+                "threshold": 0.955,
+                "threshold_end": 0.58,
+                "threshold_tolerance": 0
+              },
+              {
+                "threshold": 0.55,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.5,
+                "threshold_tolerance": 0.02
+              },
+              {
+                "threshold": 0.45,
+                "threshold_tolerance": 0.03
+              },
+              {
+                "threshold": 0.42,
+                "threshold_end": 0.045,
+                "threshold_tolerance": 0
+              },
+              {
+                "threshold": 0,
+                "threshold_tolerance": 0.04
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ParkingBrake",
+      "description": "Master switch On / Off (Uncouple local -1 / Off 0 / On 1 / Uncouple remote 2)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "MasterSwitch (Irregular Lever)",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "MasterSwitch (Irregular Lever)",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "GearLever",
+      "description": "SiFa reset (push button)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "SifaPedalReset (Push Button)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "SifaPedalReset (Push Button)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftThrottleButton",
+      "description": "Sand (three positions: back bogie 0 / off 0.5 / front bogie 1; front bogie while held, off at rest)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "Sander (Irregular Lever)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "Sander (Irregular Lever)",
+          "value": 0.5,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightThrottleButton",
+      "description": "Horn (high tone)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "HornHigh (Push Button)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "HornHigh (Push Button)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftEngineOn",
+      "description": "PZB Frei (release)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZBRelease (Push Button)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PZBRelease (Push Button)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RightEngineOn",
+      "description": "PZB Wachsam (acknowledge)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZBAcknowledge (Push Button)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PZBAcknowledge (Push Button)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimLeft",
+      "description": "Doors | Left",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PassengerDoorsLeft (Push Button)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PassengerDoorsLeft (Push Button)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RudderTrimRight",
+      "description": "Doors | Right",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PassengerDoorsRight (Push Button)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PassengerDoorsRight (Push Button)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "RoundAuxButton",
+      "description": "PZB Befehl 40 (override)",
+      "assignment": {
+        "type": "momentary",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZBOverride (Push Button)",
+          "value": 1,
+          "hold": true
+        },
+        "action_deactivate": {
+          "controls": "PZBOverride (Push Button)",
+          "value": 0,
+          "hold": false
+        }
+      }
+    },
+    {
+      "name": "LeftAuxButton",
+      "description": "SiFa isolation toggle button (lit = Isolated 0 / unlit = on 1)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "SifaIsolationSwitch (Toggle Button)",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "SifaIsolationSwitch (Toggle Button)",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RightAuxButton",
+      "description": "PZB isolation toggle button (lit = Isolated 0 / unlit = on 1)",
+      "assignment": {
+        "type": "toggle",
+        "threshold": 0.9,
+        "action_activate": {
+          "controls": "PZBIsolationSwitch (Toggle Button)",
+          "value": 0,
+          "hold": false,
+          "enable_api_fallback": true
+        },
+        "action_deactivate": {
+          "controls": "PZBIsolationSwitch (Toggle Button)",
+          "value": 1,
+          "hold": false,
+          "enable_api_fallback": true
+        }
+      }
+    },
+    {
+      "name": "RotaryCrank",
+      "description": "Wipers one notch back (six positions 0..5, steps of 1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Wipers (Irregular Lever)",
+            "value": -1,
+            "relative": true,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "RotaryIgnStart",
+      "description": "Wipers one notch on (six positions 0..5, steps of 1)",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Wipers (Irregular Lever)",
+            "value": 1,
+            "relative": true,
+            "hold": false,
+            "enable_api_fallback": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake0",
+      "description": "Headlights | Off / tail",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights/TailLights (Irregular Lever)",
+            "value": 0,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake1",
+      "description": "Headlights | Marker",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights/TailLights (Irregular Lever)",
+            "value": 0.3333,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake2",
+      "description": "Headlights | Dimmed",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights/TailLights (Irregular Lever)",
+            "value": 0.6667,
+            "hold": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "AutoBrake3",
+      "description": "Headlights | High",
+      "assignments": [
+        {
+          "type": "momentary",
+          "threshold": 0.9,
+          "action_activate": {
+            "controls": "Headlights/TailLights (Irregular Lever)",
+            "value": 1,
+            "hold": false
+          }
+        }
+      ]
+    }
+  ],
+  "controller": {
+    "usb_id": "044F:0407"
+  }
+}

@@ -35,7 +35,7 @@ p.controls=[
 ];
 fs.writeFileSync(f,JSON.stringify(p,null,2)+'\n');
 console.log(p.rail_class_information.map(c=>c.class_name).join(' '));
-const m={name:'tsw-br-442-dtg-thejag',title:'BR 442 Talent 2',eyebrow:'DB Regio · Dovetail Games · TCA Quadrant Airbus',profileName:p.name,developer:'Dovetail Games',route:'Bahnstrecke Leipzig – Dresden',colors:{navy:'#3a3d4d',blue:'#ec0016',red:'#ec0016',paper:'#f6f4f4'},logos:[{file:'../../assets/logo-db-grey.png',alt:'Deutsche Bahn'},{file:'../../assets/logo-dtg-dbgrey.png',alt:'Dovetail Games'}],dlc,credit:'© TheJAG',cab:{file:'../../assets/br-442-dtg-cab.jpg',height:196,position:'50% 50%'},
+const m={name:'tsw-br-442-dtg-thejag',title:'BR 442 / 1442 Talent 2',eyebrow:'DB Regio / S-Bahn Mitteldeutschland · Dovetail Games · TCA Quadrant Airbus',profileName:p.name+' · BR 1442: TSW | BR 1442 | DTG | TheJAG',developer:'Dovetail Games',route:'Bahnstrecke Leipzig – Dresden · Rapid Transit (S-Bahn Leipzig S2, BR 1442)',colors:{navy:'#3a3d4d',blue:'#ec0016',red:'#ec0016',paper:'#f6f4f4'},logos:[{file:'../../assets/logo-db-grey.png',alt:'Deutsche Bahn'},{file:'../../assets/logo-dtg-dbgrey.png',alt:'Dovetail Games'}],dlc:dlc+' · app/1304411 (Rapid Transit)',credit:'© TheJAG',cab:{file:'../../assets/br-442-dtg-cab.jpg',height:196,position:'50% 50%'},
 controls:{
  speedbrake:{name:'Richtungsschalter',notches:['Forward','Neutral','Reverse'],start:1},
  leftThrottle:{name:'Power / brake handle',continuous:true,notches:['Full power',null,'Power %','Min power','0','Min brake','Brake %',null,'Max brake'],start:8},
