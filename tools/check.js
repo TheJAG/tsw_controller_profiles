@@ -104,12 +104,14 @@ function checkProfile(file) {
   // a class seen in the game by a capture counts as real even when the pak scan missed it (DB_767pbzfa_RVM_C, AC4400CW_RVM_C)
   for (const c of classes) if (!pak.has(c.replace(/_C$/, '')) && !caps[c]) err('rail class ' + c + ' not in tools/pak_classes.txt');
 
-  // node names exist in the capture of one of the profile's classes
-  const known = new Set();
-  for (const c of classes) if (caps[c]) for (const x of caps[c].controls) known.add(base(x.name));
+  // node names exist in the capture of one of the profile's classes, character for character: the mod looks a node up by its
+  // full name, so `Wipers` does not reach `Wipers (Irregular Lever)` and the command is dropped without a trace (Class 484,
+  // user drive 2026-11-09; until then this check compared the names with the bracketed suffix stripped)
+  const known = new Set(), byBase = new Map();
+  for (const c of classes) if (caps[c]) for (const x of caps[c].controls) { known.add(x.name); if (!byBase.has(base(x.name))) byBase.set(base(x.name), x.name); }
   for (const c of p.controls || []) for (const n of new Set(nodeNames(c))) {
-    const missing = expandSide(n, cap).map(base).filter(x => !known.has(x));
-    if (missing.length) err(c.name + ': node ' + missing.join(', ') + ' not in the capture');
+    const missing = expandSide(n, cap).filter(x => !known.has(x));
+    if (missing.length) err(c.name + ': node ' + missing.map(x => byBase.has(base(x)) ? x + ' is not in the capture; its full name is "' + byBase.get(base(x)) + '"' : x + ' not in the capture').join(', '));
   }
 
   // manual data, assets, PDF (skipped by build_release.js, which runs before the manual exists)
