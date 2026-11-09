@@ -27,7 +27,7 @@ p.controls=[
  {name:'FlapLever',description:'Zusatzbremse LocoBrakeValve_F (Release 0 / Hold 0.5 / Apply 1, the Apply end is a spring position that never stored in the probe), plain: Release at the far end, Apply nearest: Release 0 ±0.15, Hold 0.5 ±0.15, Apply 1 ±0.15',assignments:[{type:'direct_control',controls:'LocoBrakeValve_F',input_value:{min:0,max:1,steps:[0,0.5,1],step_thresholds:[{threshold:0,threshold_tolerance:0.15},{threshold:0.5,threshold_tolerance:0.15},{threshold:1,threshold_tolerance:0.15}]}}]},
  {name:'ParkingBrake',description:'Master key MasterKeySwitch_F (lever, Unlocked 1 / Locked 0; loads Locked), brake key BrakeKey_F (Unlocked 0 / Locked 1; loads Locked) and the reverser lock ReverserLockButton_F (held 1 so the Richtungsschalter can go to Reverse): PARK BRK up = keys in, lock held',assignments:[pair('MasterKeySwitch_F (Lever)',1,0),pair('BrakeKey_F (Lever)',0,1),pair('ReverserLockButton_F (PushButton)',1,0)]},
  mom('GearLever','SiFa reset (SifaReset_F push button, held)','SifaReset_F (PushButton)',1,0),
- mom('LeftThrottleButton','Sand to the front (FowardsSander_F push button)','FowardsSander_F',1,0),
+ mom('LeftThrottleButton','Sand to the front (FowardsSander_F push button)','FowardsSander_F (PushButton)',1,0),
  mom('RightThrottleButton','Whistle (Whistle_F spring lever 0..1)','Whistle_F (Lever)',1,0),
  mom('LeftEngineOn','PZB Frei (Indusi_Release_F spring lever)','Indusi_Release_F',1,0.5),
  mom('RightEngineOn','PZB Wachsam (Indusi_Acknowledge_F spring lever)','Indusi_Acknowledge_F',1,0.5),
