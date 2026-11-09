@@ -8,6 +8,9 @@
 // are part of the name (`HeadlightSwitch (Irregular Lever)`, `Wipers (Irregular Lever)`, `AWSIS (Lever)`, `DSDID (Lever)`); the short
 // names were dropped without a trace. The sweep's snapped values above were read mid-animation: settled, the game stores
 // HeadlightSwitch 0 / 0.25 / 0.5 / 0.75 / 1, Wipers 0 / 0.33 / 0.66 / 1 and the isolation levers 0 / 1 (probe_lever.js).
+// Horn and whistle: a mod `hold` on `Horn/Whistle (Lever)` moves the lever but the horn stays SILENT until the release, and then it
+// sounds on and on (user, confirmed with a sound-level log); the game keys Space (Horn) and N (Whistle) drive the same lever and
+// sound it while held. They sit on the right throttle button and the round aux (user choice), the ENG switches are free.
 // Handle bands are the train's own since the same day: the user found the brake zone of the 171 bands (raw 0..0.31) too short.
 const fs=require('fs');
 const f=process.argv[2]; const dlc=process.argv[3]||'store.steampowered.com/app/4679460';
@@ -30,8 +33,8 @@ p.controls=[
  {name:'ParkingBrake',description:'Master key (MasterKey toggle button, Unlocked 1 / Locked 0): PARK BRK up = key in',assignments:[{type:'momentary',threshold:0.9,action_activate:{controls:'MasterKey (Toggle Button)',value:1,hold:false,enable_api_fallback:true},action_deactivate:{controls:'MasterKey (Toggle Button)',value:0,hold:false,enable_api_fallback:true}}]},
  mom('GearLever','AWS reset (AWS_Reset push button, held)','AWS_Reset (Push Button)',1,0),
  mom('LeftThrottleButton','Sand (Sanding push button)','Sanding (PushButton)',1,0),
- mom('LeftEngineOn','Horn (Horn/Whistle lever 1, rest 0)','Horn/Whistle (Lever)',1,0),
- mom('RightEngineOn','Whistle (Horn/Whistle lever -1, rest 0)','Horn/Whistle (Lever)',-1,0),
+ key('RightThrottleButton','Horn while held (game key Space; a mod hold on the Horn/Whistle lever stays silent on this train)','space'),
+ key('RoundAuxButton','Whistle while held (game key N)','n'),
  key('RudderTrimLeft','Doors | Left','y'),
  key('RudderTrimRight','Doors | Right','u'),
  tog('LeftAuxButton','AWS isolation (AWSIS lever: Cut-Out 1 / Cut-In 0). Lit = isolated','AWSIS (Lever)',1,0),
@@ -51,11 +54,11 @@ controls:{
  speedbrake:{name:'Reverser',notches:['Off','Forward','Neutral','Reverse'],start:0},
  leftThrottle:{name:'Power / brake',notches:['Full service','B2','B1','Off','P1','P2','P3','P4','P5','P6','P7'],start:0},
  rightThrottle:null, flap:null,
- leftThrottleButton:{name:'Sand'}, rightThrottleButton:null, gearLever:{name:'AWS reset'},
+ leftThrottleButton:{name:'Sand'}, rightThrottleButton:{name:'Horn'}, gearLever:{name:'AWS reset'},
  autoBrk:{name:'Headlights',positions:[{short:'0',desc:'–'},{short:'BTV',desc:'Off'},{short:'LO',desc:'Day'},{short:'2',desc:'Markers'},{short:'3',desc:'Night'},{short:'HI',desc:'Tail'}],start:1},
- eng1:{name:'Horn',start:true}, eng2:{name:'Whistle',start:true},
+ eng1:null, eng2:null,
  leftAux:{name:'AWS isolation'}, rightAux:{name:'DSD isolation'},
- modeSwitch:{name:'Wipers',left:'slower',right:'faster'}, roundAux:null, rudTrim:{name:'Doors L / R'},
+ modeSwitch:{name:'Wipers',left:'slower',right:'faster'}, roundAux:{name:'Whistle'}, rudTrim:{name:'Doors L / R'},
  parkBrk:{name:'Master key',flat:'out',up:'in'}},
 setup:['Master key in (PARK BRK); the EP key and the circuit breaker (MLCB) in the cab','Reverser from Off to Neutral','Check the AWS and DSD isolation lights are out; DRA in the cab','Headlights to Day','Open doors (RUD TRIM)'],
 depart:['Close doors and check the signal','Reverser to Forward','Handle from Full service through Off to P1','Notch up to P7 as speed rises','Acknowledge AWS with the gear lever','Brake: back through Off to B1..Full service']};
